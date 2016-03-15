@@ -1,0 +1,2342 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8">
+		<title>Curso Web XP</title>
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/night.css" id="theme">
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Curso Web Xp</h1>
+					<h3>Uma rápida abordagem aos principais recursos para o desenvolvimento web</h3>
+					<h4>Parte 1</h4>
+					<p>
+						<small>Por <a href="http://www.diogocezar.com">Diogo Cezar Teixeira Batista</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Agenda</h2>
+						<p>Vamos listar a agenda para o curso!</p>
+					</section>
+					<section>
+						<h2>Dia 01 - 02/04/2015</h2>
+						<ul>
+							<li>Introdução</li>
+							<li>Processo de Desenvolvimento</li>
+							<li>Configuração do Ambiente</li>
+							<li>HTML 5</li>
+							<li>XHTML o que realmente fica?</li>
+							<li>Url's Amigáveis</li>
+							<li>CSS3</li>
+							<li>Vetores</li>
+							<li>Tipografia</li>
+							<li>Imagens</li>
+							<li>Design em Colunas</li>
+							<li>Conteúdos Adaptáveis</li>
+							<li>Meta Tags</li>
+							<li>Google Analytics</li>
+							<li>Mão na Massa!</li>
+							<li>Vamos Conversar?</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Dia 02 - 09/04/2015</h2>
+						<ul>
+							<li>Tableless</li>
+							<li>JavaScript</li>
+							<li>JQuery</li>
+							<li>Objetos Literais</li>
+							<li>PHP</li>
+							<li>PHP Orientado a Objetos</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Dia 03 - 10/04/2015</h2>
+						<ul>
+							<li>Ajax</li>
+							<li>Acesso à Banco de Dados</li>
+							<li>Composer</li>
+							<li>Bootstrap</li>
+							<li>Envio de E-mails com Mandrill</li>
+							<li>JSON</li>
+							<li>CUrl</li>
+							<li>Dicas de Plugins e Etc...</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h1>Introdução</h1>
+					<h2>HTML5 - A Evolução</h2>
+					<p>
+						Como tudo evoluiu?
+					</p>
+				</section>
+
+				<section>
+					<h2>Internet</h2>
+					<ul>
+						<li>Constante evolução</li>
+						<ul>
+							<li>google</li>
+							<li>twitter</li>
+							<li>facebook</li>
+							<li>intagram</li>
+							<li>youtube</li>
+						</ul>
+						<li>Como trabalhar, interagir ou se relacionar sem estes serviços?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>O Problema</h2>
+					<p>A internet que acessamos hoje, nativamente, não apresenta os recursos necessários para suprir as demandas</p>
+					<ul>
+						<li>Internet baseada em padrões definidos a mais de 20 anos</li>
+						<li>Problemas?</li>
+						<ul>
+							<li>Falta de Padronização</li>
+							<li>Falta de Especificação</li>
+							<li>Difícil Manutenção</li>
+							<li>Como se Trablhar de Forma Colaborativa?</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>World Wide Web Consortium (W3C)</h2>
+					<ul>
+						<li>Grupo que ministra as métricas a serem seguidas pelas aplicações web</li>
+						<li>Especificou detalhadamente toda a web que utilizamos hoje (HTML 4.01 / XHTML 1.0);</li>
+						<li>Problema? Navegadores <strong>PROPRIETÁRIOS</strong> insistem em não implementar o <strong>PADRÃO</strong>.</li>
+						<li>A Internet chegou em um nível de evolução altíssimo</li>
+						<li>não é viável continuarmos a montar esse Frankstein</li>
+						<ul>
+							<li>Plugins fazem o que deveria ser nativo</li>
+							<li>Flash</li>
+							<li>Silverlight</li>
+							<li>Javafx</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Histórico</h2>
+						<ul>
+							<li>1995 - Netscape lanca o JavaScript e o DOM</li>
+							<li>1998 - Microsoft implementa função que daria vida ao Ajax (XMLHTTP)</li>
+							<li>2002 - Mozilla padroniza e aprimora esta função, batizando-a de XMLHttpRequest</li>
+							<li>2004 - Visibilidade Global do Ajax evidenciada pelo Google</li>
+							<li>2005 - Google Maps, uma aplicação web com características Desktop</li>
+						</ul>
+					</section>
+					<section>
+						<h2>A Saga do HTML</h2>
+						<ul>
+							<li>Em 1999 ocorre o lançamento do HTML 4.01</li>
+							<li>Grande parte Internet que acessamos hoje está escrita em HTML 4.01 ou XHTML 1.0</li>
+							<li>W3C tenta lançar o XHTML 2.0 sem sucesso, motivo? revolução e não evolução!</li>
+							<li>Em 2004, representantes das empresas Mozilla, Apple e Opera se reúnem para criar um grupo paralelo a W3C</li>
+							<li>The Web Hypertext Application Technology Working Group (WHAT-WG)</li>
+							<li>WHAT-WG propõe a criação HTML5, garantindo a compativilidade com o que já estava sendo usado</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Processo de Desenvolvimento</h2>
+						<ul>
+							<li>Benchmarking</li>
+							<ul>
+								<li>Comparação dos produtos, serviços e práticas empresariais (concorrentes ou não)</li>
+							</ul>
+							<li>Planejamento</li>
+							<ul>
+								<li>Número de horas investidas em um projeto.</li>
+								<li>Criação da <strong>Estrutura do Site</strong></li>
+								<li>Coletar o <strong>briefing</strong> com o cliente</li>
+								<ul>
+									<li>logomarcas, imagens, textos, informações de contato e etc.</li>
+								</ul>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>O Projeto</li>
+							<ul>
+								<li>Criação dos <string>wireframes</string></li>
+								<li>Design Conceitural</li>
+								<li>Interface</li>
+								<li>Engenharia de Requisitos</li>
+								<li>Modelagem do Sistema e do Banco de Dados</li>
+								<li>Implementação</li>
+								<li>Testes</li>
+								<li>Entrega</li>
+								<li>Treinamento</li>
+								<li>Divulgação</li>
+							</ul>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Configuração do Ambiente</h2>
+					<p>Antes de começar!</p>
+					<ul>
+						<li>Ambiente de Desenvolvimento vs Produção</li>
+						<li>HardMode <strong>LAMP</strong></li>
+						<li>EasyMode <strong>XAMPP</strong></li>
+						<li>Muitas Vezes, desenvolver para web também envolver configurar o ambiente</li>
+						<ul>
+							<li>Entender a estrutura de configuração do servidor web</li>
+							<li>Habilitar/desabilitar módulos e/ou linguagens</li>
+							<li>Criar Hosts Virtuais</li>
+							<li>Autorização de Diretórios por Senha</li>
+							<li>Utilização de Roteamentos de URL</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Onde entra o HTML5?</h2>
+					<p>Objetivo do HTML5: Encapsular os recursos que a Internet pode oferecer em um só lugar!</p>
+				</section>
+
+				<section>
+					<h2>Usaremos então somente HTML5?</h2>
+					<ul>
+						<li>Apesar de boa compatibilidade com a maioria dos navegadores atuais, alguns recursos podem limitar a experiência em determinados navegadores</li>
+						<li>Solução? Criar alternativa de visualização do mesmo recurso.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>HTML 5</h2>
+					<h3>Recursos</h3>
+					<ul>
+						<li>Organização e Simplificação de Código</li>
+						<li>Acesso Nativo a Áudio e Vídeo</li>
+						<li>Possibilidade de interação CANVAS (desenho) no próprio documento HTML</li>
+						<li>Possibilidade de Estilos Diferenciados e Modernos</li>
+						<li>Marcação Semântica mais Significativa</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>HTML 5</h2>
+						<h3>Novos Elementos</h3>
+						<ul>
+							<li><code>&#60;header></code> - cabeçalho da página ou de uma seção (não confundir com a tag <code>&#60;head></code>)</li>
+							<li><code>&#60;section></code> - cada seção do conteúdo</li>
+							<li><code>&#60;article></code> - um item do conteúdo dentro da página ou da seção</li>
+							<li><code>&#60;footer></code> - o rodapé da página ou de uma seção</li>
+							<li><code>&#60;nav></code> - o conjunto de links que formam a navegação, seja o menu principal do site ou links relacionados ao conteúdo da página</li>
+							<li><code>&#60;aside></code> - conteúdo relacionado ao artigo (como arquivos e posts relacionados em um blog, por exemplo)</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Exemplo</h3>
+						<img data-src="images/tags.png">
+					</section>
+					<section>
+						<h3>Outras Tags</h3>
+						<ul>
+							<li><code>&#60;figure></code> - usado para associar uma legenda a uma imagem, vídeo, arquivo de áudio, objeto ou iframe</li>
+							<pre>
+									<code data-trim contenteditable>
+&#60;figure id="figura01">
+	&#60;legend>Figura 1. Esquema de uma página em HTML5&#60;/legend>
+	&#60;img src="html5.png" border="0" width="200" height="300"
+	alt="Alt Desc" />
+&#60;/figure>
+								</code>
+							</pre>
+							<li><code>&#60;canvas></code> - por meio de uma API gráfica, renderiza imagens 2D dinâmicas que poderão ser usadas em jogos, gráficos, etc;</li>
+							<li><code>&#60;audio></code> e <code>&#60;video></code> - usados para streaming (transmissão pela internet) de áudio e vídeo. É uma tentativa de criar um padrão em todos os navegadores como acontece hoje com as imagens</li>
+							<pre>
+								<code data-trim contenteditable>
+&#60;audio src="musica.mp3" autoplay="autoplay" loop="20000">&#60;/audio>
+&#60;video src="video.mov" width="400" height="360">&#60;/video>
+								</code>
+							</pre>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li><code>&#60;dialog></code> - junto com as tags <code>&#60;dt></code> e <code>&#60;dd></code> criado para formatar um diálogo:</li>
+							<pre>
+								<code data-trim contenteditable>
+&#60;dialog> 
+	&#60;dt>Michael, you never told me your family knew Johnny Fontane!&#60;/dt>
+	&#60;dd>Oh sure, you want to meet him?&#60;/dd>
+	&#60;dt>Yeah!&#60;/dt>
+&#60;/dialog> 
+								</code>
+							</pre>
+							<li><code>&#60;time></code> - representa data e/ou hora</li>
+							<li><code>&#60;meter></code> - utilizado para representar medidas, que podem ser de distância, de armazenagem em disco, etc.</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>HTML5</h2>
+					<h3>Estrutura Básica</h3>
+					<pre>
+						<code data-trim contenteditable>
+&#60;!DOCTYPE html>
+&#60;html>
+	&#60;head>
+		&#60;meta charset="UTF-8">
+		&#60;title>Title of the document&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;header>
+			&#60;nav>&#60;/nav>
+		&#60;/header>
+		&#60;aside>&#60;/aside>
+		&#60;section>
+			&#60;header>&#60;/header>
+			&#60;article>&#60;/article>
+			&#60;article>&#60;/article>
+			&#60;article>&#60;/article>
+			&#60;footer>&#60;/footer>
+		&#60;/section>
+		&#60;footer>&#60;/footer>
+	&#60;/body>
+&#60;/html>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>XHTML o que realmente fica?</h2>
+						<ul>
+							<li>XHTML (EXtensible HyperText Markup Language)</li>
+							<li>As tags e atributos foram criadas com base nas do HTML 4.01 e suas regras</li>
+							<li>XHTML 1.0 é uma recomendação da W3C e sua versão atual data de 26 de janeiro de 2000.</li>
+							<li>Regras <strong>(herdadas pelo HTML5)</strong></li>
+							<ul>
+								<li>Fechar todas as tags</li>
+								<li>Todas as tags devem ser escritas em letras minúsculas</li>
+								<li>Todos os atributos XHTML devem conter "ASPAS".</li>
+								<li>Morre o atributo <strong>name</strong></li>
+								<li>Atributos sem valor foram descontinuados</li>
+								<li>Todos os elementos XHTML devem estar corretamente aninhados dentro do elemento raiz</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Ainda são úteis!</h2>
+							<pre>
+								<code data-trim contenteditable>
+&#60;p>&#60;/p>
+&#60;div>&#60;/div>
+&#60;h1>&#60;/h1>
+&#60;pre>&#60;/pre>
+&#60;code>&#60;/code>
+&#60;em>&#60;/em>
+&#60;span>&#60;/span>
+&#60;strong>&#60;/strong>
+&#60;ul>&#60;/ul>
+&#60;ol>&#60;/ol>
+&#60;li>&#60;/li>
+&#60;dl>&#60;/dl>
+&#60;dt>&#60;/dt>
+&#60;dd>&#60;/dd>
+&#60;table>&#60;/table>
+&#60;img>&#60;/img>
+&#60;form>&#60;/form>
+&#60;input/>
+&#60;textarea/>
+
+
+								</code>
+							</pre>
+					</section>
+					<section>
+						<h2>Não devemos mais usar!</h2>
+							<pre>
+								<code data-trim contenteditable>
+&#60;acronym>&#60;/acronym>
+&#60;applet>&#60;/applet>
+&#60;basefont>&#60;/basefont>
+&#60;big>&#60;/big>
+&#60;center>&#60;/center>
+&#60;dir>&#60;/dir>
+&#60;font>&#60;/font>
+&#60;frame>&#60;/frame>
+&#60;frameset>&#60;/frameset>
+&#60;noframes>&#60;/noframes>
+&#60;strike>&#60;/strike>
+&#60;tt>&#60;/tt>
+								</code>
+							</pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>URL's Amigáveis</h2>
+						<ul>
+							<li>Amigáveis tanto para visitantes quanto para sistemas de busca</li>
+							<li>Regras que permitem a utilização de uma palavra chave que aponta página específica</li>
+							<li>O que são? (No caso do Apache)</li>
+							<ul>
+								<li>São arquivos de acesso e configuração do Apache</li>
+								<li>Lidos pelo Apache toda vez que você tenta acessar um arquivo que esta dentro de uma pasta onde exista um arquivo .htaccess.</li>
+								<li>Nesse arquivo podemos criar regras de bloqueio de acesso, redirecionamentos e reescritas de URL.</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<ul>
+							<li>Ao invés de acessar</li>
+							<pre>
+								<code data-trim contenteditable>
+									http://www.meusite.com.br/contato.php
+								</code>
+							</pre>
+							<li>Acessamos</li>
+							<pre>
+								<code data-trim contenteditable>
+									http://www.meusite.com.br/contato
+								</code>
+							</pre>
+						</ul>
+					</section>
+					<section>
+						<h2>Como fazer?</h2>
+						<ul>
+							<li>Frameworks de desenvolvimento apresentam arquivos de roteamento</li>
+							<li>Forma simples? Utilizando Apache?</li>
+							<pre>
+								<code data-trim contenteditable>
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^contato/?$ /contato.php [NC,L]
+</IfModule>
+								</code>
+							</pre>
+					</section>
+					<section>
+						<h2>E se...</h2>
+						<ul>
+							<li>Toda a regra é baseada em expressões regulares!</li>
+							<pre>
+								<code data-trim contenteditable>
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^send?$ ./app/Troops.php?method=SendMail [NC,L]
+	RewriteRule ^job/([a-zA-Z0-9_-]+)/$ job.php?item=$1
+</IfModule>
+								</code>
+							</pre>
+							<li>Mais explicações? Thiago Belem ajuda: <a href="http://blog.thiagobelem.net/aprendendo-urls-amigaveis/">http://blog.thiagobelem.net/aprendendo-urls-amigaveis/</a></li>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>CSS3</h2>
+						<ul>
+							<li>Todo um universo de aprendizado</li>
+							<li>Muita coisa se resolve com CSS</li>
+							<li><a href="http://www.csszengarden.com/tr/portuguese/">http://www.csszengarden.com/tr/portuguese/</a></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Seletores</h3>
+						<ul>
+							<li>Dentro da estrutura DOM, temos uma árvore de elementos</li>
+							<li>Cada elemento pode ou não ter uma identificação</li>
+							<li>CSS oferece estratégias para selecionar o elemento específico a qual o estilo será aplicado</li>
+							<li>Utilizar essa estrutura de forma organizada, facilita a vida!</li>
+							<li>Mais? <a href="http://www.w3schools.com/cssref/css_selectors.asp">http://www.w3schools.com/cssref/css_selectors.asp</a></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Posicionamentos</h3>
+						<ul>
+							<li>Relative</li>
+							<ul>
+								<li>Posiciona o elemento em relação a si mesmo.</li>
+							</ul>
+							<li>Fixed</li>
+							<ul>
+								<li>Irá fixar a posição do elemento na coordenada que você definir.</li>
+							</ul>
+							<li>Absolute</li>
+							<ul>
+								<li>Irá fixar a posição do elemento na coordenada que você definir, com base em seu pai</li>
+							</ul>
+							<li>Mais? <a href="http://tableless.com.br/propriedade-position-do-css/">http://tableless.com.br/propriedade-position-do-css/</a></li>
+						</ul>
+					</section>
+					<section>
+						<h3>Media Queries</h3>
+						<ul>
+							<li>Problema? Resoluções Diferentes!</li>
+							<li>Solução? Media Queries</li>
+							<ul>
+								<li>Definem condições para que o CSS seja utilizado em cenários específicos</li>
+								<li>Se essas condições forem aprovadas, ou seja, se o dispositivo de adequar a todas as condições estabelecidas na sua Media Querie, o CSS será aplicado</li>
+							</ul>
+							<pre>
+								<code data-trim contenteditable>
+@media screen and (min-width: 768px) {
+  a {color: yellow;}
+}
+								</code>
+							</pre>
+							<li>Mais? <a href="http://tableless.com.br/introducao-sobre-media-queries/">http://tableless.com.br/introducao-sobre-media-queries/</a></li>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Na Prática?</h3>
+						<ul>
+							<li>Podemos adaptar um site na "unha"</li>
+							<li>Viavel? Sim! Produtivo? Não!</li>
+							<li>Utilização de Frameworks</li>
+							<ul>
+								<li><a href="http://getbootstrap.com/">http://getbootstrap.com/</a></li>
+								<li><a href="http://foundation.zurb.com/">http://foundation.zurb.com/</a></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Precisa mudar algo?</h3>
+						<ul>
+							<li>Sites devem ser dinâmicos</li>
+							<li>Não perca tempo, utilize JQuery</li>
+							<li>Ah, mas é um canhão para matar uma mosca</li>
+							<ul>
+								<li>Alternativas mais leves</li>
+								<li><a href="https://github.com/desandro/classie">https://github.com/desandro/classie</a></li>
+							</ul>
+						</ul>
+					</section>
+
+					<section>
+						<h3>Crie o seu padrão</h3>
+						<ul>
+							<li>Precisamos focar na produção!</li>
+							<li>Criar uma estrutura que poderá ser utilizada em vários projetos</li>
+						</ul>
+					</section>
+
+				</section>
+
+				<section>
+					<section>
+						<h2>Animações</h2>
+						<ul>
+							<li>Com CSS3 é possível animar cada elemento do HTML</li>
+							<li>Como animar os elementos? Regras de comportamento</li>
+							<li>Por exemplo: Ao passar o mouse, mover 10px este elemento para a equerda</li>
+								<pre>
+									<code data-trim contenteditable>
+.efeito{
+	transition: all 0.3s ease;
+}
+.efeito:hover{
+	margin-left:10px;
+}
+									</code>
+								</pre>
+						</ul>
+					</section>
+
+					<section>
+						<ul>
+							<li>Utilização de keyframes <a href="http://www.w3schools.com/css/tryit.asp?filename=trycss3_animation1">http://www.w3schools.com/css/tryit.asp?filename=trycss3_animation1</a></li>
+							<pre>
+								<code data-trim contenteditable>
+@keyframes example {
+    from {background-color: red;}
+    to {background-color: yellow;}
+}
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+}
+								</code>
+							</pre>
+							<li>Mais? <a href="http://www.w3schools.com/css/css3_animations.asp">http://www.w3schools.com/css/css3_animations.asp</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Animações mais Funcionais?</h2>
+						<h3>Frameworks e Plugins</h3>
+						<ul>
+							<li>Utilize animações prontas! Onde?</li>
+								<ul>
+									<li><a href="http://daneden.github.io/animate.css">http://daneden.github.io/animate.css</a></li>
+									<li><a href="http://www.justinaguilar.com/animations">http://www.justinaguilar.com/animations</a></li>
+								</ul>
+							<li>JQuery Ajuda Muito! <a href="http://www.w3schools.com/jquery/jquery_animate.asp">http://www.w3schools.com/jquery/jquery_animate.asp</a></li>
+								<pre>
+									<code data-trim contenteditable>
+$("button").click(function(){
+    $("div").animate({
+        left: '250px',
+        opacity: '0.5',
+        height: '150px',
+        width: '150px'
+    });
+});
+									</code>
+								</pre>
+						</ul>
+					</section>
+					<section>
+						<h2>Animações para OnePage?</h2>
+						<ul>
+							<li>scrollReveal.js <a href="http://scrollrevealjs.org/">http://scrollrevealjs.org/</a></li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Vetores</h2>
+						<p>A melhor maneira de exibir uma imagem!</p>
+						<ul>
+							<li>Vetores não tem pixels</li>
+							<li>Conjunto de coordenadas que dizem como a imagem deve ser plotada</li>
+							<li>Vantagem? Redimensionamento infinito</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Diferenças</h2>
+						<img data-src="images/vector.png">
+					</section>
+					<section>
+						<h2>Quer inserir um SVG diretamente?</h2>
+						<pre>
+							<code data-trim contenteditable>
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+</svg>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Ou... é só exportar e usar como uma imagem</h2>
+						<pre>
+							<code data-trim contenteditable>
+<img src="images/troops-logo.svg" class="img-responsive floating"/>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Modernizr</h2>
+						<p>E se meu browser não tiver suporte a SVG?</p>
+						<a href="http://modernizr.com/">http://modernizr.com/</a>
+						<p>
+							Modernizr é uma biblioteca JS que detecta recursos HTML5 e CSS3 compatíveis com o navegador
+						</p>
+						<pre>
+							<code data-trim contenteditable>
+if (!Modernizr.svg) {
+	$('img[src*="svg"]').attr('src', function() {
+	    return $(this).attr('src').replace('.svg', '.png');
+	});
+}
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Tipografia</h2>
+					<ul>
+						<li>Não, não adianta só mudar a fonte no css!</li>
+						<li>Se a fonte não está instalada no PC, o usuário não verá o site como o esperado</li>
+						<li>Alternativas?</li>
+						<ul>
+							<li>Criar seu pack web de fontes! Como? <a href="http://www.fontsquirrel.com/">http://www.fontsquirrel.com/</a></li>
+							<li>Google Fonts! <a href="http://www.google.com/fonts">http://www.google.com/fonts</a></li>
+						</ul>
+						<li>Saber utilizar tamanhos, espaçamentos e alinhamentos, muda completamente a aparência do site</li>
+						<li>Bom senso: Textos para leitura ou para Destaques?</li>
+						<li>Muito Mais? <a href="http://tableless.com.br/um-guia-completo-de-tipografia-para-a-web/"></a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Imagens</h2>
+					<ul>
+						<li>Que formato de imagem devo utilizar?</li>
+						<ul>
+							<li>JPEG, para backgrounds</li>
+							<li>PNG, para imagens com fundos transparentes</li>
+							<li>SVG, sempre que possível!</li>
+						</ul>
+						<li>Saber recortar e exportar imagens é improtante!</li>
+						<ul>
+							<li>Save for Web</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Design em Colunas</h2>
+						<ul>
+							<li>Se vamos trabalhar com sites responsivos, então vamos dividir em colunas</li>
+							<li>É a forma de adequação do layout mais utilizada atualmente</li>
+							<li>Exemplo</li>
+							<ul>
+								<li>Uma versão Desktop exibe 4 colunas</li>
+								<li>Uma versão Tabblet exibe 2 colunas</li>
+								<li>Uma versão Mobile exibe 1 coluna</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemplo</h2>
+						<img data-src="images/grid.png">
+					</section>
+				</section>
+
+				<section>
+					<h2>Conteúdos Adaptáveis</h2>
+					<p>Não precisamos adaptar tudo, utilizar o bom senso é a melhor saída</p>
+					<ul>
+						<li>Não há como reproduzir o mesmo conteúdo desktop para um dispositivo mobile</li>
+						<li>Galeria de Fotos?</li>
+						<li>Videos?</li>
+						<li>Tabelas de Informação?</li>
+						<li>Os <strong>conteúdos</strong> também devem ser adaptados</li>
+						<li>Responda! Qual informação é relevante ao acessar o meu site com um celular?</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Meta Tags</h2>
+						<p>é um comando implementado no código de páginas web, dentro da área Head do site para passar instruções a programas externos ou ações mais simples, como por exemplo informar qual a pessoa responsável pelo desenvolvimento da página.</p>
+						<ul>
+							<li>Importância para SEO?</li>
+							<li>Open Graph Protocol <a href="http://ogp.me/">http://ogp.me/</a></li>
+							<li>keywords</li>
+							<li>description</li>
+							<li>robots</li>
+							<li>author</li>
+						</ul>
+						<h2>viewport?</h2>
+					</section>
+					<section>
+						<table>
+							<thead>
+								<tr>
+									<th>Valor</th>
+									<th>Descrição</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>width</td>
+									<td>Define uma largura para o viewport. Os valores podem ser em PX ou “device-width”, que determina automaticamente um valor igual a largura da tela do dispositivo.</td>
+								</tr>
+							<tr>
+								<td>height</td>
+								<td>Define uma altura para o viewport. Os valores podem ser em PX ou “device-height”, que determina automaticamente um valor igual a altura da tela do dispositivo.</td>
+							</tr>
+							<tr>
+								<td>initial-scale</td>
+								<td>Define a escala inicial do viewport.</td>
+							</tr>
+							<tr>
+								<td>user-scalable</td>
+								<td>Define a possibilidade de o usuário fazer “zoom” em um determinado lugar da tela. É ativado quando o usuário bate duas vezes com o dedo em um lugar da tela.</td>
+							</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<ul>
+							<li>Mais sobre MetaTags? <a href="http://www.infowester.com/metatags.php">http://www.infowester.com/metatags.php</a></li>
+							<li>Mais sobre ViewPort? <a href="http://tableless.com.br/manipulando-metatag-viewport/">http://tableless.com.br/manipulando-metatag-viewport/</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemplos</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;meta charset="utf-8">
+&#60;meta name="keywords" content="...">
+&#60;meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+&#60;link href="images/favicon.png" rel="icon" type="image/x-icon" />
+&#60;meta name="description" content="...">
+&#60;meta name="publisher" content="CREATIVE TROOPS">
+&#60;meta name="author" content="CREATIVE TROOPS">
+&#60;meta name="robots" content="index,follow">
+&#60;meta property="og:title" content="CREATIVE TROOPS">
+&#60;meta property="og:description" content="...">
+&#60;meta property="og:site_name" content="CREATIVE TROOPS">
+&#60;meta property="og:image" content="http://www.thetroops.com.br/images/og.jpg">
+&#60;meta property="og:url" content="http://www.thetroops.com.br">
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Claro, seu site tem que estar no Google Analytics</h2>
+					<ul>
+						<li>Relatórios e estatísticas para os clientes</li>
+						<li>Perfil dos usuários</li>
+						<li>Dispositivos dos usuários</li>
+						<li>Itentificação de Páginas Desinteressantes</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Mão na Massa!</h2>
+					<ul>
+						<li>Durante o curso, vamos criar uma estrutura padrão para desenvolvimento web</li>
+						<li>Organização dos Arquivos</li>
+						<li>Criação dos CSS's</li>
+						<li>Criação do HTML</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Vamos conversar?</h2>
+					<ul>
+						<li>OnePage, por que virou moda?</li>
+						<li>Por que não podemos ignorar os dispositivos móveis?</li>
+						<li>Por que o design é tão importante?</li>
+						<ul>
+							<li>Integração entre Design e Desenvolvimento</li>
+							<li>Saber avaliar o que é bonito, como? Referências!</li>
+						</ul>
+						<li>O que faz um site é só o seu conteúdo?</li>
+						<ul>
+							<li>Planejamento</li>
+							<li>Estratégia de Marketing</li>
+							<li>Redes Sociais</li>
+						</ul>
+						<li>Qual o perfil de um desenvolvedor web?</li>
+						<ul>
+							<li>Ler em Inglês</li>
+							<li>Melhor que saber tudo? Saber onde encontrar!</li>
+							<li>A perfeição mora nos detalhes</li>
+						</ul>
+						<li>Onde hospedar?</li>
+						<li>O que gostariam de aprender?</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Curso Web Xp</h1>
+					<h3>Uma rápida abordagem aos principais recursos para o desenvolviento web</h3>
+					<h4>Parte 2</h4>
+					<p>
+						<small>Por <a href="http://www.diogocezar.com">Diogo Cezar Teixeira Batista</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Tableless</h2>
+						<p>é uma tecnologia que deixa de lado as tabelas de HTML, para fazer implementação do layout com CSS, onde é possível separar a formatação da programação do sistema.</p>
+						<p>Mas quais as vantagens?</p>
+						<ul>
+							<li>É a forma correta de se estruturar um layout em HTML</li>
+							<li>Diminuição do peso da página</li>
+							<li>Melhora da acessibilidade (Dispositivos móveis com tabela? Puff!)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Como usar Tableless?</h2>
+						<ul>
+							<li>Utilizar seletores CSS para posicionar elementos HTML</li>
+							<li>Provavelmente haverão muitas div's em seu HTML<li>
+							<li>Id's e classes devem ser aplicadas para facilitar sua seleção pelo CSS</li>
+							<li>Não podemos esquecer de aplicar corretamente os novos elementos do HTML5</li>
+							<li>Se uma div irá se repetir, use uma classe e não uma id</li>
+						</ul>
+						<p>
+							<h3>Vamos ver um exemplo</h3>
+						</p>
+					</section>
+					<section>
+						<img data-src="images/tableless_1.png">
+					</section>
+					<section>
+						<img data-src="images/tableless_2.png">
+					</section>
+					<section>
+						<img data-src="images/tableless_3.png">
+					</section>
+					<section>
+						<img data-src="images/tableless_4.png">
+					</section>
+					<section>
+						<h2>Exemplo?</h2>
+						<ul>
+							<li>Faça o download ! <a href="./files/tableless.rar">aqui</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>JavaScript</h1>
+						<p>é uma linguagem de programação interpretada com características de orientação a objetos</p>
+						<ul>
+							<li>Desenvolvida pela Netscape a fim de estender as capacidades de seu browser</li>
+							<li>Permite que um conteúdo executável seja incluído em paginas web</li>
+							<li>Sintaticamente semelhante a C e C++</li>
+							<li>Java não é JavaScript</li>
+						</ul>
+					</h2>
+					</section>
+					<section>
+						<img data-src="images/javascript.png">
+					</section>
+					<section>
+						<h2>Destaques da Linguagem</h1>
+						<ul>
+							<li>Controlar a aparência e conteúdo do documento</li>
+							<ul>
+								<li>Escrever código em um documento enquanto ele esta sendo interpretado pelo browser</li>
+								<li>Alterar cor de fundo da página em tempo de excussão</li>
+							</ul>
+							<li>Controlar o browser</li>
+							<ul>
+								<li>Abrir novas janelas, exibir mensagens na barra de status, etc</li>
+							</ul>
+							<li>Manipular formulários HTML</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Como devemos usá-los?</h1>
+						<ul>
+							<li>blocos <code>&#60;script></code>:</li>
+							<ul>
+								<li>Usado para definir funções que serão usadas dentro da mesma pagina</li>
+							</ul>
+							<li>arquivos externos</li>
+							<ul>
+								<li>Definir funções que serão usadas por varias paginas (.js)</li>
+							</ul>
+							<li>Junto a tags HTML</li>
+							<ul>
+								<li>manipulação de eventos (evitar!)</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemplo bloco <code>&#60;script></code></h1>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>JavaScript&#60;/title>
+	&#60;/head>
+	&#60;body>
+
+		&#60;script language="JavaScript">
+			document.write("Hello World!");
+		&#60;/script>
+
+	&#60;/body>
+&#60;/html>
+
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Exemplo arquivos externos</h1>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>JavaScript&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;script language="JavaScript" src="../js/jquery.js">&#60;/script> 
+	&#60;/body>
+&#60;/html>
+
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Exemplo junto a tags</h1>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>JavaScript&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;input type="buttom" onclick="javascript:alert('Teste JavaScript');">
+	&#60;/body>
+&#60;/html>
+
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>JavaScript</h1>
+					<h3>Sintaxe e Estrutura</h3>
+					<ul>
+						<li>Case sensitive - Valor, VALOR e VaLOR são variáveis diferentes</li>
+						<li>Na maior parte dos casos, JavaScript ignora espaços em branco</li>
+						<li>Comentários - Suporta estilos de C e C++</li>
+						<li>Declaração de variáveis - não e necessário inicializar a variável na declaração, nesse caso o valor e indefinido (undefined)</li>
+						<li>Tipos de dadosprimitivos: string, number, boolean, undefined, null</li>
+						<ul>
+							<li>Os tipos de dados em JavaScript são implícitos</li>
+							<li>Interpretador faz tudo automaticamente</li>
+							<li>strings → "Texto de uma string"</li>
+							<li>números → 15, 15.6, 18.23 e 10</li>
+							<li>arrays e tipos complexos</li>
+						</ul>
+						<li>Conversão de tipos automática</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JavaScript</h1>
+					<h3>Funções</h3>
+					<ul>
+						<li>Uma função é um pedaço de código reutilizável</li>
+						<li>A função é definida apenas uma vez, e pode ser utilizada um número indefinido de vezes</li>
+						<li>Em JavaScript, não é necessário fazer declaração de funções</li>
+						<li>Uma função é definida com o uso da palavra <strong>function</strong></li>
+					</ul>
+						<pre>
+							<code data-trim contenteditable>
+function exibeMensagem(){
+   document.write("Olá!");
+}
+exibeMensagem();
+
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>JavaScript</h1>
+						<h3>Eventos</h3>
+						<ul>
+							<li>A utilização do JavaScript quase sempre vem em conjunto à um eventos do HTML</li>
+							<li>São ações iniciadas por parte dos usuários</li>
+							<li>Podemos chamar determinada função ao clicar em um botão, ou ao entrar em determinado input text</li>
+							<li>sua sintaxe tem a seguinte formação:</li>
+							<pre>
+								<code data-trim contenteditable>
+&#60;TAG nomeEvento="Instruções JavaScript">
+								</code>
+							</pre>
+						</ul>
+					</section>
+					<section>
+						<img data-src="images/js_eventos_1.png">
+					</section>
+					<section>
+						<img data-src="images/js_eventos_2.png">
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>JavaScript</h1>
+						<h3>Hierarquia de Objetos</h3>
+						<ul>
+							<li>window: O objeto mais acima na hierarquia, contém propriedades que se aplicam a toda a janela. Há também um objeto desta classe para todas as "sub-janelas" de um documento com frames</li>
+							<li>location: Contém as propriedades da URL atual</li>
+							<li>history: Contém as propriedades das URLs visitadas anteriormente</li>
+							<li>document: Contém as propriedades do documento contido na janela, tais como o seu conteúdo, título, cores, etc</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Manipulando Elementos</h2>
+							<pre>
+								<code data-trim contenteditable>
+&#60;script>
+	var nome = document.getElementById("nome");
+	var nome = document.getElementByName("nome");
+&#60;/script>
+								</code>
+							</pre>
+					</section>
+					<section>
+						<h2>Capturando um texto de um input</h2>
+							<pre>
+								<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Get Text&#60;/title>
+		&#60;script>
+		function mostra_texto(){
+			var texto = document.getElementById('texto');
+			alert('Você digitou: ' + texto.value);
+		}
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		Digite seu nome:
+		&#60;input id="texto" name="texto" type="text" maxlength="50" />
+		&#60;input name="botao" type="button" id="botao" 
+		onclick="mostra_texto();" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+								</code>
+							</pre>
+				</section>
+
+				<section>
+					<h2>Alterando um Estilo</h2>
+						<pre>
+							<code data-trim contenteditable>
+var texto = document.getElementById('mudaCor');
+texto.style.color = 'red';
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Alterando a Cor de uma Div</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Muda Cor&#60;/title>
+		&#60;script>
+		function mudar_cor(){
+			var texto = document.getElementById('mudaCor');
+			texto.style.color = 'red';
+		}
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;div id="mudaCor">Testando um novo texto&#60;/div>
+		&#60;input name="botao" type="button" id="botao" onclick="mudar_cor();" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Alterando um texto</h2>
+						<pre>
+							<code data-trim contenteditable>
+var texto = document.getElementById('mudaDiv');
+texto.innerHTML = 'O texto foi trocado!'
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Alterando o conteúdo de uma Div</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Muda Div&#60;/title>
+		&#60;script>
+		function mudar_div(){
+			var texto = document.getElementById('mudaDiv');
+			texto.innerHTML = 'O texto foi trocado!'
+		}
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;div id="mudaDiv">Testando um novo texto&#60;/div>
+		&#60;input name="botao" type="button" id="botao" onclick="mudar_div();" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Redirecionando</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Redirecionando&#60;/title>
+		&#60;script>
+		function redirect() {
+			window.location = 'http://www.globo.com';
+		}
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;p>&#60;a href="#" onclick="redirect();">Redirecionar&#60;/a>&#60;/p>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Voltando</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Redirecionando&#60;/title>
+		&#60;script>
+		function voltar() {
+			window.history.go(-1);
+		}
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;p>&#60;a href="#" onclick="voltar();">Voltar&#60;/a>&#60;/p>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+				</section>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<ul>
+						<li>É um framework para ajudar os desenvolvedores a se concentrarem na lógica dos sistemas da web e não nos problemas de incompatibilidade dos navegadores atuais</li>
+						<li>Seu lema é escrever menos e fazer mais</li>
+						<li>é uma biblioteca de JavaScript</li>
+						<li>JavaScript puro == INCOMPATIBILIDADE</li>
+						<ul>
+							<li>diferentes navegadores</li>
+							<li>diferentes implementações</li>
+							<li>problemas com CSS’s</li>
+							<li>problemas de acessibilidade</li>
+						</ul>
+						<li>Milhares de Plugins!</li>
+						<li>Diminuição na escrita do código</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Funcionalidades</h3>
+					<ul>
+						<li>Resolução da incompatibilidade entre os navegadores</li>
+						<li>Dedução de código</li>
+						<li>Reusabilidade do código através de plug-ins</li>
+						<li>Implementação segura de recursos do CSS1, CSS2 e CSS3</li>
+						<li>Utilização de uma vasta quantidade de plugins criados por outros desenvolvedores</li>
+						<li>Trabalha com AJAX e DOM.</li>
+						<li>Baixe Já! <a href="http://jquery.com/">http://jquery.com/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Instalação</h3>
+					<p>A biblioteca jQuery não requer instalação. Por se tratar de um arquivo JavaScript formal, basta que você crie um link para o arquivo, na seção head do documento onde o script irá rodar, tal como faz com qualquer arquivo JavaScript tradicional.</p>
+					<pre>
+						<code data-trim contenteditable>
+&#60;script type="text/javascript" src="../jquery.js">&#60;/script>
+						</code>
+					</pre>
+					<p>para que o JQuery seja ativado, é necessário colocar as funcionalidades na função ready</p>
+					<pre>
+						<code data-trim contenteditable>
+$(document).ready(function() { 
+// faça alguma coisa quando o DOM estiver pronto 
+});
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Seletores</h3>
+					<p>Uma das principais vantagens em se utilizar esse framework se diz respeito à seleção dos componentes html</p>
+					<p>É possível selecionar de diversas formas os elementos da página como por exemplo:</p>
+					<ul>
+						<li>todos os seus links</li>
+						<li>todos os seus inputs</li>
+						<li>selecionar um elemento por seu id</li>
+						<li>selecionar um elemento por sua classe</li>
+					</ul>
+					<p>Uma lista completa pode ser vista nesse link: <a href="http://docs.jquery.com/selectors">http://docs.jquery.com/selectors</a></p>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Seleção Recursiva</h3>
+					<p>Podemos querer atribuir ações em comum para todos os elementos de determinado tipo de um HTML</p>
+					<p>Podemos então, usar a função <code>find();</code></p>
+					<pre>
+						<code data-trim contenteditable>
+$(document).find("form").each(function(){
+    $(this)...
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Capturando Atributos</h3>
+					<p>Com o JQuery temos uma propriedade específica chamada <code>attr(‘atributo’);</code></p>
+					<p>Consegue capturar qualquer atributo do elemento selecionado</p>
+					<pre>
+						<code data-trim contenteditable>
+alert(jQuery("#nome").attr("value"));
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Efeitos Visuais</h3>
+					<p>Facilidade no tratamento de efeitos visuais</p>
+					<pre>
+						<code data-trim contenteditable>
+$("#suadiv")).fadeOut("slow");
+$("#suadiv")).fadeIn("slow");
+$("#suadiv")).show();
+$("#suadiv")).hide();
+$("#go").click(function() {
+  $("#block").animate({
+    width: "70%",
+    opacity: 0.4,
+    marginLeft: "0.6in",
+    fontSize: "3em",
+    borderWidth: "10px"
+  }, 1500 );
+});
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<h2>JQuery</h2>
+					<h3>Modo de Compatibilidade</h3>
+					<p>em determinados casos o JQuery pode não funcionar como o esperado caso seja incluído junto com um outro framework JavaScript</p>
+					<p>$ é o problema! Solução?</p>
+					<pre>
+						<code data-trim contenteditable>
+&#60;script>jQuery.noConflict();&#60;/script>
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>JQuery</h2>
+						<h3>Alguns Exemplos</h3>
+						<h4>Exibindo um texto de um Input</h4>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Get Text&#60;/title>
+		&#60;script language="javascript" src="jquery/jquery.js">&#60;/script>
+		&#60;script>
+		$(document).ready(function(){
+			$('#botao').click(function(){
+				alert($('#texto').attr('value'));
+			});						   
+		});
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		Digite seu nome:
+		&#60;input id="texto" name="texto" type="text" maxlength="50" />
+		&#60;input name="botao" type="button" id="botao" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>JQuery</h2>
+						<h4>Alterando a cor de um Div</h4>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Muda Cor&#60;/title>
+		&#60;script language="javascript" src="jquery/jquery.js">&#60;/script>
+		&#60;script>
+		$(document).ready(function(){
+			$('#botao').click(function(){
+				$('#mudaCor').css({"color":"red"});
+			});						   
+		});
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;div id="mudaCor">Testando um novo texto&#60;/div>
+		&#60;input name="botao" type="button" id="botao" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>JQuery</h2>
+						<h4>Alterando o conteúdo de uma Div</h4>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Muda Div&#60;/title>
+		&#60;script language="javascript" src="jquery/jquery.js">&#60;/script>
+		&#60;script>
+		$(document).ready(function(){
+			$('#botao').click(function(){
+				$('#mudaDiv').html('O texto foi trocado!');
+			});						   
+		});
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;div id="mudaDiv">Testando um novo texto&#60;/div>
+		&#60;input name="botao" type="button" id="botao" value="Ok"/>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>JQuery</h2>
+						<h4>Facilitando com o Toogle</h4>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Detalhes&#60;/title>
+		&#60;script language="javascript" src="jquery/jquery.js">&#60;/script>
+		&#60;script>
+		$(document).ready(function(){
+			$('#link').click(function(){
+				$('#maisinfo').toggle();
+			});						   
+		});
+		&#60;/script>
+	&#60;/head>
+	&#60;body>
+		&#60;p>Clica no link para abrir a caixa de informação escondida.&#60;/p>
+		&#60;p>&#60;a href="#" id="link">Mais Informação&#60;/a>&#60;/p>
+		&#60;div id="maisinfo" style="display:none">
+		&#60;p> Texto que ficará invisível até clicar no link.&#60;/p>
+		&#60;/div>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>JavaScript - Um Objeto Literal</h2>
+					<p>Utilizar o recurso de objeto literal ajuda <strong>E MUITO</strong> a organização de seus JavaScripts</p>
+					<ul>
+						<li>Separação das funcionalidades por "classes"</li>
+						<li>Cada classe em um arquivo separado</li>
+						<li>Utilização de uma classe central "Oracle" para gerencia de todas as outras</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>JavaScript - Um Objeto Literal</h2>
+					<h3>Criando um objeto literal</h3>
+					<ul>
+						<li>É um arquivo .js comum</li>
+						<li>Elementos não possuem distinção</li>
+						<li>Podem ser: atributos, funções ou outros objetos</li>
+						<li>Convenção: todo objeto deve possuir uma função <code>init()</code></li>
+					</ul>
+					<pre>
+						<code data-trim contenteditable>
+var MeuObjeto = {
+	contador: 0,
+	init: function(){}
+}
+						</code>
+					</pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>Agora vamos Juntar Tudo!</h2>
+						<p>Várias formas de manipulação foram apresentadas, mas vamos organizar um esquema de JQuery + Objeto Literal</p>
+						<ul>
+							<li>Função de inicialização que será executada ao carregar a página</li>
+							<li>Essa função será responsável por atribuir as funcionalidades aos elementos HTML</li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+var MeuObjeto = {
+	init: function(){
+	   $("#botao").on('click', MeuObjeto.acao);
+	},
+	acao: function(){ alert('Olá...'); }
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Temos que Invocar de Algum Lugar!</h2>
+						<pre>
+							<code data-trim contenteditable>
+var MeuObjeto = {
+	init: function(){
+	   $("#botao").on('click', function(){MeuObjeto.acao});
+	},
+	acao: function(){ alert('Olá...'); }
+}
+$(document).ready(function(){
+	MeuObjeto.init();
+});
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Vamos estudar alguns exemplos!</h2>
+					<ul>
+						<li>Uma página com dois botões (+ e -) que incrementação ou decrementação um input</li>
+						<li>Uma página com 2 inputs que ao clicar em um botão resultado exibe um alerta com a soma dos inputs</li>
+						<li>Faça o download dos arquivos <a href="files/exemplos_js.rar">aqui!</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>PHP: PHP HyperText Preprocessor</h2>
+					<ul>
+						<li>Linguagem de código fonte aberto</li>
+						<li>Criada para desenvolvimento de aplicações WEB</li>
+						<li>Diferencial: ao invés de escrever um programa com um monte de comandos para imprimir HTML, você escreve um arquivo "HTML" com algum código inserido para fazer alguma coisa;</li>
+						<li>O código PHP é delimitado por tags iniciais e finais que lhe permitem pular pra dentro e pra fora do "modo PHP"</li>
+						<li>Dentro do modo PHP, têm-se todos os recursos oferecidos pela linguagem, como: acesso a base de dados, manipulação de imagens, entre outros.</li>
+						<li>A melhor coisa em usar PHP está no fato de ele ser extremamente simples para um iniciante, mas oferece muitos recursos para o programador profissional</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Iniciando com PHP</h2>
+					<ul>
+						<li>Vários editores e ambientes bacanas! Particularmente? SublimeText!</li>
+						<li>As páginas PHP devem ser salvas no diretório raiz do servidor, e serão executadas somente quando acessadas pela url correspondente em seu navegador, exemplo</li>
+						<pre>
+							<code data-trim contenteditable>
+http://localhost/app/index.php
+C:\Program Files\Wamp\www\app\index.php
+							</code>
+						</pre>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Primeiro Script</h2>
+					<p>Para criar o primeiro exemplo, digite o seguinte código-fonte no seu editor e salve com o nome de teste.php dentro do diretório raiz do servidor</p>
+					<pre>
+						<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Teste PHP&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;?php echo "&#60;p>Alô Mundo&#60;/p>"; ?>
+	&#60;/body>
+&#60;/html>
+						</code>
+					</pre>
+					<p>no browser, digite o endereço: <a href="http://localhost/teste.php">http://localhost/teste.php</a></p>
+					<ul>
+						<li>Veja também o código fonte da página</li>
+						<li>Note que os comando em php não aparecem no código fonte, pois o servidor interpreta todos os scripts antes de enviar a página compilada para o navegador</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>PHP Sintaxe Básica</h2>
+						<ul>
+							<li>Tags especiais indicam ao PHP onde estão os blocos de código</li>
+							<li>A tag de abertura é <code>&#60;?php</code> e de fechamento <code>?></code></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Iniciando nos Códigos</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Teste PHP&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;?php
+			$a = 10;
+			$b = 15;
+			$c = $a + $b;
+			echo "$a mais $b é igual a $c";
+		?>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Iniciando nos Códigos</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;html>
+	&#60;head>
+		&#60;title>Teste PHP&#60;/title>
+	&#60;/head>
+	&#60;body>
+		&#60;?php
+		   $a = 10;
+		   if($a > 0){
+		?>
+		   &#60;h1>A variável a é maior que 10!&#60;/h1>
+		&#60;?
+		   }
+		   else{
+		?>
+		   &#60;h1>A variável a é menor que 10!&#60;/h1>
+		&#60;?
+		   }
+		?>
+	&#60;/body>
+&#60;/html>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Variáveis</h2>
+						<ul>
+							<li>Variáveis armazenam valores. Pode-se referir a variáveis para obter seu valor ou para alterar seu conteúdo</li>
+							<li>No PHP elas são representadas por um cifrão ($) mais o nome da variável</li>
+							<li>Os nomes de variáveis válidos são iniciados por letras ou por um subscrito</li>
+							<li>Existe diferenciação entre nomes de variáveis maiúsculas e minúsculas</li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$a = 10;
+	$A = 20;
+	echo "O valor de ‘$a’ é $a e o de ‘$A’ é $A";
+?>
+
+							</code>
+						</pre>
+						<p>Resultado: O valor de $a é 10 e o valor de $A é 20</p>
+					</section>
+
+					<section>
+						<h2>Variáveis</h2>
+						<ul>
+							<li>As variáveis criadas dentro de uma função (function) valerão somente enquanto aquela função existir</li>
+							<li>Para trabalhar com uma variável externa à função devemos definir a variável como global</li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	function soma($a, $b){
+		global $msg;
+		return $msg.($a + $b);
+	}
+	$msg = "A soma é ";
+	echo soma(10, 2);
+?>
+
+
+							</code>
+						</pre>
+						<p>Resultado: A soma é 12</p>
+					</section>
+
+					<section>
+						<h2>Variáveis</h2>
+						<ul>
+							<li>É comum utilizarmos uma mistura de strings e variáveis para imprimir o conteúdo desejado</li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$cerveja = "Skol";
+	echo "Ele bebeu algumas " . $cerveja . "s"; // funciona
+	echo "Ele bebeu algumas $cervejas"; // não funciona
+	echo "Ele bebeu algumas ${cerveja}s"; // funciona
+	echo "Ele bebeu algumas {$cerveja}s"; // funciona
+	echo "Elemento de um Array: {$array[0][0]}";
+	echo "Atributo de um Obj: {$obj->Nome}";
+	echo "$cerveja"; // imprime conteúdo de $cerveja
+	echo '$cerveja'; // imprime cerveja;
+?>
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Rapidamente Por outros Slides</h2>
+					<ul>
+						<li><a href="./files/S05_PHP_Parte2.pptx">S05_PHP_Parte2</a></li>
+						<li><a href="./files/S05_PHP_Parte3.pptx">S05_PHP_Parte3</li>
+						<li><a href="./files/S05_PHP_Parte4.pptx">S05_PHP_Parte4</li>
+						<li><a href="./files/S06_PHPOO_Parte1.pptx">S06_PHPOO_Parte1</li>
+						<li><a href="./files/S06_PHPOO_Parte2.pptx">S06_PHPOO_Parte2</li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Curso Web Xp</h1>
+					<h3>Uma rápida abordagem aos principais recursos para o desenvolviento web</h3>
+					<h4>Parte 3</h4>
+					<p>
+						<small>Por <a href="http://www.diogocezar.com">Diogo Cezar Teixeira Batista</a></small>
+					</p>
+				</section>
+
+				<section>
+					<section>
+						<h2>Ajax</h2>
+						<p>AJAX é uma solução lado-cliente baseada em HTML, JavaScript e DOM que permite que a comunicação entre o browser e o servidor Web ocorra de forma assíncrona</p>
+						<ul>
+							<li>AJAX não é uma linguagem nova, nem mesmo uma tecnologia nova</li>
+							<li>AJAX não é uma solução lado-servidor</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Por que Usar?</h2>
+						<ul>
+							<li>A comunicação HTTP é ineficiente:</li>
+							<ul>
+								<li>Para cada requisição há uma resposta</li>
+								<li>Cada resposta devolve uma página inteira</li>
+								<li>É preciso esperar toda a página carregar antes de usar uma aplicação Web</li>
+							</ul>
+							<li>AJAX permite comunicação assíncrona:</li>
+							<ul>
+								<li>Pequenos trechos de dados podem ser transferidos assincronamente</li>
+								<li>Permite que aplicação funcione enquanto dados são transferidos</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Quando Usar?</h2>
+						<ul>
+							<li>Use em aplicações Web interativas que sofrem com o modelo requisição-resposta:</li>
+							<ul>
+								<li>Aplicações com menus, muitas opções, que requerem interatividade em tempo real</li>
+								<li>Aplicações que modelam aplicações gráficas de desktop</li>
+							</ul>
+							<li>Não use em aplicações que realmente precisam carregar uma página inteira:</li>
+							<ul>
+								<li>Tabelas inteiras</li>
+								<li>Textos longos</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>Ciclo de vida de uma aplicação web</h2>
+						<img data-src="images/ajax_1.png">
+					</section>
+					<section>
+						<h2>Ciclo de vida de uma aplicação web com Ajax</h2>
+						<img data-src="images/ajax_2.png">
+					</section>
+					<section>
+						<h2>Integração com JQuery</h2>
+						<pre>
+							<code data-trim contenteditable>
+$.ajax({
+    type: "POST",
+    url: "pagina.php",
+    data:
+	{
+	    parametro: "teste",
+	},
+    success: function (result) {
+        alert(result)
+    },
+});
+							</code>
+						</pre>
+						<p>Conheça outras funções: <code>load</code>, <code>$.post</code>, <code>$.get</code></p>
+					</section>
+					<section>
+						<h2>E no Server-Side?</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$val = $_POST['parametro'];
+	echo "Vou retornar o valor: " . $val;
+?>
+							</code>
+						</pre>
+						<p>Podemos utilizar o mesmo princípio para retornar um JSON?</p>
+					</section>
+					<section>
+						<h2>Leitura complementar?</h2>
+						<p>A alguns anos escrevi um artigo tratando do assunto:</p>
+						<a href="http://www.pinceladasdaweb.com.br/blog/2012/02/16/aplicacoes-dinamicas-com-php-e-ajax/">http://www.pinceladasdaweb.com.br/blog/2012/02/16/aplicacoes-dinamicas-com-php-e-ajax/</a>
+					</section>
+				</section>
+
+				<section>
+					<h2>Criando uma Estrurua Básica de Comunicação entre JavaScript e PHP</h2>
+					<p>Agora, vamos utilizar todos os conceitos estudados para a criação de uma estrutura de comunicação Ajax entre PHP, Jquery, Objeto Literal e HTML5</p>
+					<ul>
+						<li>Criação da Estrurua de Pastas</li>
+						<li>Criação do Singleton Oracle (PHP)</li>
+						<li>Criação do Objeto Literal Oracle.js</li>
+						<li>Criação das Urls Amigáveis</li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>PDO para conexões!</h2>
+						<ul>
+							<li>O PDO funciona como uma camada de acesso à base de dados que possibilita uma maneira uniforme de aceder a vários tipos de bases de dados.</li>
+							<pre>
+								<code data-trim contenteditable>
+&#60;?php
+	$conn = new PDO('mysql:host=localhost;dbname=aMinhaBD', $username, $password);
+?>
+								</code>
+							</pre>
+						</ul>
+					</section>
+					<section>
+						<h2>Tratando os erros</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	try
+	{
+	    $conn = new PDO('mysql:host=localhost;dbname=aMinhaBD', $username, $password);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	}
+	catch(PDOException $e)
+	{
+	    echo 'ERRO: ' . $e->getMessage();
+	}
+?>
+							</code>
+						</pre>
+						<ul>
+							<li><code>PDO::ERRMODE_EXCEPTION</code> fase de desenvolvimento</li>
+							<li><code>PDO::ERRMODE_SILENT</code> fase de produção</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Capturando Dados</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$id = 5 //Substituir com dados reais;
+	try
+	{
+	    $conn = new PDO('mysql:host=localhost;dbname=aMinhaDB', $username, $password);
+	    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);    
+	     
+	    $stmt = $conn->prepare('SELECT * FROM minhaTabela WHERE id = :id');
+	    $stmt->execute(array('id' => $id));
+	 
+	    while($row = $stmt->fetch())
+	    {
+	        print_r($row);
+	    }
+	} catch(PDOException $e) {
+	    echo 'ERRO: ' . $e->getMessage();
+	}
+?>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Inserindo Dados</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	try
+	{
+	  $pdo = new PDO('mysql:host=localhost;dbname=aMinhaDB', $username, $password);
+	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 
+	  $stmt = $pdo->prepare('INSERT INTO minhaTabela VALUES(:nome)');
+	  $stmt->execute(array(
+	    ':nome' => 'José Socrates'
+	  ));
+	}
+	catch(PDOException $e)
+	{
+	  echo 'Erro: ' . $e->getMessage();
+	}
+?>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Atualizando Dados</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$id = 5;
+	$name = "Mário Soares";
+	 
+	try
+	{
+	  $pdo = new PDO('mysql:host=localhost;dbname=aMinhaDB', $username, $password);
+	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 
+	  $stmt = $pdo->prepare('UPDATE minhaTabela SET nome = :nome WHERE id = :id');
+	  $stmt->execute(array(
+	    ':id'   => $id,
+	    ':name' => $name
+	  ));
+	}
+	catch(PDOException $e)
+	{
+	  echo 'Erro: ' . $e->getMessage();
+	}
+?>
+							</code>
+						</pre>
+					</section>
+
+<section>
+						<h2>Excluindo Dados</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$id = 5;
+	 
+	try
+	{
+	  $pdo = new PDO('mysql:host=localhost;dbname=aMinhaDB', $username, $password);
+	  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	 
+	  $stmt = $pdo->prepare('DELETE FROM minhaTabela WHERE id = :id');
+	  $stmt->execute(array(
+	    ':id' => $id
+	  ));
+	}
+	catch(PDOException $e)
+	{
+	  echo 'Erro: ' . $e->getMessage();
+	}
+?>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Mais?</h2>
+						<ul>
+							<li><a href="http://rafaelalmeida.pt/php-com-funcoes-mysql-nunca-mais/">http://rafaelalmeida.pt/php-com-funcoes-mysql-nunca-mais/</a></li>
+							<li><a href="http://www.devmedia.com.br/usando-pdo-php-data-objects-para-aumentar-a-produtividade/28446">http://www.devmedia.com.br/usando-pdo-php-data-objects-para-aumentar-a-produtividade/28446</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Composer</h2>
+						<ul>
+							<li>É uma ferramenta para gerenciamento de dependências para o PHP que vem ganhando espaço e se tornando cada vez mais indispensável</li>
+							<li>Do que preciso?</li>
+							<ul>
+								<li>Basicamente precisará do PHP em sua versão a partir da 5.3.2.</li>
+								<li>Instalá-lo em seu ambiente <a href="https://getcomposer.org/download/">https://getcomposer.org/download/</a></li>
+								<li>Executar comandos para instalar/atualizar as dependências</li>
+							</ul>
+						</ul>
+					</section>
+					<section>
+						<h2>O arquivo de configurações</h2>
+						<p>Primeiramente crie um arquivo chamado composer.json. Este arquivo possuirá as configurações de dependências de sua aplicação em formato Json.</p>
+						<pre>
+							<code data-trim contenteditable>
+{
+    "name": "Nome do projeto",
+    "description": "Breve descrição do que a aplicação se propoe a fazer",
+    "authors": [
+        {
+            "name": "Seu nome",
+            "email": "seu-email@seu-dominio.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.2.8"
+    }
+}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Importando Pacotes</h2>
+						<p>O composer utiliza como seu repositório o <a href="https://packagist.org/">Packagist</a> onde qualquer desenvolvedor pode criar seus próprios pacotes e disponibilizá-los para a comunidade semelhante o github.</p>
+						<pre>
+							<code data-trim contenteditable>
+...
+"require": {
+        "php": ">=5.2.8",
+        "kevinlebrun/slug.php": "1.*"
+}
+...
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Instalando</h2>
+						<p>Agora que o arquivo com os pacotes foi configurado, devemos rodar o comando <code> php composer.phar install</code> ou <code> php composer.phar update</code> em caso de alterações.</p>
+						<ul>
+							<li>Arquivos são baixados automaticamente</li>
+							<li>Composer cria toda a estrutura de pastas</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Importando</h2>
+						<p>Basta então, importarmos importarmos o arquivo autoload.php</p>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+header('Content-Type: text/html; charset=utf-8');
+require 'vendor/autoload.php';
+$slugifier = new \Slug\Slugifier();
+// Definindo tratamento de caracteres com acentuação
+$slugifier->setTransliterate(true); 
+$frase = 'Frase com acentuação para teste de criação de slug';
+$slug = $slugifier->slugify($frase);
+echo '<b>Frase natural: </b>' . $frase . "<br /><br />";
+echo '<b>Frase com aplicação de slug: </b>' . $slug . "<br /><br />";
+?>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>Mais?</h2>
+						<ul>
+							<li><a href="http://tableless.com.br/composer-para-iniciantes/">http://tableless.com.br/composer-para-iniciantes/</a></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>Vale a pena Criar seu Próprio Framework?</h2>
+					<ul>
+						<li>Uma boa leitura de como fazer seu framework! <a href="http://tableless.com.br/criando-seu-framework-html-css/">http://tableless.com.br/criando-seu-framework-html-css/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<section>
+						<h2>Bootstrap</h2>
+						<ul>
+							<li>Bootstrap é uma framework front-end criada pelos desenvolvedores do Twitter para agilizar desenvolvimento de sites e aplicações web</li>
+							<li>É um conjunto de recursos visuais (css, less, ícones), estruturais (grids, navegação e html semântico) e dinâmicos (javascript e ajax).<li>
+							<li>Mais? <a href="http://www.ericplatas.com.br/artigos/introducao-bootstrap-framework/#.VSPS4PnF98E">http://www.ericplatas.com.br/artigos/introducao-bootstrap-framework/#.VSPS4PnF98E</a>
+							<li>O site é completinho! <a href="http://getbootstrap.com/">http://getbootstrap.com/</a>
+						</ul>
+					</section>
+					<section>
+						<h2>Exemplo</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;section>
+	&#60;div class="container">
+		&#60;div class="row">
+			&#60;div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+				&#60;p>Oi, eu sou uma coluna!&#60;/p>
+			&#60;/div>
+			&#60;div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+				&#60;p>Oi, eu sou outra coluna!&#60;/p>
+			&#60;/div>
+			&#60;div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+				&#60;p>Oi, eu sou outra coluna!&#60;/p>
+			&#60;/div>
+			&#60;div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+				&#60;p>Oi, eu sou outra coluna!&#60;/p>
+			&#60;/div>
+		&#60;/div>
+	&#60;/div>
+&#60;/section>
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>Envio de E-mails</h2>
+					<ul>
+						<li>É sempre um problema!</li>
+						<li>Utilizar a função nativa do PHP <code>mail</code> não funciona em muitos casos. Motivo? Ambiente desconfigurado!</li>
+						<li>Uma boa solução é a utilização da classe PHPMailer! Utiliza uma conexão SMTP.</li>
+						<li>Mandrill</li>
+						<ul>
+							<li>Envio de até 200 emails por dia gratis</li>
+							<li>API Documentada e com exemplos</li>
+							<li>Pacote pelo composer</li>
+						</ul>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Como enviar pelo PHPMailer?</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$mail             = new PHPMailer();
+	$mail->IsSMTP();
+	$mail->Host       = "mail.yourdomain.com";
+	$mail->SMTPDebug  = 2;
+	$mail->SMTPAuth   = true;
+	$mail->SMTPSecure = "tls";
+	$mail->Host       = "smtp.gmail.com";
+	$mail->Port       = 587;
+	$mail->Username   = "yourusername@gmail.com";
+	$mail->Password   = "yourpassword";
+	$mail->SetFrom('name@yourdomain.com', 'First Last');
+	$mail->AddReplyTo("name@yourdomain.com","First Last");
+	$mail->Subject    = "Subject";
+	$mail->MsgHTML($body);
+	$address = "whoto@otherdomain.com";
+	$mail->AddAddress($address, "John Doe");
+	$mail->AddAttachment("images/phpmailer.gif");      // attachment
+	$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
+	if(!$mail->Send()) {
+	  echo "Mailer Error: " . $mail->ErrorInfo;
+	} else {
+	  echo "Message sent!";
+	}
+?>
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<h2>Como enviar pelo Mandril?</h2>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	try {
+	    $mandrill = new Mandrill(KEY);
+	    $message  = array(
+	                    'html'       => CONTEUDO,
+	                    'subject'    => ASUSNTO,
+	                    'from_email' => EMAIL,
+	                    'from_name'  => NOME,
+	                    'headers'    => array('Reply-To' => EMAIL),
+	                    'to'         => EMAIL
+	                );
+	    $async  = false;
+	    $result = $mandrill->messages->send($message, $async);
+	    if($result[0]['status'] == 'sent'){
+	        echo "ok"
+	    }
+	}
+	catch(Mandrill_Error $e) {
+	    echo "erro"
+	}
+?>
+							</code>
+						</pre>
+				</section>
+
+				<section>
+					<section>
+						<h2>JSON</h2>
+						<p>JSON é basicamente um formato leve de troca de informações/dados entre sistemas.</p>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?xml version="1.0" encoding="UTF-8"?>
+	&#60;id>1&#60;id>
+	&#60;nome>Alexandre Gama&#60;nome>
+	&#60;endereco>R. Qualquer&#60;endereco>
+&#60;/xml>
+{"id":1,"nome":"Alexandre Gama", "endereco":"R. Qualquer"}
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>Vantagens</h2>
+						<ul>
+							<li>Leitura mais simples</li>
+							<li>Analisador(parsing) mais fácil</li>
+							<li>JSON suporta objetos! Sim, ele é tipado!</li>
+							<li>Velocidade maior na execução e transporte de dados</li>
+							<li>Arquivo com tamanho reduzido</li>
+							<li>Quem utiliza? Google, Facebook, Yahoo!, Twitter</li>
+							<li>Mais? <a href="http://www.devmedia.com.br/introducao-json/23166">http://www.devmedia.com.br/introducao-json/23166</a> e <a href="http://www.devmedia.com.br/trabalhando-com-json-em-php/26716">http://www.devmedia.com.br/trabalhando-com-json-em-php/26716</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>JSON com PHP</h2>
+						<h3>Decode</h3>
+						<ul>
+							<li>Decodificando para um objeto em php? simples <code>json_decode</code></li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$json_str = '{"nome":"Jason Jones", "idade":38, "sexo": "M"}';
+	$obj = json_decode($json_str);
+	echo "nome: $obj->nome<br>";
+	echo "idade: $obj->idade<br>";
+	echo "sexo: $obj->sexo<br>";
+?>
+							</code>
+						</pre>
+					</section>
+
+					<section>
+						<h2>JSON com PHP</h2>
+						<h3>Encode</h3>
+						<ul>
+							<li>Codificando para um objeto em php? simples <code>json_encode</code></li>
+						</ul>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$idades = array("Jason"=>38, "Ada"=>35, "Delphino"=>26);
+	$json_str = json_encode($idades)
+	echo "$json_str";
+?>
+							</code>
+						</pre>
+					</section>
+					<section>
+						<h2>E no JavaScript?</h2>
+						<pre>
+							<code data-trim contenteditable>
+$.ajax({
+	type: "POST",
+	url: "./retorna_json.php",
+	success: function (result) {
+	    result = JSON.parse(result);
+	    // result será um objeto, basta percorrê-lo
+	},
+});
+							</code>
+						</pre>
+					</section>
+				</section>
+
+				<section>
+					<h2>cURL com PHP</h2>
+					<ul>
+						<li>Como obter conteúdo de outros sites?</li>
+						<li>cURL: permite o acesso a outras páginas e também disponibiliza diversas opções de uso</li>
+						<pre>
+							<code data-trim contenteditable>
+&#60;?php
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, "http://www.google.nl/");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+	$output = curl_exec($ch);
+	curl_close($ch);
+	echo $output;
+?>
+							</code>
+						</pre>
+						<li>Mais? <a href="http://imasters.com.br/artigo/4140/php/usando_a_biblioteca_curl_do_php/">http://imasters.com.br/artigo/4140/php/usando_a_biblioteca_curl_do_php/</a></li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Dicas de Plugins e Etc...</h2>
+					<ul>
+						<li>Carrosel Reponsivo? Owlcarrousel: <a href="http://owlgraphic.com/owlcarousel/">http://owlgraphic.com/owlcarousel/</a></li>
+						<li>Efeitos onScroll? <a href="http://scrollrevealjs.org/">http://scrollrevealjs.org/</a></li>
+						<li>LightBox? <a href="http://fancybox.net/"></a></li>
+						<li>Filtro de Portifólios? <a href="https://mixitup.kunkalabs.com/">https://mixitup.kunkalabs.com/</a></li>
+						<li>Um scroll bonito para sua página? <a href="https://github.com/inuyaksa/jquery.nicescroll">https://github.com/inuyaksa/jquery.nicescroll</a></li>
+						<li>Verificar compatibilizades? <a href="http://modernizr.com/">http://modernizr.com/</a></li>
+						<li>Sistema de Tradução? </li> <a href="https://github.com/diogocezar/dctb-translate">https://github.com/diogocezar/dctb-translate</a>
+						<li>Integração com Redes Sociais? </li> <a href="https://github.com/diogocezar/dctb-socials">https://github.com/diogocezar/dctb-socials</a>
+						<li></li>
+					</ul>
+				</section>
+
+				<section>
+					<h1>Curso Web Xp</h1>
+					<h3>Obrigado a todos :)</h3>
+					<p>
+						<small>Por <a href="http://www.diogocezar.com">Diogo Cezar Teixeira Batista</a></small>
+					</p>
+				</section>
+
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				slideNumber: true,
+				transition: 'slide',
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
