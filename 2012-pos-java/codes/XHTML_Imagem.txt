@@ -1,0 +1,17 @@
+<body>
+<h1>Exemplo de uso de Figuras</h1>
+<p>
+	Figura com alinhamento padrão: 
+	<img src="utfpr.gif" width="300" border="0" />
+	"middle" 
+	<img src="utfpr.gif" width="300" border="0" align="middle" />
+	"texttop" 
+	<img src="utfpr.gif" width="300" border="0" align="texttop"/>
+</p>
+<p>
+	Borda = 0 
+	<img src="utfpr.gif" width="100" border="0" align="middle" />
+	Borda = 1 
+	<img src="utfpr.gif" width="100" border="1" align="middle" />
+</p>
+</body>

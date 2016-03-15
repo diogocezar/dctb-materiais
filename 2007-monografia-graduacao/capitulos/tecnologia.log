@@ -1,0 +1,11 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2007.9.25)  1 OCT 2007 15:57
+entering extended mode
+**tecnologia.tex
+(tecnologia.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, portuguese, loaded.
+! Undefined control sequence.
+l.5 \UTFPRchapter
+                 [cap:tecnologia]{TECNOLOGIA}
+? 

@@ -1,0 +1,43 @@
+\section[Conclusão]{Conclusão}
+
+\begin{frame}
+    \frametitle{Conclusão}
+    \begin{itemize}
+		\item proposta de um trabalho para execução de fluxos de trabalho científicos;
+		\item técnicas de planejamento:
+		\begin{itemize}
+			\item tempo de execução: estimado fornecido pelo usuário;
+			\item coeficiente de tempo: execuções anteriores;
+			\item situação atual do ambiente distribuído;
+		\end{itemize}
+		\item coeficiente de custos: utilizado pelo planejador para criar planos de execução;
+		\item modularização dos componentes do modelo;
+		\item cenário flexível e expansível;
+		\item modificação do \emph{PeerUnit}: gerenciador de execução;
+		\item definição de um modelo de custos;
+		\item uma limitação do modelo: fluxos cíclicos;
+		\begin{itemize}
+			\item alternativa parcial: encapsular fluxo de trabalho (múltiplas entradas e saída de dados);
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Trabalhos Futuros}
+    \begin{itemize}
+		\item refinamento do \emph{OráculoDeMetaDados};
+		\item utilização de outras métricas:
+		\begin{itemize}
+			\item minimização de gasto de energia;
+			\item maximização da utilização de recursos;
+		\end{itemize}
+		\item método de difusão inteligente: capaz de analisar o plano e propagar os dados apenas para os nós que utilizarão tais dados;
+		\item planejador capaz de escolher a melhor implementação de um operador para o plano a ser gerado:
+		\item paralelização por plano:
+		\begin{itemize}
+			\item não se fixa uma quantidade de nós para cada fluxo de trabalho;
+			\item de acordo com informações do \emph{OráculoDeMetadados} planejador define o número adequado para a paralelização;
+			\item necessária adaptação do método de tradução (considerar os nós disponíveis para cada tarefa);
+		\end{itemize}
+	\end{itemize}
+\end{frame}

@@ -1,0 +1,2 @@
+x = x + 10; //Pode ser escrito como:
+x+= 10;     // x <op>= <valor>

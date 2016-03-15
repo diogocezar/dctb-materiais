@@ -1,0 +1,12 @@
+<body>
+	<div>Exemplo de <b>negrito</b></div>
+	<div>Exemplo de <big>texto maior que o padrão</big></div>
+	<div>Exemplo de <i>um texto itálico</i></div>
+	<div>Exemplo de <kdb>um texto de máquina de escrever</kdb></div>
+	<div>Exemplo de <u>um texto sublinhado</u></div>
+	<div>Exemplo de <strike>um texto riscado</strike></div>
+	<div>Exemplo de <small>texto menor que o padrão</small></div>
+	<div>Exemplo de <sub>texto subscrito</sub></div>
+	<div>Exemplo de <sup>texto sobrescrito</sup></div>
+	<div>Exemplo de <tt>texto em true-type</tt></div>
+</body>

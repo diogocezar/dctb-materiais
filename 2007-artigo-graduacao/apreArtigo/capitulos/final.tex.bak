@@ -1,0 +1,13 @@
+\begin{frame}
+    \begin{center}
+    {\Huge Dúvidas?} \\
+    \vspace{1cm}
+    {\LARGE Obrigado pela Atenção} \\
+    {\tiny Apresentação desenvolvida em \LaTeX{}}
+    \vspace{1cm}
+    Diogo Cezar Teixeira Batista \\
+    {\footnotesize\ttfamily batista.utfpr@gmail.com} \\
+    Ligia Flávia Antunes Batista \\
+    {\footnotesize\ttfamily ligia@utfpr.edu.br
+    \end{center}
+\end{frame}

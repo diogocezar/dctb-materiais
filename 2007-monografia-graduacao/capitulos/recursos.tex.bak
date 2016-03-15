@@ -1,0 +1,142 @@
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % R E C U R S O S   C O M P U T A C I O N A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:recursos]{RECURSOS COMPUTACIONAIS}
+
+    Os recursos computacionais necessários são divididos entre:
+    recursos disponíveis para desenvolvimento e recursos
+    necessários para utilização descritos nas Seções
+    \ref{sec:recursosdeselvolvimento} e \ref{sec:recursosutilizacao}
+    respectivamente.
+
+    \UTFPRsection[sec:recursosdeselvolvimento]{RECURSOS DISPONÍVEIS PARA DESENVOLVIMENTO}
+
+    \UTFPRsubsection{Recursos de Hardware}
+
+        \begin{enumerate}
+
+        \item Microcomputador Desktop:
+
+        \begin{enumerate}
+            \item[a)] \emph{Processador:} AMD Athlon(tm) XP 2700+ (2.16 GHz);
+            \item[b)] \emph{Memória:} 512 MB;
+            \item[c)] \emph{Armazenamento:} 120GB + 40GB.
+        \end{enumerate}
+
+        \item Microcomputador Notebook:
+
+        \begin{enumerate}
+            \item[a)] \emph{Modelo:} HP Pavilion dv1040;
+            \item[b)] \emph{Processador:} Pentium M Centrino  (1.7 GHz);
+            \item[c)] \emph{Memória:} 512 MB;
+            \item[d)] \emph{Armazenamento:} 60GB.
+        \end{enumerate}
+
+        \end{enumerate}
+
+    \UTFPRsubsection{Recursos de \emph{Software}}
+
+        \begin{enumerate}
+
+        \item Sistemas Operacionais:
+
+        \begin{enumerate}
+
+            \item[a)] \emph{Windows XP Professional Edition SP2 PT-BR}:
+            Sistema operacional utilizado com o
+            microcomputador \emph{desktop};
+
+            \item[b)] \emph{Windows XP Home Edition SP2 EN-US}:
+            Sistema operacional utilizado com o
+            microcomputador \emph{notebook}.
+
+        \end{enumerate}
+
+        \item Outros \emph{Softwares}:
+
+        \begin{enumerate}
+            \item[a)] \emph{Adobe Photoshop CS2}:
+            Necessário para a construção dos \emph{layouts} (\emph{design}) do
+            sistema;
+
+            \item[b)] \emph{Adobe Acrobat Reader Professional 7.0}:
+            Necessário para visualização e alteração
+            do \UTFPRsigla{PDF}{\emph{Portable Document Format}} referente
+            à monografia;
+
+            \item[c)] \emph{Apache HTTP Server 1.3.33}:
+            Servidor HTTP com suporte a linguagem PHP;
+
+            \item[d)] \emph{Macromedia Dreamweaver 8.0}:
+            Utilizado para a codificação e design do sistema;
+
+            \item[e)] \emph{Visual Paradigm versão 5.2}:
+            Utilizado para construção dos diagramas UML;
+
+            \item[f)] \emph{Mozilla Firefox versão 1.5.0.5}:
+            Navegador compatível com as especificações HTML 4.01,
+            CSS 2, e possui suporte a JavaScript. Utilizado para
+            testes no sistema;
+
+            \item[g)] \emph{Internet Explorer 7.0}:
+            Navegador compatível com as especificações HTML 4.01,
+            CSS 2, e possui suporte a JavaScript. Utilizado para
+            testes no sistema;
+
+            \item[h)] \emph{winEdit 5.4}: Programa
+            utilizado para codificação da monografia em \LaTeX;
+
+            \item[i)] \emph{PostGreSQL 8.0.1}: Banco de
+            dados utilizados neste trabalho;
+
+            \item[j)] \emph{pgAdmin 1.4.2}: Ferramenta
+            para gerenciamento do banco de dados PostGreSQL;
+
+            \item[k)] \emph{ERwin 4.0}: Ferramenta para
+            criação dos diagramas de entidades e relacionamentos;
+
+            \item[l)] \emph{MiKTeX 2.5}: Compilador
+            \LaTeX{} para Windows;
+
+            \item[m)] \emph{PHP 5.1.4}: Linguagem de
+            programação utilizada neste trabalho;
+
+
+            \item[n)] \emph{LaTable 0.7.2}: Ferramenta
+            para criação de tabelas;
+
+            \item[o)] \emph{yEd Graph Editor 2.4.2.2}: Ferramenta
+            para criação dos grafos.
+
+        \end{enumerate}
+
+        \end{enumerate}
+
+    \UTFPRsection[sec:recursosutilizacao]{RECURSOS NECESSÁRIOS PARA UTILIZAÇÃO}
+
+    \UTFPRsubsection{Usuário}
+
+        Para utilizar o sistema, o usuário deverá possuir um microcomputador
+        conectado a Internet com um navegador compatível com as
+        especificações HTML 4.01, CSS 2 e deve possuir suporte a
+        JavaScript.
+
+    \UTFPRsubsection{\emph{Website} Hospedeiro}
+
+        O sistema elaborado, poderá ser implantado em \emph{websites} comuns
+        que contemplem determinadas restrições, tais como:
+
+        \begin{itemize}
+            \item O \emph{website} deve estar rodando em um navegador
+                compatível com as especificações HTML 4.01, CSS 2, e
+                deve possuir suporte a JavaScript;
+
+            \item O \emph{website} deve suportar a linguagem de programação
+            PHP;
+
+            \item O \emph{website} deve possuir suporte ao banco de dados
+            PostGreSQL 8.1, com disponibilidade de um banco de dados para o sistema a ser
+            implantado.
+
+        \end{itemize}

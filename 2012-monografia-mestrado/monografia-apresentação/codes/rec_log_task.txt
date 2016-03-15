@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log_tasks>
+  <start-task>sumVet_sequential03-01-2012-13:43:32</start-task>
+  <end-task>sumVet_sequential03-01-2012-13:43:32</end-task>
+  <start-task>broadcastData03-01-2012-13:43:33</start-task>
+  <start-task>broadcastData03-01-2012-13:43:33</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_i.xml;03-01-2012-13:43:33</end-task>
+  <start-task>broadcastData03-01-2012-13:43:33</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_i.xml;03-01-2012-13:43:33</end-task>
+  <start-task>multVet_parallel03-01-2012-13:43:34</start-task>
+  <end-task>multVet_parallel03-01-2012-13:43:34</end-task>
+  <start-task>broadcastData03-01-2012-13:43:34</start-task>
+  <start-task>broadcastData03-01-2012-13:43:34</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_out.xml;03-01-2012-13:43:34</end-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_out.xml;03-01-2012-13:43:34</end-task>
+  <start-task>sumVet_sequential03-01-2012-13:59:36</start-task>
+  <end-task>sumVet_sequential03-01-2012-13:59:36</end-task>
+  <start-task>broadcastData03-01-2012-13:59:38</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_j.xml;03-01-2012-13:59:38</end-task>
+  <start-task>broadcastData03-01-2012-13:59:38</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_j.xml;03-01-2012-13:59:38</end-task>
+  <start-task>broadcastData03-01-2012-13:59:38</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_j.xml;03-01-2012-13:59:38</end-task>
+  <start-task>multVet_parallel03-01-2012-13:59:38</start-task>
+  <end-task>multVet_parallel03-01-2012-13:59:38</end-task>
+  <start-task>broadcastData03-01-2012-13:59:38</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_out.xml;03-01-2012-13:59:38</end-task>
+  <start-task>broadcastData03-01-2012-13:59:38</start-task>
+  <end-task>broadcastData_./src/main/resources/data/matrix_out.xml;03-01-2012-13:59:38</end-task>
+</log_tasks>
+

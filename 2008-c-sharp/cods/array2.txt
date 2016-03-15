@@ -1,0 +1,4 @@
+<TIPO> [,] NomeDoArray = new <TIPO> [tamanho do array,tamanho do array];
+
+float [,] ValorIndice = new float [10,10];
+string [,,] ElementoVetor = new string [10,10,10];

@@ -1,0 +1,3 @@
+SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM Products", oConn);
+DataSet ds = new DataSet();
+daProduct.Fill(ds, "Products");

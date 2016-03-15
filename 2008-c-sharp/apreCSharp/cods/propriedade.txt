@@ -1,0 +1,11 @@
+public tipodedado NomeDaPropriedade {
+	get{
+		return nomeAtributo;
+	}
+	set{
+		nomeAtributo = value;
+	}
+}
+// Utiliza-se da seguinte maneira
+this.NomeDaPropriedade = valor;
+valor = this.NomeDaPropriedade;

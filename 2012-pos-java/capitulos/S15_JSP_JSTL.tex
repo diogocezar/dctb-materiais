@@ -1,0 +1,558 @@
+\section[JSP JSTL]{JSP JSTL}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP JSTL}
+    \begin{itemize}
+      \item JSTL - \textit{JSP Standard Tag Library}
+      \item qual o problema?
+      \begin{itemize}
+       \item dificuldade de contruir páginas \textit{JSPs} bem organizadas
+internamente;
+       \item páginas \textit{JSPs} com muito código Java;
+       \item \textit{web designers} não sabem programar em Java;
+       \item problemas na interação entre desenvolvedores e \textit{web
+designers}.
+      \end{itemize}
+      
+      \framebreak
+      
+      \item o que queremos?
+      
+      \begin{itemize}
+       \item criar páginas dinâmicas bastante complexas sem escrever código
+Java dentro delas;
+       \item fornecer \textit{tags} que tornem fáceis tarefas que exigiriam
+várias linhas de código Java, como formatação de números e datas seguindo
+configurações regionais do usuário;
+       \item facilitar a interação entre desenvolvedores e \textit{web
+designers}.
+      \end{itemize}
+      
+      \framebreak
+      
+      \item qual a solução?
+      
+      \begin{itemize}
+       \item utilizar JSTL;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item JSTL
+      
+      \begin{itemize}
+       \item JSTL consiste em uma coleção de bibliotecas;
+       \item cada biblioteca tem um propósito bem definido;
+       \item permitem escrever páginas JSPs sem código Java;
+       \item aumentando a legibilidade do código e a interação entre
+desenvolvedores e \textit{web designers};
+       \item uma página JSTL é uma página JSP contendo um conjunto de tags
+JSTLs;
+       \item cada \textit{tag} realiza um determinado tipo de processamento
+(equivalente a código Java dentro de JSP);
+       \item cada tag JSTL, faz parte uma biblioteca JSTL;
+       \item uma página JSTL pode utilizar várias bibliotecas JSTLs.
+      \end{itemize}
+      \end{itemize}
+      
+      \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo de uma página JSTL
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+
+	  <jsp:useBean id="agora" class="java.util.Date"/>
+	  <br>
+	  Versão Curta: <fmt:formatDate value="${agora}" />
+
+	  <br> Versão Longa: <fmt:formatDate value="${agora}" dateStyle="full"/>
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{itemize}
+    \item o exemplo apresenta a data atual em dois formatos: um curto e outro
+longo;
+    \item observe que não existe nenhum código Java;
+    \item na primeira linha, temos o seguinte: \texttt{<\%@ taglib prefix="fmt"
+uri="http://java.sun.com/jsp/jstl/fmt" \%>};
+    \item esta declaração informa ao compilador de JSPs utiliza um
+biblioteca de tags, cujos tags serão reconhecidos pelo prefixo "fmt", de modo a
+evitar possíveis conflitos com tags de mesmo nome de outras bibliotecas;
+    \item a biblioteca de tags é identificada pelo atributo uri;
+    \item a tag padrão \texttt{<jsp:useBean>} é utilizada para instanciar um
+objeto \texttt{java.util.Date} (inicializado por padrão com a data e hora atuais
+do sistema);
+    \item a variável \textit{agora}, criada pelo tag \texttt{<jsp:useBean>}, é
+depois referenciada dentro do atributo value dos tags \texttt{<fmt:formatDate>},
+que aparece duas vezes na página;
+    \item observe que o atributo \texttt{dateStyle} da tag
+\texttt{<fmt:formatDate>} define se será utilizado um formato resumido da data
+ou um formato longo.
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Saída de dados do exemplo anterior
+	}
+	\begin{lstlisting}
+	  Versão Curta: 25/07/2005
+	  Versão Longa: Segunda-feira, 25 de Julho de 2005
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Expression Language}
+    \begin{itemize}
+      \item O valor de qualquer expressão pode ser acessado da seguinte forma:
+\texttt{\${expressão}}
+    \end{itemize}
+    
+    \framebreak
+    
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=11cm]{images/el.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{Bibliotecas Padrão}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=11cm]{images/jstl-1.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Tags básicas}
+    \begin{itemize}
+      \item tags de Iteração:
+      
+      
+      \begin{itemize}
+	\item a biblioteca core do JSTL fornece tags para executar trechos
+repetidamente, de maneira similar aos comandos \textit{for} e \textit{while} da
+linguagem Java.
+	\item tag \texttt{<c:forEach>}
+	\item permite realizar um \textit{loop};
+	\item exemplo: imprime os valores entre dois e cinco.
+      \end{itemize}
+      
+    \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo da utlização de forEach
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+
+	  <c:forEach var="i" begin="2" end="5">
+	  <c:out value="${i}"/>;
+	  </c:forEach>
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \begin{itemize}
+	\item saída: 2;3;4;5;
+      \end{itemize}
+      
+      \framebreak
+      
+      \begin{itemize}
+	\item tag \texttt{<c:forTokens>}
+	\item quebra uma \textit{string} em substrings, de acordo com o
+delimitador indicado como atributo;
+	\item exemplo: imprime os valores entre dois e cinco;
+      \end{itemize}
+      
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo da utlização de forTokens
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+	  <c:forTokens var="i" delims="," items="2,3,4,5">
+	    <c:out value="${i}"/>;
+	  </c:forTokens >
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \begin{itemize}
+	\item saída: 2;3;4;5;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item tags condicionais:
+      
+      \begin{itemize}
+	\item tag \texttt{<c:if>}
+	\item equivamente ao comando \textit{if};
+        \item atributo test realiza o teste condicional;
+        \item não existe o complemento do comando \textit{if}, ou seja, o
+comando \textit{else} (caso se deseje criar fluxos alternativos, deve-se
+utilizar \texttt{<c:choose>}).
+      \end{itemize}
+      
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo da utlização de if
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+	  Elementos pares:
+	  <c:forTokens var="i" delims="," items="2,3,4,5">
+		  <c:if test="${i % 2 == 0}">
+			  <c:out value="${i}"/>;
+		  </c:if>
+	  </c:forTokens >
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \begin{itemize}
+	\item saída: Elementos pares: 2; 4;
+      \end{itemize}
+      
+      \framebreak
+      
+      \begin{itemize}
+	\item tag \texttt{<c:choose>}
+	\item equivalente ao comando \textit{switch}
+	\item tags utilizadas:
+	\begin{itemize}
+	  \item \texttt{<c:when>}, realiza o teste condicional;
+	  \item \texttt{<c:otherwise>}, se todos os testes condicionais
+falharem, ele será utilizado;
+	\end{itemize}
+      \end{itemize}
+      
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo da utlização de choose
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+
+	  <c:forTokens var="i" delims="," items="2,3,4,5">
+	    <c:choose>
+		<c:when test="${i % 2 == 0}">${i} (par)</c:when>
+		<c:otherwise>${i} (impar)</c:otherwise>
+	    </c:choose>
+	    ;
+	  </c:forTokens >
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \begin{itemize}
+	\item saída: 2 (par) ; 3 (impar) ; 4 (par) ; 5 (impar) ; 
+      \end{itemize}
+      
+      \framebreak
+      
+      \item tags de atribuição e importação:
+      
+      \begin{itemize}
+	\item tag \texttt{<c:import>}
+	\item permite importar páginas \textit{web} do mesmo contexto
+\textit{web}, de contextos diferentes e até mesmo de máquinas diferentes;
+
+        \begin{center}
+            \includegraphics[width=9cm]{images/jstl-2.pdf}
+        \end{center}
+        
+        \framebreak
+
+	\item tag \texttt{<c:set>}
+	\item permite a atribuir valores a variáveis em um determinado
+escopo;
+
+        \begin{center}
+            \includegraphics[width=9cm]{images/jstl-3.pdf}
+        \end{center}
+        
+        \framebreak
+
+	\item exemplo:
+	\begin{itemize}
+	  \item neste exemplo, a variável ``title'' é criada com o valor
+``Welcome to Page 1'' com escopo ``request'';
+	  \item em seguida, a página ``header.jsp'' é carregada, e seu
+conteúdo é armazenado na variável ``headerText'';
+	  \item finalmente, imprimimos o conteúdo da variável ``title'' e
+da variável ``headerText''
+	\end{itemize}
+      \end{itemize}
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo da set e import
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+	  <html>
+	  <body>
+	  <c:set scope="request" var="title" value="Welcome to Page 1"/>
+	  <c:import var="headerText" url="header.jsp"/>
+	  <br>Minha página:${title}
+	  <br>Texto importado:${headerText}
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Arquivo header.jsp
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+	  #${title}#
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Saída
+	}
+	\begin{lstlisting}
+	  Minha página:Welcome to Page 1 
+	  Texto importado: #Welcome to Page 1# 
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+      
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Acessando objetos Java}
+      \begin{itemize}
+       \item exemplo 1: acessando uma coleção de objetos Java;
+       \item seja a classe Java ColecaoDeNomes;
+      \end{itemize}
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Classe Java ColecaoDeNomes
+	}
+	\begin{lstlisting}
+	package test;
+	import java.util.*;
+	import java.io.*;
+	public class ColecaoDeNomes implements Serializable{
+	  private Collection nomes = new ArrayList();
+	  public ColecaoDeNomes() {
+	    nomes.add("Maria");
+	    nomes.add("Zeca");
+	    nomes.add("Carlos");
+	  }
+	  public Collection getNomes() {
+	    return nomes;
+	  }
+	}
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Utilizando a lista ColecaoDeNomes
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	  <html>
+	  <body bgcolor="#FFFFFF">
+	  <jsp:useBean id="colecao" class="teste.ColecaoDeNomes"/>
+	  <c:forEach var="nome" items="${colecao.nomes}">
+	    <br>${nome}
+	  </c:forEach >
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+      
+    \begin{itemize}
+     \item queremos iterar a coleção de nomes existente dentro da classe
+\textit{ColecaoDeNomes};
+     \item observe que o objeto da classe \textit{ColecaoDeNomes} foi
+instanciado utilizando a tag \texttt{<jsp:useBean>};
+      \item além disso, o nome da instância criada é ``colecao'';
+      \item note que o atributo items da \textit{tag} \texttt{<c:forEach>} faz
+referência à instância criada (batizada como ``colecao'');
+
+      \framebreak
+
+      \item os objetos existentes dentro da coleção nomes
+(\texttt{java.util.Collection}) dentro da classe \textit{ColecaoDeNomes} estão
+sendo acessado da seguinte forma: \texttt{\${colecao.nomes}}
+       \item \texttt{\${colecao.nomes}}: colecao é o nome da instância da classe
+\textit{ColecaoDeNomes} recém criada
+       \item \texttt{\${colecao.nomes}}: nomes faz referência ao nome do método
+getNomes()
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Saída
+	}
+	\begin{lstlisting}
+	  Maria 
+	  Zeca 
+	  Carlos
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+      \begin{itemize}
+       \item exemplo 2: agora utilizando mais recursos da tag
+\texttt{<c:forEach>}
+      \end{itemize}
+      
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%> 
+	  <html>
+	    <body bgcolor="#FFFFFF">
+	    <jsp:useBean id="colecao" class="teste.ColecaoDeNomes"/>
+	      <table border="0" cellpadding="2" cellspacing="2">
+	      <tr>
+	      <td bgcolor="#e0e0e0">Id</td>
+	      <td bgcolor="#e0e0e0">Nome</td>
+	      </tr>
+      <c:forEach var="nome" items="${colecao.nomes}"
+      varStatus="status"> 
+      <tr>
+      <td bgcolor="#f0f0f0">
+      <c:choose>
+      <c:when
+      test="${status.first}">Primeiro</c:when>
+      <c:when
+      test="${status.last}">Último</c:when>
+      <c:otherwise>Número
+      ${status.count}</c:otherwise>
+      </c:choose>
+      </td>
+      <td bgcolor="#f0f0f0">${nome}</td>
+      </tr>
+      </c:forEach >
+	      </table>
+	    </body> 
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Implemente as seguintes funcionalidades utilizando JSTL:
+       \begin{itemize}
+	  \item Laço de 1 a 37 que mostre apenas os números primos;
+	  \item Laço de 1 a 45 que mostre os números divisíveis por 5;
+	  \item Laço que mostre todas as letras do alfabeto;
+	  \item Laço percorra todas as letras do alfabeto e mostre somente as
+vogais;
+	  \item Utilizando forEach, percorra uma lista de pessoas e mostre
+apenas os nomes que começam com a letra a, ou tenham a letra b no nome;
+       \end{itemize}
+      \end{itemize}
+\end{frame}

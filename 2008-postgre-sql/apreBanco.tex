@@ -1,0 +1,58 @@
+\documentclass[compress]{beamer}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme{Ilmenau}
+\usecolortheme[RGB={51,103,145}]{structure}
+\setbeamercovered{transparent} \setbeamertemplate{footline}[default]
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setlength{\tabcolsep}{1mm} \setbeamertemplate{footline}[frame
+number] \setbeamertemplate{navigation symbols}{}
+\renewcommand{\baselinestretch}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S  D O S   C Ó D I G O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\scriptsize, extendedchars=true,
+breaklines=true,frame=tb, basicstyle=\scriptsize,
+stringstyle=\scriptsize, showstringspaces=false}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+
+%%%%%%%%%%%
+% C A P A %
+%%%%%%%%%%%
+
+\title{Introdução ao Banco de Dados PostGreSQL}
+
+\author{Diogo Cezar Teixeira Batista \\
+       {\footnotesize\ttfamily diogocezar@utfpr.edu.br}
+}
+
+\institute{\large Universidade Tecnológica Federal do Paraná \\
+                  Campus Cornélio Procópio \\
+                  UTFPR-CP}
+
+\date{Cornélio Procópio - 2008}
+
+\begin{document}
+
+\input{capitulos/titulo.tex}
+\input{capitulos/agenda.tex}
+\input{capitulos/introducao.tex}
+\input{capitulos/mer.tex}
+\input{capitulos/postgres.tex}
+\input{capitulos/subjoin.tex}
+
+\end{document}

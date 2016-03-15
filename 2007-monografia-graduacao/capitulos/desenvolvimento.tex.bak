@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% D E S E N V O L V I M E N T O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:desenvolvimento]{DESENVOLVIMENTO}
+
+Para o desenvolvimento foram utilizados alguns recursos a fim de
+ampliar as funcionalidades do sistema e maximizar a interação com o
+usuário, tornando possível a abstração do processamento das
+informações fornecidas pelos usuários e facilitando a administração
+e utilização do sistema.
+
+    \UTFPRsection[sec:recursos]{RECURSOS DE DESENVOLVIMENTO}
+
+    Serão brevemente descritos os recursos utilizados no
+    desenvolvimento, bem como suas aplicações e funcionalidades. A
+    Seção \ref{sec:internacionalização} descreve o suporte a
+    internacionalização e a Seção \ref{sec:frameworks} descreve os
+    demais \emph{frameworks} utilizados neste trabalho.
+
+        \UTFPRsubsection[subsec:css]{CSS}
+
+        \UTFPRsigla{CSS}{\emph{Cascading Style Sheets}} são folhas de
+        estilos para páginas \emph{web} que possibilitam a mudança da
+        aparência simultânea de todas as páginas relacionadas com o mesmo
+        estilo.
+
+        Ao invés de colocar a formatação dentro do código, o programador
+        cria uma ligação para uma página que contém os estilos,
+        procedendo de forma idêntica para todas as páginas de um portal. Quando
+        quiser alterar a aparência do portal, basta, portanto, modificar
+        apenas um arquivo \cite{livro:css}.
+
+        As folhas de estilo CSS foram utilizadas para a customização da
+        camada de apoio à navegação, a fim de tornar a camada semelhante ao
+        estilo do \emph{website} hospedeiro. Com esse recurso foi
+        possível a personalização de alguns \emph{templates} pré-criados, e
+        a flexibilidade para criação de novos \emph{layouts}.
+
+        Ao substituir ou reescrever o arquivo CSS, é possível a
+        alteração de fontes, posicionamento dos blocos,
+        figuras e etc. Esse recurso foi proporcionado principalmente
+        pela aliança das folhas de estilo CSS ao recurso
+        \emph{tableless} (Ver Seção \ref{subsec:tableless}).
+
+        \UTFPRsubsection[subsec:tableless]{TABLELESS}
+
+        Com intuito de padronizar a \emph{web} o
+        \UTFPRsigla{W3C}{\emph{World Wide Web Consortium}} criou linguagens
+        básicas para publicação de conteúdo na Internet, como por exemplo:
+        HTML, CSS, \UTFPRsigla{SVG}{\emph{Scalable Vectorial Graphics}},
+        XML, entre outros. Essa linguagens são chamadas de \emph{web
+        standards} (padrões \emph{web}).
+
+        Para seguir os padrões recomendados pela W3C, deve-se utilizar cada \emph{tag}
+        de acordo com o propósito definido nas regras da linguagem. Por
+        exemplo, a \emph{tag} "h1"{} deve ser utilizada apenas para títulos de
+        primeiro nível, "p"{} deve ser utilizada para parágrafos e a tag
+        "table"{} deve ser utilizada exclusivamente para exibição de dados
+        tabulares.
+
+        Segundo \citeonline{artigo:tableless}, \emph{tableless} é um método
+        de construção de sites utilizando padrões \emph{web} (\emph{web standards})
+        como guia. Assim a utilização de \emph{tableless}, propõe que não se deve
+        utilizar tabelas para construir o layout geral de um site, mas
+        apenas para dados tabulares.
+
+        Neste trabalho, todas as páginas em HTML foram desenvolvidas com a
+        metodologia \emph{tableless} o que facilitou a
+        disponibilização de diferentes \emph{layouts} com o mesmo conteúdo.
+
+        Para exemplificar os conceitos de HTML, CSS e TABLELESS,
+        foram transcritos alguns códigos que podem ser vistos no
+        apêndice \ref{ape:tableless}.
+
+        \UTFPRsubsection[subsec:rss]{RSS}
+
+        O RSS é uma especificação para
+        distribuição de conteúdo através da utilização da linguagem XML
+        \cite{livro:rss}. Essa especificação surgiu com objetivo de
+        padronizar a forma de distribuição de conteúdos estruturados
+        existentes na Internet. A distribuição do conteúdo estruturado,
+        neste contexto, é representada através do termo "\emph{feed}". Um
+        \emph{feed} pode ser definido como qualquer informação importante
+        disponível em um \emph{site}, como por exemplo, notícias, artigos,
+        histórias, entre outros.
+
+        Um \emph{feed} é distribuído por arquivos de extensão .xml,
+        .rss ou .rdf, e referenciado através de uma
+        URL (\url{http://rss.terra.com.br/0,,EI1,00.xml}). Sua distribuição
+        também pode ser realizada por um \emph{script} que tenha embutido em
+        si uma função de retorno a tais documentos. Para que um arquivo seja
+        reconhecido como RSS deve-se seguir as especificações definidas no
+        padrão RSS.
+
+        A especificação RSS foi utilizada na construção do subsistemas para
+        testes (ver Capítulo \ref{cap:subsistema}). O núcleo do subsistema
+        consiste na extração e exibição de \emph{feeds} de arquivos RSS
+        pré-definidos pelo administrador.
+
+        \UTFPRfigura{width=12cm}{rss/rss.jpg}{Representação do funcionamento do RSS}{fig:funrss}
+
+        A Figura \ref{fig:funrss}, demonstra a iteração dos
+        \emph{feeds} RSS. Um servidor normalmente extraí
+        as informações que deseja compartilhar de um banco de dados
+        e cria um arquivo RSS em seu domínio. Para que um sistema
+        externo acesse essa informações, ele abre o arquivo
+        disponibilizado e extrai as informações das tags.
+
+        Um trecho de um \emph{feed} pode ser visto no apêndice
+        \ref{ape:rss}.
+
+        \UTFPRsubsection[subsec:ajax]{AJAX}
+
+        O \UTFPRsigla{AJAX}{\emph{Asynchronous} JavaScript and XML} pode ser
+        descrito conforme definição abaixo:
+
+        \begin{citacao}
+            AJAX é um acrônimo consagrado muito recentemente por Jesse James
+            Garret, da Adaptive Path, e significa Asynchronous JavaScript and
+            XML (JavaScript e XML assíncrono), porém o que temos é muito mais
+            mais que a junção de JavaScript com XML, é todo um conceito de
+            navegação e atualização de páginas \emph{web}. Algumas partes descritas na
+            definição de AJAX não são novas, as quais muitas vezes foram
+            denominadas de DHTML (HTML Dinâmico) e Script Remoto \cite{livro:ajax}
+        \end{citacao}
+
+        O AJAX teve destaque quando ofereceu uma solução para um velho
+        problema da Internet, a interação de forma síncrona, que exige a
+        atualização completa da página para cada solicitação. Outras
+        técnicas foram utilizadas na tentativa de amenizar esse problema,
+        como a utilização de pré-carregamento dos dados. \emph{Frames} e
+        \emph{iframes} (permite que diferentes arquivos HTML componham a
+        mesma página) nunca resolveram o problema da maneira eficiente. Em
+        alguns casos, apenas davam a falsa impressão de que a página não era
+        toda atualizada, quando na verdade, os dados já estavam carregados e
+        apenas eram escondidos até serem necessários.
+
+        Com o AJAX atualiza-se apenas os dados que realmente foram
+        atualizados em uma página, e obter melhor desempenho e
+        interatividade com o usuário.
+
+        Neste trabalho, a utilização do AJAX foi de extrema importância, pois a
+        necessidade de transparência para o usuário era essencial. Ao se
+        acionar um link aparentemente nada acontece, entretanto, é nesse
+        momento que o algoritmo de computação do feromônio é acionado.
+
+        Um trecho de código mostrando o a interação AJAX pode ser
+        vista no apêndice \ref{ape:ajax}.
+
+        \UTFPRsubsection[subsec:javascript]{JAVASCRIPT}
+
+        JavaScript é uma linguagem de programação que proporciona maior
+        interatividade com os usuários. Os programas feitos em JavaScript
+        permitem que praticamente todas as aplicações sejam manipuladas no
+        \emph{browser} do usuário, desde validação de formulários, apresentação de
+        novas janelas, manipulação de imagens, criação de camadas, cálculos
+        complexos e muitas outras ações que podem tornar as páginas
+        extremamente interativas \cite{livro:php}.
+
+        Neste trabalho, grande parte das funcionalidades foram
+        implementadas em JavaScript, entre elas:
+
+        \begin{itemize}
+            \item \emph{Substituição dos links} - ao término do
+            carregamento da página hospedeira todos os links são
+            substituídos para que, ao invés do redirecionamento
+            propriamente dito, invoquem o algoritmo de computação de
+            feromônio e só depois acionem a página destino.
+
+            \item \emph{Validação de formulários} - formulários para cadastro e alteração de dados;
+
+            \item \emph{Efeitos visuais} - exibição e ocultação de blocos e mensagem de "carregando".
+        \end{itemize}
+
+\UTFPRsection[sec:internacionalização]{INTERNACIONALIZAÇÃO}
+
+    O sistema foi desenvolvido com suporte à internacionalização.
+    Essa funcionalidade substitui constantes colocadas no \emph{template} HTML pela
+    sentença na linguagem selecionada, atualmente o sistema está disponível nas
+    linguagens Português - Brasil e Inglês.
+
+    A Figura \ref{fig:idioma} apresentada no Apêndice
+    \ref{ape:apreoriant} mostra o sistema disposto na língua
+    inglesa.
+
+    Um exemplo de um trecho do arquivo de tradução para a língua inglesa
+    pode ser visto no Código \ref{cod:traducaoIngles}.
+
+    \texttt{\lstinputlisting[language=PHP, label=cod:traducaoIngles,
+    caption={Trecho do arquivo de tradução para a língua inglesa}]{cods/lang.txt}}
+
+    Para que o arquivo seja exibido em outra linguagem, basta traduzir
+    as constantes e ser renomeado.
+
+    \UTFPRsection[sec:frameworks]{FRAMEWORKS UTILIZADOS}
+
+    Juntamente com o \emph{space brain} alguns \emph{frameworks} foram
+    utilizados para facilitar a implementação dos sistemas dos
+    SGBDs, \emph{templates} e ajax, detalhados nas Seções \ref{subsec:pear}
+    e \ref{subsec:sajax}.
+
+        \UTFPRsubsection[subsec:pear]{PEAR}
+
+        \UTFPRsigla{PEAR}{\emph{PHP Extension and Application Repository}} é
+        um \emph{framework} e um sistema de distribuição de componentes
+        reutilizáveis PHP. O PEAR oferece um conjunto amplo de bibliotecas
+        estruturadas de código aberto para usuários, onde cada biblioteca é
+        considerada um projeto separado com seu próprio grupo de
+        desenvolvimento, número de versões, ciclo de \emph{release} e
+        documentação \cite{monografia:lucas}.
+
+        Os componentes utilizados foram:
+
+        \begin{itemize}
+        \item \emph{PEAR::DB} : Pacote responsável pela camada de abstração do banco de
+        dados.
+        \item \emph{PEAR::HTML\_Template\_IT} : Pacote que fornece uma \emph{engine},
+        possibilitando trabalhar com blocos e substituição de \emph{tags}. Com o
+        uso deste pacote é possível separar a apresentação do sistema (HTML,
+        CSS e Javascript) da lógica de apresentação (PHP).
+        \end{itemize}
+
+        Os componentes PEAR, além de serem desenvolvidos de forma genérica,
+        podendo ser aplicados no desenvolvimento de diferentes projetos,
+        possibilitam a modificação e adaptação dos mesmos, conforme
+        necessidade do projeto em desenvolvimento.
+
+        Os componentes PEAR podem ser encontrados no \emph{website}
+        <http://pear.php.net>.
+
+        \UTFPRsubsection[subsec:sajax]{Sajax}
+
+        O Sajax é um pacote de ferramentas gratuito, que pode ser integrado
+        com as linguagens: PHP, Perl ou Python. O pacote faz a maior parte
+        do trabalho para integrar as funções Javascript com as funções da
+        linguagem utilizada. Depois de configurado, tem-se a impressão de
+        estar chamando uma função escrita em uma das linguagens diretamente
+        dentro do código Javascript.
+
+        Uma de suas desvantagens é que não armazena o código javascript
+        gerado em um arquivo, apenas escreve as funções geradas no local
+        declarado no arquivo HTML.

@@ -1,0 +1,40 @@
+\chapter{Códigos Fonte}
+\label{source-codes}
+
+Neste apêndice apresenta-se exemplos de códigos fonte utilizados para na implementação do sistema.
+
+\section{Chamada do Planejador}
+\label{ap-chamada-planejador}
+
+O código \ref{source_plan} mostra o arquivo que corresponde ao componente \emph{FábricaDePlanos}. Nesse componente o método \emph{doMakePlan()} é que invoca o planejador \emph{Crikey}. O sistema aguarda até que o arquivo de saída seja gravado, e em seguida o utiliza para a geração do arquivo contendo as ações.
+
+\UFPRlongcode{Java}{source_plan}{Exemplo que invoca o planejador}{codes/MakePlan.java}
+
+\section{Plano de Execução}
+\label{ap-plano-execucao}
+
+O código \ref{execution_plab} exemplifica um plano de execução gerado automaticamente a partir do arquivo de ações gerado pelo planejador.
+
+\UFPRlongcode{Java}{execution_plab}{Exemplo de um plano de execução}{codes/ExecutionPlanGenerated.java}
+
+\section{Fluxo de Trabalho de Exemplo}
+\label{ap-fluxo-exemplo}
+
+Apresenta-se um exemplo da implementação de um operador. O código \ref{implementation} apresenta o componente que é herdado pelos operadores. O código \ref{source_workflow} mostra a implementação de um operador para soma de matrizes.
+
+\subsection{Implementação Base}
+\label{ap-implementation}
+
+\UFPRlongcode{Java}{implementation}{Implementação básica para fluxos de trabalho}{codes/Implementation.java}
+
+\subsection{Fluxo de Trabalho para Soma de Matrizes}
+\label{ap-workflow-sum}
+
+\UFPRlongcode{Java}{source_workflow}{Fluxo de trabalho para soma de matrizes}{codes/WorkflowSumVet.java}
+
+\section{Tradutor}
+\label{ap-tradutor}
+
+O código \ref{source_translation} demonstra todo o modelo detalhado na seção \ref{tradutor}.
+
+\UFPRlongcode{Java}{source_translation}{Código que faz a tradução do sistema para os arquivos PDDL}{codes/WorkflowSumVet.java}

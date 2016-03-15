@@ -1,0 +1,2 @@
+SELECT col1 FROM tab1
+WHERE EXISTS(SELECT col1 FROM tab2 WHERE col2 = tab1.col2);

@@ -1,0 +1,125 @@
+\begin{thebibliography}{}
+
+\bibitem[Abraham et~al. 2006]{ajith:06}
+Abraham, A., Guo, H., and Liu, H. (2006).
+\newblock {\em Swarm Intelligent Systems}, chapter Swarm Intelligence:
+  Foundations, Perspectives and Applications, pages 3--25.
+\newblock Springer Verlag.
+
+\bibitem[Bowman et~al. 1993]{bowman:reasoning}
+Bowman, M., Debray, S.~K., and Peterson, L.~L. (1993).
+\newblock Reasoning about naming systems.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):795--825.
+
+\bibitem[Braams 1991]{braams:babel}
+Braams, J. (1991).
+\newblock Babel, a multilingual style-option system for use with latex's
+  standard document styles.
+\newblock {\em TUGboat}, 12(2):291--301.
+
+\bibitem[Brusilovsky 1996]{brusilovsky:96}
+Brusilovsky, P. (1996).
+\newblock Methods and techniques of adaptative hypermedia.
+\newblock In {\em User Modeling and User-Adapted Interaction}, volume~6.
+  Springer Netherlands.
+
+\bibitem[Candotti et~al. 2006]{clarissa:edudist}
+Candotti, C.~T., Geller, M., Silveira, S.~R., Marques, E.~M., and Santana,
+  M.~B. (2006).
+\newblock Sistema hipermÍdia adaptativo baseado em estilos cognitivos.
+\newblock {\em RENOTE. Revista Novas Tecnologias na Educação}, 4:25051.
+
+\bibitem[Clark 1991]{clark:pct}
+Clark, M. (1991).
+\newblock Post congress tristesse.
+\newblock In {\em TeX90 Conference Proceedings}, pages 84--89. TeX Users Group.
+
+\bibitem[da~Silva et~al. 2003]{artigo:definicoes}
+da~Silva, L.~K., Brahm, D.~R., Tagliassuchi, G., and Loh, S. (2003).
+\newblock Um assistente digital para responder automaticamente perguntas de
+  usuários humanos em portais corporativos.
+
+\bibitem[de~Oliveira and Fernandes 2004]{jose:shaes}
+de~Oliveira, J. M.~P. and Fernandes, C.~T. (2004).
+\newblock Sistemas hipermídia adaptativos educacionais: Breve panorama e modelo
+  de referência.
+\newblock {\em Congresso Nacional de Ambientes Hipermídia para Aprendizagem}.
+
+\bibitem[Dorigo et~al. 1996]{dorigo:96}
+Dorigo, M., Maniezzo, V., and Colorni, A. (1996).
+\newblock The {A}nt {S}ystem: {O}ptimization by a colony of cooperating agents.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics Part B:
+  Cybernetics}, 26(1):29--41.
+
+\bibitem[Gasparini et~al. 2004]{isabela:adaptweb}
+Gasparini, I., Amaral, M.~A., Pimenta, M.~S., and Oliveira, J. P. M.~D. (2004).
+\newblock {N}avegação {A}daptativa no {A}mbiente de {EAD} {AdaptWeb}: Uso de
+  {XML} na adequação de conteúdo e navegação.
+\newblock {\em Congresso Nacional de Ambientes Hipermídia para Aprendizagem}.
+
+\bibitem[Herlihy 1993]{herlihy:methodology}
+Herlihy, M. (1993).
+\newblock A methodology for implementing highly concurrent data objects.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):745--770.
+
+\bibitem[Lamport 1986]{Lamport:LaTeX}
+Lamport, L. (1986).
+\newblock {\em LaTeX User's Guide and Document Reference Manual}.
+\newblock Addison-Wesley Publishing Company, Reading, Massachusetts.
+
+\bibitem[Lopes 2006]{lopes:06}
+Lopes, H.~S. (2006).
+\newblock Fundamentos de computação evolucionária e aplicações.
+\newblock In Felizardo, K.~R., editor, {\em Anais da Escola Regional de
+  Informática da Sociedade Brasileira de Computação}, pages 52--107,
+  Bandeirantes, PR. Departamento de Informática da FFALM.
+
+\bibitem[Milani 2007]{livro:mysql}
+Milani, A. (2007).
+\newblock {\em {MySQL} - Guia do Programador}.
+
+\bibitem[Nadalete 2005]{monografia:lucas}
+Nadalete, L.~G. (2005).
+\newblock Sistema de controle de ocorr\^{e}ncias de docentes e discentes.
+
+\bibitem[Palazzo 2002]{palazzo:02}
+Palazzo, L. A.~M. (2002).
+\newblock Sistemas de hipermídia adaptativa.
+\newblock In {\em XXI Jornada de Atualização em Informática. XXII Congresso da
+  SBC}, Florianópolis.
+
+\bibitem[Salas and Hille 1978]{salas:calculus}
+Salas, S. and Hille, E. (1978).
+\newblock {\em Calculus: One and Several Variable}.
+\newblock John Wiley and Sons, New York.
+
+\bibitem[Soares 2000]{livro:php}
+Soares, W. (2000).
+\newblock {\em Programando em {PHP} : conceitos e aplicações}.
+\newblock Érica, 2 edition.
+
+\bibitem[Sousa et~al. 2003]{sousa:03}
+Sousa, T., Neves, A., and Silva, A. (2003).
+\newblock Swarm optimisation as a new tool for data mining.
+\newblock In {\em IPDPS '03: Proceedings of the 17th International Symposium on
+  Parallel and Distributed Processing}, page 144.2, Washington, DC, USA. IEEE
+  Computer Society.
+
+\bibitem[Teles et~al. 2003]{wesley:ant}
+Teles, W.~M., Weigang, L., and Ralha, C.~G. (2003).
+\newblock Uma heurística para guiar os usuários da internet baseada no
+  comportamento da formiga.
+\newblock {\em Scientia}, 14:277--292.
+
+\bibitem[Vieira and Caixeta 2004]{interlegis}
+Vieira, P. H.~G. and Caixeta, R.~G. (2004).
+\newblock Implementação da heurística da formiga para auxiliar à navegação do
+  portal interlegis.
+
+\bibitem[Zarnani and Rahgozar 2006]{zarnani:06}
+Zarnani, A. and Rahgozar, M. (2006).
+\newblock Mining spatial trends by a colony of cooperative ant agents.
+\newblock In {\em SIAM Conference on Data Mining}, Bethesda, Maryland, USA.
+  Society for Industrial and Applied Mathematics.
+
+\end{thebibliography}

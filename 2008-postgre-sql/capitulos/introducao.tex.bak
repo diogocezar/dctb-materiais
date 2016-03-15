@@ -1,0 +1,190 @@
+\section[Introdução]{Introdução}
+
+\subsection{Questionário inicial}
+
+\begin{frame}
+    \frametitle{Questionário inicial}
+    \begin{itemize}
+        \item O que você entende por banco de dados?
+        \item Qual a diferença entre dado e informação?
+        \item Quais os bancos de dados conhecidos?
+        \item Qual a vantagem de se utilizar um banco de dados?
+    \end{itemize}
+\end{frame}
+
+\subsection{Realidade das empresas que não utilizam BD}
+
+\begin{frame}
+    \frametitle{Realidade das empresas que não utilizam BD}
+    \begin{itemize}
+        \item Cada setor possui seus aplicativos e seus dados:
+        \begin{itemize}
+            \item Planilhas de texto, documentos textuais, arquivos.
+        \end{itemize}
+        \item O acesso aos dados é gerenciado por cada aplicação:
+        \begin{itemize}
+            \item Editores de texto, aplicações descentralizaras.
+        \end{itemize}
+        \item Não há compartilhamento;
+        \item Dados dependem dos programas, sendo manipulados apenas
+        por estes.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Problemas}
+    \begin{itemize}
+        \item Dados duplicados;
+        \item Dificuldade de manutenção;
+        \item Atualização? envio de relatórios, ofícios ou
+        memorandos?
+        \item Falta de padronização.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Processamento de arquivos: por que não é viável?}
+    \begin{itemize}
+        \item \emph{Inconsistência ou redundância}:
+        \item \emph{Dificuldade de acesso aos dados}: necessidade de novas aplicações;
+        \item \emph{Isolamento de dados}: dados dispersos em vários
+        arquivos (difícil recuperação);
+        \item \emph{Problemas de integridade}: novas restrições da
+        aplicação, exemplo: mudança da maioridade, novas taxas,
+        impostos;
+        \item \emph{Problemas de atomicidade}: quando ocorrer alguma falha
+        na escrita, deve-se voltar ao estado anterior. Exemplo:
+        transação bancária;
+        \item \emph{Acesso concorrente}: dois usuários alteram o valor de
+        uma mesma variável;
+        \item \emph{Problemas de segurança}: autorização a usuários.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Surgimento dos BD's}
+    \begin{itemize}
+        \item Necessidade de armazenar e recuperar grande quantidade de informação de maneira organizada;
+        \item Cria-se um modelo da realidade através de dados
+        representativos e suas relações (Diagrama de Entidades e
+        Relacionamentos).
+    \end{itemize}
+\end{frame}
+
+\subsection{Banco de Dados}
+
+\begin{frame}
+    \frametitle{O que é um Bando de Dados?}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=7cm]{images/banco.jpg}
+            \caption{Um sólido banco de dados}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{O que é um Bando de Dados?}
+    \begin{itemize}
+        \item "Uma coleção de dados relacionados"{} [ELMASRI \& NAVATHE];
+        \item "Conjunto de dados integrados que tem por objetivo atender a uma comunidade específica"{} [HEUSER];
+        \item "Um conjunto de dados"{} [SILBERSCHATZ];
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Componentes de um Sistema de Banco de Dados}
+    \begin{itemize}
+        \item \emph{Dados}: diferente de informação;
+        \item \emph{Hardware}: parte física (armazenamento);
+        \item \emph{Software}: SGBD (Sistema Gerenciador de Banco de
+        Dados);
+        \item \emph{Usuários}: programadores de aplicação, DBA,
+        usuário final;
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Vantagens}
+
+\begin{frame}
+    \frametitle{Vantagens}
+    \begin{itemize}
+        \item \emph{Controle centralizados dos dados}: visão geral,
+        relacionamento das informações, entre outros.
+        \item Que relação é essa?
+        \begin{itemize}
+            \item Exemplo: Agenda(nome, telefone, endereço e
+            aniversário); Fiado(nome, saldo devedor);
+
+            Situação: Enviar cartões de aniversário para os meus
+            clientes exceto para os inadimplentes.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Características}
+
+\begin{frame}
+    \frametitle{Características}
+    \begin{itemize}
+        \item \emph{Eliminação de redundância}: duplicidade, perda de
+        espaço;
+        \item \emph{Controle de consistência}: armazenamento em um único
+        local;
+        \item \emph{Compartilhamento}: questão de concorrência;
+        \item \emph{Restrições de segurança}: nível de acesso por usuário;
+        \item \emph{Integridade}: precisão dos dados, validação.
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Abstração}
+
+\begin{frame}
+    \frametitle{Abstração}
+    \begin{itemize}
+        \item \emph{Nível físico}: armazenamento;
+        \item \emph{Nível lógico}: quais dados são armazenados e
+        qual a relação entre eles?
+    \end{itemize}
+\end{frame}
+
+\subsubsection{DDL e DML}
+\begin{frame}
+    \frametitle{DDL e DML}
+    \begin{itemize}
+        \item \emph{DDL}: Linguagem de definição de dados;
+        \begin{itemize}
+            \item Define a estrutura (esquema) de um BD;
+            \item Compilação de definições: dicionário de dados
+            (dados sobre dados: metadados).
+        \end{itemize}
+        \item \emph{DML}: Linguagem de modelagem de dados;
+        \begin{itemize}
+            \item Permite o acesso ou manipulação dos dados no BD;
+            \item Recuperação, inserção, exclusão e modificação dos
+            dados.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Comparação entre alguns bancos de dados}
+
+\begin{frame}
+    \frametitle{Suporte a Sistemas Operacionais}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=9cm]{images/so.jpg}
+            \caption{Suporte a Sistemas Operacionais}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Características principais}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=9cm]{images/caracteristicas.jpg}
+            \caption{Características principais}
+        \end{center}
+    \end{figure}
+\end{frame}

@@ -1,0 +1,12 @@
+using System;
+class TryFinally{
+  public static void Main(){
+    try{	
+      throw new Exception("A excessão..."); //Dispara a excessão
+    }
+    finally{
+      Console.WriteLine("O bloco finally é sempre executado..."); 
+    }
+    Console.WriteLine("Esta linha não será executada...");
+  }
+}

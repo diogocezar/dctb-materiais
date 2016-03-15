@@ -1,0 +1,146 @@
+\section{Operadores}
+
+\begin{frame}
+    \frametitle{Operadores em C\#}
+    \begin{itemize}
+            \item <1-> C\# é uma linguagem muito rica em operadores;
+            \item <2-> Representados por símbolos;
+            \item <3-> Utilizados na construção de expressões;
+            \item <4-> Sintaxe é baseada na sintaxe do C++;
+            \item <5-> Múltiplas operações: precedência dos operadores (pode ser modificado por parênteses);
+    \end{itemize}
+\end{frame}
+
+\begin{frame}%[t,allowframebreaks]
+    \frametitle{Operadores do C\#}
+        \tiny
+        \vspace{-1cm}
+        \begin{table}[!htb]
+            \centering
+            \label{tab:tiposprimitivos}
+            \caption{Operadores do C\#}
+            \begin{tabular}{|l|l|}
+                \hline
+                Categoria & Operadores \\
+                \hline
+                Aritmética &\& + - * / \% \\
+                \hline
+                Lógica (boolena e bitwise) & \& $|$ \^{} ! ~ \&\& $||$ true false \\
+                \hline
+                Concatenação de string & + \\
+                \hline
+                Incremento e decremento & ++ -- \\
+                \hline
+                Shift & $<<$ $>>$ \\
+                \hline
+                Relacional & == != $<>$ $<$= $>$= \\
+                \hline
+                Atribuição & = += -= *= /= \%= \&= |= \^= $<<$= $>>$= \\
+                \hline
+                Acesso a membro & . \\
+                \hline
+                Indexação & [] \\
+                \hline
+                Indexação & () \\
+                \hline
+                Condicional & ?: \\
+                \hline
+                Delegate (concatenação e remoção) & + - \\
+                \hline
+                Delegate (concatenação e remoção) & new \\
+                \hline
+                Informação de tipo & is sizeof typeof \\
+                \hline
+                Controle de excessão de overflow & checked unchecked \\
+                \hline
+                Indireção e endereço & * -> [] \& \\
+                \hline
+            \end{tabular}
+        \end{table}
+\end{frame}
+
+\subsection{Operadores Aritméticos}
+
+\begin{frame}
+    \frametitle{Operadores Aritméticos}
+    \begin{itemize}
+            \item <1-> Usados para execução de cálculos;
+            \item <2-> Divididos em operadores unários e binários;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operadores Aritméticos Unários}
+    \begin{block}{Operadores Unários}
+        (atribuídos a 1 atributo) + e - são utilizados
+        para representar se o número é positivo ou negativo,
+        respectivamente.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=operadoresUnarios,
+    caption={Operadores Unários}]{cods/operadores.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operadores Aritméticos Binários}
+    \begin{block}{Operadores Binários}
+        +, -, *, / e  \% são utilizados nas
+        expressões para execução de cálculos tais como soma, subtração,
+        multiplicação, divisão e sobra.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=operadoresBinarios,
+    caption={Operadores Binários}]{cods/operadores2.txt}}
+\end{frame}
+
+\subsection{Operadores de Incremento e Decremento}
+
+\begin{frame}
+    \frametitle{Operadores de Incremento e Decremento}
+    \begin{block}{Incremento e Decremento}
+        Os operadores ++ e -- aumentam ou diminuem por um o valor
+        correspondente.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=operadoresIncDec,
+    caption={Operadores de Incremento e
+    Decremento}]{cods/operadores4.txt}}
+\end{frame}
+
+\subsection{Operadores Lógico, Relacional e Condicional}
+
+\begin{frame}
+    \frametitle{Operadores Lógico, Relacional e Condicional}
+    \begin{itemize}
+            \item <1-> Utilizados em expressões onde o resultado retornado ou a característica é booleana.
+            \item <2-> O operador de negação ! retorna o complemento (contrário) de um valor booleano.
+    \end{itemize}
+    \begin{block}{Operadores Lógico, Relacional e Condicional}
+        Os operadores relacionais ==, !=, <, >, <=, >=, resultam em um valor
+        booleano e representam igual, não igual ou diferente, menor, maior,
+        menor ou igual e maior ou igual, respectivamente.
+    \end{block}
+\end{frame}
+
+\subsection{Operação de Atribuição}
+
+\begin{frame}
+    \frametitle{Operação de Atribuição}
+    \begin{itemize}
+            \item <1-> Divididos entre simples e compostos;
+            \item <2-> Utilizados na designação de um valor para uma variável;
+            \item <3-> O operador = representa a atribuição simples;
+    \end{itemize}
+    \begin{block}{Operadores de atribuição compostos}
+        Os operadores +=, -=, *=, /=, \%=, \&=, |=, \^=, <<= e >>=
+        representam a atribuição composta, que normalmente atuam como um
+        atalho na construção de uma expressão.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operação de Atribuição}
+    \texttt{\lstinputlisting[language=C, label=operadoresAtr,
+    caption={Exemplo do operador de atribuição}]{cods/operadores6.txt}}
+
+    \texttt{\lstinputlisting[language=C, label=operadoresAtrComp,
+    caption={Exemplo do operador de atribuição
+    composta}]{cods/operadores7.txt}}
+\end{frame}

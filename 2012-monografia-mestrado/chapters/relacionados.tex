@@ -1,0 +1,355 @@
+\chapter{Trabalhos Relacionados}
+\label{trabalhos-relacionados}
+
+As seções seguintes apresentam as principais referências para a implementação do modelo. A seção \ref{relacionados-consideracoes}, ao final do capítulo, apresenta a relação de cada trabalho com o modelo proposto, bem como uma comparação entre alguns trabalhos apresentados.
+
+\section{Ptolemy}
+\label{ptolemy}
+
+Ambientes distribuídos tendem a ser heterogêneos, por serem compostos por subsistemas de diferentes características. Quando se desenvolvem aplicações para execução nesses ambientes, a linguagem deve se adaptar a essa heterogeneidade \cite{Eker2003}. A proposta do \emph{Ptolemy} é oferecer um modelo e um \emph{framework} capaz de suportar tais características.
+
+%Sistemas embarcados são normalmente, ativos, interconectados e engajados no mundo físico. Entre outras coisas, estes necessitam ser confiável, concorrentes e terem reação em tempo real. Normalmente são tratados com métodos formais.
+
+%Esse trabalho apresenta uma abordagem para compor diferentes modelos. Hierarquicamente são dividios em uma árvore de submodelos, compostos pode componentes interconectados que interagem entre sí.
+
+
+%\subsection{Modelo Orientado a Atores}
+
+O \emph{Ptolemy} implementa um modelo orientado a atores, no qual, cada ator é um bloco do sistema. Os atores são componentes concorrentes que se comunicam através de interfaces nomeadas de \emph{ports}. Um ator é atômico, e deve estar na base da hierarquia do modelo. O ator pode ser composto e nesse caso ele contém outros atores. Uma porta pode ser de entrada, saída ou ambos. Os canais de comunicação são estabelecidos pela conexão dessas portas. Uma porta para um ator composto pode ter duas conexões, uma de entrada e outra de saída.
+
+Uma implementação do modelo associada com uma composição de atores é chamada de domínio. Um domínio define a comunicação semântica e a execução da aplicação através dos atores. Isso é feito por dois componentes: receptor e diretor. Os receptores implementam o mecanismo de comunicação que estão nas portas de entrada, onde existe um receptor para cada canal de comunicação. Os atores quando em um domínio, adquirem um receptor específico do domínio, que controla a entrada específica de um fluxo corrente.
+
+O diretor define como os atores serão executados, podendo escolher uma execução serial ou paralela. Em um fluxo de trabalho for composto por tarefas que podem ser executadas em paralelo, se o diretor escolhido executa tarefas serialmente, as tarefas do fluxo serão executadas de forma serial.
+
+O diretor e os receptores devem trabalhar de forma conjunta. O diretor também é o responsável por criar os receptores. Quando um ator é executado, o diretor dentro da composição dispara os  subatores dentro do modelo de forma recursiva. Dessa maneira, o modelo criado pelo projeto \emph{Ptolemy} é capaz de executar tarefas de maneira coordenada, utilizando os componentes descritos para executar os operadores do fluxo de trabalho descritos pelos atores sobre os dados necessários.
+
+O \emph{Ptolemy} é um modelo para execução de tarefas em um ambiente distribuído, por isso não é restrito a um ambiente específico, podendo ser adaptado para execução em grades ou nuvens. %Não utiliza nenhum sistema de coleta de metadados para refinamento de execuções futuras. O processo de escalonamento é definido pela estrutura apresentada. São criadas ramificações em uma árvore e a execução é feita de forma recursiva, coordenada pelos diretores.
+
+%As relações dessas interfaces, definem as comunicações entre tais atores. Com essa abordagem é possível estabelecer uma estrutura conceitual do sistema que complementa as técnicas de orientação a objetos. Visualiza-se o sistema como uma estrutura de atores com ênfase em sua estrutura causal e suas atividades simultâneas pela comunicação e dependência de dados.
+
+%A técnica de orientação a objetos vê o sistema como uma estrutura de objetos relacionado por suas referências. A vantagem de um sistema orientado a atores está relacionada ao desacoplamento da transmissão de dados de um controlador de transferências. Ao utilizar um sistema orientado a objetos pode-se facilmente delegar funcionalidades para outro objeto acessando um método que o faça, ao se trabalhar com os atores, cada ator é responsável por cumprir sua própria tarefa, o que faz com que esses se tornem mais reusáveis. Isso pois, se um ator descreve uma funcionalidade, ela pode ser executada de diferentes formas.
+
+%\subsection{Estrutura}
+
+%Nota-se que um ator composto pode ser composto de outro ator composto, dessa forma hierarquias podem ser arbitrariamente aninhadas. Atores possuem \emph{portas}, que são sua interface de comunicação. 
+
+%\subsection{Execução}
+
+%Os atores, tanto os atômicos quanto os compostos, são executáveis. A execução de atores compostos é feita pelo controle de execução de cada um de seus filhos. Esta composicionalidade de execução é a chave para gerir a heterogeneidade hierarquicamente. A execução no Ptolemy segue as fases: configuração, iteração e finalização.
+
+%A fase de configuração é dividida entre \emph{pré-inicialização} e \emph{inicialização}. A \emph{pré-inicialização} trata das informações estruturais, como a construção de atores e suas conexões. A \emph{inicialização}, configura os parâmetros, reinicia o estado local e produz os \emph{tokens} iniciais.
+
+%Atores realizam execuções atômicas, chamadas de iterações. Uma iteração é uma computação finita que leva o ator a um estado de repouso. O modelo determina como a iteração de cada ator está relacionada com a iteração de outros atores, na mesma composição. Para coordenar as iterações entre os atores uma iteração é dividida entre \emph{pré-execução}, \emph{execução} e \emph{pós-execução}. A \emph{pré-execução} testa se as pré-condições para a execução são satisfeitas, como por exemplo a presença das entradas adequadas para completar a iteração. A computação da funcionalidade do ator é normalmente feita na fase de \emph{execução}. O estado do ator é atualizado na fase de \emph{pós-execução}.
+
+%O fluxo é finalizado exatamente no final da execução. Normalmente os atores liberam os recusos alocados durante a execução.
+
+%\subsection{Domínios}
+
+\section{Kepler}
+\label{kepler}
+
+O \emph{Kepler} é uma ferramenta que processa fluxos de trabalho científicos, baseado na estrutura definida pelo \emph{Ptolemy}. Seu foco está na simplificação da criação e execução dos fluxos de trabalho, assim os cientistas podem desenvolver, executar, monitorar, e analisar os seus experimentos sem a necessidade de focar nos detalhes de implementação \cite{Altintas2004}.
+
+%O Kepler é o único combina um desenvolvimento em alto nível do fluxo de trabalho e uma interação em tempo de execução, acessando dados e serviços locais e remotos.
+
+%Fluxos de trabalho científicos são similares a fluxos de trabalho de negócios. Ambos trabalham em um ambiente com dados heterogêneos e complexo. Por isso, o \emph{Kepler} é construído sobre o sistema de fluxo de dados \emph{Ptolemy}, que oferece um ambiente de programação orientados a módulos, com interação semântica e composição visual.
+
+%\subsection{Características do Kepler}
+
+Com o \emph{Kepler} os cientistas podem capturar os fluxos de trabalho em um formato que permite migração, arquivamento, versionamento e execução. Seus fluxos de trabalho podem ser descritos em XML utilizando o \UFPRsigla{MoML} \cite{Altintas2004}. Esse formato, representa um grafo, no qual os vértices representam atores e as arestas representam as dependências de dados entre os atores. O tipo de composição utilizada pelo sistema é concreta, pois o usuário precisa definir quais os recursos serão utilizados.
+
+A composição dos fluxos de trabalho no \emph{Kepler} é feita através de uma interface gráfica, que utiliza como base o software Virgil. Com essa interface o usuário é capaz de definir os recursos a serem utilizados, bem como a estrutura do fluxo de trabalho, que gera um arquivo no formato \UFPRsigla{MoML}.
+
+Como características o \emph{Kepler} apresenta:
+
+\begin{itemize}
+	\item \emph{prototipação de fluxos}: permite que os usuários definam um protótipo do fluxo de trabalho antes mesmo de uma implementação pronta para execução;
+	\item \emph{execução distribuída}: permite a utilização dos recursos oferecidos por ambientes distribuídos;
+	\item \emph{acesso a dados e consultas}: inclui atores que controlam os dados em uma base;
+	%\item \emph{outros ambientes de execução}: suporta outras linguagens que não Java.
+\end{itemize}
+
+A execução pode ser distribuída de duas formas: por \emph{threads} ou em um ambiente distribuído. Ao utilizar a paralelização por \emph{threads}, um recurso específico da linguagem Java é acionado para distribuir as tarefas localmente. Ao utilizar um ambiente distribuído o sistema permite uma configuração para proveito dos recursos disponíveis no ambiente.
+
+\section{Pegasus}
+\label{pegasus}
+
+O sistema \emph{Pegasus} consegue mapear fluxos de trabalhos complexos em um ambiente de grade. O sistema proposto utiliza uma composição abstrata de fluxo de trabalho. A interface de composição abstrada é baseada no software \emph{Chimera} \cite{Foster2002}, que descreve os fluxos de trabalho na linguagem \UFPRsigla{VDL} \cite{Deelman2004}. A partir da composição abstrata o sistema faz um mapeamento para um modelo executável \cite{Deelman2004}. Os fluxos de trabalho abstratos descrevem os dados e os operadores aplicáveis. Ainda indicam as possíveis dependências entre os componentes do fluxo de trabalho. 
+
+%O modelo procura o dado e o recurso necessário para resolver o fluxo na grande \cite{Deelman2004}.
+
+%Tecnologias de grade vem modificando a maneira com que os cientistas conduzem seus experimentos, usando tecnologias que permitem um cenário colaborativo no qual são compartilhados recursos, dados, aplicações e conhecimentos para resolução de problemas com o mesmo objetivo. Essas colaborações podem ser definidas como \emph{Organizações Virtuais} (OVs). \cite{Deelman2004}.
+
+%Colaborações podem se estender a um conceito chamado de \emph{Dados Virtuais}, no qual os dados se referem não somente aos dados propriamente dito, mas também aos dados processados de alguma maneira. Como o processamento de dados pode ser caro, reaproveitar seu processamento pode ser uma maneira de evitar cálculos redundantes.
+
+%Um ambiente de grade é apropriado para execução de um fluxo de trabalho, pois em sua essência possui as mesmas características necessárias para execução. Dessa forma, a aplicação que é processada de forma distribuída.
+
+%Um fluxo de trabalho pode ser descrito de uma maneira resumida em atividades que são independentes dos recursos de uma grade, usados para executar atividades. Dessa forma, um fluxo de trabalho deve ser independente de forma que possa ser executado em qualquer nó disponível na grade.
+
+%No projeto Pegasus, são manipulados fluxos de trabalho concretos. Essa particularidade obriga que os recursos da grade sejam especificados.
+
+%A descrição do \emph{Pegasus} prevê padrões para planejamento de execução em ambiente de grade.
+
+%\subsection{Características do Pegasus}
+
+%O \emph{Pegasus} é desenhado para mapear fluxos de trabalho abstratos em um ambiente de grade. Os fluxos podem ser construídos usando \emph{Chimera} \cite{Foster2002} ou escritos diretamente pelo usuário. A entrada padronizada pelo \emph{Chimera} descreve basicamente a entrada lógica dos arquivos, a transformação lógica (componentes de aplicação) e seus parâmetros, além de claro uma saída lógica com os resultados dessas transformações. Essas especificações são escritas na linguagens \emph{Chimera's Virtual Data Language} (VDL).
+
+%\subsubsection{Mapeando Fluxos de Trabalho Abstratos em uma Grade}
+
+Para mapear um fluxo de trabalho abstrato em concreto, deve-se buscar por:
+
+\begin{itemize}
+	\item recursos disponíveis para executar as tarefas;
+	\item os dados utilizados no fluxo de trabalho em questão;
+	\item o componente adequado para realizar o processamento dos dados.
+\end{itemize}
+
+Para recuperar essas informações, uma consulta é feita em um banco de metadados que mantém informações sobre a grade. O \emph{Pegasus} utiliza os nomes de arquivos referenciados na definição do fluxo de trabalho para consultar o \UFPRsigla{RLS} que localiza réplicas dos dados necessários para o processamento. Para localizar o componente que irá processar os dados é feita uma consulta ao \UFPRsigla{TC} que retorna a localização física dos componentes de transformação, bem como as variáveis de ambiente necessárias para a execução do aplicativo. Logo após, sistema consulta \UFPRsigla{MDS} para encontrar a informação necessária para o escalonamento das tarefas na grade.
+
+Na etapa de mapeamento, busca-se a melhor forma de alocar os recursos para as tarefas. Para isso, o sistema utiliza metadados com informações sobre os recursos disponíveis, redução de fluxos de trabalho (quando resultados iguais já estejam computados), agrupamento de tarefas e registro de proveniência sobre os dados de entrada e saída. Com essas informações é gerado um fluxo de trabalho concreto, pronto para ser executado.
+
+O processo de execução é feito sobre o \emph{middleware} \emph{Globus Toolkit}, que utiliza um escalonador de tarefas chamado \emph{Condor-G}. Nesse sistema existe um gerenciador de fluxo de trabalho chamado \emph{DAGMan}, que interpreta o fluxo de trabalho concreto gerado pelo \emph{Pegasus} e faz a submissão das tarefas para os respectivos nós da grade.
+
+%Outro recurso é a transformação de um fluxo de trabalho original, em um novo fluxo de trabalho abstrato. Para isso, o modelo é transformado em um grafo de dependências, no qual os vértices representam as tarefas e as arestas dirigidas suas dependências. Ao formar uma árvore, cada nível é colapsado em um novo nó, transformando a estrutura em um novo grafo no qual um nó só possui um ou nenhum filho.
+
+\section{SciCumulus}
+\label{scicumulus}
+
+%explicar varredura ou fragmentação de dados
+
+
+
+%A computação nas nuvens surgiu como uma alternativa ao modelo baseado na internet, no qual serviços permitem a obtenção de uma variedade de recursos, disponíveis a diferentes tipos de usuários. Tais recursos podem ser de \emph{hardware} ou \emph{software}.
+
+%A migração dos cientistas para o ambiente de nuvem se deve ao fato de não necessitar de uma estrutura de processamento local e a utilização de processamento na medida necessária.
+
+%Em um processamento científico, mapeia-se o trabalho em um fluxo de trabalho científico que é processado por um sistema específico para definir, executar e monitorar o experimento. Os experimentos mapeados em fluxos de trabalho científico devem seguir um método científico específico, caracterizados por composição e execução das diversas variações de fluxos de trabalho dentro de um mesmo experimento. Essas variações incluem a variação da entrada de dados e parâmetros.
+
+%Como a nuvem oferece um ambiente flexível, é possível a obtenção específica de um recurso mediante a necessidade de processamento de um fluxo de trabalho. Entretanto a especificação manual desse recurso é cansativa para o cientista. Assim é tarefa do ambiente de execução o tratamento de tal recurso.
+
+%Um experimento científico só poder ser considerado ""científico"" se é possível sua reprodução. Para reproduzir o mesmo experimento o cientista deve analisar os dados de uma execução anterior. Isso é chamado de proveniência. Ao se executar o experimento em um ambiente distribuído, a tarefa de analisar a proveniência se torna difícil. E ainda é uma área em aberto para ser estudada.
+
+%Ainda é uma dificuldade a limitação oferecida por alguns ambientes de nuvem, assim deve-se considerar tais dificuldades para elaboração do sistema.
+
+%\subsection{Características do SciCumulus}
+
+O \emph{SciCumulus} é um ambiente mediador para distribuir, controlar e monitorar execuções paralelas de fluxos de trabalho científicos em um ambiente de nuvens. O sistema conta com a execução de fluxos de trabalho em um conjunto de máquinas virtuais \cite{DeOliveira2010}. O modelo  é composto por três camadas:
+
+\begin{itemize}
+	\item \emph{área de trabalho}: despacha as atividades dos fluxos de trabalho para serem executadas no ambiente de nuvem, usando um sistema local para gerenciamento de fluxos de trabalho científico, tal como \emph{VisTrails} \cite{Callahan2006}, por exemplo;
+	\item \emph{distribuição}: gerencia a execução das atividades em um ambiente de nuvem;
+	\item \emph{execução}: executa os programas a partir dos fluxos de trabalho.
+\end{itemize}
+
+%explicar os tipos de paralelismo
+
+É possível a utilização de dois tipos de paralelismo, por \emph{dados} e por \emph{troca de parâmetros}. Para exemplificar os tipos de paralelismo adotados, supõe-se um fluxo de trabalho científico é definido por $F$ que é composto por um conjunto de atividades. $F$ é uma quádrupla $(A, P, D, S)$, onde:
+
+\begin{itemize}
+	\item $A$ é um conjunto de ações $\{a_1, a_2, \ldots, a_n\}$ que compõem um fluxo de trabalho;
+	\item $P$ é um conjunto de parâmetros $\{p_{1}, p_{2}, \ldots, p_{n}\}$ de $F$;
+	\item $D$ é um conjunto de dados $\{d_1, d_2, \ldots, d_n\}$ a serem consumidos;
+	\item $S$ é um conjunto de saída de dados $\{s_1, s_2, \ldots, s_n\}$. 
+\end{itemize}
+
+O paralelismo de dados pode ser caracterizado pela execução simultânea de mais de uma atividade $a_i$ que consome um subconjunto específico de $D$.
+
+O paralelismo por troca de parâmetros pode ser definido como uma execução simultânea das atividades de $a_i$ onde cada execução consome um subconjunto específico dos valores possíveis para os parâmetros $P$.
+
+O \emph{SciCumulus} foca seu desenvolvimento em um ambiente de computação em nuvens. O trabalho trata além das políticas de escalonamento e troca de informações entre os nós, a paralelização de dados sob diferentes abordagens.
+
+Quanto a execução, utilizou-se um ambiente realístico de nuvem, proporcionando pelo sistema \emph{CloudSim}.
+
+%\subsubsection{Atividade da Nuvem}
+
+%A atividade da nuvem a estratégia de paralelismo que será adotada pelo \emph{SciCumulus}. Essa é diferente da atividade do fluxo de trabalho, a qual não é concentrada nas estratégias de paralelismo. A atividade de nuvem requer que o cientista especifique um metadado de paralelismo, que especifica o número de fragmentos, parâmetros a serem explorados, intervalo de parâmetros a serem explorados, refinamento por performance, e restrições de tempo.
+
+%\subsubsection{Tipos de Paralelismo}
+
+
+\section{Escalonador BPEL}
+\label{bpel}
+
+Esta abordagem relaciona as dependências de dados entre as etapas dos fluxos de trabalhos e a sua utilização de recursos no momento da execução. O algoritmo de escalonamento simula uma combinação de modo a minimizar os recursos utilizados pelos fluxos de trabalho. Se essa combinação é possível, os recursos da nuvem são configurados automaticamente para maximizar o rendimento \cite{Dornemann2010}.
+
+\UFPRsigla{BPEL4WS} é um serviço de composição para aplicações de negócios, mas é comumente modificado para tratar aplicações científicas. Ao contrário do cenário de negócios, ao se trabalhar com fluxos de trabalho científicos tem-se a necessidade de processamento massivo de dados. Por isso o \UFPRsigla{BPEL4WS} precisa prover uma série de recursos tais como: tolerância a falha, adaptação em tempo de execução e escalonamento de fluxos de dados.
+
+O sistema seleciona automaticamente as máquinas com baixo processamento, dis\-po\-ni\-bi\-li\-zan\-do-as em tempo de execução. Para lidar com cargas de pico, o sistema automaticamente inicia máquinas virtuais e implanta a pilha de serviço \emph{web} sob demanda.
+
+%Como não levou-se em consideração a dependência de dados entre as fases dos fluxos de trabalho, duas desvantagens foram identificadas:
+
+%\begin{enumerate}
+%	\item o rendimento do sistema de fluxos de trabalho pode ser sub-ótimo devido as transferências de dados frequentes entre os nós (etapas dependem de resultados para continuar a execução);
+%	\item quando os recursos da nuvem são usados em algumas etapas dos fluxos de trabalho a execução pode ser mais custosa, uma vez que os dados são transferidos para dentro e para fora da nuvem frequentemente.
+%\end{enumerate}
+
+%Para eliminar essas desvantavens, propõe-se a utilização de dependência de dados entre as etapas dos fluxos de trabalho e a taxa de ocupação dos recursos no tempo da execução. Com estes dados, uma heurística de escalonamento (algoritmo genético) é aplicada. Se nenhuma atribuição satisfatória existe, o algoritmo recalcula a atribuição, inserindo na conta os recursos adicionais que possibilitariam a obtenção de um plano de escalonamento. Essa alternativa é invocada somente se a atribuição de novos recursos melhorar o escalonamento.
+
+%\subsubsection{Desenvolvimento do Fluxo de Trabalho}
+
+Para executar uma atribuição das etapas dos fluxos de trabalho para os nós disponíveis, o sistema precisa de informações sobre a quantidade de dados que serão transferidos entre as etapas dos fluxos de trabalhos e o tempo de execução esperado para cada execução. Existem duas formas de se adquirir tais informações:
+
+\begin{enumerate}
+	\item monitorar a execução dos fluxos de trabalho e anotar os resultados;
+	\item deixar o desenvolvedor do fluxo de trabalho definir essas informações na descrição do fluxo de trabalho;
+\end{enumerate}
+
+O sistema BEPEL possui uma representação de fluxo de dados por um grafo no qual os vértices correspondem as chamadas das atividades e as arestas representam a atribuição das operações do processo. Todo o processo de execução é mapeado nesse grafo.
+
+%\subsubsection{Execução do Fluxo de Trabalho}
+
+Depois que o fluxo de trabalho está desenvolvido, deve ser executado pelo motor BEPEL. Em seguida é exposto como um serviço \emph{web}. Quando o fluxo de trabalho é executado pela primeira vez, a máquina BEPEL constrói um grafo interno com a representação dos fluxos de dados e com isso, faz o escalonamento. 
+
+%Para executar um escalonamento em um ambiente heterogênio várias condições devem ser observadas. Uma das principais diferenças ao se comprar com a computação em um ambiente \emph{cluster} é que nem todos os nós oferecem o mesmo poder de processamento.
+
+O algoritmo de escalonamento pode operar em todo o grafo que representa o fluxo de trabalho, ou somente em uma única tarefa do fluxo de trabalho. Para contornar a complexidade do grafo gerado pela expressividade do BEPEL, um algoritmo genético é aplicado. Esse algoritmo opera numa população aleatória e usa estratégias para seleção, \emph{crossover} e mutações para gerar um escalonamento subótimo que é o melhor dentre a mutação de todas as gerações.
+
+%\emph{BPEL} deve ser usado em sistemas que necessitam de um largo processamento de dados. 
+
+%A abordagem apresentada consiste no \emph{tempo de desenvolvimento} e \emph{tempo de execução} dos componentes. No \emph{tempo de desenvolvimento}, o fluxo de trabalho do desenvolvedor deve cruzar o fluxo de trabalho com fluxo de dados e informação do tempo de execução. No \emph{tempo de execução}, essas anotações são usadas para criar um grafo de fluxo de dados que é a entrada para os algoritmos genéticos, que atuam na atribuição dos passos do fluxo de trabalho \emph{BPEL} para recursos. Os algoritmos genéticos operam nos caminhos críticos dos fluxos de trabalho ao invés do fluxo de trabalho completo para reduzir o tempo de execução.
+
+%\section{Gerenciamento de Infraestrutura Virtual em uma Nuvem privada e Híbrida}
+%\label{openebula-haizea}
+
+%Uma das muitas definições de nuvem é um sistema de infraestrutura como um serviço. No qual uma infraestrutura é implantada em um \emph{data center} em máquinas virtuais. Com o aumento da popularidade desta tecnologia, ferramentas e tecnologias surgem afim de transformar uma infraestrutura de alguma organização existente em uma nuvem particular ou híbrida.
+
+%O trabalho \cite{Sotomayor2009} apresenta um sistema para composição de uma estrutura de processamento de dados sobre um ambiente de nuvens. Utiliza as ferramentas \emph{OpenNebula} e \emph{Haizea} para como gerenciadores da estrutura virtual e escalonamento de recursos.
+%O termo nuvem se popularisou em 2006 com a utilização pela Amazon, que contribuiu para o paradigma de recursos-como-serviço (RcS). Uma nuvem RcS propõe a disposição de recursos sob demanda em forma de máquinas virtuais em um \emph{data center}. A tentativa é minimizar e eventualmente eliminar o custo de processamento em larga escala, deixando os consumidores adicionarem ou removem capacidades de acordo com a necessidade de seu projeto.
+
+%\subsection{Gerenciamenteo de uma Infraestrutura Virtual}
+
+%Para o gerenciamento de uma infraestrutura virtual, algumas características devem ser observadas de modo a permitir aos usuários os mesmos recursos encontrados em nuvens públicas já conceituadas. Desta forma, uma nuvem privada/híbrida deve:
+
+%\begin{itemize}
+%	\item prover uma visualização uniforme e homogênia dos recursos, independente da plataforma de virtualização utilizada;
+%	\item gerenciar as máquinas virtuais em ciclo de vida completos, incluindo a configuração de redes dinamicamente para grupos de máquinas virtuais e o gerenciamento de armazenamento de seus recursos;
+%	\item suportar políticas de alocação configurável de recursos, para permitir as organizações a especificação dos objetivos;
+%	\item adaptações a uma organização alterando as fontes necessárias.
+%\end{itemize}
+
+%\subsection{Arquiterua do OpenNebula}
+
+%O \emph{OpenNebula} é um sistema para gerenciamento de máquinas virtuais. Esse gerenciamento pode ser feito individualmente ou em grupos. A sua principal funcionalidade está na preparação de uma máquina virtual. Como por exemplo, o gerenciamento de imagens, discos ou rede.
+
+%Quanto a arquitetura do \emph{OpenNebula}, observa-se que, para controlar o ciclo de vida de uma maquina virtual, o \emph{OpenNebula} orquestra três diferentes áreas de gerenciamento: 
+
+%\begin{itemize}
+%	\item tecnologias de imagens e armazenado, para a preparação das imagens em disco;
+%	\item configuração dos protocolos dos nós, para prover a rede entre as máquinas virtuais;
+%	\item criadores e controladores das máquinas virtuais;
+%\end{itemize}
+
+%É possível ainda, selecionar o gerenciamento individual de uma máquina virtual, para adição de serviços comuns a processamento como servidor \emph{web} ou estrutura de banco de dados.
+
+%Existe ainda um componente separado, que atua como um escalonador. Este cria decisões colaborativas entre as máquinas virtuais. O escalonador tem acesso as informações de todas as requisições que o \emph{OpenNebula} recebe, e baseado nessas requisições acompanha as alocações atuais e futuras. O escalonador padrão do \emph{OpenNebula} utiliza um índice que pode ser configurado pelo administrador do nuvem. O \emph{Haizea} atua no sistema como um escalonador de máquinas virtuais para o \emph{OpenNebula}. Ele ainda pode ser utilizado como um simulador para testar as diferentes estratégias de escalonamento, e seus respectivos tempos de execução.
+
+%A modularidade para o escalonamento permite que esse escalonador possa ser refinado. Dessa forma, utiliza-se o \emph{Haizea} como componente para extração de informações sobre o escalonamento do projeto. Ele é um gerenciador de locação de recursos utilizado para simular estratégias de escalonamento para de obter a melhor medida de desempenho.
+
+%O sistema ainda suporta um modelo híbrido de nuvem, usando \emph{cloud drivers} como interface para nuvens externas.
+
+%\subsection{Haizea}
+
+%O processo fundamental para para escalonamento de recursos é o \emph{arrendamento}. Intuitivamente, um arrendamento é uma contrato, no qual uma das partes provê um conjunto de recursos (um apartamento, um carro...) para alguém. Quando um usuário deseja obter recursos computacionais do \emph{Haizea}, isso acontece em forma de arrendamento.
+
+\section{Inteligência Artificial e Fluxo de Execução}
+\label{ia-workflow}
+
+O trabalho \cite{Gil2004} utiliza um ambiente de grades para criar um sistema gerenciador de fluxo de trabalhos baseado no sistema \emph{Pegasus} \cite{Deelman2004} (seção \ref{pegasus}). Além disso, apresenta um sistema de \UFPRsigla{IA} integrado com o ambiente distribuído, que aproveita as informações sobre as execuções. O sistema de IA gera fluxos de trabalho válidos e submete para execução no ambiente distribuído.
+
+A geração do fluxo de trabalho e o sistema de mapeamento (\emph{Pegasus}) integra um planejador no ambiente da grade. Na configuração do \emph{Pegasus} o usuário informa  os detalhes do resultado desejado. O sistema gera automaticamente os fluxos de trabalho selecionando as aplicações e componentes apropriados. Além disso é feita a atribuição dos recursos necessários para a execução. O fluxo de trabalho pode ser otimizado com base no tempo estimado de execução.
+
+O planejador utiliza dados de saída mapeados como objetivos e os operadores como componentes da aplicação. Cada operador possui como parâmetro o nó em que a tarefa será executada. As pré-condições contém as restrições sobre os nós, as dependências de dados e os arquivos de entrada necessários. Com isso é possível a obtenção de um plano que também representa um fluxo de trabalho \cite{Gil2004}.
+
+No trabalho utiliza-se o conceito de fluxos de trabalhos colaborativos, supondo que vários cientistas utilizem o mesmo cenário, as estratégias de execução podem ser reaproveitadas, minimizando a necessidade de execuções redundantes, e maximizando o aproveitamento dos metadados gerados por cada experimento.
+
+\section{Considerações}
+\label{relacionados-consideracoes}
+
+%É notável que os cientistas estão migrando seus projetos para ambientes que possam executar fluxos de trabalho científico. Existem diversos trabalhos que propõem sistemas para execução de fluxos de trabalho em um ambientes homogêneos. Entretanto, nota-se que o foco dos estudos tem sido para projetos que possibilitem a execução de projetos em ambientes heterogêneos. Isso por que a
+
+Um sistema de gerenciamento e execução de fluxo de trabalho científico, deve possuir um método para a descrição destes fluxos. Nesta descrição, são listadas informações relacionadas a execução de tarefas, por exemplo: quais os dados a serem trabalhados, quais operadores serão aplicados a estes dados, e qual a técnica de paralelização será aplicada no ambiente.
+
+É importante que uma linguagem de descrição de fluxos de trabalho científico armazene parâmetros específicos das etapas de escalonamento de tarefas e execução. É indispensável, no processo de descrição dos fluxos, o acompanhamento de um usuário avançado destinado de desenvolver os operadores que atuarão sobre os dados. Isto porque é ele quem deve inserir algumas informações específicas sobre paralelismo de dados, coleta de metadados e resultados.
+
+Os executores de fluxos de trabalho científico, em sua maioria, precisam da interferência direta do usuário, que ordena manualmente os fluxos de trabalho. É desejável que este sistema seja capaz de escalonar automaticamente as tarefas de um fluxo de trabalho científico, levando em consideração as dependências de dados. Ainda é importante que o sistema possa escalonar as tarefas levando em consideração além de um histórico de execuções de tarefas semelhantes, o estado atual dos recursos.  Com isso é possível inferir critérios de otimização como por exemplo: tempo de execução, gasto de energia e minimização ou maximização de recursos computacionais.
+
+%No modelo proposto, um problema científico é mapeado em um ou mais fluxos de trabalhos. O planejador é responsável por analisar e organizar os fluxos de trabalho automaticamente. Isso é feito com uma análise do estado atual dos recursos, as dependências de dados e o histórico de execuções.
+
+Ao utilizar um sistema que execute fluxos de trabalho científicos a principal dificuldade está relacionada a como serão escalonadas as subtarefas que o compõem. Diante do conjunto de recursos disponíveis, escolher o nó mais adequado para a execução pode se tornar complexo quando esse conjunto de recursos é dinâmico. Isso acontece em ambientes de nuvem, no qual ocasionalmente o recurso se adapta à tarefa a ser executada e não ao contrário. No trabalho BEPEL \cite{Dornemann2010} (seção \ref{bpel}), propõe-se um sistema que monitora a flexibilidade dos recursos em tempo de execução. Com estas informações são consideradas novas políticas de escalonamento, que ajudam a obter um plano mais adequado no momento da execução. É desejável que um coletor de informações monitore a camada de execução, dessa forma, mesmo que o ambiente seja flexível, garante-se que a política de escalonamento levará em consideração o estado atual dos recursos.
+
+O \emph{Pegasus} \cite{Deelman2004} (seção \ref{pegasus}) propõe um sistema que utiliza uma busca nos históricos de execuções para refinar o plano de execução. Por isso é importante que um coletor de informações popule um banco de metadados. Esses metadados estão disponíveis para aplicação de técnicas de proveniência, que podem traçar custos de execuções anteriores para refinar o processo de escalonamento.
+
+
+
+%No modelo proposto,  A motivação para a criação do coletor de informações é baseada nas técnicas apresentadas pelo trabalho \UFPRsigla{BPEL4WS} (seção \ref{bpel}).
+
+%O coletor de informações atua para popular um banco de metadados com informações sobre as execuções de tarefas. 
+
+%O modelo proposto foca na construção de um modelo que trabalhe com os nós independente da particularidade de seus recursos. Facilitando assim, a transposição para um ambiente de nuvem, limitado somente pelo módulo que vai atuar como executor. Como indicado pelo trabalho 
+
+%Como quase sempre os projetos de entrada para os fluxos de trabalho visam minimizar o tempo de execução, são interessantes ambientes que possibilitem a execução paralela de tarefas, utilizando para isso a inferência de heurísticas no processo de escalonamento.
+
+Nos trabalhos \emph{Ptolemy} \cite{Eker2003} (seção \ref{ptolemy}) e \emph{Kepler} \cite{Altintas2004} (seção \ref{kepler}), nota-se a utilização de diferentes atores, que são implementados de forma a executar ações diretas sobre os dados. É importante que um sistema gerenciador de fluxos de trabalho científico suporte a implementação da mesma operação sobre os dados de diferentes formas. Isto é, um operador pode transformar um determinado conjunto de dados de forma sequencial, paralela, ou até mesmo de forma específica para uma quantidade $n$ de nós. Desta forma, é desejável que o sistema seja capaz de selecionar qual a melhor implementação do operador, analisando a situação dos recursos no momento da execução.
+
+%Como referência a essa técnica, utilizou-se no modelo, a implementação da mesma operação sobre dados de diferentes formas. 
+
+%Como característica do \emph{Ptolemy} (seção \ref{ptolemy}), o modelo proposto implementa diversos operadores que executam a mesma ação, conceito semelhante aos atores descritos pelo \emph{Ptolemy}. Entretanto, cada um dos operadores é implementado especificamente para uma quantidade de nós. 
+
+%O modelo proposto não se restringe ao escalonamento de tarefas. Propõe-se ainda, a extração de paralelismo da máquina de planejamento. 
+
+No trabalho \emph{SciCumulus} \cite{DeOliveira2010} (seção \ref{scicumulus}) apresentam-se técnicas para aplicação de paralelismo sobre os dados ou parâmetros. É importante que um sistema que execute fluxos de trabalho científicos seja capaz de aplicar técnicas para paralelização de dados, bem como paralelização dos próprio fluxos de trabalho. Isso por que uma das principais características de um experimento científico é o grande volume de dados.
+
+%No modelo proposto, utilizou-se o conceito para criação de dois tipos de paralelismo: \emph{paralelismo sobre os dados} e \emph{paralelismo sobre a execução}, que serão abordados no capítulo \ref{modelo}.
+
+%Apesar da execução em um ambiente de grades, a idéia de colaboração proposta pelo sistema \emph{Pegasus} (seção \ref{pegasus}) foi importante para a implementação de um sistema que fosse realimentado com suas prórias metainformações de execução.
+
+%Outra particularidade é quanto a questão da inferência de parâmetros para elaboração de um escalonamento específico para minimizar por exemplo o tempo de execução ou o consumo de energia.
+
+%Ainda é interessante um coletor que forneça informações sobre as execuções das tarefas traçando assim, um histórico de execuções, que posteriormente pode alimentar um sistema que utilize proveniência de dados.
+
+%Os trabalhos estudados, mostram que o ambiente de execução pode ser flexível com relação aos recursos. Por isso é desejável que o um sistema executor de fluxos de trabalhos científicos se realimente com informações sobre a execução dos recursos do ambiente. Dessa forma é possível obter um plano de execução mesmo se um recurso for inserido, removido ou redimensionado.
+
+%Isso motivou a construção de um sistema que se realimente com as informações atuais dos recursos do sistema. 
+
+Uma característica desejável em sistemas que executam fluxo de trabalho científico é a modularização. Isso porque tais sistemas estão em constante adaptação para necessidades específicas. Assim é possível a substituição não somente do escalonador de tarefas, mas também do gerenciador de execução ou de outros componentes que compõem o sistema gerenciador de fluxos de trabalho. A modularização pode realizada através de componentes que exportam e importam arquivos XML, tornando-os uma aresta de comunicação entre os componentes.
+
+O trabalho que envolve IA e fluxo de execução \cite{Gil2004} (seção \ref{ia-workflow}) é o principal trabalho relacionado. Utiliza como base o projeto \emph{Pegasus} \cite{Deelman2004} (seção \ref{pegasus}) e aprimora o escalonamento utilizando técnicas de planejamento para a distribuição das tarefas no ambiente de execução. O trabalho não descreve com exatidão a metodologia utilizada para a extração do plano da máquina de planejamento, focando em um modelo colaborativo genérico que funciona com o compartilhamento de metadados pela Internet. 
+
+%
+
+
+% diferença entre o trabalho proposto e o escalonador IA
+
+Na tabela \ref{tab:comparacao} apresenta-se um quadro comparativo entre os sistemas apresentados nesse capítulo.
+
+\begin{table}[!htb]
+	\caption{Comparação entre trabalhos}
+	\label{tab:comparacao}
+	\small
+	\begin{tabular}{|l|l|l|l|l|}
+	\cline{2-5}
+	\multicolumn{1}{l|}{} & \multicolumn{1}{c|}{Ambiente} & \multicolumn{1}{c|}{Descrição Fluxos} & \multicolumn{1}{c|}{Metadados} & \multicolumn{1}{c|}{Escalonamento} \\ 
+	\hline
+	Ptolemy & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{Não} & \multicolumn{1}{c|}{Estrutura} \\ 
+	\hline
+	Kepler & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{MoML} & \multicolumn{1}{c|}{Não} & \multicolumn{1}{c|}{Estrutura} \\ 
+	\hline
+	Pegasus & \multicolumn{1}{c|}{Grade} & \multicolumn{1}{c|}{VDL} & \multicolumn{1}{c|}{Sim} & \multicolumn{1}{c|}{Condor-G} \\ 
+	\hline
+	SciCumulus & \multicolumn{1}{c|}{Nuvem} & \multicolumn{1}{c|}{VisTrails} & \multicolumn{1}{c|}{Não} & \multicolumn{1}{c|}{VisTrails} \\ 
+	\hline
+	BPEL & \multicolumn{1}{c|}{Nuvem} & \multicolumn{1}{c|}{WS-BPEL} & \multicolumn{1}{c|}{Não} & \multicolumn{1}{c|}{Algoritmo Genético} \\ 
+	\hline
+	IA e Fluxo de Trabalho & \multicolumn{1}{c|}{Grade} & \multicolumn{1}{c|}{VDL} & \multicolumn{1}{c|}{Sim} & \multicolumn{1}{c|}{Planejamento} \\ 
+	\hline
+	SWEP & \multicolumn{1}{c|}{-} & \multicolumn{1}{c|}{Linguagem Própria} & \multicolumn{1}{c|}{Sim} & \multicolumn{1}{c|}{Planejamento} \\ 
+	\hline
+	\end{tabular}
+	\normalsize
+\end{table}
+
+O projeto \emph{Ptolemy} (seção \ref{ptolemy}), que deu origem ao \emph{Kepler} (seção \ref{kepler}) não apresenta um ambiente distribuído definido, e pode ser adaptado para execução tanto em grades ou em um ambiente de nuvem. Como o \emph{Ptolemy} descreve apenas um modelo de implementação, não existe uma linguagem para definição de fluxos de trabalho. O sistema \UFPRsigla{SWEP} é o modelo proposto neste trabalho, e utiliza as principais características positivas dos trabalhos apresentados. O \UFPRsigla{SWEP} não tem seu desenvolvimento direcionado para grades ou nuvens, pois utiliza uma aplicação baseada na estrutura \UFPRsigla{P2P}, assim, cada nó deve possuir as características para se manter de forma autônoma na rede, coordenado por um nó central. O escalonamento das tarefas dos fluxos de trabalho é dado por planos de execução construídos automaticamente a partir de metadados dos históricos de execução e do estado de disponibilidade dos recursos do ambiente. Utiliza-se ainda, o conceito de implementação modular, na qual cada componente pode ser substituído de acordo com a necessidade do experimento.
+
+O modelo proposto é apresentado no capítulo \ref{modelo}.
+
+%Para os testes apresentados nesse trabalho, utilizou-se o trabalho \emph{PeerUnit} \cite{Almeida2008} como o componente de execução, e o \emph{CRIKEY} \cite{Halsey2004,Coles} como componente de planejamento. Maiores detalhes sobre o sistema são apresentados no capítulo \ref{modelo}.

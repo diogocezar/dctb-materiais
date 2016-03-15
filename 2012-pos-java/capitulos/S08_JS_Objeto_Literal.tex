@@ -1,0 +1,153 @@
+\section[JavaScript Objeto Literal]{JavaScript Objeto Literal}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JavaScript Objeto Literal}
+    \begin{itemize}
+      \item objeto literal é uma forma de organizar o código
+\textit{JavaScript};
+
+      \item recomenda-se: cada arquivo que necessite usar qualquer tipo de
+interação \textit{JavaScript} deve conter um objeto literal correspondente;
+
+      \item criação de um Objeto Literal:
+
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo Objeto Literal
+	}
+	\begin{lstlisting}
+	  var ObjetoLiteral = {
+
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item elementos não possuem distinção;
+    
+    \item podem ser:
+    
+    \begin{itemize}
+     \item atributos;
+     \item funções;
+     \item outros objetos;
+    \end{itemize}
+
+    \item exemplo de declaração destes elementos:
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo Objeto Literal - Elementos
+	}
+	\begin{lstlisting}
+	  var ObjetoLiteral = {
+	    contador: 0,
+	    init: function(){}
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item atribuição feita por ``:'';
+    
+    \item separação entre os elementos por ``,'';
+    
+    \framebreak
+    
+    \item convenções jQuery e Objeto Literal:
+    
+    \begin{itemize}
+     \item criar uma função de inicialização que irá ser executada ao carregar a
+página;
+     \item essa função é responsável por linkar os componentes HTML com as
+funções do Objeto Literal;
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo Objeto Literal - Init
+	}
+	\begin{lstlisting}
+	  var ObjetoLiteral = {
+	  init: function(){
+	    $("#id_div").click(ObjetoLiteral.acao);
+	  },
+	    acao: function(){ alert("Testando um ObjetoLiteral"); }
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item essa função de inicialização (No exemplo init) deverá ser invocada no
+método \textit{ready} do \textit{jQuery}:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo Objeto Literal - Chamda Init
+	}
+	\begin{lstlisting}
+	  $(document).ready(function(){
+	    ObjetoLiteral.init();
+	  });
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \framebreak
+    
+    \item Um exemplo completo:
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo Completo
+	}
+	\begin{lstlisting}
+	  var ObjetoLiteral = {
+	    init: function(){
+	      $("#id_div").click(ObjetoLiteral.acao);
+	    },
+	    acao: function(){ alert("Testando um ObjetoLiteral"); }
+	  }
+	  $(document).ready(function(){
+	    ObjetoLiteral.init();
+	  });
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item utilizar o script \texttt{validate.js} e criar um formulário com as
+seguintes restrições:
+       \begin{itemize}
+	\item nome (Obrigatório);
+	\item email (Obrigatório e Validado);
+	\item telefone (Opcional);
+	\item endereço (Obrigatório);
+	\item CPF (Obrigatório).
+       \end{itemize}
+      \end{itemize}
+\end{frame}

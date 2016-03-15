@@ -1,0 +1,24 @@
+catch(System.Exception e){
+  System.Console.WriteLine(e.Message);
+}
+
+catch(System.Exception e){
+  System.Console.WriteLine(e.Source);
+}
+
+catch(System.Exception e){
+  System.Console.WriteLine(e.HelpLink);
+}
+
+catch(System.Exception e){
+  System.Console.WriteLine(e.StackTrace);
+}
+
+throw e.InnerException;
+
+System.Reflection.MethodBase mb = e.TargetSite;
+if(mb.IsStatic) Console.Write("Membro que disparou a excessão é static");
+
+throw e.GetBaseException();
+
+e.SetHelpLink("http://www.microsoft.com/brasil/msdn");

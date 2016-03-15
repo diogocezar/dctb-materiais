@@ -1,0 +1,53 @@
+\begin{thebibliography}{1}
+
+\bibitem{ajith:06}
+A.~Abraham, H.~Guo, and H.~Liu.
+\newblock {\em Swarm Intelligent Systems}, chapter Swarm Intelligence:
+  Foundations, Perspectives and Applications, pages 3--25.
+\newblock Springer Verlag, 2006.
+
+\bibitem{brusilovsky:96}
+P.~Brusilovsky.
+\newblock Methods and techniques of adaptative hypermedia.
+\newblock In {\em User Modeling and User-Adapted Interaction}, volume~6.
+  Springer Netherlands, July 1996.
+
+\bibitem{dorigo:96}
+M.~Dorigo, V.~Maniezzo, and A.~Colorni.
+\newblock The {A}nt {S}ystem: {O}ptimization by a colony of cooperating agents.
+\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics Part B:
+  Cybernetics}, 26(1):29--41, 1996.
+
+\bibitem{lopes:06}
+H.~S. Lopes.
+\newblock Fundamentos de computação evolucionária e aplicações.
+\newblock In K.~R. Felizardo, editor, {\em Anais da Escola Regional de
+  Informática da Sociedade Brasileira de Computação}, pages 52--107,
+  Bandeirantes, PR, maio 2006. Departamento de Informática da FFALM.
+
+\bibitem{palazzo:02}
+L.~A.~M. Palazzo.
+\newblock Sistemas de hipermídia adaptativa.
+\newblock In {\em XXI Jornada de Atualização em Informática. XXII Congresso da
+  SBC}, Florianópolis, julho 2002.
+
+\bibitem{sousa:03}
+T.~Sousa, A.~Neves, and A.~Silva.
+\newblock Swarm optimisation as a new tool for data mining.
+\newblock In {\em IPDPS '03: Proceedings of the 17th International Symposium on
+  Parallel and Distributed Processing}, page 144.2, Washington, DC, USA, 2003.
+  IEEE Computer Society.
+
+\bibitem{interlegis}
+P.~H.~G. Vieira and R.~G. Caixeta.
+\newblock Implementação da heurística da formiga para auxiliar à navegação do
+  portal interlegis.
+\newblock 2004.
+
+\bibitem{zarnani:06}
+A.~Zarnani and M.~Rahgozar.
+\newblock Mining spatial trends by a colony of cooperative ant agents.
+\newblock In {\em SIAM Conference on Data Mining}, Bethesda, Maryland, USA,
+  April 2006. Society for Industrial and Applied Mathematics.
+
+\end{thebibliography}

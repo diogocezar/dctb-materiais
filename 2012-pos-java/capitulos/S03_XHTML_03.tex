@@ -1,0 +1,255 @@
+\section[XHTML - Parte 3]{XHTML - Parte 3}
+
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Manipulando Tabelas}
+    \begin{itemize}
+      \item os elementos \texttt{<table>} e \texttt{</table>} são responsáveis
+pela manutenção das tabelas nesta linguagem;
+      \item uma célula pode se estender por mais de uma coluna, para isto deve
+ser utilizado o atributo ``colspan'' seguido do número de colunas que a célula
+deve se expandir;
+      \item caso a célula tenha de ocupar mais de uma linha o atributo a ser
+utilizado é o ``rowspan'', ambos os atributos devem ser inseridos dentro de uma
+declaração \texttt{<td>} e \texttt{</td>}.
+      \item na construção de uma tabela podemos utilizar alguns elementos;
+      \item uma tabela ainda possui alguns atributos importantes;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Tabela Elementos}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/tabela-elementos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Tabela Atributos}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/tabela-atributos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Tabela - Exemplo}
+    \lstinputlisting[language=HTML,label=tabela-1,
+caption={Exemplo de Tabela}]{codes/XHTML_Tabela_1.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Tabela - Exemplo União Células}
+    \lstinputlisting[language=HTML,label=tabela-1,
+caption={Exemplo de Tabela - União de Células}]{codes/XHTML_Tabela_2.txt}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Imagens}
+    \begin{itemize}
+      \item atualmente os navegadores aceitam três formatos de figuras: GIF,
+JPEG e PNG;
+      \item utiliza-se o elemento \texttt{<img>};
+      \item atributo ``alt'' utilizado para fornecer um texto alternativo
+quando a imagem não puder ser visualizada;
+      \item atributo ``src'' utilizado para indicar a localização da
+figura;
+      \item imagens png e gif podem ter o fundo transparente;
+      \item as imagens referêntes ao layout de uma página não são manipuladas
+pela tag \texttt{<img>}, são adicionadas no arquivos CSS;
+      \item As imagens possuem alguns atributos importatens;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Imagens Atributos}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/imagem-atributos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Imagem - Exemplo}
+    \lstinputlisting[language=HTML,label=tabela-1,
+caption={Exemplo de Imagem}]{codes/XHTML_Imagem.txt}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Formulários}
+    \begin{itemize}
+      \item os formulários são utilizados para o envio de informações ao
+servidor ou para a interação da página com o usuário através do uso de
+JavaScripts;
+      \item os dados podem ser submetidos através de dois métodos \textbf{GET} e
+\textbf{POST}:
+      \begin{itemize}
+       \item \textit{GET}: os dados serão anexados à URL e enviados ao servidor;
+       \item \textit{POST}: envia os dados junto com as demais informações
+contidas no cabeçalho do HTTP;
+      \end{itemize}
+      \framebreak
+      \item ao contrário do \textit{POST} que pode manipula qualquer quantidade
+de informações, o \textit{GET} fica limitado pelo tamanho máximo permitido para
+uma URL;
+      \item O \textit{GET} é menos seguro, mas seu uso permite o reenvio de um
+formulário sem que o mesmo seja re-digitado;
+      \item O \textit{GET} pode funcionar como um controle para exibição do
+conteúdo de uma mesma página;
+      \item para a construção dos formulários devemos fazer uso dos elementos
+\texttt{<form>} e \texttt{</form>}, que possuem os seguintes atributos:
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Atributos}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/form-atributos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input}
+    \begin{itemize}
+     \item Para armazenar as informações fornecidas pelo usuário podemos fazer
+uso do elemento \texttt{<input />} , que possui os seguintes atributos:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/input-atributos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Formulário Input}
+    \begin{itemize}
+     \item os principais tipos do elemento ``input'' são:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/tipo-input-1.pdf}
+        \end{center}
+    \end{figure}
+    \framebreak
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/tipo-input-2.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Text}
+    \begin{itemize}
+     \item o elemento ``input'' do tipo \textit{text}, possui os atributos:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/input-text.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Buttom}
+    \begin{itemize}
+     \item o elemento ``input'' do tipo \textit{buttom}, possui os atributos:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/input-buttom.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Select}
+    \begin{itemize}
+     \item o elemento ``input'' do tipo \textit{select}, possui os atributos:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/input-selecao.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Lista de Seleção}
+    \begin{itemize}
+     \item para a criação de uma lista para seleção devemos utilizar
+o elemento \texttt{<select>} \texttt{</select>};
+    \item e o elemento \texttt{<option>} \texttt{</option>} é utilizado na
+definição de cada item da lista.
+    \end{itemize}
+        \lstinputlisting[language=HTML,label=selecao-1,
+caption={Exemplo de Lista de Seleção}]{codes/XHTML_Selecao.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Radio}
+    \begin{itemize}
+     \item utilizado para determinar a escolha de uma única opção;
+     \item para agrupar os radios utiliza-se o mesmo atributo ``name'';
+     \item o atributo ``value'' indica o valor do grupo;
+    \end{itemize}
+        \lstinputlisting[language=HTML,label=radio-1,
+caption={Exemplo de Radio}]{codes/XHTML_Radio.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - Checkbox}
+    \begin{itemize}
+     \item utilizado para marcar determinada opção;
+     \item para agrupar os checkbox utiliza-se o mesmo atributo ``name'';
+     \item o atributo ``value'' indica o valor do grupo;
+     \item pode-se marcar vários elementos de um mesmo grupo;
+    \end{itemize}
+        \lstinputlisting[language=HTML,label=heckbox-1,
+caption={Exemplo de Checkbox}]{codes/XHTML_Checkbox.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Formulário Input - TextArea}
+    \begin{itemize}
+     \item outro elemento para inserção informações é o \texttt{<textarea>}
+\texttt{</textarea>}. Ele permite a inserção de várias linhas, possui os
+atributos:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/form-textarea.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item faça uma página em \texttt{XHTML} utilizando:
+      \begin{itemize}
+	\item uma tabela de dias da semana;
+	\item uma tabela com duas células mescladas;
+	\item uma imagem;
+	\item um formulário com:
+	\begin{itemize}
+	 \item \textit{input} do tipo \textit{text};
+	 \item \textit{input} do tipo \textit{password};
+	 \item \textit{input} do tipo \textit{buttom};
+	 \item opções com \textit{radio buttom};
+	 \item opções com \textit{checkbox};
+	 \item \textit{combobox} de opções;
+	 \item \textit{textarea};
+	\end{itemize}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+

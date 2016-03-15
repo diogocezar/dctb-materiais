@@ -1,0 +1,42 @@
+\chapter{Recursos do Sistema}
+\label{recursos}
+
+Neste apêndice apresenta-se exemplos de códigos que representam as configurações utilizadas para o gerenciamento do sistema.
+
+\section{Aplicação}
+\label{ap-aplicacao}
+
+O código \ref{rec_aplicacao} mostra o arquivo XML que representa uma aplicação no sistema.
+
+\UFPRcode{Java}{rec_aplicacao}{Arquivo XML que representa uma aplicação}{codes/rec_aplicacao.txt}
+
+No código é possível observar as informações sobre os nós disponíveis, bem como os blocos que definem os fluxos de trabalho a serem executados.
+
+\section{Ações}
+\label{ap-acoes}
+
+O arquivo de ações contém informações para geração de um plano de execução. Um exemplo desse arquivo pode ser observado no código \ref{rec_acoes}.
+
+\UFPRcode{Java}{rec_acoes}{Arquivo XML que representa um conjunto de ações}{codes/rec_acoes.txt}
+
+Esse arquivo é o intermediário entre um plano gerado pelo \emph{planejador} e um plano de execução que é interpretado pelo \emph{gerenciador de execução}. Ao utilizar esse arquivo intermediário garante-se a modularidade, podendo assim, alterar a máquina que escalona as tarefas, desde que essa utilize o mesmo sistema de exportação de ações.
+
+\section{Dados}
+\label{ap-dados}
+
+A estrutura utilizada pode ser observada no código de exemplo \ref{rec_data}. A estrutura utilizada para o processamento e validação é baseada no cálculo de vetores de matrizes. Essas estruturas são mapeadas e traduzidas para uma estrutura de linhas e colunas.
+
+\UFPRcode{Java}{rec_data}{Arquivo XML que representa um conjunto de dados}{codes/rec_data.txt}
+
+\section{Logs e Proveniência}
+\label{logs-proveniencia}
+
+No código de exemplo \ref{rec_information} estão dispostas as informações sobre os nós. Estes são dados sobre o ocupação do nó assim que a execução é finalizada. No código de exemplo \ref{rec_log_task} são armazenadas quais as tarefas foram executadas por um nó, além do tempo de execução de cada tarefa. Os arquivos de \emph{log} de tarefas executadas é alimentado assim que uma tarefa é iniciada ou finalizada, dessa forma é possível informar ao \emph{OracleMetaData} qual o estado atual dos nós.
+
+No código \ref{rec_log} pode-se observar a saída do sistema de \emph{logs} aplicado ao modelo.
+
+\UFPRcode{Java}{rec_log}{Arquivo de log de execução do sistema}{codes/rec_log.txt}
+
+\UFPRcode{Java}{rec_information}{Arquivo que representa a informação coletada de um nó}{codes/rec_information.txt}
+
+\UFPRcode{Java}{rec_log_task}{Arquivo que representa a execução de tarefas de um nó}{codes/rec_log_task.txt}

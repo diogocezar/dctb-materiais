@@ -1,0 +1,14 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2008.9.16)  18 SEP 2008 10:08
+entering extended mode
+**C:/Documents*and*Settings/Diogo/Desktop/C#/materiais/cursoCSharp/apreCSharp/c
+apitulos/traterroexce.tex
+
+("C:\Documents and Settings\Diogo\Desktop\C#\materiais\cursoCSharp\apreCSharp\c
+apitulos\traterroexce.tex"
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, loaded.
+! Undefined control sequence.
+l.1 \section
+            {Tratamento De Erros E Exceções}
+? 

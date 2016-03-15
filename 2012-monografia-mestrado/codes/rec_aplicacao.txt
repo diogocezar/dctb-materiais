@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application numWorkflows="3" numHosts="3">
+  <hosts>
+    <host>h0</host>
+    <host>h1</host>
+    <host>h2</host>
+  </hosts>
+  <workflow>
+    <id>0</id>
+    <name>sum_ab</name>
+    <description>This workflow sum matrix a with matrix b.</description>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.sumVet_sequential(globals, id, 0, leechLogger);</operator>
+    <broadcast>JoinWorkFlows.broadcastResults_sumVet(globals, id, 0, leechLogger);</broadcast>
+    <data_input>
+      <data>matrix_a.xml</data>
+      <data>matrix_b.xml</data>
+    </data_input>
+    <data_output>
+      <data>matrix_i.xml</data>
+    </data_output>
+    <parallelism type="sequential" />
+  </workflow>
+  <workflow>
+    <id>1</id>
+    <name>sum_cd</name>
+    <description>This workflow sum matrix c with matrix d.</description>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.sumVet_sequential(globals, id, 1, leechLogger);</operator>
+    <broadcast>JoinWorkFlows.broadcastResults_sumVet(globals, id, 1, leechLogger);</broadcast>
+    <data_input>
+      <data>matrix_c.xml</data>
+      <data>matrix_d.xml</data>
+    </data_input>
+    <data_output>
+      <data>matrix_j.xml</data>
+    </data_output>
+    <parallelism type="sequential" />
+  </workflow>
+  <workflow>
+    <id>2</id>
+    <name>mult_ij</name>
+    <description>This workflow mult matrix i with matrix j.</description>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.multVet_parallel(globals, id, 2, leechLogger);</operator>
+    <broadcast>JoinWorkFlows.broadcastResults_multVet_parallel(globals, id, 2, leechLogger);</broadcast>
+    <data_input>
+      <data>matrix_i.xml</data>
+      <data>matrix_j.xml</data>
+    </data_input>
+    <data_output>
+      <data objective="true">matrix_out.xml</data>
+    </data_output>
+    <parallelism type="parallel">
+      <hosts>2</hosts>
+      <chunk_size>2</chunk_size>
+    </parallelism>
+  </workflow>
+</application>

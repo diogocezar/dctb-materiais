@@ -1,0 +1,113 @@
+\subsection[Aplicação ACO]{Aplicação ACO}
+
+\begin{frame}
+    \frametitle{Aplicação ACO}
+
+    \begin{itemize}
+        \item <1-> Proposta anteriormente proposta \emph{AntWeb};
+        \cite{interlegis}
+        \item <2-> Limitação: testes com usuários reais;
+        \begin{itemize}
+            \item <3-> Necessário se estabelecer página alvo;
+        \end{itemize}
+        \item <4-> Abordagem proposta: página alvo determinada pela
+        navegação colaborativa;
+    \end{itemize}
+\end{frame}
+
+\subsection{Modelo Proposto}
+
+\begin{frame}
+    \frametitle{Modelo Proposto}
+
+    Desenvolveu-se um modelo $M<P,G,F>$.
+
+    \begin{block}{Descrição do modelo}
+        \begin{itemize}
+            \item páginas ($P$);
+            \item grupos ($G$);
+            \item feromônio ($F$);
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Descrição do Modelo}
+
+        \begin{itemize}
+        \item $P$: é uma quádrupla $P<p, u, e, c>$;
+            \begin{itemize}
+                \item $p$=identificador; $u$=data e hora do último
+                acesso; $e$=endereço URL; $c$=número de acessos.
+            \end{itemize}
+
+        \item $G$: é uma dupla $G<g, n>$;
+            \begin{itemize}
+                \item $g$=identificador do grupo; $n$=número de acessos daquele
+                grupo.
+            \end{itemize}
+
+        \item $F$: é uma quádrupla $F<o, d, g, qf>$;
+            \begin{itemize}
+                \item $o$=identificador de
+                uma página origem; $d$=identificador da página destino; $g$=identificador de
+                grupo; $qf$=quantidade de feromônio.
+            \end{itemize}
+
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Acréscimo de Feromônio}
+
+        Para cada acesso, ocorre o acréscimo de feromônio de acordo com a
+        equação \ref{eq:acrescimo_feromonio}.
+
+        \begin{equation}
+            F_{odg} = F_{odg} + \xi
+            \label{eq:acrescimo_feromonio}
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $F_{odg}$ é quantidade de feromônio na aresta, que liga a origem $o$
+            ao destino $d$ para o grupo $g$.
+
+            \item $\xi$ é uma constante definida pelo administrador do sistema, que
+            significa a relevância de um acesso.
+
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Subtração de Feromônio}
+
+        A fórmula de subtração de feromônio foi baseada no conceito de juros
+        compostos e pode ser observada na equação \ref{eq:reducao}
+
+        \begin{equation}
+            \label{eq:reducao}
+            F_{odg} = F_{odg} * (1 - \frac{\varphi}{100})^\tau
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $\varphi$ é a taxa de evaporação de feromônio, constante
+            definida pelo administrador, dependente do tempo; \\
+
+
+            \item $\tau$ é o intervalo de tempo, que a página ficou sem acessos,
+            determinado pela equação~\ref{eq:tau}.
+
+        \end{itemize}
+
+        \begin{equation}
+            \tau = t_{atual} - t_{ultimo acesso}
+            \label{eq:tau}
+        \end{equation}
+
+\end{frame}

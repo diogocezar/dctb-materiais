@@ -1,0 +1,22 @@
+(define (problem problem_matrix)
+(:domain matrix)
+	(:objects
+		<data>  - data
+		<task>  - task
+		<hosts> - hosts
+	)
+	(:init
+		(have $D)
+		(input_$X $D $T)
+		(output_$X $D $T)
+		(availiable $H)
+		(half-availiable $H)
+		(= (total-cost) 0)
+	)
+	(:goal
+		(and 	
+			(have $D)
+		)	
+	)
+	(:metric minimize (total-cost))
+)

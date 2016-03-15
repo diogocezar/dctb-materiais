@@ -1,0 +1,105 @@
+\section[Modelo Proposto - Smart Workflow Execution by Planning (SWEP)]{Modelo Proposto - Smart Workflow Execution by Planing (SWEP)}
+
+\begin{frame}
+    \frametitle{Proposta SWEP - \emph{Smart Workflow Execution by Planing}}
+	\begin{itemize}
+		\item Planejador (\emph{CRIKEY});
+		\item Ambiente P2P (\emph{PeerUnit});
+		\item Características:
+		\begin{itemize}
+			\item métricas flexíveis;
+			\item técnicas de paralelização;
+			\item proveniência e metadados;
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelo Proposto - SWEP (\emph{Smart Workflow Execution by Planing})}
+	\begin{itemize}
+		\item visão geral;
+		\item visão detalhada;
+		\item paralelismos;
+		\item métricas flexíveis;
+		\item método de tradução;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_overview-1.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_overview-2.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_overview-3.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_overview-4.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_overview-5.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/fig_sys_detailed_red.jpg}
+	\end{changemargin}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Paralelismos}
+    \begin{itemize}
+		\item paralelismo sobre dados:
+		\begin{itemize}
+			\item divisão do processamento de um único fluxo de trabalho;
+			\item desenvolvedor insere as configurações (número de nós ou tamanho dos blocos);
+		\end{itemize}
+		\item paralelismo sobre execução:
+		\begin{itemize}
+			\item paralelismo entre execução de múltiplos fluxos de trabalho;
+			\item plano paralelo: pondera as dependências de dados;
+			\item ordem correta de execução;
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplos de Paralelismo - Plano de Execução}
+	\begin{center}
+	\includegraphics[width=9cm]{../images/fig_sys_parallel_model.jpg}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Métrica Flexível}
+    \begin{itemize}
+		\item planejamento baseado nos custos das ações;
+		\item oráculo:
+		\begin{itemize}
+			\item verifica-se a taxa de ocupação dos nós (livre, parcialmente ocupado ou ocupado);
+			\item aplica-se custos pré-definidos para cada uma das situações;
+		\end{itemize}
+		\item utilização do planejamento de custos para aplicação de outras métricas:
+		\begin{itemize}
+			\item minimização do consumo de energia elétrica;
+			\item maximização de aproveitamento dos recursos;
+		\end{itemize}
+		\item quantidade de trabalho pode variar de acordo com a situação dos recursos, em planos diferentes;
+	\end{itemize}
+\end{frame}

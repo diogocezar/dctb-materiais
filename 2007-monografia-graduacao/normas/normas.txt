@@ -1,0 +1,67 @@
+NBR 14724:2995
+
+- Papel branco, tamanho A4;
+- Letra tamanho 12;
+- Fonte : Arial, Times New Roman;
+- Margens : Superior : 3cm
+            Inferior : 2cm
+            Esquerda : 3cm
+            Direita  : 2cm
+
+- Espacejamento : 1,5;
+
+- Parágrafo : 3cm;
+
+[PRE-TEXTUAIS]
+
+	Capa {TITULO:SUBTITULO};
+	Folha de Rosto;
+	Errata {Folha geralmente solta, com alguma correção referente ao texto};
+	Epígrafe {Fraze do autor};
+	Dedicatória;
+	Agradecimentos {A palavra aparece};
+	Sumário;
+
+		1.    PRIMARIO (MAIÚSCULO, NEGRITO)
+		1.1   sECUNDÁRIO (MAIÚSCULAS)
+		1.1.1 Terciário (Minúsculo, Primeira letra Maisúculo)
+		
+	Resumo;
+
+		Palavras Chave : ... [3,5]
+
+	Abstract {Mesmo que o resumo em inglês}
+
+	Listas;
+
+		Siglas;
+		Tabelas;
+		Figuras;
+		Listas;
+		Quadros;
+		Algorítimos;
+		Equações;
+
+[TEXTUAIS]
+
+	Introdução;
+	Desenvolvimento;
+	Conclusão;
+
+[POS-TEXTUAL]
+
+	Referência;
+	Anexo;
+	Apêncice;
+	Glossário;
+	Índice;
+
+============================================
+
+Trabalho em dupla:
+
+1) Direfença entre referência e bibliografia;
+
+2) Diferença entre índice e sumário;
+
+3) Diferença entre anexo e apêndice; 

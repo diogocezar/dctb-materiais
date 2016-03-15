@@ -1,0 +1,2 @@
+Console.WriteLine("Full Name is : {0}", dir1.FullName);
+Console.WriteLine("Attributes are : {0}", dir1.Attributes.ToString());

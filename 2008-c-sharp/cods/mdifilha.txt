@@ -1,0 +1,4 @@
+wndFilha myWnd = new wndFilha( );
+myWnd.MdiParent = this;
+myWnd.Text = "Janela Filha";
+myWnd.Show();

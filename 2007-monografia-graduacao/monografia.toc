@@ -1,0 +1,150 @@
+\select@language {brazil}
+\contentsline {chapter}{DEDICAT\'ORIA}{i}
+\contentsline {chapter}{AGRADECIMENTOS}{ii}
+\contentsline {chapter}{EP\'IGRAFE}{iii}
+\contentsline {chapter}{RESUMO}{iv}
+\contentsline {chapter}{ABSTRACT}{v}
+\contentsline {chapter}{LISTA DE FIGURAS}{vi}
+\contentsline {chapter}{LISTA DE TABELAS}{ix}
+\contentsline {chapter}{LISTA DE C\'ODIGOS}{xi}
+\contentsline {chapter}{LISTA DE ABREVIATURAS E SIGLAS}{xii}
+\contentsline {chapter}{\numberline {1}\uppercase {INTRODU\c C\~AO}}{1}
+\contentsline {chapter}{\numberline {2}\uppercase {FUNDAMENTOS TE\'ORICOS}}{3}
+\contentsline {section}{\numberline {2.1}\uppercase {HIPERTEXTO E HIPERM\'IDIA}}{3}
+\contentsline {section}{\numberline {2.2}\uppercase {HIPERM\'IDIA ADAPTATIVA}}{4}
+\contentsline {subsection}{\numberline {2.2.1}M\'ETODOS PARA NAVEGA\c C\~AO ADAPTATIVA}{5}
+\contentsline {subsection}{\numberline {2.2.2}T\'ECNICAS DE NAVEGA\c C\~AO ADAPTATIVA}{5}
+\contentsline {subsection}{\numberline {2.2.3}REDES DE INFORMA\c C\~OES COMO REDES QUANTIZADAS}{6}
+\contentsline {section}{\numberline {2.3}\uppercase {COMPUTA\c C\~AO EVOLUCION\'ARIA}}{7}
+\contentsline {chapter}{\numberline {3}\uppercase {OTIMIZA\c C\~AO POR COL\^ONIAS DE FORMIGAS}}{9}
+\contentsline {section}{\numberline {3.1}\uppercase {FORMIGAS REAIS EM BUSCA DE ALIMENTO}}{10}
+\contentsline {section}{\numberline {3.2}\uppercase {A HEUR\'ISTICA ACO}}{11}
+\contentsline {subsection}{\numberline {3.2.1}Descri\c c\~ao do M\'etodo}{11}
+\contentsline {section}{\numberline {3.3}\uppercase {ACO e HIPERM\'IDIA}}{12}
+\contentsline {subsection}{\numberline {3.3.1}Trabalho Relacionado: AntWeb}{13}
+\contentsline {chapter}{\numberline {4}\uppercase {PROJETO ORIANT}}{15}
+\contentsline {section}{\numberline {4.1}\uppercase {RELEV\^ANCIA}}{15}
+\contentsline {section}{\numberline {4.2}\uppercase {N\'UCLEO DO SISTEMA (ENGINE)}}{16}
+\contentsline {subsection}{\numberline {4.2.1}M\'odulo: Computa\c c\~ao de Ferom\^onio}{16}
+\contentsline {subsection}{\numberline {4.2.2}M\'odulo: Adapta\c c\~ao}{18}
+\contentsline {subsection}{\numberline {4.2.3}M\'odulo: Administra\c c\~ao}{20}
+\contentsline {subsection}{\numberline {4.2.4}GERENCIAMENTO DOS REGISTROS}{21}
+\contentsline {section}{\numberline {4.3}\uppercase {RESTRI\c C\~OES}}{22}
+\contentsline {chapter}{\numberline {5}\uppercase {MODELAGEM}}{23}
+\contentsline {section}{\numberline {5.1}\uppercase {METODOLOGIA}}{23}
+\contentsline {section}{\numberline {5.2}\uppercase {UML}}{25}
+\contentsline {section}{\numberline {5.3}\uppercase {ARTEFATOS GERADOS}}{25}
+\contentsline {subsection}{\numberline {5.3.1}Levantamento dos requisitos funcionais e n\~ao-funcionais}{25}
+\contentsline {subsection}{\numberline {5.3.2}Levantamento dos atores e casos de uso}{27}
+\contentsline {subsection}{\numberline {5.3.3}Especifica\c c\~ao dos casos de uso}{29}
+\contentsline {subsection}{\numberline {5.3.4}Diagramas de seq\"u\^encia}{39}
+\contentsline {subsection}{\numberline {5.3.5}Diagrama de classes}{46}
+\contentsline {subsection}{\numberline {5.3.6}Modelo Relacional}{51}
+\contentsline {subsection}{\numberline {5.3.7}Diagrama de pacotes}{52}
+\contentsline {subsection}{\numberline {5.3.8}Diagrama de implanta\c c\~ao}{53}
+\contentsline {subsection}{\numberline {5.3.9}Diagrama de componentes}{54}
+\contentsline {chapter}{\numberline {6}\uppercase {TECNOLOGIA}}{56}
+\contentsline {section}{\numberline {6.1}\uppercase {LINGUAGEM DE PROGRAMA\c C\~AO}}{56}
+\contentsline {section}{\numberline {6.2}\uppercase {BANCO DE DADOS}}{57}
+\contentsline {section}{\numberline {6.3}\uppercase {SERVIDOR DE APLICA\c C\~AO}}{57}
+\contentsline {chapter}{\numberline {7}\uppercase {FRAMEWORK \emph {SpaceBrain}}}{58}
+\contentsline {section}{\numberline {7.1}\uppercase {CONCEITOS}}{58}
+\contentsline {section}{\numberline {7.2}\uppercase {NEUR\^ONIOS}}{60}
+\contentsline {section}{\numberline {7.3}\uppercase {MAPEAMENTO DAS TABELAS DO SISTEMA}}{60}
+\contentsline {section}{\numberline {7.4}\uppercase {CLASSE GEN\'ERICA}}{62}
+\contentsline {section}{\numberline {7.5}\uppercase {VANTAGENS E DESVANTAGENS DO FRAMEWORK}}{62}
+\contentsline {section}{\numberline {7.6}\uppercase {TRATAMENTO DE ERROS}}{63}
+\contentsline {section}{\numberline {7.7}\uppercase {ARQUIVO DE CONFIGURA\c C\~AO DO SISTEMA}}{63}
+\contentsline {chapter}{\numberline {8}\uppercase {DESENVOLVIMENTO}}{64}
+\contentsline {section}{\numberline {8.1}\uppercase {RECURSOS DE DESENVOLVIMENTO}}{64}
+\contentsline {subsection}{\numberline {8.1.1}CSS}{64}
+\contentsline {subsection}{\numberline {8.1.2}TABLELESS}{64}
+\contentsline {subsection}{\numberline {8.1.3}RSS}{65}
+\contentsline {subsection}{\numberline {8.1.4}AJAX}{66}
+\contentsline {subsection}{\numberline {8.1.5}JAVASCRIPT}{66}
+\contentsline {section}{\numberline {8.2}\uppercase {INTERNACIONALIZA\c C\~AO}}{67}
+\contentsline {section}{\numberline {8.3}\uppercase {FRAMEWORKS UTILIZADOS}}{68}
+\contentsline {subsection}{\numberline {8.3.1}PEAR}{68}
+\contentsline {subsection}{\numberline {8.3.2}Sajax}{68}
+\contentsline {chapter}{\numberline {9}\uppercase {SUBSISTEMA PARA TESTES}}{69}
+\contentsline {section}{\numberline {9.1}\uppercase {Modelo Relacional}}{69}
+\contentsline {section}{\numberline {9.2}\uppercase {Sistema de Avalia\c c\~ao}}{70}
+\contentsline {section}{\numberline {9.3}\uppercase {Sistema de Coment\'arios}}{71}
+\contentsline {chapter}{\numberline {10}\uppercase {AN\'ALISE DE RESULTADOS E DISCUSS\~AO}}{72}
+\contentsline {section}{\numberline {10.1}\uppercase {Etapa 1: Testes isolados com 3 usu\'arios desprezando intervalo de tempo}}{73}
+\contentsline {subsubsection}{Usu\'ario 1 - Navega\c c\~ao Aleat\'oria}{76}
+\contentsline {subsubsection}{Usu\'ario 1 - Navega\c c\~ao Objetiva}{78}
+\contentsline {subsubsection}{Usu\'ario 2 - Navega\c c\~ao Aleat\'oria}{79}
+\contentsline {subsubsection}{Usu\'ario 2 - Navega\c c\~ao Objetiva}{81}
+\contentsline {subsubsection}{Usu\'ario 3 - Navega\c c\~ao Aleat\'oria}{82}
+\contentsline {subsubsection}{Usu\'ario 3 - Navega\c c\~ao Objetiva}{84}
+\contentsline {subsubsection}{An\'alise de Resultados}{84}
+\contentsline {section}{\numberline {10.2}\uppercase {Etapa 2: Teste com v\'arios usu\'arios desprezando intervalo de tempo}}{85}
+\contentsline {subsection}{\numberline {10.2.1}An\'alise de resultados}{87}
+\contentsline {section}{\numberline {10.3}\uppercase {Etapa 3: Teste isolado com um usu\'ario em diferentes intervalos de tempo}}{87}
+\contentsline {subsubsection}{Links acessados ap\'os 1 hora do rein\IeC {\'\i }cio dos registros}{89}
+\contentsline {subsubsection}{Links acessados ap\'os 10 horas do rein\IeC {\'\i }cio dos registros}{90}
+\contentsline {subsubsection}{Links acessados ap\'os 24 horas do rein\IeC {\'\i }cio dos registros}{91}
+\contentsline {subsection}{\numberline {10.3.1}An\'alise de resultados}{91}
+\contentsline {section}{\numberline {10.4}\uppercase {CONCLUS\~AO}}{93}
+\contentsline {chapter}{\numberline {11}\uppercase {RECURSOS COMPUTACIONAIS}}{94}
+\contentsline {section}{\numberline {11.1}\uppercase {RECURSOS DISPON\'IVEIS PARA DESENVOLVIMENTO}}{94}
+\contentsline {subsection}{\numberline {11.1.1}Recursos de Hardware}{94}
+\contentsline {subsection}{\numberline {11.1.2}Recursos de \emph {Software}}{94}
+\contentsline {section}{\numberline {11.2}\uppercase {RECURSOS NECESS\'ARIOS PARA UTILIZA\c C\~AO}}{95}
+\contentsline {subsection}{\numberline {11.2.1}Usu\'ario}{95}
+\contentsline {subsection}{\numberline {11.2.2}\emph {Website} Hospedeiro}{95}
+\contentsline {chapter}{\numberline {12}\uppercase {CRONOGRAMAS}}{97}
+\contentsline {section}{\numberline {12.1}\uppercase {Atividades}}{97}
+\contentsline {section}{\numberline {12.2}\uppercase {Disciplinas}}{97}
+\contentsline {section}{\numberline {12.3}\uppercase {Itera\c c\~oes}}{97}
+\contentsline {chapter}{\numberline {13}\uppercase {CONCLUS\~AO}}{100}
+\contentsline {section}{\numberline {13.1}\uppercase {TRABALHOS FUTUROS}}{101}
+\contentsline {chapter}{REFER\^ENCIAS}{102}
+\contentsline {chapter}{Ap\^endice{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} GLOSS\'ARIO}{104}
+\contentsline {section}{\numberline {A.1}\uppercase {INTRODU\c C\~AO}}{104}
+\contentsline {section}{\numberline {A.2}\uppercase {OBJETIVO}}{104}
+\contentsline {section}{\numberline {A.3}\uppercase {ESCOPO}}{104}
+\contentsline {section}{\numberline {A.4}\uppercase {DEFINI\c C\~OES}}{105}
+\contentsline {chapter}{Ap\^endice{} B{} -$\tmspace -\thinmuskip {.1667em}$-{} PERGUNTAS FREQ\"UENTES}{108}
+\contentsline {paragraph}{O que \'e OriAnt?}{108}
+\contentsline {paragraph}{Por que o nome OriAnt?}{108}
+\contentsline {paragraph}{Por que escolher um grupo?}{108}
+\contentsline {paragraph}{Caso eu n\~ao escolha um grupo o sistema funcionar\'a?}{108}
+\contentsline {paragraph}{Eu posso escolher outro grupo durante a navega\c c\~ao?}{108}
+\contentsline {paragraph}{Ao clicar nos links da camada OriAnt, ainda continuarei no site em que estou navegando?}{108}
+\contentsline {paragraph}{Outros usu\'arios podem ver as p\'aginas que eu acesso?}{109}
+\contentsline {paragraph}{Os tipos de orienta\c c\~ao interferem no \emph {link} clicado?}{109}
+\contentsline {paragraph}{Intera\c c\~oes com a p\'agina como: Coment\'arios, Avalia\c c\~oes e Contatos interferem na computa\c c\~ao dos cliques?}{109}
+\contentsline {paragraph}{Onde o OriAnt armazena as informa\c c\~oes?}{109}
+\contentsline {paragraph}{O OriAnt funciona para um \emph {site} externo ao dom\IeC {\'\i }nio, por exemplo, eu poderia usar o OriAnt no site da UOL?}{109}
+\contentsline {paragraph}{O website hospedeiro poder\'a utilizar banco de dados?}{109}
+\contentsline {paragraph}{O \emph {website} hospedeiro deve utilizar o banco de dados PostGreSQL?}{109}
+\contentsline {paragraph}{O \emph {website} hospedeiro pode conter \emph {frames}?}{109}
+\contentsline {paragraph}{O website poder\'a utilizar javascript para redirecionar um \emph {link}?}{110}
+\contentsline {paragraph}{Deve-se ter os \emph {cookies} habilitado para navegar no sistema?}{110}
+\contentsline {paragraph}{Qual a diferen\c ca entre os tipos de orienta\c c\~ao?}{110}
+\contentsline {subparagraph}{\emph {Disposi\c c\~ao objetiva}:}{110}
+\contentsline {subparagraph}{\emph {Disposi\c c\~ao orientada}:}{110}
+\contentsline {subparagraph}{\emph {Disposi\c c\~ao relacionada}:}{110}
+\contentsline {paragraph}{Qual a diferen\c ca entre os contextos de orienta\c c\~ao?}{110}
+\contentsline {subparagraph}{\emph {Essa P\'agina}:}{110}
+\contentsline {subparagraph}{\emph {Todas as P\'aginas}:}{110}
+\contentsline {chapter}{Ap\^endice{} C{} -$\tmspace -\thinmuskip {.1667em}$-{} APRESENTA\c C\~AO DA CAMADA ORIANT}{111}
+\contentsline {chapter}{Ap\^endice{} D{} -$\tmspace -\thinmuskip {.1667em}$-{} APRESENTA\c C\~AO DO SUBSISTEMA PARA TESTES}{113}
+\contentsline {chapter}{Ap\^endice{} E{} -$\tmspace -\thinmuskip {.1667em}$-{} IMPLEMENTA\c C\~AO DOS RECURSOS DE DESENVOLVIMENTO}{116}
+\contentsline {section}{\numberline {E.1}\uppercase {TABLELESS}}{116}
+\contentsline {section}{\numberline {E.2}\uppercase {RSS}}{120}
+\contentsline {section}{\numberline {E.3}\uppercase {AJAX}}{122}
+\contentsline {chapter}{Ap\^endice{} F{} -$\tmspace -\thinmuskip {.1667em}$-{} OUTROS NEUR\^ONIOS}{124}
+\contentsline {paragraph}{Cryptography}{124}
+\contentsline {paragraph}{Freight}{124}
+\contentsline {paragraph}{Inifile}{124}
+\contentsline {paragraph}{Photo}{124}
+\contentsline {paragraph}{Pikture}{124}
+\contentsline {paragraph}{RssGenerator}{124}
+\contentsline {paragraph}{SendFile}{125}
+\contentsline {paragraph}{SendMail}{125}
+\contentsline {chapter}{Ap\^endice{} G{} -$\tmspace -\thinmuskip {.1667em}$-{} CLASSE GEN\'ERICA}{126}
+\contentsline {chapter}{Ap\^endice{} H{} -$\tmspace -\thinmuskip {.1667em}$-{} CONSTANTES DE ERROS}{128}
+\contentsline {chapter}{ANEXO{} A{} -$\tmspace -\thinmuskip {.1667em}$-{} PROPOSTA DE TRABALHO DE DIPLOMA\c C\~AO}{130}

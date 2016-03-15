@@ -1,0 +1,144 @@
+\chapter{GLOSSÁRIO}\label{ape:glossario}
+
+\par
+Este documento apresenta um glossário com os termos importantes
+utilizados no projeto de desenvolvimento da ferramenta de apoio ao
+desenvolvimento global de \emph{software}.
+
+\UTFPRsection{INTRODUÇÃO}
+
+O presente documento provê um conjunto de definições importantes
+para evitar ambigüidades, de forma que os leitores compreendam as
+terminologias específicas utilizadas nesse projeto.
+
+\UTFPRsection{OBJETIVO}
+
+Auxiliar os leitores na compreensão de alguns termos técnicos
+descritos durante o documento.
+
+\UTFPRsection{ESCOPO}
+
+Este glossário está associado ao projeto de desenvolvimento de uma
+ferramenta de apoio a navegação, utilizando conceitos de hipermídia
+adaptativa e otimização por colônia de formigas.
+
+%\UTFPRsection{ORGANIZAÇÃO DO DOCUMENTO}
+%
+%A Seção \ref{sec:glodef} apresenta os termos relevantes ao
+%desenvolvimento desta ferramenta e suas definições. A listagem
+%encontra-se em ordem alfabética para facilitar o acesso a palavras
+%específicas.
+
+\newpage
+
+\UTFPRsection[sec:glodef]{DEFINIÇÕES}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRglossario{ajax}{Asynchronous Javascript And XML. É o uso
+sistemático de tecnologias providas por navegadores, Javascript e
+XML, para tornar páginas mais interativas com o usuário.}
+
+\UTFPRglossario{algoritmo}{algoritmo é uma sequência finita e não
+ambígua de instruções computáveis para solucionar um problema.}
+
+\UTFPRglossario{\emph{array}}{Matriz, tabela, conjunto de objetos
+que está organizado geometricamente, utilizado para descrever
+estruturas repetitivas ou sistemáticas dentro do sistema.}
+
+\UTFPRglossario{\emph{frame}}{(Moldura ou quadro) São subdivisões da
+janela principal do navegador ou \emph{browser}. Cada subdivisão
+funciona como uma pequena janela, exibindo conteúdos independentes.
+Os criadores de \emph{sites} da \emph{Web} utilizam este recurso
+quando é necessário exibir muitas informações de uma só vez. Em
+comunicação de dados, é um grupo de \emph{bits} que forma um bloco
+adequado à transmissão como unidade.}
+
+\UTFPRglossario{\emph{framework}}{Coleção abstraída de classes,
+interfaces e padrões, dedicados a resolver uma família de problemas
+semelhantes, através de uma arquitetura flexível e extensível.}
+
+\UTFPRglossario{grafo}{Em matemática e ciência da computação, grafo
+é o objeto básico de estudo da teoria dos grafos. Tipicamente, um
+grafo é representado como um conjunto de pontos (vértices) ligados
+por retas (as arestas). Dependendo da aplicação, as arestas podem
+ser direcionadas, e são representadas por "setas".}
+
+\UTFPRglossario{heurística}{Método de solução de problemas indutivo
+baseado em regras derivadas do senso comum ou da experiência de um
+modelo teórico da matemática. Fornece uma base geral para a solução
+de problemas, contrastando com abordagens estritamente algorítmicas,
+que nunca variam.}
+
+\UTFPRglossario{\emph{hiperlinks}}{São palavras ou ilustrações
+pré-estabelecidas como pontos de saltos. Quando clicadas, provocam a
+transferência para outro assunto ou página Web.}
+
+\UTFPRglossario{hipermídia}{Documento que contém imagens, sons,
+textos e vídeos, utilizando ligações de hipertextos para permitir o
+acesso para outro documento.}
+
+\UTFPRglossario{hipertextos}{Em computação, hipertexto é um sistema
+para a visualização de informação cujos documentos contém
+referências internas para outros documentos (chamadas de
+\emph{hiperlinks} ou, simplesmente, \emph{links}), e para a fácil
+publicação, atualização e pesquisa de informação.}
+
+\UTFPRglossario{javascript}{Linguagem de programação, criada pela
+Netscape, que funciona interativamente com o código HTML, aumentando
+os recursos do navegador.}
+
+\UTFPRglossario[\emph{links}]{\emph{links}}{O mesmo que
+\emph{hiperlinks}.}
+
+\UTFPRglossario{multimídia}{Tecnologia que permite combinar, em um
+único programa ou método de acesso (rede, CD-ROM, etc.), informações
+em diferentes meios, tais como texto, imagens estáticas e dinâmicas,
+clipes de áudio e de vídeo. Inclui funções de interatividade, ou
+seja, a possibilidade do usuário interagir com o programa na forma
+de um diálogo bidirecional. Também chamado de multimeios.}
+
+\UTFPRglossario{navegação}{Ato de conectar-se a diferentes
+computadores da rede distribuídos pelo mundo, usando as facilidades
+providas por ferramentas como browsers Web. O navegante da rede
+realiza uma "viagem" virtual explorando o ciberespaço, da mesma
+forma que o astronauta explora o espaço sideral.}
+
+\UTFPRglossario{nodo}{Um Nodo ou nó representa cada ponto de
+inter-conexão com uma estrutura ou rede, independente da função do
+equipamento representado por ele.}
+
+\UTFPRglossario{POSIX}{POSIX é o nome de uma familia de normas
+relacionadas definidas pelo IEEE e designada formalmente por IEEE
+1003. A designação internacional da norma é ISO/IEC 9945. A
+normalização das especificações POSIX surgiram de um projeto,
+iniciado por volta de 1985, que tinha como objetivo normalizar a
+interface de programação de aplicações para \emph{software}
+desenhado para correr em variantes do sistema operativo UNIX.}
+
+\UTFPRglossario{processo unificado}{O Processo Unificado (UP) de
+desenvolvimento de sistemas combina os ciclos interativo e
+incremental para a construção de \emph{softwares}. É fundamental na
+visão de que o avanço de um projeto deve estar baseado na construção
+de artefatos de \emph{software}, e não apenas em documentação.}
+
+\UTFPRglossario{\emph{software}}{São os programas, dados e rotinas
+desenvolvidos para computadores. Os programas de \emph{software}
+precisam ser instalados nos computadores para que eles passem a
+desempenhar determinadas funções.}
+
+\UTFPRglossario{web}{Termo usado para representar a grande rede de
+informações de multimídia da Internet}
+
+\UTFPRglossario{\emph{website}}{Um sítio, mais conhecido pelo
+equivalente inglês \emph{site}, de \emph{website} ou \emph{web
+site}, é uma coleção de páginas \emph{web}, isto é, de documentos
+acessíveis através da \emph{World Wide Web}, na Internet.}
+
+\UTFPRglossario{\emph{workflows}}{Fluxo de trabalho, ou seja, um
+sistema de informação que gere um conjunto de tarefas tipicamente
+rotineiras, assegurando o controlo das entregas, dos tempos de
+resposta, o \emph{time-stamping} (a que horas determinada tarefa foi
+executada) a não repudiação, a pesquisa de informação eo arquivo.}
+
+\UTFPRimprimeGlossario

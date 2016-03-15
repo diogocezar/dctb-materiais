@@ -1,0 +1,97 @@
+\documentclass[compress]{beamer}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\pdfpageattr {/Group << /S /Transparency /I true /CS /DeviceRGB>>}
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{1,1,1}
+
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	rulecolor=,
+	language=matlab,
+    basicstyle=\tiny,
+    upquote=true,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+\usetheme{Ilmenau}
+%vinho
+%\usecolortheme[RGB={75,11,31}]{structure}
+%verde
+%\usecolortheme[RGB={35,75,11}]{structure}
+%azul
+\usecolortheme[RGB={149,188,44}]{structure}
+\setbeamercovered{transparent}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setlength{\tabcolsep}{1mm}
+%\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}[default]
+\setbeamertemplate{footline}[default]
+\setbeamertemplate{footline}{\hspace*{.5cm}\scriptsize{\hfill\vspace*{0.3cm}\insertframenumber\hspace*{.5cm}}}
+
+\newenvironment{changemargin}[2]{%
+  \begin{list}{}{%
+    \setlength{\topsep}{0pt}%
+    \setlength{\leftmargin}{#1}%
+    \setlength{\rightmargin}{#2}%
+    \setlength{\listparindent}{\parindent}%
+    \setlength{\itemindent}{\parindent}%
+    \setlength{\parsep}{\parskip}%
+  }%
+  \item[]}{\end{list}}
+
+%%%%%%%%%%%
+% C A P A %
+%%%%%%%%%%%
+
+%\title{Técnicas de Planejamento para Geração de Planos de Execução em um Sistema Gerenciador de Fluxos de Trabalho Científico}
+
+\title{SERVLETS E JSP (JEE) - CSS - Parte 2}
+
+\author{Diogo Cezar Teixeira Batista \\
+       {\footnotesize\ttfamily diogo@diogocezar.com.br} \\
+       {\footnotesize\ttfamily http://www.diogocezar.com}
+}
+
+\institute{\large Universidade Tecnológica Federal do Paraná - UTFPR}
+
+\date{Cornélio Procópio - 2012}
+
+\begin{document}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% S L I D E S  I N I C I A I S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/titulo}
+
+%%%%%%%%%%%%%%%%%%%
+% C O N T E Ú D O %
+%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/S04_CSS_02}
+
+\end{document}

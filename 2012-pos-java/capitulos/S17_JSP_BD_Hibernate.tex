@@ -1,0 +1,169 @@
+\section[JSP Banco de Dados (Hibernate)]{JSP Banco de Dados (Hibernate)}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Banco de Dados (Hibernate)}
+    \begin{itemize}
+      \item o \textit{Hibernate} é um \textit{framework} para o mapeamento
+objeto-relacional escrito na linguagem Java;
+      \item este \textit{framework} facilita o mapeamento dos atributos entre
+uma base tradicional de dados relacionais e o modelo objeto de uma aplicação;
+      \item uso de arquivos (XML) ou anotações Java;
+    
+    
+    \framebreak 
+    
+    \item Arquivo de configuração: \textit{hibernate.cfg.xml}
+    
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=XML
+      }
+      \begin{lstlisting}
+	<hibernate-configuration>
+	<session-factory>
+	<property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+	<propertyname="hibernate.connection.driver_class">org.postgresql.Driver</property>
+	<propertyname="hibernate.connection.url">jdbc:postgresql://localhost:5432/alunos</property>
+	<property name="hibernate.connection.username">postgres</property>
+	<property name="hibernate.connection.password">*****</property>
+	<property name="show_sql">true</property>
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<mapping class="model.Aluno"/>
+	<mapping class="model.Endereco"/>
+	</session-factory>
+	</hibernate-configuration>
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \item MVC: é um modelo de desenvolvimento de \textit{Software};
+
+  \item é um padrão de arquitetura de aplicações que visa
+separar a lógica da aplicação (\textit{Model}), da interface do usuário (\textit{View}), e do fluxo da aplicação (\textit{Controller});
+  
+  \item \textit{Model} (Modelo): representa os dados;
+  
+  \item \textit{View} (Visão): representa a interface de interação com o usuário;
+  
+  \item \textit{Controller} (Controle): representa o elo de ligação entre visão e modelo, é reponsável também por tratar a regra de negócios;
+  
+  \framebreak
+  
+  \item Organização dos arquivos:
+  
+  \begin{itemize}
+    \item ClasseField e ClasseList: Responsável por tratar a iteração com o usuário;
+    \item ClasseDAO: Responsável por invocar as interações com os dados de um modelo;
+    \item Classe: Modelo que representa os campos da tabela;
+  \end{itemize}
+  
+  \framebreak
+  
+  \item Exemplo Aluno - AlunoDAO:
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=Java
+      }
+      \begin{lstlisting}
+	public class AlunoDAO {
+	  private SessionFactory factory;
+	  public AlunoDAO(){
+	    ...
+	  }
+	  public List<Aluno> getAllList(){
+	    ...
+	  }
+	  public void insert(Aluno aluno){
+	    ...
+	  }
+	}
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \item Exemplo aluno - Aluno:
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=Java
+      }
+      \begin{lstlisting}
+	@Table(name="aluno")
+	@Entity
+	public class Aluno {
+
+	@Id
+	@SequenceGenerator(name = "idSeqAluno", sequenceName="aluno_id_seq")
+	@GeneratedValue(generator = "idSeqAluno")
+	private Integer id;
+
+	@Column(name = "nome")
+	private String nome;
+
+	@Column(name = "idade")
+	private Integer idade;
+
+	@Column(name = "fone")
+	private String fone;
+
+	@Column(name = "email")
+	private String email;
+
+	@OneToMany(mappedBy="aluno", fetch=FetchType.EAGER, cascade = CascadeType.ALL, targetEntity = Endereco.class)
+	private List<Endereco> endereco = new ArrayList<Endereco>();
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \item Exemplo aluno - Endereco:
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=Java
+      }
+      \begin{lstlisting}
+	@Table(name="endereco")
+	@Entity
+	public class Endereco {
+	@Id
+	@SequenceGenerator(name = "idSeqEndereco", sequenceName="endereco_id_seq")
+	@GeneratedValue(generator = "idSeqEndereco")
+	private Integer id;
+
+	@Column(name = "descricao")
+	private String descricao;
+
+	@JoinColumn(name = "_aluno", referencedColumnName="id")
+	@ManyToOne
+	private Aluno aluno;
+	\end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \item pode-se tratar os dados como se fossem listas de objetos;
+  \item ao utilizar JSTL alterar o retorno das listas para \textit{Collection};
+  \item existem métodos de criação automática destas classes (Netbeans);
+  \item A organização do modelo MVC pode se alterar de acordo com as tecnologias utilizadas;
+  \begin{itemize}
+    \item JSF + JPA + Facelets;
+  \end{itemize}
+  
+\end{itemize}
+\end{frame}

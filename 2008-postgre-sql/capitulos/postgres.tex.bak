@@ -1,0 +1,165 @@
+\section[Postgres]{Postgres}
+\begin{frame}
+    \frametitle{Uma breve história do PostGreSQL}
+    \begin{itemize}
+        \item Banco de dados objeto-relacional;
+        \item Derivado do pacote POSTGRES (Universidade da Califórnia em
+        Berkeley);
+        \begin{itemize}
+            \item 1986 início do projeto;
+            \item 1987 primeira versão do Postgres;
+            \item 1989 liberação para usuários restritos da versão 1;
+            \item 1991 versão 3 com as principais funcionalidades atuais;
+            \item 1993 versão 4.2, última lançada pela Berkeley;
+            \item 1994 Andrew Yu e Jolly Chen criaram a versão conhecida como Postgre95 com interpretador para a linguagem SQL;
+            \item 1997 Nãome do projeto muda para PostgreSQL, a versão 6 é lançada;
+            \item 2000 versão 7 lançada com suporte a Foreign Key;
+            \item 2005 versão 8 lançada com versão nativa (sem uso do CYGWIN) para Windows, TABLESPACES, SAVEPOINTS, POINTINTIMERECOVERY. etc.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{ACID}
+\begin{frame}
+    \frametitle{ACID}
+    \begin{itemize}
+        \item \emph{Atomicidade}: transações não podem ficar pela metade (tudo ou nada);
+        \item \emph{Consistência}: transações devem transformar um estado consistente do banco em outro estado consistente;
+        \item \emph{Isolamento}: transações são isoladas umas das outras, elas não "enxergam"{} dados gravados por transações concorrentes;
+        \item \emph{Durabilidade}: uma vez efetuada a transação os dados devem permanecer no banco.
+    \end{itemize}
+\end{frame}
+
+\subsection{Alguns tipos de dados}
+\begin{frame}
+    \frametitle{Alguns tipos de dados}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=9cm]{images/td1.jpg}
+            \caption{Alguns tipos de dados}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Alguns tipos de dados II}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=9cm]{images/td2.jpg}
+            \caption{Alguns tipos de dados}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Funcionalidades Avançadas}
+\begin{frame}
+    \frametitle{No PostgreSQL você pode:}
+    \begin{itemize}
+        \item Criar validações de dados;
+        \item Criar tipos de dados personalizados;
+        \item Disparar \emph{stored procedures} a partir de eventos das tabelas;
+        \item Dividir o banco de dados em esquemas;
+        \item Alocar bases inteiras, esquemas ou tabelas em locais diferentes (disco ou
+        rede);
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Componentes do PostgreSQL:}
+    \begin{itemize}
+        \item Esquemas;
+        \item Herança;
+        \item Views;
+        \item Funções;
+        \item Restrições;
+        \item Gatilhos;
+    \end{itemize}
+\end{frame}
+
+\subsection{Linguagem de Definição de Dados(DDL)}
+
+\subsubsection{Create Table}
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Create Table}
+    Utilizado para criar tabelas.
+    \texttt{\lstinputlisting[language=C, label=createtable,
+    caption={Sintaxe da linguagem DDL para criação de tabelas}]{cods/createtable.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Usando corretamente o Create Table}
+    \texttt{\lstinputlisting[language=C, label=createtable1,
+    caption={Boa prática usando Create Table}]{cods/createtable1.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Usando o Create Table sem convenção}
+    \texttt{\lstinputlisting[language=C, label=createtable2,
+    caption={Má prática usando Create Table}]{cods/createtable2.txt}}
+\end{frame}
+
+\subsubsection{Alter Table}
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Alter Table}
+    Utilizado para alterar tabelas.
+    \texttt{\lstinputlisting[language=C, label=altertable,
+    caption={Sintaxe da linguagem DDL para alteração de tabelas}]{cods/altertable.txt}}
+\end{frame}
+
+\subsubsection{Drop Table}
+\begin{frame}
+    \frametitle{Drop Table}
+    Remove uma ou mais tabelas.
+    \texttt{\lstinputlisting[language=C, label=droptable,
+    caption={Sintaxe da linguagem DDL para remover tabelas}]{cods/droptable.txt}}
+\end{frame}
+
+\subsubsection{Comment}
+\begin{frame}
+    \frametitle{Comment}
+    Adiciona comentários em uma tabela, coluna, indice, restrição, função, indice, etc.
+    \texttt{\lstinputlisting[language=C, label=comment,
+    caption={Sintaxe da linguagem DDL para fazer comentários}]{cods/comment.txt}}
+\end{frame}
+
+\subsubsection{Create Index}
+\begin{frame}
+    \frametitle{Create Index}
+    Cria um índice numa tabela.
+    \texttt{\lstinputlisting[language=C, label=comment,
+    caption={Sintaxe da linguagem DDL para criar índices}]{cods/index.txt}}
+\end{frame}
+
+\subsection{Linguagem de Modificação de Dados (DML)}
+
+\subsubsection{Insert}
+\begin{frame}
+    \frametitle{Insert}
+    Insere um registro em uma tabela.
+    \texttt{\lstinputlisting[language=C, label=insert,
+    caption={Sintaxe da linguagem DML para inserir registro}]{cods/insert.txt}}
+\end{frame}
+
+\subsubsection{Update}
+\begin{frame}
+    \frametitle{Update}
+    Atualiza um registro em uma tabela.
+    \texttt{\lstinputlisting[language=C, label=update,
+    caption={Sintaxe da linguagem DML para atualizar registro}]{cods/update.txt}}
+\end{frame}
+
+\subsubsection{Delete}
+\begin{frame}
+    \frametitle{Delete}
+    Remove um registro em uma tabela.
+    \texttt{\lstinputlisting[language=C, label=delete,
+    caption={Sintaxe da linguagem DML para remover registro}]{cods/delete.txt}}
+\end{frame}
+
+\subsubsection{Truncate}
+\begin{frame}
+    \frametitle{Truncate}
+    Zera os registros de uma tabela.
+    \texttt{\lstinputlisting[language=C, label=truncate,
+    caption={Sintaxe da linguagem DML para zerar os registros de uma tabela}]{cods/truncate.txt}}
+\end{frame}

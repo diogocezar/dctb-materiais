@@ -1,0 +1,10 @@
+interface IExemploInterface {
+    void ExemploMetodo();
+}
+class ImplementacaoClasse : IExemploInterface {
+    void IExemploInterface.ExemploMetodo() { }
+    static void Main() {
+        IExemploInterface obj = new ImplementacaoClasse();
+        obj.ExemploMetodo();
+    }
+} 

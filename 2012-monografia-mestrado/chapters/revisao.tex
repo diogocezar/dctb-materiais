@@ -1,0 +1,271 @@
+\chapter{Revisão Bibliográfica}
+\label{revisao-bibliografica}
+
+Neste capítulo discute-se os assuntos relacionados ao trabalho proposto. Na seção \ref{workflow} estão descritos os conceitos de Fluxo de Trabalho Científico. A seção \ref{proveniencia} discorre sobre Proveniência de Dados. A seção \ref{ambiente} introduz os conceitos de Grades e Computação em Nuvens. A seção \ref{p2p} descreve as características das aplicações \UFPRsigla{P2P}. A seção \ref{planejamento} apresenta as considerações sobre Planejamento. E finalmente, na seção \ref{plan-consideracoes} estão as considerações sobre o capítulo.
+
+\section{Fluxo de Trabalho Científico}
+\label{workflow}
+
+Os experimentos científicos necessitam de processamento e analise de seus dados, essa tarefa vem se tornando complexa e pode envolver muitas etapas que necessitam coordenação e integração. Além disso, é necessário tratar a distribuição de dados a fim de se obter um tempo de execução viável destes fluxos de trabalho.
+
+Para tratar os desafios dos experimentos científicos, utiliza-se sistemas que tem como objetivo o foco na coordenação, integração e distribuição de dados. Desta forma o sistema é capaz de executar experimentos que sejam estruturados de acordo com um modelo. Os experimentos científicos são modelados em fluxos de trabalho  (\emph{workflow}) científico.
+
+Um fluxo de trabalho científico é o encapsulamento de informações que pode ser processado automaticamente em um fluxo de execução, gerenciado por um sistema dito sistema gerenciador de fluxos de trabalho científico. Estes sistemas transmitem documentos, tarefas ou informações de um participante para outro através de ações. Estas ações trabalham de forma coordenada de acordo com as regras estabelecidas entre os participantes formando um plano de execução \cite{Deelman2009}. 
+
+O processo de execução de um fluxo de trabalho científico pode ser dividido em etapas, são elas: \emph{composição}, \emph{orquestração}, \emph{mapeamento} e \emph{execução} \cite{Deelman2009}. A figura \ref{fig:workflow_model} ilustra as etapas para execução de fluxos de trabalho cientifico.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=16cm]{images/fig_workflow_model.jpg}
+    \caption{Etapas para execução de fluxos de trabalho científico}
+    \label{fig:workflow_model}
+\end{figure}
+
+O processo de \emph{composição} de um fluxo de trabalho científico está relacionado à descrição das tarefas que cada fluxo deverá executar, bem como a relação de dependência entre elas. Normalmente sua representação é feita através de grafos dirigidos, no qual os vértices representam as tarefas e as arestas suas dependências \cite{Deelman2009}.
+
+Existem diversas linguagens para especificação de fluxo de trabalho científico, cada qual com características distintas de semântica, tipo de aplicação, ambiente de execução ou representação \emph{abstrata} ou \emph{concreta}. Uma representação \emph{abstrata} não descreve os detalhes do ambiente execução. Uma representação \emph{concreta} descreve detalhes do ambiente de execução. Como exemplo de linguagens, apresenta-se: \UFPRsigla{MoML} \cite{Altintas2004}, \emph{Scufl} \cite{Belhajjame2008}, \emph{BPEL} \cite{Akram2006}, \UFPRsigla{VDL} \cite{Deelman2004} e \emph{DAX} \cite{Lee2008}. \UFPRsigla{MoML}, \emph{Scufl} e \emph{DAX}, são linguagens especificamente desenvolvidas para o processamento de fluxos de trabalho. \emph{BPEL} é uma linguagem para especificar ações em processos de negócios dentro de serviços \emph{web}, adaptada para execução de fluxos de trabalho. \emph{VDL} é uma linguagem utilizada para descrição de dados utilizada pelo \emph{software} Chimera \cite{Foster2002}.
+
+O processo de \emph{orquestração} tem como objetivo a coordenação das tarefas que compõem um fluxo de trabalho científico. Outro objetivo é garantir que as dependências sejam atendidas.
+
+A etapa de \emph{mapeamento} tem como função o escalonamento entre tarefas e recursos, para que um fluxo de trabalho seja executável no ambiente de execução. Essa etapa pode ser feita com a intervenção do usuário, ou automaticamente através de um componente específico. Em ambos os casos é necessária a obtenção de informações relativas aos recursos disponíveis.
+
+A \emph{execução} tem como função a alocação e execução das tarefas nos nós disponíveis, além de tratar a tolerância a falhas e adaptabilidade dos fluxos de trabalho. A tolerância a falhas deve prever a realocação das tarefas de forma automática caso um dos nós seja desconectado. A adaptabilidade diz respeito a modelagem do fluxo de trabalho durante a execução. Isso se deve pela necessidade da variação dos dados de entrada específica de cada aplicação.
+
+O modelo de execução pode utilizar abordagens orientadas a dados, controle ou híbrido. Essas abordagens tratam as dependências entre tarefas. O modelo orientado a dados recebe os dados de entrada, aplica as operações e fornece o dado de saída como resultado ou como entrada para outra tarefa. Ao se trabalhar um sistema de controle, o gerenciador de fluxo de trabalho utiliza sinais que indicam o início ou término da execução de determinado conjunto de dados. Nesse caso os dados são transportados de alguma forma implícita, não especificada, fazendo com que o sistema controle apenas o fluxo no qual as tarefas são executadas. Os sistemas híbridos utilizam a junção das duas abordagens.
+
+Algumas implementações estão detalhadas no capítulo \ref{trabalhos-relacionados}.
+
+\section{Proveniência de Dados}
+\label{proveniencia}
+
+A proveniência de dados é uma técnica de analise de dados que ajuda a determinar a derivação histórica de um dado ou processo, partindo de sua fonte original \cite{Simmhan2005,Miles}. O uso da proveniência pode auxiliar na análise da \emph{qualidade de dados}, utilizado para estabelecer a qualidade e/ou confiabilidade dos dados baseado nos dados originais e suas transformações. Ainda é possível a utilização de rastreamento de dados pela \emph{trilha de auditoria}, que busca determinar o uso de recursos e a detecção de erros na geração de dados. A \emph{replicação} fornece informações detalhadas da proveniência possibilitando a repetição da derivação de dados, para gerar uma possível replicação. Com a \emph{atribuição} é possível estabelecer o direito do autor sobre a propriedade de um dado, e determinar sua responsabilidade em caso de dados incorretos. Com a técnica \emph{informacional} possibilita-se a consulta baseada no histórico de metadados para a descoberta de novos dados \cite{Simmhan2005}. 
+
+%\begin{itemize}
+%	\item \emph{qualidade de dados}: usado para estabelecer a qualidade e/ou confiabilidade dos dados baseado nos dados originais e suas transformações;
+%	\item \emph{trilha de auditoria}: pode ser usado rastreamento de dados, determinar uso de recursos e detecção de erros na geração de dados;
+%	\item \emph{replicação}: informações detalhadas da proveniência podem repetir a derivação de dados, podendo gerar uma possível replicação;
+%	\item \emph{atribuição}: é possível estabelecer o direito do autor sobre a propriedade de um dado, e determinar sua responsabilidade em caso de dados incorretos.
+%	\item \emph{informacional}: é a consulta baseada no histórico de metadados para a descoberta de novos dados.
+%\end{itemize}
+
+No que diz respeito à representação da proveniência, diferentes técnicas podem ser usadas. As duas principais são \emph{anotação} e \emph{inversão}. A \emph{anotação} diz respeito ao armazenamento de informações coletadas sobre os dados e os processos. A \emph{inversão} faz um rastreamento de todo o processo de transformação dos dados, com intuito de traçar suas modificações \cite{Simmhan2005}. 
+
+A técnica de \emph{anotação} gera uma grande quantidade de metadados. O volume de metadados pode ficar maior que o próprio armazenamento de dados caso o método de extração dos metadados seja detalhado. Por isso, a maneira de como a proveniência será armazenada é importante para a escalabilidade. Quanto a forma de armazenamento, muitos sistemas de proveniência utilizam a linguagem \UFPRsigla{XML} para representá-los \cite{Miles}.
+
+Em \cite{Miles2007}, são abordados casos de uso que justificam a utilização de proveniência em um ambiente científico. Estes ilustram situações em que as técnicas de proveniência de dados resolveriam problemas recorrentes do ambiente científico, como por exemplo, um caso de uso que descreve uma situação na qual um cientista deseja registrar uma patente para os resultados de seu experimento, mas ao revisar o experimento um outro cientista percebe que o experimento possui restrições legais e não pode ser patenteado. De acordo com um histórico de experimentos referenciados o cientista que irá validar o experimento foca suas atenções as restrições legais, que passa desapercebido pelo cientista que deseja a patente.
+
+%Bom base nos exemplos descritos por \cite{Miles2007}, propõe-se um módulo para a validação de execução de fluxos de trabalho. Esta validação baseia-se em um documento de proveniência que armazena resultados dos experimentos. A proveniência contém o registro de todos as invocações dos serviços, para que seja possível a reprodução exata daquele experimento. Uma interface para publicação de metadados permite que sejam adicionadas anotações aos serviços, agregando informações e detalhes para as próximas execuções. Sua estrutura permite que o usuário construa um fluxo de trabalho, e os envie para um máquina que decide quais serão as tarefas que irão ser executadas. Então, invoca-se os serviços para a execução das tarefas na ordem correta. A cada execução as informações coletadas sobre o experimento repopulam o banco de metadados.
+
+\section{Ambiente de Execução Distribuído}
+\label{ambiente}
+
+Um ambiente distribuído envolve a coordenação e o compartilhamento dos recursos computacionais, armazenamento de dados e recursos de rede. 
+
+%Uma grade computacional, é uma abordagem da área da computação distribuída que envolve a coordenação e o compartilhamento dos recursos computacionais, armazenamento de dados e recursos de rede através de distribuições dinâmicas e geograficamente dispersas \cite{Sharma2010}.
+
+Segundo \cite{Sharma2010}, o modelo básico de uma grade computacional é geralmente composto por um determinado número de nós, cada um contendo vários recursos computacionais. O agrupamento desses nós pode ser classificado como \emph{homogêneos} ou \emph{heterogêneos}. Quando uma grade é homogênea os recursos disponíveis apresentam as mesmas características, enquanto que em uma grade heterogênea os nós apresentam características diferentes.
+
+Destacam-se quatro componentes básicos em um modelo de grade:
+
+\begin{itemize}
+	\item \emph{usuário}: responsável por alimentar a grade com tarefas a serem processadas;
+	\item \emph{gerenciador de recursos}: responsável por gerenciar a distribuição das tarefas para os nós, além de obter e utilizar informações do \emph{serviço de informações da grade};
+	\item \emph{serviço de informações da grade}: captura informações sobre a execução dos nós, que ajuda no processo de escalonamento;
+	\item \emph{recursos da grade}: reunião dos nós disponíveis para processamento.
+\end{itemize}
+
+Quando um usuário necessita executar determinada tarefa essa solicitação é enviada ao gerenciador de recursos, que com a ajuda do serviço de informação da grade, escalona e distribui as tarefas. Cada nó processa a parte que lhe foi designada e retorna a tarefa processada para o gerenciador de recursos. O gerenciador de recursos junta as tarefas processadas e devolve o resultado para o usuário.
+
+A Computação em Nuvens (do inglês \emph{Cloud Computing}) é um conceito de computação distribuída que surgiu no meio comercial para oferecer serviços e recursos na Internet específicos para a necessidade dos usuários \cite{Armbrust2009}. Os aplicativos desenvolvidos para esse ambiente são desenvolvidos como um serviço. Isso é, para extrair a informação do recurso na nuvem, deve-se adaptar o ambiente a um modelo de requisição e resposta. Para executar o serviço, uma requisição com parâmetros específicos é enviada para a nuvem que processa as informações e retorna como resposta o processamento dos dados em questão.
+
+A vantagem em utilizar os recursos como serviços está na instalação, manutenção e centralização do controle de versões. Dessa forma os usuários podem usar o serviço a qualquer hora, e de qualquer lugar.
+
+Do ponto de vista dos recursos, a computação em nuvens pode oferecer três novos aspectos:
+
+\begin{enumerate}
+	\item A possibilidade de recursos ``infinitos''. Na nuvem não existem limitações de \emph{hardware}. Na teoria os recursos são flexíveis, limitados somente pelo provedor do recurso;
+	\item Usuários da nuvem podem requisitar processamento de acordo com sua necessidade, e expandir o poder de processamento caso seja necessário;
+	\item A capacidade de pagar pelos recursos por curtos prazos de utilização, uma ou duas horas, conforme o necessário.
+\end{enumerate}
+
+\section{Sistemas Ponto a Ponto}
+\label{p2p}
+
+Sistemas \UFPRsigla{P2P} são sistemas distribuídos, que consistem em nós interconectados capazes de se auto-organizar em topologias de rede com o objetivo de compartilhar recursos, tais como: conteúdo, ciclos de processamento, armazenamento e largura de banda. Estes sistemas são capazes de se adaptar a falhas e a acomodação transitória de nós, sem a necessidade da intermediação ou suporte de um servidor centralizado \cite{Androutsellis-theotokis2004}. Segundo \cite{Androutsellis-theotokis2004}, existem duas características que definem uma arquitetura \UFPRsigla{P2P}:
+
+\begin{enumerate}
+	\item O compartilhamento de recursos de forma direta, sem a necessidade de um servidor centralizado. No entanto, sistemas que dependem da utilização de um servidor centralizado para seu funcionamento básico (por exemplo, para a manutenção de índices globais ou busca) se estendem a definição de \UFPRsigla{P2P}. Como os nós de uma rede \UFPRsigla{P2P} não podem confiar em um servidor central para a coordenação da troca de conteúdo, eles são obrigados a participar ativamente de forma independente e unilateral realizando tarefas como: procura de nós, localização ou cache de conteúdo, informações de roteamento, conexão ou desconexão de outros nós vizinhos, sistema de criptografia e verificação de conteúdo;
+	\item Sua capacidade de tratar a instabilidade e conectividade como regras, adaptando-se automaticamente às falhas de conexão. Bem como uma população transitória de nós. Esta capacidade de auto-organização tolerante a falhas necessita de uma topologia de rede adaptativa, que irá mudar conforme a entrada ou saída de nós, a fim de manter a sua conectividade e desempenho.
+\end{enumerate}
+
+Quanto à classificação proposta por \cite{Androutsellis-theotokis2004}, as aplicações podem ser divididas em diferentes categorias descritas a seguir.
+
+As aplicações de \emph{Comunicação e Colaboração} incluem sistemas que oferecem uma infra-estrutura para facilitar a comunicação direta e colaborativa entre computadores. Como exemplo estão as aplicações de troca de mensagens instantâneas e bate-papo.
+
+%, como: \emph{Chat/Irc}, \emph{Instant Messaging} (Aol, Icq, Yahoo, Msn) e Jabber.
+
+Nas aplicações que envolvem \emph{Computação Distribuída} estão os sistemas que utilizam o processamento distribuído dos nós. Essa técnica distribui entre os nós do sistema \UFPRsigla{P2P} pequenas tarefas para serem executadas, ao final do processamento executa-se um roteiro para coletar os resultados obtidos. Uma coordenação central é invariavelmente necessária, principalmente para dividir, distribuir as tarefas e coletar os resultados.
+
+Com aplicações de \emph{Suporte a Serviços de Internet} é possível utilizar o ambiente \UFPRsigla{P2P} para compor um serviço. Esse serviço é utilizado como um componente que trabalha no modelo de requisição-resposta.
+
+Aplicações com \emph{Sistemas de Banco de Dados} podem utilizar a arquitetura \UFPRsigla{P2P} para construção de bancos de dados distribuídos.
+
+A \emph{Distribuição de Conteúdo} é a classificação mais comum para aplicações \UFPRsigla{P2P}. Estas aplicações incluem sistemas e infra-estruturas feitos para o compartilhamento de mídia digital e outros dados entre os usuários.
+
+O trabalho elaborado se enquadra na classificação \emph{Computação Distribuída}, pois apresenta um sistema \UFPRsigla{P2P} como executor de tarefas de fluxos de trabalho científico.
+
+\section{Planejamento}
+\label{planejamento}
+
+%Nesse capítulo são apresentadas algumas considerações iniciais sobre planejamento na seção \ref{plan-introducao}. A seção \ref{\UFPRsigla{PDDL}} descreve a linguagem \UFPRsigla{PDDL} utilizada para descrição de problemas de planejamento. Nas seções \ref{graphplan} e \ref{satplan} apresentam-se os trabalhos que inspiraram a evolução das técnicas de planejamento. Na seção \ref{htn} apresenta-se uma outra técnica de planejamento. Na seção \ref{crikey} é apresentado o planejador utilizado neste trabalho. E finalmente, na seção \ref{plan-consideracoes} estão as considerações sobre o capítulo.
+
+Problemas mapeados do mundo real podem apresentar um alto nível de complexidade. É difícil representar algumas características, como por exemplo: representação temporal, eventos inesperados e principalmente como estará espaço de estados depois de determinada modificação. Problemas que envolvam tais características estão em uma classe de complexidade que se tornam inviáveis com algoritmos convencionais \cite{Weld1999}.
+
+O planejamento em \UFPRsigla{IA} é uma técnica que busca tratar esse nível de complexidade de forma independente do domínio do problema. Nessa abordagem, após o mapeamento detalhado do problema do mundo real, define-se um estado inicial conhecido e um estado final desejado. Para gerar um plano, elabora-se uma busca por um conjunto de ações já conhecidas, que modificam o cenário a cada execução. O desafio está em encontrar em todo o espaço de estados quais as ações e em que ordem devem ser invocadas para gerar um plano válido para o problema de planejamento \cite{Weld1999}.
+
+%A busca no espaço de estados de um problema de planejamento é um problema que ficou em aberto durante muito tempo na área, pois qualquer tentativa de busca gerava uma quantidade exponencial de elementos a serem tratados. 
+
+O \UFPRsigla{STRIPS} \cite{Fikes1971} foi o precursor dos planejamentos modernos. Com essa abordagem definiu-se a forma com que um problema e um domínio de planejamento são representados, e que é mantida na maioria dos planejadores atuais. Um \emph{estado} do problema é dado pelo conjunto de fatos verdadeiros em um determinado instante do plano. Um operador, ou ação, é representado por:
+
+\begin{itemize}
+	\item \emph{pré-condição}: são os requisitos necessários para que um determinado operador seja aplicado sobre um estado;
+	\item \emph{lista de adição}: são os fatos a serem adicionados ao estado depois que operador é executado;
+	\item \emph{lista de exclusões}: são os efeitos negativos, ou seja, o conjunto de fatos que será retirado do estado após a execução de um operador.
+\end{itemize}
+
+Um problema de planejamento é dado por dois conjuntos de fatos que representam o estado inicial e o estado final ou objetivo do problema, em um conjunto de operadores. Um plano, que é a solução para o problema de planejamento, é uma sequência de ações que quando aplicada sobre o estado inicial obtém o estado final do problema.
+
+Quanto à classificação, os planejadores podem ser divididos em: \emph{clássicos} ou \emph{hierárquicos}. Os clássicos executam uma busca no espaço de estados com objetivo de encontrar um caminho (que representará um conjunto de ações) do estado inicial até o estado objetivo. Os hierárquicos utilizam uma técnica de decomposição de tarefas, dividindo uma tarefa complexa (abstrata) em uma ou mais tarefas com menor grau de complexidade (primitiva). Esse mapeamento é feito através de métodos que descrevem possíveis reduções entre os operadores. 
+
+%A classe de planejadores clássicos é efetiva para a resolução de problemas com domínios relativamente pequenos e estáticos, entretanto, falha ao tentar tratar domínios dinâmicos e mais complexos \cite{Porto2006}.
+
+Outra classificação está relacionada ao encadeamento, o encadeamento define como se dará a busca no espaço de estados. Um planejador pode possuir \emph{encadeamento para frente}, quando as ações retornadas partem do estado inicial, ou \emph{encadeamento para traz}, quando as ações retornadas partem do estado final \cite{Halsey2004,Coles}.
+
+\subsection{Redes de Tarefas Hierárquicas}
+\label{htn}
+
+Os planejadores \emph{hierárquicos} são uma evolução dos clássicos, e conseguem tratar uma gama de problemas com maior grau de complexidade pela inferência direta de informações que refinam o processo de busca. Basicamente, a principal característica da abordagem hierárquica está na utilização de ações capazes de resolver subobjetivos que formam um objetivo maior \cite{Nau1999, Nau2003}. Essa inferência de informações é feita através de \emph{métodos}. Cada \emph{método} é responsável por descrever quais ações ou subtarefas irão compor uma tarefa mais complexa. Se uma tarefa é primitiva, ela não pode ser subdividida em uma tarefa menor, pois é possível resolvê-la com as ações já descritas. O principal objetivo dessa abordagem é reduzir as tarefas complexas até que existam somente tarefas primitivas, obtendo assim o plano \cite{Nau2003}. 
+
+A maioria dos planejadores hierárquicos são independentes do domínio, mas os métodos, são específicos do domínio. Isso faz com que seja necessária a ação de um especialista para construir o domínio do problema, o que torna o planejador muito mais rápido.
+
+JSHOP2 \cite{Ilghami2006} é uma implementação de um planejador hierárquico desenvolvida na linguagem Java. Seu desenvolvimento foi inspirado no planejador SHOP2 \cite{Nau2003}. O SHOP2 planeja as tarefas $T$ na mesma ordem que serão executadas. Para isso, uma escolha não-determinística de uma tarefa $t \in T$ que não possui predecessores, resulta em dois casos:
+
+\begin{enumerate}
+	\item se $t$ é primitivo, então encontra-se uma ação $a$ que resolve $t$ de forma que as pre-condições são satisfeitas em um estado $s$, e aplica $a$ em $s$. Se não existe essa ação, então esse ramo do espaço de busca falha;
+	\item se a tarefa $t$ é composta, então o planejador encontra de forma não-determinística um método $m$ que irá decompor a tarefa $t$ em subtarefas. Se não existe um método para tal decomposição, então esse ramo do espaço de busca falha.
+\end{enumerate}
+
+Se existe uma solução que envolve $m$, então suas subtarefas farão parte de uma nova lista atualizada $T'$ que é percorrida recursivamente até que todas as tarefas sejam primarias e resolvíveis com operadores. 
+
+As duas escolhas não-determinística presentes no algoritmo apresentado recaem inevitavelmente em um processo de busca exponencial \cite{Nau1999}.
+
+No início da elaboração deste trabalho, os planejadores hierárquicos foram foco dos estudos por apresentarem uma estrutura de resolução bastante semelhante a um fluxo de trabalho, que também pode ser hierarquicamente dividido. No apêndice \ref{jshop} apresenta-se um modelo inicial, construído com um planejador hiearárquico. Entretanto notou-se que para extrair um plano paralelo do planejador em questão, seria necessário cálculos de pós-processamento, pois o planejador escolhido não era capaz de retornar planos paralelos. Por isso o \emph{CRIKEY} foi o planejador escolhido, descrito na seção \ref{crikey}.
+
+\subsection{Planejadores Clássicos}
+
+Em 1998, Daniel S. Weld \cite{Weld1999} fez um apanhado de duas principais técnicas que possibilitaram a retomada dos estudos em planejamento devido ao grande desempenho dos planejadores obtidos. Estes são exemplos de planejadores clássicos, e estão brevemente descritas a seguir.
+
+A idéia do \emph{Graphpan} \cite{Blum1995} é a representação do espaço de estados através de um grafo. Nesse grafo existem dois tipos de vértices: \emph{proposição} e \emph{ação}. A construção do grafo é feita de modo que os vértices estejam separados por camadas. As camadas pares são formadas por vértices de proposição enquanto que as camadas ímpares são compostas por vértices de ações. A camada zero (inicial) é formada por proposições que representam os fatos do estado inicial do problema. Arestas ligam os vértices de proposições aos de ações, cujas pré-condições mencionam tais proposições ou que representam os efeitos das ações.
+
+Ações que estão na mesma camada, podem ter uma característica de exclusão mútua, se uma for escolhida a outra não pode ser, devido a conflitos entre as pre-condições e os efeitos destas ações. Nesse caso existem arestas que as conectam classificando-as como mutuamente exclusivos.
+
+Para extrair a solução na estrutura definida, o planejador faz uma tentativa de gerar o plano com $n$ passos. Logo, é necessária a representação do grafo até a camada $2n$, depois faz-se uma busca de encadeamento para traz, procurando um caminho que chegue ao estado inicial do problema. Se ao voltar pelo grafo, ações mutuamente exclusivas são escolhidas, aplica-se a técnica de \emph{backtraking} até que todas as opções estejam esgotadas. Caso não se encontre um caminho com $n$ passos, o algoritmo expande o grafo para a camada $2(n+1)$ e realiza o procedimento novamente.
+
+Baseados no grafo de planos proposto por \cite{Blum1995}, alguns planejadores direcionam os estudos para buscas heurísticas. O planejador \UFPRsigla{FF} \cite{Hoffmann2002}, por exemplo, utiliza o grafo de planos e uma busca heurística baseada no \UFPRsigla{HSP} \cite{Bonet2001}. O \UFPRsigla{FF} realiza uma busca progressiva no espaço de estados utilizando a técnica de \emph{subida de encosta reforçada}. Essa técnica pode ser definida como: partindo de um estado $S$, avalia-se todos os seus sucessores diretos $S'$. Se nenhum deles tem uma heurística melhor que $S$, procure pelos sucessores dos sucessores, e assim sucessivamente até encontrar um estado $S'$ com heurística melhor que $S$. O planejador \emph{CRIKEY} \cite{Halsey2004,Coles} é inspirado no planejador \UFPRsigla{FF} e está detalhado na seção \ref{crikey}.
+
+\UFPRsigla{SAT} é um problema da \UFPRsigla{IA} que procura uma valoração que torne uma fórmula lógica proposicional verdadeira. Inicialmente proposto por \cite{Kautz1992}, um planejador baseado em \UFPRsigla{SAT} tem como entrada um problema de planejamento que gera uma fórmula lógica proposicional, que se for satisfeita por alguma valoração para suas variáveis proposicionais, implica na existência de um plano, que pode ser obtido a partir de tal valoração.
+
+Ao traduzir o problema de planejamento para \UFPRsigla{SAT}, torna-se necessário um resolvedor \UFPRsigla{SAT} eficiente. Devido ao alto desempenho dos resolvedores \UFPRsigla{SAT} atuais, esta técnica de planejamento ainda é a que apresenta um melhor desempenho \cite{Kautz2006}.
+
+%melhorar último parágrafo
+
+%alto desempenho SAT = técnica apresenta melhor desempenho
+
+%HSP, FF, MIPS, CRIKEY
+
+%que podem ser classificados em \emph{sistemáticos} ou \emph{estocásticos}. Resolvedores sistemáticos são determinísticos e normalmente utilizam o algoritmo \UFPRsigla{DPLL} para executar uma busca em profundidade, com recurso de \emph{backtraking}. Os estocásticos não são determinísticos, utilizam uma busca local usando movimentações aleatórias, com objetivo de fugir da mínima local. Essa abordagem, por ser incompleta, quando invocada para resolver problemas difíceis podem simplesmente responder que não foi possível encontrar um resultado em tempo satisfatório.
+
+Com o avanço dos estudos na área de planejamento foi proposta a unificação da descrição dos domínios e problemas em uma linguagem comum a vários planejadores, a linguagem \UFPRsigla{PDDL}.
+
+\subsection{\emph{Planning Domain Definition Language}}
+\label{pddl}
+
+%Após a identificação da necessidade da utilização de um planejador que suportasse planos paralelos, bem como a utilização de métricas, optou-se pela utilização de planejadores que interpretassem a linguagem \UFPRsigla{PDDL} (\emph{Planning Domain Definition Language}).
+
+A linguagem \UFPRsigla{PDDL} fornece uma base para a descrição de problemas de planejamento, permitindo que os modelos possam ser compartilhados de forma padronizada entre a comunidade científica. Em sua versão 2.1 a linguagem conta com definições para utilização de domínios que tratem ações com um tempo de duração, bem como a utilização de métricas que permitem procurar por um plano específico que busque maximizar ou minimizar o valor de uma variável, que pode ser incrementada ou decrementada dependendo da ação que é executada \cite{Fox2003}.
+
+A linguagem \UFPRsigla{PDDL} é formada por:
+
+\begin{itemize}
+	\item \emph{objetos}: entidades representadas num problema de planejamento;
+	\item \emph{predicados}: propriedades dos objetos;
+	\item \emph{estado inicial}: é um conjunto de predicados sobre objetos que representam o estado do mundo quando o processo de planejamento é iniciado;
+	\item \emph{objetivo}: é o conjunto de predicados que deve ser verdadeiro no estado final gerado pelo plano;
+	\item \emph{ações/operadores}: meios de mudar o estado do mundo.
+\end{itemize}
+
+As especificações em \UFPRsigla{PDDL} são separadas em dois arquivos: \emph{domínio} e \emph{problema}. O \emph{domínio} possui os predicados e as ações. O \emph{problema} possui os objetos, o estado inicial e a especificação do objetivo.
+
+Um arquivo de domínio tem a estrutura disposta no código \ref{def_domain} e um arquivo de problema tem sua estrutura exemplificada no código \ref{def_problem}.
+
+\UFPRcode{Java}{def_domain}{Estrutura de um arquivo PDDL de domínio}{codes/def_domain.txt}
+
+\UFPRcode{Java}{def_problem}{Estrutura de um arquivo PDDL de problema}{codes/def_problem.txt}
+
+Para exemplificar a descrição de um problema na linguagem \UFPRsigla{PDDL}, apresenta-se um problema clássico da \UFPRsigla{IA} chamado \emph{mundo dos blocos}. Esse problema consiste basicamente de blocos sobre uma mesa e um braço mecânico que movimenta os blocos. O objetivo é determinar um plano a partir de um estado inicial e um estado final. Os códigos \ref{def_domain_blocks} e \ref{def_problem_blocks} representam o domínio e um problema do problema do mundo dos blocos.
+
+\UFPRcode{Java}{def_domain_blocks}{Domínio exemplo: mundo de blocos}{codes/def_domain_blocks.txt}
+
+\UFPRcode{Java}{def_problem_blocks}{Problema exemplo: mundo de blocos}{codes/def_problem_blocks.txt}
+
+Na definição do domínio, são criados os predicados que serão utilizados para validar as possíveis ações. São elas: pegar um bloco, soltar um bloco, empilhar um bloco, desempilhar um bloco.
+
+O problema é composto por 4 blocos $A, B, C$ e $D$ o estado inicial diz que todos os blocos estão desempilhados, o braço mecânico está vazio e os 4 blocos estão na mesa. O objetivo é ter $C$ sobre $D$, $B$ sobre $C$ e $A$ sobre $B$.
+
+O plano gerado está transcrito no código \ref{plan_problem_blocks}.
+
+\UFPRcode{Java}{plan_problem_blocks}{Plano gerado: mundo de blocos}{codes/plan_problem_blocks.txt}
+
+No apêndice \ref{plan-files} encontram-se exemplos de especificações de problemas na linguagem \UFPRsigla{PDDL} utilizados neste trabalho.
+
+%Os códigos para as especificações \UFPRsigla{PDDL} são exemplificados no apêndice \ref{plan-files}.
+
+\subsection{Crikey}
+\label{crikey}
+
+O \emph{CRIKEY} \cite{Halsey2004,Coles} é um planejador que utiliza uma heurística de busca com encadeamento para frente, baseada na métrica \UFPRsigla{FF} \cite{Hoffmann2002}, implementado na linguagem Java, em sua versão 1.4. Ele é completo mas não é ótimo (no tempo ou na métrica especificada). Ele vai, entretanto, fazer uma tentativa para minimizar o número de ações em um plano.
+
+O planejador foi escrito para trabalhar com os modelos de métricas e tempo da linguagem \UFPRsigla{PDDL} 2.1 \cite{Fox2003}. Ele é capaz de tratar ambos os aspectos temporais: ações durativas e recursos de métricas. Nos domínios \UFPRsigla{PDDL}: \texttt{:typing}, \texttt{:fluents}, e \texttt{:durative-actions}.
+
+\emph{CRIKEY} separa o planejamento do escalonamento das partes temporais do problema (no caso do planejamento temporal). A técnica utilizada busca detectar onde esses dois sub-problemas estão fortemente acoplados, para separá-los completamente. Depois que o planejador obtém um plano totalmente ordenado, aplica-se a rede temporal, que gera como saída o plano temporal.
+
+Durante o planejamento a informação temporal é ignorada. A estratégia de pesquisa é aplicada em subidas de encosta, ou seja, uma vez que o melhor estado é encontrado, a pesquisa continua daquele estado sem retrocesso. Se a busca por subida de encosta falha, retorna-se para o estado inicial, o que tecnicamente gera um novo plano. Assim como na técnica FF, somente as ações úteis são consideradas. Ações úteis são ações que aparecem na primeira camada do grafo de planejamento. \cite{Halsey2004}.
+
+A utilização do planejador é feita por um arquivo do tipo \emph{.jar} que recebe como parâmetro três arquivos: \emph{domínio}, \emph{problema} e \emph{saída}. Os arquivos de \emph{domínio} e \emph{problema} são construções definidas pela linguagem \UFPRsigla{PDDL}, e o arquivo de \emph{saída} possui um padrão que dispõe as informações sobre a ordem de execução, a ação utilizada e as proposições que compõem essa ação. De acordo com o modelo proposto, a integração com o planejador foi feita através da chamada externa de um comando que gera o arquivo de saída, que é utilizado para extrair as devidas informações necessárias para dar seguimento ao fluxo de execução.
+
+A utilização de métrica utilizada no modelo, diz respeito a procura por um plano que minimize o incremento de uma variável. Esse incremento é feito com valores diferentes para cada uma das ações do planejador, dessa forma, procura-se por um caminho que busque o menor custo, gerando assim um plano mais refinado e próximo da solução ótima.
+
+O \emph{CRIKEY} participou da competição \UFPRsigla{IPC4} realizada em 2004, onde obteve bons resultados.
+
+\section{Considerações}
+\label{plan-consideracoes}
+
+%workflow
+
+Ao utilizar fluxos de trabalhos científicos, os usuários podem focar suas atenções em seus experimentos e deixar a complexidade de gerenciamento para o ambiente de execução. Atualmente, pela grande vantagem em se utilizar ambientes de nuvem, os projetos que utilizam esse ambiente tem destaque.
+
+%proveniencia
+
+Como quase sempre o objetivo principal de experimento científico é a minimização do tempo de execução, a utilização de um coletor de informações sobre os recursos pode ser utilizado como um mecanismo de coleta de metadados. Com estas informações é possível traçar um histórico da taxa de ocupação dos recursos e utilizá-las para a obtenção de um plano refinado.
+
+% ambientes distribuídos
+
+Independente do ambiente de execução (uma grade ou nuvem) ao se utilizar uma aplicação baseada na estrutura \UFPRsigla{P2P} cada nó deve possuir as características para se manter de forma autônoma na rede. Para a adaptação de um modelo que utilize \emph{Computação Distribuída} é necessária a modificação do ambiente para a utilização de um nó central responsável por coletar os resultados processados. Quanto ao armazenamento de informações sobre a ocupação dos nós, é necessário que cada nó seja indexado com um identificador. A utilização de um sistema \UFPRsigla{P2P} e os detalhes modificados são apresentados na seção \ref{peerunit}.
+
+%planejamento
+
+Quanto às técnicas de planejamento, inicialmente optou-se pela utilização de uma planejador hierárquico. Isso pela similaridade da decomposição de um fluxo de trabalho e a decomposição de tarefas oferecida pelo planejador hierárquico. Por exemplo, um fluxo de trabalho pode ser definido em $n$ subtarefas e cada subtarefa dividida em $n_i$ subsubtarefas. Entretanto, depois de um modelo inicial testado (apêndice \ref{jshop}), notou-se que para extrair um plano paralelo do planejador em questão, seria necessário cálculos de pós-processamento. Por permitir a execução de planos paralelos, ter sua implementação em Java e mostrar-se um planejador rápido, o \emph{CRIKEY} foi adotado como planejador no modelo proposto. O \emph{CRIKEY} ainda utiliza a linguagem \UFPRsigla{PDDL} como entrada para resolução de seus problemas.
+
+A vantagem ao se utilizar a linguagem \UFPRsigla{PDDL} colaborou diretamente para o desacoplamento do planejador. Se a implementação seguisse com a utilização do \emph{JSHOP}, todo o tradutor teria que ser re-escrito caso fosse necessária a utilização de outro planejador. Ao optar pela tradução para a linguagem \UFPRsigla{PDDL}, qualquer planejador que suporte a linguagem em sua versão 2.1 pode ser facilmente acoplado ao sistema. Aumentando assim a modularidade do sistema.
+
+A escolha do planejamento para compor um plano de execução, tem potencialidade para fornecer tipos refinados de planos. A medida que se incrementa a possibilidade de parametrização na geração de um plano, planos mais específicos podem ser gerados. Como por exemplo, tentar traçar um plano que minimize ao invés do tempo de execução, o consumo de energia. Isso é possível através da inferência de informações coletadas do próprio histórico de execuções do modelo. Por esse motivo, a criação de um modelo que utilize técnicas de planejamento tem potencialidade para não só escalonar de forma eficiente, mas também alterar o esquema de execução de acordo com a necessidade do usuário. A potencialidade da geração de planos de execução é discutida na seção \ref{plan-custos}.

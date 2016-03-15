@@ -1,0 +1,7 @@
+create table Faturas
+(IdFatura integer primary key,
+Total money not null,
+Desconto numeric(6,2),
+IdCliente integer not null references Cliente,
+IdVendedor integer not null references Vendedor,
+Data timestamp default now());

@@ -1,0 +1,6 @@
+0.01: (start-task-full2 h0 sum_cd matrix_c matrix_d)
+0.01: (start-task-full2 h1 sum_ab matrix_a matrix_b)
+0.02: (end-task-full1 h1 sum_ab matrix_i)
+0.02: (end-task-full1 h0 sum_cd matrix_j)
+0.03: (start-task-full2 h0 mult_ij matrix_i matrix_j)
+0.04: (end-task-full1 h0 mult_ij matrix_out)

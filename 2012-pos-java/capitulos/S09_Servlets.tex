@@ -1,0 +1,384 @@
+\section[Servlets]{Servlets}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Servlets}
+    \begin{itemize}
+      \item O que é Servlet?
+      \begin{itemize}
+	\item é a base do desenvolvimento de aplicativos java
+baseados na \textit{web};
+	\item de uma maneira simples, pode ser entendida como
+uma classe que é automaticamente carregada na
+memória e posteriormente executada por um
+servidor \textit{web} especial;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item o servidor \textit{web} é chamado de \textit{container},
+escolhas comuns entre \textit{conteiners} estão:
+
+      \begin{itemize}
+	\item Tomcat \\ \url{http://jakarta.apache.org/tomcat/}
+	\item JBoss \\ \url{http://www.jboss.org/products/index}
+	\item Websphere \\ \url{http://www-306.ibm.com/software/websphere/}
+      \end{itemize}
+      
+      \framebreak
+      
+      \item arquitetura servlet:
+      
+      \begin{itemize}
+	\item o pacote \texttt{javax.servlet} provê as classes e interfaces
+para o desenvolvimento de \textit{servlets};
+	\item a principal abstração no pacote \textit{Servlet} é a interface
+\textit{Servlet}.
+	\item todas as \textit{servlets} implementam esta
+interface;
+	\item utilização indireta da interface \textit{Servlet};
+	\item o mais comum é a herança da classe \texttt{HttpServlet},
+que por sua vez implementa a interface \textit{Servlet};
+	\item a interface \textit{Servlet} declara, mas não implementa, métodos
+de gerenciamento e comunicação com os clientes;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item interação com o cliente:
+      
+      \begin{itemize}
+	\item quando um \textit{servlet} aceita uma chamada de um cliente, ele
+recebe dois objetos:
+	\begin{itemize}
+	  \item um \texttt{ServletRequest} , que encapsula a comunicação entre o
+cliente e o servidor;
+	  \item um \texttt{ServletResponse} , que encapsula a comunicação entre
+o servidor e o cliente;
+	\end{itemize}
+	\item \texttt{ServletRequest} and \texttt{ServletResponse} são
+interfaces definidas pelo pacote javax.servlet.
+      \end{itemize}
+      
+      \framebreak
+      
+      \item a interface \texttt{ServletRequest}
+      
+      \begin{itemize}
+	\item a interface \texttt{ServletRequest} permite ao servlet ter
+acesso a:
+	\begin{itemize}
+	  \item informações como nomes de parâmetros passados pelo
+cliente, o protocolo usado pelo cliente e os nomes dos
+\textit{hosts} remotos que fizeram a requisição ao servidor;
+
+	  \item O \textit{stream} de entrada, \texttt{ServletInputStream} .
+\textit{Servlets} usam o \textit{stream} de entrada para receber os dados do
+cliente, como é o caso do métodos HTTP \texttt{POST} e \texttt{GET};
+	\end{itemize}
+	\item A interface \texttt{HttpServletRequest} é mais usual em
+ambientes HTTP;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item a interface \texttt{ServletResponse}
+      
+      \begin{itemize}
+	\item a interface \texttt{ServletResponse} permite ao
+\textit{servlet} métodos para enviar ao cliente:
+	\begin{itemize}
+	  \item um \textit{stream} de saída, \texttt{ServletOutputStream} , e um
+\textit{Writer} através dos quais podem ser enviados
+dados de resposta ao cliente;
+	\end{itemize}
+	\item A interface \texttt{HttpServletResponse} é mais
+usual em ambientes HTTP.
+      \end{itemize}
+      
+      \framebreak
+      
+      \item hierarquia de classes de um \textit{Servlet}
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=7cm]{images/servlets-hearanca.pdf}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item ciclo de vida de um \textit{Servlet}
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=10cm]{images/servlets-ciclo.pdf}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item método \texttt{init()} - chamado automaticamente pelo container após
+o carregamento da classe na memória;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  public void init (ServletConfig config) throws ServletException
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \framebreak
+      
+      \item método \texttt{service()} - é chamado pelo container logo após o
+método \texttt{init()}, permitindo ao \textit{servlet} responder a uma
+requisição.
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  public void service (servletRequest request, Servlet response
+response) throws ServletException,
+java.io.Exception
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \framebreak
+      
+      \item método \texttt{destroy()} - é chamado pelo container antes de
+remover a \textit{servlet} da memória;
+
+      \framebreak
+      
+      \item como o \textit{servlet} implementa \textit{doGet()} e
+\textit{doPost()}:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=implementado GET e POST
+	}
+	\begin{lstlisting}
+	  public class ServletWeb extends HttpServlet {
+	    public void doGet (HttpServletRequest request,
+	    HttpServletResponse response) {
+	      processar(request, response);
+	    }
+	    public void doPost (HttpServletRequest request,
+	    HttpServletResponse response) {
+	      processar(request, response);
+	    }
+	    public void processar(HttpServletRequest request,
+	    HttpServletResponse response) {
+	      ...
+	    }
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item como ler parâmetros de requisição:
+    
+    \begin{itemize}
+      \item formulários HTML codificam o texto ao enviar os dados
+automaticamente;
+      \item seja o método POST ou GET, os valores dos parâmetros
+podem ser recuperados pelo método \texttt{getParameter()} de
+\textit{ServletRequest}, que recebe seu nome;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  String parametro = request.getParameter("nome");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item parâmetros de mesmo nome podem ser repetidos. Neste
+caso \texttt{getParameter()} retornará apenas a primeira ocorrência.
+Para obter todas use \texttt{String[] getParameterValues()}
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  String[] params = request.getParameterValues("nome");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \end{itemize}
+    
+    \framebreak
+    
+    \item como gerar uma resposta:
+    
+    \begin{itemize}
+      \item para gerar uma resposta, primeiro é necessário obter, do
+objeto \textit{HttpServletResponse}, um fluxo de saída, que pode
+ser de caracteres (\textit{Writer}) ou de bytes (\textit{OutputStream}):
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  Writer out = response.getWriter(); // ou
+	  OutputStream out = response.getOutputStream();
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item apenas um deve ser usado. Os objetos correspondem ao
+mesmo stream de dados;
+
+    \item deve-se também definir o tipo de dados a ser gerado. Isto é
+importante para que o cabeçalho \textit{Content-type} seja gerado
+corretamente e o \textit{browser} saiba exibir as informações:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  response.setContentType("text/html");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item depois, pode-se gerar os dados, imprimindo-os no objeto de
+saída (\textit{out}) obtido anteriormente:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  out.println("<h1>Hello</h1>");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \end{itemize}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Exemplos}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exemplo index.jsp
+	}
+	\begin{lstlisting}
+	  <!DOCTYPE html>
+	  <html>
+	      <head>
+		  <meta http-equiv="Content-Type" content="text/html;
+    charset=UTF-8">
+		  <title>Teste sua Altura</title>
+	      </head>
+	      <body>
+		  <h1>Teste a sua Altura</h1>
+		  <p>Programa feito para testar a sua altura.</p>
+		  <p>Esta página irá acessar um Servlet.</p>
+		  <form method="POST" action="ServeletAltura">
+		      <input type="text" name="txtAltura" id="txtAltura" />
+		      <input type="submit" value="Enviar" />
+		  </form>
+	      </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo ServletIdade.java
+	}
+	\begin{lstlisting}
+	  protected void processRequest(HttpServletRequest request,
+      HttpServletResponse response)
+		  throws ServletException, IOException {
+	      response.setContentType("text/html;charset=UTF-8");
+	      PrintWriter out = response.getWriter();
+	      try {
+		  float
+altura = Float.parseFloat(request.getParameter("txtAltura"));
+		  out.println("<html>");
+		  out.println("<head>");
+		  out.println("<title>Servlet ServeletIdade</title>");         
+		  out.println("</head>");
+		  out.println("<body>");
+		  out.println("<h1>Resultado para sua altura</h1>");
+		  if(altura <= 1.50){ out.println("<p>Você é baixo.</p>");}
+		  else if(altura <= 1.80){ out.println("<p>Você possui uma
+altura mediana.</p>");}
+		  else {out.println("<p>Você é alto.</p>");}
+		  out.println("</body>");
+		  out.println("</html>");
+	      } catch(Exception e) {
+		  out.println("<h1>Houve um erro: " + e.getMessage() + "</h1>");
+	      }
+	      out.close();
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item crie um \textit{servlet} que receba três
+informações:
+	\begin{itemize}
+	  \item nome;
+	  \item idade;
+	  \item data de nascimento;
+	\end{itemize}
+	\item o servlet deve analisar as informações e exibir:
+	\begin{itemize}
+	  \item ``Bom dia'', ``Boa tarde'' ou ``Boa noite'' dependendo da hora
+de acesso do dia;
+	  \item a idade da pessoa (tratar a \textit{exception} se não for uma
+idade válida 0-150);
+	  \item o signo da pessoa baseado em seu mês de nascimento;
+	\end{itemize}
+      \end{itemize}
+\end{frame}

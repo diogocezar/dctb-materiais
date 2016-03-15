@@ -1,0 +1,7 @@
+SELECT DISTINCT nome_cliente
+FROM devedor
+WHERE nome_cliente in (select nome_cliente from depositante)
+
+SELECT DISTINCT nome_cliente
+FROM devedor
+WHERE nome_cliente not in ('Smith', 'Jones')

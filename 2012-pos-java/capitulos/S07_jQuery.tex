@@ -1,0 +1,404 @@
+\section[jQuery]{jQuery}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - O que é?}
+    \begin{itemize}
+      \item é um \textit{framework} para ajudar os desenvolvedores a se
+concentrarem na lógica dos sistemas da \textit{web} e não nos problemas de
+incompatibilidade dos navegadores atuais;
+
+      \item seu lema é escrever menos e fazer mais;
+      
+      \item \textit{jQuery} é uma biblioteca \textit{JavaScript};
+      
+      \item \url{http://jquery.com/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Por que utilizar?}
+    \begin{itemize}
+      \item \texttt{JavaScript puro == INCOMPATIBILIDADE}:
+      \begin{itemize}
+       \item diferentes navegadores;
+       \item diferentes implementações;
+       \item problemas com CSS's;
+       \item compatiblidade entre browsers;
+       \item problemas de acessibilidade;
+      \end{itemize}
+      \item o objetivo do \textit{jQuery}, é facilitar o desenvolvimento com
+\textit{JavaScript}, abstraindo os programadores destes tipos de problemas,
+focando-os apenas no desenvolvimento puro;
+      \item estão disponíveis plugins adicionais;
+      \item diminuição na escrita de código;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Funcionalidades}
+    \begin{itemize}
+      \item suas principais funcionalidades:
+      \begin{itemize}
+       \item resolução da incompatibilidade entre os navegadores;
+       \item redução de código;
+       \item reusabilidade do código através de plug-ins;
+       \item implementação segura de recursos do CSS1, CSS2 e CSS3;
+       \item utilização de uma vasta quantidade de plugins criados por outros
+       \item desenvolvedores;
+       \item trabalha com AJAX e DOM;
+    \end{itemize}
+   \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Utilização}
+    \begin{itemize}
+      \item a biblioteca \textit{jQuery} não requer instalação. Por se tratar de
+um arquivo \textit{JavaScript} formal, basta que você crie um link para o
+arquivo, na seção head do documento onde o \textit{script} irá rodar, tal como
+faz com qualquer arquivo JavaScript tradicional.
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Importando o jQuery
+	}
+	\begin{lstlisting}
+	  <script type="text/javascript" src="jquery-1.2.6.mini.js"></script>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Iniciando}
+    \begin{itemize}
+      \item para que o \textit{JQuery} seja ativado, é necessário colocar as
+funcionalidades na função \textit{ready}:
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Inicializando o jQuery
+	}
+	\begin{lstlisting}
+	  $(document).ready(function() { 
+	  // faça alguma coisa quando o DOM estiver pronto 
+	  });
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Seletores}
+    \begin{itemize}
+      \item uma das principais vantagens em se utilizar esse framework se diz
+respeito à seleção dos componentes html;
+      \item é possível selecionar de diversas formas os elementos da página como
+por exemplo:
+      \begin{itemize}
+       \item todos os seus links;
+       \item todos os seus inputs;
+       \item selecionar um elemento por seu id;
+       \item muitos outros.
+      \end{itemize}
+     
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Seletores mais utilizados
+	}
+	\begin{lstlisting}
+	 $("#id_div");
+	 $(".classe_div");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+      
+      \item uma lista completa pode ser vista nesse link:
+\url{http://docs.jquery.com/selectors}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Capturando Atributos}
+    \begin{itemize}
+      \item em \textit{JQuery} temos uma propriedade específica chamada
+attr('atributo');
+      \item esta propriedade pode retornar um atributo específico de um
+elemento XHTML, por exemplo:
+
+      \begin{itemize}
+       \item name;
+       \item value;
+       \item className;
+       \item type;
+       \item ID.
+      \end{itemize}
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Capturando Atributos
+	}
+	\begin{lstlisting}
+	  alert($("#nome").attr("value"));
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Seleção Genérica}
+    \begin{itemize}
+      \item é possível selecionar todos os elementos de determinado tipo;
+      \item para isso utiliza-se a função \texttt{find()};
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Seleção Genérica
+	}
+	\begin{lstlisting}
+	  $(document).find("form").each(function(){
+	      $(this)...
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item o código acima procura todos os elementos do tipo form, e para cada um
+deles (each) executa uma nova funcionalidade;
+
+    \item para capturar cada um dos formulários usa-se \texttt{\$(this)} dentro
+do each.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Efeitos Visuais}
+    \begin{itemize}
+      \item um dos recursos mais interessantes do \textit{JQuery} é a facilidade
+com que ele trata recursos visuais:
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Efeitos Visuais
+	}
+	\begin{lstlisting}
+	  // Some a div (com um efeito de esmaecimento);
+	  $("#id_div").fadeOut("slow"); 
+	  // Aparece a div (com um efeito de esmaecimento);
+	  $("#id_div").fadeIn("slow"); 
+	  // Mostra ou esconde uma div;
+	  $("#id_div").show();
+	  $("#id_div").hide();
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item Uma lista completa pode ser lida em:
+\url{http://docs.jquery.com/effects}
+    
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Modo de Compatibilidade}
+    \begin{itemize}
+      \item em determinados casos o \textit{JQuery} pode não funcionar como o
+esperado caso seja incluído junto com um outro \textit{framework} JavaScript;
+
+      \item porque? O JQuery por padrão utiliza o símbolo \$ para acessar suas
+bibliotecas;
+
+      \item pode-se utilizar o  modo de compatibilidade alterando o \$ para
+uma palavra qualquer.
+
+      \item para habilitar essa configuração basta incluir antes
+dos scripts:
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Modo de Compatibilidade
+	}
+	\begin{lstlisting}
+	  <script>jQuery.noConflict();</script>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Capturando o Texto de um Input}    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Capturando o Texto de um Input
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	  <title>Get Text</title>
+	  <script language="javascript" src="jquery.js"></script>
+	    <script>
+	    $(document).ready(function(){
+	      $("#botao").click(function(){
+	         alert($("#texto").attr("value"));
+	      });
+	    });
+	    </script>
+	  </head>
+	  <body>
+	    Digite seu nome:
+	    <input id="texto" name="texto" type="text" maxlength="50" />
+	    <input name="botao" type="button" id="botao" value="Ok"/>
+	    </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \begin{itemize}  
+    
+    \item note que não há mais link no botão com o js;
+    
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Alterando a Cor de uma Div}    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Alterando a Cor de uma Div
+	}
+	\begin{lstlisting}
+	<html>
+	<head>
+	  <title>Muda Cor</title>
+	  <script language="javascript" src="jquery.js"></script>
+	  <script>
+	  $(document).ready(function(){
+	    $("#botao").click(function(){
+	      $("#mudaCor").css({"color":"red"});
+	    });
+	  });
+	  </script>
+	</head>
+	<body>
+	  <div id="mudaCor">Testando um novo texto</div>
+	  <input name="botao" type="button" id="botao" value="Ok"/>
+	</body>
+	</html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Alterando o Conteúdo de uma Div}    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Alterando o Conteúdo de uma Div
+	}
+	\begin{lstlisting}
+	<html>
+	<head>
+	  <title>Muda Div</title>
+	  <script language="javascript" src="jquery.js"></script>
+	  <script>
+	  $(document).ready(function(){
+	    $("#botao").click(function(){
+	      $("#mudaDiv").html("O texto foi trocado!");
+	    });
+	  });
+	  </script>
+	</head>
+	<body>
+	  <div id="mudaDiv">Testando um novo texto</div>
+	  <input name="botao" type="button" id="botao" value="Ok"/>
+	</body>
+	</html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{jQuery - Exibindo Detalhes}    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Exibindo Detalhes
+	}
+	\begin{lstlisting}
+	<html>
+	<head>
+	<title>Detalhes</title>
+	<script language="javascript" src="jquery.js"></script>
+	<script>
+	  $(document).ready(function(){
+	    $("#link").click(function(){
+	      $("#maisinfo").toggle();
+	    });
+	  });
+	</script>
+	</head>
+	<body>
+	  <p>Clica no link para abrir a caixa de informação escondida.</p>
+	  <p><a href="#" id="link">Mais Informação</a></p>
+	  <div id="maisinfo" style="display:none">
+	  <p> Texto que ficará invisível até clicar no link.</p>
+	  </div>
+	</body>
+	</html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item crie uma página em XHTML que tenha um conteúdo em uma única div;
+       \item faça os seguintes botões:
+       \begin{itemize}
+	\item verde;
+	\item vermelho;
+	\item azul;
+	\item aumentar;
+	\item diminuir.
+       \end{itemize}
+       \item ao clicar em um dos botões de cor o texto mudará sua cor;
+       \item ao clicar em aumentar ou diminuir o texto mudará seu tamanho.
+      \end{itemize}
+\end{frame}

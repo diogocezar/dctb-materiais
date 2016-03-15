@@ -1,0 +1,11 @@
+switch(sProduct){
+  case "Windows 2000":
+  case "Windows NT":
+    System.Console.Write("Sistema Operacional");
+    break;
+  case "MSDE":
+    System.Console.Write("Mecanismo Simplificado");
+    goto case "SQL Server";
+  case "SQL Server":
+    System.Console.Write("Banco de Dados");
+}

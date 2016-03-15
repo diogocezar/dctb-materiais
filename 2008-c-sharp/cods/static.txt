@@ -1,0 +1,3 @@
+NomeDaClasse.atributoEstatico = valor;
+valor = NomeDaClasse.atributoEstatico;
+NomeDaClasse.MetodoEstatico();

@@ -1,0 +1,435 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% P R O J E T O   O R I A N T %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:projeto]{PROJETO ORIANT}
+
+    A proposta definida pelo sistema \emph{AntWeb} descrita na Seção
+    \ref{subsec:antweb} apresenta algumas limitações: não é possível
+    fazer testes com usuários reais, apenas com caminhos aleatórios que
+    simulam o comportamento dos insetos; além disso, há ainda a
+    necessidade de determinar para cada usuário qual sua página alvo,
+    informação difícil de ser identificada, pois o interesse de um
+    usuário hoje pode não ser o mesmo de amanhã.
+
+    No trabalho desenvolvido chamado OriAnt (orientação por formigas)
+    tenta-se contornar esses problemas, eliminando a necessidade da
+    prévia determinação de uma página alvo por meio da navegação
+    colaborativa entre usuários com um mesmo interesse, tornando
+    possível o teste com usuários reais.
+
+    Neste capítulo, discute-se as características do projeto, sua
+    importância, e descreve-se em três módulos: \emph{computação de
+    feromônio}, \emph{adaptação} e \emph{administração}, o modelo
+    computacional proposto.
+
+    \UTFPRsection[sec:importância]{RELEVÂNCIA}
+
+    Diversos tipos de usuários navegam pela \emph{web}, para usuários
+    experientes, a busca por informações na rede é intuitiva, pois isso
+    faz parte de seu cotidiano. Entretanto, nem todos os usuários têm a
+    mesma facilidade para encontrar rapidamente o que estão procurando.
+    Isso ocorre devido à desorientação oferecida por \emph{websites} que
+    não contemplam algumas regras básicas de acessibilidade/usabilidade.
+
+    A fim de suprir esta desorientação, sistemas de busca conseguem
+    filtrar uma grande quantidade de informação, objetivando parte da
+    busca do usuário, mas não conseguem traçar com precisão o caminho
+    que deve ser percorrido até seu objetivo. Ainda nota-se uma carência
+    de alguma forma de assistência navegacional que oriente o usuário
+    até seu objetivo.
+
+    Percebe-se que, mesmo com os mecanismos de busca, alguns usuários
+    ainda têm dificuldades para encontrar páginas de determinados assuntos.
+    Isso ocorre porque o que é oferecido como resultado, se resume em uma
+    lista de \emph{websites} que contém palavras iguais à(s)
+    palavra(s)-chave(s) procurada(s). Apesar da grande ajuda oferecida,
+    uma busca menos detalhada pode trazer resultados irrelevantes para o
+    usuário.
+
+    Observa-se a carência de algum mecanismo que oriente o usuário dentro
+    de um determinado \emph{website}, pois a busca se torna mais
+    agradável ao se localizar em um \emph{site} relevante. Outra vantagem do
+    sistema de orientação é que ao se navegar até o objetivo há a
+    possibilidade de se descobrir outros assuntos relevantes que podem
+    estar relacionados ao assunto procurado.
+
+    \begin{citacao}
+
+        Para minimizar a desorientação, deve-se fornecer recursos para
+        permitir aos leitores a identificação de sua posição corrente em
+        relação à estrutura global, reconstruir o caminho que o levou a esta
+        posição, e distinguir entre as diferentes opções para mover-se a
+        partir desta posição. Por exemplo, a manutenção do histórico de
+        navegação (isto é, o caminho percorrido pelo usuário) auxilia o
+        leitor a reconstruir o caminho até a sua posição atual
+        \cite{artigo:aspcognitivo}.
+
+    \end{citacao}
+
+    O mecanismo criado oferece sugestões, independentemente do conteúdo
+    ou diagramação do \emph{website} hospedeiro, ajudando os usuários a
+    traçar o caminho até seu objetivo.
+
+    \UTFPRsection[sec:engine]{NÚCLEO DO SISTEMA (ENGINE)}
+
+        Nesta seção do trabalho serão apresentados os três módulos
+        que compõem o sistema OriAnt, são eles: Computação de
+        Feromônio, Adaptação e Administração. Nas seções
+        \ref{subsec:compfero}, \ref{subsec:adaptacao} e
+        \ref{subsec:administracao}, respectivamente.
+
+        \UTFPRsubsection[subsec:compfero]{Módulo: Computação de Feromônio}
+
+        Implementa a máquina da navegação adaptativa.
+
+        Para descrever o módulo de computação de feromônio, desenvolveu-se
+        um modelo \\ $M<P,G,F,pA>$ constituído de três conjuntos de dados,
+        representando páginas ($P$), grupos ($G$), feromônio ($F$) e
+        parâmetros administrativos ($pA$). Cada elemento possui seus
+        sub-elementos de tal forma que:
+
+        \begin{itemize}
+        \item $P$: é uma quádrupla $P<p, u, e, c>$ com os dados de
+        todas as páginas, tais como identificador, data e hora do último acesso,
+        endereço URL e número de acessos, respectivamente;
+
+        \item $G$: é uma dupla $G<g, n>$, sendo $g$ o identificador do grupo e $n$ o
+        número de acessos daquele grupo;
+
+        \item $F$: é uma quádrupla $F<o, d, g, qf>$, tendo $o$ como identificador de
+        uma página origem, $d$ da página destino, $g$ como identificador de
+        grupo e $qf$ como quantidade de feromônio.
+
+        \item $pA$: é uma tripla $pA<a, t, d>$, tendo $a$ como a taxa de
+        acréscimo de feromônio, $t$ como a taxa de evaporação e $d$ como
+        taxa de divisão, parâmetro que pondera a diferença dos tempos para a
+        subtração de feromônio, necessário para uniformizar os intervalos de
+        tempo extraídos de $P_{u}$ \UTFPRfoot{quando estes assumem valores
+        muito pequenos ou muito grandes}{Em determinado momento do sistema,
+        a diferença entre os tempos de acesso pode ser pequena,
+        representando apenas alguns segundos, entretanto, essa diferença em
+        outro momento pode chegar a horas ou dias. O elemento $pA_{d}$ foi
+        criado para regularizar esses valores.}. Esses parâmetros são
+        constantes definidas pelo administrador do sistema.
+
+        \end{itemize}
+
+        Desta forma, o sistema mantém informações de todas as páginas de um
+        \emph{website} em $P$. Os interesses dos usuários são mapeados por
+        meio de grupos em $G$, a representação de feromônios é feita em $F$,
+        uma matriz tridimensional, indicando para cada página a relevância
+        do destino $d$ para o grupo $g$ e os parâmetros administrativos
+        estão definidos em $pA$.
+
+        Para cada acesso, ocorre o acréscimo de feromônio de acordo com a
+        equação \ref{eq:acrescimo_feromonio}.
+
+        \UTFPRequation{Realimentação positiva (acréscimo de feromônio)}
+        \begin{equation}
+            F_{odg} = F_{odg} + pA_a
+            \label{eq:acrescimo_feromonio}
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $F_{odg}$ é quantidade de feromônio na aresta, que liga a origem $o$
+            ao destino $d$ para o grupo $g$.
+
+            \item $pA_a$ é a taxa de acréscimo de feromônio definida pelo administrador do sistema, que
+            significa a relevância de um acesso;
+
+        \end{itemize}
+
+        A fórmula de subtração de feromônio foi baseada no conceito de juros
+        compostos e pode ser observada na equação \ref{eq:reducao}
+
+        \UTFPRequation{Realimentação negativa (subtração de feromônio)}
+        \begin{equation}
+            \label{eq:reducao}
+            F_{odg} = F_{odg} * (1 - \frac{pA_t}{100})^\tau
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $pA_t$ é a taxa de evaporação de feromônio, dependente do tempo;
+
+            \item $\tau$ é o intervalo de tempo, que a página ficou sem acessos,
+            determinado pela equação~\ref{eq:tau}.
+
+        \end{itemize}
+
+        \UTFPRequation{Intervalo de tempo das páginas sem acesso}
+        \begin{equation}
+            \tau = \frac{t_{atual} - t_{ultimo acesso}}{pA_d}
+            \label{eq:tau}
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+        \item $pA_d$ é a taxa de divisão definida pelo administrador, que é
+        inversamente proporcional a taxa de subtração de feromônio.
+
+        \end{itemize}
+
+        \UTFPRsubsection[subsec:adaptacao]{Módulo: Adaptação}
+
+        Para implementar o modelo descrito na Seção
+        \ref{subsec:compfero}, desenvolveu-se uma camada de adaptação que
+        pudesse ser acoplada em qualquer \emph{website} que seguisse
+        determinadas recomendações, descritas na Seção
+        \ref{sec:restricoes}.
+
+        A arquitetura do modelo proposto está apresentada na
+        Figura~\ref{fig:arquitetura}, em que as setas apresentam a seqüência
+        de ações que ilustra o comportamento adaptativo da camada OriAnt a
+        partir da navegação de um usuário, que compreende:
+
+        \UTFPRfigura{width=15.5cm}{oriant/fig_geral.jpg}{Arquitetura do
+        modelo proposto}{fig:arquitetura}
+
+        \begin{enumerate}
+            \item \emph{escolher o grupo}: o usuário faz a opção de seu tema de
+            interesse, para que a partir desta, a camada de adaptação atue. Os
+            grupos de interesse com maior número de visitas recentes aparecem
+            destacados na camada com fontes maiores. Este dado é obtido a partir
+            do sub-elemento $n$ de $G$. A Figura \ref{fig:grupo}
+            apresentada no Apêndice \ref{ape:apreoriant} mostra a
+            disposição dos grupos de interesse;
+
+            \item Atualizar o banco de dados OriAnt com o dado do grupo,
+            especificando aquele que o usuário tem interesse e incrementando o
+            sub-elemento $n$ de $G$;
+
+            \item Navegar acionando o \textit{hyperlink} desejado;
+
+            \item \emph{visualizar a página destino}: a camada de orientação é
+            transparente para o usuário e portanto, a página destino é
+            visualizada normalmente após um clique;
+
+            \item \emph{realizar a computação de feromônio}: isto é calcular a nova quantidade
+            de feromônio para o elemento $F_{odg}$ conforme a equação
+            \ref{eq:acrescimo_feromonio};
+
+            \item Atualizar o banco de dados com o novo valor de $F_{odg}$ (página
+            acessada);
+
+            \item \emph{efetuar a dedução de feromônio (evaporação)}: calcular a nova
+            quantidade de feromônio para toda a matriz de feromônio conforme a
+            equação \ref{eq:reducao};
+
+            \item Atualizar o banco de dados com os novos valores de  $F_{odg}$
+            para toda a matriz de feromônio;
+
+            \item Iniciar a computação dos \emph{links} que devem ser sugeridos conforme
+            cálculo de relevância da página, definido pela equação
+            \ref{eq:relevancia};
+
+            \UTFPRequation{Cálculo de relevância da página}
+            \begin{equation}
+                \omega(o, d, g) = \frac{F_{odg}}{\sum_{t=1}^{n}F_{otg}}
+                \label{eq:relevancia}
+            \end{equation}
+
+            \emph{onde:}
+
+            \begin{itemize}
+
+                \item $\omega$ é a relevância daquela página em relação às outras;
+
+                \item $n$ é o número de páginas destino a partir daquela
+                origem.
+
+            \end{itemize}
+
+            \item Obter os dados do banco com relação à navegação dos outros
+            usuários para sugerir \emph{links};
+
+            \item Exibir sugestões de \emph{links} conforme a estratégia de orientação
+            selecionada;
+
+            \item Aguardar que o usuário acione outro \textit{hyperlink}.
+        \end{enumerate}
+
+        Caso o usuário não escolha nenhum dos grupos disponíveis na camada
+        de adaptação, o sistema não é acionado. Caso ocorra a alteração de
+        grupo durante a navegação, as sugestões passarão a ser computadas
+        com base no novo grupo selecionado.
+
+        Além do grupo de interesses, também é possível que o usuário escolha
+        um dos tipos de orientação: objetiva, orientada ou relacionada;
+        e o contexto da orientação: esta página ou todas as páginas.
+
+        Cada tipo de orientação oferece uma disposição
+        diferenciada da sugestão gerada pelo sistema. As disposições
+        são:
+
+        \begin{itemize}
+
+        \item \emph{disposição objetiva}: mostrará qual é a página alvo, ou seja, a
+        página que possui mais feromônio de um certo grupo. Essa
+        disposição implementa a técnica de orientação direta descrita na
+        Seção \ref{subsec:tecnicasdenavegacao}. A Figura \ref{fig:objetiva}
+        apresentada no Apêndice \ref{ape:apreoriant} mostra a
+        disposição objetiva;
+
+        \item \emph{disposição orientada}: mostrará qual o caminho que se deve seguir
+        para chegar até a página alvo. Esse caminho é traçado com base no
+        histórico dos caminhos percorridos de usuários do mesmo grupo e
+        implementa o método da condução global descrita na Seção
+        \ref{subsec:metodosnavegacao}. A Figura \ref{fig:orientada}
+        apresentada no Apêndice \ref{ape:apreoriant} mostra a
+        disposição orientada;
+
+        \item \emph{disposição por assuntos relacionados}: mostrará quais os \emph{hyperlinks}
+        mais visitados pelos usuários de seu  grupo. Além da página
+        alvo,
+        outras páginas também podem  interessar o usuário de determinado
+        grupo, assim, ao  selecionar a exibição por assuntos relacionados,
+        obtém-se uma lista das páginas mais relevantes para este
+        determinado assunto. A Figura \ref{fig:relacionada}
+        apresentada no Apêndice \ref{ape:apreoriant} mostra a
+        disposição por assuntos relacionados.
+
+        \end{itemize}
+
+        Dependendo do contexto da orientação, a camada de adaptação
+        comporta-se da seguinte forma:
+
+        \begin{itemize}
+
+            \item \emph{essa página}: quando esta opção está selecionada, a
+            disposição toma como contexto a página atual, ou seja, a partir
+            desta página, calcula-se qual é a próxima página mais relevante;
+
+            \item \emph{todas as páginas}: quando esta opção está selecionada, a
+            disposição toma como contexto todas as páginas do sistema,
+            verificando dentre todas, qual é a página mais relevante.
+            Este contexto é particularmente interessante, principalmente para
+            usuários que não conhecem a estrutura global do \emph{site} em que
+            estão navegando.
+
+        \end{itemize}
+
+        A partir do cálculo da relevância de cada página em relação a atual,
+        do tipo de orientação e do contexto, o OriAnt sugere páginas, caminhos
+        ou assuntos considerados mais apropriados para o grupo de interesse
+        do usuário.
+
+        A rede de informação definida por \citeonline{atigo:hiperadapt},
+        tripla $<N, L, P>$, descrita na Seção
+        \ref{subsec:redesdeinformacoes}, caracteriza o funcionamento da
+        camada de adaptação. Pode-se fazer uma analogia dos sistemas em que,
+        $N$ representa o conjunto de páginas do \emph{website}, $L$
+        representa as ligações entre as páginas e $P$ são as propriedades
+        definidas para que uma ligação se torne relevante. Na Figura
+        \ref{fig:rededeinformacoes} a projeção para o plano inferior mostra
+        algumas ligações em negrito, que analogamente representam os
+        caminhos mais relevantes para um determinado usuário.
+
+        \UTFPRsubsection[subsec:administracao]{Módulo: Administração}
+
+        O módulo de administração foi elaborado para que o responsável pelo
+        \emph{website} hospedeiro pudesse ter uma maior autonomia sobre a
+        camada OriAnt. Dentre as funcionalidades disponíveis estão:
+
+
+        \begin{itemize}
+
+            \item inserir, alterar ou remover grupos, possibilitando
+                ao administrador gerenciar os grupos de interesse de seu
+                \emph{website} hospedeiro;
+
+            \item consultar freqüência dos grupos (é possível consultar
+                todos os grupos em uma lista ordenada pelo elemento $n$ de
+                $G$) e páginas cadastradas (consultar todas
+                as páginas cadastradas no sistema OriAnt);
+
+            \item alterar \emph{template} que permite que o administrador escolha em
+                uma lista a aparência padrão da camada
+                OriAnt; e instruções para criação, em que se exibe ao administrador
+                um modelo passo-a-passo de como criar um novo \emph{template} para a
+                camada. As Figuras \ref{fig:skinroxo} e \ref{fig:skinamarelo}
+                apresentadas no Apêndice \ref{ape:apreoriant} mostram dois
+                exemplos dos \emph{templates} pré-existentes;
+
+            \item permitir ao
+            administrador a alteração dos parâmetros de $pA$;
+
+            \item permitir ao administrador o
+            gerenciamento dos registros do banco de dados do modelo
+            $M$. O gerenciamento dos registros do sistema está
+            detalhado na Seção \ref{subsubsec:gerenciamento}.
+
+        \end{itemize}
+
+    \UTFPRsubsection[subsubsec:gerenciamento]{GERENCIAMENTO DOS REGISTROS}
+
+    Para o gerenciamento dos registros do banco de dados, um módulo
+    foi criado. É possível através de parâmetros enviados para a página
+    \texttt{gerenciar.php}, selecionar qual tabela será exibida, bem
+    como qual campo será exibido e quais os campos possíveis para
+    filtragem, ainda é possível visualizar os detalhes de um registro ao
+    se passar o mouse sobre o mesmo. Com esse módulo genérico é
+    possível gerenciar os registros não só do sistema OriAnt, mas
+    qualquer sistema que implementar a mesma estrutura.
+
+    É possível disponibilizar para o administrador várias formas de
+    gerenciamento. No Código \ref{cod:gerenciar}, pode-se observar
+    algumas opções e seus respectivos parâmetros. O parâmetro
+    \texttt{tabela} é uma \emph{string} e indica qual tabela deverá
+    ser gerenciada, o parâmetro \texttt{campos} é também uma
+    \emph{string} e pode ser composta por 1 ou mais elementos que devem
+    ser separados por vírgula, o primeiro elemento indica qual o campo a
+    ser exibido na lista de gerenciamento. Os campos são representados
+    por um número que indica a sua ordem no arquivo de mapeamento das
+    tabelas do sistema que pode ser visto na Seção \ref{sec:mapeamento}.
+    Para a tabela "Grupo"{} temos os campos "2,1,0"{} que representam
+    respectivamente "nome do grupo", "identificação"{} e "contador".
+
+    \texttt{\lstinputlisting[language=HTML, label=cod:gerenciar,
+    caption={Exemplo de \emph{links} para o gerenciamento dos registros}]{cods/gerenciar.txt}}
+
+
+    \UTFPRfigura{width=10cm}{gerenciar/gerenciar.jpg}{Sistema de
+    gerenciamento dos registros}{fig:gerenciamento}
+
+    A Figura \ref{fig:gerenciamento}, mostra o gerenciamento dos
+    registros da tabela "Grupo"{}, conforme a linha 5 do código
+    \ref{cod:gerenciar}. Nesse momento o administrador procurava por
+    palavras em que o "nome do grupo", "contador", ou "identificação"{}
+    possuiriam a letra "N".
+
+    A consulta montada para a exibição do resultado pode ser observada
+    no Código \ref{cod:gerenciarConsulta}.
+
+    \texttt{\lstinputlisting[language=HTML, label=cod:gerenciarConsulta,
+    caption={Exemplo de consulta gerada para gerenciamento dos registros}]{cods/gerenciarConsulta.txt}}
+
+    \UTFPRsection[sec:restricoes]{RESTRIÇÕES}
+
+    Para a utilização do sistema proposto, deve-se seguir algumas
+    restrições básicas, são elas:
+
+    \begin{enumerate}
+        \item O \emph{website} hospedeiro não deve utilizar em seu conteúdo a
+        utilização das tags HTML: \emph{$<$frame$>$} ou \emph{$<$iframe$>$}. Como
+        o sistema é um \emph{frame}, ou seja, uma camada do \emph{website} hospedeiro, ao
+        se utilizar outras camadas, a camada OriAnt pode não apresentar um
+        comportamento normal;
+
+        \item Para o armazenamento das páginas o \emph{website} hospedeiro
+        não deve utilizar funções \emph{JavaScript} (Seção
+        \ref{subsec:javascript}) na tag HTML \emph{$<$a$>$}, pois os
+        registros das páginas são computados a partir do \emph{link}
+        indicado nessa tag;
+
+        \item O usuário do sistema deverá preferencialmente habilitar as
+        \emph{cookies} para o perfeito funcionamento do sistema.
+    \end{enumerate}

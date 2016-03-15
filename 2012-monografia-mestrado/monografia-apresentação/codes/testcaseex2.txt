@@ -1,0 +1,165 @@
+4 avaliable
+
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 36 msec. Average: 0 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1962 msec. Average: 1960 msec. 	 Method: host_0_order_1_workflow_2
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1777 msec. Average: 1770 msec. 	 Method: host_1_order_1_workflow_3
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1620 msec. Average: 1614 msec. 	 Method: host_2_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1881 msec. Average: 1861 msec. 	 Method: host_3_order_1_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1849 msec. Average: 1810 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1752 msec. Average: 1709 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1939 msec. Average: 1875 msec. 	 Method: host_all_order_2_workflow_2
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1763 msec. Average: 1722 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 409 msec. Average: 408 msec. 	 Method: host_0_order_3_workflow_4
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 733 msec. Average: 726 msec. 	 Method: host_3_order_3_workflow_5
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1373 msec. Average: 1316 msec. 	 Method: host_all_order_4_workflow_4
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1472 msec. Average: 1443 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 364 msec. Average: 362 msec. 	 Method: host_0_order_5_workflow_6
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 488 msec. Average: 485 msec. 	 Method: host_1_order_5_workflow_7
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1516 msec. Average: 1479 msec. 	 Method: host_all_order_6_workflow_6
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1606 msec. Average: 1576 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 501 msec. Average: 490 msec. 	 Method: host_1_order_7_workflow_8
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1271 msec. Average: 1206 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 442 msec. Average: 438 msec. 	 Method: host_2_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1039 msec. Average: 997 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 209 msec. Average: 164 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 26016
+------------------------------
+
+0.01: (start-task-full2 h1 mult_hi H I)
+0.01: (start-task-full2 h0 mult_ef E F)
+0.01: (start-task-full2 h2 sum_cd C D)
+0.01: (start-task-full2 h3 sum_ab A B)
+0.02: (end-task-full1 h0 mult_ef EF)
+0.02: (end-task-full1 h1 mult_hi HI)
+0.02: (end-task-full1 h3 sum_ab AB)
+0.02: (end-task-full1 h2 sum_cd CD)
+0.03: (start-task-full2 h3 mult_g_hi G HI)
+0.03: (start-task-full2 h0 mult_ab_cd AB CD)
+0.04: (end-task-full1 h3 mult_g_hi GHI)
+0.04: (end-task-full1 h0 mult_ab_cd ABCD)
+0.05: (start-task-full2 h1 sum_ef_ghi EF GHI)
+0.05: (start-task-full2 h0 sum_abcd_ef ABCD EF)
+0.06: (end-task-full1 h1 sum_ef_ghi EFGHI)
+0.06: (end-task-full1 h0 sum_abcd_ef ABCDEF)
+0.07: (start-task-full2 h1 sum_efghi_hi EFGHI HI)
+0.08: (end-task-full1 h1 sum_efghi_hi EFGHIHI)
+0.09: (start-task-full2 h2 sum_abcdef_efghihi ABCDEF EFGHIHI)
+0.10: (end-task-full1 h2 sum_abcdef_efghihi ABCDEFEFGHIHI)
+
+
+2 avaliable e 2 half
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 34 msec. Average: 0 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1781 msec. Average: 1779 msec. 	 Method: host_0_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 2015 msec. Average: 2010 msec. 	 Method: host_1_order_1_workflow_3
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1547 msec. Average: 1541 msec. 	 Method: host_3_order_1_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 3083 msec. Average: 2577 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1504 msec. Average: 1437 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1657 msec. Average: 1599 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 504 msec. Average: 502 msec. 	 Method: host_0_order_3_workflow_5
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 785 msec. Average: 779 msec. 	 Method: host_1_order_3_workflow_2
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1658 msec. Average: 1603 msec. 	 Method: host_all_order_4_workflow_2
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1344 msec. Average: 1274 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 403 msec. Average: 402 msec. 	 Method: host_0_order_5_workflow_4
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 502 msec. Average: 498 msec. 	 Method: host_1_order_5_workflow_7
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1171 msec. Average: 1114 msec. 	 Method: host_all_order_6_workflow_4
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1287 msec. Average: 1240 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 350 msec. Average: 342 msec. 	 Method: host_2_order_7_workflow_8
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 331 msec. Average: 321 msec. 	 Method: host_3_order_7_workflow_6
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1489 msec. Average: 1420 msec. 	 Method: host_all_order_8_workflow_6
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1285 msec. Average: 1227 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 326 msec. Average: 322 msec. 	 Method: host_3_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 986 msec. Average: 932 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 40 msec. Average: 10 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 11 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 24093
+------------------------------
+
+0.01: (start-task-full2 h1 mult_hi H I)
+0.01: (start-task-full2 h0 sum_cd C D)
+0.01: (start-task-half2 h3 sum_ab A B)
+0.02: (end-task-full1 h1 mult_hi HI)
+0.02: (end-task-full1 h0 sum_cd CD)
+0.02: (end-task-half1 h3 sum_ab AB)
+0.03: (start-task-full2 h1 mult_ef E F)
+0.03: (start-task-full2 h0 mult_g_hi G HI)
+0.04: (end-task-full1 h0 mult_g_hi GHI)
+0.04: (end-task-full1 h1 mult_ef EF)
+0.05: (start-task-full2 h1 sum_ef_ghi EF GHI)
+0.05: (start-task-full2 h0 mult_ab_cd AB CD)
+0.06: (end-task-full1 h0 mult_ab_cd ABCD)
+0.06: (end-task-full1 h1 sum_ef_ghi EFGHI)
+0.07: (start-task-half2 h2 sum_efghi_hi EFGHI HI)
+0.07: (start-task-half2 h3 sum_abcd_ef ABCD EF)
+0.08: (end-task-half1 h2 sum_efghi_hi EFGHIHI)
+0.08: (end-task-half1 h3 sum_abcd_ef ABCDEF)
+0.09: (start-task-half2 h3 sum_abcdef_efghihi ABCDEF EFGHIHI)
+0.10: (end-task-half1 h3 sum_abcdef_efghihi ABCDEFEFGHIHI)
+
+3 half 1 avaliable
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 29 msec. Average: 0 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1783 msec. Average: 1780 msec. 	 Method: host_0_order_1_workflow_2
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1858 msec. Average: 1851 msec. 	 Method: host_1_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1920 msec. Average: 1914 msec. 	 Method: host_2_order_1_workflow_3
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 2332 msec. Average: 2324 msec. 	 Method: host_3_order_1_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1724 msec. Average: 1650 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 2301 msec. Average: 2238 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1935 msec. Average: 1878 msec. 	 Method: host_all_order_2_workflow_2
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1771 msec. Average: 1748 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 501 msec. Average: 483 msec. 	 Method: host_0_order_3_workflow_4
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 666 msec. Average: 662 msec. 	 Method: host_3_order_3_workflow_5
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1590 msec. Average: 1533 msec. 	 Method: host_all_order_4_workflow_4
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1640 msec. Average: 1613 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 435 msec. Average: 423 msec. 	 Method: host_1_order_5_workflow_6
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 464 msec. Average: 452 msec. 	 Method: host_3_order_5_workflow_7
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1130 msec. Average: 1086 msec. 	 Method: host_all_order_6_workflow_6
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1443 msec. Average: 1361 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 410 msec. Average: 402 msec. 	 Method: host_2_order_7_workflow_8
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1318 msec. Average: 1262 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 354 msec. Average: 348 msec. 	 Method: host_2_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 1107 msec. Average: 1075 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 54 msec. Average: 30 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 26779
+------------------------------
+
+0.01: (start-task-full2 h0 mult_ef E F)
+0.01: (start-task-half2 h2 mult_hi H I)
+0.01: (start-task-half2 h1 sum_cd C D)
+0.01: (start-task-half2 h3 sum_ab A B)
+0.02: (end-task-full1 h0 mult_ef EF)
+0.02: (end-task-half1 h2 mult_hi HI)
+0.02: (end-task-half1 h3 sum_ab AB)
+0.02: (end-task-half1 h1 sum_cd CD)
+0.03: (start-task-half2 h3 mult_g_hi G HI)
+0.03: (start-task-full2 h0 mult_ab_cd AB CD)
+0.04: (end-task-half1 h3 mult_g_hi GHI)
+0.04: (end-task-full1 h0 mult_ab_cd ABCD)
+0.05: (start-task-half2 h3 sum_ef_ghi EF GHI)
+0.05: (start-task-half2 h1 sum_abcd_ef ABCD EF)
+0.06: (end-task-half1 h3 sum_ef_ghi EFGHI)
+0.06: (end-task-half1 h1 sum_abcd_ef ABCDEF)
+0.07: (start-task-half2 h2 sum_efghi_hi EFGHI HI)
+0.08: (end-task-half1 h2 sum_efghi_hi EFGHIHI)
+0.09: (start-task-half2 h2 sum_abcdef_efghihi ABCDEF EFGHIHI)
+0.10: (end-task-half1 h2 sum_abcdef_efghihi ABCDEFEFGHIHI)
+
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 55 msec. Average: 0 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 2205 msec. Average: 2197 msec. 	 Method: host_0_order_1_workflow_0
+Step: 2. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 4.  Time elapsed: 4832 msec. Average: 4495 msec. 	 Method: host_all_order_2_workflow_0
+Step: 3. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 45 msec. Average: 14 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 12 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 7149
+------------------------------

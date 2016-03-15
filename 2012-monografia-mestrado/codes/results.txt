@@ -1,0 +1,122 @@
+4 avaliable
+
+[INIT_SWEP_LOGGER_19-03-2012-12:32:03]
+(19-03-2012 12:32:03:0362)[INFO] Exporting Application.
+(19-03-2012 12:32:03:0423)[INFO] Executing Translation Box.
+(19-03-2012 12:32:04:0724)[INFO] Calling the Planner.
+(19-03-2012 12:32:07:0201)[INFO] Exporting Actions.
+(19-03-2012 12:32:07:0213)[INFO] Generating Plan.
+(19-03-2012 12:32:07:0222)[INFO] Making JoinWorkFlows.
+(19-03-2012 12:32:07:0239)[INFO] Making Bash File.
+(19-03-2012 12:32:07:0319)[INFO] Executing Application
+[END_SWEP_LOGGER]
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 32 msec. Average: 1 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17400 msec. Average: 17391 msec. 	 Method: host_0_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17160 msec. Average: 17151 msec. 	 Method: host_1_order_1_workflow_3
+Step: 1. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 1.  Time elapsed: 16699 msec. Average: 16682 msec. 	 Method: host_2_order_1_workflow_0
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17738 msec. Average: 17734 msec. 	 Method: host_3_order_1_workflow_2
+Step: 2. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 4.  Time elapsed: 16616 msec. Average: 15918 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15818 msec. Average: 14840 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14650 msec. Average: 13881 msec. 	 Method: host_all_order_2_workflow_2
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14472 msec. Average: 13726 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14475 msec. Average: 14466 msec. 	 Method: host_0_order_3_workflow_4
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13168 msec. Average: 13158 msec. 	 Method: host_2_order_3_workflow_5
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14908 msec. Average: 13900 msec. 	 Method: host_all_order_4_workflow_4
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14637 msec. Average: 13933 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14189 msec. Average: 14181 msec. 	 Method: host_1_order_5_workflow_7
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13622 msec. Average: 13618 msec. 	 Method: host_3_order_5_workflow_6
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14661 msec. Average: 14201 msec. 	 Method: host_all_order_6_workflow_6
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14881 msec. Average: 14270 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13584 msec. Average: 13580 msec. 	 Method: host_3_order_7_workflow_8
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15042 msec. Average: 14218 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14900 msec. Average: 14891 msec. 	 Method: host_0_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15145 msec. Average: 14365 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 39 msec. Average: 15 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 10 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 303846
+------------------------------
+
+2 avaliable / 2 half-avaliable
+
+[INIT_SWEP_LOGGER_19-03-2012-13:46:12]
+(19-03-2012 13:46:12:497)[INFO] Exporting Application.
+(19-03-2012 13:46:12:573)[INFO] Executing Translation Box.
+(19-03-2012 13:46:13:616)[INFO] Calling the Planner.
+(19-03-2012 13:46:15:331)[INFO] Exporting Actions.
+(19-03-2012 13:46:15:335)[INFO] Generating Plan.
+(19-03-2012 13:46:15:344)[INFO] Making JoinWorkFlows.
+(19-03-2012 13:46:15:359)[INFO] Making Bash File.
+(19-03-2012 13:46:15:429)[INFO] Executing Application
+[END_SWEP_LOGGER]
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 38 msec. Average: 1 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 18999 msec. Average: 18990 msec. 	 Method: host_0_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17012 msec. Average: 16991 msec. 	 Method: host_1_order_1_workflow_3
+Step: 1. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 1.  Time elapsed: 17541 msec. Average: 17535 msec. 	 Method: host_3_order_1_workflow_0
+Step: 2. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 4.  Time elapsed: 17243 msec. Average: 16586 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 16543 msec. Average: 15332 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15426 msec. Average: 14558 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15188 msec. Average: 15174 msec. 	 Method: host_0_order_3_workflow_5
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13453 msec. Average: 13444 msec. 	 Method: host_1_order_3_workflow_2
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15377 msec. Average: 14175 msec. 	 Method: host_all_order_4_workflow_2
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15170 msec. Average: 14263 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15286 msec. Average: 15264 msec. 	 Method: host_0_order_5_workflow_4
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14212 msec. Average: 14202 msec. 	 Method: host_1_order_5_workflow_7
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15334 msec. Average: 14165 msec. 	 Method: host_all_order_6_workflow_4
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15415 msec. Average: 14338 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13484 msec. Average: 13475 msec. 	 Method: host_2_order_7_workflow_8
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13389 msec. Average: 13386 msec. 	 Method: host_3_order_7_workflow_6
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15433 msec. Average: 14137 msec. 	 Method: host_all_order_8_workflow_6
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15423 msec. Average: 14053 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13634 msec. Average: 13631 msec. 	 Method: host_3_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15518 msec. Average: 14434 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 33 msec. Average: 11 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 10 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 309161
+------------------------------
+
+1 avaliable / 3 half-avaliable
+
+[INIT_SWEP_LOGGER_19-03-2012-14:16:57]
+(19-03-2012 14:16:57:547)[INFO] Exporting Application.
+(19-03-2012 14:16:57:605)[INFO] Executing Translation Box.
+(19-03-2012 14:16:58:720)[INFO] Calling the Planner.
+(19-03-2012 14:17:00:0464)[INFO] Exporting Actions.
+(19-03-2012 14:17:00:0468)[INFO] Generating Plan.
+(19-03-2012 14:17:00:0477)[INFO] Making JoinWorkFlows.
+(19-03-2012 14:17:00:0506)[INFO] Making Bash File.
+(19-03-2012 14:17:00:0579)[INFO] Executing Application
+[END_SWEP_LOGGER]
+
+------------------------------
+Test Case Verdict: 
+Step: -2147483648. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 31 msec. Average: 1 msec. 	 Method: begin
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 18146 msec. Average: 18129 msec. 	 Method: host_0_order_1_workflow_2
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17923 msec. Average: 17911 msec. 	 Method: host_1_order_1_workflow_1
+Step: 1. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 17075 msec. Average: 17059 msec. 	 Method: host_2_order_1_workflow_3
+Step: 1. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 1.  Time elapsed: 17972 msec. Average: 17962 msec. 	 Method: host_3_order_1_workflow_0
+Step: 2. Pass: 0. Fails: 0. Errors: 0. Inconclusive: 4.  Time elapsed: 16672 msec. Average: 16122 msec. 	 Method: host_all_order_2_workflow_0
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15897 msec. Average: 15277 msec. 	 Method: host_all_order_2_workflow_1
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14519 msec. Average: 14106 msec. 	 Method: host_all_order_2_workflow_2
+Step: 2. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14676 msec. Average: 14192 msec. 	 Method: host_all_order_2_workflow_3
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 13658 msec. Average: 13650 msec. 	 Method: host_0_order_3_workflow_4
+Step: 3. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14333 msec. Average: 14329 msec. 	 Method: host_3_order_3_workflow_5
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15110 msec. Average: 14332 msec. 	 Method: host_all_order_4_workflow_4
+Step: 4. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14909 msec. Average: 14407 msec. 	 Method: host_all_order_4_workflow_5
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14770 msec. Average: 14761 msec. 	 Method: host_1_order_5_workflow_6
+Step: 5. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14974 msec. Average: 14969 msec. 	 Method: host_3_order_5_workflow_7
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14817 msec. Average: 14520 msec. 	 Method: host_all_order_6_workflow_6
+Step: 6. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15352 msec. Average: 14427 msec. 	 Method: host_all_order_6_workflow_7
+Step: 7. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14004 msec. Average: 13994 msec. 	 Method: host_2_order_7_workflow_8
+Step: 8. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 15235 msec. Average: 14477 msec. 	 Method: host_all_order_8_workflow_8
+Step: 9. Pass: 1. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14046 msec. Average: 14037 msec. 	 Method: host_2_order_9_workflow_9
+Step: 10. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 14987 msec. Average: 14607 msec. 	 Method: host_all_order_10_workflow_9
+Step: 11. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 32 msec. Average: 10 msec. 	 Method: leechInformation
+Step: 2147483647. Pass: 4. Fails: 0. Errors: 0. Inconclusive: 0.  Time elapsed: 9 msec. Average: 0 msec. 	 Method: end
+Accumulated Time Elapsed: 309147
+------------------------------

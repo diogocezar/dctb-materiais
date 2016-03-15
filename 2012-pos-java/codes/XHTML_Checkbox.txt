@@ -1,0 +1,9 @@
+<body>
+Sistema Operacional:
+	<input type="checkbox" name="so" id="so" value="linux" /> Linux
+	<input type="checkbox" name="so" id="so" value="bsd" /> BSD
+	<input type="checkbox" name="so" id="so" value="aix" /> AIX
+	<input type="checkbox" name="so" id="so" value="solaris" /> Solaris
+	<input type="checkbox" name="so" id="so" value="macos" /> MacOS
+	<input type="checkbox" name="so" id="so" value="outro" /> Outro
+</body>

@@ -1,0 +1,41 @@
+\subsection[Hipermídia Adaptativa]{Hipermídia Adaptativa}
+
+\begin{frame}
+    \frametitle{Hipermídia Adaptativa}
+        \begin{block}{Hipermídia Adaptativa}<1->
+            A hipermídia adaptativa tem como objetivo proporcionar conteúdo
+            adequado ao perfil ou modelo de cada usuário.
+        \end{block}
+
+        Adaptação dos sistemas hipermídia:
+
+        \begin{itemize}
+            \item <2-> adaptação do conteúdo;
+            \item <3-> adaptação dos links.
+        \end{itemize}
+\end{frame}
+
+%\begin{frame}
+%    \frametitle{Métodos para Navegação Adaptativa}
+%
+%        \begin{itemize}
+%            \item <1-> condução global;
+%            \item <2-> condução local;
+%            \item <3-> suporte à orientação global;
+%            \item <4-> suporte à orientação local;
+%        \end{itemize}
+%\end{frame}
+%
+%\begin{frame}
+%
+%    \frametitle{Técnicas de Navegação Adaptativa}
+%
+%    \begin{itemize}
+%        \item <1-> orientação direta;
+%        \item <2-> classificação;
+%        \item <3-> ocultação;
+%        \item <4-> anotação;
+%        \item <5-> geração de \emph{hyperlinks};
+%        \item <6-> mapas adaptativos;
+%    \end{itemize}
+%\end{frame}

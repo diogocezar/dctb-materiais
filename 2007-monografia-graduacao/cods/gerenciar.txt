@@ -1,0 +1,8 @@
+opção = Consulta de Páginas Cadastradas
+link  = gerenciar.php?tabela=pagina&campos=2,0
+
+opção = Gerenciar Grupos Cadastrados
+link  = gerenciar.php?tabela=grupo&campos=2,1,0
+
+opção = Consultar Quantidade de Feromônio
+link  = gerenciar.php?tabela=feromonio&campos=4

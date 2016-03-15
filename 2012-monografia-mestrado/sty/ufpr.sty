@@ -1,0 +1,159 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MODELO PARA PROPOSTA / TRABALHO DE DIPLOMAÇÃO   %
+%                                                  %
+% DIOGO CEZAR TEIXEIRA BATISTA                     %
+% <xgordo@gmail.com>                               %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sty/ufpr}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O    R E S U M O   D A   O B R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRresumo}[2][]{
+	\chapter*{Resumo}
+    \ifthenelse{\equal{#1}{}}{
+        #2
+    }{
+        #2
+		\\{}
+		\\{}
+        Palavras-chave: #1
+    }
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Resumo}}
+	\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O    A B S T R A C T   D A   O B R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRabstract}[2][]{
+	\chapter*{Abstract}
+	\ifthenelse{\equal{#1}{}}{
+	    #2
+	}{
+	    #2
+		\\{}
+		\\{}
+	    Key-words: #1
+	}
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Abstract}}
+	\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A   L I S T A   D E   S I G L A S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRlistadesiglas}[1]{
+	\chapter*{LISTA DE SIGLAS E ABREVIAÇÕES}
+	#1
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Siglas e Abreviações}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   G E R A R   S I G L A  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRsigla}[1]{
+	\ac{#1}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   I N S E R I R   C Ó D I G O  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRcode}[4]{
+	\noindent\begin{minipage}{\textwidth}
+		\singlespacing
+		\texttt{\lstinputlisting[language=#1, label=#2, caption={#3}]{#4}}
+		\doublespacing
+	\end{minipage}
+}
+
+\newcommand{\UFPRlongcode}[4]{
+	\singlespacing
+	\texttt{\lstinputlisting[language=#1, label=#2, caption={#3}]{#4}}
+	\doublespacing
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A   D E D I C A T Ó R I A   D O   A U T O R %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRdedicatoria}[1]{
+    \chapter*{DEDICATÓRIA}
+    \vspace{10cm}
+    \begin{flushright}
+        \parbox{10cm}{
+            #1
+        }
+    \end{flushright}
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Dedicatória}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O S   A G R A D E C I M E N T O S   D O   A U T O R %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRagradecimentos}[1]{
+    \chapter*{Agradecimentos}
+    \vspace{1cm}
+    #1
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Agradecimentos}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% L I S T A   D E   F I G U R A S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRlistadefiguras}[1]{
+	\listoffigures
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Figuras}}
+	\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% L I S T A   D E   T A B E L A S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRlistadetabelas}[1]{
+	\listoftables
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Tabelas}}
+	\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% L I S T A   D E   C Ó D I G O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRlistadecodigos}[1]{
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Lista de Códigos}}
+	\newpage
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A    E P Í G R A F E %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UFPRepigrafe}[2]{
+\chapter*{EPÍGRAFE}
+    \vspace{10cm}
+    \begin{flushright}
+        \parbox{10cm}{
+            \begin{flushright}
+                \textit{``#1''}\\
+            \end{flushright}
+            \begin{flushright}
+                (#2)
+            \end{flushright}
+        }
+    \end{flushright}
+	\addcontentsline{toc}{chapter}{\MakeUppercase{Epígrafe}}
+}

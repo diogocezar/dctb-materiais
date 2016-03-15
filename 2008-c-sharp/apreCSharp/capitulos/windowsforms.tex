@@ -1,0 +1,261 @@
+\section{Aprofundando em Windows Forms}
+
+\begin{frame}
+    \frametitle{Aprofundando em Windows Forms}
+    \begin{itemize}
+        \item Programas dificilmente utilizam somente 1 form;
+        \item Basicamente podemos ter os seguintes tipos de interface Windows:
+        \begin{itemize}
+            \item MDI (\emph{Multiple Document Interface}): Múltiplos documentos : o Word por
+            exemplo;
+            \item SDI (\emph{Single Document Interface}): Apenas um documento : a calculadora por
+            exemplo;
+            \item Janelas modais. Exemplo: As janelas informativas conhecidas como diálogos.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Aplicações MDI}
+
+\begin{frame}
+    \frametitle{Aplicações MDI}
+    \begin{itemize}
+        \item Têm por objetivo criar várias instâncias;
+        \item Instâncias filhas dentro de uma aplicação principal;
+        \item Um projeto se torna MDI a seguinte configuração:
+        \begin{itemize}
+            \item Defini-se o form que será a aplicação principal
+            alterando-se a propriedade \texttt{isMdiContainer = true}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Adicionando uma nova janela filha}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Adicionando uma nova janela filha}
+    \begin{block}{Definição}
+        Para adicionar uma nova janela filha, devemos inserir um novo
+        formulário ao projeto: menu \emph{File/Add} $\rightarrow$ \emph{New
+        Item} $\rightarrow$ selecione \emph{Windows Forms}.
+    \end{block}
+    \begin{itemize}
+        \item Ao instanciarmos uma nova janela filha utilizamos a seguinte
+codificação:
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=mdiFilha, caption={Janela
+    filha (MDI)}]{cods/mdifilha.txt}}
+    O que se fez aqui?
+    \begin{itemize}
+        \item Nova instância do formulário (filho);
+        \item Definimos o pai da janela filha (\emph{this});
+        \item Mostramos a janela filha (\emph{show});
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Fechando uma janela filha}
+
+\begin{frame}
+    \frametitle{Fechando uma janela filha}
+    \begin{itemize}
+        \item Para fechar uma janela filha MDI ativa utiliza-se a seguinte
+        notação:
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=mdifechaFilha,
+    caption={Fechar janela filha (MDI)}]{cods/mdifechafilha.txt}}
+    \begin{enumerate}
+        \item Se existir uma janela MDI, então...
+        \item Feche a janela MDI que está ativada.
+    \end{enumerate}
+\end{frame}
+
+\subsection{Aplicações SDI}
+
+\begin{frame}
+    \frametitle{Aplicações SDI}
+    \begin{itemize}
+        \item Projeto \emph{windows forms}: padrão SDI.
+        \item Para adicionar um formulário:
+    \begin{enumerate}
+        \item Na janela \emph{Solution Explorer}, clique com o botão direito no nome do
+        projeto, selecione \emph{Add} e clique em \emph{Windows Form};
+        \item Digite um nome para o novo formulário e clique em \emph{Add}.
+    \end{enumerate}
+        \item Para renomear um formulário: clique sobre o nome do \emph{Form} no \emph{Solution Explorer} e
+        clique em \emph{Rename};
+        \begin{itemize}
+        \item Se a uma mensagem de confirmação aparecer, clique em Sim. Isso vai atualizar todas as
+        referencias ao \emph{form} do projeto para o novo nome.
+        \end{itemize}
+        \item Para se exibir um formulário, deve-se criar uma
+        instância (objeto) do mesmo.
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Comandos Show() e ShowDialog()}
+
+\begin{frame}
+    \frametitle{Comandos Show() e ShowDialog()}
+    Ambos os comandos são utilizados para abrir um formulário,
+    entretanto:
+    \begin{itemize}
+        \item \emph{Show()}: É possível navegar entre os outros
+        formulários que estão abertos;
+        \item \emph{ShowDialog()}: Impede que se navegue entre
+        outros formulários abertos enquanto o mesmo não seja
+        fechado.
+        \item Exemplo de utilização dos comandos \emph{Show()} e
+    \emph{ShowDialog()}:
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=formShow,
+    caption={Código para exibir formulário}]{cods/show.txt}}
+    \texttt{\lstinputlisting[language=C, label=formShowDialog,
+    caption={Código para exibir formulário com show dialog}]{cods/showdialog.txt}}
+\end{frame}
+
+\subsection{Passando valores entre Forms}
+
+\begin{frame}
+    \frametitle{Passando valores entre Forms}
+        \begin{itemize}
+            \item É possível alterar atributos de um formulário, estando em
+            outro;
+            \item Modificador de acesso \emph{public};
+            \item Pode-se passar objetos entre formulários.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Ilustrando}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/valoresForms.jpg}
+            \caption{Ilustrando como é possível o compartilhamento de valores entre forms}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Posicionando e estado dos formulários na tela}
+
+\begin{frame}
+    \frametitle{Posicionando os formulários na tela \emph{StartPosition}}
+    \begin{itemize}
+        \item Estética do projeto;
+        \item Propriedade \emph{StartPosition}:
+        \begin{itemize}
+            \item \emph{CenterScreen}: centro da tela;
+            \item \emph{Manual}: Deve-se especificar manualmente os
+            valores:
+            \begin{itemize}
+                \item Posicionamento ${x, y}$ do formulário na tela.
+            \end{itemize}
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Estado inicial do formulário}
+    \begin{itemize}
+        \item \emph{Normal}: Abre o formulário em seu estado inicial;
+        \item \emph{Minimized}: Abre o formulário minimizado na barra de
+        tarefas;
+        \item \emph{Maximized}: Abre o formulário maximizado.
+    \end{itemize}
+\end{frame}
+
+\subsection{Controlando os eventos dos formulários}
+
+\begin{frame}
+    \frametitle{Controlando os eventos dos formulários}
+    \begin{itemize}
+        \item Ações atribuídas ao comportamento do formulário;
+        \item Ao ocorrer um evento, um bloco de código é executado (\emph{Manipulador de Evento});
+        \item Nomeação padrão combina o nome do objeto com o evento correspondente ligando-os por um
+        underline:
+        \begin{itemize}
+            \item exemplo: button1\_Click; form1\_Load.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Aplicações de exemplo}
+
+\begin{frame}
+    \frametitle{Aplicações de exemplo}
+    Para fixar o conteúdo estudado, vamos analisar as seguintes
+    aplicações:
+    \begin{itemize}
+        \item Aplicação com janelas MDI (MDIApplication);
+        \item Aplicação com formulários \textcolor[rgb]{0.00,0.50,0.00}{Verde} e \textcolor[rgb]{0.98,0.00,0.00}{Vermelho} (VerdeVermelho);
+        \item Aplicação com posicionamento das janelas (PosicaoForm);
+        \item Aplicação com eventos dos formulários (EventosForm);
+        \item Aplicação com interação de objetos entre formulários
+        (InteracaoFormularios);
+    \end{itemize}
+\end{frame}
+
+\subsection{Exercícios para praticar}
+
+\begin{frame}
+    \frametitle{Exercícios para praticar}
+    \begin{enumerate}
+        \item Em uma aplicação MDI, implemente $n$ filhos para uma
+        aplicação, cada filho dessa aplicação será um bloco de
+        notas que deverá abrir e salvar arquivos de locais
+        selecionados pelo usuário. O programa deve mostrar o número
+        do filho, e ordenar as janelas conforme a aplicação MDI de
+        exemplo.
+        \item Faça uma aplicação que altere através de um formulário
+        principal a cor, o tamanho, o posicionamento e um label de
+        um outro formulário no projeto.
+        \item Utilizando o primeiro exercício e os conceitos de eventos, implemente:
+        \begin{itemize}
+            \item Mensagem de boas vindas ao abrir o programa;
+            \item Confirmação quando o usuário tentar sair do
+            programa;
+        \end{itemize}
+    \end{enumerate}
+\end{frame}
+
+
+\subsection{Exercício para entregar}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Exercício para entregar}
+    Uma empresa solicitou a criação de um programa que vai registrar
+    em um único arquivo texto seus clientes, clientes preferenciais
+    e seus fornecedores.
+    A estrutura para a criação do arquivo pode ser analisada no
+    seguinte diagrama de classes:
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=8cm]{images/diagramaExWindowApp.jpg}
+            \caption{Diagrama de classes a ser implementado}
+        \end{center}
+    \end{figure}
+    Existe um projeto criado pelo analista de sistema disponível
+    para facilitar a implementação do projeto, esse arquivo se chama
+    ExWindowApp.rar (disponível no moodle);
+    O arquivo de saída deve ser formatado da seguinte maneira:
+    \texttt{\lstinputlisting[language=C, label=exWindowApp,
+    caption={Arquivo texto utilizado pela empresa}]{cods/arquivoSaida.txt}}
+    R:F:: indica que os próximos registros serão fornecedores, --
+    indica a separação entre registros, R:C:: indica o registro de
+    clientes e R:CP :: indica o registro de clientes preferenciais.
+
+    É importante que o programa seja feito em múltiplos formulários,
+    um formulário para cadastro de fornecedores, outro para cadastro
+    de clientes e outro para o cadastro de clientes preferenciais. O
+    programa deverá trabalhar com listas de objetos. O programa
+    deve ter ainda a opção: salvar dados, a qual
+    deverá localizar um local para gerar o arquivo texto conforme a
+    formatação solicitada.
+
+    Esse projeto engloba a maioria das funcionalidades estudadas até
+    o momento e valerá 20 pontos na nota dos exercícios.
+
+    Data da entrega: 17 de outubro.
+
+    Dica: utilize os projetos já montados e reaproveite seus
+    códigos.
+\end{frame}

@@ -1,0 +1,36 @@
+(define (problem problem_matrix)
+(:domain matrix)
+
+	(:objects
+		matrix_a matrix_b matrix_c matrix_d matrix_i matrix_j matrix_out - data
+		sum_ab sum_cd mult_ij - task
+		h0 h1 - hosts
+	)
+
+	(:init
+		(have matrix_a)
+		(have matrix_b)
+		(have matrix_c)
+		(have matrix_d)
+
+		(input2 matrix_a matrix_b sum_ab)
+		(input2 matrix_c matrix_d sum_cd)
+		(input2 matrix_i matrix_j mult_ij)
+
+		(output1 matrix_i sum_ab)
+		(output1 matrix_j sum_cd)
+		(output1 matrix_out mult_ij)
+
+		(availiable h0)
+		(availiable h1)
+		
+		(= (total-cost) 0)
+	)
+
+	(:goal
+		(have matrix_out)
+
+	)
+
+	(:metric minimize (total-cost))
+)

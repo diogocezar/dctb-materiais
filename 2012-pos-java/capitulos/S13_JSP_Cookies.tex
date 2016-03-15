@@ -1,0 +1,99 @@
+\section[JSP Cookies]{JSP Cookies}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Cookies}
+    \begin{itemize}
+      \item \textit{Cookie} é um mecanismo padrão fornecido pelo protocolo HTTP
+e que permite gravarmos pequenas quantidades de dados persistentes no navegador
+de um usuário;
+      \item tais dados podem ser recuperados posteriormente pelo navegador;
+      \item esse mecanismo é usado quando queremos recuperar informações de
+algum usuário;
+      \item com os \textit{cookies}, pode-se reconhecer quem entra num site, de
+onde vem, com que periodicidade costuma voltar;
+
+      \framebreak
+
+      \item como padrão, os cookies expiram tão logo o usuário encerra a
+navegação naquele site, porém podemos configurá-los para persistir por vários
+dias;
+      \item além dos dados que ele armazena, um \textit{cookie} recebe um nome;
+      \item um servidor pode então definir múltiplos cookies e fazer a
+identificação entre eles através dos seus nomes;
+      \item os cookies são associados a URL da página que os manipula.
+    \end{itemize}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Setando as cookies
+	}
+	\begin{lstlisting}
+	Cookie cookie = new Cookie("txtNome",
+request.getParameter("txtNome"));
+	cookie.setMaxAge(365 * 24 * 60 * 60);
+	response.addCookie(cookie);
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Recuperando as cookies
+	}
+	\begin{lstlisting}
+	Cookie txtNome = null;
+	Cookie mCookies[] = request.getCookies();
+	for(int i = 0; i < mCookies.length; i++){
+	  if(mCookies[i].getName().equals("txtNome")){
+	    txtNome = mCookies[i];
+	  }
+	}
+	...
+	<h1> Olá, <%= txtNome.getValue() %> você também é reconhecido aqui!</h1>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Excluindo as cookies
+	}
+	\begin{lstlisting}
+	  txtNome.setMaxAge(1);
+	  response.addCookie(txtNome);
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+\end{frame}
+
+
+
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Atualize o sistema de login adicionando as funcionalidades:
+       \begin{itemize}
+	  \item salvar o email do usuário e no próximo acesso recuperar este
+email;
+	  \item armazenar a data do ultimo login em cookie e exibí-la caso o
+acesso seja permitido;
+       \end{itemize}
+      \end{itemize}
+\end{frame}

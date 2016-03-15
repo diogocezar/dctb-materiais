@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%
+% T E C N O L O G I A %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:tecnologia]{TECNOLOGIA}
+
+Neste capítulo estão descritas as principais tecnologias utilizadas
+no desenvolvimento do projeto.
+
+    \UTFPRsection[sec:linguagem]{LINGUAGEM DE PROGRAMAÇÃO}
+
+    \UTFPRsigla{PHP}{\emph{Hypertext PreProcessor}} é uma linguagem de
+    \emph{script} para uso em servidores. O servidor faz a codificação dos
+    \emph{scripts} PHP, retornando um resultado em HTML para o navegador do cliente. Este
+    tipo de interação permite algumas operações complexas,
+    possibilitando assim a elaboração de páginas dinâmicas
+    \cite{artigo:definicoes}.
+
+A escolha da linguagem está fortemente relacionada com o poder que
+esta oferece e o seu crescimento. A linguagem PHP vem crescendo
+exponencialmente nos últimos anos. No início de 1999, pouco mais de
+50 mil sites utilizavam a linguagem PHP, enquanto que no início de
+2003 esse número ultrapassava 10 milhões \cite{livro:php2}.
+
+    Segundo \citeonline{curso:php}, são vantagens do PHP:
+
+    \begin{itemize}
+    \item linguagem de fácil aprendizado;
+
+    \item performance e estabilidade excelentes;
+
+    \item código-aberto (não necessitando licença de uso e
+    podendo alterá-lo conforme as necessidades);
+
+    \item suporte nos principais servidores de páginas existentes;
+
+    \item suporte aos principais bancos de dados existentes;
+
+    \item multiplataforma e portável;
+
+    \item Suporte a uma grande variedade de padrões e protocolos, como \UTFPRsigla{XML}{\emph{eXtensible Markup Language}},
+    \UTFPRsigla{DOM}{\emph{Document Object Model}}, \UTFPRsigla{IMAP}{\emph{Internet Message Access Protocol}},
+    \UTFPRsigla{POP3}{\emph{Post Office Protocol}}, \UTFPRsigla{LDAP}{\emph{Lightweight Directory Access Protocol}}, HTTP,
+    \UTFPRsigla{FTP}{\emph{File Transfer Protocol}}, entre outros.
+    \end{itemize}
+
+    Neste trabalho, a linguagem PHP (em sua quinta versão) foi utilizada por
+    implementar os paradigmas de orientação a objetos, tornando possível
+    a implementação efetiva das classes projetadas, além da
+    disponibilização de recursos exclusivos como a função
+    \texttt{\emph{eval}} que será explicada no Capítulo
+    \ref{cap:desenvolvimento}.
+
+    \UTFPRsection[sec:banco]{BANCO DE DADOS}
+
+    A fim de demonstrar a portabilidade do sistema proposto, dois
+    \UTFPRsigla{SGBDs}{Sistemas Gerenciadores de Bancos de Dados} foram
+    utilizados: o PostGreSQL, para abrigar as tabelas do sistema
+    proposto (OriAnt); e o MySQL, para suporte ao subsistema
+    desenvolvido, abrigando as tabelas descritas na Seção
+    \ref{sec:submer}. Isso demonstra que não é necessário que o sistema
+    hospedeiro utilize o mesmo banco de dados que o sistema
+    desenvolvido.
+
+    \UTFPRsubsection[subsec:pgsql]{PostgreSQL}
+
+    O PostgreSQL é um SGBD objeto-relacional, que oferece mecanismos
+    eficientes de segurança e integridade de dados, além de suportar
+    SQL. É um \emph{software} de livre distribuição e, em termos de
+    recursos, pode ser comparado aos melhores bancos de dados comerciais
+    existentes \cite{livro:pgsql}.
+
+    \UTFPRsubsection[subsec:mysql]{MySQL}
+
+    O MySQL é um banco de dados, robusto e extremamente rápido,
+    com todas as características existentes nos principais bancos de
+    dados disponíveis no mercado. Uma de suas vantagens são suas
+    licenças para uso gratuito, tanto para fins estudantis como para
+    realização de negócios, possibilitando que empresas o utilizem
+    livremente \cite{livro:mysql}.
+
+    \UTFPRsection[sec:servidor]{SERVIDOR DE APLICAÇÃO}
+
+    O servidor de aplicação utilizado neste trabalho foi o Apache, criado em
+    1995 por Rob McCool, então funcionário do \UTFPRsigla{NCSA}{\emph{National Center for
+    Supercomputing Applications}}, Universidade Independente. Numa
+    pesquisa realizada em dezembro de \UTFPRfoot{2005}{Pesquisa
+    realizada pelo sítio netcraft
+    \url{<http://news.netcraft.com/archives/2005/12/02/december_2005_web_server_survey.html>}},
+    foi constatado que a utilização do Apache supera 60\% nos servidores
+    ativos no mundo.
+
+    O servidor é compatível com o protocolo HTTP versão 1.1. Suas
+    funcionalidades são mantidas por uma estrutura de módulos,
+    podendo inclusive, ao usuário, escrever seus próprios módulos
+    utilizando a API do \emph{software}.
+
+    É disponibilizado em versões para os sistemas \emph{Windows}, \emph{Novell}
+    \emph{Netware}, OS/2 e diversos outros do padrão POSIX (Unix, Linux,
+    FreeBSD, etc) \cite{site:apache}.

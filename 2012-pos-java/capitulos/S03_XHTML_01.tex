@@ -1,0 +1,144 @@
+\section[XHTML - Parte 1]{XHTML - Parte 1}
+
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Introdução}
+    \begin{itemize}
+      \item XHTML (\textit{EXtensible HyperText Markup Language});
+      \item uma linguagem quase igual ao HTML original, mas que é capaz de
+apresentar a "flexibilidade" da linguagem XML;
+      \item é uma aplicação da XML criada para substituir a linguagem HTML;
+      \item as marcações (tags) e atributos foram criadas com base nas do HTML
+4.01 e suas regras;
+      \item XHTML 1.0 é uma recomendação da W3C e sua versão atual data de 26 de
+janeiro de 2000.
+      \framebreak
+      \item Vantagens:
+      \begin{itemize}
+       \item compatibilidade com as futuras aplicações;
+       \item código consistente;
+       \item facilidade de edição;
+       \item carregamento rápido.
+      \end{itemize}
+      \framebreak
+      \item Regras básicas do XHTML 1.0:
+      \begin{itemize}
+       \item fechar todas as tags;
+       \item todas as tags devem ser escritas com letras minúsculas;
+       \item todos os atributos devem conter aspas;
+       \item morre o atributo name (substituido pelo id);
+       \item atributos sem valor foram descontinuados, utiliza-se um novo
+padrão;
+       \item todos os atributos HTML devem estar aninhados;
+       \framebreak
+       \lstinputlisting[language=HTML,label=html-basico,
+caption={Novidades XHTML}]{codes/NovidadesXHTML.txt}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos}
+    \begin{itemize}
+      \item os documentos XHTML podem ser divididos em duas partes básicas: 
+      \begin{itemize}
+	\item o cabeçalho;
+	\item o corpo;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Cabeçalho}
+    \begin{itemize}
+      \item o cabeçalho possui informações sobre o documento em si;
+      \item seus principais componentes são:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/cabecalho.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Cabeçalho - Exemplo}
+       \lstinputlisting[language=HTML,label=html-basico,
+caption={Exemplo Cabeçalho}]{codes/Head.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Corpo do Arquivo}
+    \begin{itemize}
+      \item o corpo do arquivo é formado por tags de formatação, utilizadas na
+estruturação das informações a serem exibidas.
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/blocos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Corpo do Arquivo - Exemplo}
+       \lstinputlisting[language=HTML,label=html-basico,
+caption={Exemplo Corpo do Arquivo}]{codes/Body.txt}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Conceitos Básicos - Elementos Descritivos}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/linha.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Elementos Descritivos - Exemplo}
+       \lstinputlisting[language=HTML,label=html-basico,
+caption={Exemplo Elementos Descritivos}]{codes/Linha.txt}
+\end{frame}
+
+\begin{frame}[c]
+    \frametitle{XHTML - Conceitos Básicos - Estilos de Linha}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/estilo_linha.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Estilos de Linha - Exemplo}
+       \lstinputlisting[language=HTML,label=html-basico,
+caption={Exemplo Estilos de Linha}]{codes/Estilo_Linha.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Conceitos Básicos - Outros}
+    \begin{itemize}
+     \item além dos elementos estudados, podemos utilizar outros dois elementos
+de estilo para formatar nosso documento XHTML:
+      \begin{itemize}
+	\item o primeiro é o \texttt{<br />}: utilizado para inserir uma quebra
+de linha;
+	\item o segundo é o \texttt{<hr />}: utilizado para inserir uma linha
+horizontal na apresentação do documento.
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item copie a seguinte imagem, utilizando as tags \texttt{HTML};
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=4cm]{images/atividade_xhtml.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+

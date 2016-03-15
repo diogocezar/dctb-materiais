@@ -1,0 +1,3 @@
+SqlCommand oCmd = New SqlCommand("UPDATE Products SET UnitPrice=UnitPrice*1.1");
+oCmd.Connection = oConn;
+oCmd.CommandText = "UPDATE Products SET UnitPrice=UnitPrice*1.05";

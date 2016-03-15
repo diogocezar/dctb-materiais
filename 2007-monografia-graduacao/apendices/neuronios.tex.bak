@@ -1,0 +1,62 @@
+\chapter{OUTROS NEURÔNIOS IMPLEMENTADOS}\label{ape:neuronios}
+
+Além dos neurônios descritos no Capítulo \ref{cap:framework}, outros
+neurônios foram implementados, são eles:
+
+    \paragraph{Cryptography}
+
+    \hspace{1cm}
+
+    Neurônio responsável por efetuar a criptografia e descriptografia de
+    \emph{strings}.
+
+    \paragraph{Freight}
+
+    \hspace{1cm}
+
+    Neurônio responsável por calcular o frete de um produto, esse valor
+    é extraído do \emph{site} oficial dos correios.
+
+    \paragraph{Inifile}
+
+    \hspace{1cm}
+
+    Neurônio responsável pela manipulação de variáveis em um arquivo
+    texto do tipo ".ini".
+
+    \paragraph{Photo}
+
+    \hspace{1cm}
+
+    Neurônio responsável pela manipulação de fotos. Com ele é possível
+    exibir uma foto redimensionada em tempo de execução.
+
+    \paragraph{Pikture}
+
+    \hspace{1cm}
+
+    Neurônio responsável pela criação de galerias de imagens. Esse
+    neurônio cria toda a estrutura necessária para a exibição de uma
+    galeria de fotos.
+
+    \paragraph{RssGenerator}
+
+    \hspace{1cm}
+
+    Neurônio responsável pela criação de um arquivo no formato RSS,
+    tendo como fonte os arquivos do banco de dados local.
+
+    \paragraph{SendFile}
+
+    \hspace{1cm}
+
+    Neurônio responsável pelo envio de arquivos para o servidor. Nele é
+    possível restringir tipos de arquivos permitidos para envio.
+
+    \paragraph{SendMail}
+
+    \hspace{1cm}
+
+    Neurônio responsável pelo envio de \emph{e-mails}. Com ele é possível se
+    fazer o envio de \emph{e-mail} individual ou em massa, utilizando-se de um
+    \emph{template} HTML padrão para envio.

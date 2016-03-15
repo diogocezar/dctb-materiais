@@ -1,0 +1,89 @@
+\select@language {brazil}
+\contentsline {section}{\numberline {1}INTRODU\c C\~AO}{9}
+\contentsline {subsection}{\numberline {1.1}Plataforma .NET}{9}
+\contentsline {subsubsection}{\numberline {1.1.1}Abordagem .NET}{9}
+\contentsline {subsubsection}{\numberline {1.1.2}Arquitetura .NET}{10}
+\contentsline {paragraph}{\numberline {1.1.2.1}CLR (\emph {Commom Language Runtime})}{10}
+\contentsline {paragraph}{\numberline {1.1.2.2}CLS (\emph {Common Language Specification})}{10}
+\contentsline {paragraph}{\numberline {1.1.2.3}BCL (\emph {Base Classe Library})}{10}
+\contentsline {section}{\numberline {2}A linguagem C\#}{10}
+\contentsline {subsection}{\numberline {2.1}Caracter\IeC {\'\i }sticas do C\#}{10}
+\contentsline {section}{\numberline {3}PRIMEIRO PROGRAMA}{12}
+\contentsline {subsection}{\numberline {3.1}Main}{12}
+\contentsline {section}{\numberline {4}ESTRUTURA DE UM PROGRAMA}{12}
+\contentsline {section}{\numberline {5}VARI\'AVEIS NA LINGUAGEM C\#}{13}
+\contentsline {subsection}{\numberline {5.1}Tipos de dados}{14}
+\contentsline {subsubsection}{\numberline {5.1.1}Tipos Valor e Tipos Refer\^encia}{15}
+\contentsline {subsubsection}{\numberline {5.1.2}Convers\~ao de Tipos}{15}
+\contentsline {subsubsection}{\numberline {5.1.3}O Objeto \emph {Convert}}{16}
+\contentsline {subsection}{\numberline {5.2}\emph {Arrays}}{17}
+\contentsline {section}{\numberline {6}COMANDOS}{18}
+\contentsline {subsection}{\numberline {6.1}Sele\c c\~ao}{18}
+\contentsline {subsubsection}{\numberline {6.1.1}Comando \emph {if}}{19}
+\contentsline {subsubsection}{\numberline {6.1.2}Comando \emph {switch}}{21}
+\contentsline {subsection}{\numberline {6.2}Itera\c c\~ao ou Loop}{23}
+\contentsline {subsubsection}{\numberline {6.2.1}Comando \emph {for}}{23}
+\contentsline {subsubsection}{\numberline {6.2.2}Comando \emph {foreach}}{25}
+\contentsline {subsubsection}{\numberline {6.2.3}Comandos \emph {do} e \emph {while}}{26}
+\contentsline {section}{\numberline {7}OPERADORES}{26}
+\contentsline {subsection}{\numberline {7.1}Operadores Aritm\'eticos}{27}
+\contentsline {subsection}{\numberline {7.2}Operadores de Incremento e Decremento}{29}
+\contentsline {subsection}{\numberline {7.3}Operadores L\'ogico, Relacional e Condicional}{30}
+\contentsline {subsection}{\numberline {7.4}Opera\c c\~ao de Atribui\c c\~ao}{30}
+\contentsline {section}{\numberline {8}PROGRAMA\c C\~AO BASEADA EM OBJETOS}{31}
+\contentsline {subsection}{\numberline {8.1}Conven\c c\~oes e Padr\~oes de Nomenclatura}{31}
+\contentsline {subsubsection}{\numberline {8.1.1}Nomea\c c\~ao de vari\'aveis}{32}
+\contentsline {subsubsection}{\numberline {8.1.2}Nomea\c c\~ao de classes, m\'etodos, propriedades, entre outros.}{32}
+\contentsline {subsection}{\numberline {8.2}Classes}{32}
+\contentsline {subsection}{\numberline {8.3}Propriedades}{33}
+\contentsline {subsection}{\numberline {8.4}Modificadores de visibilidade}{34}
+\contentsline {subsection}{\numberline {8.5}Heran\c ca}{34}
+\contentsline {subsubsection}{\numberline {8.5.1}\emph {This} e \emph {Base}}{35}
+\contentsline {subsection}{\numberline {8.6}Declara\c c\~ao e Chamada de M\'etodos e Objetos}{36}
+\contentsline {subsection}{\numberline {8.7}M\'etodos e Atributos \emph {Static}}{36}
+\contentsline {subsection}{\numberline {8.8}\emph {Const} e \emph {ReadOnly}}{37}
+\contentsline {subsection}{\numberline {8.9}Classes e M\'etodos Abstratos}{37}
+\contentsline {subsection}{\numberline {8.10}Interfaces}{38}
+\contentsline {subsection}{\numberline {8.11}M\'etodos Virtuais}{39}
+\contentsline {subsection}{\numberline {8.12}Classes e M\'etodos \emph {sealed} - Finais}{39}
+\contentsline {subsection}{\numberline {8.13}Ent\~ao, quando devo utilizar o que?}{40}
+\contentsline {section}{\numberline {9}TRATAMENTO DE ERROS E EXCE\c C\~OES}{41}
+\contentsline {subsection}{\numberline {9.1}Comando \emph {throw}}{41}
+\contentsline {subsection}{\numberline {9.2}Bloco \emph {try} - \emph {catch}}{43}
+\contentsline {subsection}{\numberline {9.3}Bloco \emph {try} - \emph {finally}}{43}
+\contentsline {subsection}{\numberline {9.4}Bloco \emph {try} - \emph {catch} - \emph {finally}}{44}
+\contentsline {subsection}{\numberline {9.5}A classe Exception}{45}
+\contentsline {section}{\numberline {10}MANIPULA\c C\~AO DE ARQUIVOS}{46}
+\contentsline {subsection}{\numberline {10.1}Classes \emph {DirectoryInfo} e \emph {FileInfo}}{46}
+\contentsline {subsubsection}{\numberline {10.1.1}Criando diret\'orios e subdiret\'orios}{47}
+\contentsline {subsubsection}{\numberline {10.1.2}Acessando as propriedades}{48}
+\contentsline {subsection}{\numberline {10.2}Criando arquivos usando a classe \emph {FileInfo}}{49}
+\contentsline {subsubsection}{\numberline {10.2.1}Entendendo o m\'etodo \emph {Open()}}{49}
+\contentsline {subsubsection}{\numberline {10.2.2}Entendendo a classe \emph {FileStream}}{49}
+\contentsline {subsubsection}{\numberline {10.2.3}M\'etodos \emph {CreateText()} e \emph {OpenText()}}{50}
+\contentsline {section}{\numberline {11}APROFUNDANDO EM WINDOWS FORMS}{51}
+\contentsline {subsection}{\numberline {11.1}Aplica\c c\~oes MDI}{51}
+\contentsline {subsubsection}{\numberline {11.1.1}Adicionando uma nova janela filha}{51}
+\contentsline {subsubsection}{\numberline {11.1.2}Fechando uma janela filha}{52}
+\contentsline {subsection}{\numberline {11.2}Aplica\c c\~oes SDI}{52}
+\contentsline {subsubsection}{\numberline {11.2.1}Exemplo m\'ultiplos formul\'arios}{52}
+\contentsline {subsection}{\numberline {11.3}Passando valores entre Forms}{53}
+\contentsline {subsection}{\numberline {11.4}Posicionando os formul\'arios na tela}{54}
+\contentsline {subsection}{\numberline {11.5}Controlando os eventos dos formul\'arios}{55}
+\contentsline {section}{\numberline {12}CONEX\~AO COM BANCO DE DADOS}{56}
+\contentsline {subsection}{\numberline {12.1}O que \'e o ADO.NET ?}{56}
+\contentsline {subsection}{\numberline {12.2}Os \emph {namespaces} relacionados ao ADO.NET}{56}
+\contentsline {subsection}{\numberline {12.3}O modelo de execu\c c\~ao do ADO.NET}{57}
+\contentsline {subsection}{\numberline {12.4}O modelo de execu\c c\~ao em um ambiente conectado}{58}
+\contentsline {subsection}{\numberline {12.5}O modelo de execu\c c\~ao em um ambiente desconectado}{58}
+\contentsline {subsection}{\numberline {12.6}Estabelecendo uma conex\~ao com um banco de dados}{59}
+\contentsline {subsection}{\numberline {12.7}Criando comandos}{60}
+\contentsline {subsection}{\numberline {12.8}Executando comandos}{60}
+\contentsline {subsubsection}{\numberline {12.8.1}O m\'etodo \emph {ExecuteNonQuery}}{61}
+\contentsline {subsubsection}{\numberline {12.8.2}O m\'etodo \emph {ExecuteScalar}}{61}
+\contentsline {subsubsection}{\numberline {12.8.3}O m\'etodo \emph {ExecuteReader}}{62}
+\contentsline {subsection}{\numberline {12.9}Passando par\^ametros}{62}
+\contentsline {subsection}{\numberline {12.10}O que \'e um \emph {DataSet}?}{63}
+\contentsline {subsection}{\numberline {12.11}O que \'e um \emph {DataAdapter} ?}{63}
+\contentsline {subsection}{\numberline {12.12}Criando um \emph {DataSet} e um \emph {DataAdapter}}{64}
+\contentsline {subsection}{\numberline {12.13}Criando e preenchendo um \emph {DataSet}}{64}

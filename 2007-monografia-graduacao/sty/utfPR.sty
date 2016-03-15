@@ -1,0 +1,406 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% U T F P R  /  C  O R N É L I O   P R O C Ó P I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MODELO PARA PROPOSTA / TRABALHO DE DIPLOMAÇÃO   %
+%                                                  %
+% E Q U I P E :                                    %
+%                                                  %
+% DIOGO CEZAR TEIXEIRA BATISTA                     %
+% <xgordo@gmail.com>                               %
+%                                                  %
+% RAFAEL AUGUSTO AMBROSIO ROSA                     %
+% <rafarafarosa@hotmail.com>                       %
+%                                                  %
+% Início : Agosto/2006                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{sty/utfPR}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R E N O M E A N D O   E L E M E N T O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\annexname}{ANEXO}
+\renewcommand{\resumoname}{RESUMO}
+\renewcommand{\ABNTabstractname}{ABSTRACT}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R E N O M E A N D O   C O M A N D O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\UTFPRlistadefiguras   {\renewcommand{\listfigurename}{LISTA DE FIGURAS} \listadefiguras}
+\def\UTFPRlistadetabelas   {\renewcommand{\listtablename}{LISTA DE TABELAS} \listadetabelas}
+\def\UTFPRlistofequations  {\renewcommand{\listequationname}{LISTA DE EQUAÇÕES} \listofequations}
+\def\UTFPRlistoflistings   {\renewcommand{\lstlistlistingname}{LISTA DE CÓDIGOS} \newpage \addcontentsline{toc}{chapter}{LISTA DE CÓDIGOS} \lstlistoflistings}
+\def\UTFPRlistadesiglas    {\renewcommand{\listofabreviationsname}{LISTA DE ABREVIATURAS E SIGLAS} \listadesiglas}
+\def\UTFPRsumario          {\renewcommand{\contentsname}{SUM\'ARIO} \sumario}
+\def\UTFPRmakeglossario    {\makeglossary}
+\def\UTFPRimprimeGlossario {\renewcommand{\glossaryname}{GLOSS\'ARIO} \printglossary}
+\def\UTFPRapendice         {\apendice}
+\def\UTFPRanexo            {\anexo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRconfigs}{
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % C O N F I G U R A Ç Õ E S   D A   P Á G I N A %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \footskip=0.7cm
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    % E S P A Ç A M E N T O %
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \renewcommand{\baselinestretch}{1.5}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % C O N F I G U R A Ç Õ E S   A D I C I O N A I  S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \renewcommand{\baselinestretch}{1.5}
+    \setlength{\LTcapwidth}{\textwidth}
+    \renewcommand{\headrulewidth}{0pt}
+    \settoheight{\headsep}{1cm}
+    \settoheight{\headheight}{1.25cm}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O S   D E   N U M E R A Ç Ã O   D A   P Á G I N A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{
+    \UTFPRnumRomanos}{
+        \renewcommand{\chaptertitlepagestyle}{fancy}
+        \pagestyle{fancy}
+        \pagenumbering{roman}
+        \fancyhf{}
+        \fancyfoot[C]{\thepage}
+}
+
+\newcommand{
+    \UTFPRnumArabicos}{
+        \renewcommand{\chaptertitlepagestyle}{fancy}
+        \pagestyle{fancy}
+        \pagenumbering{arabic}
+        \setcounter{page}{\thepage}
+        \fancyhf{}
+        \fancyhead[R]{\thepage}
+}
+
+\newcommand{
+    \UTFPRnonum}{
+        \thispagestyle{empty}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A   O   T A M A N H O    D AS    F O N T E S   D O S   C A P Í T U L O S   E   D O S   A P E N D I C  E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\ABNTchapterfont}{\bfseries}
+\renewcommand{\ABNTchaptersize}{\Large}
+\renewcommand{\ABNTsectionfont}{\large}
+\renewcommand{\ABNTanapsize}{\Large}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A   M O N T A G E M   D O   S U M Á R I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A    O   E S P A Ç A M E N T O   E N T R E   D O T S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand\@dotsep{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A   A   M O N T A G E M   D O   S U M Á R I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand\l@chapter[2]{
+  \ifnum \c@tocdepth >\m@ne
+    \addpenalty{-\@highpenalty}%
+    \vskip 1.0em \@plus\p@
+    \setlength\@tempdima{1.5em}%
+    \begingroup
+      \ifthenelse{\boolean{ABNTpagenumstyle}}
+        {\renewcommand{\@pnumwidth}{2.6em}}
+        {}
+      \parindent \z@ \rightskip \@pnumwidth
+      \parfillskip -\@pnumwidth
+      \leavevmode \normalsize\ABNTtocchapterfont
+      \advance\leftskip\@tempdima
+      \hskip -\leftskip
+      #1\nobreak\dotfill \nobreak%
+      \ifthenelse{\boolean{ABNTpagenumstyle}}
+         {%
+          \hb@xt@\@pnumwidth{\hss
+            \ifthenelse{\not\equal{#2}{}}{{\normalfont p.\thinspace#2}}{}}\par
+         }
+         {%
+          \hb@xt@\@pnumwidth{\hss #2}\par
+         }
+      \penalty\@highpenalty
+    \endgroup
+  \fi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A  O  E S P A Ç A M E N T O   D O   S U M Á R I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{0em}{3.2em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{3}{0em}{4.1em}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A L T E R A   E S P A Ç  A M E N T O   D O    C A B E Ç A L H O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\@makechapterhead#1{%
+  {%
+  \normalfont\ABNTchaptersize\ABNTchapterfont%
+  \espaco{simples}%
+  \vspace*{30pt}%
+  \noindent%
+  \parbox[b]{\textwidth}{%
+    \parbox[t]{4ex}{\thechapter}%
+    \parbox[t]{\textwidth-4ex-1ex}%
+      {\interlinepenalty\@M\raggedright%
+        \ifthenelse{\boolean{ABNTcapchap}}%
+          {\MakeUppercase{#1}}%
+          {#1}
+      }%
+    \vspace*{0cm}
+    }%
+  \vspace{15pt}%
+  }%
+}
+
+\def\@makeschapterhead#1{%
+  \vspace*{0pt}\par
+  {\centering\normalfont\ABNTchaptersize\ABNTchapterfont%
+   \ifthenelse{\boolean{ABNTcapchap}}%
+     {\MakeUppercase{#1}}%
+     {#1}
+    \par}%
+  \vspace{15pt}%
+  \par%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O    R E S U M O   D A   O B R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRresumo}[2][]{
+    \begin{resumo}
+        \ifthenelse{\equal{#1}{}}{
+            #2
+        }{
+            #2
+            \\{}
+            [Palavras-chave: #1]
+        }
+    \end{resumo}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O    A B S T R A C T   D A   O B R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRabstract}[2][]{
+    \begin{abstract}
+        \ifthenelse{\equal{#1}{}}{
+            #2
+        }{
+            #2
+            \\{}
+            [Key-words: #1]
+        }
+    \end{abstract}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A   D E D I C A T Ó R I A   D O   A U T O R %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRdedicatoria}[1]{
+    \chapter*{DEDICATÓRIA}
+    \vspace{10cm}
+    \begin{flushright}
+        \parbox{10cm}{
+            #1
+        }
+    \end{flushright}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D O S   A G R A D E C I M E N T O S   D O   A U T O R %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRagradecimentos}[1]{
+    \chapter*{AGRADECIMENTOS}
+    \vspace{1cm}
+    #1
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   F O L H A   D E   A P R O V A Ç Ã O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRfaDescricao}[1]{\def\UTFPRfaImprimeDescricao{#1}}
+
+\newcommand{\UTFPRfaBancaA}[2]{\def\UTFPRfaImprimeBancaA{#1 \\ #2}}
+\newcommand{\UTFPRfaBancaB}[2]{\def\UTFPRfaImprimeBancaB{#1 \\ #2}}
+\newcommand{\UTFPRfaBancaC}[2]{\def\UTFPRfaImprimeBancaC{#1 \\ #2}}
+
+
+\newcommand{\UTFPRfolhaaprovacao}[1]{
+
+    \setlength{\ABNTsignwidth}{8cm}
+    \setlength{\ABNTsignthickness}{0.4pt}
+
+    \begin{folhadeaprovacao}
+    \chapter*{FOLHA DE APROVAÇÃO}
+        \UTFPRfaImprimeDescricao
+        \assinatura{\UTFPRfaImprimeBancaA}
+        \assinatura{\UTFPRfaImprimeBancaB}
+        \assinatura{\UTFPRfaImprimeBancaC}
+    \end{folhadeaprovacao}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A    E P Í G R A F E %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRepigrafe}[2]{
+\chapter*{EPÍGRAFE}
+    \vspace{10cm}
+    \begin{flushright}
+        \parbox{10cm}{
+            \begin{center}
+                \textit{``#1''}\\
+            \end{center}
+            \begin{flushright}
+                (#2)
+            \end{flushright}
+        }
+    \end{flushright}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A S   B I B L I O  G R A F I A S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRbibliographystyle}[1]{
+    \bibliographystyle{#1}
+}
+
+\newcommand{\UTFPRbibliografiaALL}[1]{
+    \nocite{*}
+    \renewcommand{\bibname}{REFERÊNCIAS}
+    \bibliography{#1}
+}
+
+\newcommand{\UTFPRbibliografia}[1]{
+    \renewcommand{\bibname}{REFERÊNCIAS}
+    \bibliography{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   G E R A R   S I G L A  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRsigla}[2]{{#2} {}(#1)\sigla{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   G E R A R   S I M B O L O  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRsimbolo}[2]{{#2} {}(#1)\simbolo{#1}{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   G E R A R   N O T A   D E   R O D A P É %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRfoot}[2]{#1\footnote{#2}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D E   C A P Í T U L O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRchapter}[2][]{
+    \ifthenelse{\equal{#1}{}}{
+        \chapter{\uppercase{#2}}
+    }{
+        \chapter{\uppercase{#2}\label{#1}}
+    }
+    \UTFPRnonum
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A S   S E S S Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRsection}[2][]{
+    \ifthenelse{\equal{#1}{}}{
+        \section{\uppercase{#2}}
+    }{
+        \section{\uppercase{#2}\label{#1}}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A S   S U B S E S S Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRsubsection}[2][]{
+    \ifthenelse{\equal{#1}{}}{
+        \subsection{#2}
+    }{
+        \subsection{#2\label{#1}}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   C R I A Ç Ã O   D A S   S U B S U B S E S S Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRsubsubsection}[2][]{
+    \ifthenelse{\equal{#1}{}}{
+        \subsubsection{#2}
+    }{
+        \subsubsection{#2\label{#1}}
+    }
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   I N S E R I R   F I G U R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRfigura}[5][]{
+    \begin{figure}[!htb]
+    \centering
+    \includegraphics[#2]{images/#3}\\
+        \ifthenelse{\equal{#1}{}}{
+            \caption{#4}\label{#5}
+        }{
+            \caption{#4}\label{#5}
+            \vspace{0.1cm}
+            \footnotesize Fonte: #1
+        }
+    \end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   I N S E R I R   F I G U R A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\UTFPRtabela}[3]{
+    \begin{table}[!htb]
+    \centering
+    \caption{#1}\label{#2}
+    #3
+    \end{table}
+}

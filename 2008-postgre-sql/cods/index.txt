@@ -1,0 +1,4 @@
+CREATE [ UNIQUE ] INDEX nome_do_índice ON tabela [ USING método ]
+	( { coluna | ( expressão ) } [ classe_de_operadores ] [, ...] )
+	[ TABLESPACE espaço_de_tabelas ]
+	[ WHERE predicado ]

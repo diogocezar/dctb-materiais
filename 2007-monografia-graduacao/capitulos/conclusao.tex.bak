@@ -1,0 +1,71 @@
+%%%%%%%%%%%%%%%%%%%%%
+% C O N C L U S Ã O %
+%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:conclusao]{CONCLUSÃO}
+
+    A Internet é um meio de comunicação em constante expansão, e
+    atualmente, faz parte da vida de milhares de pessoas em todo o mundo
+    que cada vez mais procuram fontes de informação e conhecimento
+    também na \emph{web}. Com um grande volume de usuários, a tecnologia
+    tende a disponibilizar grande parte de seus estudos para a adaptação
+    dos meios de comunicação existentes na Internet, com objetivo de
+    abranger e dar conformo ao maior número de usuários possíveis.
+
+As evoluções tecnológicas de nada servem se não oferecerem
+resultados concretos para seus usuários, não seria útil um
+\emph{website} que utilizasse os últimos recursos tecnológicos, mas
+não fosse acessível; e o mais importante, que não tivesse
+usabilidade. Para o usuário final, não importa qual tecnologia foi
+empregada no \emph{website}, com tanto que seja possível encontrar o
+que procura de forma rápida e objetiva.
+
+    Na tentativa de auxiliar o usuário nessa tarefa, este trabalho
+    apresenta uma estratégia de orientação por meio de navegação
+    colaborativa para sistemas de hipermídia adaptativa, aplicando os
+    princípios teóricos com fudamentação na teoria ACO, em que o
+    comportamento dos usuários é análogo ao comportamento das formigas.
+
+    A metodologia proposta foi implementada em um protótipo OriAnt, uma
+    camada de adaptação que pode ser acoplada em \emph{websites} que
+    cumpram com certas restrições básicas para fornecer orientação aos
+    usuários.
+
+    Os resultados dos testes realizados mostraram que é possível uma
+    colaboração indireta entre usuários por meio do compartilhamento dos
+    caminhos realizados durante a navegação e das páginas acessadas,
+    independente de trilha percorrida para atingí-las. A metodologia
+    projetada mostrou-se coerente para modelar a estratégia proposta.
+
+    Entretanto, observou-se, que o sistema não consegue uma solução
+    imediata, ou seja, é necessário que o sistema seja alimentado com as
+    informações referentes às navegações dos usuários por algum tempo
+    até que seja possível se obter informações relevantes sobre as
+    sugestões, e ainda que os usuários podem não seguir o caminho mais
+    relevante atribuído por seu grupo, podendo ocasionar uma
+    desestabilização do sistema, que pode ser contornada caso a maioria
+    dos usuários de seu grupo siga o sugerido.
+
+    \UTFPRsection[sec:trabsf]{TRABALHOS FUTUROS}
+
+    Dentre os trabalhos futuros, visualiza-se a necessidade de aprimorar
+    a eficiência do sistema, visto que com a instalação da camada o
+    \emph{website} hospedeiro se torna mais lento, devido a necessidade
+    da computação do feromônio (origem-destino) para cada clique do
+    usuário.
+
+    Há ainda, a possibilidade de se implementar outras formas de
+    orientação, principalmente a de anotações compartilhadas em
+    \emph{hyperlinks} relevantes.
+
+    Como sugestão de implementação, em uma futura versão, pode-se
+    eliminar a limitação da implementação em apenas um \emph{site} hospedeiro,
+    reduzir o problema de lentidão e ainda inserir o recurso de
+    anotações compartilhada, com um \emph{software} instalado no computador de
+    cada usuário, preferencialmente uma barra de ferramentas para o
+    navegador, em que se possa extrair a URL acionada sem interferência
+    no \emph{website} hospedeiro, melhorando ou até mesmo eliminando o
+    problema de lentidão. Com a barra de ferramentas, seria possível
+    centralizar o base de dados, criando uma grande comunidade
+    colaborativa e aumentando assim, cada vez mais a prescisão das
+    sugestões.

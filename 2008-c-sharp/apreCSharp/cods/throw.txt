@@ -1,0 +1,12 @@
+using System;
+class Throws{
+  public static void Main(string[] args){
+    if(args.Length==1)
+      System.Console.WriteLine(args[0]);
+    else{
+      ArgumentOutOfRangeException ex; 
+      ex = new ArgumentOutOfRangeException("Utilize uma string somente");
+      throw(ex); //Dispara a excessão
+    }
+  }
+}

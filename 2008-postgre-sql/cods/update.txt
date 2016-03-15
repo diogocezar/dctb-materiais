@@ -1,0 +1,3 @@
+UPDATE tabela SET coluna = { expressão | DEFAULT } [, ...]
+	[ FROM lista_do_from ]
+	[ WHERE condição ]

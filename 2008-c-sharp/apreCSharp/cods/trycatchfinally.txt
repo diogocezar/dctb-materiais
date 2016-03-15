@@ -1,0 +1,27 @@
+using System;
+using System.Xml;
+class TryCatchFinally{
+public static void Main(){  
+  XmlDocument doc = null;
+  try{	
+    doc = new XmlDocument();                             
+    doc.LoadXml("<Exception>The Exception</Exception>"); //Carrega o conteúdo          
+    throw new Exception(doc.InnerText); //Dispara a excessão
+  }
+  catch(OutOfMemoryException){  
+    //Tratamento aqui
+  }
+  catch(NullReferenceException){  
+    //Tratamento aqui
+  }
+  catch(Exception e){    
+    //Tratamento aqui
+    Console.WriteLine("Excessão ocorrida no programa {0}", e);
+  }
+  finally{
+    Console.WriteLine(@"Gravando o Documento no C:\..."); //Uso do verbatim (@)
+    doc.Save(@"c:\exception.xml"); //Grava o conteúdo 
+  }
+  Console.WriteLine("Esta linha não será executada...");
+}
+}

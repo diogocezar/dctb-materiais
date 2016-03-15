@@ -1,0 +1,45 @@
+\section[Subconsultas e Junções]{Subconsultas e Junções}
+
+\subsection{Exists}
+\begin{frame}
+    \frametitle{Exists}
+    \begin{block}{Caracterização}
+        Verifica se um valor existe no \emph{resultset} retornado por um
+        \emph{select}.
+    \end{block}
+    \begin{itemize}
+        \item Se a subconsulta retornar pelo menos uma linha, o resultado dela é TRUE, caso contrário será
+        FALSE;
+        \item Observe a ligação entre a consulta externa e a
+        interna.
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=exists,
+    caption={Exemplo de utilização do Exists}]{cods/exists.txt}}
+\end{frame}
+
+\subsection{In e Not In}
+\begin{frame}
+    \frametitle{In e Not In}
+    \begin{block}{Caracterização}
+        Verifica  se um valor está contido em um grupo de valores.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=innotin,
+    caption={Exemplo de utilização do in e not in}]{cods/innotin.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Formas Alternativas para In e Not In}
+    \texttt{\lstinputlisting[language=C, label=innotinalt,
+    caption={Exemplo de utilização do in e not in de formas alternativas}]{cods/innotinalt.txt}}
+\end{frame}
+
+\subsection{Junções}
+\begin{frame}
+    \frametitle{Inner Join}
+    \begin{block}{Caracterização}
+        Somente as linhas/registros que satisfaçam a ligação determinada
+        pelo \emph{JOIN} serão recuperados pelo \emph{SELECT}, sendo assim, os registros
+        que não se enquadram no relacionamento definido pelo \emph{JOIN} não serão
+        recuperados.
+    \end{block}
+\end{frame}

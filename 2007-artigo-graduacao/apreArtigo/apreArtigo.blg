@@ -1,0 +1,15 @@
+This is BibTeX, Version 0.99cThe top-level auxiliary file: apreArtigo.aux
+The style file: bst/sbc.bst
+Database file #1: bibliografia/bibliografia.bib
+I was expecting a `,' or a `}'---line 117 of file bibliografia/bibliografia.bib
+ :   
+ :   series =       "Studies in Computational Intelligence",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in ajith:06
+Warning--can't use both volume and number fields in brusilovsky:96
+Warning--empty journal in artigo:definicoes
+Warning--empty publisher in livro:mysql
+Warning--empty journal in monografia:lucas
+Warning--empty journal in interlegis
+(There was 1 error message)

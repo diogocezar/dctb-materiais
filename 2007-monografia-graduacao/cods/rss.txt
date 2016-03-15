@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="2.0">
+    <channel>
+        <title>Terra - RSS - Automobilismo</title>		
+	<link>http://esportes.terra.com.br/ultimas/0,,EI1874,00.html</link>
+	<description>Últimas notícias - Automobilismo</description>
+        <language>pt-br</language>
+        <copyright>Copyright 2000-2006 Terra Networks, S.A.</copyright>
+        <image>
+            <title>Terra</title>
+            <width>132</width>
+            <height>54</height>
+            <link>http://www.terra.com.br</link>
+	    <url>http://img.terra.com.br/i/logo.gif</url>
+	</image>
+        <webMaster>ednot@terra.com.br</webMaster>	
+		  
+		  
+	<item>
+            <title><![CDATA[Tempestades ameaçam as 500 Milhas de Indianápolis]]></title>
+            <link>http://esportes.terra.com.br/interna/0,,OI1643926-EI2173,00.html</link>
+            <description><![CDATA[Tempestades ameaçam prejudicar a 91a. edição das 500 Milhas de Indianápolis no ...]]></description>
+            <pubDate>Sat, 26 May 2007 19:52:00 GMT</pubDate>			
+        </item>
+	
+		  
+		  
+	<item>
+            <title><![CDATA[Kanaan vence prova mista da IRL]]></title>
+            <link>http://esportes.terra.com.br/interna/0,,OI645704-EI1874,00.html</link>
+            <description><![CDATA[O brasileiro Tony Kanaan, da Andretti Green, venceu a etapa de Sonoma, na ...]]></description>
+            <pubDate>Mon, 29 Aug 2005 03:47:49 GMT</pubDate>			
+        </item>
+	
+	...	
+		  
+		  
+	<item>
+            <title><![CDATA[Johnny Herbert vence a Le Mans Legend]]></title>
+            <link>http://esportes.terra.com.br/interna/0,,OI558206-EI1874,00.html</link>
+            <description><![CDATA[O ex piloto de Fórmula 1 Johnny Herbert conduziu o seu Jaguar à vitória na Le ...]]></description>
+            <pubDate>Sat, 18 Jun 2005 16:49:50 GMT</pubDate>			
+        </item>
+	 </channel>
+</rss>

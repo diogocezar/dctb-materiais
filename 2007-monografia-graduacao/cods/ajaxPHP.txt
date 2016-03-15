@@ -1,0 +1,26 @@
+<?php
+/**
+* Funções a serem executadas pelo ajax.
+*/
+
+/* Configurando o sAjax */
+sajax_init();
+$sajax_debug_mode = 0;
+sajax_export("getGrupos", ...);
+sajax_handle_client_request();
+
+...
+
+function getGrupos(){
+
+	global $controlador;
+	
+	$controlador['oriant']->setGrupo($controlador['grupo']);
+	$retorno = $controlador['oriant']->getGroups();
+	
+	return rawurlencode($retorno);
+}
+
+...
+
+?>

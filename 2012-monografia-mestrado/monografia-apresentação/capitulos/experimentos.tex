@@ -1,0 +1,190 @@
+\section[Experimentos]{Experimentos}
+
+\begin{frame}
+    \frametitle{Descrição dos Experimentos}
+    \begin{itemize}
+		\item validação do modelo proposto;
+		\item dados: matrizes quadradas preenchidas com números aleatórios;
+		\item cálculos simples em um grande volume de dados científicos;
+		\item operadores implementados: soma e multiplicação;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Experimento 1 - Paralelização Direta}
+	\begin{center}
+		\begin{changemargin}{-1cm}{-1cm}
+		\includegraphics[width=12.8cm]{../images/fig_ex1_parallel-ap.jpg}
+		\end{changemargin}
+	\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Experimento 2 - Encadeamento de Fluxos de Trabalho}
+		Execução em três cenários:
+		\begin{enumerate}
+			\item quatro nós disponíveis;
+			\item dois nós disponíveis ($h_0$ e $h_1$) e dois nós parcialmente disponíveis ($h_2$ e $h_3$);
+			\item um nó disponível ($h_0$) e três parcialmente disponíveis ($h_1$, $h_2$ e $h_3$).
+		\end{enumerate}
+\end{frame}
+
+\begin{frame}
+    %\frametitle{Experimento 2 - Encadeamento de Fluxos de Trabalho}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/experimento-2b.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+    %\frametitle{Experimento 2 - Encadeamento de Fluxos de Trabalho}
+	\begin{changemargin}{-1cm}{-1cm}
+	\includegraphics[width=12.8cm]{../images/experimento-2ac.jpg}
+	\end{changemargin}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Experimento 2 - Planos}
+	\scriptsize
+	\begin{columns}[t]
+		\begin{column}{4cm}
+			\begin{center}
+				Cenário 1: \\
+				(quatro nós disponíveis)
+			\end{center}
+			\begin{table}[ht]
+				\centering
+				\begin{tabular}{|l|l|l|}
+				\hline
+				\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\end{tabular}
+			\end{table}
+		\end{column}
+					
+		\begin{column}{4cm}
+			\begin{center}
+				Cenário 2: \\
+				(dois nós disponíveis e dois nós parcialmente disponíveis)
+			\end{center}
+			\begin{table}[ht]
+				\centering
+				\begin{tabular}{|l|l|l|}
+				\hline
+				\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\end{tabular}
+			\end{table}
+		\end{column}
+		
+		\begin{column}{4cm}
+			\begin{center}
+				Cenário 3: \\
+				(um nó disponível e três parcialmente disponíveis)
+			\end{center}
+			\begin{table}[ht]
+				\centering
+				\begin{tabular}{|l|l|l|}
+				\hline
+				\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SOMA} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} \\ 
+				\hline
+				\end{tabular}
+			\end{table}
+		\end{column}
+	\end{columns}
+	\normalsize
+\end{frame}
+
+\begin{frame}
+    \frametitle{Experimento 3 - Múltiplas Entrada e Saídas de Dados}
+	\begin{center}
+		\includegraphics[width=4cm]{../images/fig_ex2-ap.jpg}
+	\end{center}
+	\begin{itemize}
+		\item validação de múltiplas entradas e saídas de dados;
+		\item tradutor preparado para tratar estes casos;
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Considerações}
+    \begin{itemize}
+		\item experimentos direcionados para a validação do modelo: principais funcionalidades;
+		\item experimento 1:
+		\begin{itemize}
+			\item validação da paralelização direta;
+			\item modelo está preparado para implementação da paralelização por plano;
+		\end{itemize}
+		\item experimento 2:
+		\begin{itemize}
+			\item capacidade do planejador se adaptar de acordo com a situção dos recursos;
+			\item nós parcialmente ocupados: planos diferentes, mas com o mesmo número de passos;
+		\end{itemize}
+		\item experimento 3:
+		\begin{itemize}
+			\item criação de operadores mais elaborados: vários conjuntos de dados de entrada e saída;
+		\end{itemize}
+		\item geração de planos ótimos com variação do cenário;
+		\item demora para propagação dos resultados;
+	\end{itemize}
+\end{frame}

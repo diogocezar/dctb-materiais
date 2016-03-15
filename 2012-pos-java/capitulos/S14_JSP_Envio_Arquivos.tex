@@ -1,0 +1,84 @@
+\section[JSP Envio de Arquivos]{JSP Envio de Arquivos}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Envio de Arquivos}
+    \begin{itemize}
+      \item \textit{UploadBean} é um componente JAVA (JavaBean) que permite
+upload de arquivos;
+      \item este bean pode ser integrado em qualquer aplicação JSP/Servlet;
+      \item pode-se armazenar arquivos de upload em uma Pasta, arquivo ZIP, um
+Banco de Dados ou em Memória;
+
+      \framebreak
+
+      \item restrições como limite de tamanho de arquivo, listas negras/brandas
+e número máximo de arquivos de upload estão disponíveis;
+      \item \textit{UploadBean} é gratuito para uso não-comercial;
+      \item
+\url{http://www.javazoom.net/jzservlets/uploadbean/uploadbean_pt.html}
+
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Enviando um arquivo
+	}
+	\begin{lstlisting}
+	  if (MultipartFormDataRequest.isMultipartFormData(request))
+	    {
+	    MultipartFormDataRequest mrequest = new
+	    MultipartFormDataRequest(request);
+	    Hashtable files = mrequest.getFiles();
+	    if ((files != null) && (!files.isEmpty()))
+	    {
+	      UploadFile file = (UploadFile) files.get("uploadfile");
+	      if (file != null) out.println("<li>Form field :
+	      uploadfile"+"<BR> Uploaded file : "+file.getFileName()+"
+	    ("+file.getFileSize()+"  bytes)"+"<BR> Content Type :
+	  "+file.getContentType());
+	      upBean.store(mrequest, "uploadfile");
+	    }
+	    else
+	    {
+	      out.println("<li>No uploaded files");
+	    }
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+       \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Formulário para Envio
+	}
+	\begin{lstlisting}
+	  <form method="post" action="index.jsp" name="upform"
+	  enctype="multipart/form-data">
+	      <label>Select a file to upload :</label>
+	      <input type="file" name="uploadfile" size="50">
+	      <input type="submit" name="Submit" value="Upload">
+	      <input type="reset" name="Reset" value="Cancel">
+	  </form>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Faça um exemplo que envie arquivos apenas nos formatos: pdf, doc,
+docx, xml e gif;
+       \item O tratamento pode ser feito em JavaScript ou em JSP;
+      \end{itemize}
+\end{frame}

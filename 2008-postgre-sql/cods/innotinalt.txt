@@ -1,0 +1,5 @@
+SELECT * FROM produtos
+WHERE cod_produto = (SELECT cod_produto FROM item_pedido)
+
+SELECT * FROM Table1
+  WHERE (column1, column2) = (SELECT column1, column2 FROM Table2)

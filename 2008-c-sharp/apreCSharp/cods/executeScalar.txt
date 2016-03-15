@@ -1,0 +1,5 @@
+SqlCommand oCmd = new SqlCommand("UPDATE Products SET UnitPrice=UnitPrice*1.1");
+oCmd.Connection = oConn;
+oCmd.CommandText = "SELECT COUNT(*) FROM Products";
+int iNumProdutos;
+iNumProdutos = oCmd.ExecuteScalar();

@@ -1,0 +1,2074 @@
+This is pdfeTeX, Version 3.141592-1.30.6-2.2 (MiKTeX 2.5) (preloaded format=pdflatex 2008.4.23)  23 APR 2008 14:49
+entering extended mode
+**C:/Documents*and*Settings/Diogo/Meus*documentos/Escola/trabDip/monografia/mon
+ografia-final/monografia.tex
+
+("C:\Documents and Settings\Diogo\Meus documentos\Escola\trabDip\monografia\mon
+ografia-final\monografia.tex"
+LaTeX2e <2005/12/01>
+Babel <v3.8g> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman, ngerman, french, portuguese, loaded.
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abnt.cls"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+Document Class: abnt 2005/12/21 v1.31 Classe abnt (NBR6024, NBR6027, NBR6028, N
+BR14724)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\tools\calc.sty"
+Package: calc 2005/08/06 v4.2 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count79
+\calc@Bcount=\count80
+\calc@Adimen=\dimen102
+\calc@Bdimen=\dimen103
+\calc@Askip=\skip41
+\calc@Bskip=\skip42
+LaTeX Info: Redefining \setlength on input line 75.
+LaTeX Info: Redefining \addtolength on input line 76.
+\calc@Ccount=\count81
+\calc@Cskip=\skip43
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\tools\multicol.sty"
+Package: multicol 2006/05/18 v1.6g multicolumn formatting (FMi)
+\c@tracingmulticols=\count82
+\mult@box=\box26
+\multicol@leftmargin=\dimen104
+\c@unbalance=\count83
+\c@collectmore=\count84
+\doublecol@number=\count85
+\multicoltolerance=\count86
+\multicolpretolerance=\count87
+\full@width=\dimen105
+\page@free=\dimen106
+\premulticols=\dimen107
+\postmulticols=\dimen108
+\multicolsep=\skip44
+\multicolbaselineskip=\skip45
+\partial@page=\box27
+\last@line=\box28
+\mult@rightbox=\box29
+\mult@grightbox=\box30
+\mult@gfirstbox=\box31
+\mult@firstbox=\box32
+\@tempa=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\c@columnbadness=\count88
+\c@finalcolumnbadness=\count89
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
+\mult@nat@firstbox=\box50
+\colbreak@box=\box51
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntex-abrev.sty"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+Package: abntex-abrev 2005/11/14 v1.4 Abreviacoes
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\nbr10522-1988.def"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+File: nbr10522-1988.def 2003/10/13 v1.2 Abreviacoes bibliograficas (NBR10522:19
+88)
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntex-abrev-pt_BR.def"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+File: abntex-abrev-pt_BR.def 2005/11/14 v1.3 definicao de abntex-abrev, traduca
+o de termos en_US/pt_BR
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntex-text.sty"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+Package: abntex-text 2005/11/14 v1.1 abnTeX text replacements
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntex-text-pt_BR.def"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+File: abntex-text-pt_BR.def 2005/12/21 v1.2 Definicao de nomes em Portugues/Bra
+sil (pt_BR)
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntex-default-design.st
+y" ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+Package: abntex-default-design 2005/06/22 v1.2 Definicoes de design padrao do a
+bntex
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\ltxmisc\relsize.sty"
+Package: relsize 2003/07/04 ver 3.1
+
+
+Package relsize Warning: Failed to get list of font sizes.
+(relsize)                Falling back to old definition. on input line 81.
+
+)
+\ABNTanapindent=\skip46
+\ABNTsignwidth=\skip47
+\ABNTsignthickness=\skip48
+\ABNTsignskip=\skip49
+) ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\nbr6027-1989.def")
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\nbr14724-2001.def")
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\report.cls"
+Document Class: report 2005/09/16 v1.4f Standard LaTeX document class
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\size12.clo"
+File: size12.clo 2005/09/16 v1.4f Standard LaTeX file (size option)
+)
+\c@part=\count90
+\c@chapter=\count91
+\c@section=\count92
+\c@subsection=\count93
+\c@subsubsection=\count94
+\c@paragraph=\count95
+\c@subparagraph=\count96
+\c@figure=\count97
+\c@table=\count98
+\abovecaptionskip=\skip50
+\belowcaptionskip=\skip51
+\bibindent=\dimen112
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\setspace\setspace.sty"
+Package: setspace 2000/12/01 6.7 Contributed and Supported LaTeX2e package
+
+Package: `setspace' 6.7 <2000/12/01>
+) ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\mathptmx.sty"
+Package: mathptmx 2005/04/12 PSNFSS-v9.2a Times w/ Math, improved (SPQR, WaS) 
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ztmcm/m/n on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `letters' on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/ztmcm/m/it on input line 29.
+LaTeX Font Info:    Redeclaring symbol font `symbols' on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/ztmcm/m/n on input line 30.
+LaTeX Font Info:    Redeclaring symbol font `largesymbols' on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/ztmcm/m/n on input line 31.
+\symbold=\mathgroup4
+\symitalic=\mathgroup5
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/ptm/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT1/ptm/m/it on input line 35.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT1/ptm/m/it on input line 35.
+LaTeX Info: Redefining \hbar on input line 50.
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\helvet.sty"
+Package: helvet 2005/04/12 PSNFSS-v9.2a (WaS) 
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\tools\indentfirst.sty"
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\generic\babel\babel.sty"
+Package: babel 2005/05/21 v3.8g The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\00miktex\bblopts.cfg"
+File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\generic\babel\portuges.ldf"
+Language: portuges 2005/03/31 v1.2p Portuguese support from the babel system
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\generic\babel\babel.def"
+File: babel.def 2005/05/21 v3.8g Babel common definitions
+\babel@savecnt=\count99
+\U@D=\dimen113
+)
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\inputenc.sty"
+Package: inputenc 2006/05/05 v1.1b Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\latin1.def"
+File: latin1.def 2006/05/05 v1.1b Input encoding file
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\fontenc.sty"
+Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\t1enc.def"
+File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+))
+(sty\tabela-simbolos.sty
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+
+LaTeX Warning: You have requested package `sty/tabela-simbolos',
+               but the package provides `tabela-simbolos'.
+
+Package: tabela-simbolos 2006/09/09 v1.12 Tabela de simbolos e siglas
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\camel\index.sty"
+Package: index 1995/09/28 v4.1beta Improved index support (dmj)
+\@indexbox=\insert233
+\indexproofstyle=\toks17
+
+
+LaTeX Warning: Command \markboth  has changed.
+               Check if current package is valid.
+
+
+LaTeX Warning: Command \markright  has changed.
+               Check if current package is valid.
+
+)
+\idxtitle@sigla=\toks18
+\tf@sigla=\write3
+Package index Info: Writing index file monografia.siglax on input line 118.
+\idxtitle@romanlow=\toks19
+\tf@romanlow=\write4
+Package index Info: Writing index file monografia.romanlowx on input line 136.
+\idxtitle@romanupp=\toks20
+\tf@romanupp=\write5
+Package index Info: Writing index file monografia.romanuppx on input line 136.
+\idxtitle@greeklow=\toks21
+\tf@greeklow=\write6
+Package index Info: Writing index file monografia.greeklowx on input line 136.
+\idxtitle@greekupp=\toks22
+\tf@greekupp=\write7
+Package index Info: Writing index file monografia.greekuppx on input line 136.
+\idxtitle@miscelan=\toks23
+\tf@miscelan=\write8
+Package index Info: Writing index file monografia.miscelanx on input line 136.
+\c@Ocorrencia=\count100
+
+Ordem: 1: Romanos 2: Gregos 3: Simbolos
+) (sty\makeglo.sty
+Package: sty/makeglo 
+\glossentrylen=\skip52
+) (sty\utfPR.sty
+Package: sty/utfPR 
+) (sty\listings.sty
+\lst@mode=\count101
+\lst@gtempboxa=\box52
+\lst@token=\toks24
+\lst@length=\count102
+\lst@currlwidth=\dimen114
+\lst@column=\count103
+\lst@pos=\count104
+\lst@lostspace=\dimen115
+\lst@width=\dimen116
+\lst@newlines=\count105
+\lst@lineno=\count106
+\lst@maxwidth=\dimen117
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+\c@lstnumber=\count107
+\lst@skipnumbers=\count108
+\lst@framebox=\box53
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\listings.cfg"
+File: listings.cfg 2007/02/22 1.4 listings configuration
+))
+
+LaTeX Warning: You have requested package `sty/listings',
+               but the package provides `listings'.
+
+Package: listings 2007/02/22 1.4 (Carsten Heinz)
+(sty\listequations.sty)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\graphics.sty"
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2005/12/29 v1.2 MiKTeX 'graphics' configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 90.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\pdftex.def"
+File: pdftex.def 2006/08/14 v0.03t Graphics/color for pdfTeX
+\Gread@gobject=\count109
+))
+\Gin@req@height=\dimen118
+\Gin@req@width=\dimen119
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\ltxmisc\url.sty"
+\Urlmuskip=\muskip10
+Package: url 2005/06/27  ver 3.2  Verb mode for urls, etc.
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\fancyhdr\fancyhdr.sty"
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\geometry\geometry.sty"
+Package: geometry 2002/07/08 v3.2 Page Geometry
+\Gm@cnth=\count110
+\Gm@cntv=\count111
+\c@Gm@tempcnt=\count112
+\Gm@bindingoffset=\dimen120
+\Gm@wd@mp=\dimen121
+\Gm@odd@mp=\dimen122
+\Gm@even@mp=\dimen123
+\Gm@dimlist=\toks25
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\geometry\geometry.cfg"))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\tools\longtable.sty"
+Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip62
+\LTright=\skip63
+\LTpre=\skip64
+\LTpost=\skip65
+\LTchunksize=\count113
+\LTcapwidth=\dimen124
+\LT@head=\box54
+\LT@firsthead=\box55
+\LT@foot=\box56
+\LT@lastfoot=\box57
+\LT@cols=\count114
+\LT@rows=\count115
+\c@LT@tables=\count116
+\c@LT@chunks=\count117
+\LT@p@ftn=\toks26
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\abntcite.sty"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+Package: abntcite 2005/11/14 v1.29 Chamadas de referencias no texto (NBR10520, 
+NBR10522)
+\minimumbiblabelwidth=\skip66
+\ABCIauxlen=\skip67
+\c@ABCIaux=\count118
+\c@ABCImax=\count119
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\nbr10520-2002.def"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\abntex\cvs-id.def")
+File: nbr10520-2002.def 2005/06/22 v1.3 Definicoes para abntcite (NBR10520:2002
+)
+)
+\biblabelsep=\skip68
+LaTeX Info: Redefining \newblock on input line 466.
+LaTeX Info: Redefining \cite on input line 493.
+\ABCItoken=\toks27
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip69
+
+For additional information on amsmath, use the `?' option.
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks28
+\ex@=\dimen125
+))
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen126
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count120
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count121
+\leftroot@=\count122
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count123
+\DOTSCASE@=\count124
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box58
+\strutbox@=\box59
+\big@size=\dimen127
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count125
+\c@MaxMatrixCols=\count126
+\dotsspace@=\muskip11
+\c@parentequation=\count127
+\dspbrk@lvl=\count128
+\tag@help=\toks29
+\row@=\count129
+\column@=\count130
+\maxfields@=\count131
+\andhelp@=\toks30
+\eqnshift@=\dimen128
+\alignsep@=\dimen129
+\tagshift@=\dimen130
+\tagwidth@=\dimen131
+\totwidth@=\dimen132
+\lineht@=\dimen133
+\@envbody=\toks31
+\multlinegap=\skip70
+\multlinetaggap=\skip71
+\mathdisplay@stack=\toks32
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count132
+\float@exts=\toks33
+\float@box=\box60
+\@float@everytoks=\toks34
+\@floatcapt=\box61
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\qtree\qtree.sty"
+Package: 2006/07/10 v.3.1Qtree: tree-drawing for linguistics
+Package: qtree 2006/07/10 v.3.1Qtree: tree-drawing for linguistics
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\pict2e\pict2e.sty"
+Package: pict2e 2006/03/05 v0.2s Improved picture commands (HjG,RN)
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\00miktex\pict2e.cfg"
+File: pict2e.cfg 2005/12/29 v1.0 MiKTeX 'pict2e' configuration
+)
+Package pict2e Info: Driver file: pdftex.def on input line 99.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 101.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\pict2e\p2e-pdftex.def"
+File: p2e-pdftex.def 2004/06/25 v0.1r Driver-dependant file (RN,HjG)
+)
+\pIIe@GRAPH=\toks35
+)
+\c@treecount=\count133
+\c@branchcount=\count134
+\parentbox=\box62
+\treebox=\box63
+\treeboxone=\box64
+\treeboxtwo=\box65
+\treeboxthree=\box66
+\treeboxfour=\box67
+\treeboxfive=\box68
+\treeboxsix=\box69
+\treeboxseven=\box70
+\treeboxeight=\box71
+\treeboxnine=\box72
+\treeboxten=\box73
+\treeboxeleven=\box74
+\treeboxtwelve=\box75
+\treeboxthirteen=\box76
+\treeboxfourteen=\box77
+\treeboxfifteen=\box78
+\treeboxsixteen=\box79
+\treeboxseventeen=\box80
+\treeboxeighteen=\box81
+\treeboxnineteen=\box82
+\treeboxtwenty=\box83
+\treeoffsetone=\skip72
+\treeoffsettwo=\skip73
+\treeoffsetthree=\skip74
+\treeoffsetfour=\skip75
+\treeoffsetfive=\skip76
+\treeoffsetsix=\skip77
+\treeoffsetseven=\skip78
+\treeoffseteight=\skip79
+\treeoffsetnine=\skip80
+\treeoffsetten=\skip81
+\treeoffseteleven=\skip82
+\treeoffsettwelve=\skip83
+\treeoffsetthirteen=\skip84
+\treeoffsetfourteen=\skip85
+\treeoffsetfifteen=\skip86
+\treeoffsetsixteen=\skip87
+\treeoffsetseventeen=\skip88
+\treeoffseteighteen=\skip89
+\treeoffsetnineteen=\skip90
+\treeoffsettwenty=\skip91
+\treeshiftone=\skip92
+\treeshifttwo=\skip93
+\treeshiftthree=\skip94
+\treeshiftfour=\skip95
+\treeshiftfive=\skip96
+\treeshiftsix=\skip97
+\treeshiftseven=\skip98
+\treeshifteight=\skip99
+\treeshiftnine=\skip100
+\treeshiftten=\skip101
+\treeshifteleven=\skip102
+\treeshifttwelve=\skip103
+\treeshiftthirteen=\skip104
+\treeshiftfourteen=\skip105
+\treeshiftfifteen=\skip106
+\treeshiftsixteen=\skip107
+\treeshiftseventeen=\skip108
+\treeshifteighteen=\skip109
+\treeshiftnineteen=\skip110
+\treeshifttwenty=\skip111
+\treewidthone=\skip112
+\treewidthtwo=\skip113
+\treewidththree=\skip114
+\treewidthfour=\skip115
+\treewidthfive=\skip116
+\treewidthsix=\skip117
+\treewidthseven=\skip118
+\treewidtheight=\skip119
+\treewidthnine=\skip120
+\treewidthten=\skip121
+\treewidtheleven=\skip122
+\treewidthtwelve=\skip123
+\treewidththirteen=\skip124
+\treewidthfourteen=\skip125
+\treewidthfifteen=\skip126
+\treewidthsixteen=\skip127
+\treewidthseventeen=\skip128
+\treewidtheighteen=\skip129
+\treewidthnineteen=\skip130
+\treewidthtwenty=\skip131
+\daughteroffsetone=\skip132
+\daughteroffsettwo=\skip133
+\daughteroffsetthree=\skip134
+\daughteroffsetfour=\skip135
+\branchwidthone=\skip136
+\branchwidthtwo=\skip137
+\branchwidththree=\skip138
+\branchwidthfour=\skip139
+\parentoffset=\skip140
+\treeoffset=\skip141
+\daughteroffset=\skip142
+\branchwidth=\skip143
+\parentwidth=\skip144
+\treewidth=\skip145
+\qta=\toks36
+\qtb=\toks37
+\nbranches=\count135
+\qroofx=\count136
+\qroofy=\count137
+\@qrscratchbox=\box84
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\supertabular\supertabular.sty"
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count138
+\ST@wd=\dimen134
+\ST@rightskip=\skip146
+\ST@leftskip=\skip147
+\ST@parfillskip=\skip148
+\ST@pageleft=\dimen135
+\ST@headht=\dimen136
+\ST@tailht=\dimen137
+\ST@pagesofar=\dimen138
+\ST@pboxht=\dimen139
+\ST@lineht=\dimen140
+\ST@stretchht=\dimen141
+\ST@prevht=\dimen142
+\ST@toadd=\dimen143
+\ST@dimen=\dimen144
+\ST@pbox=\box85
+) ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\graphics\color.sty"
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\00miktex\color.cfg"
+File: color.cfg 2005/12/29 v1.1 MiKTeX 'color' configuration
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+\@glossaryfile=\write9
+
+Writing glossary file monografia.glo 
+
+LaTeX Warning: Unused global option(s):
+    [abnt-url-package=url].
+
+(monografia.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
+LaTeX Font Info:    ... okay on input line 55.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 55.
+ ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\t1ptm.fd"
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+
+Package tabel-simbolos Warning: package supertabular detected, redefining table
+ commands on input line 55.
+
+\c@lstlisting=\count139
+("C:\Arquivos de programas\MiKTeX 2.5\tex\context\base\supp-pdf.tex"
+("C:\Arquivos de programas\MiKTeX 2.5\tex\context\base\supp-mis.tex"
+loading : Context Support Macros / Miscellaneous (2004.10.26)
+\protectiondepth=\count140
+\scratchcounter=\count141
+\scratchtoks=\toks38
+\scratchdimen=\dimen145
+\scratchskip=\skip149
+\scratchmuskip=\muskip12
+\scratchbox=\box86
+\scratchread=\read1
+\scratchwrite=\write10
+\zeropoint=\dimen146
+\onepoint=\dimen147
+\onebasepoint=\dimen148
+\minusone=\count142
+\thousandpoint=\dimen149
+\onerealpoint=\dimen150
+\emptytoks=\toks39
+\nextbox=\box87
+\nextdepth=\dimen151
+\everyline=\toks40
+\!!counta=\count143
+\!!countb=\count144
+\recursecounter=\count145
+)
+loading : Context Support Macros / PDF (2004.03.26)
+\nofMPsegments=\count146
+\nofMParguments=\count147
+\MPscratchCnt=\count148
+\MPscratchDim=\dimen152
+\MPnumerator=\count149
+\everyMPtoPDFconversion=\toks41
+)
+-------------------- Geometry parameters
+paper: a4paper
+landscape: --
+twocolumn: --
+twoside: --
+asymmetric: --
+h-parts: 85.35826pt, 469.47049pt, 42.67912pt
+v-parts: 85.35826pt, 717.00946pt, 42.67912pt
+hmarginratio: --
+vmarginratio: --
+lines: --
+heightrounded: --
+bindingoffset: 0.0pt
+truedimen: --
+includehead: --
+includefoot: --
+includemp: --
+driver: pdftex
+-------------------- Page layout dimensions and switches
+\paperwidth  597.50787pt
+\paperheight 845.04684pt
+\textwidth  469.47049pt
+\textheight 717.00946pt
+\oddsidemargin  13.08827pt
+\evensidemargin 13.08827pt
+\topmargin  -21.05495pt
+\headheight 7.7362pt
+\headsep    7.7362pt
+\footskip   19.91684pt
+\marginparwidth 35.0pt
+\marginparsep   10.0pt
+\columnsep  10.0pt
+\skip\footins  10.8pt plus 4.0pt minus 2.0pt
+\hoffset 0.0pt
+\voffset 0.0pt
+\mag 1000
+
+(1in=72.27pt, 1cm=28.45pt)
+-----------------------
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 65
+.
+ ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\ot1ztmcm.fd"
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 65
+.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\omlztmcm.fd"
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 65
+.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\omsztmcm.fd"
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 65
+.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\omxztmcm.fd"
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 65.
+
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+
+(pretextual\dedicatoria.tex) [1
+
+
+{psfonts.map}] (pretextual\agradecimento.tex)
+[2
+
+] [3
+
+] (pretextual\resumo.tex) [4
+
+
+] (pretextual\abstract.tex) [5
+
+
+]
+(monografia.lof [6
+
+] [7])
+\tf@lof=\write11
+ [8] (monografia.lot [9
+
+])
+\tf@lot=\write12
+ [10] (monografia.lol)
+\tf@lol=\write13
+
+[11
+
+] (monografia.sigla
+Underfull \hbox (badness 10000) in alignment at lines 87--31
+[][]
+ []
+
+[12
+
+
+])
+Underfull \hbox (badness 10000) in alignment at lines 31--87
+[][]
+ []
+
+[13] (monografia.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+ [14
+
+] [15]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 50.
+ [16] [17])
+\tf@toc=\write14
+ [18] (capitulos\introducao.tex
+Cap\'{\i }tulo 1.
+[1
+
+
+]) (capitulos\fundamentos.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[2]
+Cap\'{\i }tulo 2.
+[3
+
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 98.
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[4]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 122.
+
+ ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\psnfss\omsptm.fd"
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 122.
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[5]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 167.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 209.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 209.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 209.
+ <images/hipermidia/rede_de_informacoes.jpg, id=92, 385.44pt x 243.15843pt>
+File: images/hipermidia/rede_de_informacoes.jpg Graphic file (type jpg)
+
+<use images/hipermidia/rede_de_informacoes.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[6]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[7 <images/hipermidia/rede_de_informacoes.jpg>]) (capitulos\aco.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Cap\'{\i }tulo 3.
+[9
+
+] <images/aco/formigas.jpg, id=106, 582.175pt x 230.8625pt>
+File: images/aco/formigas.jpg Graphic file (type jpg)
+
+<use images/aco/formigas.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[10 <images/aco/formigas.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11] <images/aco/diagramanav.jpg, id=122, 452.69125pt x 246.9225pt>
+File: images/aco/diagramanav.jpg Graphic file (type jpg)
+
+<use images/aco/diagramanav.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[12]) (capitulos\projeto.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <images/aco/diagramanav.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+Cap\'{\i }tulo 4.
+[15
+
+]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 113.
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[16]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[17] <images/oriant/fig_geral.jpg, id=145, 782.925pt x 381.425pt>
+File: images/oriant/fig_geral.jpg Graphic file (type jpg)
+
+<use images/oriant/fig_geral.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[18 <images/oriant/fig_geral.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[19]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[20]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 376.
+
+ ("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\base\t1cmtt.fd"
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
+)
+(cods\gerenciar.txt)
+<images/gerenciar/gerenciar.jpg, id=156, 590.205pt x 489.83pt>
+File: images/gerenciar/gerenciar.jpg Graphic file (type jpg)
+
+<use images/gerenciar/gerenciar.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[21] (cods\gerenciarConsulta.txt)
+Overfull \hbox (8.39914pt too wide) in paragraph at lines 421--426
+[]\T1/ptm/m/n/12 O \T1/ptm/m/it/12 web-site \T1/ptm/m/n/12 hos-pe-deiro não dev
+e uti-li-zar em seu con-teúdo a uti-li-za-ção das tags HTML: $\OML/ztmcm/m/it/1
+2 <$\T1/ptm/m/it/12 frame$\OML/ztmcm/m/it/12 >$
+ []
+
+) (capitulos\modelagem.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[22 <images/gerenciar/gerenciar.jpg>]
+Cap\'{\i }tulo 5.
+<images/metodologia/fases_workflows.jpg, id=165, 803.0pt x 462.72874pt>
+File: images/metodologia/fases_workflows.jpg Graphic file (type jpg)
+
+<use images/metodologia/fases_workflows.jpg> [23
+
+ <images/metodologia/fases_workflows.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[24]
+Underfull \hbox (badness 6078) in paragraph at lines 180--180
+[]\T1/ptm/m/it/12 Templates \T1/ptm/m/n/12 pre-vi-a-mente ca-das-tra-
+ []
+
+
+Underfull \hbox (badness 7851) in paragraph at lines 184--184
+[]\T1/ptm/m/n/12 Armazenamento dos pa-râ-me-tros
+ []
+
+
+Overfull \hbox (5.3208pt too wide) in paragraph at lines 160--191
+[][] 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[25]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+[]\T1/ptm/m/n/12 Padronização e
+ []
+
+
+Overfull \hbox (7.5472pt too wide) in paragraph at lines 201--224
+[][] 
+ []
+
+<images/diagramas/Atores.jpg, id=179, 208.78pt x 111.41624pt>
+File: images/diagramas/Atores.jpg Graphic file (type jpg)
+
+<use images/diagramas/Atores.jpg>
+<images/diagramas/CasosDeUso.jpg, id=180, 548.0475pt x 246.9225pt>
+File: images/diagramas/CasosDeUso.jpg Graphic file (type jpg)
+
+<use images/diagramas/CasosDeUso.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[27 <images/diagramas/Atores.jpg>]
+Overfull \hbox (3.79639pt too wide) in paragraph at lines 254--254
+[]\T1/ptm/m/n/12 Categoria| 
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[28 <images/diagramas/CasosDeUso.jpg>]
+<images/diagramas/AcionarLink.jpg, id=187, 385.44pt x 196.735pt>
+File: images/diagramas/AcionarLink.jpg Graphic file (type jpg)
+
+<use images/diagramas/AcionarLink.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[29 <images/diagramas/AcionarLink.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[30]
+<images/diagramas/AdministrarGrupos.jpg, id=194, 541.02126pt x 251.94125pt>
+File: images/diagramas/AdministrarGrupos.jpg Graphic file (type jpg)
+
+<use images/diagramas/AdministrarGrupos.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[31 <images/diagramas/AdministrarGrupos.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[32]
+<images/diagramas/GerenciarRegistrosDoSistema.jpg, id=202, 259.97125pt x 297.11
+pt>
+File: images/diagramas/GerenciarRegistrosDoSistema.jpg Graphic file (type jpg)
+ <use images/diagramas/GerenciarRegistrosDoSistema.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[33 <images/diagramas/GerenciarRegistrosDoSistema.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[34] <images/diagramas/Principal.jpg, id=209, 758.835pt x 638.385pt>
+File: images/diagramas/Principal.jpg Graphic file (type jpg)
+
+<use images/diagramas/Principal.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[35 <images/diagramas/Principal.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[36]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[37]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[38]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[39] <images/diagramas/AcionarLink1.jpg, id=226, 940.51375pt x 499.8675pt>
+File: images/diagramas/AcionarLink1.jpg Graphic file (type jpg)
+
+<use images/diagramas/AcionarLink1.jpg>
+<images/diagramas/AcrecimoDeFeromonio.jpg, id=227, 1032.85875pt x 770.88pt>
+File: images/diagramas/AcrecimoDeFeromonio.jpg Graphic file (type jpg)
+
+<use images/diagramas/AcrecimoDeFeromonio.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[40 <images/diagramas/AcionarLink1.jpg> <images/diagramas/AcrecimoDeFeromonio.j
+pg>] <images/diagramas/AlterarGrupo.jpg, id=231, 720.6925pt x 540.0175pt>
+File: images/diagramas/AlterarGrupo.jpg Graphic file (type jpg)
+
+<use images/diagramas/AlterarGrupo.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[41 <images/diagramas/AlterarGrupo.jpg>]
+<images/diagramas/ConsultarPaginasCadastradas.jpg, id=235, 814.04124pt x 479.79
+25pt>
+File: images/diagramas/ConsultarPaginasCadastradas.jpg Graphic file (type jpg)
+ <use images/diagramas/ConsultarPaginasCadastradas.jpg>
+<images/diagramas/ConsultrarFrequenciaDosGrupos.jpg, id=236, 822.07124pt x 499.
+8675pt>
+File: images/diagramas/ConsultrarFrequenciaDosGrupos.jpg Graphic file (type jpg
+)
+ <use images/diagramas/ConsultrarFrequenciaDosGrupos.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[42 <images/diagramas/ConsultarPaginasCadastradas.jpg> <images/diagramas/Consul
+trarFrequenciaDosGrupos.jpg>]
+<images/diagramas/DeducaoDeFeromonio.jpg, id=240, 849.1725pt x 409.53pt>
+File: images/diagramas/DeducaoDeFeromonio.jpg Graphic file (type jpg)
+
+<use images/diagramas/DeducaoDeFeromonio.jpg>
+<images/diagramas/EfetuarLogin.jpg, id=241, 941.5175pt x 399.4925pt>
+File: images/diagramas/EfetuarLogin.jpg Graphic file (type jpg)
+
+<use images/diagramas/EfetuarLogin.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[43 <images/diagramas/DeducaoDeFeromonio.jpg> <images/diagramas/EfetuarLogin.jp
+g>] <images/diagramas/EscolherGrupo.jpg, id=246, 1061.9675pt x 570.13pt>
+File: images/diagramas/EscolherGrupo.jpg Graphic file (type jpg)
+
+<use images/diagramas/EscolherGrupo.jpg>
+<images/diagramas/EscolherTipoDeOrientacao.jpg, id=247, 688.5725pt x 248.93pt>
+File: images/diagramas/EscolherTipoDeOrientacao.jpg Graphic file (type jpg)
+
+<use images/diagramas/EscolherTipoDeOrientacao.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[44 <images/diagramas/EscolherGrupo.jpg> <images/diagramas/EscolherTipoDeOrient
+acao.jpg>]
+<images/diagramas/ExcluirGrupo.jpg, id=251, 861.2175pt x 620.3175pt>
+File: images/diagramas/ExcluirGrupo.jpg Graphic file (type jpg)
+
+<use images/diagramas/ExcluirGrupo.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[45 <images/diagramas/ExcluirGrupo.jpg>]
+File: images/diagramas/EscolherGrupo.jpg Graphic file (type jpg)
+
+<use images/diagramas/EscolherGrupo.jpg>
+<images/diagramas/TrocarGrupo.jpg, id=255, 1270.7475pt x 529.98pt>
+File: images/diagramas/TrocarGrupo.jpg Graphic file (type jpg)
+
+<use images/diagramas/TrocarGrupo.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[46 <images/diagramas/TrocarGrupo.jpg>]
+<images/diagramas/DiagramaDeClasses.jpg, id=259, 1481.535pt x 1792.6975pt>
+File: images/diagramas/DiagramaDeClasses.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeClasses.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[47 <images/diagramas/DiagramaDeClasses.jpg>]
+<images/diagramas/DiagramaDeClassesP1.jpg, id=263, 1148.29pt x 1076.02pt>
+File: images/diagramas/DiagramaDeClassesP1.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeClassesP1.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[48 <images/diagramas/DiagramaDeClassesP1.jpg>]
+<images/diagramas/DiagramaDeClassesP2.jpg, id=267, 994.71625pt x 732.7375pt>
+File: images/diagramas/DiagramaDeClassesP2.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeClassesP2.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[49 <images/diagramas/DiagramaDeClassesP2.jpg>]
+<images/diagramas/DiagramaDeClassesP3.jpg, id=272, 492.84125pt x 483.8075pt>
+File: images/diagramas/DiagramaDeClassesP3.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeClassesP3.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[50 <images/diagramas/DiagramaDeClassesP3.jpg>]
+Overfull \hbox (11.68634pt too wide) in paragraph at lines 976--978
+[]\T1/ptm/m/n/12 Apesar da com-ple-xi-dade dos al-go-rit-mos de-sen-vol-vi-dos,
+ o mo-delo re-la-ci-o-nal do pro-jeto apresenta-
+ []
+
+<images/diagramas/mer.jpg, id=276, 437.635pt x 437.635pt>
+File: images/diagramas/mer.jpg Graphic file (type jpg)
+
+<use images/diagramas/mer.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[51 <images/diagramas/mer.jpg>]
+<images/diagramas/DiagramaDePacotes.jpg, id=280, 658.46pt x 417.56pt>
+File: images/diagramas/DiagramaDePacotes.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDePacotes.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[52 <images/diagramas/DiagramaDePacotes.jpg>]
+<images/diagramas/DiagramaDeImplantacao.jpg, id=284, 487.8225pt x 317.185pt>
+File: images/diagramas/DiagramaDeImplantacao.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeImplantacao.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[53 <images/diagramas/DiagramaDeImplantacao.jpg>]
+<images/diagramas/DiagramaDeComponentes.jpg, id=288, 1132.23pt x 1150.2975pt>
+File: images/diagramas/DiagramaDeComponentes.jpg Graphic file (type jpg)
+
+<use images/diagramas/DiagramaDeComponentes.jpg>
+Overfull \hbox (14.22635pt too wide) in paragraph at lines 1034--1034
+ [][] 
+ []
+
+) (capitulos\tecnologia.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[54 <images/diagramas/DiagramaDeComponentes.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[55]
+Cap\'{\i }tulo 6.
+[56
+
+]) (capitulos\framework.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[57]
+Cap\'{\i }tulo 7.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <17.28> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 5.
+<images/neuronio/neuronio.jpg, id=304, 631.35875pt x 591.20876pt>
+File: images/neuronio/neuronio.jpg Graphic file (type jpg)
+
+<use images/neuronio/neuronio.jpg> [58
+
+ <images/neuronio/neuronio.jpg>]
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2004/09/05 1.3 listings language file
+)
+("C:\Arquivos de programas\MiKTeX 2.5\tex\latex\listings\lstlang2.sty"
+File: lstlang2.sty 2004/09/05 1.3 listings language file
+)
+(cods\eval.txt
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <8> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 7.
+)
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[59]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[60] (cods\mapeamento.txt)
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[61]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[62]) (capitulos\desenvolvimento.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[63]
+Cap\'{\i }tulo 8.
+[64
+
+] <images/rss/rss.jpg, id=328, 559.08875pt x 116.435pt>
+File: images/rss/rss.jpg Graphic file (type jpg)
+
+<use images/rss/rss.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[65 <images/rss/rss.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[66] (cods\lang.txt)
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[67]) (capitulos\subsistema.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[68]
+Cap\'{\i }tulo 9.
+<images/diagramas/mergo.jpg, id=342, 437.635pt x 377.41pt>
+File: images/diagramas/mergo.jpg Graphic file (type jpg)
+
+<use images/diagramas/mergo.jpg> [69
+
+]
+<images/sub/aval.jpg, id=346, 214.8025pt x 70.2625pt>
+File: images/sub/aval.jpg Graphic file (type jpg)
+
+<use images/sub/aval.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[70 <images/diagramas/mergo.jpg> <images/sub/aval.jpg>]
+<images/sub/come.jpg, id=350, 340.27126pt x 112.42pt>
+File: images/sub/come.jpg Graphic file (type jpg)
+
+<use images/sub/come.jpg>) (capitulos\resultados.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[71 <images/sub/come.jpg>]
+Cap\'{\i }tulo 10.
+[72
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[73] <images/grafos/inicial.jpg, id=361, 401.5pt x 503.8825pt>
+File: images/grafos/inicial.jpg Graphic file (type jpg)
+
+<use images/grafos/inicial.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[74]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[75 <images/grafos/inicial.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[76] <images/grafos/u1na.jpg, id=371, 460.72125pt x 540.0175pt>
+File: images/grafos/u1na.jpg Graphic file (type jpg)
+
+<use images/grafos/u1na.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[77 <images/grafos/u1na.jpg>]
+<images/grafos/u1no.jpg, id=375, 534.99875pt x 532.99126pt>
+File: images/grafos/u1no.jpg Graphic file (type jpg)
+
+<use images/grafos/u1no.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[78]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[79 <images/grafos/u1no.jpg>]
+<images/grafos/u2na.jpg, id=383, 479.7925pt x 477.785pt>
+File: images/grafos/u2na.jpg Graphic file (type jpg)
+
+<use images/grafos/u2na.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[80 <images/grafos/u2na.jpg>]
+<images/grafos/u2no.jpg, id=387, 507.8975pt x 522.95375pt>
+File: images/grafos/u2no.jpg Graphic file (type jpg)
+
+<use images/grafos/u2no.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[81]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[82 <images/grafos/u2no.jpg>]
+<images/grafos/u3na.jpg, id=394, 476.78125pt x 540.0175pt>
+File: images/grafos/u3na.jpg Graphic file (type jpg)
+
+<use images/grafos/u3na.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[83 <images/grafos/u3na.jpg>]
+<images/grafos/u3no.jpg, id=398, 519.9425pt x 550.055pt>
+File: images/grafos/u3no.jpg Graphic file (type jpg)
+
+<use images/grafos/u3no.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[84]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[85 <images/grafos/u3no.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[86]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[87]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[88]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[89]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[90]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[91]
+<images/testesOriant/teste_dif_horas/grafico.jpg, id=425, 447.6725pt x 308.1512
+5pt>
+File: images/testesOriant/teste_dif_horas/grafico.jpg Graphic file (type jpg)
+ <use images/testesOriant/teste_dif_horas/grafico.jpg>
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[92 <images/testesOriant/teste_dif_horas/grafico.jpg>]) (capitulos\recursos.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[93]
+Cap\'{\i }tulo 11.
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <14.4> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 38.
+[94
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[95]) (capitulos\cronogramas.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[96]
+Cap\'{\i }tulo 12.
+[97
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[98]
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
+
+Overfull \hbox (31.89705pt too wide) in paragraph at lines 65--83
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--83
+
+ []
+
+
+Overfull \hbox (31.897pt too wide) in paragraph at lines 93--111
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--111
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[99
+
+]) (capitulos\conclusao.tex
+Cap\'{\i }tulo 13.
+[100
+
+
+]) (monografia.bbl
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[101]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[102
+
+]) (glossario\glossario.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[103]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
+
+Apendice A.
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[104
+
+] (monografia.gls
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[105]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[106])) (apendices\faq.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[107]
+Apendice B.
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[108
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[109]) (apendices\apresentacao.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[110]
+Apendice C.
+<images/oriant/grupos.jpg, id=486, 784.9325pt x 111.41624pt>
+File: images/oriant/grupos.jpg Graphic file (type jpg)
+
+<use images/oriant/grupos.jpg>
+<images/oriant/objetiva.jpg, id=487, 784.9325pt x 111.41624pt>
+File: images/oriant/objetiva.jpg Graphic file (type jpg)
+
+<use images/oriant/objetiva.jpg>
+<images/oriant/orientada.jpg, id=488, 784.9325pt x 111.41624pt>
+File: images/oriant/orientada.jpg Graphic file (type jpg)
+
+<use images/oriant/orientada.jpg>
+<images/oriant/relacionada.jpg, id=489, 784.9325pt x 111.41624pt>
+File: images/oriant/relacionada.jpg Graphic file (type jpg)
+
+<use images/oriant/relacionada.jpg>
+<images/oriant/roxo.jpg, id=490, 784.9325pt x 111.41624pt>
+File: images/oriant/roxo.jpg Graphic file (type jpg)
+
+<use images/oriant/roxo.jpg>
+<images/oriant/amarelo.jpg, id=491, 784.9325pt x 111.41624pt>
+File: images/oriant/amarelo.jpg Graphic file (type jpg)
+
+<use images/oriant/amarelo.jpg>
+<images/oriant/idioma.jpg, id=492, 784.9325pt x 111.41624pt>
+File: images/oriant/idioma.jpg Graphic file (type jpg)
+
+<use images/oriant/idioma.jpg>) (apendices\subsistema.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[111
+
+ <images/oriant/grupos.jpg> <images/oriant/objetiva.jpg> <images/oriant/orienta
+da.jpg> <images/oriant/relacionada.jpg> <images/oriant/roxo.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[112 <images/oriant/amarelo.jpg> <images/oriant/idioma.jpg>]
+Apendice D.
+<images/sub/capa.jpg, id=499, 784.9325pt x 628.3475pt>
+File: images/sub/capa.jpg Graphic file (type jpg)
+
+<use images/sub/capa.jpg>
+<images/sub/noticia.jpg, id=500, 784.9325pt x 758.835pt>
+File: images/sub/noticia.jpg Graphic file (type jpg)
+
+<use images/sub/noticia.jpg>
+<images/sub/menuAdmin.jpg, id=501, 185.69376pt x 681.54625pt>
+File: images/sub/menuAdmin.jpg Graphic file (type jpg)
+
+<use images/sub/menuAdmin.jpg>) (apendices\implementacao.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[113
+
+ <images/sub/capa.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[114 <images/sub/noticia.jpg>]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[115 <images/sub/menuAdmin.jpg>]
+Apendice E.
+(cods\oriAntHTML.txt
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[116
+
+]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[117]) (cods\oriAntCSS.txt
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[118]
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[119])
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[120] (cods\rss.txt)
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[121] (cods\ajaxPHP.txt) (cods\ajaxJS.txt
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[122])) (apendices\neuronios.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[123]
+Apendice F.
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[124
+
+]) (apendices\generica.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[125]
+Apendice G.
+(cods\generica.txt
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[126
+
+])) (apendices\erros.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[127]
+Apendice H.
+(cods\erros.txt
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[128
+
+])) (anexos\proposta.tex
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[129]
+Anexo A.
+)
++-------------------------------------------------------------------+
+| Comentario, sugestao ou critica sobre o abnTeX? Entre em contato: |
+|                  http://abntex.codigolivre.org.br                 |
++-------------------------------------------------------------------+
+########################################################################
+tabela-simbolos: agora rode geratss (linux) ou manualmente,
+makeindex -s tabela-siglas.ist -o monografia.sigla monografia.siglax
+makeindex -s tabela-simbolos.ist -o monografia.romanlow monografia.romanlowx
+makeindex -s tabela-simbolos.ist -o monografia.romanupp monografia.romanuppx
+makeindex -s tabela-simbolos.ist -o monografia.greeklow monografia.greeklowx
+makeindex -s tabela-simbolos.ist -o monografia.greekupp monografia.greekuppx
+makeindex -s tabela-simbolos.ist -o monografia.miscelan monografia.miscelanx
+makeindex -s tabela-simbolos.ist -o monografia.symbols monografia.symbolsx
+########################################################################
+
+Package Fancyhdr Warning: \headheight is too small (7.7362pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[130
+
+] (monografia.aux) ) 
+Here is how much of TeX's memory you used:
+ 10011 strings out of 95400
+ 140558 string characters out of 1186772
+ 586593 words of memory out of 1440759
+ 12086 multiletter control sequences out of 60000
+ 92084 words of font info for 143 fonts, out of 1000000 for 2000
+ 16 hyphenation exceptions out of 8191
+ 33i,12n,53p,1147b,2999s stack positions out of 5000i,500n,10000p,200000b,32768s
+PDF statistics:
+ 558 PDF objects out of 300000
+ 0 named destinations out of 300000
+ 271 words of extra memory for PDF output out of 10000
+ <C:\Documents and Settings\All Users\Dados de aplicativos\
+MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecit0800.pk> <C:\Documents and Se
+ttings\All Users\Dados de aplicativos\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dp
+i600\ectt1000.pk> <C:\Documents and Settings\All Users\Dados de aplicativos\MiK
+TeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ecit1200.pk> <C:\Documents and Setti
+ngs\All Users\Dados de aplicativos\MiKTeX\2.5\fonts\pk\ljfour\jknappen\ec\dpi60
+0\ectt0800.pk> <C:\Documents and Settings\All Users\Dados de aplicativos\MiKTeX
+\2.5\fonts\pk\ljfour\jknappen\ec\dpi600\ectt1200.pk><C:/Arquivos de programas/M
+iKTeX 2.5/fonts/type1/bluesky/cm/cmex10.pfb><C:/Arquivos de programas/MiKTeX 2.
+5/fonts/type1/urw/symbol/usyr.pfb><C:/Arquivos de programas/MiKTeX 2.5/fonts/ty
+pe1/urw/symbol/usyr.pfb><C:/Arquivos de programas/MiKTeX 2.5/fonts/type1/bluesk
+y/cm/cmr10.pfb><C:/Arquivos de programas/MiKTeX 2.5/fonts/type1/bluesky/cm/cmsy
+10.pfb><C:/Arquivos de programas/MiKTeX 2.5/fonts/type1/bluesky/cm/cmmi10.pfb>{
+8r.enc}<C:/Arquivos de programas/MiKTeX 2.5/fonts/type1/urw/times/utmbi8a.pfb><
+C:/Arquivos de programas/MiKTeX 2.5/fonts/type1/urw/times/utmri8a.pfb><C:/Arqui
+vos de programas/MiKTeX 2.5/fonts/type1/urw/times/utmr8a.pfb><C:/Arquivos de pr
+ogramas/MiKTeX 2.5/fonts/type1/urw/times/utmb8a.pfb>
+Output written on monografia.pdf (148 pages, 6008141 bytes).

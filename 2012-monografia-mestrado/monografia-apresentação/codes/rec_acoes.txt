@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<execution_plan>
+  <action>
+    <name>sum_cd</name>
+    <range>0</range>
+    <order>1</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.sumVet_sequential(globals, id, 1, leechLogger);</operator>
+    <workflow>1</workflow>
+  </action>
+  <action>
+    <name>sum_ab</name>
+    <range>1</range>
+    <order>1</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.sumVet_sequential(globals, id, 0, leechLogger);</operator>
+    <workflow>0</workflow>
+  </action>
+  <action>
+    <name>sum_ab</name>
+    <range>*</range>
+    <order>2</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.broadcastResults_sumVet(globals, id, 0, leechLogger);</operator>
+    <workflow>0</workflow>
+  </action>
+  <action>
+    <name>sum_cd</name>
+    <range>*</range>
+    <order>2</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.broadcastResults_sumVet(globals, id, 1, leechLogger);</operator>
+    <workflow>1</workflow>
+  </action>
+  <action>
+    <name>mult_ij</name>
+    <range>0-1</range>
+    <order>3</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.multVet_parallel(globals, id, 2, leechLogger);</operator>
+    <workflow>2</workflow>
+  </action>
+  <action>
+    <name>mult_ij</name>
+    <range>0-1</range>
+    <order>4</order>
+    <timeout>1000</timeout>
+    <operator>JoinWorkFlows.broadcastResults_multVet_parallel(globals, id, 2, leechLogger);</operator>
+    <workflow>2</workflow>
+  </action>
+</execution_plan>

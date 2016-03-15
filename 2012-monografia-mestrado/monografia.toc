@@ -1,0 +1,72 @@
+\select@language {brazil}
+\contentsline {chapter}{\MakeUppercase {Lista de Figuras}}{iv}
+\contentsline {chapter}{\MakeUppercase {Lista de Tabelas}}{v}
+\contentsline {chapter}{\MakeUppercase {Lista de C\'odigos}}{vi}
+\contentsline {chapter}{\MakeUppercase {Lista de Siglas e Abrevia\c c\~oes}}{vii}
+\contentsline {chapter}{\MakeUppercase {Resumo}}{viii}
+\contentsline {chapter}{\MakeUppercase {Abstract}}{ix}
+\contentsline {chapter}{\numberline {1}\MakeUppercase {Introdu\c c\~ao}}{1}
+\contentsline {chapter}{\numberline {2}\MakeUppercase {Revis\~ao Bibliogr\'afica}}{5}
+\contentsline {section}{\numberline {2.1}Fluxo de Trabalho Cient\IeC {\'\i }fico}{5}
+\contentsline {section}{\numberline {2.2}Proveni\^encia de Dados}{7}
+\contentsline {section}{\numberline {2.3}Ambiente de Execu\c c\~ao Distribu\IeC {\'\i }do}{8}
+\contentsline {section}{\numberline {2.4}Sistemas Ponto a Ponto}{10}
+\contentsline {section}{\numberline {2.5}Planejamento}{11}
+\contentsline {subsection}{\numberline {2.5.1}Redes de Tarefas Hier\'arquicas}{13}
+\contentsline {subsection}{\numberline {2.5.2}Planejadores Cl\'assicos}{14}
+\contentsline {subsection}{\numberline {2.5.3}\emph {Planning Domain Definition Language}}{16}
+\contentsline {subsection}{\numberline {2.5.4}Crikey}{19}
+\contentsline {section}{\numberline {2.6}Considera\c c\~oes}{20}
+\contentsline {chapter}{\numberline {3}\MakeUppercase {Trabalhos Relacionados}}{23}
+\contentsline {section}{\numberline {3.1}Ptolemy}{23}
+\contentsline {section}{\numberline {3.2}Kepler}{24}
+\contentsline {section}{\numberline {3.3}Pegasus}{25}
+\contentsline {section}{\numberline {3.4}SciCumulus}{26}
+\contentsline {section}{\numberline {3.5}Escalonador BPEL}{27}
+\contentsline {section}{\numberline {3.6}Intelig\^encia Artificial e Fluxo de Execu\c c\~ao}{29}
+\contentsline {section}{\numberline {3.7}Considera\c c\~oes}{29}
+\contentsline {chapter}{\numberline {4}\MakeUppercase {Modelo Proposto - SWEP}}{33}
+\contentsline {section}{\numberline {4.1}Vis\~ao Geral}{33}
+\contentsline {section}{\numberline {4.2}Gerenciador de Execu\c c\~ao}{35}
+\contentsline {subsection}{\numberline {4.2.1}PeerUnit}{36}
+\contentsline {section}{\numberline {4.3}Vis\~ao Detalhada do Modelo}{38}
+\contentsline {subsection}{\numberline {4.3.1}Usu\'arios}{40}
+\contentsline {subsection}{\numberline {4.3.2}Planejador}{40}
+\contentsline {subsection}{\numberline {4.3.3}Operadores}{41}
+\contentsline {subsection}{\numberline {4.3.4}Execu\c c\~ao}{42}
+\contentsline {subsection}{\numberline {4.3.5}Coletor de Informa\c c\~oes}{43}
+\contentsline {section}{\numberline {4.4}Fluxo de Execu\c c\~ao}{43}
+\contentsline {section}{\numberline {4.5}Paralelismo sobre Dados}{45}
+\contentsline {subsection}{\numberline {4.5.1}Paraleliza\c c\~ao Direta}{45}
+\contentsline {subsection}{\numberline {4.5.2}Paraleliza\c c\~ao por Plano}{46}
+\contentsline {section}{\numberline {4.6}Paralelismo sobre Execu\c c\~ao}{47}
+\contentsline {section}{\numberline {4.7}Planejamento de Custos}{48}
+\contentsline {section}{\numberline {4.8}M\'etodo de Tradu\c c\~ao}{50}
+\contentsline {section}{\numberline {4.9}Considera\c c\~oes}{53}
+\contentsline {chapter}{\numberline {5}\MakeUppercase {Experimentos}}{55}
+\contentsline {section}{\numberline {5.1}Experimento 1 - Paraleliza\c c\~ao Direta}{56}
+\contentsline {section}{\numberline {5.2}Experimento 2 - Encadeamento de Fluxos de Trabalho}{58}
+\contentsline {section}{\numberline {5.3}Experimento 3 - M\'ultiplas Entrada e Sa\IeC {\'\i }das de Dados}{64}
+\contentsline {section}{\numberline {5.4}Considera\c c\~oes}{65}
+\contentsline {chapter}{\numberline {6}\MakeUppercase {Conclus\~ao}}{66}
+\contentsline {section}{\numberline {6.1}Trabalhos Futuros}{67}
+\contentsline {chapter}{\numberline {A}\MakeUppercase {Modelo Inicial Elaborado em JSHOP}}{69}
+\contentsline {chapter}{\numberline {B}\MakeUppercase {Recursos do Sistema}}{72}
+\contentsline {section}{\numberline {B.1}Aplica\c c\~ao}{72}
+\contentsline {section}{\numberline {B.2}A\c c\~oes}{74}
+\contentsline {section}{\numberline {B.3}Dados}{76}
+\contentsline {section}{\numberline {B.4}Logs e Proveni\^encia}{76}
+\contentsline {chapter}{\numberline {C}\MakeUppercase {Arquivos de Planejamento}}{79}
+\contentsline {section}{\numberline {C.1}Dom\IeC {\'\i }nio}{79}
+\contentsline {section}{\numberline {C.2}Problema}{80}
+\contentsline {section}{\numberline {C.3}Plano Gerado}{80}
+\contentsline {chapter}{\numberline {D}\MakeUppercase {Descri\c c\~ao dos Componentes}}{81}
+\contentsline {chapter}{\numberline {E}\MakeUppercase {Arquivo de Configura\c c\~ao do PeerUnit}}{83}
+\contentsline {chapter}{\numberline {F}\MakeUppercase {C\'odigos Fonte}}{84}
+\contentsline {section}{\numberline {F.1}Chamada do Planejador}{84}
+\contentsline {section}{\numberline {F.2}Plano de Execu\c c\~ao}{86}
+\contentsline {section}{\numberline {F.3}Fluxo de Trabalho de Exemplo}{87}
+\contentsline {subsection}{\numberline {F.3.1}Implementa\c c\~ao Base}{87}
+\contentsline {subsection}{\numberline {F.3.2}Fluxo de Trabalho para Soma de Matrizes}{90}
+\contentsline {section}{\numberline {F.4}Tradutor}{94}
+\contentsline {chapter}{\MakeUppercase {Bibliografia}}{1}

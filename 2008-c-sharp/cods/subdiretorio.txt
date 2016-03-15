@@ -1,0 +1,8 @@
+DirectoryInfo dir = new DirectoryInfo(@"F:\WINNT");
+try{
+  dir.CreateSubdirectory("Sub");
+  dir.CreateSubdirectory(@"Sub\MySub");
+}
+catch(IOException e){
+  Console.WriteLine(e.Message);
+}

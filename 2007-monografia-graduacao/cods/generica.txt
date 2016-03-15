@@ -1,0 +1,62 @@
+<?php
+abstract class Generic{
+	
+    private $tabela;
+    private $condicao;	    
+    private $campos  = array();	    
+    private $valores = array();
+    private $db;
+	
+    public function __construct_Generic(){}
+
+    public function dataBase(){
+	if(empty($this->db)){
+		$this->db = new DataBase();
+		return $this->db;
+	}
+	else{
+		return $this->db;
+	}
+    }
+
+    public function uniqueKey($key){
+
+        $pk        = "";
+        $strCampos = "";
+		$campos    = $this->getCampos();
+        $separacao = "";
+        
+        for($i=0; $i<count($campos); $i++){
+            if($i == 0) $pk = $campos[$i];
+            if($i == count($campos)-1){
+                $separacao = "";
+            }
+            else{
+                $separacao = ", ";
+            }
+            $strCampos .= $campos[$i].$separacao; 
+        }
+        
+        $key = "'".$key."'";
+		
+		$sql = "SELECT ".$strCampos." FROM ".$this->getTabela()." WHERE ".$pk." = ".$key;
+		
+		$db = $this->dataBase();
+		
+        return $db->query($sql);       
+    }  
+    public function save(){
+		$db = $this->dataBase();
+        $db->insert($this->getTabela(), $this->getCampos(), $this->getValores());
+    }
+    public function update(){   
+		$db = $this->dataBase();
+		$db->update($this->getTabela(), $this->getCondicao(), $this->getCampos(), $this->getValores());
+    }  
+    public function delete(){
+		$db = $this->dataBase();
+        $db->delete($this->getTabela(), $this->getCondicao());
+    }   
+    abstract public function __toFillGeneric();
+}
+?>

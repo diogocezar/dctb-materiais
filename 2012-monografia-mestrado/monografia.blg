@@ -1,0 +1,102 @@
+This is BibTeX, Version 0.99c (TeX Live 2009)
+The top-level auxiliary file: monografia.aux
+The style file: bst/bibstyle.bst
+Database file #1: bib/bibliografia.bib
+Warning--I'm ignoring Sharma2010's extra "journal" field
+--line 63 of file bib/bibliografia.bib
+Repeated entry---line 192 of file bib/bibliografia.bib
+ : @article{Weld1999
+ :                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 205 of file bib/bibliografia.bib
+ : @inproceedings{Nau1999
+ :                       ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 216 of file bib/bibliografia.bib
+ : @article{Nau2003
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 245 of file bib/bibliografia.bib
+ : @article{Simmhan2005
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 260 of file bib/bibliografia.bib
+ : @article{Sharma2010
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 284 of file bib/bibliografia.bib
+ : @article{Fikes1971
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 303 of file bib/bibliografia.bib
+ : @article{Fox2003
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 368 of file bib/bibliografia.bib
+ : @techreport{Blum1995
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 385 of file bib/bibliografia.bib
+ : @article{Ilghami2006
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 395 of file bib/bibliografia.bib
+ : @article{Kautz1992
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1760 of file bib/bibliografia.bib
+ : @article{Deelman2009
+ :                     ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1793 of file bib/bibliografia.bib
+ : @article{Fox2003
+ :                 ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 1846 of file bib/bibliografia.bib
+ : @article{Armbrust2009
+ :                      ,
+I'm skipping whatever remains of this entry
+Warning--can't use both author and editor fields in Deelman2004
+Warning--there's a number but no volume in Kautz1992
+You've used 34 entries,
+            2118 wiz_defined-function locations,
+            743 strings with 11161 characters,
+and the built_in function-call counts, 14515 in all, are:
+= -- 1434
+> -- 790
+< -- 15
++ -- 314
+- -- 277
+* -- 1097
+:= -- 2347
+add.period$ -- 111
+call.type$ -- 34
+change.case$ -- 241
+chr.to.int$ -- 0
+cite$ -- 36
+duplicate$ -- 525
+empty$ -- 1027
+format.name$ -- 277
+if$ -- 3060
+int.to.chr$ -- 0
+int.to.str$ -- 34
+missing$ -- 33
+newline$ -- 173
+num.names$ -- 70
+pop$ -- 236
+preamble$ -- 1
+purify$ -- 206
+quote$ -- 0
+skip$ -- 397
+stack$ -- 0
+substring$ -- 906
+swap$ -- 165
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 134
+warning$ -- 2
+while$ -- 136
+width$ -- 36
+write$ -- 386
+(There were 13 error messages)

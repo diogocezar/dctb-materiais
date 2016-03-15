@@ -1,0 +1,3 @@
+obj.nomeMetodo();
+obj.nomeAtributo = 23;
+obj.NomePropriedade = "Apenas um teste";

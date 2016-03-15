@@ -1,0 +1,51 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{6}{0}{1}
+\beamer@subsectionintoc {1}{1}{Question\'ario inicial}{6}{0}{1}
+\beamer@subsectionintoc {1}{2}{Realidade das empresas que n\~ao utilizam BD}{7}{0}{1}
+\beamer@subsectionintoc {1}{3}{Problemas}{8}{0}{1}
+\beamer@subsectionintoc {1}{4}{Processamento de arquivos: por que n\~ao \'e vi\'avel?}{9}{0}{1}
+\beamer@subsectionintoc {1}{5}{Surgimento dos BD's}{10}{0}{1}
+\beamer@subsectionintoc {1}{6}{Banco de Dados}{11}{0}{1}
+\beamer@subsubsectionintoc {0}{1}{6}{1}{13}{1}{Componentes de um Sistema de Banco de Dados}
+\beamer@subsubsectionintoc {0}{1}{6}{2}{14}{1}{Vantagens}
+\beamer@subsubsectionintoc {0}{1}{6}{3}{15}{1}{Caracter\IeC {\'\i }sticas}
+\beamer@subsubsectionintoc {0}{1}{6}{4}{16}{1}{Abstra\c c\~ao}
+\beamer@subsubsectionintoc {0}{1}{6}{5}{17}{1}{DDL e DML}
+\beamer@subsubsectionintoc {0}{1}{6}{6}{18}{1}{Compara\c c\~ao entre alguns bancos de dados}
+\beamer@sectionintoc {2}{Modelo de Entidades e Relacionamentos}{20}{0}{2}
+\beamer@subsectionintoc {2}{1}{Modelos de Banco de Dados}{20}{0}{2}
+\beamer@subsectionintoc {2}{2}{Entidades e conjuntos de entidades}{21}{0}{2}
+\beamer@subsectionintoc {2}{3}{Atributos}{23}{0}{2}
+\beamer@subsubsectionintoc {0}{2}{3}{1}{24}{2}{Atributos Compostos e Multivalorados}
+\beamer@subsectionintoc {2}{4}{Identificadores}{25}{0}{2}
+\beamer@subsubsectionintoc {0}{2}{4}{1}{26}{2}{Super Chave}
+\beamer@subsubsectionintoc {0}{2}{4}{2}{27}{2}{Chave Candidata}
+\beamer@subsubsectionintoc {0}{2}{4}{3}{28}{2}{Chave Prim\'aria}
+\beamer@subsectionintoc {2}{5}{Relacionamentos}{29}{0}{2}
+\beamer@subsectionintoc {2}{6}{Grau de Relacionamento}{30}{0}{2}
+\beamer@subsubsectionintoc {0}{2}{6}{1}{31}{2}{Cardinalidade do Mapeamento: 1:1}
+\beamer@subsubsectionintoc {0}{2}{6}{2}{33}{2}{Cardinalidade do Mapeamento: 1:N}
+\beamer@subsubsectionintoc {0}{2}{6}{3}{35}{2}{Cardinalidade do Mapeamento: N:N}
+\beamer@sectionintoc {3}{Postgres}{37}{0}{3}
+\beamer@subsectionintoc {3}{1}{ACID}{38}{0}{3}
+\beamer@subsectionintoc {3}{2}{Alguns tipos de dados}{39}{0}{3}
+\beamer@subsectionintoc {3}{3}{Funcionalidades Avan\c cadas}{41}{0}{3}
+\beamer@subsectionintoc {3}{4}{Linguagem de Defini\c c\~ao de Dados(DDL)}{43}{0}{3}
+\beamer@subsubsectionintoc {0}{3}{4}{1}{43}{3}{Create Table}
+\beamer@subsubsectionintoc {0}{3}{4}{2}{47}{3}{Alter Table}
+\beamer@subsubsectionintoc {0}{3}{4}{3}{49}{3}{Drop Table}
+\beamer@subsubsectionintoc {0}{3}{4}{4}{50}{3}{Comment}
+\beamer@subsubsectionintoc {0}{3}{4}{5}{51}{3}{Create Index}
+\beamer@subsectionintoc {3}{5}{Linguagem de Modifica\c c\~ao de Dados (DML)}{52}{0}{3}
+\beamer@subsubsectionintoc {0}{3}{5}{1}{52}{3}{Insert}
+\beamer@subsubsectionintoc {0}{3}{5}{2}{53}{3}{Update}
+\beamer@subsubsectionintoc {0}{3}{5}{3}{54}{3}{Delete}
+\beamer@subsubsectionintoc {0}{3}{5}{4}{55}{3}{Truncate}
+\beamer@sectionintoc {4}{Subconsultas e Jun\c c\~oes}{56}{0}{4}
+\beamer@subsectionintoc {4}{1}{Exists}{56}{0}{4}
+\beamer@subsectionintoc {4}{2}{In e Not In}{57}{0}{4}
+\beamer@subsectionintoc {4}{3}{Jun\c c\~oes}{59}{0}{4}
+\beamer@subsubsectionintoc {0}{4}{3}{1}{59}{4}{Inner Join}
+\beamer@subsubsectionintoc {0}{4}{3}{2}{61}{4}{Left Join}
+\beamer@subsubsectionintoc {0}{4}{3}{3}{63}{4}{Right Join}

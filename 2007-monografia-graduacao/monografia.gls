@@ -1,0 +1,46 @@
+
+ \begin{theglossary} 
+ \glossgroup{A}
+  \item [\emph  {array}]Matriz, tabela, conjunto de objetos que est\'a organizado geometricamente, utilizado para descrever estruturas repetitivas ou sistem\'aticas dentro do sistema.
+		\glosspage{106}
+  \item [\emph  {framework}]Cole\c c\~ao abstra\IeC {\'\i }da de classes, interfaces e padr\~oes, dedicados a resolver uma fam\IeC {\'\i }lia de problemas semelhantes, atrav\'es de uma arquitetura flex\IeC {\'\i }vel e extens\IeC {\'\i }vel.
+		\glosspage{106}
+  \item [\emph  {frame}](Moldura ou quadro) S\~ao subdivis\~oes da janela principal do navegador ou \emph  {browser}. Cada subdivis\~ao funciona como uma pequena janela, exibindo conte\'udos independentes. Os criadores de \emph  {sites} da \emph  {web} utilizam este recurso quando \'e necess\'ario exibir muitas informa\c c\~oes de uma s\'o vez. Em comunica\c c\~ao de dados, \'e um grupo de \emph  {bits} que forma um bloco adequado \`a transmiss\~ao como unidade.
+		\glosspage{106}
+  \item [\emph  {hiperlinks}]S\~ao palavras ou ilustra\c c\~oes pr\'e-estabelecidas como pontos de saltos. Quando clicadas, provocam a transfer\^encia para outro assunto ou p\'agina \emph  {web}.
+		\glosspage{106}
+  \item [\emph  {links}]O mesmo que \emph  {hiperlinks}.\glosspage{106}
+  \item [\emph  {software}]S\~ao os programas, dados e rotinas desenvolvidos para computadores. Os programas de \emph  {software} precisam ser instalados nos computadores para que eles passem a desempenhar determinadas fun\c c\~oes.
+		\glosspage{106}
+  \item [\emph  {website}]Um s\IeC {\'\i }tio, mais conhecido pelo equivalente ingl\^es \emph  {site}, de \emph  {website} ou \emph  {web site}, \'e uma cole\c c\~ao de p\'aginas \emph  {web}, isto \'e, de documentos acess\IeC {\'\i }veis atrav\'es da \emph  {World Wide Web}, na Internet.
+		\glosspage{106}
+  \item [\emph  {workflows}]Fluxo de trabalho, ou seja, um sistema de informa\c c\~ao que gere um conjunto de tarefas tipicamente rotineiras, assegurando o controlo das entregas, dos tempos de resposta, o \emph  {time-stamping} (a que horas determinada tarefa foi executada) a n\~ao repudia\c c\~ao, a pesquisa de informa\c c\~ao eo arquivo.
+		\glosspage{106}
+  \item [ajax]Asynchronous Javascript And XML. \'E o uso sistem\'atico de tecnologias providas por navegadores, Javascript e XML, para tornar p\'aginas mais interativas com o usu\'ario.
+		\glosspage{106}
+  \item [algoritmo]algoritmo \'e uma sequ\^encia finita e n\~ao amb\IeC {\'\i }gua de instru\c c\~oes comput\'aveis para solucionar um problema.
+		\glosspage{106}
+  \item [grafo]Em matem\'atica e ci\^encia da computa\c c\~ao, grafo \'e o objeto b\'asico de estudo da teoria dos grafos. Tipicamente, um grafo \'e representado como um conjunto de pontos (v\'ertices) ligados por retas (as arestas). Dependendo da aplica\c c\~ao, as arestas podem ser direcionadas, e s\~ao representadas por "setas".
+		\glosspage{106}
+  \item [heur\IeC {\'\i }stica]M\'etodo de solu\c c\~ao de problemas indutivo baseado em regras derivadas do senso comum ou da experi\^encia de um modelo te\'orico da matem\'atica. Fornece uma base geral para a solu\c c\~ao de problemas, contrastando com abordagens estritamente algor\IeC {\'\i }tmicas, que nunca variam.
+		\glosspage{106}
+  \item [hiperm\IeC {\'\i }dia]Documento que cont\'em imagens, sons, textos e v\IeC {\'\i }deos, utilizando liga\c c\~oes de hipertextos para permitir o acesso para outro documento.
+		\glosspage{106}
+  \item [hipertextos]Em computa\c c\~ao, hipertexto \'e um sistema para a visualiza\c c\~ao de informa\c c\~ao cujos documentos cont\'em refer\^encias internas para outros documentos (chamadas de \emph  {hiperlinks} ou, simplesmente, \emph  {links}), e para a f\'acil publica\c c\~ao, atualiza\c c\~ao e pesquisa de informa\c c\~ao.
+		\glosspage{106}
+  \item [javascript]Linguagem de programa\c c\~ao, criada pela Netscape, que funciona interativamente com o c\'odigo HTML, aumentando os recursos do navegador.
+		\glosspage{106}
+  \item [multim\IeC {\'\i }dia]Tecnologia que permite combinar, em um \'unico programa ou m\'etodo de acesso (rede, CD-ROM, etc.), informa\c c\~oes em diferentes meios, tais como texto, imagens est\'aticas e din\^amicas, clipes de \'audio e de v\IeC {\'\i }deo. Inclui fun\c c\~oes de interatividade, ou seja, a possibilidade do usu\'ario interagir com o programa na forma de um di\'alogo bidirecional. Tamb\'em chamado de multimeios.
+		\glosspage{106}
+  \item [navega\c c\~ao]Ato de conectar-se a diferentes computadores da rede distribu\IeC {\'\i }dos pelo mundo, usando as facilidades providas por ferramentas como browsers \emph  {web}. O navegante da rede realiza uma "viagem" virtual explorando o ciberespa\c co, da mesma forma que o astronauta explora o espa\c co sideral.
+		\glosspage{106}
+  \item [nodo]Um Nodo ou n\'o representa cada ponto de inter-conex\~ao com uma estrutura ou rede, independente da fun\c c\~ao do equipamento representado por ele.
+		\glosspage{106}
+  \item [POSIX]POSIX \'e o nome de uma familia de normas relacionadas definidas pelo IEEE e designada formalmente por IEEE 1003. A designa\c c\~ao internacional da norma \'e ISO/IEC 9945. A normaliza\c c\~ao das especifica\c c\~oes POSIX surgiram de um projeto, iniciado por volta de 1985, que tinha como objetivo normalizar a interface de programa\c c\~ao de aplica\c c\~oes para \emph  {software} desenhado para correr em variantes do sistema operativo UNIX.
+		\glosspage{106}
+  \item [processo unificado]O Processo Unificado (UP) de desenvolvimento de sistemas combina os ciclos interativo e incremental para a constru\c c\~ao de \emph  {softwares}. \'E fundamental na vis\~ao de que o avan\c co de um projeto deve estar baseado na constru\c c\~ao de artefatos de \emph  {software}, e n\~ao apenas em documenta\c c\~ao.
+		\glosspage{106}
+  \item [web]Termo usado para representar a grande rede de informa\c c\~oes de multim\IeC {\'\i }dia da Internet
+		\glosspage{106}
+
+ \end{theglossary}

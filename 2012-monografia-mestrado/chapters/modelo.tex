@@ -1,0 +1,364 @@
+\chapter{Modelo Proposto - SWEP}
+\label{modelo}
+
+Nesse capítulo é apresentado o modelo do \UFPRsigla{SWEP} (\emph{Smart Workflow Execution by Planning}), um sistema capaz de utilizar técnicas de planejamento para a obtenção de um plano de execução em um ambiente distribuído que execute fluxos de trabalho científico. A seção \ref{visao-geral} mostra uma visão geral do modelo, bem como a descrição do fluxo de dados que a compõe. A seção \ref{gerenciador-execucao} descreve as necessidades da camada de execução. A seção \ref{visao-detalhada} descreve em detalhes cada componente do sistema. A seção \ref{fluxo-execucao} mostra o fluxo de execução no modelo proposto. Na seção \ref{paralelismo-dados} descrevem-se os tipos de paralelismo sobre dados abordados no modelo. Na seção \ref{paralelismo-execucao} discute-se o paralelismo sobre execução. A seção \ref{plan-custos} descreve técnicas para definição de custos e mostra a potencialidade do modelo. A seção \ref{tradutor} descreve o método de tradução da linguagem de descrição dos fluxos de trabalho para um modelo PDDL que será executado pelo planejador. Finalmente, em \ref{modelo-consideracoes} apresentam-se as considerações sobre o capítulo.
+
+\section{Visão Geral}
+\label{visao-geral}
+
+% como um fluxo de trabalho entra no modelo?
+Nesta seção são abordados os componentes que integram o modelo a partir de uma perspectiva de fluxo de processamento. Inicialmente, um usuário deve criar um arquivo de descrição dos fluxos de trabalho científicos. Um outro usuário chamado desenvolvedor, é responsável por escrever os operadores destes fluxos, bem como auxiliar em sua descrição. Cada fluxo de trabalho desse arquivo descreve, além de outras informações detalhadas a seguir, quais serão os dados a serem trabalhados e quais as operações sobre estes dados. Essas informações servem de entrada para para dois gerenciadores o \emph{planejador} e o \emph{executor}. O \emph{planejador} tem como função a geração de um plano de execução que será utilizado pelo \emph{executor}, que por sua vez, distribui as tarefas entre os recursos disponíveis. A figura \ref{fig:overview} ilustra o fluxo de informações.
+
+%O modelo proposto é composto por dois principais gerenciadores: \emph{planejador} e o \emph{gerenciador de execução}, ilustrados na figura \ref{fig:overview}. O \emph{planejador} tem a função de gerar um plano de execução que será utilizado no \emph{gerenciador de execução}, que por sua vez, distribui as tarefas entre os recursos disponíveis.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=16cm]{images/fig_sys_overview.jpg}
+    \caption{Visão geral do modelo}
+    \label{fig:overview}
+\end{figure}
+
+Para cada um dos gerenciadores existem \emph{plugins} de entrada e saída. O planejador recebe como entrada três parâmetros: as \emph{descrições dos fluxos de trabalho}, o \emph{estado atual dos recursos} e a \emph{base de metadados}. As \emph{descrições dos fluxos de trabalho} armazenam as informações referentes aos \emph{dados}, \emph{operadores} entre outros detalhados a seguir. Os \emph{dados} são as fontes a serem transformadas. Essas fontes devem possuir uma formatação específica para o reconhecimento no modelo e podem ser dados propriamente ditos, como por exemplo um vetor, uma matriz ou informações extraídas de um banco de dados. O apêndice \ref{ap-dados} exemplifica a estrutura de dados utilizada no modelo. Os \emph{operadores} definem a regra de transformação de dados. Essa regra é definida na implementação de um método em Java, que segue um modelo previamente definido. O operador utiliza como fonte direta os dados do sistema e gera novos dados. 
+
+Nos apêndices \ref{ap-implementation} e \ref{ap-workflow-sum}, estão transcritos exemplos de códigos que representam a classe de implementação e um operador de soma. São apresentadas duas implementações da operação soma. A primeira, sequencial, pode ser observada entre as linhas 86 e 104. Uma implementação paralela pode ser analisada entre as linhas 129 e 144.
+
+O \emph{estado atual dos recursos} obtém informações sobre os recursos. Por exemplo a sua taxa de ocupação, ou ainda a quantidade de memória utilizada. Estas informações são consideradas na geração do plano de execução.
+
+Ainda como entrada do planejador, utiliza-se uma \emph{base de metadados}, que armazena um histórico de execuções. Essas informações também auxiliam no processo de escalonamento, feito pelo planejador.
+
+Com todas essas entradas, o planejador gera um plano com regras que irão definir qual tarefa será executada, em qual nó e qual a ordem dessa execução. Esse plano é chamado de \emph{plano de execução}. No apêndice \ref{ap-plano-execucao} transcreve-se um plano de execução gerado automaticamente pelo sistema.
+
+O \emph{gerenciador de execução} recebe como entrada um \emph{plano de execução} que irá definir o roteiro de execução, bem como os \emph{dados} para a aplicação dos \emph{operadores}, já definidos no plano de execução. Durante a execução, existe um mecanismo de coleta de metadados. Este permite repopular o banco de metadados com o \emph{estado atual dos recursos}. O \emph{gerenciador de execução} gera ainda os dados de saída, que são os dados depois da aplicação dos operadores.
+
+Os trabalhos \cite{Gil2004, Sotomayor2009, Dornemann2010, DeOliveira2010, Deelman2004, Altintas2004, Eker2003} influenciaram para a separação do modelo em módulos. Propõe-se uma modularização que desacople os ambientes de escalonamento e de execução. Desta forma, é possível a substituição não somente do planejador, mas de toda a máquina de escalonamento ou do gerenciador de execução. A modularização foi realizada através de componentes que exportam e importam arquivos XML.
+
+No modelo, utilizou-se como planejador o \emph{Crikey} \cite{Halsey2004,Coles} (detalhado na seção \ref{crikey}). Como gerenciador de execução apresenta-se uma adaptação do trabalho \emph{PeerUnit} \cite{Almeida2008} apresentado na seção \ref{gerenciador-execucao}.
+
+Os \emph{plugins} utilizados para compor o modelo estão detalhados na seção \ref{visao-detalhada}.
+
+\section{Gerenciador de Execução}
+\label{gerenciador-execucao}
+
+%escrever das necessidades da camada de execução e depois agregar o peerunit
+
+O modelo proposto utiliza uma camada para distribuir as tarefas de forma coordenada. O \emph{gerenciador de execução} recebe como entrada um \emph{plano de execução} gerado pelo planejador. Esse \emph{plano de execução} é dado por um conjunto de tarefas: $P = \{s_1, s_2, \ldots, s_n\}$. Cada tarefa é uma tripla formada por: $s_i = \{O, L, H\}$, onde:
+
+\begin{itemize}
+	\item $O$ é um número inteiro que define a ordem que a tarefa será executada. Assim, é possível definir que a tarefa $s_i$ seja executada em uma ordem específica na linha de tempo da execução. Nessa definição é possível alocar mais de uma tarefa para uma determinada ordem. Dessa forma, a execução poderá ocorrer paralelamente;
+	\item $L$ define o tempo de execução estimado da tarefa em segundos;
+	\item $H$ é a identificação do nó que executará a tarefa.
+\end{itemize}
+
+Cada nó, identificado por $H$, deve ser único para o todas as execuções no ambiente. Essa característica é importante porque um sistema coletor de metadados deve armazenar uma base as informações referentes as execuções de um nó. Esta base de metadados possui informações que ajudam na política de escalonamento feita pelo planejador. Estas características serão detalhadas na seção \ref{visao-detalhada}.
+
+%Para que seja possível a geração de planos refinados, é importante que os nós identificados no modelo sejam persistentes. Por isso é necessário que cada nó tenha uma identificação única $H$. Possibilitando assim, estabelecer uma distribuição de carga baseada em históricos de execução.
+
+%Por utilizar um sistema de coleta de metadados que alimentam o planejador, é necessário que cada nó tenha uma identificação única $H$. Dessa forma, é possível estabelecer uma distribuição de carga baseada em históricos de execução.
+
+O \emph{gerenciador de execução} deve estar preparado para executar em um ambiente paralelo e escalável, pois a execução de fluxos de trabalho científicos exige grande quantidade de processamento. Portanto, é proposta uma adaptação do sistema \emph{PeerUnit} \cite{Almeida2008}.
+
+%Como o trabalho é direcionado para o processamento de fluxos de trabalho científicos, que exigem grande quantidade de processamento, o \emph{gerenciador de execução} deve estar preparado para executar em um ambiente paralelo e escalável. Para isso, é proposto uma adaptação do sistema \emph{PeerUnit} \cite{Almeida2008}.
+
+\subsection{PeerUnit}
+\label{peerunit}
+
+O sistema \textit{PeerUnit} \cite{Almeida2008} foi concebido inicialmente para realizar testes em sistemas \textit{peer to peer}, a fim de garantir as seguintes propriedades:
+
+\begin{itemize}
+  \item \emph{funcionalidade}: garante que o sistema irá responder como o esperado;
+  \item \emph{escalabilidade}: garante que a funcionalidade desenvolvida poderá ser expandida para um ambiente com vários \textit{peers};
+  \item \emph{volatilidade}: garante que mesmo com a entrada ou a saída de \textit{peers} o sistema continuará funcionando como o esperado.
+\end{itemize}
+
+A estrutura \textit{PeerUnit} basicamente acopla a todos os \textit{peers} um código escrito na linguagem Java. Nele são definidas instruções de como tais elementos devem se comportar. Ainda é possível (através de anotações especiais) indicar qual método será executado por qual \textit{peer} e qual será a ordem dessa execução. Além disso, é definido um tempo limite que se superado, retorna que o \emph{peer} não foi capaz de executar o método com sucesso.
+
+%Sua arquitetura é baseada em duas vertentes. A primeira utiliza um nó controlador que coordena as chamadas dos métodos nos nós disponíveis. A desvantagem dessa abordagem é que ao se perder o nó controlador perde-se todo o sistema. A segunda abordagem baseia-se em uma árvore binária. Cada \textit{peer} pode ter vários testadores, dependendo da ordem da árvore.
+
+O código \ref{alg:use_case} representa um trecho de um caso de uso, no qual exemplifica-se a utilização do sistema \emph{PeerUnit}.
+
+\UFPRcode{Java}{alg:use_case}{Caso de uso de exemplo}{codes/use_case.txt}
+
+Nota-se que, antes da declaração do método, é definida uma linha de anotação iniciada pelo caractere @. A anotação é composta dos seguintes elementos:
+
+\begin{itemize}
+	\item \emph{range}: especifica quais serão os \emph{peers} atingidos. Pode ser uma samblagem que representa somente um \emph{peer}, como por exemplo: ``3'', uma faixa de atuação ``1-3'', elementos específicos ``1,3,4'' ou todos os \emph{peers} ``*'';
+	\item \emph{order}: controla qual será a ordem de execução do método após a anotação;
+	\item \emph{timeout}: estabelece um tempo limite para execução. 
+	%Caso esse tempo seja atingido sem que o método tenha sido executado com sucesso, a ação falha. 
+\end{itemize}
+
+No código, \ref{alg:use_case} o método \emph{join()} inicia todos os \emph{peers}. O método \emph{put()} faz com que o \emph{peer} de identificação $0$ insira um dado em uma variável global, visível para todos os outros \emph{peers}. O método \emph{retrive()} captura o dado inserido pelo \emph{peer} 0. Por fim, o método \emph{assertRetrive()} faz uma verificação se o valor inserido foi recuperado de forma correta. 
+
+As configurações para a execução do \emph{PeerUnit}, como por exemplo a quantidade de \emph{peers}, o ip do \emph{peer} servidor, a porta de comunicação ou o diretório de \emph{logs} estão definidas em um arquivo padrão chamado \emph{peerunit.properties}. No apêndice \ref{peer-unit-file} está transcrito um exemplo de arquivo de configuração utilizado neste trabalho.
+
+Algumas adaptações foram necessárias para transformar o sistema \emph{PeerUnit} em um sistema executor de tarefas. Para isso, cada caso de uso acopla dois componentes: um \emph{coletor de informações} e um \emph{compilado de operadores}. O \emph{coletor de informações} tem a função de monitorar os detalhes das execuções de um \emph{peer}. Ao final da execução são armazenadas informações como: quais tarefas foram executas e qual o tempo de execução de cada tarefa. Este componente também tem a função de armazenar o estado atual do recurso, que engloba por exemplo, a taxa de ocupação do nó ou a quantidade de memória utilizada. O \emph{compilado de operadores} representa o conjunto dos operadores a serem utilizados nos fluxos de trabalho científicos. Estes operadores devem ser acoplados aos \emph{peer} permitindo que qualquer um deles possa executar determinada operação de forma autônoma. Maiores detalhes destes componentes estão descritos na seção \ref{visao-detalhada}.
+
+Além disso, é necessário que o sistema de execução esteja adaptado para garantir que os nós possuam sempre a mesma identificação. Por exemplo, se um recurso $r$ possui a identificação $1$, deve-se garantir que em todas as próximas execuções a identificação de $r$ será $1$. Para que isso seja feito, assume-se que a ordem com que os \emph{peers} sejam inseridos seja sempre a mesma.
+
+%Além disso, uma instrução deve ser inserida no arquivo de configuração, para permitir que as execuções ocorram em paralelamente. Esta instrução pode ser observada na linha 16 do arquivo transcrito em \ref{peer-unit-file}. 
+
+%O \emph{gerenciador de execução} utiliza as mesmas características do \emph{PeerUnit}. A implementação oferece uma estrutura que suporta as necessidades do plano de execução $P$. O único elemento não definido nativamente nas anotações é $H$, pois o mesmo não é especificado na camada de planejamento.
+
+%Para contornar esse problema, a
+
+\section{Visão Detalhada do Modelo}
+\label{visao-detalhada}
+
+%melhorar
+
+Nesta seção apresenta-se um detalhamento dos componentes do modelo proposto. Com base no diagrama apresentado pela figura \ref{fig:detailed}, nota-se a relação dos usuários com os módulos e componentes do modelo. Dentre os módulos estão: planejador, operadores, execução e coletor de informações. Os módulos, componentes, usuários e suas respectivas relações estão detalhados nas próximas seções.
+
+\begin{landscape}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=22cm]{images/fig_sys_detailed.jpg}
+    \caption{Visão detalhada do modelo}
+    \label{fig:detailed}
+\end{figure}
+
+\end{landscape}
+
+\subsection{Usuários}
+
+São dois usuários que atuam no modelo: \emph{usuário} e \emph{desenvolvedor}. O \emph{usuário} é o agente que utilizará o sistema depois que sua estrutura estiver devidamente configurada. Ele deve inserir informações de entrada para a composição dos fluxos de trabalho. Essas informações são referentes aos dados de entrada e saída, bem como o tipo de processamento de dados (sequencial ou paralelo), descrição do operador, entre outros. Todos os atributos estão listados no arquivo XML de exemplo no apêndice \ref{ap-aplicacao}. O \emph{desenvolvedor} tem como função a escrita dos operadores que atuarão sobre os dados. Ele ainda deve inserir informações mais específicas na geração da aplicação, tais como: nome do método que executará a operação, a distribuição dos dados e o tempo limite para que a ação seja executada. Outra função designada ao \emph{desenvolvedor} é o controle da importação de dados. Para isso, utiliza-se o componente \emph{ImportadorDeDados} que conta com uma estrutura para a importação dos dados no formato aceito pelo modelo.
+
+\subsection{Planejador}
+
+No modelo, a subdivisão \emph{planejador} compreende os componentes: \emph{CaixaDeTradução}, \emph{domínio.pddl} e \emph{problema.pddl}, \emph{FábricaDePlanos}, \emph{ExportadorDeAções} e o próprio planejador.
+
+As informações que os usuários inserem sobre os fluxos de trabalho, são capturadas e exportadas pelo componente \emph{ExportadorDeAplicação}, que gera um arquivo no formato \UFPRsigla{XML}, que está transcrito no apêndice \ref{ap-aplicacao}. Após a interferência do \emph{desenvolvedor} na importação dos dados, é criada uma coleção de arquivos \UFPRsigla{XML} que representam os dados. Estes dados são formatados de acordo com o padrão transcrito no apêndice \ref{ap-dados}.
+
+A próxima etapa está relacionada a transformação das informações capturadas em arquivos no formato \UFPRsigla{PDDL} que darão origem ao \emph{plano de execução}. Para isso utiliza-se o componente \emph{CaixaDeTradução} que tem a função de capturar as informações da aplicação, bem como a extração das informações sobre os nós. Esta informação é oferecida pelo componente \emph{OráculoDeMetaDados} que tem como função analisar em um banco de metadados a situação corrente dos recursos disponíveis. No apêndice \ref{ap-tradutor} transcreve-se o código do componente \emph{CaixaDeTradução}. Em nossa implementação a informação que o \emph{OráculoDeMetaDados} está preparado para responder é se um nó está disponível ou parcialmente disponível (quando esse nó já está executando alguma tarefa).
+
+Com a geração dos arquivos de domínio e problema, é possível invocar o planejador para a obtenção do plano. Por trabalhar com a linguagem \UFPRsigla{PDDL}, torna-se possível a modularização da fase de planejamento com a utilização de outros planejadores. O componente responsável por invocar o planejador e gerar o plano é a \emph{FábricaDePlanos}.
+
+Após a geração do plano, o componente \emph{ExportadorDeAções} é acionado para gerar um arquivo \UFPRsigla{XML} que contém as informações necessárias para a geração do plano de execução. Tais como: nome, nó que executará a ação, ordem de execução, tempo limite e operador. Outra modularidade estabelecida nesse momento é a alteração do componente de escalonamento. Com o \emph{ExportadorDeAções}, qualquer escalonador pode substituir o planejador, desde que exporte o plano de execução de acordo com o padrão estabelecido. O apêndice \ref{ap-acoes} transcreve um arquivo \UFPRsigla{XML} com a descrição de um conjunto de ações.
+
+%Como o sistema trabalha com padrão para importação das informações para geração do plano de escalonamento, o componente de planejamento pode ser substituído por outro componente que trate as entradas e devolva como resultado um arquivo no padrão estipulado.
+
+O próximo passo é a geração do plano. Isso é feito pelo componente \emph{FábricaDePlanosDeExecução}. Este recebe como entrada o arquivo gerado pelo \emph{ExportadorDeAções} e gera um \emph{plano de execução} com base em um \emph{template} pré-definido e as ações importadas. Esse plano está pronto para ser executado pelo \emph{gerenciador de execução}.
+
+\subsection{Operadores}
+\label{operadores}
+
+A subdivisão de \emph{operadores} compreende os componentes: \emph{FluxoDeTrabalho}, \emph{DistribuiçãoDeDados}, \emph{Implementação}, uma coleção de implementações de fluxos de trabalho e um arquivo com invocações para os fluxos de trabalhos desenvolvidos.
+
+O componente \emph{Implementação} é a base para a implementação de qualquer operador. Ele define regras de inserção e recuperação de variáveis globais (visíveis para todos os nós no ambiente), bem como a distribuição dos dados no modelo \emph{direto}. Define ainda, os métodos de agrupamento e distribuição dos resultados obtidos. O componente de \emph{Implementação} está transcrito no apêndice \ref{ap-implementation}.
+
+No componente de \emph{Implementação} são agregados dois componentes para controle das informações extraídas do sistema: \emph{FluxoDeTrabalho} e \emph{DistribuiçãoDeDados}. O \emph{FluxoDeTrabalho} é uma classe que representa um fluxo de trabalho no modelo. O componente \emph{DistribuiçãoDeDados} contém as regras para a paralelização direta. Os modelos de paralelização serão detalhados na seção \ref{paralelismo-dados}.
+
+Cada componente deve implementar as funcionalidades para a transformação dos dados em questão. Antes da execução do sistema, um componente \emph{FábricaDeAgrupador} é invocado, esse componente gera automaticamente uma compilação das funcionalidades (métodos) de transformação de dados e os reúne em um único arquivo chamado \emph{FluxosDeTrabalhoAgrupados}. Este é utilizado diretamente no plano de execução para chamada dos operadores.
+
+Os operadores devem estar preparados para suportar múltiplos conjuntos de dados de entrada e saída. Para isso é necessário que o método de tradução esteja preparado para tratar tarefas que recebem ou devolvem 1 ou mais conjuntos de dados. O método utilizado para tratar essa característica está descrito na seção \ref{tradutor}.
+
+A utilização dos operadores no modelo foi baseada nos trabalhos \emph{Ptolemy}  \cite{Eker2003} (seção \ref{ptolemy}) e \emph{Kepler} \cite{Altintas2004} (seção \ref{kepler}). Desta forma é possível implementações diferentes para um mesmo operador. Na implementação atual ainda é necessária a intervenção do desenvolvedor para estabelecer qual a versão do operador deverá ser utilizada.
+
+\subsection{Execução}
+\label{execucao}
+
+A subdivisão de execução é formada pelos componentes: \emph{TemplatePlanoExecução.tpl}, \emph{PlanoDeExecução} e a invocação do sistema de gerenciamento de execução.
+
+O arquivo \emph{TemplatePlanoExecução.tpl} contém um formato pré-estabelecido para a criação dinâmica dos planos de execução. Nesse formato estão definidas as importações necessárias da linguagem Java, a invocação do coletor de informações ao fim do plano de execução e alguns métodos que se repetem em todas as execuções.
+
+O \emph{PlanoDeExecução} é um arquivo gerado automaticamente pelo sistema, de acordo com o componente \emph{FábricaDePlanosDeExecução}. Esse arquivo utiliza o o \emph{TemplatePlanoExecução.tpl} e preenche a área customizável do plano com as ações geradas pelo planejador.
+
+\subsection{Coletor de Informações}
+\label{coletor}
+
+A subdivisão \emph{Coletor de Informações} é formada pelos componentes: \emph{Tarefas}, \emph{TarefasNosNós}, \emph{BancoDeInformações}, \emph{LogsDoColetor}, \emph{ExportadorBDI} e \emph{ColetorDeInformações}.
+
+O \emph{Coletor de Informações} é um componente agregado a todos os nós do ambiente distribuído. Baseado nas técnicas apresentadas pelos trabalhos \emph{BPEL} \cite{Dornemann2010} (seção \ref{bpel}) e \emph{Pegasus} \cite{Deelman2004} (seção \ref{pegasus}), este tem como função a captura de informações referentes a execução. Essas informações são armazenada no formato XML em um banco de metadados. O apêndice \ref{logs-proveniencia} mostra exemplos das informações armazenadas.
+
+O componente \emph{ColetorDeInformações} obtém as informações sobre o estado atual do nó. Além disso, informa qual foi a tarefa executada. Para isso, utiliza os componentes: \emph{LogsDoColetor}, \emph{TarefasNosNós} e \emph{Tarefas}. Para que seja possível obter a informação de qual tarefa é executada em qual nó. Ao acionar cada operador o componente \emph{LogsDoColetor} grava um \emph{log} que armazena o início e o fim da operação, além do tempo de execução. O componente \emph{BancoDeInformações} é responsável por manter as informações organizadas em um banco de metadados. Esse componente permite consultas específicas aos arquivos XML armazenados. O \emph{ExportadorBDI} é o componente usado como aresta para exportar as informações em um formato específico utilizado no modelo.
+
+Uma base de metadados específica é designada para armazenar os \emph{logs} de execução de tarefa dos nós. Um exemplo desse arquivo está transcrito no código \ref{rec_log_task} no apêndice \ref{logs-proveniencia}. Esse é o arquivo consultado pelo componente \emph{OráculoDeMetaDados} para a extração do estado dos nós.
+
+\section{Fluxo de Execução}
+\label{fluxo-execucao}
+
+A figura \ref{fig:flow} mostra o fluxo de execução do modelo proposto.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=13cm]{images/fig_sys_flow.jpg}
+    \caption{Fluxo de execução do modelo}
+    \label{fig:flow}
+\end{figure}
+
+O componente principal \emph{PreparaçãoDoAmbiente} tem como função coordenar a ordem de chamada dos componentes do modelo. O primeiro componente a ser invocado é o \emph{ExportadorDeAplicação} que exporta as informações principais do aplicativo. Em seguida, o componente \emph{ImportadorDeDados} é invocado com o objetivo de se obter as fontes de dados do sistema. Em seguida, dá-se início a tradução das informações do sistema para os arquivos PDDL. Com os arquivos gerados, o plano é gerado pelo componente \emph{FábricaDePlanos} que imediatamente aciona o componente \emph{ExportadorDeAções}, que converte o plano em um formato XML aceito para geração do plano de execução. O componente \emph{FábricaDePlanosDeExecução} utiliza as ações exportadas para geração do \emph{plano de execução}.
+
+Com o plano de execução pronto, o componente \emph{FluxosDeTrabalhoAgrupados} é invocado para gerar o \emph{FábricaDeAgrupador} que reúne todas as funcionalidades dos operadores. Em seguida o componente \emph{FábricaDeScriptBash} prepara um roteiro para execução dos comandos para a execução do ambiente. O componente \emph{FábricaDePropriedadesPU} altera as propriedades do \emph{gerenciador de execução} (essencialmente o número de nós). Um método \emph{iniciarExecução()} é invocado, este é responsável por compilar os arquivos gerando uma versão atualizada com o novo \emph{plano de execução}. Por fim, o roteiro é invocado para a execução do ambiente.
+
+Baseado no trabalho \emph{SciCumulus} \cite{DeOliveira2010} (seção \ref{scicumulus}) são implementados dois tipos de paralelismo: o \emph{paralelismo sobre dados} (seção \ref{paralelismo-dados}) e o \emph{paralelismo sobre execução} (seção \ref{paralelismo-execucao}).
+
+\section{Paralelismo sobre Dados}
+\label{paralelismo-dados}
+
+O paralelismo sobre os dados diz respeito a divisão do processamento de um único fluxo de trabalho. Dessa maneira, dois ou mais nós podem ser designados para aplicar os operadores sobre o conjunto de dados que compõe um fluxo de trabalho. A primeira implementação abordada no modelo diz respeito a uma paralelização direta, que necessita da intervenção do \emph{usuário}. O segundo método de paralelização utiliza a técnica de planejamento para estipular a divisão dos dados entre os nós disponíveis.
+
+\subsection{Paralelização Direta}
+\label{par-direta}
+
+Ao definir um fluxo de trabalho, o \emph{usuário} tem a opção de marcar o processamento como paralelo. Ao escolher essa opção é necessário que se informe uma das opções: tamanho dos blocos de dados ($d$) ou número de nós disponíveis para o processamento ($n$). Com uma dessas informações, é possível calcular a segunda:
+
+\begin{equation}
+	n = \lceil\frac{t}{d}\rceil
+\end{equation} 
+
+Onde:
+
+\begin{itemize}
+	\item $t$ representa um número inteiro com o tamanho dos dados a serem executados.
+\end{itemize}
+
+Caso a divisão não seja exata, o último nó se encarrega de executar os dados restantes.
+
+Nesse tipo de paralelização é necessária a intervenção direta do \emph{desenvolvedor}, que deve adequar a distribuição dos dados. Por exemplo, se a operação sobre um fluxo de trabalho é a soma de uma matriz, fica a cargo do desenvolvedor estipular se a divisão pelos nós será feita por linhas ou colunas.
+
+A operação de junção dos dados é implementada de acordo com o padrão estipulado em um \emph{template} de fluxo de trabalho.
+
+A definição do paralelismo direto pode ser analisado na linha 48 do código \ref{rec_aplicacao} no apêndice \ref{ap-aplicacao}. Um exemplo da implementação paralela, pode ser observado entre as linhas 129 e 145 do código \ref{source_workflow}, bem como o método para junção de dados descrito entre as linhas 150 e 174 do mesmo código, que está transcrito no apêndice \ref{ap-fluxo-exemplo}.
+
+\subsection{Paralelização por Plano}
+\label{par-plano}
+
+Nesse tipo de distribuição, o número de nós que irá atuar sobre os dados de um fluxo de trabalho não é fixo. De acordo com as informações obtidas no \emph{OráculoDeMetadados}, o planejador deve ser capaz de definir um número adequado para a execução paralela de um conjunto de dados. Para que isso seja possível, é necessária a criação de um operador flexível, que aceite como parâmetro quais serão os nós utilizados.
+
+Antes de iniciar o processo de planejamento, uma consulta ao \emph{OráculoDeMetadados} retorna uma lista dos recursos e suas respectivas informações quanto a sua \emph{taxa de ocupação}. Essa taxa de ocupação é representada por um número percentual, que indica o quanto o nó está ocupado. Além disso outra consulta ao banco de metadados retorna uma \emph{lista de custos} das tarefas baseadas nos históricos de execuções. 
+
+Para popular a lista de custos, sugere-se a seguinte estratégia. Seja $T$ uma nova tarefa a ser executada. Se existe um conjunto de tarefas $T_1, T_2, \ldots, T_n$ no histórico de execução exatamente igual a $T$, assume-se que o custo de $T$ é uma média dos custos de $T_1, T_2, \ldots, T_n$. Caso não se encontre nenhuma tarefa igual, assume-se certa prioridade na execução dessa tarefa. Desta forma, popula-se o banco de metadados com seu custo, auxiliando em futuras execuções.
+
+Com a \emph{taxa de ocupação} e a \emph{lista de custos}, o planejador é capaz de expandir um grafo com todas possibilidades, utilizando o cruzamento das combinações para selecionar a quantidade de recursos, bem como quais serão utilizados para a realização de uma tarefa em específico.
+
+Na paralelização por planos é necessária uma adaptação na tradução para a geração dos arquivos PDDL. O problema deve levar em consideração duas listas extraídas do banco de metadados pelo \emph{OráculoDeMetadados}. A primeira com a taxa de ocupação de cada nó e a segunda com os respectivos custos de uma tarefa. Os operadores devem receber como parâmetro os nós a serem alocados, suas respectivas taxas de ocupação e o custo da tarefa. Com uma métrica de redução de custos dos operadores, garante-se que uma tarefa com um custo mais elevado vai ser alocada em um conjunto nós com maior capacidade de processamento.
+
+\section{Paralelismo sobre Execução}
+\label{paralelismo-execucao}
+
+Além do paralelismo sobre os dados de um fluxo de trabalho, também é explorado o paralelismo com relação a execução de múltiplos operadores de fluxos. Este nível de paralelismo está implícito ao gerar um plano paralelo que pondera a dependência dos dados que compõem as tarefas. Desta forma garante-se que além de uma ordem correta de dependência também serão gerados planos com execuções em paralelo.
+
+Na figura \ref{fig:parallel_model} ilustra-se um exemplo de paralelismo sobre execução.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=12cm]{images/fig_sys_parallel_model.jpg}
+    \caption{Exemplo de paralelização e dependência de dados}
+    \label{fig:parallel_model}
+\end{figure}
+
+Nota-se dois instantes de tempo $T_0$ e $T_1$. No momento $T_0$ são utilizados dois nós que executam em paralelo $op_{ab}$ e $op_{cd}$ gerando como resultado as entradas para o fluxo $op_{ij}$ que é executado no momento $T_1$. Essa execução utiliza a técnica de \emph{paralelismo sobre execução}. Em $T_0$ cada nó executa sua tarefa sequencialmente, e gera um resultado. Em $T_1$ utiliza-se uma coleção de $n$ nós que executam $op_{ij}$ de forma paralela, essa execução utiliza a técnica de \emph{paralelização direta}.
+
+\section{Planejamento de Custos}
+\label{plan-custos}
+
+Ao aplicar a técnica de planejamento para a resolução de um problema de escalonamento, busca-se resultados mais refinados utilizando-se as informações disponíveis para a geração de um plano. A implementação do planejamento de custos buscou a validação do modelo e propõe uma versão simplificada do modelo proposto nesta seção. Na implementação, verifica-se a taxa de ocupação de um recurso do sistema e aplica-se um custo pré-definido caso o recurso esteja ocupado ou parcialmente ocupado. Maiores detalhes estão descritos na seção \ref{tradutor}.
+
+Para um modelo de custos mais refinado, propõe-se uma técnica de aplicação de custos às ações que compõem um plano de execução. Uma ação, nesse contexto, é a possibilidade de escalonar uma tarefa $T$ em um nó $N$ utilizando para isso o operador $O$.
+
+Formalmente, um custo de uma ação é uma função: $\omega(E, H, A)$, onde:
+
+\begin{itemize}
+	\item $E$ é um número inteiro que representa o tempo estimado em segundos. Esse tempo é fornecido pelo \emph{usuário} no momento da descrição do fluxo de trabalho. Esta informação é coletada de forma empírica;
+	\item $H$ é um coeficiente gerado pela média de tempo de execução extraído do histórico de uma determinada tarefa. Como todas as execuções no sistema são monitoradas e armazenadas, é possível saber em média quanto o operador em questão demorou em execuções anteriores;
+	\item $A$ é a situação do ambiente no momento do escalonamento. Essencialmente $A$ é um conjunto de duplas $A = \{\{n_1,to_1\}, \{n_2,to_2\}, \ldots ,\{n_n,to_n\}\}$. Onde, $n$ representa um nó e $to$ representa o taxa de ocupação deste nó;
+	\item A função $\omega(E, H, A)$ é implementada no componente \emph{OráculoDeMetaDados}. Utiliza as informações de $E, H$ e $A$ para a geração do coeficiente de custo de um determinado operador:
+	\begin{equation}
+		\omega = \displaystyle \frac{(E+H)}{2} + \alpha(A,H)
+	\end{equation}
+	A função $\alpha(A,H)$ utiliza informações da tarefa, do ambiente de execução e do histórico de execuções para gerar um coeficiente. Com base no histórico de execuções $H$, extraí-se o custo de uma tarefa de forma semelhante a apresentada nas técnicas de \emph{paralelização por plano} (seção \ref{par-plano}). Se existe um conjunto de tarefas $T_1, T_2, \ldots, T_n$ no histórico de execução exatamente igual a $T$, assume-se que o custo de $T$ é uma média dos custos de $T_1, T_2, \ldots, T_n$. A situação do ambiente de execução $A$ influencia no custo de uma tarefa de acordo com a ocupação dos recursos. Por exemplo, se o sistema está sobrecarregado, o custo de uma tarefa baseada em seu histórico, pode aumentar. Se o ambiente está livre, este custo deve diminuir.
+\end{itemize}
+
+A função para geração do custo pode agregar ainda outros parâmetros, para a elaboração de um plano com um objetivo específico. Por exemplo, se fossem armazenados dados de quanto cada operador gasta em energia elétrica, esse índice poderia ser considerado na função de geração do custo. Desta forma, a política de escalonamento poderia maximizar ou minimizar o gasto de energia elétrica.
+
+O componente \emph{CaixaDeTradução} obtém essas informações e as utiliza para a composição dos arquivos PDDL. Cada custo é calculado pelo componente \emph{OráculoDeMetaDados}. Assim, cada ação no domínio do problema é descrito com um custo diferente. O planejador busca pelo plano que minimize a somatória total dos custos.
+
+%Para descrever o modelo, podemos definir formalmente um grafo dirigido com peso nas arestas $G = (V,E,\omega)$, onde $V$ é um conjunto de vértices e $E$ é um conjunto de arestas e $\omega: E(G) \rightarrow \mathbb{R}^+$ é uma função que atribui peso a cada aresta de $E(G)$. O comprimento de um caminho $C = (x_0, x_1, \ldots, x_k)$ em $(V,E,\omega)$ é a soma dos pesos (comprimentos) das arestas do caminho, ou seja:
+
+%\begin{equation}
+%	\mbox{custo}(C) = \sum_{i=0}^{k-1} p(\{x_i, x_{i+1}\})
+%\end{equation}
+
+%Onde $p$ é o peso da aresta.
+
+%A distância entre dois vértices $u$ e $v$ é dada por:
+
+%\begin{equation}
+%	\mbox{dist}(u,v) = min\{ \mbox{custo}(C) \}
+%\end{equation}
+
+%Sendo que $C$ é um caminho com extremos em $u$ e $v$. 
+
+%Cada um dos vértices representa uma ação mapeada do modelo. O problema é encontrar a distância entre $dist(u,v)$, onde $u$ é um vértice inicial, a primeira ação que será executada e $v$ é o vértice final, a última ação a ser executada. Ao final da execução, o conjunto $G$ representa o plano de ações com o menor caminho entre $u$ e $v$.
+
+%A figura \ref{fig:graph_custos} ilustra o percurso em um grafo que representa o modelo.
+
+%\begin{figure}[!htb]
+%    \centering
+%    \includegraphics[width=5cm]{images/graph_custos.jpg}
+%    \caption{Exemplo de grafo com consumo de custos}
+%    \label{fig:graph_custos}
+%\end{figure}
+
+%No exemplo proposto pela figura \ref{fig:graph_custos} relaciona-se $A$ com o vértice $u$ e $E$ com o vértice $v$. A distância $dist(A,E)$ está marcada com as arestas em negrito, e geram o custo dado por:
+
+%\begin{eqnarray}
+%	\mbox{custo}(C) & = & \sum(5,2,1,2,1) \\
+%	\mbox{custo}(C) & = & 11
+%\end{eqnarray}
+
+%O conjunto $V = \{A,C,D,F,G\}$ corresponde a ordem de execução das ações no modelo proposto.
+
+Para ilustrar a potencialidade do plano de execução gerado pelo planejador, supõe-se o seguinte exemplo hipotético: seja uma tarefa $T_1$ composta por dois operadores $O_1$ e $O_2$. O operador $O_1$ executa a tarefa sequencial e leva para isso $10$ segundos. O operador $O_2$ executa a tarefa de forma paralela em $5$ nós e leva $8$ segundos. A princípio o tempo de execução é menor. Entretanto se considerarmos a quantidade de nós alocados, o primeiro operador gasta usa um nó enquanto o segundo usa cinco nós. A escolha de $O_1$ ou $O_2$ depende da situação atual dos recursos, logo se existem nós livres, o melhor operador a ser escolhido é $O_2$, entretanto se o sistema já está com certa sobre-carga a melhor opção é $O_1$. O planejador é capaz de atribuir custos a esses operadores, e em uma situação em que os recursos estão livres $\omega(O_1) < \omega(O_2)$ e quando o sistema já possui processos executando no ambiente $\omega(O_1) > \omega(O_2)$. Desta forma a busca pelo menor operador implica na geração do melhor plano.
+
+O modelo de custos apresentadas nessa seção pode contribuir para um planejamento mais refinado, levando em consideração outras características para um escalonamento personalizado. Com a atribuição de outras funções de custos é possível, por exemplo, considerar a quantidade de energia elétrica que se gasta para processar determinada operação, possibilitando assim a geração de um plano que minimize o gasto de energia elétrica.
+
+\section{Método de Tradução}
+\label{tradutor}
+
+O método de tradução é um padrão que atua como interface entre as informações do sistema (\emph{dados}, \emph{operadores}, \emph{estado atual dos recursos} e \emph{base de metadados}) e o planejador. Essas informações são utilizadas para compor dois arquivos no formato PDDL, que servirão de entrada para o planejador. O componente responsável pelo método de tradução é a \emph{CaixaDeTradução}.
+
+Em nossa implementação, a estrutura básica adotada para geração dos arquivos PDDL pode ser observada nos códigos \ref{template_problem} e  \ref{template_domain}. Nesta versão do método de tradução, explora-se o \emph{paralelismo direto} (seção \ref{par-direta}) e o \emph{paralelismo sobre execução} (seção \ref{paralelismo-execucao})
+
+\UFPRcode{Java}{template_problem}{Estrutura básica do problema utilizado}{codes/template_problem.txt}
+
+O arquivo PDDL no código \ref{template_problem} representa a estrutura do problema. Importa-se as informações contidas na descrição dos fluxos de trabalho para que sejam utilizadas pelo planejador. No código, $<$data$>$, $<$task$>$ e $<$hosts$>$ representam coleções que indicam os dados, tarefas e os nós, que serão utilizados no escalonamento. O conjunto de dados é obtido por todos os dados de entrada e saída, que não se repetem. As tarefas são os nomes dos operadores dos fluxos de trabalhos. Ambas informações são obtidas através do arquivo \emph{aplicação.xml}. O conjunto de nós é obtido pelo componente \emph{OráculoDeMetaDados}.
+
+Os elementos iniciados por \$ representam variáveis. \$D é um conjunto de dados. \$X é um número. \$T é uma tarefa. \$H é um nó.
+
+Para todos os dados de entrada, atribui-se uma proposição \emph{(have \$D)} que informa ao planejador qual dado está disponível.
+
+As definições de \emph{input} e \emph{output} são semelhantes. Definem-se proposições diferentes com um indexador numérico (\$X) que representa o numero de dados (\$D) para uma tarefa (\$T). Com as informações de entrada e saída é possível informar ao planejador a dependência entre os os operadores dos fluxos. Assim, se uma tarefa $A$ necessita de um dado $D$ que só é fornecido pela tarefa $B$, então $B$ deve ser executado antes de $A$.
+
+O componente \emph{OráculoDeMetaDados} também retorna informações sobre a ocupação do nó, que no modelo é definido como disponível (\emph{availiable} \$H) ou parcialmente disponível (\emph{half-availiable} \$H). Quando disponível, um nó pode trabalhar com sua capacidade total, pois está livre para executar qualquer tarefa. Um nó parceialmente disponível já está executando alguma tarefa e por isso aplica-se um custo maior para a execução dessa tarefa.
+
+Uma variável de controle (\emph{total-cost}) é utilizada para acumular os custos das tarefas realizadas. É possível ainda pedir ao planejador que retorne um plano que minimize esse custo, para isso a métrica (\emph{minimize (total-cost)}). Na seção \ref{plan-custos} descreve-se a possibilidade da adaptação de outras métricas para a geração de um plano de execução personalizado, nesse caso outras métricas deveriam ser incluídas e computadas.
+
+\UFPRcode{Java}{template_domain}{Estrutura básica do domínio utilizado}{codes/template_domain.txt}
+
+No domínio, código \ref{template_domain}, definem-se as ações que caracterizam o início e fim de cada tarefa. Cada uma dessa ações utiliza um indexador \$X. Para as ações de início \emph{(start-task}) \$X define o número de dados de entrada para o \emph{input}, então se $\$X = 2$ então $|D| = 2$. A mesma lógica é aplicada as ações de fim (\emph{end-task}).
+
+Para cada indexação de \$X são definidas duas opções de início e fim de tarefa: \emph{full} e \emph{half}. A primeira utiliza apenas nós que estejam totalmente disponíveis para a execução de uma tarefa. Essa ação incrementa em $1$ o custo total (\emph{total-cost}). A segunda utiliza nós que já estejam trabalhando, entretanto incrementa em $10$ o custo total. Os custos aplicados são fixos, entretanto aplicados automaticamente de acordo com a ocupação do nó.
+
+Desta forma, consegue-se o paralelismo pretendido entre os nós; visto que mesmo que um nó já esteja ocupado, ainda é vantagem distribuir a nós diferentes tarefas que podem ser executadas em paralelo.
+
+O apêndice \ref{plan-files} transcreve os arquivos de domínio e problema, respectivamente em \ref{ap-dominio} e \ref{ap-problema}. O plano gerado é transcrito no aprêndice \ref{ap-plano}.
+
+\section{Considerações}
+\label{modelo-consideracoes}
+
+Quanto à classificação (seção \ref{workflow}), a descrição dos fluxos de trabalho em um arquivo XML é a etapa de \emph{composição}. O planejador atua como \emph{orquestrador}, pois define as regras de dependências e escalonamento, e ainda atua como componente de \emph{mapeamento}, pois dá origem ao plano de execução que será enviado ao gerenciador de execução. O componente de \emph{execução} é definido pelas adaptações do sistema \emph{PeerUnit}.
+
+A implementação utiliza a linguagem Java. A motivação para o uso da linguagem é relacionada a linguagem de desenvolvimento da camada de execução (\emph{PeerUnit} seção \ref{peerunit}). A estrutura da codificação segue os padrões do projeto \emph{PeerUnit}, fazendo dele uma ramificação direta, porém com um objetivo diferente, ou seja, ao invés de testar um sistema P2P, utiliza-se a mesma estrutura para a construção de um ambiente de execução inteligente. Além disso, o planejador \emph{CRIKEY} (seção \ref{crikey}) também está implementado na linguagem java.
+
+%diferença IA e este trabalho
+O trabalho que envolve IA e fluxo de execução \cite{Gil2004} (seção \ref{ia-workflow}) é o principal trabalho relacionado. Utiliza como base o projeto \emph{Pegasus} \cite{Deelman2004} (seção \ref{pegasus}) e aprimora o escalonamento utilizando técnicas de planejamento para a distribuição das tarefas no ambiente de execução. O trabalho usa um modelo colaborativo genérico que funciona com o compartilhamento de metadados pela Internet. A principal diferença entre \cite{Gil2004} e este trabalho está no ambiente de execução. Nosso trabalho utiliza técnicas P2P que focam em um sistema de execução escalável, enquanto que \cite{Gil2004}, busca a colaboração entre ambientes de grade.
+
+%explicar limitação tempo limite de execução
+Uma limitação do modelo está relacionada ao tempo limite de execução para uma ação. Como o \emph{PeerUnit} foi concebido inicialmente para testes que validam se um dado pode ser encontrado em um ambiente P2P, estabelece-se um tempo limite para assumir que o dado foi encontrado. Apesar da utilização de um ambiente P2P, assume-se que este ambiente deve estar controlado para a extração das metainformações sobre os recursos que ajudam na política de escalonamento. Por isso, não espera-se um tempo limite, pois há a garantia de resposta do um nó. Em nossas implementações este problema foi contornado inserindo em uma primeira execução um tempo limite infinito, e nas próximas execuções um tempo perto do esperado.
+
+A implementação focou na construção básica para o gerenciamento dos fluxos de trabalhos científicos. Essencialmente o componente \emph{OráculoDeMetaDados} foi implementado de maneira simplista, e não está preparado para responder a perguntas mais complexas. Nos experimentos realizados o oráculo é capaz de responder apenas uma visão global dos recursos do ambiente, classificando-os em: disponível, indisponível ou parcialmente disponível. Quanto aos tipos de paralelização, implementou-se basicamente o modelo direto, no qual o usuário define a quantidade de nós que irão trabalhar em um operador paralelo, e o paralelismo sobre execução, que permite a execução paralela de múltiplos operadores.
+
+Na seção de planejamento de custos (seção \ref{plan-custos}) expõe-se a potencialidade do modelo, com a discussão sobre as opções de escalonamento levando em consideração a situação do ambiente distribuído.
+
+%A implementação focou na validação das principais potencialidades do modelo proposto, para isso se implementou-se a técnica de paralelização de dados direta \ref{par-direta} para mostrar a potencialidade e a distribuição de dados entre os nós no ambiente criado. Além disso explorou-se uma implementação simplificada do \emph{OráculoDeMetadados} que em nossa implementação responde apenas se um nó está ocupado, parcialmente ocupado ou livre. A partir da resposta do oráculo o planejamento de custos atribui o custo de uma operação de acordo com a ocupação de um nó.

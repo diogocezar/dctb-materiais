@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE
+html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Listas Não Ordenadas</title>
+</head>
+	<body>
+		<ul>
+			<li type="circle"> Primeiro Item </li>
+		</ul>
+		<br />
+		<ul type="disk">
+			<li>Seu ítem</li>
+		</ul>
+		<ul type="square">
+			<li>Seu ítem</li>
+		</ul>
+		<ul type="circle">
+			<li>Seu ítem</li>
+		</ul>
+	</body>
+</html>

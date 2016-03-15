@@ -1,0 +1,17 @@
+\section[Hipermídia Adaptativa]{Hipermídia Adaptativa}
+
+\begin{frame}
+    \frametitle{Hipermídia Adaptativa}
+        \begin{block}{Hipermídia Adaptativa}<1->
+        É a área da computação que estuda uma forma de desenvolvimento de
+        aplicativos que possuam a característica de adaptação do espaço
+        digital (Internet) à cada perfil de usuário.
+        \end{block}
+
+        Adaptação dos sistemas hipermídia:
+
+        \begin{itemize}
+            \item <2-> adaptação do conteúdo;
+            \item <3-> adaptação dos links.
+        \end{itemize}
+\end{frame}

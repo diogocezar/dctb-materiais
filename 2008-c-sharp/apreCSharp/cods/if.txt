@@ -1,0 +1,13 @@
+if(a==true){
+System.Console.Write("Verdadeiro");
+}
+
+if(a==true){
+  System.Console.Write("Verdadeiro");
+}
+else{
+  System.Console.Write("Falso");
+}
+
+
+

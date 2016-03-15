@@ -1,0 +1,8 @@
+using System;
+class classeparacadastrodeclientes{
+  private int j;
+  private int n;
+  private string str;  
+  public adicionarcliente(string s){  
+  }
+}

@@ -1,0 +1,16 @@
+\subsection{Bloco Try - Catch - Finally}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Bloco Try - Catch - Finally}
+    \begin{block}{Finally}
+        A instrução \emph{finally} garante a execução de seu bloco,
+        independente da excessão ocorrer no bloco \emph{try}.
+    \end{block}
+    \begin{itemize}
+        \item \emph{Finally} é utilizado para liberação de
+        recursos consumidos;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=excessaoTriCatchFinally,
+    caption={Exemplo de utilização do bloco Try - Catch -
+    Finally}]{cods/trycatchfinally.txt}}
+\end{frame}

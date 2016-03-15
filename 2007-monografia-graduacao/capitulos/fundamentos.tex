@@ -1,0 +1,294 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% F U N D A M E N T O S   T E Ó R I C O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:fundamentos]{FUNDAMENTOS TEÓRICOS}
+
+Neste capítulo, discute-se sobre os conceitos e a funcionalidade do
+hipertexto e da HA, bem como os conceitos teóricos da CE, ACO e a
+interação dessas tecnologias.
+
+    \UTFPRsection[sec:hipertextohipermidia]{HIPERTEXTO E HIPERMÍDIA}
+
+    Segundo \citeonline{mono:interlegis}, em um ambiente de comunicação
+    como a Internet, as informações, normalmente, são dispostas como uma
+    coleção de dados organizados em um tópico específico, formando
+    assim, nodos interconectados em que seus leitores podem navegar de
+    maneira arbitrária. "\emph{Esse ambiente de comunicação caracteriza um
+    sistema de hipertexto ou um hiperdocumento}".
+
+    O significado da palavra hipertexto é a junção dos termos "espaço
+    hiperbólico"{} e "texto", sugerindo assim uma idéia de espaço
+    multidimensional em que o usuário pode navegar de forma não
+    seqüencial. A navegação pode ser feita em telas de computador,
+    janelas com barra de rolagem, arquivos ou pedaços menores de
+    informação. Cada unidade de informação é designada como um nodo.
+    Qualquer que seja o tamanho desses nodos, cada um deles pode conter
+    referências para outras unidades; essas referências são denominadas
+    ligações ou \emph{links}. Alguns nodos estão relacionados a muitos
+    outros e terão, portanto, muitas ligações, enquanto outros servirão
+    apenas como destinos, sem que saiam ligações a partir deles
+    \cite{apresentacao:jean}.
+
+    \begin{figure}[!htb]
+    \label{fig:grafoHipertexto} \Tree [.$PaginaPrincipal$ $PaginaA$ [.$PaginaB$ $SubPaginaB.A$ ] $PaginaC$ ]
+    \caption{Exemplo de um ambiente hipertexto}
+    \end{figure}
+
+    Na Figura \ref{fig:grafoHipertexto}, o nodo $PaginaPrincipal$ é
+    denominado nodo raiz, porque ele é o nodo que dá origem a todos os
+    outros, analogamente em um \emph{website} esse nodo corresponderia a
+    página principal. No nodo raiz ainda estão as referências (ligações)
+    para as sub-páginas: $PaginaA$, $PaginaB$ e $PaginaC$. As
+    sub-páginas $PaginaA$ e $PaginaC$ são nodos folha, pois não têm
+    ligação para outros nodos, em um \emph{website}. As arestas que
+    ligam os nodos são os \emph{links}, que podem ser direcionais
+    (ligação em só um sentido) ou bidirecionais (ligação nos dois
+    sentidos).
+
+    O termo multimídia sugere a integração de textos, gráficos, imagens,
+    animações, sons e qualquer outro meio onde a informação pode ser
+    representada, armazenada, transmitida e processada sob a forma
+    digital \cite{apresentacao:jean}.
+
+    A hipermídia é a união da tecnologia do hipertexto com os recursos
+    da multimídia (hipertexto + multimídia = hipermídia) e pode ser
+    definida como um recurso para manipulação, recuperação ou
+    apresentação de informações \cite{apresentacao:jean}.
+
+    Uma ligação hipertextual conecta dois nodos e é normalmente
+    dirigida, a fim de formar uma ligação de um nodo (denominado o nodo
+    âncora) para outro (designado como o nodo destino). A transição
+    entre os \emph{links} deve acontecer de forma involuntária, ou seja,
+    quando o leitor selecionar, através de um clique, um \emph{link} no
+    hipertexto, o movimento entre os dois nodos devem ser automático.
+
+    \UTFPRsection[sec:hipermidiaadaptativa]{HIPERMÍDIA ADAPTATIVA}
+
+    A HA é a área da computação que estuda uma forma de desenvolvimento
+    de aplicativos que possuam a característica de adaptação do espaço
+    digital (Internet) à cada perfil de usuário.
+
+    O desenvolvimento de sistemas de uma forma geral não se preocupa com
+    esse tipo de direcionamento, pois são projetados de acordo com
+    usuários padrão para o sistema. Entretanto, quando há uma utilização
+    massiva por usuários diferenciados, pode haver dificuldades em
+    relação à utilização e até excesso ou carência de conteúdo
+    \cite{atigo:hiperadapt}.
+
+    Sistemas que utilizam a HA possuem a peculiaridade de classificar de
+    alguma maneira seus usuários para essa adaptação. Esse passo para a
+    construção de um sistema que utiliza HA é chamado de modelagem de
+    usuário, que traça o perfil desse e quais características serão
+    analisadas para a adaptação do conteúdo. Por exemplo, um usuário
+    leigo tem preferência na visualização de conteúdos mais explicativos
+    e simplificados; contudo, os mais experientes esperam maior objetividade
+    do conteúdo. A capacidade do usuário, nesse caso, é a característica
+    que o sistema deve estar apto a discernir \cite{atigo:hiperadapt}.
+
+    A adaptação de sistemas hipermídia pode ocorrer principalmente de
+    duas maneiras: adaptação do conteúdo ou adaptação dos \emph{links}. No caso
+    da primeira, o conteúdo deve ser armazenado de formas diferentes e
+    ao identificar o perfil de usuário, o sistema deve ser capaz de
+    exibir a informação mais adequada. Já a adaptação de \emph{links} mostra,
+    oculta, destaca ou não links conforme algum critério definido
+    previamente. Por exemplo, destacar \emph{links} do mesmo assunto da página
+    atual.
+
+        \UTFPRsubsection[subsec:metodosnavegacao]{MÉTODOS PARA NAVEGAÇÃO ADAPTATIVA}
+
+        Os métodos existentes para a navegação adaptativa indicam o que deve
+        ser feito para proporcionar auxílio ao usuário \cite{atigo:hiperadapt}.
+
+        O método da \emph{condução global}, conduz o usuário na direção de
+        seu objetivo, apresentando uma seqüência de passos; já o da
+        \emph{condução local} apresenta-se como um passo de navegação que seja
+        interessante, conforme os dados do modelo do usuário; e o método do
+        \emph{suporte à orientação global}, auxilia o entendimento da
+        estrutura de todo o hiperdocumento; enquanto que o \emph{suporte à
+        orientação local}, ajuda na compreensão de seu posicionamento no
+        hiperespaço, apresentando informações sobre os nós que podem ser
+        acessados a partir do atual.
+
+        \UTFPRsubsection[subsec:tecnicasdenavegacao]{TÉCNICAS DE NAVEGAÇÃO ADAPTATIVA}
+
+        Segundo \citeonline{atigo:hiperadapt} as técnicas de NA são os
+        recursos usados pelos sistemas de HA para informar ou influenciar o
+        usuário no seu processo de navegação.
+
+        As principais técnicas de NA são:
+
+        \begin{itemize}
+            \item \emph{orientação direta}:
+                decide em cada ponto da navegação qual o melhor nodo a ser visitado
+                em seguida. Apresenta como desvantagem, a falta de suporte no
+                caso do usuário não desejar seguir a sugestão do
+                sistema;
+
+            \item \emph{classificação adaptativa}:
+                classifica os \emph{links} de um nodo de acordo com sua
+                relevância;
+
+            \item \emph{ocultação adaptativa}:
+                consiste em restringir o espaço de navegação, ocultando os \emph{links} para nodos não
+                relevantes;
+
+            \item \emph{anotação adaptativa}:
+                consiste em aumentar a informação existente nos links com alguma forma de anotação ou
+                comentário que podem dizer mais sobre o estado corrente dos nodos a
+                que se conectam;
+
+            \item \emph{geração de links}:
+                consiste em criar \emph{links} adicionais automaticamente nos nodos.
+                Uma das desvantagens desta técnica é o aumento no número de
+                \emph{links} existentes nos nodos, acrescendo a sobrecarga cognitiva
+                e tornando o hiperespaço mais complexo;
+
+            \item \emph{mapas adaptativos}:
+                têm o objetivo de ajudar o usuário a entender a estrutura do
+                hiperespaço.
+        \end{itemize}
+
+        \UTFPRsubsection[subsec:redesdeinformacoes]{REDES DE INFORMAÇÕES COMO REDES QUANTIZADAS}
+
+        Alguns parâmetros podem ser identificados em um sistema que
+        utiliza a HA. Segundo \citeonline{atigo:hiperadapt}, são eles:
+
+        \sigla{Potencial de Ativação}{P}
+        \sigla{Limiar de Visibilidade}{L}
+        \sigla{Constante de Freqüência}{KF}
+        \sigla{Constante de Transitividade}{KT}
+        \sigla{Constante de Simetria}{KS}
+        \sigla{Taxa de Degradação}{Z}
+
+        \begin{citacao}
+
+            \begin{itemize}
+                \item \emph{potencial de ativação}: o potencial de ativação de um arco é a medida
+                discreta da probabilidade de que o arco seja ativado em um próximo intervalo de
+                tempo. Seu valor é obtido medindo a freqüência com que cada arco na rede é
+                ativado e aplicando sistematicamente sobre essa os operadores de
+                transitividade, simetria e degradação. O resultado deste processo é uma rede
+                quantizada que representa pró-ativamente o estado de evolução do
+                sistema;
+
+                \item \emph{limiar de visibilidade}: o limiar de visibilidade corresponde a um limite do
+                potencial de ativação abaixo do qual os arcos não são mais visíveis. Seu valor
+                pode ser graduado, para possibilitar a visão da rede em diferentes níveis limites,
+                ou composto em um intervalo para observar diferentes camadas da
+                rede;
+
+                \item \emph{constante de freqüência}: valor que é adicionado ao potencial de ativação
+                de cada arco toda vez que este é percorrido. Como as demais constantes, pode
+                ser arbitrada. Supõe-se que seu valor deva ser superior ao das demais
+                constantes, tendo em vista, representar um evento concreto de
+                navegação;
+
+                \item \emph{constante de transitividade}: valor que é sistematicamente adicionado ao
+                potencial de ativação de um arco segundo a regra de transitividade. Seu efeito sobre a rede deve ser menor do que a KF, entretanto sua
+                aplicação pode propagar-se e influir no potencial de ativação de diversos arcos
+                na rede;
+
+                \item \emph{constante de simetria}: valor que é sistematicamente adicionado ao
+                potencial de ativação de um arco segundo a regra de simetria. Seu efeito é predominantemente local, mas, sua influência também se
+                exerce sobre a rede como um todo;
+
+                \item \emph{taxa de degradação}: valor percentual que decrementa o potencial de
+                ativação de um arco a cada intervalo de tempo T considerado. Pode ser um minuto, uma hora ou um dia, conforme
+                desejado.
+            \end{itemize}
+
+        \end{citacao}
+
+        \citeonline{atigo:hiperadapt}, ainda define uma rede de informações
+        como uma tripla, $<N, L, P>$, onde:
+
+        \begin{citacao}
+
+            \begin{itemize}
+                \item $N$: conjunto de nodos que são entidades primitivas,
+                correspondendo a unidades estruturais, semânticas e referenciais do
+                sistema. Um nodo se relaciona com outros nodos por meio de arcos.
+                Nodos que se encontram em relacionamento direto por meio de um arco
+                são conhecidos por vizinhos. A vizinhança de um nodo corresponde esse nodo
+                juntamente com todos os seus vizinhos;
+
+                \item $L$: conjunto de arcos, que são entidades estruturais estabelecendo a
+                existência e definindo os detalhes de um relacionamento entre dois
+                nodos. Os arcos podem apresentar diferentes semânticas, conforme os
+                nodos e o sistema considerado. Os arcos denotam um relacionamento
+                abstrato que possui associado um potencial de
+                ativação;
+
+                \item $P$: conjunto de propriedades que valem para a rede. Estas propriedades não
+                são pré-definidas e podem ser diferentes em cada situação.
+            \end{itemize}
+
+        \end{citacao}
+
+        As redes de informações podem ser vistas então como redes
+        quantizadas, nas quais os arcos possuem potenciais de
+        ativação, que está associado a cada arco é incrementado de um valor
+        constante (quantum) sempre que o arco é percorrido.
+
+        \UTFPRfigura[\cite{atigo:hiperadapt}]{width=10cm}{hipermidia/rede_de_informacoes.jpg}{Quantização em redes de informação}{fig:rededeinformacoes}
+
+        Na Figura \ref{fig:rededeinformacoes}, as setas em negrito no diagrama inferior
+        mostram apenas os arcos que possuem potencial de ativação acima de
+        um determinado valor, denominado limiar de visibilidade. Esse valor,
+        que pode ser escolhido arbitrariamente, funciona como um seletor dos
+        arcos que são visíveis ou não na rede.
+
+        Os fundamentos do trabalho desenvolvido estão relacionados
+        com esses conceitos e serão abordados nos capítulos
+        subseqüentes.
+
+    \UTFPRsection[sec:ce]{COMPUTAÇÃO EVOLUCIONÁRIA}
+
+    No âmbito computacional a resolução dos problemas é feita através da
+    escrita de algoritmos, que processam os dados de entrada gerando o
+    resultado esperado. Entretanto, nem todos os problemas são triviais,
+    para alguns deles a construção de um algoritmo torna-se
+    particularmente mais complexa que a resolução do mesmo problema de
+    outra forma.
+
+    De acordo com \citeonline{algoritmos:NPCompleto}, esse tipo de
+    problema caracterizado por ter mais restrições que regras, são
+    denominados problemas NP completos (Não polinomiais, isto é, o
+    seu custo em termos de tempo é muito elevado e não pode ser descrito
+    por um polinômio); e sua codificação com lógica convencional não é
+    suficiente para a solucioná-lo, então é proposta a utilização de
+    heurísticas, no intuito de se obter uma resposta sub-ótima para o
+    mesmo.
+
+    Uma alternativa encontrada para solucionar tais problemas foi a
+    inspiração nas ações da natureza do planeta. Assim originou-se a CE
+    \cite{eri:heitor}.
+
+    Dentre as técnicas de CE encontra-se: os
+    \UTFPRsigla{AG}{Algoritmos Genéticos}, a
+    \UTFPRsigla{PG}{Programação Genética}, os
+    \UTFPRsigla{SC}{Sistemas Classificadores}, as
+    \UTFPRsigla{EE}{Estratégias Evolucionárias} e a
+    \UTFPRsigla{PE}{Programação Evolucionária}. Descritos a
+    seguir, conforme \citeonline{eri:heitor}:
+
+    \begin{itemize}
+        \item AG, são intensamente
+        utilizados para problemas de busca e otimização numérica,
+        baseiam-se na teoria da seleção natural de Darwin;
+
+        \item PG, derivada dos AG para evolução de programas;
+
+        \item SC, também derivado
+        dos AG's e aplicados ao aprendizado de regras num ambiente
+        específico;
+
+        \item EE, um ramo da CE
+        desenvolvido independentemente na Alemanha, utilizado também
+        para otimização numérica;
+
+        \item PE, utiliza uma
+        máquina de estados finitos para simular processos
+        inteligentes.
+    \end{itemize}

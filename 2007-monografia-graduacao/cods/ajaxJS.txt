@@ -1,0 +1,20 @@
+/**
+* call_getGrupos()
+*/
+function call_getGrupos(){
+	hide();
+	x_getGrupos(return_getGrupos);	
+}
+
+function return_getGrupos(retorno){
+	var objIframe = parent.frames[1];
+	
+	addContDiv(idInGrupos, url_decode(retorno));
+	show();
+	hideDiv(idInformacoes);
+	hideDiv(idTipo);
+	hideDiv(idBox);
+	
+	/* Recarregando o frame inferior para remover os links gerados */
+	objIframe.window.location.reload();
+}

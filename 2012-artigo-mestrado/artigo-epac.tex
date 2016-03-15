@@ -1,0 +1,342 @@
+\documentclass[12pt,]{article}
+\usepackage{EPAC2009}
+\usepackage{graphicx,url}
+\usepackage[normal]{subfigure}
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{listings}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\tiny, extendedchars=true, breaklines=true,frame=tb,
+basicstyle=\footnotesize, stringstyle=\tiny, showstringspaces=false}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+\renewcommand{\footrulewidth}{0.1pt}
+
+%\hyphenation{}
+
+\sloppy
+
+\title{Modelo de Sistema de Processamento de Fluxos de Trabalho Científico Utilizando Planejamento}
+
+%\author{Diogo Cezar Teixera Batista\inst{1} \and
+%		Fabiano Silva\inst{1} \and
+%		Ailton Sergio Bonifacio\inst{1}
+%}
+
+
+%\address{ UFPR - Universidade Federal do Paraná\\
+%		  LIAMF - Laboratório de Inteligência Artificial e Métodos Formais\\
+%		  Av Cel. Francisco H. dos Santos, s/n. Jardim das Américas. \\
+%		  Caixa Postal 19081 - CEP 81531-980 \\
+%		  Curitiba/PR - Brasil
+%          \email{diogoc@c3sl.ufpr.br,fabiano@inf.ufpr.br,ailtons@c3sl.ufpr.br}
+%} 
+
+\author{}
+
+\address{}        	   
+
+
+\begin{document} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\small IV EPAC - Encontro Paranaense de Computação ISSN:1981-8653} 
+\fancypagestyle{plain}
+
+\headsep=40pt
+
+% from the definition of maketitle!
+%\makeatletter
+%\renewcommand{\@maketitle}{
+%\newpage
+% \null
+% \vskip 2em%
+% \begin{center}%
+%  {\LARGE \@title \par}%
+% \end{center}%
+% \par} \makeatother
+
+\maketitle
+
+\thispagestyle{fancy} % Cria o cabeçalho das páginas
+     
+\begin{resumo}
+Experimentos científicos produzem grande quantidade de informações que necessitam de processamento para uma posterior análise. Um cientista, que não da área da computação, nem sempre possui as habilidades para desenvolver seu próprio ambiente de testes, por isso a utilização de executores de fluxos de trabalhos científicos vêm sido largamente estudada. A principal vantagem ao utilizar um processador de fluxo de trabalho científico é a transparência oferecida para o cientista em relação a maneira com que os experimentos serão organizados, distribuídos e processados. O presente trabalho propõe um modelo para criação de um ambiente que seja capaz de processar esses fluxos de trabalho, com foco em um escalonamento inteligente utilizando para isso, técnicas para resolução de problemas de planejamento da área de inteligência artificial.
+\end{resumo}
+
+\section{Introdução}
+\label{introducao}
+
+O ambiente científico produz \emph{terabytes} de informações que precisam ser processadas e analisadas. A interação multidisciplinar entre a computação e outras áreas da ciência carece de ferramentas que ofereçam uma interface amigável e transparente. Desta forma, os cientistas não precisam se aprofundar em conhecimentos computacionais avançados, necessários para processar e extrair informações de suas pesquisas. Para que tais projetos científicos sejam executados, são criados fluxos de trabalho científicos, que dividem uma consulta maior em partes menores, permitindo uma distribuição estratégica do processamento desses fluxos, visando minimizar o tempo de execução \cite{Simmhan2005}.
+
+A utilização de fluxos de trabalho científico é uma forma de encapsular a automatização de processos de negócios, compostos por dados que são transformados e transmitidos entre participantes, com uma certa regra procedimental, afim de obter um resultado de um experimento científico \cite{Hollingsworth1995}. 
+
+Uma das grandes dificuldades ao se trabalhar com fluxos de trabalhos científicos está no escalonamento das tarefas que o compõem. Os experimentos científicos necessitam de muito processamento computacional, por isso, normalmente utilizam um ambiente distribuído, que oferece recursos computacionais e técnicas de paralelismo que possibilitam tal processamento. Dessa forma, é necessário alguma estratégia para escalonar tarefas de múltiplos fluxos de trabalho científico. 
+
+O problema de escalonamento é um subproblema de planejamento, no qual já se sabe quais serão os elementos a serem trabalhados, necessita-se apenas de uma ordenação coordenada desses elementos. A alternativa proposta neste trabalho é a utilização de técnicas para resolução de problemas de planejamento da área da inteligência artificial com o objetivo de escalonar as tarefas dos fluxos de trabalho científico \cite{Deelman2009}.
+
+Um problema de planejamento pode ser definido como sequência de ações que quando executadas em um mundo que satisfaça um estado inicial descrito, vai atingir o objetivo. Ao mapear computacionalmente situações do mundo real, nota-se a complexidade obtida por uma grande quantidade de escolhas, o que torna o problema intratável com algoritmos convencionais. Ao tratar problemas complexos torna-se necessário a utilização de meta informações específicas do domínio, que auxiliam na busca de uma solução para o problema de planejamento.
+
+%Uma técnica para resolução de um problema de planejamento tem o objetivo de encontrar uma solução ideal dentre todas as possíveis \cite{Weld1999}.
+
+% Comentário Fabiano: "falar sobre o uso de informações sobre histórico"
+Com o objetivo de refinar o processo de escalonamento, propõe-se a utilização de informações armazenadas em um banco de metadados que servirão para alimentar a construção de um plano de execução, contendo os passos a serem executados para a obtenção do resultado.
+
+% Referencia PeerUnit
+Com o plano de execução traçado pelo planejador, torna-se necessária uma estrutura que possibilite interpretar o plano e disparar a execução das tarefas em um ambiente distribuído. Para isso utiliza-se um \emph{gerenciador de execução} baseado no sistema \emph{PeerUnit} \cite{Almeida2008}, que originalmente foi concebido para executar testes em ambientes \emph{peer to peer}. O \emph{gerenciador de execução} faz com que os \emph{nós} sejam capazes de executar as tarefas que lhe são designadas, respeitando o plano de execução anteriormente traçado.
+
+% No próprio plano de execução são extraídas informações que permitem um escalonamento sem conflitos.
+
+
+% Focar o próximo parágrafo na funcionalidade/fluxo
+
+No modelo proposto, um problema científico é mapeado em fluxos de trabalho científicos. Cada fluxo de trabalho é dividido em tarefas. Na definição dos fluxos, são estabelecidas possíveis dependências entre as tarefas, que serão analisadas posteriormente pelo planejador. Essas tarefas podem ser implementadas de diferentes maneiras, explorando ou não o paralelismo disponível, para que posteriormente possam ser ponderadas pelo planejador. Existe ainda um banco de metadados que armazena informações sobre execuções anteriores, bem como as características dos nós disponíveis para execução. O planejador utiliza as informações desse banco de metadados para criar um plano de execução que define qual tarefa será executada em qual nó. Com o plano de execução pronto, uma camada de execução é acionada e dispara as tarefas para seus respectivos nós. Após a execução de uma tarefa, cada nó envia informações sobre a utilização de seus recursos, que são armazenados e utilizados para refinar uma próxima execução.
+
+% Ser menos específico (pois não se tem o diagrama)
+%O modelo proposto é formado uma série de componentes que formam uma estrutura de execução de fluxos de trabalho científicos. O componente de \emph{aplicação} é composto por uma descrição XML que modela a estrutura dos fluxos de trabalho, bem como as dependências de dados e quais as implementações disponíveis, que estão dispostas no componente de \emph{implementação}. A camada de planejamento obtém informações do componente \emph{coletor de informações} afim de analisar históricos de execução com características semelhantes e criar através da máquina de planejamento (\emph{JSHOP}) um plano de execução. A exportação desse plano de execução é feita através de arquivos XML. O componente \emph{gerenciador de execução} é baseado em um sistema de testes para \emph{peers} (\emph{PeerUnit}) e dispara o plano de execução para os nós disponíveis. Cada nó recebe o plano e executa a parte que lhe é designada. O resultado deve ser escrito em um diretório ou base de dados compartilhada.
+
+Na seção \ref{workflow} são apresentados os conceitos de fluxos de trabalho científico. Na seção \ref{planejamento} faz-se um breve levantamento sobre as técnicas para resolução de problemas de planejamento, bem como a motivação para a escolha da técnica e seu funcionamento. A execução do modelo está descrita na seção \ref{in}. O modelo para um sistema de processamento de fluxos de trabalho científico utilizando planejamento está descrito na seção \ref{modelo}, bem como um exemplo que ilustra o fluxo de execução do modelo. A seção \ref{conclusao} apresenta as considerações finais do artigo e os trabalhos futuros previstos.
+
+\section{Fluxo de Trabalho Científico}
+\label{workflow}
+
+%alterar parágrafo
+
+%Um fluxo de trabalho é uma maneira de encapsular a automatização de processos de negócios, compostos por documentos, informações ou tarefas que são transformados e transmitidos entre participantes, com uma certa regra procedimental, para atingir um objetivo \cite{Hollingsworth1995}. Um fluxo de trabalho científico pode ser definido como a automatização de tarefas com o objetivo de processar experimentos científicos.
+
+Um fluxo de trabalho científico é o encapsulamento de informações que pode ser processado automaticamente em um fluxo de execução, gerenciado por um sistema dito \emph{sistema gerenciador de fluxos de trabalho científico}. Ele é composto por dados que são transformados e transmitidos entre os componentes do sistema, para atingir um objetivo. O processo de execução de um fluxo de trabalho científico pode ser dividido em etapas, são elas: \emph{composição}, \emph{orquestração}, \emph{mapeamento} e \emph{execução} \cite{Deelman2009}.
+
+%referencias
+
+O processo de \emph{composição} de um fluxo de trabalho científico está relacionado a descrição das tarefas que cada fluxo deverá executar, bem como a relação de dependência entre elas. Normalmente sua representação é feita através de grafos dirigidos, no qual os vértices representam as tarefas e as arestas suas dependências \cite{Deelman2009}.
+
+% detalhado [ok]
+
+Existem linguagens que especificam um fluxo de trabalho científico, entre elas: \emph{MoML} \cite{Altintas2004}, \emph{Scufl} \cite{Belhajjame2008}, \emph{BPEL} \cite{Akram2006} e \emph{DAX} \cite{Lee2008}. Essas, variam de acordo com a semântica, tipo de aplicação, ambiente de execução ou representação \emph{abstrato} ou \emph{concreto}. Uma representação \emph{abstrata} não descreve os detalhes de execução, diferente de uma representação \emph{concreta}, que descreve. \emph{MoML}, \emph{Scufl} e \emph{DAX}, são linguagens especificamente desenvolvidas para o processamento de fluxos de trabalho. \emph{BPEL} é uma linguagem para especificar ações em processos de negócios dentro de serviços \emph{web}, adaptada para execução de fluxos de trabalho. No modelo proposto indica-se a adaptação de uma linguagem descrita em XML, afim de aplicar inferências e parâmetros específicos das camadas de planejamento e execução.
+
+O processo de automatização de tarefas requer uma coordenação, para que haja um controle sobre as dependências entre as tarefas de um fluxo de trabalho. O componente que efetua essa automatização é chamado de \emph{orquestrador}. O componente de \emph{mapeamento} tem como função a ligação entre tarefas e recursos. Dessa forma, uma tarefa que necessite de mais recursos é alocada em um nó com maior capacidade de processamento. A \emph{execução} tem como função a alocação das tarefas nos nós disponíveis \cite{Deelman2009}.
+
+Os executores de fluxos de trabalho científico, em sua maioria, precisam da interferência direta do usuário, que ordena manualmente os fluxos de trabalho. No modelo proposto, um problema científico é mapeado em $1$ ou mais fluxos de trabalhos. O planejador é responsável por analisar e organizar os fluxos de trabalho automaticamente, obtidos pela análise de execuções anteriores. Com isso é possível inferir critérios de otimização como por exemplo: tempo de execução, gasto de energia e minimização ou maximização de recursos computacionais.
+
+As etapas de \emph{composição}, \emph{orquestração} e \emph{mapeamento} são tratadas na fase de planejamento e a etapa de \emph{execução} é feita pelo \emph{gerenciador de execução}.  
+
+\section{Planejamento}
+\label{planejamento}
+
+A computação oferece recursos para minimizar esforços ao resolver problemas do mundo real, tais problemas podem apresentar um alto nível de complexidade. Embora seja difícil representar algumas características tais como: representação temporal, eventos inesperados e principalmente como estará o mundo depois de determinada modificação. Problemas que envolvam tais características estão em uma classe de complexidade que são intratáveis com algoritmos convencionais \cite{Weld1999}. Seguem algumas definições para o entendimento do mapeamento do problema de escalonar fluxos de trabalho científico em um problema de planejamento em inteligência artificial.
+
+%definir estado, plano, planejamento, acao, efetio.
+
+Um \emph{estado} é definido por um conjunto de proposições que identificam as características de algum elemento no mundo descrito. Um \emph{plano} é a sequencia de ações que levam do estado inicial dado a um estado objetivo desejado, e também é a solução de um problema de planejamento. Uma \emph{ação} ou \emph{operador} é um modificador de estado. Quando uma \emph{ação} é executada algum efeito é aplicado no mundo mapeado. Uma ação é formada por:
+
+\begin{itemize}
+	\item \emph{lista de pré-condições}: são os requisitos necessários para que uma determinada ação seja executada;
+	\item \emph{lista de adições}: são os fatos a serem adicionados ao mundo mapeado, depois que a ação é executada;
+	\item \emph{lista de exclusões}: são os efeitos negativos, ou seja, o que será retirado da representação do estado atual, após a execução de uma ação.
+\end{itemize}
+
+A busca no espaço de estados de um problema de planejamento foi definido inicialmente por STRIPS (\emph{STranford Research Institute Problem Solver}) \cite{Fikes1971}, esse foi o precursor dos resolvedores dos problemas de planejamentos modernos, com essa abordagem definiu-se a forma com que as ações são representadas, e é mantida na maioria dos planejadores atuais.
+
+%Para resolver o problema de planejamento utiliza-se técnicas que buscam contornar esse nível de complexidade. Dessa forma, após o mapeamento detalhado do problema do mundo real, define-se um estado inicial conhecido e um estado final desejado. Para gerar um plano, elabora-se uma busca por um conjunto de ações já conhecidas, que modificam o cenário a cada execução. O desafio do planejamento está em encontrar em todo o espaço de estados quais as ações e em que ordem devem ser invocadas para gerar um plano \cite{Weld1999}.
+
+% por que escolher o hierárquico: classico não dá conta
+
+As abordagens clássicas para resolução de problemas de planejamento executam uma busca no espaço de estados com objetivo de encontrar um caminho (que representará um conjunto de ações) do estado inicial até o estado objetivo. Esses planejadores são efetivos para resolução de problemas com domínios relativamente pequenos e estáticos \cite{Blum1995, Kautz1992}. Entretanto, ao tentar tratar domínios dinâmicos e mais complexos não obtém bons resultados \cite{Weld1999}. 
+
+%Como abordagens clássicas \emph{Graphpan} \cite{Blum1995} e \emph{Satplan} \cite{Kautz1992} 
+
+Os planejadores \emph{hierárquicos} são uma evolução dos clássicos, e conseguem tratar uma gama de problemas com maior grau de complexidade pela inferência direta de informações que refinam o processo de busca. Basicamente, a principal característica da abordagem hierárquica está na utilização de ações capazes de resolver subobjetivos que formam um objetivo maior \cite{Nau1999, Nau2003}. Essa inferência de informações é feita através de \emph{métodos}. Cada \emph{método} é responsável por descrever quais ações ou subtarefas irão compor uma tarefa mais complexa. Se uma tarefa é primitiva, ela não pode ser subdividida em uma tarefa menor, pois é possível resolvê-la com as ações já descritas. O principal objetivo dessa abordagem é reduzir as tarefas complexas até que existam somente tarefas primitivas, obtendo assim o plano \cite{Nau2003}. 
+
+A maioria dos planejadores hierárquicos são independentes do domínio, mas os métodos, são específicos do domínio. Isso faz com que seja necessária a ação de um especialista para construir o domínio do problema, o que torna o planejador muito mais rápido.
+ 
+
+%Quanto a classificação, os planejadores podem ser distintos em: \emph{clássicos} ou \emph{hierárquicos}. Os clássicos executam uma busca no espaço de estados com objetivo de encontrar um caminho (que representará um conjunto de ações) do estado inicial até o estado objetivo. Os hierárquicos utilizam uma técnica de decomposição de tarefas, dividindo uma tarefa complexa (abstrata) em uma ou mais tarefas com menor grau de complexidade (primitiva). Esse mapeamento é feito através de métodos que descrevem possíveis reduções. A classe de planejadores clássicos é efetiva para a resolução de problemas com domínios relativamente pequenos e estáticos, entretanto, falha ao tentar tratar domínios dinâmicos e mais complexos \cite{Porto2006}. Os planejadores \emph{Graphpan} \cite{Blum1995} e \emph{Satplan} \cite{Kautz1992} deram início aos estudos direcionados ao planejamento.
+
+%As we mentioned earlier, SHOP2 plans for tasks in the same order that they will be executed. In order to do this, it nondeterministically chooses a task t E T that has no predecessors; t is the first task that SHOP2 will start working on. At this point, there are two cases...
+
+JSHOP2 \cite{Ilghami2006} é uma implementação de um planejador hierárquico desenvolvida na linguagem Java. Seu desenvolvimento foi inspirado no planejador SHOP2 \cite{Nau2003}. O SHOP2 planeja as tarefas $T$ na mesma ordem que serão executadas. Para isso, uma escolha não-determinística de uma tarefa $t \in T$ que não possui predecessores, resulta em dois casos:
+
+\begin{enumerate}
+	\item se $t$ é primitivo, então encontra-se uma ação $a$ que resolve $t$ de forma que as pre-condições são satisfeitas em um estado $s$, e aplica $a$ em $s$. Se não existe essa ação, então esse ramo do espaço de busca falha;
+	\item se a tarefa $t$ é composta, então o planejador encontra de forma não-determinística um método $m$ que irá decompor a tarefa $t$ em subtarefas. Se não existe um método para tal decomposição, então esse ramo do espaço de busca falha.
+\end{enumerate}
+
+Se existe uma solução que envolve $m$, então suas subtarefas farão parte de uma nova lista atualizada $T'$ que é percorrida recursivamente até que todas as tarefas sejam primarias e resolvíveis com operadores. 
+
+As duas escolhas não-determinística presentes no algoritmo apresentado recaem inevitavelmente em um processo de busca exponencial \cite{Nau1999}.
+
+%ligação
+O planejador será responsável por gerar um plano de execução, que necessita de alguma camada que possa despachar as tarefas planejadas para os nós disponíveis. Para isso, propõe-se a utilização de um \emph{gerenciador de execução}, descrito na seção \ref{in}.
+
+%No modelo proposto, utiliza-se um planejador hierárquico como motor para distribuição de fluxos de trabalho para uma camada de execução. Com o planejamento hierárquico é possível descrever o domínio do problema bem como seus métodos de forma a otimizar o processo de escalonamento. Além do escalonamento, são aproveitadas informações provenientes de metadados coletados dos nós da camada de execução. Essas informações são utilizadas para alimentar automaticamente o domínio do sistema, assim torna-se viável a obtenção de informações relevantes para próximas execuções ou implementação de alguma ferramenta que auto-regule o motor para executar de forma inteligente uma próxima execução de um fluxo de trabalho.
+
+\section{Gerenciador de Execução}
+\label{in}
+
+%escrever das necessidades da camada de execução e depois agregar o peerunit
+
+O modelo proposto carece de uma camada que possa distribuir as tarefas de forma coordenada. O \emph{gerenciador de execução} recebe como entrada um \emph{plano de execução} gerado pelo planejador. Esse \emph{plano de execução} pode ser definido como $P$ que é um conjunto de tarefas: $P = \{s_1, s_2, \ldots, s_n\}$. Cada tarefa é uma tripla formada por: $s_i = \{O, L, H\}$, onde:
+
+\begin{itemize}
+	\item $O$ é um número inteiro que define a ordem que a tarefa será executada. Assim, é possível definir que a tarefa $s_i$ seja executada em uma ordem específica na linha de tempo da execução. Nessa definição é possível alocar mais de uma tarefa para uma determinada ordem. Dessa forma, a execução deverá ocorrer paralelamente;
+	\item $L$ define o tempo \emph{limite} de execução estimado da tarefa em segundos;
+	\item $H$ é a identificação do nó que executará a tarefa.
+\end{itemize}
+
+Por utilizar um sistema de coleta de metadados que alimentam o planejador, é necessário que cada nó tenha uma identificação única $H$. Dessa forma, é possível estabelecer uma distribuição de carga baseada em históricos de execução.
+
+O \emph{gerenciador de execução} deve estar preparado para executar em um ambiente
+paralelo e escalável, pois a execução de fluxos de trabalho científicos exige grande quantidade de processamento. Portanto, é proposta uma adaptação do sistema \emph{PeerUnit} \cite{Almeida2008}.
+
+%Como o trabalho é direcionado para o processamento de fluxos de trabalho científicos, que exigem grande quantidade de processamento, o \emph{gerenciador de execução} deve estar preparado para executar em um ambiente paralelo e escalável. Para isso, é proposto uma adaptação do sistema \emph{PeerUnit} \cite{Almeida2008}.
+
+\subsection{PeerUnit}
+\label{peerunit}
+
+O sistema \textit{PeerUnit} foi concebido inicialmente para realizar testes em sistemas \textit{peer to peer}, afim de garantir as seguintes propriedades:
+
+\begin{itemize}
+  \item \emph{funcionalidade}: garante que o sistema irá responder como o esperado;
+  \item \emph{escalabilidade}: garante que a técnica aplicada poderá ser expandida para um ambiente com vários \textit{peers};
+  \item \emph{volatilidade}: garante que mesmo com a entrada ou a saída de \textit{peers} o sistema continuará funcionando como o esperado.
+\end{itemize}
+
+A estrutura \textit{PeerUnit} basicamente embute a todos os \textit{peers} um código escrito na linguagem Java. Nele são definidas instruções de como tais elementos devem se comportar. Ainda é possível (através de anotações especiais) indicar qual método será executado por qual \textit{peer} e qual será a ordem dessa execução. Além disso, é definido um tempo limite que se superado, retorna que o \emph{peer} não foi capaz de executar o método com sucesso.
+
+%Sua arquitetura é baseada em duas vertentes. A primeira utiliza um nó controlador que coordena as chamadas dos métodos nos nós disponíveis. A desvantagem dessa abordagem é que ao se perder o nó controlador perde-se todo o sistema. A segunda abordagem baseia-se em uma árvore binária. Cada \textit{peer} pode ter vários testadores, dependendo da ordem da árvore.
+
+\newpage
+
+O código \ref{alg:use_case} representa um trecho de um caso de uso, no qual exemplifica-se a utilização do sistema \emph{PeerUnit}.
+
+\texttt{\lstinputlisting[language=Java, label=alg:use_case, caption={Caso de uso de exemplo.}]{use_case.txt}}
+
+Nota-se que, antes da declaração do método, é definida uma linha de anotação iniciada pelo caractere @. A anotação é composta dos seguintes elementos:
+
+\begin{itemize}
+	\item \emph{range}: especifica quais serão os \emph{peers} atingidos. Pode ser uma samblagem que representa somente um \emph{peer} (3), uma faixa de atuação (1-3), elementos específicos (1,3,4), ou todos os \emph{peers} (*);
+	\item \emph{order}: controla qual será a ordem de execução do método após a anotação;
+	\item \emph{timeout}: estabelece um tempo limite para execução. Caso esse tempo seja atingido sem que o método tenha sido executado com sucesso, a ação falha. 
+\end{itemize}
+
+No código, \ref{alg:use_case} o método \emph{join()} inicia todos os \emph{peers}. O método \emph{put()} faz com que o \emph{peer} de identificação $0$ insira um dado em uma variável global, visível para todos os outros \emph{peers}. O método \emph{retrive()} captura o dado inserido pelo \emph{peer} 0. Por fim, o método \emph{assertRetrive()} faz uma verificação se o valor inserido foi recuperado de forma correta.
+
+O \emph{gerenciador de execução} utiliza as mesmas características do \emph{PeerUnit}. A implementação oferece uma estrutura que suporta as necessidades do plano de execução $P$. O único elemento não definido nativamente nas anotações é $H$, pois o mesmo não é especificado na camada de planejamento.
+
+%ligacao
+
+%Tendo em vista as definições para fluxo de trabalho científico, planejamento, e uma camada executora, apresenta-se a seguir o modelo proposto.
+
+Na seção seguinte o modelo proposto é apresentado. Para tal, as definições de fluxo de trabalho científico, planejamento, e uma camada executora são levados em consideração.
+
+
+\section{Modelo Proposto}
+\label{modelo}
+
+A figura \ref{fig:modelo} representa uma visão geral do modelo proposto.
+%O modelo proposto pode ser representado através de uma visão geral representada pela figura \ref{fig:modelo}.
+
+\begin{figure}[ht]
+  \begin{center}
+  \includegraphics[width=0.9\textwidth]{modelo.jpg}
+  \caption{Visão geral do modelo proposto}
+  \label{fig:modelo}
+  \end{center}
+\end{figure}
+
+A camada de \emph{aplicação} é definido em um documento XML. Esse documento contém a descrição dos metadados necessários para executar os fluxos de trabalhos codificados na camada de \emph{implementação}. Nessa descrição deve-se detalhar quais são os fluxos de trabalho, a forma de processamento distribuído e as dependências de dados. 
+
+A camada de \emph{implementação} define as funcionalidades da aplicação. Estas são baseadas em regras definidas pelo \emph{plano de execução}. Pode-se implementar diferentes formas de paralelização para uma mesma funcionalidade. Todas as operações descritas na camada de aplicação devem ser implementadas.
+
+%O componente de \emph{implementação} define as funcionalidades da aplicação. Estas são baseadas em regras definidas pelo \emph{plano de execução}. O desenvolvedor pode implementar diferentes formas de paralelização para uma mesma funcionalidade neste componente. Todas as operações descritas na camada de aplicação devem ser implementadas.
+
+%É importante que sejam implementadas todas as operações definidas no documento de descrição de metadados.
+
+A camada de \emph{planejamento} engloba os componentes: \emph{JSHOP}, \emph{exportador de ações}, \emph{gerador do plano de execução} e \emph{plano de execução}. O \emph{JSHOP} é o planejador propriamente dito. Nele são processadas as informações da descrição de metadados e do \emph{coletor de informações} de forma a se criar um plano de execução dos fluxos de trabalho disponíveis. O \emph{coletor de informações} é um componente externo à camada de \emph{planejamento} e está ligado diretamente a todos os planos de execução. Esse componente coleta os metadados sobre o processamento de tarefas em cada nó. O propósito desta ação é popular um banco de dados com informações relevantes para serem utilizadas nas execuções futuras do planejador. O \emph{exportador de ações} é um componente acessado diretamente pelo \emph{JSHOP}. Esse componente traduz o resultado fornecido pelo planejador para um documento padronizado XML. Este dará origem ao \emph{plano de execução} através do componente \emph{gerador de plano de execução}, que interpreta a descrição XML recebida e traduz em um formato interpretável para o \emph{gerenciador de execução}. Finalmente, o componente \emph{plano de execução} é, como o nome sugere, o plano de execução propriamente dito e pronto para ser enviado ao \emph{gerenciador de execução}.
+
+O \emph{gerenciador de execução} é uma camada que implementa o \emph{PeerUnit} \cite{Almeida2008}. Recebe-se um plano de execução semelhante às configurações demonstradas no código \ref{alg:use_case}. Desta forma, aciona-se devidamente qual nó deve executar qual trecho do plano. 
+
+%Na Figura \ref{fig:modelo} observa-se a separação do modelo em componentes, onde:
+%\begin{itemize}
+%	\item \emph{aplicação}: é o componente que descreve a aplicação em um documento XML com a descrição de metadados necessários para executar os fluxos de trabalhos codificados na camada de implementação. Na descrição dos metadados deve-se detalhar quais são os fluxos de trabalho, a forma de processamento distribuído e as dependências de dados;
+%	\item \emph{implementação}: deve-se implementar as funcionalidades da aplicação baseando-se nas regras definidas pelo \emph{plano de execução}. Aqui o desenvolvedor pode implementar diferentes formas de paralelização de uma mesma funcionalidade. É importante que sejam implementadas todas as operações descritas no documento de descrição de metadados;
+%	\item \emph{planejamento}: na camada de planejamento têm-se a interação com outros componentes, que são:
+%	\begin{itemize}
+%		\item \emph{JSHOP}: é o planejador propriamente dito. Aqui são processadas as informações da descrição de metadados e do coletor de informações de forma a se criar um plano de execução dos fluxos de trabalho disponíveis;
+%		\item \emph{exportador de ações}: é um componente acessado diretamente pelo planejador. Esse componente traduz o resultado fornecido pelo planejador para um documento padronizado XML, que dará origem ao plano de execução;
+%		\item \emph{gerador do plano de execução}: é um componente que gera um plano de execução a partir de um xml padronizado;
+%		\item \emph{plano de execução}: é o plano propriamente dito, pronto para ser enviado para a camada de inicialização de nós;
+%	\end{itemize}
+%	\item \emph{gerenciador de execução}: é uma implementação do \emph{PeerUnit}. Recebe-se um plano de execução semelhante as configurações demonstradas no código \ref{alg:use_case}, assim. aciona-se devidamente qual nó deve executar qual trecho do plano;
+%	\item \emph{nós}: são os nós propriamente ditos, as máquinas que executarão os processamentos;
+%	\item \emph{coletor de informações}: é um componente ligado diretamente a todos os planos de execução, esse componente coleta as metadados sobre o processamento de tarefas em cada nó, afim de alimentar um banco de dados a ser utilizado em próximas execuções pelo planejador.
+%\end{itemize}
+
+No modelo proposto, utiliza-se um planejador hierárquico como motor de distribuição de fluxos de trabalho para a camada de execução. Com o planejamento hierárquico é possível descrever o domínio do problema, bem como seus métodos, de forma a otimizar o processo de escalonamento. Além do escalonamento, são aproveitadas informações provenientes de metadados, coletados dos nós da camada de execução. Essas informações são utilizadas para alimentar automaticamente o domínio do sistema, possibilitando a obtenção de informações relevantes para próximas execuções. Assim, ao permitir diferentes formas de paralelização de uma funcionalidade do sistema, o planejador pode avaliar qual a melhor, baseando-se no histórico de execuções.
+
+Dentro do cenário apresentado, verifica-se a necessidade da utilização de um ambiente controlado. Isto porque, além de escalonar as tarefas de um fluxo de trabalho, o planejador também tem a função de analisar o histórico de execução e aproveitar informações do coletor de informações. Com isso, é possível atribuir não somente uma ordem com que as tarefas serão executadas, mas também em qual nó especificamente. Para tanto, deve-se obter a mesma identificação de um \emph{host} toda vez que o sistema for iniciado. Assim, defini-se que a ordem com que os nós serão inseridos no sistema deve ser a mesma.
+
+
+%Para tanto, defini-se que para a obtenção da mesma identificação de um \emph{peer}, toda vez que o sistema for iniciado, a ordem com que os \emph{hosts} serão inseridos no sistema deve ser a mesma.
+
+
+
+%Para tanto, defini-se que, para a obtenção da mesma identificação de um \emph{peer} toda vez que o sistema for iniciado, a ordem com que os \emph{hosts} serão inseridos no sistema deve ser a mesma.
+
+%Neste cenário, é necessário a utilização de um ambiente controlado, pois além de escalonar as tarefas de um fluxo de trabalho, o planejador também tem a função de analisar o histórico de execução e aproveitar informações do coletor de informações. Com isso é possível atribuir não somente uma ordem com que as tarefas serão executadas, mas também em qual nó especificamente. Para isso defini-se que para a obtenção da mesma identificação de um \emph{peer}, toda vez que o sistema for iniciado, a ordem com que os \emph{hosts} serão inseridos no sistema deve ser a mesma.
+
+Para ilustrar o funcionamento do modelo proposto, propõe-se um exemplo que demonstra o fluxo de execução, descrito na seção \ref{exemplo}.
+
+\subsection{Exemplo de Funcionamento}
+\label{exemplo}
+
+Seja um fluxo de trabalho científico, um conjunto $W$ composto por três tarefas a serem executadas $W = \{s_1, s_2, s_3\}$. Em um ambiente composto por três nós $Y = \{n_1, n_2, n_3\}$. Após a definição dos metadados que descrevem $W$, implementa-se as funcionalidades que executam $s_1$, $s_2$ e $s_3$. Mais de uma implementação pode ser definida para a mesma tarefa $s_1$. Uma implementação pode ser feita de forma sequencial $s_{1s}$ e outra explorando as possibilidades de paralelização $s_{1p}$.
+
+Em seguida são extraídas as informações do \emph{coletor de informações} a fim de popular o planejador. Caso haja execuções anteriores, são consideradas informações referentes ao tempo de execução e recursos (nós) disponíveis para execução. Desta forma, o planejador consegue ponderar qual a ordem de execução. Assume-se nesse exemplo que não há dependência entre as tarefas a serem executadas.
+
+Dado que a tarefa $s_1$ tem múltiplas implementações, o planejador pondera quais foram executadas com sucesso em casos anteriores e seleciona a que minimiza o tempo de execução. Seja o \emph{plano de execução} definido por $P = \{s_{1s}, s_2, s_3\}$, temos que $s_{1s}$, $s_2$ e $s_3$ são triplas, formadas por: $s_{1s} = \{1, 1000, n_2\}$, $s_2 = \{3, 500, n_1\}$ e $s_3 = \{2, 500, n_3\}$. Os parâmetros representam respectivamente: a ordem na linha de execução, o tempo estimado em segundos para execução e o nó onde a tarefa será executada.
+
+%\begin{itemize}
+%	\item $A$ define as ações: $\{t_{1s}, t_2, \mbox{ } e \mbox{ } t_3\}$;
+%	\item $O$ define a ordem de execução: $\{1, 3 \mbox{ } e \mbox{ } 2\}$;
+%	\item $T_l$ define o tempo de execução em segundos: $\{1000, 500 \mbox{ } e \mbox{ } 500\}$;
+%	\item $H$ define o nó em que a tarefa será executada: $\{n_2, n_1 \mbox{ } e \mbox{ } n_3\}$;
+%\end{itemize}
+
+Invoca-se, então, o \emph{gerenciador de execução}, que despacha as tarefas para os seus respectivos nós de acordo com as definições do plano de execução. Cada nó ainda é observado pelo componente \emph{coletor de informações} que recupera e re-alimenta a base de metadados a cada execução da aplicação.
+
+\section{Conclusão}
+\label{conclusao}
+
+O ambiente científico produz \emph{terabytes} de informações que precisam ser processadas e analisadas. A utilização de ferramentas com interfaces amigáveis e transparentes permitem aos cientistas processarem e extraírem informações para suas pesquisas. Para tanto, são criados fluxos de trabalho científicos, que dividem uma consulta maior em partes menores, permitindo, assim, o processamento e a distribuição destas partes estrategicamente.
+
+O modelo proposto visa esta facilidade e melhoria para o tratamento dos fluxos de trabalho científicos. Este modelo está em fase de implementação. Para testes iniciais propõe-se a utilização de fluxos de trabalhos na área de processamento de sequências de DNA, por exemplo. As transformações nessas cadeias devem possibilitar o mapeamento de subtarefas em fluxos de trabalho. Estes são problemas que tratam grandes volumes de dados em fluxos de trabalho complexos e que demandam muito processamento.
+
+
+%O modelo proposto está em fase de implementação. Para testes iniciais propõe-se a utilização de fluxos de trabalhos na área de processamento de sequências de DNA, por exemplo. As transformações nessas cadeias devem possibilitar o mapeamento de subtarefas em fluxos de trabalho. Estes são problemas que tratam grandes volumes de dados em fluxos de trabalho complexos e que demandam muito processamento.
+
+%A implementação deste modelo está em andamento e utiliza a linguagem Java. A motivação para o uso da linguagem é relacionada a linguagem de desenvolvimento da camada de execução (\emph{PeerUnit}) e do planejador (\emph{JSHOP}). A estrutura da codificação está seguindo os padrões do projeto \emph{PeerUnit}, fazendo dele uma ramificação direta, que tem um objetivo diferente, ao invés de testar \emph{peer}, utiliza a mesma estrutura para a construção de um ambiente de execução inteligente.
+
+A implementação deste modelo está em andamento e utiliza a linguagem Java. A motivação para o uso da linguagem é relacionada a linguagem de desenvolvimento da camada de execução (\emph{PeerUnit}) e do planejador (\emph{JSHOP}). A estrutura da codificação está seguindo os padrões do projeto \emph{PeerUnit}, fazendo dele uma ramificação direta, porém com um objetivo diferente, ou seja, ao invés de testar \emph{peer}, utiliza-se a mesma estrutura para a construção de um ambiente de execução inteligente.
+
+Uma característica do modelo proposto é a modularização dos componentes, que se interligam através de arquivos XML. Desta forma, será criado um modelo que pode ser adaptado para executar com diferentes componentes. Por exemplo, se houver a necessidade de alteração do escalonador de fluxos de trabalho, basta retirar o planejador e inserir um outro escalonador que exporte as ações no mesmo formato aceito pelo modelo. Ou ainda, caso seja necessário alterar a camada de execução, o mesmo procedimento pode ser acionado.
+
+%O próximo passo é finalizar a implementação do modelo proposto e testá-lo em um ambiente real. Assim, o modelo poderá ser validado e apresentado a comunidade científica.
+
+%Experimentos científicos, necessitam de um processamento massivo de dados. A utilização de uma camada executora altamente escalável em conjunto com o refinamento da fase de composição de fluxos de trabalho científicos, são características que auxiliam a minimizar o tempo de execução que é usualmente a necessidade dos cientistas.
+
+% Falar dos ambientes distribuídos, escalabilidade e alto desempenho
+
+\bibliographystyle{aiaa}
+\bibliography{referencias}
+
+\end{document}

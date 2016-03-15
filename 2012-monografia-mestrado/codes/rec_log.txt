@@ -1,0 +1,12 @@
+[INIT_SWEP_LOGGER_03-01-2012-13:59:20]
+(03-01-2012 13:59:20)[INFO] Exporting Application.
+(03-01-2012 13:59:20)[INFO] Executing Translation Box.
+(03-01-2012 13:59:20)[INFO] Calling the Planner.
+(03-01-2012 13:59:21)[INFO] Exporting Actions.
+(03-01-2012 13:59:21)[INFO] Generating Plan.
+(03-01-2012 13:59:21)[INFO] Making JoinWorkFlows.
+(03-01-2012 13:59:21)[INFO] Making Bash File.
+(03-01-2012 13:59:21)[INFO] Executing Application
+(03-01-2012 13:59:21)[INFO] Executing mvn install.
+(03-01-2012 13:59:33)[INFO] Executing PeerUnit.
+[END_SWEP_LOGGER]

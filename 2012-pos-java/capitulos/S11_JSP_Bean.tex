@@ -1,0 +1,142 @@
+\section[JSP Bean]{JSP Bean}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Bean}
+    \begin{itemize}
+      \item padronização de um exemplo;
+      \item irá ser utilizado em todos os próximos tópios;
+      \item o exemplo será sempre o cadastro de alunos;
+      \item em determinados casos, este aluno poderá ter uma lista de endereços;
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=SQL,
+	  caption=Exemplo do SQL padrão
+	}
+	\begin{lstlisting}
+	  CREATE TABLE alunos (
+	      id integer UNIQUE NOT NULL,
+	      nome text,
+	      idade numeric,
+	      fone text,
+	      email text,
+	      PRIMARY KEY (id)
+	  );
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo de uma Bean
+	}
+	\begin{lstlisting}
+	  package beans;
+
+	  public class AlunoBean {
+	      
+	      private Integer id;
+	      private Integer idade;
+	      private String  nome;
+	      private String  fone;
+	      private String  email;
+	      
+	      public AlunoBean(){}
+	      
+	      /* gets e sets */
+	      
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Utilização da Bean
+	}
+	\begin{lstlisting}
+	<body>
+		  <jsp:useBean id="alunoBean"
+class="beans.AlunoBean" scope="request"/>
+		  <jsp:setProperty property="*" name="alunoBean"/>
+		  <% if(request.getParameter("nome")  != null &&
+			request.getParameter("idade") != null &&
+			request.getParameter("fone")  != null &&
+			request.getParameter("email") != null
+		      ){ 
+		  %>
+		  <h1>Aluno Cadastrado</h1>
+		  <ul>
+		      <li>Nome: <jsp:getProperty
+name="alunoBean" property="nome"/></li>
+		      <li>Idade: <jsp:getProperty
+name="alunoBean" property="idade"/></li>
+		      <li>Telefone: <jsp:getProperty
+name="alunoBean" property="fone"/></li>
+		      <li>Email: <jsp:getProperty
+name="alunoBean" property="email"/></li>
+		  </ul>
+		  <% } %>
+	...
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Utilização da Bean
+	}
+	\begin{lstlisting}
+		  <h1>Cadastro de Aluno</h1>
+		  <form action="index.jsp" method="POST">
+		      <label> Nome </label>
+		      <input type="text" name="nome"/> <br />
+		      <label> Idade </label>
+		      <input type="text" name="idade"/> <br />
+		      <label> Fone </label>
+		      <input type="text" name="fone"/> <br />
+		      <label> Email </label>
+		      <input type="text" name="email"/> <br />
+		      <input type="submit" value="Enviar"/> 
+		  </form>
+	</body>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Implemente uma bean para a classe Produto a seguir:
+       \begin{itemize}
+	  \item id (int);
+	  \item Nome (string);
+	  \item Categoria (string);
+	  \item Preço (Float);
+	  \item Promoção (Boolean);
+	  \item Desconto (Float);
+       \end{itemize}
+       \item Os campos Promoção e Desconto são opcionais;
+       \item Caso o item tenha um desconto, exibir seu preço original, seu
+preço com o desconto e a \% de desconto;
+      \end{itemize}
+\end{frame}

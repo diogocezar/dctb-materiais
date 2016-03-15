@@ -1,0 +1,1106 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A N Á L I S E   D E   R E S U L T A D O S   E   D I S C U S S Ã O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:resultados]{ANÁLISE DE RESULTADOS E DISCUSSÃO}
+
+O sistema teve como sua principal funcionalidade a computação de
+feromônio, testada de várias formas. As baterias de testes foram
+divididas em três etapas, são elas:
+
+\begin{enumerate}
+    \item \emph{etapa 1}: testes isolados com 3 usuários desprezando intervalo de
+    tempo;
+    \item \emph{etapa 2}: teste simultâneo com vários usuários desprezando intervalo de tempo;
+    \item \emph{etapa 3}: teste isolado com 1 usuário em diferentes intervalos de
+    tempo.
+\end{enumerate}
+
+    Nas etapas 1 e 2, o intervalo de tempo entre o reinício dos
+    registros do sistema e o momento em que o usuário inicia a navegação
+    pelos \emph{links} disponíveis não foram computados. Inicialmente apenas as
+    duas primeiras etapas seriam realizadas, entretanto ao notar a
+    relevância do intervalo de tempo, uma terceira etapa foi proposta
+    para a análise detalhada desse quesito.
+
+Condições diferentes para as etapas foram propostas. Nas etapas 1 e
+2, as mesmas constantes administrativas (ver Tabela
+\ref{tab:constadmingab}) foram adotadas, na etapa 3 houve uma
+alteração na taxa de evaporação (ver Tabela \ref{tab:constadmingc}).
+Para as etapas 1 e 3, o número de grupos de interesses foi reduzido
+para objetivar o teste. Na etapa 2, o número de grupos de interesses
+foi maior para oferecer ao grupo maiores possibilidades de escolha.
+Para etapa 3, os dados foram extraídos da navegação do primeiro
+usuário da etapa 1. A navegação foi refeita, entretanto a cada teste
+a diferença de intervalo de tempo era alterada.
+
+    \begin{table}[H]
+    \footnotesize{
+    \caption{Constantes administrativas utilizadas nas etapas 1 e 2}
+    \label{tab:constadmingab}
+        \begin{center}
+        \begin{tabular}{|l|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{acrescimo\_feromonio} & \multicolumn{1}{c|}{tx\_evaporacao} & \multicolumn{1}{c|}{div\_diferenca} \\
+        \hline
+        \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{1800} \\
+        \hline
+        \end{tabular}
+        \end{center}
+    }
+    \end{table}
+
+    \begin{table}[H]
+    \caption{Constantes administrativas utilizadas na etapas 3}
+    \label{tab:constadmingc}
+    \footnotesize{
+        \begin{center}
+        \begin{tabular}{|l|l|l|}
+        \hline
+        \multicolumn{1}{|c|}{acrescimo\_feromonio} & \multicolumn{1}{c|}{tx\_evaporacao} & \multicolumn{1}{c|}{div\_diferenca} \\
+        \hline
+        \multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{35} & \multicolumn{1}{c|}{1800} \\
+        \hline
+        \end{tabular}
+        \end{center}
+    }
+    \end{table}
+
+    Para todos os testes não foi solicitado que se mantivesse fixo algum
+    tipo de orientação ou contexto de orientação, essas opções não
+    interferem no resultado da navegação, alteram somente a disposição
+    de um mesmo resultado.
+
+    \UTFPRsection{Etapa 1: Testes isolados com 3 usuários desprezando intervalo de
+    tempo}
+
+    Para efetuar os testes, um formulário foi criado solicitando que
+    cada usuário navegasse pelo sistema e anotasse os links acionados. A
+    navegação foi dividida em duas partes:
+
+    \begin{itemize}
+        \item \emph{navegação aleatória}: o usuário deverá navegar
+        de forma aleatória, sem objetividade entre os assuntos do
+        \emph{site};
+        \item \emph{navegação objetiva}: o usuário deverá navegar
+        com objetividade entre os assuntos do \emph{site}.
+    \end{itemize}
+
+        Para o primeiro usuário todo o trajeto percorrido no sistema foi
+        seguido; e para cada \emph{link} acionado a situação das tabelas
+        (grupo, feromônio e página) foi registrada. Para o segundo e
+        terceiro usuários, apenas a situação da última iteração em cada tipo
+        de navegação, foi registrada.
+
+        Para testar a duração da taxa de feromônio, a navegação objetiva foi
+        feita após a navegação aleatória, sem que as tabelas fossem
+        reiniciadas.
+
+        Ao término do teste de cada usuário as tabelas do sistema eram
+        reiniciadas de acordo com as Tabelas \ref{tab:grupoiniciale1},
+        \ref{tab:feromonioinicial} e \ref{tab:paginainicial}{}. A Tabela
+        \ref{tab:grupoiniciale1} mostra o estado inicial da tabela grupo, "Id"{} é
+        o identificador das linhas, "Cont"{} armazena o número de vezes que um
+        grupo foi acessado e "Nome"{} armazena o nome de um determinado grupo; a
+        Tabela \ref{tab:feromonioinicial} mostra o estado inicial da tabela
+        feromônio, "Id"{} é o identificador das linhas, "Id\_origem"{} armazena o
+        identificador da página de origem, "Id\_destino"{} armazena o
+        identificador da página de destino, "Id\_grupo"{} armazena o
+        identificador do grupo e "Qtd\_feromonio"{} armazena a quantidade de
+        feromônio presente na aresta. E finalmente a Tabela
+        \ref{tab:paginainicial} mostra o estado inicial da tabela página,
+        "Id"{} é o identificador das linhas, "Ultimo\_acesso"{} armazena quando a
+        página foi acessada pela última vez, "Url"{} armazena o endereço da
+        página e "Cont"{} a quantidade de acessos da página.
+
+            \begin{table}[H]
+            \caption{Etapa 1: Estado inicial da tabela: grupo}
+            \label{tab:grupoiniciale1}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|}
+                    \hline
+                    Id & Cont & Nome \\
+                    \hline
+                    1 & 2 & Últimas notícias \\
+                    \hline
+                    2 & 7 & Mundo \\
+                    \hline
+                    3 & 21 & Brasil \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            \begin{table}[H]
+            \caption{Etapa 1: Estado inicial da tabela: feromônio}
+            \label{tab:feromonioinicial}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|}
+                    \hline
+                    Id & Id\_origem & Id\_destino & Id\_grupo & Qtd\_feromonio \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            \begin{table}[H]
+            \caption{Etapa 1: Estado inicial da tabela: página}
+            \label{tab:paginainicial}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|}
+                    \hline
+                    Id & Ultimo\_acesso & Url & Cont \\
+                    \hline
+                    1 & \ldots & \ldots & 1 \\
+                    \hline
+                    2 & \ldots & \ldots & 2 \\
+                    \hline
+                    3 & \ldots & \ldots & 1 \\
+                    \hline
+                    4 & \ldots & \ldots & 1 \\
+                    \hline
+                    5 & \ldots & \ldots & 1 \\
+                    \hline
+                    6 & \ldots & \ldots & 2 \\
+                    \hline
+                    7 & \ldots & \ldots & 1 \\
+                    \hline
+                    8 & \ldots & \ldots & 1 \\
+                    \hline
+                    9 & \ldots & \ldots & 1 \\
+                    \hline
+                    10 & \ldots & \ldots & 2 \\
+                    \hline
+                    11 & \ldots & \ldots & 1 \\
+                    \hline
+                    12 & \ldots & \ldots & 1 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            Os dados substituídos por reticências diferem
+            a cada reinicialização dos testes e não têm influência direta na
+            exibição dos resultados.
+
+            Para as tabelas da etapa 1 que demonstram os resultados das taxas de feromônio,
+            uma representação gráfica das páginas foi criada. Essa representação
+            implementa os conceitos de \emph{quantização em redes de informação}
+            explanada na Seção \ref{subsec:redesdeinformacoes}. A Tabela
+            \ref{tab:feromonioinicial} está representada na Figura
+            \ref{fig:grafo:tabferinicial}.
+
+            \UTFPRfigura{width=7cm}{grafos/inicial.jpg}{Representação gráfica
+            da tabela de feromônio inicial}{fig:grafo:tabferinicial}
+
+            As Figuras \ref{fig:grafo:tabferinicial},
+            \ref{fig:grafo:resultadou1na}, \ref{fig:grafo:resultadou1no},
+            \ref{fig:grafo:resultadou2na}, \ref{fig:grafo:resultadou2no},
+            \ref{fig:grafo:resultadou3na}{} e \ref{fig:grafo:resultadou3no} têm
+            os nodos representados por um círculo amarelo e o número inscrito
+            mostra sua identificação. Os grupos estão divididos por cores, o
+            grupo 1 é indicado pela cor azul, o grupo 2 pela cor vermelha e o
+            grupo 3 pela cor preta. A quantidade de feromônio é indicada pela
+            espessura das arestas.
+
+            Para as Tabelas \ref{tab:resultadou1na}, \ref{tab:resultadou1no},
+            \ref{tab:resultadou2na}, \ref{tab:resultadou2no},
+            \ref{tab:resultadou3na}{} e \ref{tab:resultadou3no} temos: qf
+            INÍCIO, representando a quantidade de feromônio no início dos
+            testes; qt itN, representando a quantidade de feromônio na iteração
+            N.
+
+            \UTFPRsubsubsection{Usuário 1 - Navegação Aleatória}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação aleatória do usuário 1}
+            \label{tab:resultadou1na}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it01 & qf it02 & qf it03 & qf it04 & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 19 & 19 & 19 & 19 & 19 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 19 & 19 & 18 & 18 & 17 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 19 & 19 & 18 & 18 & 17 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 9 & 9 & 8 & 8 & 7 \\
+                    \hline
+                    13 & 1 & 13 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    14 & 1 & 2 & 3 & 0 & 0 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    15 & 1 & 14 & 3 & 0 & 0 & 0 & 10 & 10 & 10 \\
+                    \hline
+                    16 & 1 & 15 & 3 & 0 & 0 & 0 & 0 & 10 & 10 \\
+                    \hline
+                    17 & 1 & 16 & 3 & 0 & 0 & 0 & 0 & 0 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            De acordo com a fórmula de acréscimo de feromônio
+            (ver Equação \ref{eq:acrescimo_feromonio}), uma aresta recentemente acessada
+            recebe um acréscimo da taxa de feromônio cadastrada nas constantes
+            administrativas. Como, no exemplo, a constante vale 10, a cada clique a
+            aresta percorrida é renovada, isso pode ser observado nas linhas 13
+            a 17 da tabela \ref{tab:resultadou1na}, que foram acessadas seqüencialmente.
+
+            A cada iteração o algoritmo de dedução de feromônio (evaporação) é
+            acionado, então novos valores são atribuídos para a taxa de feromônio.
+
+            Pode-se observar que, ao se acionar dois \emph{links} em um curto intervalo
+            de tempo, a redução pode não ser significativa. Como nesse momento o
+            sistema estava computando apenas números inteiros, não foi possível
+            observar as diferenças. Essas diferenças serão mostradas na terceira
+            etapa de testes.
+
+            Ainda é possível notar uma diferença entre as linhas 2, 6 e 10. Em
+            todos os casos a aresta é iniciada com uma taxa de feromônio igual a
+            20. Entretanto, a taxa final computada é 19 para a linha 2, e 17 para
+            as linhas 6 e 10. Isso ocorre devido ao intervalo de tempo entre o
+            reinício das tabelas do sistema e o momento do clique, indicando que
+            a linha 2 foi acessada mais recentemente que as linhas 6 e 10. Essa
+            diferença está presente também nos testes subseqüentes, pois os dados
+            iniciais foram mantidos, inclusive o momento do último acesso da
+            aresta.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou1na} está representada na Figura
+            \ref{fig:grafo:resultadou1na}.
+
+            \UTFPRfigura{width=9cm}{grafos/u1na.jpg}{Representação gráfica
+            da última iteração da Tabela \ref{tab:resultadou1na}}{fig:grafo:resultadou1na}
+
+            \UTFPRsubsubsection{Usuário 1 - Navegação Objetiva}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação objetiva do usuário 1}
+            \label{tab:resultadou1no}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it01 & qf it02 & qf it03 & qf it04 & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 19 & 19 & 19 & 19 & 19 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 17 & 17 & 16 & 15 & 15 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 17 & 17 & 17 & 17 & 17 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 17 & 17 & 16 & 15 & 15 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 7 & 7 & 6 & 5 & 5 \\
+                    \hline
+                    13 & 1 & 13 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    14 & 1 & 2 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    15 & 1 & 14 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    16 & 1 & 15 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    17 & 1 & 16 & 3 & 0 & 10 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    18 & 9 & 17 & 3 & 0 & 0 & 10 & 10 & 10 & 10 \\
+                    \hline
+                    19 & 9 & 18 & 3 & 0 & 0 & 0 & 10 & 10 & 10 \\
+                    \hline
+                    20 & 9 & 19 & 3 & 0 & 0 & 0 & 0 & 10 & 10 \\
+                    \hline
+                    21 & 9 & 20 & 3 & 0 & 0 & 0 & 0 & 0 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            Na tabela \ref{tab:resultadou1no} as linhas 13 a 21 compreendem
+            aos \emph{links} recentemente acessados. Nas linhas 1 a 12, nota-se uma maior
+            redução na taxa de feromônio das páginas porque não sofreram nenhum
+            recente acesso. Com a continuação dos acessos, caso não haja nenhuma
+            renovação de feromônio das arestas antigas, elas deixam
+            de existir para a camada de orientação.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou1no} está representada na Figura
+            \ref{fig:grafo:resultadou1no}.
+
+            \UTFPRfigura{width=9cm}{grafos/u1no.jpg}{Representação gráfica
+            da tabela \ref{tab:resultadou1no}}{fig:grafo:resultadou1no}
+
+            \UTFPRsubsubsection{Usuário 2 - Navegação Aleatória}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação aleatória do usuário 2}
+            \label{tab:resultadou2na}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 8 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 20 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 8 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 8 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 8 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 18 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 8 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 8 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 8 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 18 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 8 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 8 \\
+                    \hline
+                    13 & 1 & 2 & 3 & 0 & 10 \\
+                    \hline
+                    14 & 1 & 13 & 3 & 0 & 20 \\
+                    \hline
+                    15 & 1 & 14 & 3 & 0 & 10 \\
+                    \hline
+                    16 & 1 & 15 & 3 & 0 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            Na Tabela \ref{tab:resultadou2na}, pode-se observar que as linhas 13
+            a 16 são arestas novas adicionadas pelo usuário e, por isso, não
+            sofrem alteração brusca na taxa de feromônio. A linha 14, em
+            especial,
+            possui o dobro da taxa de feromônio indicada, pois foi acessada duas
+            vezes pelo usuário.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou2na} está representada na Figura
+            \ref{fig:grafo:resultadou2na}.
+
+            \UTFPRfigura{width=9cm}{grafos/u2na.jpg}{Representação gráfica
+            da tabela \ref{tab:resultadou2na}}{fig:grafo:resultadou2na}
+
+            \UTFPRsubsubsection{Usuário 2 - Navegação Objetiva}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação objetiva do usuário 2}
+            \label{tab:resultadou2no}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 6 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 20 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 6 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 6 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 6 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 16 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 6 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 6 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 18 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 26 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 16 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 6 \\
+                    \hline
+                    13 & 1 & 2 & 3 & 0 & 10 \\
+                    \hline
+                    14 & 1 & 13 & 3 & 0 & 20 \\
+                    \hline
+                    15 & 1 & 14 & 3 & 0 & 10 \\
+                    \hline
+                    16 & 1 & 15 & 3 & 0 & 10 \\
+                    \hline
+                    17 & 9 & 16 & 3 & 0 & 10 \\
+                    \hline
+                    18 & 9 & 17 & 3 & 0 & 20 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            É possível observar na Tabela \ref{tab:resultadou2no} que, a linha 10
+            possui maior quantidade de feromônio na última iteração que em seu
+            estado inicial. Isso aconteceu porque o usuário em algum momento de
+            sua navegação acessou novamente a aresta indicada na linha 10. A
+            aresta recentemente acessada (id 10) sofre uma menor redução de
+            feromônio que as demais arestas.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou2no} está representada na Figura
+            \ref{fig:grafo:resultadou2no}.
+
+            \UTFPRfigura{width=9cm}{grafos/u2no.jpg}{Representação gráfica
+            da tabela \ref{tab:resultadou2no}}{fig:grafo:resultadou2no}
+
+            \UTFPRsubsubsection{Usuário 3 - Navegação Aleatória}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação aleatória do usuário 3}
+            \label{tab:resultadou3na}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 2 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 5 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 2 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 2 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 2 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 5 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 2 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 2 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 2 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 5 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 2 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 2 \\
+                    \hline
+                    13 & 1 & 13 & 1 & 0 & 10 \\
+                    \hline
+                    14 & 1 & 14 & 1 & 0 & 10 \\
+                    \hline
+                    15 & 1 & 15 & 1 & 0 & 10 \\
+                    \hline
+                    16 & 1 & 16 & 1 & 0 & 10 \\
+                    \hline
+                    17 & 1 & 17 & 1 & 0 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            A Tabela \ref{tab:resultadou3na} mostra uma baixa taxa de feromônio
+            na nas linhas 1 a 12 da última iteração do usuário. Essa grande
+            diferença acontece porque o usuário 3 demorou um longo tempo para
+            iniciar a navegação após o reinício das tabelas do sistema.
+            Observando esse acontecimento, a terceira etapa de testes foi
+            proposta para analisar em detalhes a variável tempo.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou3na} está representada na Figura
+            \ref{fig:grafo:resultadou3na}.
+
+            \UTFPRfigura{width=9cm}{grafos/u3na.jpg}{Representação gráfica
+            da tabela \ref{tab:resultadou3na}}{fig:grafo:resultadou3na}
+
+            \UTFPRsubsubsection{Usuário 3 - Navegação Objetiva}
+
+            \begin{table}[H]
+            \caption{Dados extraídos da navegação objetiva do usuário 3}
+            \label{tab:resultadou3no}
+            \footnotesize{
+                \begin{center}
+                    \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                    Id & Origem & Destino & Grupo & qf IINÍCIO & qf it05 \\
+                    \hline
+                    1 & 1 & 1 & 1 & 10 & 0 \\
+                    \hline
+                    2 & 1 & 2 & 1 & 20 & 1 \\
+                    \hline
+                    3 & 1 & 3 & 1 & 10 & 0 \\
+                    \hline
+                    4 & 1 & 4 & 1 & 10 & 0 \\
+                    \hline
+                    5 & 1 & 5 & 2 & 10 & 0 \\
+                    \hline
+                    6 & 5 & 6 & 2 & 20 & 1 \\
+                    \hline
+                    7 & 5 & 7 & 2 & 10 & 0 \\
+                    \hline
+                    8 & 5 & 8 & 2 & 10 & 0 \\
+                    \hline
+                    9 & 1 & 9 & 3 & 10 & 0 \\
+                    \hline
+                    10 & 9 & 10 & 3 & 20 & 1 \\
+                    \hline
+                    11 & 9 & 11 & 3 & 10 & 0 \\
+                    \hline
+                    12 & 9 & 12 & 3 & 10 & 0 \\
+                    \hline
+                    13 & 1 & 13 & 1 & 0 & 20 \\
+                    \hline
+                    14 & 1 & 14 & 1 & 0 & 10 \\
+                    \hline
+                    15 & 1 & 15 & 1 & 0 & 10 \\
+                    \hline
+                    16 & 1 & 16 & 1 & 0 & 10 \\
+                    \hline
+                    17 & 1 & 17 & 1 & 0 & 10 \\
+                    \hline
+                    18 & 1 & 18 & 1 & 0 & 20 \\
+                    \hline
+                    19 & 1 & 19 & 1 & 0 & 10 \\
+                    \hline
+                    20 & 1 & 20 & 1 & 0 & 10 \\
+                    \hline
+                    \end{tabular}
+                \end{center}
+            }
+            \end{table}
+
+            A Tabela \ref{tab:resultadou3no} mostra que, após um determinado
+            tempo, a taxa de feromônio se torna nula e a aresta deixa de ser indicada pelo sistema,
+            como pode ser observado nas linhas 1, 3, 4, 5, 7, 8, 9, 11 e 12.
+
+            A última iteração (qf it05) da Tabela \ref{tab:resultadou3no} está representada na Figura
+            \ref{fig:grafo:resultadou3no}.
+
+            \UTFPRfigura{width=9cm}{grafos/u3no.jpg}{Representação gráfica
+            da tabela \ref{tab:resultadou3no}}{fig:grafo:resultadou3no}
+
+            \UTFPRsubsubsection{Análise de Resultados}
+
+            Com os três testes isolados pode-se observar que o sistema simula a
+            evaporação de feromônio de forma similar à utilizada pelas formigas.
+            Um caminho é traçado pela quantidade de feromônio e esse caminho
+            pode deixar de existir; caso não seja realimentado, ou se
+            torne mais intenso caso seja constantemente alimentado.
+
+            Segundo os testes realizados e descritos nesse trabalho, pode-se
+            concluir que o sistema atendeu as expectativas e gerou o resultado
+            esperado.
+
+    \UTFPRsection{Etapa 2: Teste com vários usuários desprezando intervalo de tempo}
+
+    O teste foi efetuado com 10 alunos do curso superior de Tecnologia
+    em Análise e Desenvolvimento de Sistemas da
+    \UTFPRsigla{UTFPR}{Universidade Tecnológica Federal do Paraná} de Cornélio Procópio, que
+    cursavam o segundo período. Uma breve apresentação do sistema foi
+    efetuada e posteriormente foi solicitado para que cada aluno
+    navegasse pelo sistema e acessasse as notícias de seu interesse.
+
+    Para a computação do teste, o sistema foi reiniciado, e suas
+    tabelas: feromônio e página foram limpas. As constantes administrativas se
+    mantiveram (ver Tabela \ref{tab:constadmingab}), e a tabela de
+    grupos foi reformulada de acordo com as sessões disponíveis no
+    subsistema para testes (ver Tabela \ref{tab:grupoinicial}).
+
+    \begin{table}[H]
+    \caption{Etapa 2: Estado inicial da tabela: grupo}
+    \label{tab:grupoinicial}
+    \footnotesize{
+        \begin{center}
+            \begin{tabular}{|c|c|c|}
+            \hline
+            Id & Cont & Nome \\
+            \hline
+            1 & 10 & Últimas notícias \\
+            \hline
+            2 & 22 & Mundo \\
+            \hline
+            3 & 6 & Brasil \\
+            \hline
+            4 & 1 & Negócios \\
+            \hline
+            5 & 2 & Ciência/tecnologia \\
+            \hline
+            6 & 4 & Saúde \\
+            \hline
+            7 & 20 & Esportes \\
+            \hline
+            8 & 8 & Automobilismo \\
+            \hline
+            9 & 4 & Fórmula 1 \\
+            \hline
+            10 & 1 & Basquete \\
+            \hline
+            11 & 3 & Motociclismo \\
+            \hline
+            12 & 14 & Tênis \\
+            \hline
+            13 & 4 & Vôlei \\
+            \hline
+            14 & 1 & Entretenimento \\
+            \hline
+            15 & 20 & Diversão \\
+            \hline
+            16 & 2 & Arte e Cultura \\
+            \hline
+            17 & 3 & Cinema/DVD \\
+            \hline
+            18 & 12 & Gente/TV \\
+            \hline
+            19 & 4 & Moda \\
+            \hline
+            20 & 1 & Música \\
+            \hline
+            21 & 14 & Games \\
+            \hline
+            22 & 6 & Nintendo \\
+            \hline
+            23 & 1 & PC \\
+            \hline
+            \end{tabular}
+        \end{center}
+    }
+    \end{table}
+
+    \UTFPRsubsection{Análise de resultados}
+
+        \begin{table}[H]
+        \caption{Resultados testes do usuário 3 - Navegação Objetiva}
+        \label{tab:resultadogrupo}
+        \footnotesize{
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|c|c|}
+                \hline
+                Id & Origem & Destino & Grupo & qf IINÍCIO & qf it05 \\
+                \hline
+                1 & 2 & 1 & 9 & 0 & 10 \\
+                \hline
+                2 & 2 & 3 & 18 & 0 & 10 \\
+                \hline
+                3 & 2 & 4 & 1 & 0 & 10 \\
+                \hline
+                4 & 3 & 5 & 18 & 0 & 10 \\
+                \hline
+                5 & 2 & 6 & 7 & 0 & 10 \\
+                \hline
+                6 & 2 & 7 & 14 & 0 & 10 \\
+                \hline
+                7 & 2 & 8 & 14 & 0 & 10 \\
+                \hline
+                8 & 8 & 9 & 14 & 0 & 10 \\
+                \hline
+                9 & 8 & 10 & 14 & 0 & 10 \\
+                \hline
+                10 & 2 & 2 & 14 & 0 & 10 \\
+                \hline
+                11 & 2 & 4 & 14 & 0 & 10 \\
+                \hline
+                12 & 4 & 11 & 14 & 0 & 10 \\
+                \hline
+                13 & 11 & 8 & 14 & 0 & 10 \\
+                \hline
+                14 & 1 & 12 & 9 & 0 & 10 \\
+                \hline
+                15 & 2 & 13 & 23 & 0 & 10 \\
+                \hline
+                16 & 2 & 3 & 7 & 0 & 10 \\
+                \hline
+                \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+    Nota-se na tabela \ref{tab:resultadogrupo}, que a quantidade de
+    feromônio manteve-se alta para todas as arestas, simulando acessos
+    simultâneos ao mesmo tempo em um \emph{site}. Com esse teste pode-se
+    comprovar que o sistema não consegue gerar uma sugestão relevante em
+    um curto espaço de tempo, caso os usuários não acessem de forma
+    colaborativa. No teste os usuários acessaram páginas diferentes.
+
+    \UTFPRsection{Etapa 3: Teste isolado com um usuário em diferentes intervalos de
+    tempo}
+
+    Para analisar os resultados foram realizados três testes que
+    se diferenciaram pelo intervalo em que o sistema ficou sem
+    acessos a partir do estado inicial, representado pela Tabela
+    \ref{tab:diftempo}.
+
+        \begin{table}[H]
+        \caption{Diferença de tempo inicial entre as páginas}
+        \label{tab:diftempo}
+        \footnotesize{
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|}
+                \hline
+                pg & último-acesso & dif & qf0 \\
+                \hline
+                1 & 12:31 & 0min & 10 \\
+                \hline
+                2 & 12:31 & 0min & 20 \\
+                \hline
+                3 & 12:32 & 1min & 10 \\
+                \hline
+                4 & 12:33 & 2min & 10 \\
+                \hline
+                5 & 12:35 & 4min & 10 \\
+                \hline
+                6 & 12:35 & 4min & 20 \\
+                \hline
+                7 & 12:36 & 5min & 10 \\
+                \hline
+                8 & 12:36 & 5min & 10 \\
+                \hline
+                9 & 12:37 & 6min & 10 \\
+                \hline
+                10 & 12:38 & 7min & 20 \\
+                \hline
+                11 & 12:39 & 8min & 10 \\
+                \hline
+                12 & 12:39 & 8min & 10 \\
+                \hline
+                \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+    A Tabela \ref{tab:diftempo} apresenta o horário de último acesso da
+    página (pg) antes do início do teste na segunda coluna, a diferença
+    de horário em relação à página 1 na terceira coluna e na coluna
+    qf0, a quantidade de feromônio com que cada item da tabela foi
+    inicializado.
+
+    A terceira etapa de testes foi divida em três sub-etapas, são elas:
+
+    \begin{enumerate}
+        \item links acessados após 1 hora do reinício dos registros;
+        \item links acessados após 10 horas do reinício dos registros;
+        \item links acessados após 24 horas do reinício dos
+        registros.
+    \end{enumerate}
+
+    Para precisão dos resultados, a equação de subtração de feromônio foi ajustada para
+    relevar até 5 casas decimais.
+
+        \UTFPRsubsubsection{Links acessados após 1 hora do reinício dos registros}
+
+        \begin{table}[H]
+        \caption{Links acessados após uma hora do reinício dos registros}
+        \label{tab:resultadotr1h}
+        \footnotesize{
+            \begin{center}
+                \begin{tabular}{|c|c|r|r|r|r|r|r|}
+                \hline
+                \# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+                \hline
+                1 & 1-1-1 & 9,92858 & 9,85717 & 9,78568 & 9,71423 & 9,64282 \\
+                \hline
+                2 & 1-2-1 & 19,85715 & 19,71432 & 19,57134 & 19,42845 & 19,28563 \\
+                \hline
+                3 & 1-3-1 & 9,92974 & 9,85947 & 9,78911 & 9,71877 & 9,64845 \\
+                \hline
+                4 & 1-4-1 & 9,9309 & 9,86177 & 9,79253 & 9,72331 & 9,65409 \\
+                \hline
+                5 & 1-5-2 & 9,93322 & 9,86638 & 9,7994 & 9,7324 & 9,66537 \\
+                \hline
+                6 & 5-6-2 & 19,86644 & 19,73277 & 19,59881 & 19,46482 & 19,33076 \\
+                \hline
+                7 & 5-7-2 & 9,93438 & 9,86869 & 9,80284 & 9,73696 & 9,67103 \\
+                \hline
+                8 & 5-8-2 & 9,93438 & 9,86869 & 9,80284 & 9,73696 & 9,67103 \\
+                \hline
+                9 & 1-9-3 & 20 & 19,99899 & 19,99677 & 19,99358 & 19,98937 \\
+                \hline
+                10 & 9-10-3 & 19,8734 & 19,7466 & 19,61943 & 19,49213 & 19,36467 \\
+                \hline
+                11 & 9-11-3 & 9,93786 & 9,87561 & 9,81316 & 9,75063 & 9,688 \\
+                \hline
+                12 & 9-12-3 & 9,93786 & 9,87561 & 9,81316 & 9,75063 & 9,688 \\
+                \hline
+                13 & 9-13-3 & 0 & 10 & 9,9994 & 9,99831 & 9,99671 \\
+                \hline
+                14 & 9-14-3 & 0 & 0 & 10 & 9,99951 & 9,99852 \\
+                \hline
+                15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99949 \\
+                \hline
+                16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+                \hline
+                \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+        Na tabela \ref{tab:resultadotr1h}, as linhas de 13 a 16 indicam os
+        caminhos que iniciam sem feromônio, as linhas 7,8 e 11,12 apresentam
+        os mesmos valores porque a diferença de tempo não foi relevante
+        para a subtração do feromônio. Os valores de feromônio das linhas 2,
+        6 e 10, que começaram com 20 unidades, devem-se à diferença de tempo
+        entre os seus acessos.
+
+        Nota-se também que na linha 9, no momento em que a aresta é reforçada
+        com feromônio, sua dedução fica quase nula e esse processo se repete
+        para todos os intervalos de tempo a seguir.
+
+        \UTFPRsubsubsection{Links acessados após 10 horas do reinício dos registros}
+
+        \begin{table}[H]
+        \caption{Links acessados após dez horas do reinício dos registros}
+        \label{tab:resultadotr10h}
+        \footnotesize{
+            \begin{center}
+                \begin{tabular}{|c|c|r|r|r|r|r|r|}
+                \hline
+                \# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+                \hline
+                1 & 1-1-1 & 9,31582 & 8,67811 & 8,08376 & 7,5296 & 7,01306 \\
+                \hline
+                2 & 1-2-1 & 18,63165 & 17,35624 & 16,16754 & 15,05922 & 14,02614 \\
+                \hline
+                3 & 1-3-1 & 9,31691 & 8,68014 & 8,0866 & 7,53313 & 7,01717 \\
+                \hline
+                4 & 1-4-1 & 9,318 & 8,68217 & 8,08943 & 7,53664 & 7,02126 \\
+                \hline
+                5 & 1-5-2 & 9,32018 & 8,68624 & 8,09512 & 7,54371 & 7,02949 \\
+                \hline
+                6 & 5-6-2 & 18,64036 & 17,37247 & 16,19022 & 15,0874 & 14,05896 \\
+                \hline
+                7 & 5-7-2 & 9,32127 & 8,68827 & 8,09795 & 7,54723 & 7,03359 \\
+                \hline
+                8 & 5-8-2 & 9,32127 & 8,68827 & 8,09795 & 7,54723 & 7,03359 \\
+                \hline
+                9 & 1-9-3 & 20 & 19,99922 & 19,9977 & 19,99482 & 19,99089 \\
+                \hline
+                10 & 9-10-3 & 18,64689 & 17,38465 & 16,20726 & 15,10858 & 14,08363 \\
+                \hline
+                11 & 9-11-3 & 9,32454 & 8,69436 & 8,10647 & 7,55782 & 7,04593 \\
+                \hline
+                12 & 9-12-3 & 9,32454 & 8,69436 & 8,10647 & 7,55782 & 7,04593 \\
+                \hline
+                13 & 9-13-3 & 0 & 10 & 9,99963 & 9,99858 & 9,997 \\
+                \hline
+                14 & 9-14-3 & 0 & 0 & 10 & 9,99932 & 9,99811 \\
+                \hline
+                15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99947 \\
+                \hline
+                16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+                \hline
+                \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+        Na tabela \ref{tab:resultadotr10h}, o decréscimo dos valores é mais
+        acentuado que no primeiro teste. Isso ocorre pela maior
+        evaporação ocorrida neste intervalo.
+
+        \UTFPRsubsubsection{Links acessados após 24 horas do reinício dos registros}
+
+        \begin{table}[H]
+        \caption{Links acessados após vinte e quatro horas do reinício dos registros}
+        \label{tab:resultadotr24h}
+        \footnotesize{
+            \begin{center}
+                \begin{tabular}{|c|c|r|r|r|r|r|r|}
+                \hline
+                \# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+                \hline
+                1 & 1-1-1 & 8,39057 & 7,03988 & 5,90639 & 4,95517 & 4,15693 \\
+                \hline
+                2 & 1-2-1 & 16,78114 & 14,07976 & 11,81278 & 9,91034 & 8,31387 \\
+                \hline
+                3 & 1-3-1 & 8,39155 & 7,04153 & 5,90846 & 4,95749 & 4,15937 \\
+                \hline
+                4 & 1-4-1 & 8,39253 & 7,04317 & 5,91053 & 4,9598 & 4,16179 \\
+                \hline
+                5 & 1-5-2 & 8,3945 & 7,04647 & 5,91468 & 4,96445 & 4,16667 \\
+                \hline
+                6 & 5-6-2 & 16,78899 & 14,09293 & 11,82936 & 9,92889 & 8,33332 \\
+                \hline
+                7 & 5-7-2 & 8,39548 & 7,04812 & 5,91676 & 4,96677 & 4,1691 \\
+                \hline
+                8 & 5-8-2 & 8,39548 & 7,04812 & 5,91676 & 4,96677 & 4,1691 \\
+                \hline
+                9 & 1-9-3 & 20 & 19,99918 & 19,99758 & 19,99505 & 19,99151 \\
+                \hline
+                10 & 9-10-3 & 16,79488 & 14,10282 & 11,84181 & 9,94283 & 8,34795 \\
+                \hline
+                11 & 9-11-3 & 8,39842 & 7,05306 & 5,92298 & 4,97374 & 4,17642 \\
+                \hline
+                12 & 9-12-3 & 8,39842 & 7,05306 & 5,92298 & 4,97374 & 4,17642 \\
+                \hline
+                13 & 9-13-3 & 0 & 10 & 9,99961 & 9,99875 & 9,99739 \\
+                \hline
+                14 & 9-14-3 & 0 & 0 & 10 & 9,99953 & 9,99856 \\
+                \hline
+                15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99949 \\
+                \hline
+                16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+                \hline
+                \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+        Após a análise feita com os dados da Tabela
+        \ref{tab:resultadotr24h}, o decréscimo dos valores é ainda mais
+        acentuado em relação aos dois primeiros testes, devido ao maior
+        intervalo e conseqüentemente maior evaporação.
+
+        \UTFPRsubsection{Análise de resultados}
+
+        A tabela a seguir mostra a diferença de feromônio nos três testes
+        anteriores, após análise minuciosa feita das tabelas anteriormente
+        apresentadas nesta seção. A diferença é dada pela subtração da
+        quantidade de feromônio da última iteração (qf it05) pela quantidade
+        de feromônio da primeira iteração (qf it01).
+
+        \begin{table}[H]
+        \caption{Diferença de feromônio nos testes efetuados}
+        \label{tab:testesdiferencas}
+        \footnotesize{
+            \begin{center}
+            \begin{tabular}{|l|l|l|l|l|l|}
+            \hline
+            \multicolumn{1}{|c|}{Origem} & \multicolumn{1}{c|}{Destino} & \multicolumn{1}{c|}{Grupo} & \multicolumn{1}{c|}{dif 1h} & \multicolumn{1}{c|}{dif 10h} & \multicolumn{1}{c|}{dif 24h} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,65876} & \multicolumn{1}{c|}{4,55171} & \multicolumn{1}{c|}{8,36076} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{4} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{5} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{6} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{0,65876} & \multicolumn{1}{c|}{4,55171} & \multicolumn{1}{c|}{8,36076} \\
+            \hline
+            \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{7} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{8} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{9} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{0,02329} & \multicolumn{1}{c|}{0,01679} & \multicolumn{1}{c|}{0,01317} \\
+            \hline
+            \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{10} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{0,65876} & \multicolumn{1}{c|}{4,55171} & \multicolumn{1}{c|}{8,36076} \\
+            \hline
+            \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{11} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{12} & \multicolumn{1}{c|}{3} & \multicolumn{1}{c|}{0,32939} & \multicolumn{1}{c|}{2,27586} & \multicolumn{1}{c|}{4,18039} \\
+            \hline
+            \end{tabular}
+            \end{center}
+        }
+        \end{table}
+
+        A Tabela \ref{tab:testesdiferencas} que demonstra a diferença de
+        feromônio nos testes, mostra que a grande diferença é gerada pelo
+        intervalo de tempo entre o reinício dos registros e o momento do
+        teste.
+
+        Com os dados da tabela \ref{tab:testesdiferencas} pode-se
+        gerar o seguinte gráfico:
+
+        \UTFPRfigura{width=10cm}{testesOriant/teste_dif_horas/grafico.jpg}{Gráfico indicativo com diferença de feromônio}{fig:grafico:dif}
+
+        No gráfico \ref{fig:grafico:dif}, o eixo horizontal representa a variação das
+        iterações no tempo, o eixo vertical representa a quantidade
+        de feromônio em cada iteração.
+
+        É possível notar uma queda brusca na iteração 9. Isso ocorre pois a
+        dedução de feromônio não foi significativa, essa aresta foi
+        recentemente acessada e por isso em nenhuma das diferenças (dif) há
+        uma elevada dedução nesse momento.
+
+        \UTFPRsection{CONCLUSÃO}
+
+        Na primeira etapa dos testes pode-se observar que o modelo proposto
+        simula a evaporação de feromônio de forma similar à utilizada pelas
+        formigas, criando assim um mecanismo transparente de colaboração
+        entre os usuário de determinado \emph{website}. Os grafos gerados
+        fornecem uma visão física dos caminhos traçados e da quantidade de
+        feromônio em cada aresta.
+
+        Na segunda etapa de testes não foi possível testar o que era
+        esperado, pois os acessos foram simultâneos e assim não se pode
+        gerar uma sugestão relevante em um curto espaço de tempo,
+        principalmente porque os usuários não acessaram o sistema de forma
+        colaborativa.
+
+        Na terceira e última etapa de testes, se pode detalhar com precisão
+        a redução de feromônio em diferentes intervalos de tempo.
+
+        Com os resultados dos testes apresentados nesse capítulo, nota-se
+        que é possível, através de uma colaboração indireta de usuários, o
+        compartilhamento dos caminhos realizados durante a navegação.

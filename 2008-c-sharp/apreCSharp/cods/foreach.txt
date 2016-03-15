@@ -1,0 +1,7 @@
+int[] iSeq = new int[10];
+	
+foreach(int a in iSeq){
+	Console.Write(a);
+	Console.Write(" ");
+}
+

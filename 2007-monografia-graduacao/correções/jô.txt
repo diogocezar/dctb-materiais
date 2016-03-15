@@ -1,0 +1,47 @@
+Oi Diogo, tudo bem??
+
+Seguinte, li sua monografia.. 
+Fico mto legal.. =)
+Sou super curiosa pra entende melhor esse negócio das formigas.. rsrs
+E seu trabalho é bem interessante, facilita a vida das pessoas na web é uma boa... a liberdade de uso é tão grande que muitas das coisas que encontramos nao sao uteis... 
+Parabens!
+
+Eu não sei se qdo vc pediu pra ler seu trabalho vc já sabia que eu gosto mesmo de dá opinião em textos... rs mas eu anotei algumas coisinhas pra te falar.. rs
+Mas já vou avisando... As vezes eu do mto palpite.. Heheh Me desculpe se me tornar um pouco invasiva... rs 
+
+Algumas palavras erradas:
+
+pagina 10 - dinal (final) $ok$
+pagina 11 - diatancia (distancia) $ok$
+pagina 11 - tava (seria taxa?) $ok$
+
+Dá uma olhada tbm sobre a palavra "seção". Eu sempre me confundo entre "seção" e "sessão", mas se não me engano, o correto seria "seção". E sobre "subsessão" tbm, não costumo ver esse termo em outros trabalhos, normalmente aparece tudo como seção. $ok$
+
+Depois, na pagina 13 vc fala sobre o sistema AntWeb descrito na seçao 2.3.1. Quando li isso fiquei um pouco perdida pq nao me lembrava de ter lido nada sobre esse sistema AntWeb. Procurei pela palavra AntWeb e vi que a primeira vez que ela aparece é ali, na seçao 2.3.1 vc nao faz nenhuma referencia a esse sistema, pelo menos não diretamente. $ok$
+
+Uma outra sugestão é colocar na seção 3.1 (Descrição do projeto) as partes finais das seções dos fundamentos teóricos. Por exemplo, o último da seção 2.2 fala da utilização do conceito de adaptação dos links utilizado no projeto. Esse parágrafo, assim como os das outras seções (2.2.1 e 2.2.2), poderiam ser movidos para a seção 3.1 que fala especificamente do projeto desenvolvido. $ok$
+
+Na pagina 14 vc fala sobre a camada de navegacao adaptativa, eu fiquei um pouco confusa tentando imaginar se o sistema possui outras camadas e quais seriam elas. Entao talvez caberia alguma consideracao sobre isso na apresentacao do projeto. $ok$
+
+Na pagina 16 a formula 3.4 ficou um pouco perdida no final da pagina, talvez desse pra coloca-la apos item 9. $ok$
+
+Na paginca 18, o item 3.4 apresenta as restrições, mas são restricoes de que? Eu senti que ficou um texto solto, talvez coubesse uma explicacao sobre que restrições seram apresentadas a seguir. 
+
+Na pagina 24, requisito R9, não seria legal trocar admin por administrador? $ok$
+
+Ainda na pagina 24, o que é PO? rs $ok$
+
+Na pagina 51, tem um texto estranho: "os neuronios (classes) interagir entre sí". Dá uma olhada se é "interagir" mesmo. $ok$
+
+Pra finaliza, mais algumas sugestões sobre os artigos e trabalhos que já li.
+
+Quando referenciar uma figura pelo seu índice, acho que o correto é usa Figura (com F maiúsculo). O índice (número) da figura é considerado o nome dela dentro do texto, e por isso o F í maiúsculo. 
+
+Dá uma olhada nos marcadores. Tenta padroniza-los. Tem marcadores em que vc usa negrito, em outros itálicos. E verifica tbm a pontuacao final de cada item. $ok$
+
+E por último (depois chega de dar palpite, eu juro!), as equações. Nos artigos que eu li em que aparecem equações, eu nao vi elas serem refenciadas antes delas aparecerem. Por exemplo: "A fórmula de subtração de feromônio foi baseada no conceito de juros compostos e pode ser observada na equação 3.2", o que eu vejo seria "observada na equação:" e o 3.2 seria usado para referencias posteriores a equacao.
+
+Acho que era isso. Desculpa o monte de palpite aí no seu trabalho. E espero que tenha ajudado. ;) 
+
+E se precisar, estamos aí!!!
+Bjs e boa sorte... 

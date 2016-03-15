@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O T I M I Z A Ç Ã O   P O R   C O L Ô N I A S   D E   F O R M I G A S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:otimizacaocolonias]{OTIMIZAÇÃO POR COLÔNIAS DE FORMIGAS}
+
+    Há um conjunto de heurísticas, conhecidas como inteligência de
+    enxames (\emph{swarm intelligence}), que baseiam-se em um modelo
+    computacional que estuda o comportamento de agentes simples
+    interagindo entre si. Um particular interesse tem surgido sobre as
+    colônias de insetos (formigas, cupins, abelhas, etc), pois os insetos
+    isoladamente não têm um comportamento relevante, entretanto, quando
+    em grupo revelam-se uma organização bastante complexa.
+
+    A interação entre os insetos para produzir um sistema
+    auto-organizado pode ocorrer de duas formas, \emph{direta} ou
+    \emph{indireta}. A direta ocorre pelo contato direto entre os
+    insetos. O contato pode ser feito de forma física (antenas ou
+    mandíbulas), através do contato visual, ou ainda quimicamente pelos
+    odores exalados por outros insetos. A interação indireta ocorre
+    quando o indivíduo de uma população altera de alguma maneira seu
+    meio-ambiente próximo; conseqüentemente os outros indivíduos poderão
+    ter o seu comportamento alterado por essa modificação.
+
+    As principais características de um sistema de auto-organização são:
+    a \emph{descentralização}, em que o comportamento é definido
+    localmente; a \emph{flexibilidade}, em que os indivíduos possuem a
+    astúcia de se adaptar em ambientes dinâmicos; e a \emph{robustez},
+    que permite que a operacionalidade persista na ocorrência de falhas.
+
+    Para que a colônia se auto-organize algumas regras são
+    estabelecidas, especificando a forma de interação entre os
+    indivíduos. Quatro grupos principais resumem esse conjunto de regras
+    \cite{eri:heitor}:
+
+    \begin{itemize}
+        \item \emph{Realimentação positiva ou autocatalítica}:
+        ampliação dos melhores caminhos traçados;
+
+        \item \emph{Realimentação negativa}: é um contra-balanço da
+        alimentação positiva, e é utilizado para que caminhos pouco
+        utilizados sejam esquecidos com o passar do tempo;
+
+        \item \emph{Aleatoriedade}: a busca por novos caminhos;
+
+        \item \emph{Interações múltiplas}: um indivíduo único pode produzir
+        uma estrutura organizada por uma trilha estável de
+        feromônios. Porém, essa estrutura não será otimizada. Para
+        que a colônia encontre boas soluções, é necessário a
+        interação de múltiplos indivíduos entre si.
+    \end{itemize}
+
+        \UTFPRsection[sec:formigasreais]{FORMIGAS REAIS EM BUSCA DE ALIMENTO}
+
+        As formigas têm como função a procura e o transporte do alimento da
+        fonte até o formigueiro. Para realizar esse procedimento, a maioria
+        das espécies de formigas cria uma trilha que é feita com uma
+        substância química denominada feromônio. Essa substância é
+        depositada por cada inseto da colônia durante a sua movimentação
+        entre o formigueiro e a fonte de alimento.
+
+        Uma formiga, ao se deparar com dois caminhos diferentes, faz uma
+        escolha probabilística baseada na quantidade de feromônio presente
+        nesses caminhos. Logo, se há maior concentração de feromônio em
+        determinado caminho, será esse o caminho escolhido
+        \cite{eri:heitor}.
+
+        O feromônio evapora com o passar do tempo, assim sendo, um caminho
+        que não é constantemente visitado tende a desaparecer, ao contrário
+        do caminho oficial tomado pelas formigas.
+
+        No início do processo, quando um grupo de formigas está em busca de
+        alimento e ainda não há um caminho traçado, o grupo que optar
+        casualmente pelo menor caminho irá chegar ao alimento antes do grupo
+        que optar pelo caminho maior. Desta forma, vão acentuar o menor
+        caminho com feromônio na volta para o ninho. É questão de tempo até
+        que todos os membros da colônia estejam trafegando pelo caminho mais
+        curto \cite{artigo:dorigo96nt}.
+
+        A busca por alimento pelas formigas reais é ilustrada na Figura
+        \ref{fig:formigas}. A Figura \ref{fig:formigas}-A mostra o caminho traçado entre
+        o ninho e o alimento. A Figura \ref{fig:formigas}-B mostra o que acontece
+        logo após a inserção de um obstáculo no caminho. O inseto tende a
+        seguir cada uma das direções (esquerda ou direita) com probabilidade
+        igual de 50\%. Observa-se a ocorrência análoga no sentido inverso
+        \ref{fig:formigas}-C. Com tempo, o feromônio acumula-se mais rapidamente no
+        caminho mais curto ao redor do obstáculo, tornando assim o menor
+        caminho a ligação entre o ninho e o alimento
+        \cite{eri:heitor}.
+
+        \UTFPRfigura{width=1.0\textwidth}{aco/formigas.jpg}{Formigas em
+        busca de alimento encontram o menor caminho entre alimento e ninho}
+        {fig:formigas}
+
+        Através desta engenhosidade, que no âmbito computacional ficou
+        conhecida como ACO muitos problemas puderam ser solucionados, como é
+        o caso do problema do caixeiro viajante e roteamento de
+        pacotes, \cite{mono:interlegis}.
+
+        \UTFPRsection[sec:heuristicaaco]{A HEURÍSTICA ACO}
+
+        O algoritmo de otimização por colônia de formigas conhecido como
+        AntSystem \cite{artigo:antsystem}, é baseado na busca do caminho
+        mínimo em um grafo, ou seja, dentre todos os caminhos que ligam um
+        ponto inicial a um ponto final qual é o caminho mais curto entre
+        eles.
+
+        Existem diversas diferenças entre as formigas reais e as formigas
+        artificiais em um sistema ACO. As formigas artificiais, por exemplo,
+        têm memória, portanto são capazes de armazenar o caminho percorrido.
+        Elas não são completamente cegas, por isso, podem escolher entre
+        diversos arcos possíveis através de uma função heurística. Além
+        disso, o tempo é discreto, os eventos acontecem
+        seqüencialmente.
+
+        \UTFPRsubsection[subsec:descricaodometodo]{Descrição do Método}
+
+        Esse é o algoritmo clássico aplicado a problemas de busca e
+        otimização, como o problema do caixeiro viajante e roteamento de
+        pacotes \cite{mono:interlegis}.
+
+        Para cada aresta $(i,j)$ do grafo, uma variável $\tau(i,j)$ é
+        definida como trilha artificial de feromônio. Essa variável é
+        incrementada cada vez que as formigas passam pela trilha
+        correspondente (realimentação positiva), e decrementada ao final de
+        cada ciclo (realimentação negativa ou evaporação). A intensidade da
+        trilha de feromônio define a atratividade da trilha para as
+        formigas, ou seja, quanto maior a quantidade de feromônio maior a
+        probabilidade de uma formiga utilizar uma trilha \cite{eri:heitor}.
+
+        Em cada aresta $i$, uma formiga $k$ calcula a
+        probabilidade de seguir para a próxima aresta não
+        visitada $j$, a partir das equações  \ref{eq:probabilidade:pk} e \ref{eq:heuristica:n}:
+
+        \UTFPRequation{Método ACO: Probabilidade de escolha de um caminho}
+            \begin{eqnarray}
+                \label{eq:probabilidade:pk}
+                p_k(i,j) =
+                \frac{[\tau(i,j)]^\alpha.[\eta(i,j)]^\beta}
+                {\displaystyle\sum_{\imath\in{}N_i^k}[\tau(i,l)]^\alpha.[\eta(i,l)]^\beta}
+            \end{eqnarray}
+
+        A heurística é definida por:
+
+        \UTFPRequation{Método ACO: Heurística da probabilidade de escolha de um caminho}
+        \begin{eqnarray}
+            \label{eq:heuristica:n}
+            \eta(i,j) =
+            \frac{1}{d(i,j)}
+        \end{eqnarray}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+        \item $d(i,j)$ representa a distância entre os nodos $i$
+        e $j$, $N_i^k$ é o conjunto de destinos conectados a $i$
+        que ainda não foram visitadas e $\tau(i,j)$ é o valor da
+        trilha de feromônios no arco que conecta origem e
+        destino. $\alpha$ e $\beta$ influenciam na distância
+        entre origem e destino e na quantidade feromônio
+        presente em cada uma das arestas, se $\alpha = 0$ as
+        formigas seguirão a heurística do vizinho mais próximo e
+        se $\beta = 0$ as formigas selecionarão um caminho
+        aleatório.
+
+        \end{itemize}
+
+        O algoritmo \ref{eq:txevaporacao} representa a taxa de evaporação do
+        feromônio:
+
+        \UTFPRequation{Método ACO: Taxa de evaporação do feromônio}
+        \begin{equation}
+            \label{eq:txevaporacao}
+            \tau(i,j) = \rho.\tau(i,j) + \displaystyle\sum_{k=1}^m
+            \Delta\tau(i,j)
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+        \item $\rho$ representa a taxa de evaporação do feromônio;
+
+        \item $\Delta\tau$ é definido por:
+
+        \UTFPRequation{Método ACO: Condição para definição de $\Delta\tau$}
+        \begin{equation}
+            \label{eq:deltatau}
+            \Delta\tau(i,j) =
+            \begin{cases}
+                \frac{1}{L_k} & \text{se (i,j) usado} \\
+                0             & \text{contrario}
+            \end{cases}
+        \end{equation}
+
+        \end{itemize}
+
+    \UTFPRsection[sec:aplicacao]{ACO e HIPERMÍDIA}
+
+    Segundo \citeonline{mono:interlegis}, um sistema de hipermídia é um
+    grafo e nele existem vários caminhos possíveis para se chegar a um
+    nodo partindo de outro. Alguns caminhos são menores e a indicação
+    preferencial desses caminhos faz com que os usuários cheguem ao seu
+    objetivo de forma mais rápida. Veja um exemplo na Figura
+    \ref{fig:diagramanav}
+
+    \UTFPRfigura{width=0.7\textwidth}{aco/diagramanav.jpg}{Sistema hipermídia representado como um grafo}{fig:diagramanav}
+
+    Partindo desse princípio, pode-se fazer uma analogia com uma colônia
+    de formigas reais. Visto que cada usuário pode representar uma
+    formiga, o grafo gerado pelas páginas corresponderia aos diferentes
+    caminhos do formigueiro, o ponto inicial do usuário que é a página
+    principal corresponderia ao ninho ou ponto de partida das formigas,
+    e o objetivo do usuário corresponderia a comida que deve ser
+    encontrada. Pode-se ainda afirmar que, como a formiga, o usuário
+    consegue visualizar apenas o próximo passo a partir dos links
+    existentes na página atual, por ter também uma visão de curto
+    alcance \cite{artigo:antweb}.
+
+    Apesar da semelhança, o que causa o sucesso das colônias de
+    formiga em encontrar o alimento por uma forma
+    cooperativa de trabalho, ainda não ocorre na Internet, pois
+    os usuários não interagem para colaborar entre si na
+    navegação.
+
+    O propósito deste trabalho foi integrar um sistema baseado em HA
+    utilizando as heurísticas de ACO para criar um sistema de apoio à
+    navegação para os usuários de \emph{websites} comuns da internet.
+    Partindo do princípio que cada usuário representa um inseto,
+    rastreia-se o caminho percorrido e esse caminho fica disponível para
+    outros usuários que tenham os mesmos interesses.
+
+        \UTFPRsubsection[subsec:antweb]{Trabalho Relacionado: AntWeb}
+
+        O AntWeb \cite{mono:interlegis} é um sistema que proporciona aos
+        usuários de um determinado \emph{site} uma navegação cooperativa, baseada
+        no comportamento das formigas reais em busca de alimento. O sistema
+        orienta os visitantes com interesses similares às suas páginas de
+        destino através de uma matriz bidimensional, que representa as taxas
+        de feromônio de cada nodo para todos os outros. A quantidade de
+        feromônio depositada em cada célula da matriz corresponde ao quão
+        relevante uma página destino é perante uma página origem (corrente),
+        considerando um objetivo final como página alvo. Ou, de outra forma,
+        é um indicativo de resposta para a pergunta: estando no nodo $i$,
+        dar o passo para $j$, é uma boa escolha a fim de alcançar a página
+        destino $d$? Para isto, faz-se o cálculo da probabilidade de cada
+        formiga escolher ir para a página $j$, estando na página $i$ na
+        iteração $p$, a partir da matriz de feromônio, utilizando uma
+        heurística de custo baseada em tempo de obtenção e visita da página
+        $j$.
+
+        Um protótipo do AntWeb foi implantado em uma versão do portal
+        Interlegis (Portal da Comunidade Legislativa Brasileira
+        <http://www.interlegis.gov.br>). O portal serviu apenas como um
+        experimento, portanto, o sistema não foi efetivamente implantado no site
+        oficial. Os testes realizados apenas com simulações
+        computacionais indicaram boa performance. Entretanto, não foi
+        possível prever o comportamento do sistema com usuários reais
+        \cite{mono:interlegis}.

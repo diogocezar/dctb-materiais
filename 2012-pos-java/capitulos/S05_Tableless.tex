@@ -1,0 +1,190 @@
+\section[Tableless]{Tableless}
+
+\begin{frame}
+    \frametitle{Tableless - O que é?}
+    \begin{itemize}
+      \item \textbf{tableless} é uma tecnologia que deixa de lado as tabelas de
+HTML, para fazer implementação do layout com CSS, onde é possível separar a
+formatação e programação do sistema.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tableless - Vantagens}
+    \begin{itemize}
+      \item a \textit{diminuição do peso da página} (na realidade, o conteúdo da
+página é mostrado mais rápido, o que não significa que o peso da página seja
+menor) - isso, é claro, sempre dependendo de como o HTML é feito;
+
+      \item \textit{melhora da acessibilidade} - podem ser vistos em
+dispositivos móveis sem necessidade de versão especial e por deficientes
+visuais, embora não sejam muitos os sites tableless que carregam atualmente esta
+segunda característica.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Tableless - Como Fazer?}
+    \begin{itemize}
+      \item ao criar seus \textit{boxes} com definições de estilos segundo suas
+necessidades, não estarão disponíveis elementos HTML predefinidos. Você terá que
+inventar os seus próprios.
+
+      \item provavelmente haverão alguns ou talvez muitos \textit{boxes} CSS
+\texttt{<divs>};
+
+      \item devemos dar-lhes nomes que os identifique;
+      
+      \item isso é feito pelo identificador único: id;
+      
+      \framebreak
+      
+      \item um exemplo simples ocorre quando você divide sua página em três
+áreas horizontais.
+
+      \begin{itemize}
+       \item um topo ('header') contendo um logotipo e uma barra de navegação;
+       \item a seção do meio a seguir contém textos e imagens;
+       \item e embaixo teremos o rodapé ('footer') com os direitos autorais e
+uma reprodução da barra de navegação superior;
+      \end{itemize}
+      
+      \framebreak
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=5cm]{images/tableless.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item este exemplo foi construído com 5 \textit{boxes}
+horizontais, sendo os dois boxes a mais, para a barra de navegação e o logotipo,
+que foram posicionados logo abaixo do topo:
+
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=2.5cm]{images/tableless_layout.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item nas definições de estilos usamos um símbolo \# antes do
+nome que identifica 'id' o box:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  #header {...} 
+	  #navbar {...} 
+	  #logo {...} 
+	  #midsection {...} 
+	  #footer {...} 
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item então colocamos as definições de estilo para o box, dentro de sua
+respectiva 'id' como mostrado abaixo:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  <div id="header">...</div>
+	  <div id="navbar">...</div>
+	  <div id="logo">...</div>
+	  <div id="midsection">...</div>
+	  <div id="footer">...</div>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item em alguns casos é necessário utiliza o mesmo box por várias vezes em
+uma página;
+    \item neste caso poderemos reutilizar um box;
+    \item um box que pode ser reutilizado é nomeado com uma classe;
+    \item exatamente como se tem 'classes' de flores ou insetos, uma classe aqui
+é basicamente um mesmo box com conteúdo diferente;
+    \item para mostrar que temos uma 'classe' e não uma 'id' única, usamos um .
+(ponto) em lugar de uma \# ('tralha');
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Tableless - Exemplo}
+    \begin{itemize}
+      \item o exemplo terá o layout clássico citado anteriormente:
+      
+      \begin{itemize}
+       \item topo;
+       \item logo;
+       \item menu;
+       \item conteúdo;
+       \item título;
+       \item texto;
+       \item rodapé;
+       \item créditos;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item sem CSS:
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=7cm]{images/tableless_exemplo_1.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item formatação inicial:
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=7cm]{images/tableless_exemplo_2.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item formatação exibindo as bordas:
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=7cm]{images/tableless_exemplo_3.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item finalizando:
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=7cm]{images/tableless_exemplo_4.jpg}
+	  \end{center}
+      \end{figure}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item crie a estrutura descrita nos \textit{slides} anteriores;
+    \end{itemize}
+\end{frame}

@@ -1,0 +1,31 @@
+\section[Ambiente Distribuído]{Ambiente Distribuído}
+
+\begin{frame}
+    \frametitle{Aplicações \emph{Peer to Peer} (P2P) e \emph{PeerUnit}}
+    \begin{itemize}
+		\item aplicações \emph{Peer to Peer} (P2P):
+		\begin{itemize}
+			\item motivação: ser um sistema independente do ambiente de execução (grades ou nuvens);
+			%\item nós interconectados capazes de se auto-organizar com objetivo de compartilhar recursos;
+		\end{itemize}
+		\item \emph{PeerUnit}:
+		\begin{itemize}
+			\item concebido para realização de testes para sistemas P2P;
+			\item cada nó recebe um código pré-definido em Java;
+			\item no código são definidos instruções de como os elementos devem se comportar:
+			\begin{itemize}
+				\item ordem de execução;
+				\item tempo limite de execução;
+				\item quais nós devem executar.
+			\end{itemize}
+			\item é um sistema escalável;
+		\end{itemize}
+		\item modificações no \emph{PeerUnit}:
+		\begin{itemize}
+			\item identificação única para os nós;
+			\item acoplamento do coletor de dados;
+			\item adaptação para execução de operações;
+			\item limitação de tempo flexível;
+		\end{itemize}
+    \end{itemize}
+\end{frame}

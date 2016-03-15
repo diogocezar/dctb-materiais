@@ -1,0 +1,10 @@
+\chapter{APRESENTAÇÃO DO SUBSISTEMA PARA TESTES}\label{cap:apresubsistema}
+
+\UTFPRfigura{width=16cm}{sub/capa.jpg}{Página principal do
+subsistema}{fig:subPgPrincipal}
+
+\UTFPRfigura{width=16cm}{sub/noticia.jpg}{Detalhes de uma
+notícia}{fig:subDetalhesNot}
+
+\UTFPRfigura{width=5cm}{sub/menuAdmin.jpg}{Modo de
+Administração}{fig:subMenuAdmin}

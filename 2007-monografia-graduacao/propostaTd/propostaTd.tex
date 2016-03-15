@@ -1,0 +1,1093 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% U T F P R  /  C  O R N É L I O   P R O C Ó P I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MODELO PARA PROPOSTA / TRABALHO DE DIPLOMAÇÃO   %
+%                                                  %
+% E Q U I P E :                                    %
+%                                                  %
+% DIOGO CEZAR TEIXEIRA BATISTA                     %
+% <xgordo@gmail.com>                               %
+%                                                  %
+% RAFAEL AUGUSTO AMBROSIO ROSA                     %
+% <rafarafarosa@hotmail.com>                       %
+%                                                  %
+% Início : Agosto/2006                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,noheader,indentfirst,pnumplain,times,tocpage=plain]{abnt}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{sty/tabela-simbolos}
+\usepackage{sty/makeglo}
+\usepackage{sty/utfPR}
+\usepackage{graphicx,url}
+\usepackage{fancyhdr}
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=1.5cm,bmargin=1.5cm]{geometry}
+\usepackage[pdftex]{lscape}
+\usepackage[alf,abnt-and-type=e,abnt-etal-cite=2, bibjustif]{abntcite}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage{color}
+
+%\usepackage{url}
+%\usepackage{hyperref}
+%
+%\hypersetup{colorlinks=true,linkcolor=red,citecolor=blue}
+
+\UTFPRconfigs
+
+\begin{document}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  P R E - T E X  T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRnumRomanos
+
+    \UTFPRlistadefiguras
+
+    \UTFPRlistadetabelas
+
+    \UTFPRlistadesiglas
+
+    \UTFPRsumario
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  T E X T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRnumArabicos
+
+    %%%%%%%%%%%%%%%%%%%%%%%
+    % I N T R O D U Ç Ã O %
+    %%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter{INTRODUÇÃO}
+
+        A Internet representa atualmente um dos maiores meios de comunicação
+        global, por meio da qual milhares de pessoas interagem entre si, seja pela
+        escrita, voz ou vídeo.
+
+        Dentre os meios de comunicação disponíveis na Internet, os
+        \emph{websites} são responsáveis por grande parte das informações
+        trafegadas na rede. Um site é um conjunto de páginas, isto é, de
+        hipertextos, sistema para a visualização de informação cujos
+        documentos contém referências internas para outros documentos
+        (chamadas de \emph{hiperlinks} ou, simplesmente, \emph{links}),
+        acessíveis geralmente pelo protocolo
+        \UTFPRsigla{HTTP}{\emph{HyperText Transfer Protocol}} na Internet. \cite{livro:http}
+
+        As páginas num \emph{website} são encontradas a partir de uma
+        \UTFPRsigla{URL}{\emph{Universal Resource Locator}} inicial (página
+        principal) e geralmente residem no mesmo diretório de um servidor.
+        \cite{livro:http}
+
+        A maioria dos websites utiliza recursos da hipermídia, documento
+        hipertexto que incorpora textos, gráficos, sons, imagens e
+        animações, para apresentar as informações aos usuários.
+
+        Entretanto, nem sempre as ligações (\emph{links}) entre os
+        documentos estão organizadas de modo que o usuário consiga
+        facilmente atingir seu objetivo. Isso acontece devido a quantidade de
+        páginas e sub-páginas inseridas para representar partes do mesmo contexto,
+        ou ainda pelo fato que maioria das páginas \emph{Web} utiliza
+        mecanismos de representação embutidos em linguagem
+        \UTFPRsigla{HTML}{\emph{HyperText Markup Language}}, tornando a
+        definição da estrutura da página \emph{Web} bastante limitada e
+        dificultando sua análise semântica. \cite{mono:interlegis}
+
+        Apesar dos vários mecanismos de busca existentes, como Google
+        (<http://www.google.com>), Yahoo (<www.yahoo.com.br>) entre outros,
+        ainda se percebe a carência de uma mecanismo que oriente o usuário
+        sugerindo ou mostrando qual é o próximo passo para encontrar seu
+        objetivo.
+
+        Os termos orientação e navegação sugerem a concepção de
+        hiperdocumentos como espaços de informação onde os leitores podem
+        mover-se de uma parte para outra. Essa idéia certamente contribui
+        para caracterizar o mais citado problema dos leitores de hipertexto,
+        a "desorientação", que ocorre quando os leitores não sabem onde
+        estão, como chegaram lá, ou para onde deveriam ir.
+        \cite{artigo:aspcognitivo}
+
+        \UTFPRsigla{HA}{Hipermídia Adaptativa} é a área da ciência da
+        computação que se ocupa do estudo e desenvolvimento de sistemas,
+        arquiteturas, métodos e técnicas capazes de promover a adaptação de
+        hipermídia em geral às expectativas, necessidades,
+        preferências e desejos de seus usuários. \cite{atigo:hiperadapt}
+
+        A fim de suprir essas necessidades, a HA, através da navegação
+        adaptativa, procura gerar as ligações (\emph{links}) entre os assuntos
+        do site de forma que o usuário consiga minimizar sua desorientação,
+        formando assim uma rota até seu objetivo. A presente proposta está
+        inserida neste contexto.
+
+        No Capítulo \ref{cap:referencial} estão apresentados os principais
+        fundamentos teóricos, no Capítulo \ref{cap:objetivo} estão
+        apresentados o objetivo geral e os objetivos específicos, no
+        Capítulo \ref{cap:justificativa} estão relacionados os principais
+        motivos pelo qual o sistema deverá ser elaborado, no Capítulo
+        \ref{cap:metodologia} está descrita a metodologia de desenvolvimento
+        do projeto e as tecnologias utilizadas, no Capítulo
+        \ref{cap:riscos} estão apresentados os possíveis riscos
+        apresentados pelo sistema, no Capítulo \ref{cap:limites} estão
+        apresentados os principais tópicos que objetivam o sistema, no
+        Capítulo \ref{cap:recursos} estão descritos os recursos
+        computacionais disponíveis para desenvolvimento e os recursos
+        computacionais necessários para utilização do sistema e finalmente
+        no Capítulo \ref{cap:cronogramas} estão estipulados os cronogramas para
+        desenvolvimento do projeto.
+
+    \UTFPRchapter[cap:referencial]{REFERENCIAL TEÓRICO}
+
+        Segundo \citeonline{mono:interlegis}, um sistema de hipermídia é um grafo
+        e nele existem vários caminhos possíveis para se chegar à um nodo
+        partindo de outro. Alguns caminhos são menores que outros. A
+        indicação preferencial desses caminhos faz com que os usuários
+        cheguem ao seu objetivo de forma mais rápida.
+
+        \UTFPRfigura{width=0.7\textwidth}{diagramanav.jpg}{Sistema hipermídia representado como um grafo}{fig:diagramanav}
+
+        Observa-se na figura \ref{fig:diagramanav} a estrutura
+        exemplificado de um diagrama navegacional de um
+        \emph{website}, nota-se grande semelhança com a estrutura
+        de um grafo.
+
+        Partindo desse princípio, pode-se fazer uma analogia com
+        uma colônia de formigas reais, visto que cada usuário representa
+        uma formiga, o grafo gerado pelas páginas corresponde aos diferentes
+        caminhos do formigueiro, o ponto inicial do usuário (página
+        principal) corresponde ao ninho (ponto de partida das formigas) e o
+        objetivo do usuário corresponde a comida que deve ser encontrada.
+        Ainda pode-se afirmar que como a formiga, o usuário também tem uma
+        visão de curto alcance, ou seja consegue visualizar apenas o próximo passo.
+        \cite{atigo:antweb}
+
+        Apesar de tanta semelhança, o que causa o sucesso das colônias de
+        formiga em alcançar o objetivo de encontrar o alimento por uma forma
+        cooperativa de trabalho, ainda não ocorre na Internet, pois
+        os usuários não interagem para colaborar entre si na
+        navegação.
+
+        As formigas reais se comunicam indiretamente por uma substância
+        chamada feromônio. Essa substância é exalada espontaneamente por
+        todos os membros da colônia. Uma formiga ao se deparar com dois
+        caminhos diferentes faz uma escolha probabilística baseada na
+        quantidade de feromônio presente nestes caminhos. Logo, se há maior
+        concentração de feromônio em determinado caminho, será esse o
+        caminho escolhido. \cite{eri:heitor}
+
+        O feromônio evapora com o passar do tempo, assim sendo, um caminho
+        que não é constantemente visitado tende a desaparecer do caminho
+        oficial tomado pelas formigas.
+
+        No início do processo, quando um grupo de formigas está em busca de
+        alimento e ainda não há um caminho traçado, o grupo que optar
+        casualmente pelo menor caminho irá chegar ao alimento antes do grupo
+        que optar pelo caminho maior. Desta forma, vão acentuar o menor
+        caminho com feromônio na volta para o ninho. É questão de tempo até
+        que todos os membros da colônia estejam trafegando pelo caminho mais
+        curto. \cite{artigo:dorigo96nt}
+
+        A busca por alimento pelas formigas reais é ilustrada na figura
+        \ref{fig:formigas}. A figura \ref{fig:formigas}-A mostra o caminho traçado entre
+        o ninho e o alimento. A figura \ref{fig:formigas}-B mostra o que acontece
+        logo após a inserção de um obstáculo no caminho. O inseto tende a
+        seguir cada uma das direções (esquerda ou direita) com probabilidade
+        igual de 50\%. Observa-se a ocorrência análoga no sentido inverso
+        \ref{fig:formigas}-C. Com tempo, o feromônio acumula-se mais rapidamente no
+        caminho mais curto ao redor do obstáculo, tornando assim o menor
+        caminho a ligação entre o ninho e o alimento. \cite{eri:heitor}
+
+        \UTFPRfigura{width=1.0\textwidth}{formigas.jpg}{Formigas em busca de alimento encontram o menor caminho entre alimento e ninho}
+        {fig:formigas}
+
+        Através desta engenhosidade, que no âmbito computacional ficou
+        conhecida como \UTFPRsigla{ACO}{\emph{Ant Colony Optimization}}
+        muitos problemas puderam ser solucionados como é o caso do problema
+        do caixeiro viajante e roteamento de pacotes. \cite{mono:interlegis}
+
+    \UTFPRsection{Técnicas de Navegação Adaptativa}
+
+    Segundo \citeonline{atigo:hiperadapt} as técnicas de
+    \UTFPRsigla{NA}{Navegação Adaptativa} são os recursos usados pelos
+    sistemas de HA para informar ou influenciar o usuário no seu
+    processo de navegação.
+
+    As principais técnicas de NA são:
+
+    \begin{itemize}
+        \item \textbf{Orientação Direta}:
+            Decide em cada ponto da navegação qual o melhor nodo a ser visitado a
+            seguir. Como desvantagem, essa técnica não oferece suporte
+            no caso do usuário não desejar seguir a sugestão do
+            sistema.
+        \item \textbf{Classificação Adaptativa}:
+            Classifica os links de um nodo de acordo com sua
+            relevância.
+        \item \textbf{Ocultação Adaptativa}:
+            Consiste em restringir o espaço de navegação, ocultando os links para nodos não-relevantes.
+        \item \textbf{Anotação Adaptativa}:
+            Consiste em aumentar a informação existente nos links com alguma forma de anotação ou
+            comentário que podem dizer mais sobre o estado corrente dos nodos a
+            que se conectam.
+        \item \textbf{Geração de Links}:
+            Consiste em criar links adicionais automaticamente nos
+            nodos. Umas das desvantagens desta técnica é o
+            aumento no número de links existentes nos nodos, aumentando a
+            sobrecarga cognitiva e tornando o hiperespaço mais complexo.
+        \item \textbf{Mapas Adaptativos}:
+            Têm o objetivo de ajudar o usuário a entender a estrutura do
+            hiperespaço.
+    \end{itemize}
+
+    Para a presente proposta, as técnicas de NA empregadas serão:
+    Orientação Direta e Classificação Adaptativa.
+
+    \UTFPRsection{Trabalhos Relacionados}
+
+    \UTFPRsubsection{AntWeb}
+
+        O trabalho proposto está relacionado a um trabalho já
+        existente chamado AntWeb \cite{atigo:antweb,mono:interlegis}
+
+        O AntWeb é um sistema que proporciona aos usuários de um determinado
+        site uma navegação cooperativa, também baseada no comportamento das
+        formigas reais em busca de alimento. O sistema orienta os visitantes
+        com interesses similares às suas páginas de destino.
+
+        Um protótipo do AntWeb foi implantado em uma versão do portal
+        Interlegis (Portal da Comunidade Legislativa Brasileira
+        <http://www.interlegis.gov.br>). O portal serviu apenas como um
+        experimento e o sistema AntWeb não foi efetivamente
+        implantado no site oficial.
+
+        O AntWeb foi testado apenas com simulações computacionais, que
+        indicaram boa performance, entretanto não é possível prever o
+        comportamento do sistema com usuários reais. \cite{mono:interlegis}
+
+        Apesar dos testes realizados, e do bom desempenho obtido, fica claro
+        que o AntWeb ainda pode ser melhorado, pois é preciso determinar com
+        precisão as categorias de usuários para que o sistema possa
+        recuperar as páginas relevantes para os usuários de mesma categoria
+        \cite{mono:interlegis}
+
+        Nos testes do sistema AntWeb, foram gerados dados para
+        contornar o fato destas funcionalidades não estarem
+        implementadas.
+
+        A presente proposta também servirá de parâmetro para trabalhos
+        futuros, em que pretende-se coletar resultados e informar se o sistema
+        realmente funcionará com usuários reais.
+
+    \UTFPRsubsection{Tendências espaciais}
+
+            Com a otimização por colônia de formigas é
+            possível traçar uma linha que representa qual será a tendência, por exemplo, de crescimento de uma população. Ainda tomando uma população como exemplo, com o estudo de tendências espaciais é possível fazer
+            uma previsão de crescimento que irá indicar para que lugar a população tende a se
+            alastrar. \cite{artigo:tendespaci}.
+
+            \UTFPRfigura[\cite{artigo:tendespaci}]{width=7cm}{tendencias.jpg}{As regiões de uma cidade com pontos de agências bancárias}{fig:tendencias}
+
+            Na figura \ref{fig:tendencias} é traçada a tendência de expansão das agências bancárias de uma determinada cidade.
+
+    \UTFPRsubsection{\emph{Data mining} com otimização por colônia de formigas}
+
+    O trabalho de \citeonline{artigo:parpinelli} propõe um algoritmo
+    para a mineração de dados denominado \emph{Ant-mining}. O objetivo
+    do algoritmo é extrair regras da classificação de dados. O algoritmo
+    é inspirado na pesquisa sobre o comportamento das colônias de
+    formigas reais e reúne conceitos de mineração de dados. O objetivo
+    do algoritmo é gerar uma lista de regras que consegue uma solução
+    sub-ótima para a resolução de um determinado problema. Num
+    comparativo com outra técnica de mineração o \emph{Ant-mining} se mostrou
+    mais eficiente e a lista de regras descobertas foi consideravelmente
+    mais simples (menor) do que aquelas descobertas com outra técnica.
+    \cite{artigo:parpinelli}.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % O B J E T I V O  G E R A L %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:objetivo]{OBJETIVO GERAL}
+
+        Desenvolver um mecanismo de navegação adaptativa e cooperativa, com
+        base na sugestão de links selecionados a partir da meta-heurística
+        ACO e implementa-lo em um protótipo.
+
+    \UTFPRsection{OBJETIVOS ESPECÍFICOS}
+
+        O sistema será divididos em módulos descritos a seguir.
+
+    \UTFPRsubsection{Módulo: Computação de Feromônio}
+
+        O módulo de computação do feromônio, deve implementar de
+        fato a meta-heurística de ACO. Esse módulo é acionado toda
+        vez que um usuário trafega pelas páginas do \emph{website}.
+
+        A cada link acessado, antes do redirecionamento propriamente dito figura
+        \ref{fig:camadas}-3, uma camada (camada Ant) é invocada para computar a
+        origem e destino de determinado usuário, atualizando a taxa de
+        feromônio na aresta percorrida figura \ref{fig:camadas}-2.
+
+        Os algoritmos de ACO serão desenvolvidos em forma de componentes,
+        para que possam ser reutilizados em outros projetos.
+
+    \UTFPRsubsection{Módulo: Adaptação}
+
+        Antes da devolução da página em HTML, a camada de sugestão de links recolhe
+        as informações relevantes para o usuário solicitante, conforme a figura
+        \ref{fig:camadas}-4. Finalmente, a página é retornada com as sugestões
+        relevantes para o usuário.
+
+        Os visitantes poderão optar pela utilização do sistema. Ao se escolher
+        por navegar com o sistema habilitado, uma camada (em HTML
+        \emph{iframe}) é adicionada na parte superior do \emph{website} e
+        nela serão efetivamente adicionadas as sugestões de links, caso
+        contrário o site não sofrerá qualquer alteração, porém os links
+        percorridos pelos usuários não serão computados.
+
+    \UTFPRsubsection{Módulo: Administração}
+
+        \UTFPRfigura{width=1.0\textwidth}{camadas.jpg}{Funcionamento do sistema em
+        camadas}{fig:camadas}
+
+        É imprescindível que o usuário se auto-classifique em um dos grupos
+        pré-determinados pelo administrador do \emph{website}, pois a
+        relevância dos conteúdos será baseada no histórico de navegação dos
+        usuários de mesmo grupo.
+
+        O sistema poderá ser ajustado pelo administrador do \emph{website}
+        hospedeiro, através do qual será possível a personalização de:
+
+        \begin{itemize}
+
+            \item \textbf{Grupos de usuários} - Esses grupos deverão ser cadastrados de acordo com o
+            contexto do \emph{website} hospedeiro, sendo possível adicioná-los ou
+            removê-los. Os grupos devem ser bem definidos, para que o sistema
+            tenha um bom aproveitamento.
+
+            \item \textbf{Cores do sistema} - Para de tornar o sistema
+            adaptável ao estilo do \emph{website} hospedeiro, alguns estilos
+            pré-definidos estarão disponíveis. Para usuários avançados, com objetivo
+            de uma personalização específica, a folha de estilos \UTFPRsigla{CSS}{\emph{Cascading Style Sheets}} ficará
+            disponível para alterações.
+
+            \item \textbf{Cores dos links} - As cores dos links sugeridos
+            pelo sistema poderão ser configuradas de modo que um link
+            mais relevante fique mais destacado que outro.
+
+            \item \textbf{Exibição das sugestões} - Será possível alterar a
+            disposição das sugestões:
+
+            \begin{itemize}
+
+                \item \textbf{Disposição objetiva}: Mostrará qual é a página
+                alvo. Essa é a página que em média foi mais visitada pelos
+                outros elementos de um mesmo grupo. Essa disposição
+                implementa a técnica de orientação direta de
+                \citeonline{atigo:hiperadapt}.
+
+                \item \textbf{Disposição orientada}: Mostrará qual o caminho que se
+                deve seguir para chegar até a página alvo. Esse caminho é
+                traçado com base no histórico dos caminhos percorridos de usuários do mesmo grupo.
+
+                \item \textbf{Disposição por assuntos relacionados}:
+                Mostrará quais os links mais visitados pelos usuários de seu
+                grupo. Além da página alvo outras páginas também podem
+                interessar o usuário de determinado grupo, assim ao
+                selecionar a exibição por assuntos relacionados, obtém-se
+                uma lista das páginas mais relevantes para determinado.
+
+            \end{itemize}
+
+            \item \textbf{Configurações do sistema} - Determinadas
+            configurações de característica técnica, para administradores
+            avançados, também poderão ser configuradas. Estas
+            características são constantes matemáticas utilizadas nas
+            equações para o cálculo de atualização de feromônio ou sugestão
+            de links, por exemplo.
+
+            A equação \ref{eq:feromonio} \cite{mono:interlegis} mostra como é feito o cálculo da probabilidade na qual uma formiga escolhe ir da página $i$ para a página $j \in N_{i}$ na iteração $p$.
+
+            \begin{equation}
+                \label{eq:feromonio}
+                p_{ij}^d(p) =
+                \frac{[\tau_{j}^d(p)]^\alpha.[\eta_{j}(p)]^\beta}{\sum_{\forall\imath\in{}N}[\tau_{l}^d(p)]^\alpha.[\eta_{l}(p)]^\beta}
+                \forall j \in N_{i}
+            \end{equation}
+
+            Na qual $\tau_{j}^d(p)$ é a quantidade de feromônio na página $j$ na iteração $p$ para o
+            destino $d$; $N_{i}$ é o conjunto dos vizinhos da página $i$. $ \alpha \hspace{.1cm} $ e \space $\beta$ são
+            parâmetros que permitem controlar respectivamente os pesos relativos
+            a trilha de feromônio e o valor da heurística. $\eta_{j} = 1/ \omega t_{j}$ é uma heurística relacionada ao custo de usar a página $j$, onde:
+
+            \begin{equation}
+                \omega t_{j} = lt_{j} + \nu t_{j}
+            \end{equation}
+
+            Onde $\omega t_{j}$ é o tempo estimado na página $j$, sendo $lt_{j}$ o tempo estimado para obter a página $j$ através do browser, e $\nu t_{j}$ o tempo que o usuário levará para visitar a página.
+
+        \end{itemize}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % J U S T I F I C A T I V A %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:justificativa]{JUSTIFICATIVA}
+
+    A Internet é um meio de comunicação em constante desenvolvimento,
+    contém diversos tipos de conteúdos e abriga diferentes tipos de
+    usuários. Para usuários experientes, a busca por informações na rede
+    é intuitiva, pois isso faz parte de seu cotidiano. Entretanto nem
+    todos usuários têm a mesma facilidade para encontrar rapidamente o
+    que estão procurando. Isso ocorre devido a desorientação oferecida
+    por \emph{websites} que não contemplam algumas regras básicas de
+    acessibilidade/usabilidade.
+
+    Afim de suprir esta desorientação, sistemas de busca conseguem
+    filtrar uma grande quantidade de informação objetivando parte da
+    busca do usuário, mas não conseguem traçar com precisão o caminho
+    que deve ser percorrido até seu objetivo. Ainda nota-se uma carência
+    de alguma forma de assistência navegacional que oriente o usuário
+    até seu objetivo.
+
+    Percebe-se que mesmo com os mecanismos de busca, alguns usuários
+    ainda têm dificuldades de encontrar páginas de determinado assunto.
+    Isto ocorre pois, o que é oferecido como resultado se resume em uma
+    lista de \emph{websites} que contém palavras iguais à(s)
+    palavra(s)-chave(s) procurada(s). Apesar da grande ajuda oferecida,
+    uma busca menos detalhada pode trazer resultados irrelevantes para o
+    usuário.
+
+    Nota-se a carência de algum mecanismo que oriente o usuário dentro um
+    de determinado \emph{website}, pois fica mais fácil se localizar em
+    um site relevante que procurar por vários sites com com conteúdos
+    incoerentes à pesquisa. Outra vantagem do sistema de orientação é
+    que ao se navegar até o objetivo há a possibilidade de se descobrir
+    outros assuntos relevantes que podem estar relacionados ao assunto
+    procurado.
+
+    Para minimizar a desorientação, deve-se fornecer recursos para
+    permitir aos leitores a identificação de sua posição corrente em
+    relação à estrutura global, reconstruir o caminho que o levou a esta
+    posição, e distinguir entre as diferentes opções para mover-se a
+    partir desta posição. Por exemplo, a manutenção do histórico de
+    navegação (isto é, o caminho percorrido pelo usuário) auxilia o
+    leitor a reconstruir o caminho até a sua posição atual.
+    \cite{artigo:aspcognitivo}
+
+    O trabalho proposto pretende criar um mecanismo que,
+    independentemente do conteúdo ou diagramação do \emph{website}
+    hospedeiro, possa oferecer um mecanismo de orientação ajudando os
+    usuários a traçar o caminho até seu objetivo.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    % M E T O D O L O G I A %
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:metodologia]{METODOLOGIA}
+
+        Neste sistema, o processo de desenvolvimento adotado é baseado no
+        \UTFPRsigla{PDSU}{Processo de Desenvolvimento de Softwares
+        Unificado}, denotado nesse trabalho como \UTFPRsigla{UP}{\emph{Unified Process}}. Esse processo é usado em conjunto com a
+        \UTFPRsigla{UML}{\emph{Unified Modeling Language}} e o paradigma de
+        orientação a objetos.
+
+        A figura \ref{fig:work} representa graficamente as fases (concepção,
+        elaboração, construção e transição), tarefas do processo
+        (requisitos, análise, projeto, implantação e testes), e a quantidade
+        de trabalho estimado para tarefas específicas em cada fase.
+
+        \UTFPRfigura[\cite{arlow:2003}]{width=15.5cm,height=9cm}{fases_workflows.jpg}{Quantidade de
+        trabalho aplicada em cada workflow nas fases do
+        UP}{fig:work}
+
+            O UP é iterativo, incremental, dirigido por casos de uso e dividido
+            em quatro fases: concepção,elaboração, construção e
+            transição \cite{livro:up}:
+
+            \begin{itemize}
+
+                \item \textbf{Concepção:} Estabelece a viabilidade e escopo do sistema,
+                define e estrutura uma arquitetura, identifica os riscos, esclarece questões de custo-benefício. \cite{livro:up}
+
+                \item \textbf{Elaboração:} A elaboração deve coletar os requisitos, visando recolher o máximo de
+                informação útil e solidificar a arquitetura. Esta fase visa desenvolver a maioria dos casos
+                de uso e especificar as metas de qualidade \cite{livro:up}.
+
+                \item \textbf{Construção:} Desenvolve uma versão operacional do sistema que
+                possa ser entregue a usuários beta. Nesta etapa constrói-se maior parte dos modelos de
+                projeto, análise, instalação, implantação e teste \cite{livro:up}.
+
+                \item \textbf{Transição:} Fase final do projeto, quando é realizado a entrega do sistema aos usuários beta
+                com todas as funcionalidades finalizadas (e futuramente a todos os usuários). A divulgação do software, e
+                preparação dos usuários também fazem parte dessa
+                fase \cite{livro:up}.
+
+            \end{itemize}
+
+            Cada uma dessas fases é dividida em sub-processos chamados fluxos de trabalho ou \emph{workflows}. Cada fluxo de
+            trabalho tem um tema técnico específico, enquanto as fases constituem divisões gerenciais,
+            caracterizadas por atingirem metas bem definidas. \cite{livro:engenharia} Podem acontecer uma ou mais
+            iterações por fase do processo, cada iteração gerará uma gama de artefatos específicos dos fluxo
+            de trabalho.
+
+            É proposto, com o uso desta metodologia e base nos workflows citados, gerar os seguintes
+            artefatos para fins de documentação:
+
+            \begin{itemize}
+
+                \item Requisitos: Fluxo que visa a obter um conjunto de requisitos de um produto, aprovado
+                pelo cliente e desenvolvedor \cite{livro:engenharia}.
+
+                \begin{itemize}
+
+                    \item Levantamento dos requisitos funcionais e
+                    não-funcionais;
+
+                    \item Levantamento dos atores e casos de uso;
+
+                    \item Levantamento dos riscos;
+
+                    \item Especificação dos casos de uso;
+
+                    \item Diagrama de caso de uso;
+
+                \end{itemize}
+
+
+            \end{itemize}
+
+            \begin{itemize}
+
+                \item Análise: Fluxo cujo objetivo é detalhar, estruturar, e validar os requisitos, de forma
+                que esses possam ser usados como base para o planejamento detalhado \cite{livro:engenharia}.
+
+                \begin{itemize}
+
+                    \item Diagramas de classes de análise;
+
+                    \item Refinamento dos casos de uso;
+
+                    \item Especificação de casos de uso;
+
+                    \item Diagrama de seqüencia;
+
+                \end{itemize}
+
+                \item Projeto: Fluxo cujo objetivo é formular um modelo estrutural do produto que sirva de
+                base para a implementação \cite{livro:engenharia}.
+
+                \begin{itemize}
+
+                    \item Diagrama de classe de projeto;
+
+                    \item \UTFPRsigla{MR}{Modelo Relacional};
+
+                    \item Diagrama de pacotes;
+
+                    \item Manual do usuário;
+
+                \end{itemize}
+
+                \item Implementação: Fluxo cujo objetivo é realizar o projeto em termos de componentes de
+                código \cite{livro:engenharia}.
+
+                \begin{itemize}
+
+                    \item Codificação do sistema;
+
+                    \item Implementação do MR;
+
+                    \item Diagrama de implantação;
+
+                    \item Diagrama de componentes;
+
+                \end{itemize}
+
+                \item Teste: Fluxo cujo objetivo é verificar os resultados da implementação
+                \cite{livro:engenharia}.
+
+                \begin{itemize}
+
+                    \item Gerar casos de teste de todas as funcionalidades do
+                    sistema;
+
+                    \item Documento de teste de caixa preta;
+
+                \end{itemize}
+
+            \end{itemize}
+
+    \UTFPRsection{TECNOLOGIA}
+
+        O trabalho será implementado utilizando as seguintes tecnologias:
+
+        \UTFPRsubsection{PHP}
+
+        \UTFPRsigla{PHP}{\emph{Hypertext PreProcessor}} é uma linguagem de script para uso em servidores. O servidor faz
+        a codificação dos scripts PHP, retornando um resultado em HTML para
+        o navegador. Este tipo de interação permite algumas operações
+        complexas, possibilitando assim a elaboração de páginas dinâmicas.
+        \cite{artigo:definicoes}
+
+        A escolha da linguagem está fortemente relacionada com o poder que a
+        linguagem oferece e o seu crescimento. A linguagem PHP vem crescendo
+        exponencialmente nos últimos anos. No início de 1999, pouco mais de
+        50 mil sites utilizavam a linguagem PHP, enquanto que no início de
+        2003 esse número ultrapassava 10 milhões. \cite{livro:php2}
+
+        Segundo \citeonline{curso:php} são vantagens do PHP:
+
+        \begin{enumerate}
+            \item Linguagem de fácil aprendizado;
+
+            \item Performance e estabilidade excelentes;
+
+            \item Código-aberto (não necessitando licença de uso e
+            podendo alterá-lo conforme as necessidades);
+
+            \item Suporte nos principais servidores de páginas existentes;
+
+            \item Suporte aos principais banco de dados existentes;
+
+            \item Multipaltaforma e portável;
+
+            \item Suporte a uma grande variedade de padrões e protocolos, como \UTFPRsigla{XML}{\emph{Extensible Markup Language}},
+            \UTFPRsigla{DOM}{\emph{Document Object Model}}, \UTFPRsigla{IMAP}{\emph{Internet Message Access Protocol}},
+            \UTFPRsigla{POP3}{\emph{Post Office Protocol}}, \UTFPRsigla{LDAP}{\emph{Lightweight Directory Access Protocol}}, HTTP,
+            \UTFPRsigla{FTP}{\emph{File Transfer Protocol}}, entre outros.
+        \end{enumerate}
+
+        No projeto, a linguagem PHP (em sua versão 5) será utilizada por implementar
+        os paradigmas da orientação a objetos, tornando possível a
+        implementação efetiva das classes projetadas.
+
+        \UTFPRsubsection{CSS}
+
+        Cascading Style Sheets (CSS) são folhas estilos para páginas web e
+        possibilitam a mudança da aparência simultânea de todas as páginas relacionadas
+        com o mesmo estilo.
+
+        Ao invés de colocar a formatação dentro do código, o programador
+        cria um \emph{link} (ligação) para uma página que contém os estilos,
+        procedendo de forma idêntica para todas as páginas de um portal.
+
+        Quando quiser alterar a aparência do portal basta portanto modificar
+        apenas um arquivo. \cite{livro:css}
+
+        As folhas de estilo CSS serão utilizadas para a customização
+        da camada de apoio à navegação, a fim de tornar a camada
+        semelhante ao estilo do \emph{website} hospedeiro.
+
+        \UTFPRsubsection{JavaScript}
+
+        JavaScript é uma linguagem de programação que proporciona maior
+        interatividade com os usuários. Os programas feitos em JavaScript
+        permitem que praticamente todas as aplicações sejam manipuladas no
+        browser do usuário, desde validação de formulários, apresentação de
+        novas janelas, manipulação de imagens, criação de camadas, cálculos
+        complexos, e muitas outras ações que podem tornar as páginas
+        extremamente interativas \cite{livro:php}.
+
+        A linguagem JavaScript será utilizada para validações de
+        campos e nos componentes feitos em \UTFPRsigla{Ajax}{\emph{Asynchronous JavaScript and XML}}.
+
+        \UTFPRsubsection{Ajax}
+
+        Ajax é o uso de Javascript e XML (e derivados) para tornar o navegador mais
+        interativo com o usuário, utilizando-se de solicitações assíncronas
+        de informações. Ajax não é uma tecnologia, são realmente várias
+        tecnologias trabalhando em conjunto, cada uma fazendo sua parte,
+        oferecendo novas funcionalidades.
+
+        Uma de suas principais funcionalidades é poder processar informações sem
+        a necessidade de recarregar o navegador, se assemelhando à aplicações desktop.
+        Embora muito útil, o Ajax usado em demasia pode tornar uma aplicação mais lenta que o
+        necessário.
+
+        No projeto, o Ajax será aplicado uma camada de trabalho
+        (\emph{framework}) denominada sAjax. Disponível em:
+        <http://www.modernmethod.com/sajax/>.
+
+
+        \UTFPRsubsection{UML}
+
+        A UML é uma linguagem gráfica para visualização, especificação,
+        construção e documentação de artefatos de sistemas complexos
+        de software. A UML proporciona uma forma-padrão para a
+        preparação de planos de arquitetura de projetos de sistemas,
+        incluindo aspectos conceituais tais como processos de
+        negócios e funções do sistema, além de itens concretos como
+        as classes escritas em determinada linguagem de programação,
+        esquemas de bancos de dados e componentes de software
+        reutilizáveis. \cite{livro:uml}
+
+        No projeto, a linguagem UML servirá para a documentação dos
+        artefatos descritos no capítulo \ref{cap:metodologia} dessa
+        proposta.
+
+        \UTFPRsubsection{PEAR}
+
+        \UTFPRsigla{PEAR}{\emph{PHP Extension and Application Repository}} é
+        um framework e um sistema de distribuição de
+        componentes reutilizáveis PHP. O PEAR oferece um conjunto amplo de
+        bibliotecas estruturadas de código aberto para usuários, onde cada
+        biblioteca é considerada um projeto separado com seu próprio grupo
+        de desenvolvimento, número de versões, ciclo de \emph{release} e
+        documentação. \cite{monografia:lucas}
+
+        Dentre os principais componentes deverão ser utilizados:
+
+        \begin{itemize}
+                \item \textbf{PEAR::DB} : Pacote responsável pela camada de abstração do banco de
+                dados.
+                \item \textbf{PEAR::HTML\_Template\_IT} : Pacote que fornece uma \emph{engine},
+                possibilitando trabalhar com blocos e substituição de \emph{tags}. Com o
+                uso deste pacote é possível separar a apresentação do sistema (HTML,
+                CSS e Javascript) da lógica de apresentação (PHP).
+        \end{itemize}
+
+        Os componentes PEAR, além de serem desenvolvidos de forma genérica,
+        podendo ser aplicados no desenvolvimento de diferentes projetos,
+        possibilitam a modificação e adaptação dos mesmos, conforme
+        necessidade do projeto em desenvolvimento.
+
+        Os componentes PEAR podem ser encontrados no \emph{website}
+        <http://pear.php.net>
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % A N A L I S E   D E   R I S C O S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:riscos]{ANÁLISE DE RISCOS}
+
+        \begin{table}[H]
+        \centering
+             \begin{minipage}{\linewidth}
+                    \caption{Descrição dos riscos do sistema}
+                    \label{tab:riscos}
+                    \begin{tabular}{|p{0.7cm}|p{11cm}|p{1.5cm}|p{1.5cm}|}
+                        \hline
+                        ID & Risco & Categoria & \UTFPRfoot{PO}{\UTFPRsigla{PO}{Probabilidade de Ocorrência}} \\
+                        \hline
+                        R1 & O sistema poderá tornar um site \textbf{dinâmico} mais lento que um padrão aceitável & Técnico & Média \\
+                        \hline
+                        R2 & O sistema poderá isolar certas áreas do site, criando "\textbf{áreas mortas}" & Técnico & Baixa \\
+                        \hline
+                        R3 & Os algoritmos genéticos podem levar mais tempo que o previsto para serem desenvolvidos  & Técnico & Baixa \\
+                        \hline
+                        R4 & O sistema pode não ser aceito, por ser lento ou não se enquadrar nos \emph{websites} atuais & Negócio & Baixa \\
+                        \hline
+                        R5 & Os algoritmos genéticos podem causar um maior custo de processamento que o esperado & Projeto & Baixa \\
+                        \hline
+                        R6 & Pode-se deparar com dados de backup corrompidos & Técnico & Baixa \\
+                        \hline
+                        R7 & O sistema pode não gerar a melhor sugestão de link para o usuário & Técnico & Média \\
+                        \hline
+                        R8 & O usuário prefere procurar seu objetivo que utilizar o sistema de sugestão & Técnico & Baixa \\
+                        \hline
+                        R9 & O sistema pode não funcionar caso o admin do \emph{website} hospedeiro não defina corretamente classes para os usuários & Técnico & Média \\
+                        \hline
+                        R10 & Usuários não são formigas, não há como prever seu comportamento no sistema proposto, podendo tornar o sistema completamente ineficaz & Técnico & Média \\
+                        \hline
+                \end{tabular}
+            \end{minipage}
+        \end{table}
+
+        \vspace{0.5cm}
+
+        Em um trabalho de pesquisa científica, o resultado não pode ser
+        previsto, diferente de um sistema comercial em que o resultado deve
+        ser traçado como o objetivo da equipe. Este trabalho propõe testar uma
+        idéia e coletar seus resultados, podendo assim divulgar sua eficácia ou suas deficiências.
+
+        Os riscos citados têm como parâmetro suposições com o
+        conhecimento técnico obtido ao longo do curso, entretanto não podem
+        ser tomadas como realidade, tão pouco sua PO como real, e sim
+        apenas como uma estimativa.
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % L I M I T E S   D O   S I S T E M A %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:limites]{LIMITES DO SISTEMA}
+
+        É objetivo dessa proposta traçar o escopo do projeto,
+        deixando claro quais são os limites do sistema.
+
+        \begin{table}[H]
+        \centering
+             \begin{minipage}{\linewidth}
+                    \caption{Descrição dos limites do sistema}
+                    \label{tab:riscos}
+                    \begin{tabular}{|p{0.7cm}|p{15cm}|}
+                        \hline
+                        ID & Limite do sistema\\
+                        \hline
+                        L1 & O sistema não se irá direcionar o usuário a seu objetivo, apenas orientá-lo \\
+                        \hline
+                        L2 & O sistema não é um \emph{website} e sim uma ferramenta de orientação aos usuários \\
+                        \hline
+                        L3 & O sistema não funcionará isolado, deverá ser aplicado a um \emph{website} hospedeiro \\
+                        \hline
+                        L4 & O sistema não fará uma busca no web site hospedeiro \\
+                        \hline
+                        L5 & O sistema não cria as classificações de usuários \\
+                        \hline
+                        L6 & O sistema não cadastrará os usuários \\
+                        \hline
+                \end{tabular}
+            \end{minipage}
+        \end{table}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % R E C U R S O S   C O M P U T A C I O N A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:recursos]{RECURSOS COMPUTACIONAIS}
+
+    Os recursos necessários são divididos entre:
+
+    \UTFPRsection{RECURSOS DISPONÍVEIS PARA DESENVOLVIMENTO}
+
+    \UTFPRsubsection{Recursos de Hardware}
+
+        \begin{enumerate}
+
+        \item Microcomputador Desktop:
+
+        \begin{enumerate}
+            \item \textbf{Processador:} AMD Athlon(tm) XP 2700+ (2.16 GHz);
+            \item \textbf{Memória:} 512 MB;
+            \item \textbf{Armazenamento:} 120GB + 40GB;
+        \end{enumerate}
+
+        \item Microcomputador Notebook:
+
+        \begin{enumerate}
+            \item \textbf{Modelo:} HP Pavilion dv1040;
+            \item \textbf{Processador:} Pentium M Centrino  (1.7 GHz);
+            \item \textbf{Memória:} 512 MB;
+            \item \textbf{Armazenamento:} 60GB;
+        \end{enumerate}
+
+        \end{enumerate}
+
+    \UTFPRsubsection{Recursos de Software}
+
+        \begin{enumerate}
+
+        \item Sistemas Operacionais:
+
+        \begin{enumerate}
+
+            \item \textbf{Windows XP Professional Edition SP2 PT-BR}
+            $\rightarrow$ Sistema operacional utilizado com o
+            microcomputador \emph{desktop};
+
+            \item \textbf{Windows XP Home Edition SP2 EN-US}
+            $\rightarrow$ Sistema operacional utilizado com o
+            microcomputador \emph{notebook};
+
+        \end{enumerate}
+
+        \item Outros Softwares:
+
+        \begin{enumerate}
+            \item \textbf{Adobe Photoshop CS2} $\rightarrow$
+            Necessário para a construção dos \emph{layouts} (\emph{design}) do
+            sistema.
+
+            \item \textbf{Adobe Acrobat Reader Professional 7.0}
+            $\rightarrow$ Necessário para visualização e alteração
+            do \UTFPRsigla{PDF}{\emph{Portable Document Format}} referente
+            à monografia.
+
+            \item \textbf{Apache HTTP Server 1.3.33} $\rightarrow$
+            Servidor HTTP com suporte a linguagem PHP.
+
+            \item \textbf{Macromedia Dreamweaver 8.0} $\rightarrow$
+            Utilizado para a codificação e design do sistema.
+
+            \item \textbf{Visual Paradigm versão 5.2} $\rightarrow$
+            Utilizado para construção dos diagramas UML.
+
+            \item \textbf{Mozilla Firefox versão 1.5.0.5}
+            $\rightarrow$ Navegador compatível com as especificações HTML 4.01,
+            CSS 2, e possui suporte a JavaScript. Utilizado para
+            testes no sistema.
+
+            \item \textbf{Internet Explorer 6.0}
+            $\rightarrow$ Navegador compatível com as especificações HTML 4.01,
+            CSS 2, e possui suporte a JavaScript. Utilizado para
+            testes no sistema.
+
+            \item \textbf{winEdit 5.4} $\rightarrow$ Programa
+            utilizado para codificação da monografia em \LaTeX.
+
+            \item \textbf{PostGreSQL 8.0.1} $\rightarrow$ Banco de
+            dados utilizados no projeto.
+
+            \item \textbf{pgAdmin 1.4.2} $\rightarrow$ Ferramenta
+            para gerenciamento do banco de dados PostGreSQL.
+
+            \item \textbf{ERwin 4.0} $\rightarrow$ Ferramenta para
+            criação dos diagramas de entidades e relacionamentos.
+
+            \item \textbf{Cerberus FTP Server} $\rightarrow$
+            Servidor FTP.
+
+            \item \textbf{MiKTeX 2.5} $\rightarrow$ Compilador
+            \LaTeX{} para Windows.
+
+            \item \textbf{PHP 5.1.4} $\rightarrow$ Linguagem de
+            programação utilizada no projeto.
+
+            \item \textbf{JabRef 2.1} $\rightarrow$ Ferramenta para
+            criação de referências bibliográficas.
+
+
+            \item \textbf{LaTable 0.7.2} $\rightarrow$ Ferramenta
+            para criação de tabelas.
+
+        \end{enumerate}
+
+        \end{enumerate}
+
+    \UTFPRsection{RECURSOS NECESSÁRIOS PARA UTILIZAÇÃO}
+
+    \UTFPRsubsection{Usuário}
+
+        Para utilizar o sistema o usuário deverá possuir um microcomputador
+        conectado a Internet com um navegador compatível com as
+        especificações HTML 4.01, CSS 2, e deve possuir suporte a
+        JavaScript.
+
+    \UTFPRsubsection{\emph{Website} Hospedeiro}
+
+        O sistema proposto, poderá ser implantado em \emph{websites} comuns
+        que contemplem determinadas restrições, tais como:
+
+        \begin{itemize}
+            \item O \emph{website} deve estar rodando em um navegador
+                compatível com as especificações HTML 4.01, CSS 2, e
+                deve possuir suporte a JavaScript.
+
+            \item O \emph{website} deve suportar a linguagem de programação
+            PHP.
+
+            \item O \emph{website} deve possuir suporte ao banco de dados
+            PostGreSQL 8.1, com disponibilidade de um banco de dados para o sistema a ser implantado;
+
+        \end{itemize}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+    % C R O N O G R A M A S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRchapter[cap:cronogramas]{CRONOGRAMAS}
+
+    \UTFPRsection{Atividades}
+
+    \begin{itemize}
+        \item[A1.] Reunião com orientador;
+        \item[A2.] Pesquisa bibliográfica;
+        \item[A3.] Redação da monografia;
+        \item[A4.] Defesa do trabalho de diplomação;
+    \end{itemize}
+
+    \UTFPRsection{Disciplinas}
+
+    \begin{itemize}
+        \item[D1.] Requisitos;
+        \item[D2.] Análise;
+        \item[D3.] Projeto;
+        \item[D4.] Implementação;
+        \item[D5.] Testes;
+    \end{itemize}
+
+    \UTFPRsection{Iterações}
+
+    \begin{itemize}
+        \item[I1.] Iteração \#1 $\rightarrow$ Módulo: Computação de
+        Feromônio; (Marcado com:
+        {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}})
+        \item[I2.] Iteração \#2 $\rightarrow$ Módulo: Adaptação; (Marcado com:
+        {\textcolor[rgb]{0.53,0.00,0.00}{\textbullet}})
+        \item[I3.] Iteração \#3 $\rightarrow$ Módulo: Administração;
+        (Marcado com:
+        {\textcolor[rgb]{0.00,0.25,0.00}{\textbullet}})
+    \end{itemize}
+
+
+    As tarefas estão divididas dentro do prazo previsto para a execução
+    deste trabalho conforme as tabelas \ref{tab:cronograma1} e
+    \ref{tab:cronograma2}.
+
+    \begin{landscape}
+
+        \begin{table}[H]
+        \centering
+             \begin{minipage}{\linewidth}
+                    \caption{Cronograma das atividades desenvolvidas}
+                    \label{tab:cronograma2}
+                    %\begin{tabular}{|p{2.6cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+                    \begin{tabular}{|p{2.6cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+                    \hline
+                    \multicolumn{1}{|c|}{Atividades} & \multicolumn{4}{c|}{Nov/06} & \multicolumn{4}{c|}{Dez/06} & \multicolumn{4}{c|}{Jan/07} & \multicolumn{4}{c|}{Fev/07} & \multicolumn{4}{c|}{Mar/07} & \multicolumn{4}{c|}{Abr/07} & \multicolumn{4}{c|}{Maio/07} & \multicolumn{4}{c|}{Jun/07} & \multicolumn{4}{c|}{Jul/07} \\
+                    \hline
+                    & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 \\
+                    \hline
+                    A1 &  &  &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet &  &  \\
+                    \hline
+                    A2 &  &  &  &  & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet &  &  &  &  &  &  &  &  &  &  &  &  \\
+                    \hline
+                    A3 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \textbullet &  & \textbullet &  & \textbullet &  & \textbullet & \textbullet & \textbullet & \textbullet & \textbullet &  &  &  \\
+                    \hline
+                    A4 &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & \textbullet \\
+                    \hline
+                    \end{tabular}
+             \end{minipage}
+        \end{table}
+
+        \begin{table}[H]
+        \centering
+             \begin{minipage}{\linewidth}
+                    \caption{Cronograma da metodologia de desenvolvimento}
+                    \label{tab:cronograma1}
+                        \begin{tabular}{|p{2.6cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+                        \hline
+                        \multicolumn{1}{|c|}{Atividades} & \multicolumn{4}{c|}{Nov/06} & \multicolumn{4}{c|}{Dez/06} & \multicolumn{4}{c|}{Jan/07} & \multicolumn{4}{c|}{Fev/07} & \multicolumn{4}{c|}{Mar/07} & \multicolumn{4}{c|}{Abr/07} & \multicolumn{4}{c|}{Maio/07} & \multicolumn{4}{c|}{Jun/07} & \multicolumn{4}{c|}{Jul/07} \\
+                        \hline
+                        & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 & 1 & 2 & 3 & 4 \\
+                        \hline
+                        D1 &  &  &  & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} &  &  &  &  &  & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} &  &  &  &  &  & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} &  &  &  &  &  &  &  &  \\
+                        \hline
+                        D2 &  &  &  &  &  & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} &  &  &  &  &  & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} &  &  &  &  &  & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} &  &  &  &  &  &  \\
+                        \hline
+                        D3 &  &  &  &  &  &  &  & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} &  &  &  &  &  & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} &  &  &  &  &  & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} &  &  &  &  \\
+                        \hline
+                        D4 &  &  &  &  &  &  &  &  &  &  &  & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} &  &  &  &  &  &  &  &  & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} &  &  &  &  &  &  &  &  & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} &  &  &  \\
+                        \hline
+                        D5 &  &  &  &  &  &  &  &  &  &  &  &  & {\textcolor[rgb]{0.00,0.00,0.46}{\textbullet}} &  &  &  &  &  &  &  &  &  & \textcolor[rgb]{0.53,0.00,0.00}{\textbullet} &  &  &  &  &  &  &  &  &  & \textcolor[rgb]{0.00,0.25,0.00}{\textbullet} &  &  &  \\
+                        \hline
+                    \end{tabular}
+             \end{minipage}
+        \end{table}
+    \end{landscape}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  P Ó S - T E X T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRbibliographystyle{abnt-alf}
+
+    \UTFPRbibliografia{bib/bibliografia}
+
+\end{document}

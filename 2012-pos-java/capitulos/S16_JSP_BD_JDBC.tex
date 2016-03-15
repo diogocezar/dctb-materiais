@@ -1,0 +1,212 @@
+\section[JSP Banco de Dados (JDBC)]{JSP Banco de Dados (JDBC)}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Banco de Dados (JDBC)}
+    \begin{itemize}
+      \item \textit{Java Database Connectivity} ou JDBC é um conjunto de classes
+e interfaces (API) escritas em Java que fazem o envio de instruções SQL para
+qualquer banco de dados relacional;
+      \item Api de baixo nível e base para api's de alto nível;
+      \item Amplia o que você pode fazer com Java;
+      \item Possibilita o uso de bancos de dados já instalados; 
+      \item Para cada banco de dados há um driver JDBC;
+      
+      \framebreak
+      
+      \item exemplo separado em arquivos:
+      
+      \begin{itemize}
+	\item bd:
+	\begin{itemize}
+	 \item ConnectionBase - É a base para a conexão ao banco de dados;
+	 \item DataBase - Herda a ConnectionBase e configura o banco de dados
+baseado nas constantes definidas na classe ConfigSite;
+	\end{itemize}
+	\item config:
+	\begin{itemize}
+	  \item ConfigSite - Seta as configurações do banco e do site em
+questão;
+	\end{itemize}
+	\item errors:
+	\begin{itemize}
+	  \item Error - Seta as mensagens de erro do sistema;
+	\end{itemize}
+	\item util:
+	\begin{itemize}
+	  \item Library - Biblioteca com funções do sistema;
+	\end{itemize}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Exemplos}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo ConnectionBase
+	}
+	\begin{lstlisting}
+public ConnectionBase(String url, String bd, String user, String key,
+String path, String driver, int tipo, int concorrencia){
+	...
+	try {
+		  Class.forName(getDriver());
+		  setConnection(DriverManager.getConnection(getUrl(), getUser(),
+	  getKey()));
+		  this.connection.setAutoCommit(isAutoCommit());
+		  setStatement(this.connection.createStatement(getTipo(),
+	  getConcorrencia()));
+		  if(!Library.empty(getPath())){
+		      this.statement.execute("SET SEARCH_PATH TO " + getPath());
+		  }
+		  setConectado(true);
+	      } catch (Exception ex) {
+		  Error.addError(Error.E_CONNECTION + ex);
+		  setConectado(false);
+	      }
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo DataBase
+	}
+	\begin{lstlisting}
+	  public class DataBase extends ConnectionBase{
+	    public DataBase(){        
+	      super(ConfigSite.url, ConfigSite.bd,
+ConfigSite.user, ConfigSite.key, ConfigSite.path,
+ConfigSite.driver, ConfigSite.tipo, ConfigSite.concorrencia);
+	    }
+	    public ResultSet query(String sql){}
+	    public int write(String sql){}
+	    public void close(){}
+	    public int insert(String tabela, String campos[], String
+valores[]){}
+	    public int update(String tabela, String condicao, String campos[],
+	    String valores[]){}
+	    public int delete(String tabela, String condicao){}
+	    public boolean conectado(){}
+	    public void commit(){}
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo Error
+	}
+	\begin{lstlisting}
+	public abstract class ConfigSite {
+	  public static final String TITULO_SISTEMA = "Alunos Online";
+	  public static String url = "jdbc:postgresql://localhost:5432/";
+	  public static String bd = "alunos";
+	  public static String user = "postgres";
+	  public static String key = "*****";
+	  public static String path = "public";
+	  public static String driver = "org.postgresql.Driver";
+	  public static boolean autoCommit = false;
+	  public static int tipo = ResultSet.TYPE_SCROLL_SENSITIVE;
+	  public static int concorrencia = ResultSet.CONCUR_UPDATABLE;
+	  private ConfigSite(){
+	  }    
+	}
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo ConfigSite
+	}
+	\begin{lstlisting}
+	  public abstract class Error {
+	    public static final String E_CONNECTION = "Erro ao se conectar com
+o banco de dados: ";
+	    public static final String E_QUERY = "Erro ao executar uma
+consulta no banco de dados: ";
+	    public static final String E_WRITE = "Erro ao executar uma escrita
+no banco de dados: ";
+	    public static final String E_CLOSE = "Erro ao fechar a conexão com
+o banco de dados: ";
+	    public static final String E_COMMIT = "Erro ao efetuar o commit: ";
+	    private static String errors = "";   
+	    public static void addError(String error){
+	    setErrors(errors+"<br>"+error);
+	    }
+	    public static void clearError(){
+	    setErrors("");
+	    }
+	    ...
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Exemplo Library
+	}
+	\begin{lstlisting}
+	  package util;
+	  public abstract class Library {
+	      public static boolean empty(String vazia){
+		  if(vazia.compareTo("") == 0){
+		      return true;
+		  }
+		  else{
+		      return false;
+		  }
+	      }
+	      private Library() {
+	      }
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Utilize esta estrutura de arquivos para fazer um crud do objeto
+\textit{Produto}:
+       \begin{itemize}
+	  \item id (int);
+	  \item Nome (string);
+	  \item Categoria (string);
+	  \item Preço (Float);
+	  \item Promoção (Boolean);
+	  \item Desconto (Float);
+       \end{itemize}
+      \end{itemize}
+\end{frame}

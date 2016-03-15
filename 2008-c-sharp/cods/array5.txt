@@ -1,0 +1,4 @@
+int[] vetor = {10, 20, 30, 40, 50};
+Array.IndexOf(vetor, 22);
+
+public void ExibeVetor( int[] vetor );

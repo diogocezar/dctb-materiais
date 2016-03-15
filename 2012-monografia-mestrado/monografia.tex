@@ -1,0 +1,230 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (19-12-2011) ~ MONOGRAFIA                           %
+% DIOGO CEZAR TEIXEIRA BATISTA                        %
+% ADAPTAÇÕES DO MODELO UFPR PARA DISSERTAÇÕES E TESES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper]{ufpr}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[boxruled,noline,linesnumbered,portuguese,onelanguage,algoruled]{algorithm2e}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb,amsmath}
+\usepackage{multirow}
+\usepackage{indentfirst}
+\usepackage{amssymb}
+\usepackage{subfigure}
+\usepackage{graphicx}
+\usepackage{caption2}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{sty/ps-macros}
+\usepackage{listings}
+\usepackage{type1ec}
+\usepackage{pdflscape}
+\usepackage{color}
+\usepackage{textcomp}
+\usepackage{sty/ufpr}
+\usepackage{acronym}
+
+%%%%%%%%%%%%%%%%%
+% CONFIGURAÇÕES %
+%%%%%%%%%%%%%%%%%
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\scriptsize, extendedchars=true, breaklines=true,frame=tb,
+basicstyle=\scriptsize, stringstyle=\scriptsize, showstringspaces=false}
+
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{1,1,1}
+
+\lstset{
+	backgroundcolor=\color{lbcolor},
+	tabsize=4,
+	rulecolor=,
+	language=matlab,
+    basicstyle=\scriptsize,
+    upquote=true,
+    aboveskip={1.5\baselineskip},
+    columns=fixed,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+    frame=single,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    identifierstyle=\ttfamily,
+}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+%%%%%%%%
+% CAPA %
+%%%%%%%%
+%\title{Técnicas de Planejamento para Geração de Planos de Execução em um Sistema Gerenciador de Fluxos de Trabalho Científico}
+\title{Um Modelo de Execução de Fluxos de Trabalho Científico Utilizando Técnicas de Planejamento Automático}
+\author{Diogo Cezar Teixeira Batista}
+\advisortitle{Orientador} 
+\advisorname{Prof. Dr. Fabiano Silva}
+\advisorplace{Departamento de Informática, UFPR}
+\city{Curitiba}
+\year{2012}
+\banca
+{Prof. Dr. }{Departamento de Informática, UFPR}
+{Prof. Dr. }{Departamento de Informática, UFPR} 
+{}{}
+{}{}
+\defesa{}
+
+%%%%%%%%%%%%%
+% DOCUMENTO %
+%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%
+% PRE-TEXTUAL %
+%%%%%%%%%%%%%%%
+
+\makecapadissertacao
+\makerosto
+%\maketermo
+
+%%%%%%%%%%%%%%%%
+% ESPAÇAMENTOS %
+%%%%%%%%%%%%%%%%
+
+%\singlespacing
+%\onehalfspacing
+\doublespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% ESTILO DA PAGINAÇÃO %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagestyle{headings}
+\pagenumbering{roman}
+
+%%%%%%%%%%%%%%%%
+% DEDEICATÓRIA %
+%%%%%%%%%%%%%%%%
+
+%\UFPRdedicatoria{\input{dedication/dedicatoria.tex}}
+
+%%%%%%%%%%%%%%%%%%
+% AGRADECIMENTOS %
+%%%%%%%%%%%%%%%%%%
+
+%\UFPRagradecimentos{\input{appreciation/agradecimentos.tex}}
+
+%%%%%%%%%%%%%%%%%%%
+% E P Í G R A F E %
+%%%%%%%%%%%%%%%%%%%
+
+%\UFPRepigrafe{Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven't found it yet, keep looking, and don't settle. As with all matters of the heart, you'll know when you find it.}{Steve Jobs}
+
+%%%%%%%%%%%
+% SUMÁRIO %
+%%%%%%%%%%%
+
+\tableofcontents
+
+%%%%%%%%%%%%%%%%%%%%
+% LISTA DE FIGURAS %
+%%%%%%%%%%%%%%%%%%%%
+
+\UFPRlistadefiguras
+
+%%%%%%%%%%%%%%%%%%%%
+% LISTA DE TABELAS %
+%%%%%%%%%%%%%%%%%%%%
+
+\UFPRlistadetabelas
+
+%%%%%%%%%%%%%%%%%%%%
+% LISTA DE CODIGOS %
+%%%%%%%%%%%%%%%%%%%%
+
+\UFPRlistadecodigos
+
+%%%%%%%%%%%%%%%%%%%
+% LISTA DE SIGLAS %
+%%%%%%%%%%%%%%%%%%%
+
+\UFPRlistadesiglas{\input{acronyms/acronyms.tex}}
+
+%%%%%%%%%%
+% RESUMO %
+%%%%%%%%%%
+
+\UFPRresumo[Planejamento, Inteligência Artificial, Fluxo de Trabalho Científico, Computação Distribuída]{
+\input{abstract/resumo.tex}
+}
+
+%%%%%%%%%%%%
+% ABSTRACT %
+%%%%%%%%%%%%
+
+\UFPRabstract[Planning, Artificial Intelligence, Scientific Workflow, Distributed Computing]{
+\input{abstract/abstract.tex}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% SEPARAÇÃO DE PALAVRAS %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hyphenation{Fá-bri-ca-De-Pla-nos-De-Exe-cu-ção}
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% ESTILO DA PAGINAÇÃO %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic}
+
+%%%%%%%%%%%%%
+% CAPÍTULOS %
+%%%%%%%%%%%%%
+
+%todo:
+
+%definição núvens
+
+%melhorar custos
+
+\input{chapters/introducao.tex}
+\input{chapters/revisao.tex}
+\input{chapters/relacionados.tex}
+\input{chapters/modelo.tex}
+\input{chapters/experimentos.tex}
+\input{chapters/conclusao.tex}
+
+\appendix
+
+\input{appendices/jshop.tex}
+\input{appendices/recursos.tex}
+\input{appendices/arquivos-plan.tex}
+\input{appendices/descricao.tex}
+\input{appendices/peerunit.tex}
+\input{appendices/codigos-fonte.tex}
+
+
+%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA %
+%%%%%%%%%%%%%%%%
+
+\bibliographystyle{bst/bibstyle}
+\bibliography{bib/bibliografia}
+
+\addcontentsline{toc}{chapter}{\MakeUppercase{Bibliografia}}
+
+\singlespacing
+\makecapadissertacao
+
+\end{document}

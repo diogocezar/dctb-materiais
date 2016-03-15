@@ -1,0 +1,9 @@
+for(int x=0; x < 100; ++x){
+	System.Console.WriteLine(x);
+}
+for(;;){ // Laço infinito
+	System.Console.WriteLine("Hello, World!");
+}
+for(int y=100, int x = 0;x < y; ++x, --y){ // Laço com mais de 1 variável
+	System.Console.WriteLine(y);
+}

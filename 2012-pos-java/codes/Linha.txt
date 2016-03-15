@@ -1,0 +1,6 @@
+<body>
+	<div>Exemplo de <cite>uma citação</cite></div>
+	<div>Exemplo de <code>um código</code></div>
+	<div>Exemplo de <em>um texto com ênfase</em></div>
+	<div>Exemplo de <strong>um texto forte</strong></div>
+</body>

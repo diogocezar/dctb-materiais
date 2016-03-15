@@ -1,0 +1,345 @@
+\section[CSS - Parte 1]{CSS - Parte 1}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Problemas do HTML}
+    \begin{itemize}
+      \item HTML só se preocupava com a exibição dos dados;
+      \item HTML passou a se preocupar com a formatação através da criação de
+novas tags e atributos:
+    \end{itemize} 
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  <h1><font color="#00FF00">Título</font></h1>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \framebreak
+    \begin{itemize}
+    \item problemas aos projetos criados;
+    \item os documentos HTML estavam fugindo do controle de seus criadores:
+    \begin{itemize}
+     \item falta de modularidade;
+     \item difícil manutenção;
+     \item códigos duplicados;
+     \item difícil padronização de formatação.
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CSS - O que é?}
+    \begin{itemize}
+      \item \textit{Cascading Style Sheet} que em português foi traduzido para
+folha de estilo em cascata;
+      \item um mecanismo simples para adicionar estilos (ex.: fontes, cores,
+espaçamentos) aos documentos \textit{web}.
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{CSS - Por que usar?}
+    \begin{itemize}
+      \item separação entre HTML e formatação visual da pagina;
+      \item facilidade para alteração de padrões em paginas;
+      \item \url{http://www.csszengarden.com/tr/portuguese/}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{CSS - Por que cascata?}
+    \begin{itemize}
+      \item todos os elementos XHTML possuem um estilo (definido ou não);
+      \item herdam o estilo de seu parente mais próximo;
+      \item estilo do elemento \texttt{<body>}: pai de todos;
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	<body>
+	  <div>
+	    <p></p>
+	  </div>
+	</body>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \begin{itemize}
+    \item elemento \texttt{<p>} herda de elemento \texttt{<div>} que herda de
+\texttt{<body>}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CSS - Precedência de Estilos}
+    \begin{itemize}
+      \item que estilo será aplicado, quando há conflito de estilos
+especificados?
+      \begin{itemize}
+	\item folha de estilo padrão do navegador do usuário;
+	\item folha de estilo do usuário;
+	\item folha de estilo do desenvolvedor; 
+	\item estilo externo (importado ou linkado).
+	\item estilo incorporado (definido na seção head do documento);
+	\item estilo inline (dentro de um elemento HTML);
+	\item declarações do desenvolvedor com !important;
+	\item declarações do usuário com !important;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{CSS - Onde definir?}
+    \begin{itemize}
+      \item onde definir o CSS? 
+      \begin{itemize}
+	\item Os arquivos CSS internos são definidos dentro das tags
+\texttt{<head>} e \texttt{</head>};
+	\item sua definição pode ser:
+	\begin{itemize}
+	  \item definição no próprio arquivo CSS;
+	  \item definição em um arquivos separado (recomendado);
+	\end{itemize}
+      \end{itemize}
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  basicstyle=\tiny
+	}
+	\begin{lstlisting}
+	  <style type="text/css" title="mystyles" media="all">...</style>
+	  
+	  <link rel="stylesheet" href="style.css" type="text/css"
+media="screen" />
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Media Types}
+    \begin{itemize}
+      \item Os tipos de media são:
+      \begin{itemize}
+	\item \textit{all} - Para todos os dispositivos;
+	\item \textit{braille} - Para dispositivos táteis;
+	\item \textit{embossed} - Para dispositivos que ``imprimem'' em braille.
+	\item \textit{handheld} - Para dispositivos de mão. Normalmente com
+telas pequenas e banda limitada;
+	\item \textit{print} - Para impressão em papel;
+	\item \textit{projection} - Para apresentações, como PowerPoint.
+	\item \textit{screen} - Para monitores ou outros dispositivos com telas
+coloridas e com resolução adequada.
+	\item \textit{speech} - Para sintetizadores de voz;
+	\item \textit{tty} -  Para dispositivos que utilizam uma grade fixa para
+exibição de caracteres, como por exemplo, teletypes, terminais, dispositivos
+portáteis com display limitado;
+	\item \textit{tv} - Para dispositivos como televisores, ou seja, com
+baixa resolução, quantidade de cores e scroll limitado;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Regras do CSS e Sua Sintaxe}
+    \begin{itemize}
+      \item uma regra CSS é uma declaração que segue uma sintaxe própria e que
+define como será aplicado estilo a um ou mais elementos HTML:
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  seletor { propriedade: valor; }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{itemize}
+     \item \textit{seletor}: genericamente, é o elemento que será afetado pelo
+estilo, pode ser indexado por:
+      \begin{itemize}
+	\item sua tag;
+	\item uma classe (class);
+	\item uma identificação (id);
+	\item entre outros.
+      \end{itemize}
+      \item exemplo: \texttt{p{}}, \texttt{h1{}}, \texttt{form{}},
+\texttt{.minhaclasse{}}, etc...
+      \item \textit{propriedade}: é o atributo do elemento HTML ao qual será
+aplicada a regra;
+      \item exemplo: \textit{fonte}, \textit{color}, \textit{font-size},
+\textit{border}, etc...
+      \item \textit{valor}: é a característica específica a ser assumida pela
+propriedade;
+      \item exemplo: letra do tipo arial, cor azul, fundo verde, etc...
+      
+      \framebreak
+      
+      \item a formatação não se restringe somente aos elementos HTML (tags) para
+aplicar regras de estilo;
+
+      \begin{itemize}
+	\item Pode-se mesclar tags html com classes:
+      \end{itemize}
+      
+      \begin{center}
+      \begin{minipage}{0.9\textwidth}
+	  \lstset{
+	    frame=tb,
+	    language=HTML,
+	    basicstyle=\tiny,
+	  }
+	  \begin{lstlisting}
+	    p.corum { color:#000000; } 
+	    p.cordois { color:#0000FF; }
+	    <p class="corum">este parágrafo terá cor preta</p> 
+	    <p class="cordois">este parágrafo terá cor azul</p>
+	  \end{lstlisting}
+      \end{minipage}
+      \end{center}
+      
+      \framebreak
+      
+      \begin{itemize}
+	\item pode-se ainda criar uma classe aplicável a qualquer elemento HTML:
+      \end{itemize}
+      
+      \begin{center}
+      \begin{minipage}{0.9\textwidth}
+	  \lstset{
+	    frame=tb,
+	    language=HTML,
+	    basicstyle=\tiny,
+	  }
+	  \begin{lstlisting}
+	    .cortres { color: #0000FF; }
+	    <h2 class="cortres">Este cabeçalho é azul</h2> 
+	    <p class="cortres">Este parágrafo é azul</p>
+	  \end{lstlisting}
+      \end{minipage}
+      \end{center}
+      
+      
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Exemplos}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Outros Exemplos
+	}
+	\begin{lstlisting}
+	  p{ font-size: 12px;  /* ; é opcional*/ }
+	  body { 
+	    color: #000000; background: #FFFFFF; 
+	    font-weight: bold;
+	  }
+	  h3 { font-family: "Comic Sans MS" }
+	  h1, h2, h3, h4, h5, h6 { color: #00FF00; }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Modificando os Links}
+      \begin{itemize}
+	\item para modificar TODOS os links de um XHTML alteramos o atributo
+\texttt{<a>} conforme os seguintes seletores:
+	\begin{itemize}
+	  \item \texttt{a:link}: para não visitado;
+	  \item \texttt{a:visited}: visitado;
+	  \item \texttt{a:hover}: com o mouse em cima;
+	  \item \texttt{a:active}: no momento do click;
+	\end{itemize}
+	\item a ordem de definição dos estilos no arquivo css deve ser a
+apresentada acima (efeito cascata);
+	\item a mesma idéia pode ser aplicada a uma classe, Ex.
+\texttt{.minhaclasse:hover};
+      \end{itemize}
+      
+      \framebreak
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Modificando os Links
+	}
+	\begin{lstlisting}
+	  a:link{
+	    text-decoration:none;color:#0000cc;
+	  }
+	  a:visited{
+	    text-decoration:none;color:#9900CC;
+	  }
+	  a:hover{
+	    text-decoration:none;color:#0099FF;
+	  }
+	  a:active{
+	    text-decoration:underline;
+	    color:#ff0000;
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{CSS - Outros Seletores}
+      \begin{itemize}
+	\item Ainda é possível selecionar os elementos específicos;
+	\item \texttt{\#minhadiv p \{\}} - todos os parágrafos da div;
+	\item \texttt{input text\{\}} - todos os inputs do tipo text;
+	\item \texttt{*\{\}} - todos os elementos;
+	\item \texttt{body\{\}} - todos os elementos do body;
+	\item \texttt{.class a:hover\{\}} - todos os links (ao passar o mouse) 
+da classe;
+	\item \texttt{ul li li\{color:red;\}} - sub-sub-item de todas listas
+\texttt{ul};
+      \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item faça uma página em \texttt{XHTML} e \texttt{CSS}:
+      \begin{itemize}
+	\item modificando as cores dos links;
+	\item atribuindo uma propriedade \texttt{CSS} comum a todos elementos;
+	\item atribuindo uma propriedade \texttt{CSS} a um titulo \texttt{<h1>};
+	\item atribuindo uma propriedade \texttt{CSS} a uma classe e utilizando
+esta
+classe em mais de uma \texttt{div};
+	\item atribuindo uma propriedade \texttt{CSS} a uma \texttt{div}
+específica;
+	\item organizando as atribuições em um arquivo \texttt{CSS} separado;
+      \end{itemize}
+    \end{itemize}
+\end{frame}

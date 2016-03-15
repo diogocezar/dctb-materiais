@@ -1,0 +1,27 @@
+<?php
+class Feromonio extends Generic{
+	/**
+	* Atributos
+	*/
+	protected
+		$id_feromonio      = '',
+		$id_pagina_origem  = '',
+		$id_pagina_destino = '',
+		$id_grupo          = '',
+		$qtd_feromonio     = '';
+	...
+}
+$tabelaMap['feromonio'] = 'feromonio';
+$camposMap['feromonio'] = array('id',
+				'id_origem',
+				'id_destino',
+				'id_grupo',
+				'qtd_feromonio'
+				);
+$aliasMap['feromonio'] = array('identificação',
+                               'identificação da página de origem',
+			       'identificação da página de destino',
+			       'identificação do grupo',
+			       'quantidade de feromônio'
+			       );
+?>

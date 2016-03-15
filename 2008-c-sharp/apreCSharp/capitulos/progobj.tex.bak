@@ -1,0 +1,85 @@
+\section{Programação Baseada em Objetos}
+
+\subsection{Convenções e Padrões de Nomenclatura}
+
+\begin{frame}
+    \frametitle{Recomendação da Microsoft para nomeação de variáveis}
+    \begin{itemize}
+            \item <1-> Evite usar underline "\_";
+            \item <2-> Não crie variáveis com o mesmo nome mudando somente entre maiúsculas e minúsculas;
+            \item <3-> Utilize nomes de variáveis com minúsculas;
+            \item <4-> Evite utilizar todas as letras maiúsculas;
+            \item <5-> Notação \emph{camelCasing}: Primeira letra de cada palavra em caixa alta, menos da primeira;
+            \item <6-> Recomendações para nomeação de classes, métodos: Notação \emph{PascalCasing}: primeiro caractere de cada palavra em
+            caixa alta.
+    \end{itemize}
+\end{frame}
+
+\subsection{Classes}
+
+\begin{frame}
+    \frametitle{Classes}
+    \begin{block}{Definição}
+        Uma classe é um poderoso tipo de dado em C\#. Como estrutura, uma
+        classe define os dados e o comportamento dos tipos de dados.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=classe, caption={Exemplo
+    de Classe em C\#}]{cods/classe.txt}}
+\end{frame}
+
+\subsection{Propriedades}
+
+\begin{frame}
+    \frametitle{Propriedades}
+    \begin{block}{Definição}
+        As propriedades são recursos fornecidos pelas classes para que seja
+        possível alterar seus valores.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=propriedades,
+    caption={Exemplo de Propriedades em C\#}]{cods/propriedade.txt}}
+\end{frame}
+
+\subsection{Modificadores de visibilidade}
+
+\begin{frame}
+    \frametitle{Modificadores de visibilidade}
+    C\# apresenta os seguintes modificadores de visibilidades:
+    \begin{itemize}
+            \item  \emph{private};
+            \item  \emph{public};
+            \item  \emph{protected};
+            \item  \emph{internal};
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=modificadoresVis,
+    caption={Exemplo de utilização dos modificadores de visibilidade
+    C\#}]{cods/modificadores.txt}}
+\end{frame}
+
+\subsection{Herança}
+
+\begin{frame}
+    \frametitle{Herança}
+    \begin{block}{Definição}
+        A herança é um recurso utilizado para derivar classes que têm
+        métodos ou atributos em comum. Sua principal vantagem é o
+        reaproveitamento de código.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=Heranca, caption={Exemplo
+    de declaração de herança em C\#}]{cods/heranca.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{\emph{This} e \emph{Base}}
+    \begin{block}{Definição}
+        As cláusulas \emph{this} e \emph{base} são referências que indicam a
+        propria classe e a classe base, respectivamente.
+
+        \emph{Classe base}: classe cuja a classe atual herda as
+        propriedades e atributos.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=thisBase,
+    caption={Exemplo de this e base em
+    C\#}]{cods/thisbase.txt}}
+\end{frame}
+
+\section{Declaração e Chamada de Métodos e Objetos}

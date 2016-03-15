@@ -1,0 +1,9 @@
+HTTP/1.0 200 Document follows
+Date: Thu, 20 Aug 1998 18:47:27 GMT
+Server: NCSA/1.5.1
+Content-type: text/html
+Last-modified: Fri, 14 Aug 1998 20:14:23 GMT
+Content-length:5807
+<html>
+<head><title> Navegando na Internet</title></head>
+<body>

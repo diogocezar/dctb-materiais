@@ -1,0 +1,10 @@
+FileInfo fi = new FileInfo(@"F:\Myprogram.txt");
+FileStream fstr = fi.Create();
+Console.WriteLine("Creation Time: {0}",fi.CreationTime);
+Console.WriteLine("Full Name: {0}",fi.FullName);
+Console.WriteLine("FileAttributes: {0}",fi.Attributes.ToString());
+//Way to delete Myprogram.txt file.
+Console.WriteLine("Press any key to delete the file");
+Console.Read();
+fstr.Close();
+fi.Delete();

@@ -1,0 +1,1 @@
+DirectoryInfo dir1 = new DirectoryInfo(@"F:\WINNT");

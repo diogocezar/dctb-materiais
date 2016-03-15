@@ -1,0 +1,69 @@
+\documentclass[compress]{beamer}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{colortbl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usetheme{Ilmenau}
+\usecolortheme[RGB={176,66,19}]{structure}
+\setbeamercovered{transparent}
+\setbeamertemplate{footline}[default]
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\setlength{\tabcolsep}{1mm}
+\setbeamertemplate{footline}[frame number]
+\setbeamertemplate{navigation symbols}{}
+
+%%%%%%%%%%%
+% C A P A %
+%%%%%%%%%%%
+
+\title{Proposta de Abordagem Hipermídia Adaptativa Baseada em Otimização por Colônia de Formigas}
+
+\author{Diogo Cezar Teixeira Batista \\
+       {\footnotesize \texttt{batista.utfpr@gmail.com}} \\
+       Ligia Flávia Antunes Batista \\
+       {\footnotesize \texttt{ligia@utfpr.edu.br}}
+}
+
+\institute{\large Universidade Tecnológica Federal do Paraná \\
+                  Campus Cornélio Procópio \\
+                  UTFPR-CP}
+
+\date{Cornélio Procópio - 2007}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% S L I D E S  I N I C I A I S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/titulo}
+\input{capitulos/agenda}
+
+%%%%%%%%%%%%%%%%%%%%%
+% C A P Í T U L O S %
+%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/introducao}
+\input{capitulos/orientacao}
+    \input{capitulos/ha}
+    \input{capitulos/aco}
+    %\input{capitulos/trabalhosrel}
+\input{capitulos/adaptacao}
+\input{capitulos/tecnologia}
+\input{capitulos/resultados}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% S L I D E S    F I N A I S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{capitulos/referencias}
+\input{capitulos/final}
+
+\end{document}

@@ -1,0 +1,30 @@
+\section[Tecnologia]{Tecnologia}
+
+\subsection{Tecnologia}
+
+\begin{frame}
+\frametitle{Tecnologia}
+    \begin{itemize}
+    \item <1-> linguagem de programação: \emph{Hypertext PreProcessor} (PHP);
+    \item <2-> sistemas gerenciadores de banco de dados:
+        \begin{itemize}
+            \item <3-> PostgreSQL: tabelas do sistema OriAnt;
+            \item <4-> MySQL: tabelas do sub-sistema para testes;
+        \end{itemize}
+    \item <5-> servidor de aplicação: Apache 1.33;
+    \end{itemize}
+\end{frame}
+
+\subsection[Recursos de Desenvolvimento]{Recursos de Desenvolvimento}
+
+\begin{frame}
+\frametitle{Recursos de Desenvolvimento}
+    Os recursos de desenvolvimento utilizados neste trabalho foram:
+    \begin{itemize}
+        \item <1-> \emph{Cascading Style Sheets} (CSS);
+        \item <2-> tableless;
+        \item <3-> \emph{RDF Site Summary} (RSS);
+        \item <4-> \emph{Asynchronous JavaScript and XML} (AJAX);
+        \item <5-> javascript;
+    \end{itemize}
+\end{frame}

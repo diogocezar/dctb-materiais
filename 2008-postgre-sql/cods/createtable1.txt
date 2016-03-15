@@ -1,0 +1,11 @@
+CREATE TABLE fatura (
+	id_fatura integer,
+	total numeric(9,2) NOT NULL,
+	desconto numeric(6,2),
+	id_cliente integer NOT NULL,
+	id_vendedor integer NOT NULL,
+	data timestamp(0) DEFAULT current_timestamp(0),
+	CONSTRAINT fatura_pk PRIMARY KEY (id_fatura),
+	CONSTRAINT fatura_cliente_fk FOREIGN KEY id_cliente REFERENCES cliente,
+	CONSTRAINT fatura_vendedor_fk FOREIGN KEY id_vendedor REFERENCES vendedor
+) WHITHOUT OIDS;

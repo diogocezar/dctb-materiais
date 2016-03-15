@@ -1,0 +1,1 @@
+MinhaClasse obj = new MinhaClasse();

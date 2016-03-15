@@ -1,0 +1,680 @@
+\section[Javascript]{Javascript}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - O que é?}
+    \begin{itemize}
+      \item é uma linguagem de programação interpretada com características de
+orientação a objetos;
+      \begin{itemize}
+       \item desenvolvida pela Netscape a fim de estender as capacidades de seu
+browser;
+       \item permite que um conteúdo executável seja incluído em paginas
+\textit{web};
+       \item sintaticamente semelhante a C e C++;
+      \end{itemize}
+      
+      \framebreak
+      
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=8cm]{images/javascript.jpg}
+	  \end{center}
+      \end{figure}
+      
+      \framebreak
+      
+      \item \textbf{Java} é uma linguagem orientada a objetos com um escopo
+bastante amplo (não necessariamente ligado a \textit{web});
+
+      \item o nome \textbf{JavaScript} foi escolhido por mera questão de
+marketing;
+
+      \item seu nome ia ser \textbf{LiveScript};
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Javscript - Destaques da Linguagem}
+    \begin{itemize}
+      \item controlar a aparência e conteúdo do documento:
+      \begin{itemize}
+       \item escrever código em um documento enquanto ele esta sendo
+interpretado pelo \textit{browser};
+       \item alterar cor de fundo da página em tempo de excussão;
+      \end{itemize}
+      \item controlar o \textit{browser}:
+      \begin{itemize}
+	\item abrir novas janelas, exibir mensagens na barra de status, etc;
+      \end{itemize}
+      \item manipular formulários HTML;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Javscript - Código}
+    \begin{itemize}
+      \item controlar a aparência e conteúdo do documento:
+      \begin{itemize}
+       \item escrever código em um documento enquanto ele esta sendo
+interpretado pelo \textit{browser};
+       \item alterar cor de fundo da página em tempo de excussão;
+      \end{itemize}
+      \item podemos dividir o código JavaScript em três partes:
+      \begin{itemize}
+	\item \textbf{código comum}: realiza qualquer tarefa;
+	\item \textbf{manipulação de eventos}: funções devem ser chamadas para
+manipular os eventos (onClick, onLoad...);
+	\item \textbf{manipulação do browser}: o \textit{browser} é tratado como
+uma hierarquia de objetos.
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Javscript - Onde são usados?}
+    \begin{itemize}
+      \item blocos \texttt{<script>}:
+      \begin{itemize}
+       \item usado para definir funções que serão usadas dentro da mesma pagina;
+      \end{itemize}
+      \item arquivos externos:
+      \begin{itemize}
+       \item definir funções que serão usadas por varias páginas (.js);
+      \end{itemize}
+      \item junto a tags HTML:
+      \begin{itemize}
+       \item manipulação de eventos;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{Javscript - Bloco \texttt{<script>}}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Bloco \texttt{<script>}
+	}
+	\begin{lstlisting}
+	<html>
+	<head>
+	  <title>JavaScript</title>
+	</head>
+	<body>
+	  <script language="JavaScript">
+	    document.write("Hello World!");
+	  </script>
+	</body>
+	</html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{Javscript - Arquivos Externos}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Arquivos Externos
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	    <title>JavaScript</title>
+	    <script type="text/javascript" src="adjustments.js"></script>
+	  </head>
+	  <body>
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+
+\begin{frame}[c,fragile]
+    \frametitle{Javscript - Junto a uma Tag}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Junto a uma Tag
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	    <title>JavaScript</title>
+	  </head>
+	  <body>
+	    <input type="buttom" onclick="javascript:alert("TesteJavaScript");">
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - Sintaxe e Estrutura}
+    \begin{itemize}
+     \item case sensitive: Valor, VALOR e VaLOR são variáveis diferentes;
+     \item na maior parte dos casos, JavaScript ignora espaços em branco;
+     \item inclusive tabulações e quebras de linha;
+     \item ponto e virgula opcional (recomendável utilização);
+     \item comentários: estilo C ou C++;
+     
+     \framebreak
+     
+     \item declaração de variáveis:
+     \begin{itemize}
+      \item não e necessário inicializar a variável na declaração;
+      \item nesse caso o valor e indefinido (undefined);
+     \end{itemize}
+     
+     \framebreak
+     
+     \item tipos primitivos:
+     
+     \begin{itemize}
+      \item string;
+      \item number;
+      \item boolean;
+      \item undefined;
+      \item null;
+     \end{itemize}
+     
+     \framebreak
+     
+      \item os tipos de dados em JavaScript são implícitos;
+      \item interpretador faz tudo automaticamente;
+      \item \textbf{declaração implícita}: atribui-se um valor a um
+identificador cujo nome não seja uma palavra reservada:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Declaração Implícita
+	}
+	\begin{lstlisting}
+	  salario = 1000;
+	  nome = "Joao";
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+
+      \item \textbf{declaração explicita}: usa-se a palavra reservada var para
+definir que o identificador a seguir e uma variável:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Declaração Explícita
+	}
+	\begin{lstlisting}
+	  var salario;
+	  var nome;
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item em JavaScript, os tipos das variáveis são implícitos;
+    \item o tipo da variável depende do valor assumido naquele instante:
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Declaração Explícita
+	}
+	\begin{lstlisting}
+	  y = 10
+	  y = "nome"
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item a conversão de tipos é automática e transparente ao usuário;
+    \item não existe casting;
+    
+    \framebreak
+    
+    \item JavaScript define dois valores especiais relacionados:
+    
+    \begin{itemize}
+     \item \textit{null} - Nenhum valor;
+     \item \textit{undefined} - Valor não definido (padrão na declaração).
+    \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - Caixas de Mensagens}
+    \begin{itemize}
+     \item JavaScript permite a comunicação com o usuário através de caixas de
+mensagem abertas pelo navegador;
+     \item caixas de mensagem:
+     \begin{itemize}
+      \item simples de implementar;
+      \item poucas opções de personalização;
+      \item interrupção do usuário;
+     \end{itemize}
+     
+     \framebreak
+     
+     \item a função \textit{alert} exibe uma caixa de mensagem simples na tela,
+com uma frase e um botão \textit{OK};
+
+     \item a função \textit{confirm} exibe uma caixa de mensagens com dois
+botões: \textit{OK} e \textit{Cancelar};
+
+     \item a função \textit{prompt} exibe uma caixa de mensagem que permite ao
+usuário digitar um texto;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Caixas de Diálogo
+	}
+	\begin{lstlisting}
+	  alert(string)
+	  confirm(string) // retorna true ou false
+	  prompt(string) // retorna o texto digitado
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+     
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,fragile]
+    \frametitle{Javscript - Funções}
+    \begin{itemize}
+     \item uma função (ou subrotina, procedimento...) é um pedaço de código
+reutilizável;
+     \item a função é definida apenas uma vez, e pode ser utilizada um número
+indefinido de vezes;
+     \item em JavaScript, não é necessário fazer declaração de funções;
+     \item uma função é definida com o uso da palavra function.
+     
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Declaração de uma função
+	}
+	\begin{lstlisting}
+	  function exibeMensagem(){
+	    document.write("Olá!");
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Uso de uma função
+	}
+	\begin{lstlisting}
+	  exibeMensagem();
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+   
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - Eventos}
+    \begin{itemize}
+     \item a utilização de JavaScript quase sempre vem atrelada a um eventos de
+um de nossos componentes no XHTML;
+      \item são ações iniciadas por parte dos usuários;
+      \item podemos chamar determinada função ao clicar em um botão, ou ao
+entrar em determinado \textit{input text}, por exemplo;
+      \item sua utilização se dá como atributos da linguagem XHTML, ou seja
+dentro das próprias Tag's XHTML;
+      \item sua sintaxe tem a seguinte formação:
+      
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  <tag nomeEvento="Instruções JavaScript">
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/eventos-js-1.pdf}
+        \end{center}
+    \end{figure}
+    
+    \framebreak
+    
+     \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/eventos-js-2.pdf}
+        \end{center}
+    \end{figure}
+      
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - Hierarquia de Objetos}
+    \begin{itemize}
+     \item \textbf{window}: o objeto acima na hierarquia, contém
+propriedades que se aplicam a toda a janela. Há também um objeto desta classe
+para todas as "sub-janelas" de um documento com frames;
+
+     \begin{itemize}
+      \item \textit{location}: contém as propriedades da URL atual;
+      \item \textit{history}: contém as propriedades das URLs visitadas
+anteriormente
+      \item \textit{document}: contém as propriedades do documento contido na
+janela, tais como o seu conteúdo, título, cores, etc.
+     \end{itemize}
+    
+    \framebreak
+    
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/hierarquia_javascript.jpg}
+        \end{center}
+    \end{figure}
+      
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Javscript - Propriedades e Métodos}
+    \begin{itemize}
+     \item sintaxe de utilização de propriedades: \texttt{nomeObjeto.
+propriedade};
+
+     \item sintaxe de utilização dos métodos:
+\texttt{nomeObjeto.metodo(argumento)};
+
+     \framebreak
+
+     \item capturando um elemento por seu id ou nome:
+     
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  <script>
+	  var nome = document.getElementById("nome");
+	  var nome = document.getElementByName("nome");
+	  </script>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \item a partir desse momento a variável nome assume as propriedades do
+elemento com id nome;
+
+    \item se for um input, terá o atributo value;
+    \item se for um div terá o atributo style.
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	    <title>Get Text</title>
+	    <script>
+	    function mostra_texto(){
+	      var texto = document.getElementById("texto");
+	      alert("Você digitou: " + texto.value);
+	    }
+	    </script>
+	  </head>
+	    <body>
+	      Digite seu nome:
+	      <input id="texto" name="texto" type="text" maxlength="50" />
+	      <input name="botao" type="button" id="botao" 
+	      onclick="mostra_texto();" value="Ok"/>
+	    </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item caso o elemento seja selecionado é possível alterar seu estilo, para
+isso utilizamos o seguinte comando:
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  var texto = document.getElementById("mudaCor");
+	  texto.style.color = "red";
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	    <title>Muda Cor</title>
+	    <script>
+	    function mudar_cor(){
+	      var texto = document.getElementById("mudaCor");
+	      texto.style.color = "red";
+	    }
+	    </script>
+	  </head>
+	    <body>
+	    <div id="mudaCor">Testando um novo texto</div>
+	    <input name="botao" type="button" id="botao"
+onclick="mudar_cor();" value="Ok"/>
+	    </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item é possível alterar o conteúdo de uma div com o seguinte comando:
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  var texto = document.getElementById("mudaDiv");
+	  texto.innerHTML = "O texto foi trocado!"
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	    <title>Muda Cor</title>
+	    <script>
+	    function mudar_div(){
+	      var texto = document.getElementById("mudaDiv");
+	      texto.innerHTML = "O texto foi trocado!"
+	    }
+	    </script>
+	  </head>
+	    <body>
+	    <div id="mudaCor">Testando um novo texto</div>
+	    <input name="botao" type="button" id="botao"
+onclick="mudar_idv();" value="Ok"/>
+	    </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Detalhes de conteúdo
+	}
+	\begin{lstlisting}
+	<html>
+	<head>
+	<title>Detalhes</title>
+	<script>
+	function toggle(obj) {
+	  var el = document.getElementById(obj);
+	  if ( el.style.display != "none" ){
+	    el.style.display = "none";
+	  }
+	  else{ 
+	    el.style.display = ""
+	  }	
+	}
+	</script>
+	</head>
+	<body>
+	  <p>Clica no link</p>
+	  <p><a href="#" onclick="toggle("maisinfo");">Mais Informação</a></p>
+	  <div id="maisinfo" style="display:none">
+	  <p> Texto que ficará invisível até clicar no link.</p>
+	  </div>
+	</body>
+	</html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Redirecionando
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	  <title>Redirecionando</title>
+	    <script>
+	    function redirect() {
+	      window.location = "http://www.globo.com";
+	    }
+	    </script>
+	  </head>
+	  <body>
+	    <p><a href="#" onclick="redirect();">Redirecionar</a></p>
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Voltando
+	}
+	\begin{lstlisting}
+	  <html>
+	  <head>
+	  <title>Voltando</title>
+	    <script>
+	    function voltar() {
+	      window.history.go(-1);
+	    }
+	    </script>
+	  </head>
+	  <body>
+	    <p><a href="#" onclick="voltar();">Voltar</a></p>
+	  </body>
+	  </html>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item criar um script contador:
+      \begin{itemize}
+	\item \textit{input text} que mostrará a contagem atual;
+	\item botão \textit{[+]} para incrementar o valor;
+	\item botão \textit{[-]} para decrementar o valor;
+	\item o valor deve ter o valor máximo de 15 e mínimo de -3;
+	\item exiba uma mensagem caso um valor extrapole os limites
+estabelecidos.
+      \end{itemize}
+    \end{itemize}
+\end{frame}

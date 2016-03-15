@@ -1,0 +1,228 @@
+\section{Manipulação de Arquivos}
+
+\begin{frame}
+    \frametitle{Manipulação de Arquivos}
+    \begin{block}{Definição}
+        Utilizado para: criar, editar e excluir arquivos ou diretórios.
+    \end{block}
+    \begin{itemize}
+        \item Pacote \texttt{System.IO};
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{As principais classes que estão nesse pacote}
+    \begin{table}[!htb]
+        \centering
+        \scriptsize
+        \label{tab:classesIO}
+        \caption{Principais classes do System.IO}
+        \begin{tabular}{|l|p{5cm}|}
+            \hline
+            Classe & Uso \\
+            \hline
+            Directory, File, DirectoryInfo, e FileInfo & Cria, exclui e move arquivos e diretórios. Ainda retorna informações específicas sobre arquivos ou diretórios \\
+            \hline
+            FileStream & Usado para escrever/ler informações em arquivo com ajuda  das classes StreamReader e StreamWriter  \\
+            \hline
+            StreamWriter e StreamReader & Lê e escreve um informação textual  \\
+            \hline
+            StringReader e StringWriter & Lê e escreve um informação textual a partir de um \emph{buffer} de string \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\subsection{Classes DirectoryInfo e FileInfo}
+
+\begin{frame}
+    \frametitle{Classes DirectoryInfo e FileInfo}
+    \begin{block}{Definição}
+        Utilizadas para recuperar informações de arquivos e
+        diretórios.
+    \end{block}
+    \begin{itemize}
+        \item \emph{DirectoryInfo} usado para extrair informações de
+        diretórios;
+        \item \emph{FileInfo} usado para extrair informações de arquivos.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Propriedades e métodos que essas classes oferecem}
+    \begin{table}[!htb]
+        \centering
+        \scriptsize
+        \label{tab:atributosDirFile}
+        \caption{Propriedades e métodos de \emph{DirectoryInfo} e \emph{FileInfo}}
+        \begin{tabular}{|l|p{8cm}|}
+            \hline
+            Propriedade/Método & Uso \\
+            \hline
+            Attributes & Retorna os atributos associados aos arquivos \\
+            \hline
+            CreationTime & Retorna a hora de criação do arquivo  \\
+            \hline
+            Exists & Checa se o arquivo/diretório existe \\
+            \hline
+            Extension & Retorna a extensão do arquivo \\
+            \hline
+            LastAccessTime & Retorna a hora do último acesso \\
+            \hline
+            FullName & Retorna o nome completo do arquivo/diretório \\
+            \hline
+            LastWriteTime & Retorna a hora da ultima escrita no arquivo/diretório \\
+            \hline
+            Name & Retorna o nome do arquivo/diretório \\
+            \hline
+            Delete() & Exclui o arquivo/diretório \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\subsection{Criando diretórios e subdiretórios}
+
+\begin{frame}
+    \frametitle{Criando diretórios e subdiretórios}
+
+    Para criar um diretório utiliza-se a seguinte notação:
+
+    \texttt{\lstinputlisting[language=C, label=diretorio,
+    caption={Criação de diretório}]{cods/diretorio.txt}}
+
+    Para criar um subdiretório:
+
+    \texttt{\lstinputlisting[language=C, label=subdiretorio,
+    caption={Criação de subdiretórios}]{cods/subdiretorio.txt}}
+\end{frame}
+
+\subsection{Acessando as propriedades}
+
+\begin{frame}
+    \frametitle{Acessando as propriedades}
+    Para acessar as propriedades de um diretório utiliza-se a seguinte
+    notação:
+
+    \texttt{\lstinputlisting[language=C, label=propriedades,
+    caption={Propriedades de um diretório}]{cods/propriedades.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Criando diretórios e subdiretórios}
+    Exemplo de acesso às propriedades de arquivos:
+
+    \texttt{\lstinputlisting[language=C, label=propriedadesarquivos,
+    caption={Propriedades de arquivos}]{cods/propriedadesarquivo.txt}}
+\end{frame}
+
+\subsection{Criando arquivos usando a classe FileInfo}
+
+\begin{frame}
+    \frametitle{Criando arquivos usando a classe FileInfo}
+    \begin{block}{Definição}
+        Com a classe \emph{FileInfo}, é possível criar novos arquivos,
+        acessar suas informações, exclui-los e move-los.
+    \end{block}
+    \begin{itemize}
+        \item Oferece métodos para abrir, ler e escrever um arquivo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Criando arquivos com a classe FileInfo}
+    O seguinte exemplo mostra como é possível criar um arquivo texto e
+    acessar suas informações.
+
+    \texttt{\lstinputlisting[language=C, label=fileinfo,
+    caption={Criando arquivos com a classe
+    FileInfo}]{cods/fileinfo.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Método Open()}
+    \begin{block}{Definição}
+        Abre um arquivo
+    \end{block}
+    \begin{itemize}
+        \item Deve-se passar no construtor, o modo de abertura e acesso ao arquivo.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo Método Open()}
+    O seguinte exemplo ilustra essa situação:
+
+    \texttt{\lstinputlisting[language=C, label=fileinfoopen,
+    caption={Abrindo arquivos com a classe
+    FileInfo}]{cods/fileinfoopen.txt}}
+\end{frame}
+
+\subsection{Entendendo a classe FileStream}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Entendendo a classe FileStream}
+    \begin{block}{Definição}
+        Ao abrir ou criar arquivos, o atribuímos para a classe
+        \emph{FileStream}. Ela pode
+    \end{block}
+    \begin{itemize}
+        \item Escreve ou lê arquivos, com a ajuda das classes \emph{StreamWriter} e \emph{StreamReader}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo FileStream}
+    \texttt{\lstinputlisting[language=C, label=filestream,
+    caption={Escrevendo/Lendo com FileStream}]{cods/filestream.txt}}
+\end{frame}
+
+\subsection{Métodos CreateText() e OpenText()}
+
+\begin{frame}
+    \frametitle{Métodos CreateText() e OpenText()}
+    \begin{itemize}
+        \item O método \emph{CreateText()} retorna um \emph{StreamWriter} que escreve um arquivo.
+        \item O método \emph{OpenText()} retorna um \emph{StreamReader} que lê um arquivo.
+        \item Esses métodos são utilizados quando trabalha-se com arquivos de texto puro.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo CreateText() e OpenText()}
+    \texttt{\lstinputlisting[language=C, label=createopentext,
+    caption={CreateText e OpenText}]{cods/createopentext.txt}}
+\end{frame}
+
+\section{Exemplos Codificados}
+
+\begin{frame}
+    \frametitle{Exemplos Codificados}
+    \begin{itemize}
+        \item Para fixar os conceitos, vamos estudar os seguintes
+        exemplos:
+        \begin{enumerate}
+            \item ManipulacaoArquivos: Utiliza as classes
+            \emph{StreamWriter} e \emph{StreamReader} puras para
+            criar um mini editor de textos.
+            \item BlocoDeNotas: Utiliza a classe FileInfo em
+            conjunto com as classes \emph{StreamWriter} e
+            \emph{StreamReader} para criar um editor de texto
+            completo.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\section{Exercícios}
+
+\begin{frame}
+    \frametitle{Exercícios}
+    \begin{itemize}
+        \item Exercício para praticar:
+        \begin{enumerate}
+            \item 
+        \item Exercícios para serem entregues.
+
+        \end{enumerate}
+    \end{itemize}
+\end{frame}

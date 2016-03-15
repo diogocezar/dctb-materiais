@@ -1,0 +1,20 @@
+<!-- Errado -->
+
+	<p>Um parágrafo.<p>Outro parágrafo
+	<DIV><P>Aqui um texto</P></DIV>
+	<img src="imagem.gif" name="imagem" />
+	<option selected>
+	<frame noresize>
+	<input checked>
+	<input readonly>
+
+<!-- Correto -->
+
+	<p>Um parágrafo<br /></p>
+	<b>Texto em negrito</b>
+	<div><p>Aqui um texto</p></div>
+	<img src="imagem.gif" id="imagem" name="imagem" />
+	<option selected="selected">
+	<frame noresize="noresize">
+	<input checked="checked">
+	<input readonly="readonly">

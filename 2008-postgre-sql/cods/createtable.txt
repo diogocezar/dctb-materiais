@@ -1,0 +1,12 @@
+CREATE TABLE nome_da_tabela (
+	{ <nome_da_coluna> <tipo_de_dado> [ DEFAULT expressão_padrão ] [[ restrição_de_coluna ] | [restrição_de_tabela]]}
+)[WITH OIDS | WITHOUT OIDS ]
+onde restrição_de_coluna é:
+[ CONSTRAINT nome_da_restrição ]
+{ NOT NULL | NULL | UNIQUE [ USING INDEX TABLESPACE espaço_de_tabelas ] | PRIMARY KEY [ USING INDEX TABLESPACE espaço_de_tabelas ] |
+CHECK (expressão) | REFERENCES tabela_referenciada [ ( coluna_referenciada ) ] }
+e restrição_de_tabela é:
+[ CONSTRAINT nome_da_restrição ]
+{ UNIQUE ( nome_da_coluna [, ... ] ) [ USING INDEX TABLESPACE espaço_de_tabelas ] | PRIMARY KEY ( nome_da_coluna [, ... ] ) [ USING INDEX TABLESPACE
+espaço_de_tabelas ] | CHECK ( expressão ) | FOREIGN KEY ( nome_da_coluna [, ... ] )
+REFERENCES tabela_referenciada [ ( coluna_referenciada [, ... ] ) ] }

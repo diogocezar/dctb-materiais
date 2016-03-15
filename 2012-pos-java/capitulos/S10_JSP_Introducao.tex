@@ -1,0 +1,359 @@
+\section[JSP Introdução]{JSP Introdução}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Introdução}
+    \begin{itemize}
+      \item o que é JSP?
+      \begin{itemize}
+	\item JSP significa ``\textit{Java Server Pages}''. Esta tecnologia é
+usada para servir conteúdo dinâmico para o usuário;
+	\item usando lógica e dados no lado do servidor;
+	\item JSP faz parte da plataforma J2EE (\textit{Java 2 Enterprise
+Edition}) e juntamente com os Java \textit{Servlets} e Java \textit{Beans} pode
+ser usada para desenvolver aplicações \textit{web} eficientes, escaláveis e
+seguras rapidamente;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item Por que usar JSP se já existem PHP, ASP, etc?
+      
+      \begin{itemize}
+	\item JSP usa Java - Java é uma das linguagens mais populares
+atualmente e é interpretada, portanto o código escrito em uma arquitetura pode
+ser portado para qualquer outra;
+
+	\item JSP é parte do pacote J2EE - J2EE é um dos modelos mais usados
+para contruir aplicações de grande porte;
+
+	\item JSP roda em qualquer plataforma que tenha a máquina virtual de
+Java;
+
+	\item Servidores gratúitos;
+      \end{itemize}
+      
+      \framebreak
+      
+      \item Como JSPs funcionam?
+      
+      \begin{itemize}
+	\item A finalidade de JSP é fornecer um método de desenvolvimento de
+\textit{servlets} declarativo e centrado na apresentação;
+
+	\item extensão da API de \textit{Servlets};
+	
+	\item página JSP possuem uma fase de tradução e outra
+de processamento da requisição;
+
+	\item o resultado é uma página JSP que implementa a interface
+\textit{Servlet};
+      \end{itemize}
+     
+   \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Java Beans}
+      \begin{itemize}
+       \item um \textit{Bean} é simplesmente uma classe de Java que segue um
+conjunto de convenções;
+	\item os \textit{Beans} não precisam estender uma determinada classe ou
+implementar uma determinada interface;
+
+	\framebreak
+	
+	\item Convenções de um Bean:
+	
+	\begin{itemize}
+	 \item \textit{Beans} são simplesmente objetos Java;
+	 \item como seguem um padrão fica mais fácil trabalhar com eles;
+	 \item Uma boa prática é colocar \textit{Bean} no nome de uma classe que
+é um \textit{Bean};
+	 \item uma classe que representa uma pessoa ficaria \textit{PessoaBean}
+ou \textit{BeanPessoa};
+	 \item deve conter um construtor sem argumentos; (para se poder
+utilizar \texttt{<jsp:useBean>});
+	 \item get's e set's para acessar atributos privados;
+	 \item padrão para nomenclatura dos atributos;
+	 \item padrão para atributos indexados;
+	 \item padrão para atributos boleanos;
+	\end{itemize}
+	
+	\framebreak
+	
+	\item JSP Tags:
+	
+	\begin{itemize}
+	 \item JSP parece com HTML (ou XML);
+	 \item enquanto as tags HTML são processadas pelo navegador do cliente
+para mostrar a página, as tags de JSP são usadas pelo servidor \textit{web} para
+gerar conteúdo dinâmico;
+	\end{itemize}
+	
+	\framebreak
+	
+	\item Ações em JSP - Executam diversas funções e estendem a capacidade
+de JSP.
+
+	\begin{itemize}
+	 \item \texttt{<jsp:forward>} - transfere o objeto request contendo
+informação da requisição do cliente de uma página JSP para outro arquivo;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <jsp:forward page="URL relativa" />
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+	\framebreak
+    
+	\item \texttt{<jsp:getProperty>} - captura o valor da propriedade de um
+\textit{bean} usando o método get da propriedade e mostra o valor na página JSP;
+
+	\item é necessário criar ou localizar o \textit{bean} com
+\texttt{<jsp:useBean>} antes de usar \texttt{<jsp:getProperty>};
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <jsp:getProperty name="nome do objeto (bean)" property="nome da
+propriedade" />
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+	\framebreak
+	
+	\item \texttt{<jsp:include>} - Este elemento permite incluir um arquivo
+estático ou dinâmico numa página JSP;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	<jsp:include page="URL relativa" />
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \framebreak
+      
+      \item \texttt{<jsp:useBean>} - Localiza ou instancia um componente;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	<jsp:useBean 
+	id="nome da instancia"
+	scope="page|request|session|application"
+	{
+	  class="package.class" |
+	  type="package.class" |
+	  class="package.class" type="package.class" |
+	  beanName="{package.class}"
+	  type="package.class"
+	}
+	/>
+	</jsp:useBean>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \framebreak
+      
+      \item \texttt{<jsp:setProperty>} - ajusta o valor de uma ou mais
+propriedades em um bean;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <jsp:setProperty
+	  name="nome de instância do bean"
+	  {
+	    property="*" |
+	    property="nome da propriedade" [ param="nome do parâmetro" ] |
+	    property="nome da propriedade" value="{string}"
+	  }
+	  />
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \end{itemize}
+    
+    \framebreak
+    
+    \item Diretivas - são instruções processadas quando a página JSP é
+compilada em um \textit{servlet}.
+
+    \begin{itemize}
+      \item \textit{Include} - inclui um arquivo estático em uma página JSP;
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <%@ include file="relativeURL" %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+      \framebreak
+    
+      \item \textit{Page} - Define atributos que são aplicados a todo o arquivo
+JSP, e a todos os seus arquivos incluídos estaticamente;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <%@ page
+	  [ language="java" ]
+	  [ extends="package.class" ]
+	  [ import="{package.class | package.*}, ..." ]
+	  [ session="true|false" ]
+	  [ buffer="none|8kb|sizekb" ]
+	  [ autoFlush="true|false" ]
+	  [ isThreadSafe="true|false" ]
+	  [ info="text" ]
+	  [ errorPage="URL relativa" ]
+	  [ contentType="mimeType [ ;charset=characterSet ]" |
+	  "text/html ; charset=ISO-8859-1" ]
+	  [ isErrorPage="true|false" ]
+	  %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+
+    \framebreak
+    
+    \item \textit{Taglib} - Define uma \textit{tag library} e seu prefixo a ser
+usado na página JSP.
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <%@ taglib uri="localização do descritor da tag" prefix="prefixo da
+tag" %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \end{itemize}
+    
+    \framebreak
+    
+    \item \textit{Declarações} - são similares com as declarações de
+variáveis em Java;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <%! int x = 0;  %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+
+    \item \textit{Expressões} - Contém um comando válido da linguagem Java que
+é avaliado, convertido para um \textit{String}, e inserido onde a expressão
+aparece no arquivo JSP:
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <%= pessoa.getNome() %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \item \textit{Scriptlets} - São blocos de código Java embutidos numa
+página JSP;
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java
+	}
+	\begin{lstlisting}
+	  <% int x = 0;
+	    x = 4 * 9;
+	    String str = "PET";
+	    ...
+	  %>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \end{itemize}
+\end{frame}
+
+% Objetos
+%\begin{frame}[c,allowframebreaks,fragile]
+%    \frametitle{Objetos implícitos}
+%      \begin{itemize}
+%       \item como uma caracterísstica conveniente, o container JSP deixa
+%disponível objetos implícitos que podem ser usados nos scriptlets e
+%expressões, sem que o autor tenha que criá-los;
+%       \item estes objetos instanciam classes definidas na API
+%(application program interface) de Servlets;
+%      \end{itemize}
+%\end{frame}
+
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Faça uma página em JSP que:
+       \begin{itemize}
+	  \item exiba data e hora de acesso;
+	  \item percorra uma lista de objetos e mostre todos seus atributos;
+	  \item imprima uma um único atributo do objeto utilizando \texttt{<\%=
+\%>};
+	  \item declare uma variável com \texttt{<\%!
+\%>};
+	  \item sete as propriedades de um objeto;
+	  \item recurepe as propriedades de um objeto;
+       \end{itemize}
+      \end{itemize}
+\end{frame}

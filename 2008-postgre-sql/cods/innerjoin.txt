@@ -1,0 +1,13 @@
+SELECT p.uname, p.nome, a.qtde
+FROM pessoas p
+INNER JOIN acessos a
+ON p.uname = a.pessoa
+ORDER BY p.uname;
+
+O mesmo JOIN:
+
+SELECT p.uname, p.nome, a.qtde
+FROM pessoas p, acessos a
+WHERE p.uname = a.pessoa
+ORDER BY p.uname;
+

@@ -1,0 +1,35 @@
+\chapter{Conclusão}
+\label{conclusao}
+
+Este trabalho apresenta um modelo para a construção de um sistema para execução de fluxos de trabalho científico baseado em técnicas de planejamento. Um fluxo de trabalho é formado por tarefas, que são enviadas para um ambiente de execução distribuído, visando minimizar o tempo de execução.
+
+Para o escalonamento de tarefas entre os nós do ambiente distribuído, o modelo proposto utiliza técnicas de planejamento que leva em consideração três principais características: um tempo de execução estimado fornecido pelo usuário, um coeficiente de tempo extraído de execuções anteriores e a situação atual do ambiente distribuído. Essas informações são obtidas por um oráculo que consulta: as definições dos fluxos de trabalho, o estado atual do sistema e um banco de metadados. Com essas informações, o oráculo gera um coeficiente de custo para cada operador no espaço de estados do plano. O planejador procura por um plano que minimize o custo total das operações, resultando em um plano de execução que mapeia as tarefas para seus respectivos nós.
+
+A implementação do sistema, utilizou o \emph{CRIKEY} como planejador \cite{Halsey2004,Coles} (seção \ref{crikey}) e o \emph{PeerUnit} \cite{Almeida2008} (seção \ref{peerunit}) como gerenciador de execução. Visto que a implementação utilizou a técnica P2P, o sistema torna-se independente das características do ambiente distribuído, pois cada \emph{peer} tem a função de trabalhar de forma autônoma.
+
+A fim de coletar os metadados, cada nó possui um sistema coletor de informações, que armazena em um banco de metadados quais foram as tarefas executadas, o tempo de execução e informações sobre o nó no final da execução, tais como: taxa de ocupação do processador, quantidade de memória utilizada, entre outros.
+
+No modelo, foram explorados dois tipos de paralelismo: \emph{paralelismo sobre os dados} e \emph{paralelismo sobre a execução}. O paralelismo sobre os dados é dividido em dois submodelos: \emph{direto} e \emph{paralelo por plano}. O modelo \emph{direto} escalona o processamento dos dados a partir de parâmetros inseridos na descrição do fluxo de trabalho. O modelo \emph{paralelo por plano} utiliza o planejador para dividir os dados entre os nós disponíveis. O \emph{paralelismo sobre a execução} é a execução paralela dos fluxos de trabalho. Seu escalonamento é feito pelo planejador, que a partir das informações provenientes dos recursos disponíveis, pondera quais tarefas podem ser executadas em paralelo e quais os melhores nós para tal execução.
+
+A implementação do modelo focou na construção de um ambiente executável, que coordena desde o mapeamento dos experimentos para os fluxos de trabalho, até a exportação dos resultados obtidos. Dentre as técnicas de paralelização, implementou-se o modelo \emph{direto}, e o \emph{paralelismo sobre execução}. Além disso, foi implementada uma versão mais simples do oráculo, que é capaz de responder apenas a taxa de ocupação dos nós em três estados: disponível, parcialmente disponível ou indisponível.
+
+Com os resultados obtidos, nota-se que o sistema gera planos de qualidade e que podem ser aprimorados com o refinamento do oráculo, bem como a implementação completa do planejamento de custos abordado na seção \ref{plan-custos}, e a adição de novas métricas para explorar planos de execução personalizados.
+
+\section{Trabalhos Futuros}
+\label{trabalhos-futuros}
+
+A implementação utilizada neste trabalho focou na construção de uma estrutura capaz de executar as funcionalidades básicas do modelo descrito. Por isso uma série de extensões podem ser exploradas como trabalhos futuros. O principal componente a ser trabalho é o \emph{OráculoDeMetaDados}. Com consultas mais detalhadas aos metadados, e a situação atual dos recursos é possível obter planos ainda melhores. Como sugestão de implementação, apresenta-se o modelo descrito na seção de custos \ref{plan-custos}. 
+
+Ainda é possível obter detalhes dos nós que possam ajudar em um planejamento baseado em outras métricas que não se resumem a minimizar o tempo de execução. Ao extrair informações específicas, como por exemplo, qual o custo em energia elétrica para processar determinado operador, pode-se ajustar o coeficiente de custos para a obtenção de um plano de execução que resolva um determinado fluxo de trabalho com o menor gasto de energia.
+
+Os operadores (seção \ref{operadores}) suportam diferentes implementações, específicas para serem executadas de forma serial ou para uma quantidade $n$ de nós. Desta forma propõe-se que o planejador seja capaz de escolher (em conjunto com o \emph{OráculoDeMetaDados}) qual a melhor implementação a ser utilizada. Para que isso seja feito, é necessário que se insira informações específicas sobre as tarefas nos arquivos PDDL que serão interpretados pelo planejador.
+
+Nos testes efetuados, nota-se que o processo de difusão dos resultados consome um tempo considerável. Para amenizar este problema, sugere-se que o método de difusão seja capaz de analisar o plano de execução e propague os dados de saída apenas para os nós que irão utilizar os dados em processamentos futuros. Para isso, é necessário que os operadores de difusão sejam incluídos no planejamento, assim é possível uma propagação exata dos dados para os nós que irão utilizar os dados futuramente.
+
+A \emph{paralelização por plano} (seção \ref{par-plano}) pode ser implementada, deixando por conta do planejador a distribuição de dados paralela. Após a análise dos dados oferecidos pelo oráculo, o planejador poderá escolher quantos nós serão destinados para a execução de uma tarefa. Para isso é necessário que o sistema de tradução seja alterado, e os operadores recebam como parâmetro o número de nós que serão utilizados naquela operação.
+
+Como detalhes de implementação, sugere-se o refinamento do tratamento de tolerância a falhas, o detalhamento do sistema de \emph{logs} e a interação com o sistema de \emph{logs} do \emph{PeerUnit}.
+
+Um fluxo de trabalho científico pode conter ciclos em sua estrutura. Os ciclos aumentam a complexidade em sistemas que incluam o tratamento dessa classe de problemas \cite{Yongsun2004}. Uma limitação deste modelo é a impossibilidade de tratar fluxos de trabalho que necessitem de uma especificação cíclica. Entretanto, uma das funcionalidades desenvolvidas, permite ao usuário especificar múltiplas entrada e saídas de dados (seção \ref{ex3}). Isso permite um encapsulamento de operadores que necessitem de ciclos, unindo-os em um operador maior que executa mais de uma operação.
+
+%Em \cite{Cheung2005} discute-se uma visão da interação de sistemas que utilizam ambientes de execução distribuídos com sistemas de IA. Demonstra-se que a Internet é um ótimo meio para criação de trabalhos colaborativos. Baseado nisso, propõe-se a adequação do modelo para execução na Internet. A principal vantagem ao trabalhar com este tipo de colaborativismo global está no refinamento das informações geradas nos históricos de execução. % Quanto mais experimentos forem executados nesse ambiente, mais refinados serão os planos de execução gerados.

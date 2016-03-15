@@ -1,0 +1,13 @@
+abstract class formaClasse
+{
+    abstract public int Area();
+}
+class quadrado : formaClasse
+{
+    int x, y;
+    // Se não for implementado o método Area()
+    // será gerado um compile-time error.
+    // Utiliza-se o operador override para indicar a sobrescrita.
+
+    public override int Area(){ return x * y; }
+}

@@ -1,0 +1,155 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{1.52 }
+
+\bibitem[Amaral 2001]{livro:css}
+\abntrefinfo{Amaral}{AMARAL}{2001}
+{AMARAL, L.~G. \emph{Cascading Style Sheets (CSS) - Guia de Consulta Rápida}.
+  [S.l.]: Novatec, 2001.}
+
+\bibitem[Andreazza 2006]{apresentacao:jean}
+\abntrefinfo{Andreazza}{ANDREAZZA}{2006}
+{ANDREAZZA, J. D. H.~M. \emph{Hipermídia}. Julho 2006.}
+
+\bibitem[Apache \emph{Software} Foundation 2006]{site:apache}
+\abntrefinfo{Apache\ldots}{APACHE\ldots}{2006}
+{APACHE \emph{Software} Foundation. 2006.
+Disponível em: <http://www.apache.org/>.}
+
+\bibitem[ARLOW 2002]{arlow:2003}
+\abntrefinfo{ARLOW}{ARLOW}{2002}
+{ARLOW, J. \emph{UML and the unified process: practical object-oriented
+  analysis and design}. [S.l.]: Addison Wesley, 2002.}
+
+\bibitem[Booch et al. 2000]{livro:uml}
+\abntrefinfo{Booch et al.}{BOOCH et al.}{2000}
+{BOOCH, G.; RUMBAUGH, J.; JACOBSON, I. \emph{UML guia do usuário}. [S.l.]:
+  Editora Campus, 2000.}
+
+\bibitem[Cardim 2002]{artigo:neuronios}
+\abntrefinfo{Cardim}{CARDIM}{2002}
+{CARDIM, M. A evolu\c{C}Ão da computa\c{C}Ão / redes neurais.
+2002.}
+
+\bibitem[Colorni et al. 2001]{artigo:antsystem}
+\abntrefinfo{Colorni et al.}{COLORNI et al.}{2001}
+{COLORNI, A.; DORIGO, M.; MANIEZZO, V. Distributed optimization by ant
+  colonies.
+2001.}
+
+\bibitem[Couto 2004]{curso:php}
+\abntrefinfo{Couto}{COUTO}{2004}
+{COUTO, R. \emph{Curso PHP}. 6 2004.}
+
+\bibitem[Dorigo et al. 1996]{artigo:dorigo96nt}
+\abntrefinfo{Dorigo et al.}{DORIGO et al.}{1996}
+{DORIGO, M.; MANIEZZO, V.; COLORNI, A. The {A}nt {S}ystem: {O}ptimization by a
+  colony of cooperating agents.
+\emph{IEEE Transactions on Systems, Man, and Cybernetics Part B: Cybernetics},
+  v.~26, n.~1, p. 29--41, 1996.
+Dispon{\'\i}vel em: $<$citeseer.ist.psu.edu/dorigo96ant.html$>$.}
+
+\bibitem[Feofiloff 2006]{algoritmos:NPCompleto}
+\abntrefinfo{Feofiloff}{FEOFILOFF}{2006}
+{FEOFILOFF, P. \emph{Analise de Algorítmos -
+  http://www.ime.usp.br/pf/analisedealgoritmos}. [S.l.]: IME - Instituto de
+  Matemática e Estatística da USP, 2006.}
+
+\bibitem[Filho 2003]{livro:engenharia}
+\abntrefinfo{Filho}{FILHO}{2003}
+{FILHO, W. de P.~P. \emph{Engenharia de Software}: Fundamentos, métodos e
+  padrões. [S.l.]: LTC, 2003.}
+
+\bibitem[Hammersley 2003]{livro:rss}
+\abntrefinfo{Hammersley}{HAMMERSLEY}{2003}
+{HAMMERSLEY, B. \emph{Content Syndication with RSS}. [S.l.]: O'Reilly Media,
+  2003.}
+
+\bibitem[Lopes 2006]{eri:heitor}
+\abntrefinfo{Lopes}{LOPES}{2006}
+{LOPES, H.~S. Fundamentos da computação evolucionária e aplicações.
+\emph{XIII Escola Regional de Informática da Sociedade Brasileira de Computação
+  (SBC) - Paraná}, 2006.}
+
+\bibitem[Milani 2007]{livro:mysql}
+\abntrefinfo{Milani}{MILANI}{2007}
+{MILANI, A. \emph{MySQL - Guia do Programador}. [S.l.: s.n.], 2007.}
+
+\bibitem[Nadalete 2005]{monografia:lucas}
+\abntrefinfo{Nadalete}{NADALETE}{2005}
+{NADALETE, L.~G. Sistema de controle de ocorr\^{e}ncias de docentes e
+  discentes.
+2005.}
+
+\bibitem[Niederauer 2001]{livro:pgsql}
+\abntrefinfo{Niederauer}{NIEDERAUER}{2001}
+{NIEDERAUER, J. \emph{PostgreSQL - Guia de Consulta Rápida}. [S.l.: s.n.],
+  2001.}
+
+\bibitem[Niederauer 2004]{livro:php2}
+\abntrefinfo{Niederauer}{NIEDERAUER}{2004}
+{NIEDERAUER, J. \emph{PHP para quem conhece PHP : Recursos avançados para a
+  criação de Websites dinâmicos}. 2. ed. [S.l.]: Novatec, 2004.}
+
+\bibitem[Palazzo 2002]{atigo:hiperadapt}
+\abntrefinfo{Palazzo}{PALAZZO}{2002}
+{PALAZZO, L. A.~M. Sistemas de hipermídia adaptativa.
+2002.}
+
+\bibitem[PANSANATO 2003]{artigo:aspcognitivo}
+\abntrefinfo{PANSANATO}{PANSANATO}{2003}
+{PANSANATO, L. T.~E. Aspectos cognitivos de aplicações hipermídia.
+2003.}
+
+\bibitem[Santos 2006]{artigo:tableless}
+\abntrefinfo{Santos}{SANTOS}{2006}
+{SANTOS, L. E.~B. dos. Web standards - benefícios do desenvolvimento web
+  baseado na metodologia tableless.
+2006.}
+
+\bibitem[Scott 2003]{livro:up}
+\abntrefinfo{Scott}{SCOTT}{2003}
+{SCOTT, K. \emph{O Processo Unificado Explicado}. [S.l.]: Bookman, 2003.}
+
+\bibitem[Shishido 2007]{td:shido}
+\abntrefinfo{Shishido}{SHISHIDO}{2007}
+{SHISHIDO, H.~Y. Sistema para lançamento de ocorrências e notificações para
+  pocket pc.
+2007.}
+
+\bibitem[Silva et al. 2003]{artigo:definicoes}
+\abntrefinfo{Silva et al.}{SILVA et al.}{2003}
+{SILVA, L.~K. da et al. Um assistente digital para responder automaticamente
+  perguntas de usuários humanos em portais corporativos.
+2003.}
+
+\bibitem[Soares 2000]{livro:php}
+\abntrefinfo{Soares}{SOARES}{2000}
+{SOARES, W. \emph{Programando em PHP : conceitos e aplicações}. 2. ed. [S.l.]:
+  Érica, 2000.}
+
+\bibitem[Soares 2006]{livro:ajax}
+\abntrefinfo{Soares}{SOARES}{2006}
+{SOARES, W. \emph{AJAX - Guia Prático para Windows}. [S.l.: s.n.], 2006.}
+
+\bibitem[Teles et al. 2003]{artigo:antweb}
+\abntrefinfo{Teles et al.}{TELES et al.}{2003}
+{TELES, W.~M.; WEIGANG, L.; RALHA, C.~G. Uma heurística para guiar os usuários
+  da internet baseada no comportamento da formiga.
+2003.}
+
+\bibitem[Vieira e Caixeta 2004]{mono:interlegis}
+\abntrefinfo{Vieira e Caixeta}{VIEIRA; CAIXETA}{2004}
+{VIEIRA, P. H.~G.; CAIXETA, R.~G. Implementação da heurística da formiga para
+  auxiliar à navegação do portal interlegis.
+2004.}
+
+\bibitem[Wong 2000]{livro:http}
+\abntrefinfo{Wong}{WONG}{2000}
+{WONG, C. \emph{HTTP Pocket Reference: Hypertext Transfer Protocol
+  (Paperback)}. 1. ed. [S.l.]: O'Reilly Media, 2000.}
+
+\end{thebibliography}

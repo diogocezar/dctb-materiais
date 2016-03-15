@@ -1,0 +1,52 @@
+\section{Camada de Adaptação}
+
+\begin{frame}
+    \frametitle{Cálculo da Relevância de uma Página}
+
+    \begin{equation}
+        \omega(o, d, g) = \frac{F_{odg}}{\sum_{t=1}^{n}F_{otg}}
+        \label{eq:relevancia}
+    \end{equation}
+
+    \emph{onde:}
+
+    \begin{itemize}
+        \item $\omega$ é a relevância daquela página em relação às outras;
+        \item $n$ é o número de páginas destino a partir daquela
+        origem.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Arquitetura do Modelo Proposto}
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/oriant/fig_geral.jpg}
+            \label{fig:arquitetura}
+            \caption{Arquitetura do modelo proposto}
+        \end{center}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Opções para o usuário OriAnt}
+
+    Além do grupo de interesses, também é possível que o usuário escolha
+    um dos tipos de orientação:
+
+    \begin{itemize}
+        \item <1-> disposição objetiva;
+        \item <2-> disposição orientada;
+        \item <3-> disposição por assuntos relacionados;
+    \end{itemize}
+
+    E o contexto da orientação: esta página ou todas as páginas:
+
+    \begin{itemize}
+        \item <4-> essa página;
+        \item <5-> todas as páginas;
+    \end{itemize}
+
+\end{frame}

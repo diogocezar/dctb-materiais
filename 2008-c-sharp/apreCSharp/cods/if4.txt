@@ -1,0 +1,1 @@
+if(x==1 && y==100 && z==1000) System.Console.Write("OK");

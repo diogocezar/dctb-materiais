@@ -1,0 +1,213 @@
+\begin{thebibliography}{10}
+
+\bibitem{Akram2006}
+A.~Akram, D.~Meredith, e R.~Allan.
+\newblock {Evaluation of BPEL to Scientific Workflows}.
+\newblock {\em Proceedings of 6th IEEE International Symposium on Cluster
+  Computing and the Grid}, páginas 269--274. IEEE Computer Society, 2006.
+
+\bibitem{Almeida2008}
+Eduardo Cunha~De Almeida, Gerson Suny\'{e}, Yves~Le Traon, e Patrick Valduriez.
+\newblock {A Framework for Testing Peer-to-Peer Systems}.
+\newblock {\em 2008 19th International Symposium on Software Reliability
+  Engineering (ISSRE)}, páginas 167--176, novembro de 2008.
+
+\bibitem{Altintas2004}
+I.~Altintas, C.~Berkley, E.~Jaeger, M.~Jones, B.~Ludascher, e S.~Mock.
+\newblock {Kepler: an Extensible System for Design and Execution of Scientific
+  Workflows}.
+\newblock {\em Proceedings of the 16th International Conference on Scientific
+  and Statistical Database Management}, páginas 423--424. IEEE Computer
+  Society, 2004.
+
+\bibitem{Androutsellis-theotokis2004}
+Stephanos Androutsellis-Theotokis e Diomidis Spinellis.
+\newblock A survey of peer-to-peer content distribution technologies.
+\newblock {\em ACM Comput. Surv.}, 36(4):335--371, dezembro de 2004.
+
+\bibitem{Armbrust2009}
+M.~Armbrust, A.~Fox, R.~Griffith, A.~D. Joseph, R.~H. Katz, A.~Konwinski,
+  G.~Lee, D.~A. Patterson, A.~Rabkin, I.~Stoica, e M.~Zaharia.
+\newblock {Above the Clouds: A Berkeley View of Cloud Computing}.
+\newblock Relatório técnico, EECS Department, University of California,
+  Berkeley, 2009.
+
+\bibitem{Belhajjame2008}
+K.~Belhajjame, K.~Wolstencroft, O.~Corcho, T.~Oinn, F.~Tanoh, A.~William, e
+  C.~Goble.
+\newblock {Metadata Management in the Taverna Workflow System}.
+\newblock {\em Journal of 8th IEEE International Symposium on Cluster Computing
+  and the Grid}, 0:651--656, maio de 2008.
+
+\bibitem{Blum1995}
+Avrim~L. Blum e Merrick~L. Furst.
+\newblock Fast planning through planning graph analysis.
+\newblock {\em Artificial Intelligence}, 90(1):1636--1642, 1995.
+
+\bibitem{Bonet2001}
+Blai Bonet e Hector Geffner.
+\newblock Planning as heuristic search.
+\newblock {\em Artificial Intelligence}, 129:5--33, 2001.
+
+\bibitem{Callahan2006}
+S.P. Callahan, Juliana Freire, Emanuele Santos, C.E. Scheidegger, C.T. Silva, e
+  H.T. Vo.
+\newblock {VisTrails: visualization meets data management}.
+\newblock {\em Proceedings of the 2006 ACM SIGMOD international conference on
+  Management of data}, páginas 745--747. ACM, 2006.
+
+\bibitem{Yongsun2004}
+Yongsun Choi.
+\newblock A two phase verification algorithm for cyclic workflow graphs.
+\newblock Jian Chen, editor, {\em ICEB}, páginas 137--143. Academic
+  Publishers/World Publishing Corporation, 2004.
+
+\bibitem{Coles}
+Andrew Coles, Maria Fox, Keith Halsey, Derek Long, e Amanda Smith.
+\newblock Managing concurrency in temporal planning using planner-scheduler
+  interaction.
+\newblock {\em Artif. Intell.}, 173(1):1--44, 2009.
+
+\bibitem{DeOliveira2010}
+Daniel de~Oliveira, Eduardo~S. Ogasawara, Fernanda~Araujo Bai{\~a}o, e Marta
+  Mattoso.
+\newblock Scicumulus: A lightweight cloud middleware to explore many task
+  computing paradigm in scientific workflows.
+\newblock {\em IEEE CLOUD}, páginas 378--385, 2010.
+
+\bibitem{Deelman2004}
+E.~Deelman, J.~Blythe, Y.~Gil, C.~Kesselman, G.~Mehta, S.~Patil, M.~H. Su,
+  K.~Vahi, e M.~Livny.
+\newblock {\em {Pegasus: Mapping Scientific Workflows onto the Grid}}, volume
+  0086044, páginas 131--140.
+\newblock Springer Berlin / Heidelberg, 2004.
+
+\bibitem{Deelman2009}
+Ewa Deelman, Dennis Gannon, Matthew Shields, e Ian Taylor.
+\newblock Workflows and e-science: An overview of workflow system features and
+  capabilities.
+\newblock {\em Future Generation Computer Systems}, 25(5):528 -- 540, 2009.
+
+\bibitem{Dornemann2010}
+T.~D\"{o}rnemann, E.~Juhnke, T.~Noll, D.~Seiler, e B.~Freisleben.
+\newblock {Data Flow Driven Scheduling of BPEL Workflows Using Cloud
+  Resources}.
+\newblock {\em Proceedings of 3rd International Conference on Cloud Computing},
+  páginas 196--203. IEEE Computer Society, julho de 2010.
+
+\bibitem{Eker2003}
+Johan Eker, Jorn Janneck, Edward~A. Lee, Jie Liu, Xiaojun Liu, Jozsef Ludvig,
+  Sonia Sachs, e Yuhong Xiong.
+\newblock Taming heterogeneity - the ptolemy approach.
+\newblock {\em Proceedings of the IEEE}, 91(1):127--144, January de 2003.
+
+\bibitem{Fikes1971}
+Richard~E. Fikes e Nils~J. Nilsson.
+\newblock {Strips: A new approach to the application of theorem proving to
+  problem solving}.
+\newblock {\em Artificial Intelligence}, 2(3-4):189--208, janeiro de 1971.
+
+\bibitem{Foster2002}
+Ian Foster, J.~Vockler, M.~Wilde, e Y.~Zhao.
+\newblock {Chimera: A virtual data system for representing, querying, and
+  automating data derivation}.
+\newblock {\em Scientific and Statistical Database Management, 2002.
+  Proceedings. 14th International Conference on}, páginas 37--46. IEEE, 2002.
+
+\bibitem{Fox2003}
+Maria Fox e Derek Long.
+\newblock {pddl2 . 1 : An Extension to pddl for Expressing Temporal Planning
+  Domains}.
+\newblock {\em Information Sciences}, 20:61--124, 2003.
+
+\bibitem{Gil2004}
+Yolanda Gil, Ewa Deelman, Jim Blythe, Carl Kesselman, e H.~Tangmunarunkit.
+\newblock {Artificial Intelligence and Grids : Workflow Planning and Beyond}.
+\newblock {\em Intelligent Systems, IEEE}, 19(1):26--33, 2004.
+
+\bibitem{Halsey2004}
+Keith Halsey.
+\newblock {The workings of CRIKEY - a temporal metric planner}.
+\newblock {\em Proc. Int. Conf. on Automated Planning and Scheduling
+  (ICAPS-2004) International Planning Competition}, páginas 35--37, 2004.
+
+\bibitem{Hoffmann2002}
+Jorg Hoffmann.
+\newblock Extending ff to numerical state variables.
+\newblock {\em Proceedings of the 15Th European Conference on Artificial
+  Intelligence}, páginas 571--575. Wiley, 2002.
+
+\bibitem{Ilghami2006}
+Okhtay Ilghami.
+\newblock {Documentation for JSHOP2}.
+\newblock {\em Relat\'{o}rio t\'{e}cnico, Department of Computer Science,
+  University of Maryland}, 51, 2006.
+
+\bibitem{Kautz1992}
+Henry Kautz.
+\newblock {Planning as satisfiability}.
+\newblock {\em Proceedings of the European Conference on}, (August 1992):1--12,
+  1992.
+
+\bibitem{Kautz2006}
+Henry~A. Kautz, Bart Selman, e J{\"{o}}rg Hoffmann.
+\newblock {SatPlan}: Planning as satisfiability.
+\newblock {\em Abstracts of the 5th International Planning Competition}, 2006.
+
+\bibitem{Lee2008}
+Kevin Lee, Norman~W. Paton, Rizos Sakellariou, Ewa Deelman, Alvaro A.~A.
+  Fernandes, e Gaurang Mehta.
+\newblock {Adaptive Workflow Processing and Execution in Pegasus}.
+\newblock {\em Proceedings of the 2008 The 3rd International Conference on Grid
+  and Pervasive Computing - Workshops}, páginas 99--106, Washington, DC, USA,
+  2008. IEEE Computer Society.
+
+\bibitem{Miles}
+Simon Miles, Paul Groth, Miguel Branco, e Luc Moreau.
+\newblock The requirements of recording and using provenance in e-science
+  experiments.
+\newblock Relatório técnico, Journal of Grid Computing, 2005.
+
+\bibitem{Miles2007}
+Simon Miles, Sylvia~C. Wong, Weijian Fang, Paul Groth, Klaus-Peter Zauner, e
+  Luc Moreau.
+\newblock {Provenance-based validation of e-science experiments}.
+\newblock {\em Web Semantics: Science, Services and Agents on the World Wide
+  Web}, 5(1):28--38, março de 2007.
+
+\bibitem{Nau1999}
+D.~Nau, Y.~Cao, A.~Lotem, e H.~Mu\~{n}oz Avila.
+\newblock {SHOP: Simple hierarchical ordered planner}.
+\newblock {\em Proceedings of the 16th international joint conference on
+  Artificial intelligence-Volume 2}, páginas 968--973. Morgan Kaufmann
+  Publishers Inc., 1999.
+
+\bibitem{Nau2003}
+Dana Nau, T.C. Au, O.~Ilghami, U.~Kuter, J.W. Murdock, Dan Wu, e F.~Yaman.
+\newblock {SHOP2: An HTN planning system}.
+\newblock {\em Journal of Artificial Intelligence Research}, 20(1):379--404,
+  2003.
+
+\bibitem{Sharma2010}
+Raksha Sharma, Vishnu~Kant Soni, Manoj~Kumar Mishra, e Prachet Bhuyan.
+\newblock {A Survey of Job Scheduling and Resource Management in Grid
+  Computing}.
+\newblock {\em Engineering and Technology}, páginas 461--466, 2010.
+
+\bibitem{Simmhan2005}
+Yogesh~L. Simmhan, Beth Plale, e Dennis Gannon.
+\newblock {A survey of data provenance in e-science}.
+\newblock {\em ACM SIGMOD Record}, 34(3):31, setembro de 2005.
+
+\bibitem{Sotomayor2009}
+B.~Sotomayor, R.~S. Montero, I.~M. Llorente, e I.~Foster.
+\newblock {Virtual Infrastructure Management in Private and Hybrid Clouds}.
+\newblock {\em Journal of IEEE Internet Computing}, 13(5):14--22, setembro de
+  2009.
+
+\bibitem{Weld1999}
+D.S. Weld.
+\newblock {Recent advances in AI planning}.
+\newblock {\em AI magazine}, 20(2):93, 1999.
+
+\end{thebibliography}

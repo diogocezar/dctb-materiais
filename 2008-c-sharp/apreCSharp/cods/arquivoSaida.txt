@@ -1,0 +1,30 @@
+R:F::
+cnpf:000.000.000-00/00;
+nome:bebidas gel dist;
+razao_social:coca-cola s/a;
+cidade:cornélio procópio;
+endereco:rua pedro gomes, 425;
+telefone:043-3523-3340;
+--
+cnpf:111.121.242-24/21;
+nome:padaria pao bao;
+razao_social:pao bao ltda;
+cidade:paraguacu;
+endereco:rua alfredo quincas, 49;
+telefone:043-8897-9889;
+--
+R:C::
+cpf:009.880.000-29;
+nome:pedro bozzeli;
+cidade:paraguacu;
+endereco:julio gomes, 8849;
+telefone:043-8878-7789;
+--
+R:CP::
+cpf:059.855.064-49;
+nome:pedro rico;
+cidade:londrina;
+endereco:jk, 1232;
+telefone:043-3345-9789;
+desconto:45.50;
+--

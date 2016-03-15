@@ -1,0 +1,10 @@
+int a = 0; bool f = true; 
+while(f){
+  if(++a==100) f = true;
+  System.Console.WriteLine(a);
+}
+int a = 0; bool f = true; 
+do{
+  if(++a==100) f = true;
+  System.Console.WriteLine(a);
+} while(f);

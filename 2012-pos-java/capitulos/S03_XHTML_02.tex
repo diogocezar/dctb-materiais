@@ -1,0 +1,93 @@
+\section[XHTML - Parte 2]{XHTML - Parte 2}
+
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Elementos de Lista}
+    \begin{itemize}
+      \item o XHTML dá suporte a três tipos de listas:
+      \begin{itemize}
+       \item ordenadas;
+       \item não ordenadas; 
+       \item de definição.
+      \end{itemize}
+      \item utiliza-se o marcador \texttt{<ul>} e \texttt{</ul>}, e dos
+elementos \texttt{<li>} e \texttt{</li>};
+      \item este tipo de lista pode através do atributo ``type'', apresentar
+três tipos de marcadores:
+      \begin{itemize}
+       \item um circulo vazio (circle);
+       \item um circulo cheio (disc); 
+       \item um quadrado (square).
+      \end{itemize}
+      \item as listas ordenadas possuem elementos que são ``numerados'', o
+marcador utilizado é o \texttt{<ol>} e \texttt{</ol>} e para definição de cada
+sub-elemento são os \texttt{<li>} e \texttt{</li>}.
+      \item o tipo de numeração pode ser alterado com o uso do atributo
+``type'', o qual pode assumir os valores: 
+      \begin{itemize}
+       \item 1 (arábico);
+       \item a, A (alfabético);
+       \item i e I (romano).
+      \end{itemize}
+      \item podem ser utilizadas na definição de termos, o marcador geral são os
+\texttt{<dl>} e \texttt{</dl>};
+      \item os que identificam o texto a ser definido são os
+\texttt{<dt>} e \texttt{</dt>} e a definição dos termos é feita através dos
+\texttt{<dd>} \texttt{</dd>}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Elementos de Lista - Exemplos}
+      \lstinputlisting[language=HTML,label=lista-nao-ordenada,
+caption={Exemplo Lista Não Ordenada}]{codes/XHTML_Lista_Nao_Ordenada.txt}
+      \framebreak
+      \lstinputlisting[language=HTML,label=lista-definicao,
+caption={Exemplo Lista de Definição}]{codes/XHTML_Lista_Definicao.txt}
+      \framebreak
+      \lstinputlisting[language=HTML,label=lista-ordenada,
+caption={Exemplo Lista Ordenada}]{codes/XHTML_Lista_Ordenada.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{XHTML - Atributos}
+    \begin{itemize}
+      \item os atributos são utilizados para complementar a personalização dos
+componentes, seja com relação a seu comportamento ou quanto a sua apresentação;
+      \item podem ser utilizados por qualquer marcador existente na linguagem:
+    \end{itemize}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/atributos.pdf}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{XHTML - Links}
+    \begin{itemize}
+      \item as ligações hipertexto são figuras ou trechos de textos que quando
+clicados, ou acionados, redirecionam o navegador ou leitor XHTML à um outro
+documento, ou a outro ponto do documento atual;
+      \item outro atributo que pode ser utilizado pelo elemento \texttt{<a>} é o
+``name'', utilizado na criação de âncoras dentro do mesmo documento:
+    \end{itemize}
+      \framebreak
+      \lstinputlisting[language=HTML,label=ancora,
+caption={Exemplo Links Âncora}]{codes/Ancora.txt}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item faça uma página em \texttt{XHTML} utilizando:
+      \begin{itemize}
+       \item elementos de lista ordenadas;
+       \item elementos de lista não ordenadas;
+       \item elementos de lista de definição;
+       \item links internos (outras páginas locais);
+       \item links externos (páginas externas);
+       \item links para ancoragem (pontos específicos no próprio documento);
+      \end{itemize}
+    \end{itemize}
+\end{frame}

@@ -1,0 +1,7 @@
+class NomeDaClasse {	
+	private   int atrib1;
+	public    int atrib2;
+	protected int atrib3;
+	internal  int atrib4;
+	...
+}

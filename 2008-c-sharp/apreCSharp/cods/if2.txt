@@ -1,0 +1,9 @@
+//&& (And). Somente a primeira função é executada
+if(MyFunc() && MyFunc2());
+
+//|| (Or). Ambas funções são executadas
+if(MyFunc() || MyFunc2());
+
+public static bool MyFunc(){ return false; }
+
+public static bool MyFunc2(){ return true; }

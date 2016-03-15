@@ -1,0 +1,20 @@
+<body>
+<h1>Exemplo de uso de Ligações Hipertexto</h1>
+<p>Menu</p>
+<p><a href="#uteis">Links Úteis</a></p>
+<p><a href="#busca">Sites de Busca</a></p>
+<p><a href="#ref">Referencias</a></p>
+<p>
+	<a name="uteis" href="http://www.yahoo.com.br">http://www.ig.com.br</a>
+	<a href="http://www.bol.com.br">http://www.bol.com.br</a>
+	<a href="http://www.gmail.com">http://www.gmail.com</a>
+	<a href="http://www.hotmail.com">http://www.hotmail.com</a>
+</p>
+<p>
+	<a name="busca">Sites de Busca</a>
+</p>
+<p>
+	<a name="ref">Referencias</a>
+</p>
+</body>
+

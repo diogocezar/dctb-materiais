@@ -1,0 +1,12 @@
+class NomeDaClasse {
+	// Definição dos atributos
+	private int atrib1;
+	private string atrib2;
+	// Método construtor
+	public NomeDaClasse(int param1, string param2){
+	}
+	// Definição dos métodos
+	public tipoRetorno MetodoUm([lista de parâmetros]){
+	return [valor];
+	}
+}

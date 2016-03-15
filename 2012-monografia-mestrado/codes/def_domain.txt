@@ -1,0 +1,6 @@
+(define (domain <domain name>)
+	<PDDL code for predicates>
+	<PDDL code for first action>
+	[...]
+	<PDDL code for last action>
+)

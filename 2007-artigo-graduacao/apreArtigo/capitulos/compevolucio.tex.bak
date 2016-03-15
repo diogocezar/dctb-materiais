@@ -1,0 +1,34 @@
+\section[Computação Evolucionária]{CE}
+
+\begin{frame}
+    \frametitle{Computação Evolucionária}
+
+    No âmbito computacional nem todos os problemas são triviais e
+    podem ser resolvidos com algoritmos convencionais.
+
+        \begin{block}{Problemas NP completos}
+            São problemas não polinomiais, isto é, o seu custo em termos de tempo é muito
+            elevado e não pode ser descrito por um polinômio.
+        \end{block}
+
+    Alternativa: inspiração nas ações da natureza do planeta
+    \cite{eri:heitor}.
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Técnicas de Computação Evolucionária}
+
+    Dentre as técnicas de CE encontra-se:
+
+    \begin{itemize}
+        \item <1-> algoritmos genéticos;
+        \item <2-> programação genética;
+        \item <3-> sistemas classificadores;
+        \item <4-> estratégias evolucionárias;
+        \item <5-> programação evolucionária;
+    \end{itemize}
+
+    Este trabalho está inserido na técnica de programação genética.
+
+\end{frame}

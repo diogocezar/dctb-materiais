@@ -1,0 +1,4 @@
+SELECT id, nome FROM grupo WHERE nome iLIKE '%n%' 
+OR cont iLIKE '%N%' 
+OR id iLIKE '%N%' 
+ORDER BY id DESC LIMIT 30

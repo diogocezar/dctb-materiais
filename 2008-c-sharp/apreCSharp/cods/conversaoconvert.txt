@@ -1,0 +1,6 @@
+double dNumber = 23.15;
+
+int    iNumber = System.Convert.ToInt32(dNumber);
+bool   bNumber = System.Convert.ToBoolean(dNumber);
+String strNumber = System.Convert.ToString(dNumber);
+char   chrNumber = System.Convert.ToChar(strNumber[0]);

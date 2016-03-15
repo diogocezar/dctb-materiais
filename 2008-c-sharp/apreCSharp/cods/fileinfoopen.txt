@@ -1,0 +1,2 @@
+FileInfo f = new FileInfo(@"c:\myfile.txt");
+FileStream s = f.Open(FileMode.OpenorWrite, FileAccess.Read);

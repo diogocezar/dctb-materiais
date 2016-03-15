@@ -1,0 +1,8 @@
+using System;
+class ClasseCadastrodeClientes{
+  private int numFilhos;
+  private int numBens;
+  private string nomeCompleto;  
+  public adicionarCliente(string cliente){  
+  }
+}

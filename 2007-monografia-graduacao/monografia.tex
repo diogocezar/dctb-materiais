@@ -1,0 +1,136 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% U T F P R  /  C  O R N É L I O   P R O C Ó P I O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  MODELO PARA PROPOSTA / TRABALHO DE DIPLOMAÇÃO   %
+%                                                  %
+% E Q U I P E :                                    %
+%                                                  %
+% DIOGO CEZAR TEIXEIRA BATISTA                     %
+% <xgordo@gmail.com>                               %
+%                                                  %
+% RAFAEL AUGUSTO AMBROSIO ROSA                     %
+% <rafarafarosa@hotmail.com>                       %
+%                                                  %
+% Início : Agosto/2006                             %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper,noheader,indentfirst,pnumplain,times,tocpage=plain,estilo=UTFPR,abnt-url-package=url]{abnt}
+
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{sty/tabela-simbolos}
+\usepackage{sty/makeglo}
+\usepackage{sty/utfPR}
+\usepackage{sty/listings}
+\usepackage{sty/listequations}
+\usepackage{graphicx,url}
+\usepackage{fancyhdr}
+\usepackage[lmargin=3cm,tmargin=3cm,rmargin=1.5cm,bmargin=1.5cm]{geometry}
+\usepackage[pdftex]{lscape}
+\usepackage{longtable}
+\usepackage[alf,abnt-and-type=e,abnt-etal-cite=2, bibjustif]{abntcite}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{qtree}
+\usepackage{supertabular}
+\usepackage{color}
+
+\UTFPRconfigs
+
+\UTFPRmakeglossario
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S  D O S   C Ó D I G O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\tiny, extendedchars=true, breaklines=true,frame=tb,
+basicstyle=\scriptsize, stringstyle=\scriptsize,
+showstringspaces=false}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{LISTA DE CÓDIGOS}
+
+\begin{document}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  P R E - T E X  T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRnumRomanos
+
+    \UTFPRdedicatoria{
+    \input{pretextual/dedicatoria.tex}
+    }
+
+    \UTFPRagradecimentos{
+    \input{pretextual/agradecimento.tex}
+    }
+
+    \UTFPRepigrafe{Escolha um trabalho que você ame e não terás que trabalhar um único dia em sua vida}{Confúcio}
+
+    \UTFPRresumo[Hipermídia Adaptativa, Orientação, Otimização por Colônia de Formigas, Navegação Colaborativa]{
+    \input{pretextual/resumo.tex}
+    }
+
+    \UTFPRabstract[Adaptative Hypermedia, Orientation, Ant Colony Optimization,Collaborative Navigation.]{
+    \input{pretextual/abstract.tex}
+    }
+
+    \UTFPRlistadefiguras
+
+    \UTFPRlistadetabelas
+
+    \UTFPRlistoflistings
+
+    \UTFPRlistadesiglas
+
+    \UTFPRsumario
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  T E X T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRnumArabicos
+
+    %%%%%%%%%%%%%%%%%%%%%
+    % C A P Í T U L O S %
+    %%%%%%%%%%%%%%%%%%%%%
+
+    \input{capitulos/introducao.tex}        % [ok]
+    \input{capitulos/fundamentos.tex}       % [ok]
+    \input{capitulos/aco.tex}               % [ok]
+    \input{capitulos/projeto.tex}           % [ok]
+    \input{capitulos/modelagem.tex}         % [ok]
+    \input{capitulos/tecnologia.tex}        % [ok]
+    \input{capitulos/framework.tex}         % [ok]
+    \input{capitulos/desenvolvimento.tex}   % [ok]
+    \input{capitulos/subsistema.tex}        % [ok]
+    \input{capitulos/resultados.tex}        % [ok]
+    \input{capitulos/recursos.tex}          % [ok]
+    \input{capitulos/cronogramas.tex}       % [ok]
+    \input{capitulos/conclusao.tex}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % E L E M E N T O S  P Ó S - T E X T U A I S %
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \UTFPRbibliographystyle{abnt-alf}
+
+    \UTFPRbibliografia{bib/bibliografia}
+
+    \UTFPRapendice
+    \input{glossario/glossario.tex}         % [ok]
+    \input{apendices/faq.tex}               % [ok]
+    \input{apendices/apresentacao.tex}      % [ok]
+    \input{apendices/subsistema.tex}        % [ok]
+    \input{apendices/implementacao.tex}     % [ok]
+    \input{apendices/neuronios.tex}         % [ok]
+    \input{apendices/generica.tex}          % [ok]
+    \input{apendices/erros.tex}             % [ok]
+
+    \UTFPRanexo
+    \input{anexos/proposta.tex}             % [ok]
+
+\end{document}

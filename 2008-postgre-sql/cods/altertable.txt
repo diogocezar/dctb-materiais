@@ -1,0 +1,14 @@
+ALTER TABLE nome ação [, ... ]
+ALTER TABLE nome RENAME [ COLUMN ] coluna TO novo_nome_da_coluna
+ALTER TABLE nome RENAME TO novo_nome
+onde ação é uma entre:
+	ADD [ COLUMN ] coluna tipo [ restrição_de_coluna [ ... ] ]
+	DROP [ COLUMN ] coluna [ CASCADE ]
+	ALTER [ COLUMN ] coluna TYPE tipo [ USING expressão ]
+	ALTER [ COLUMN ] coluna SET DEFAULT expressão
+	ALTER [ COLUMN ] coluna DROP DEFAULT
+	ALTER [ COLUMN ] coluna { SET | DROP } NOT NULL
+	ADD restrição_de_tabela
+	DROP CONSTRAINT nome_da_restrição [ RESTRICT | CASCADE ]
+	OWNER TO novo_dono
+	SET TABLESPACE nome_do_espaço_de_tabelas

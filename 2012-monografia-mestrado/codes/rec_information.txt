@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<leech_information>
+	<host_information>
+		<host_id>0</host_id>
+		<date>03-01-2012</date>
+		<time>13:43:34</time>
+		<available_processors>2</available_processors>
+		<free_memory>73744352</free_memory>
+		<max_memory>129957888</max_memory>
+		<roots_number>1</roots_number>
+			<roots>
+			<total_space>319213174784</total_space>
+			<free_space>164763983872</free_space>
+			<usable_space>164501839872</usable_space>
+			</roots>
+		<cpu_average>23,63%</cpu_average>
+		<tasks>
+			<task>
+				<name>sumVet_sequential</name>
+				<runtime>30.0</runtime>
+			</task>
+			<task>
+				<name>broadcastData_./src/main/resources/data/matrix_i.xml;</name>
+				<runtime>135.0</runtime>
+			</task>
+			<task>
+				<name>multVet_parallel</name>
+				<runtime>14.0</runtime>
+			</task>
+			<task>
+				<name>broadcastData_./src/main/resources/data/matrix_out.xml;</name>
+				<runtime>67.0</runtime>
+			</task>
+		</tasks>
+	</host_information>
+</leech_information>

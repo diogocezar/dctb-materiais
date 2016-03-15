@@ -1,0 +1,371 @@
+\chapter{Experimentos}
+\label{experimentos}
+
+Neste capítulo apresentam-se os experimentos realizados no sistema desenvolvido. A seção \ref{ex1} mostra um experimento que demonstra a técnica de paralelização direta. Na seção \ref{ex2} apresenta-se um experimento para avaliação do comportamento utilizando vários encadeamentos no fluxo de trabalho. Na seção \ref{ex3} apresenta-se uma abordagem que demonstra a implementação de um operador que trabalha com múltiplas entradas e saídas. Na seção \ref{ex-consideracoes} faz-se uma analise dos resultados obtidos.
+
+\vspace{1.5cm}
+
+O principal objetivo na análise dos resultados está na corretude dos experimentos bem como a qualidade dos planos gerados. Para os experimentos \ref{ex1} e \ref{ex3} utilizou-se um ambiente de execução local no qual simulou-se um ambiente distribuído. Desta forma, possibilitou-se a reprodução dos experimentos com nós emulados na mesma máquina. O experimento \ref{ex2} foi um teste para a validação do modelo, executado em um ambiente distribuído com 4 nós.
+
+A máquina utilizada para execução local possui um processador 2.66 GHz Intel Core 2 Duo com 4GB de memória. As máquinas do ambiente distribuído possuem um AMD Opteron com 2.4 GHz e 2GB de memória.
+
+Os testes utilizaram como base os dados extraídos de matrizes. A motivação para a utilização de matrizes é a necessidade de cálculos simples sobre um grande volume de dados científicos. Para a validação do experimento foram utilizadas matrizes quadradas preenchidas por números aleatórios. Dois operadores foram implementados: soma e multiplicação de matrizes.
+
+Nas figuras dispostas nesse capítulo, cada quadrado representa um operador. Cada operador possui uma identificação dos dados que são trabalhados. Por exemplo, \emph{op\_a\_b} significa que o operador está trabalhando com os dados $A$ e $B$. Dentro do quadrado, descreve-se ainda uma informação que mostra qual a operação efetuada com os dados em questão. Por exemplo, \emph{SUM} para soma ou \emph{MULT} para multiplicação. Os dados são representados por cilindros, cada conjunto de dados representa uma matriz e sua identificação se dá por letras em maiúsculo. As setas indicam o fluxo dos dados.
+
+Nas tabelas estão apresentados os resumos de execução dos fluxos de trabalho, bem como o plano gerado pelo planejador. A coluna ordem, define a sequencia de execução de uma ação no plano de execução. Se uma mesma ordem é repetida em mais de um linha, significa que as ações ocorrerem em paralelo. A coluna nó, indica qual o nó selecionado para a execução da ação. Se a célula apresenta o caractere $*$, significa que a ação foi executada por todos os nós. 
+
+Ainda é possível que um subconjunto específico de nós execute uma ação, nesse caso suas identificações estão separadas por vírgula. A coluna operador indica qual o operador utilizado. Se o operador é identificado como \emph{difundir} então há uma barreira para a publicação das informações, geradas até o momento, para todos os outros nós. A coluna dados, indica os dados utilizados para a aplicação do operador. Quando um dado está na mesma linha que possui um operador difundir, esse dado é o que será publicado para todo o conjunto de nós. A coluna tempo indica o tempo de execução de cada uma das ações em \UFPRsigla{ms}. As últimas linhas mostram um resumo do tempo de execução de cada etapa: planejamento, tradução, difusão e processamento. A última linha mostra o tempo total de execução.
+
+\section{Experimento 1 - Paralelização Direta}
+\label{ex1}
+
+A representação do esquema de execução dos fluxos de trabalho estão dispostos na figura \ref{fig:ex1}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=11cm]{images/fig_ex1.jpg}
+    \caption{Experimento com operações entre matrizes}
+    \label{fig:ex1}
+\end{figure}
+
+No exemplo são definidas três operadores: $op_{\{ma,mb\}}$, $op_{\{mc,md\}}$ e $op_{\{mi,mj\}}$. O operador $op_{\{ma,mb\}}$ espera como entrada os dados $MA$ e $MB$ e gera como saída $MI$. Já $op_{\{mc,md\}}$ espera como entrada $MC$ e $MD$ e gera como saída $MJ$. O operador $op_{\{mi,mj\}}$ espera como entrada $MI$ e $MJ$ e gera como saída $MK$, que em nosso exemplo é o objetivo. A definição do arquivo que contém a descrição dos fluxos de trabalho está transcrita no apêndice \ref{ap-aplicacao}.
+
+Foram utilizados dois nós para a execução do experimento: $h_0$ e $h_1$. Neste experimento, analisa-se os modelos paralelos abordados no capítulo \ref{modelo}. A \emph{paralelização direta} (seção \ref{par-direta}) e o \emph{paralelismo sobre execução} (seção \ref{paralelismo-execucao}). A figura \ref{fig:ex1_parallel} mostra a distribuição das tarefas e os respectivos nós utilizados para execução.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=11cm]{images/fig_ex1_parallel.jpg}
+    \caption{Diagrama do experimento 1}
+    \label{fig:ex1_parallel}
+\end{figure}
+
+A paralelização direta ocorre na execução distribuída do operador $op_{\{mi,mj\}}$. O paralelismo sobre execução está exemplificado na execução simultânea de $op_{\{ma,mb\}}$ e $op_{\{mc,md\}}$.
+
+A tabela \ref{tab:ex1} detalha as informações extraídas do experimento.
+
+\begin{table}[ht]
+	\centering
+	\caption{Resultados do experimento com paralelização direta}
+	\label{tab:ex1}
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} & \multicolumn{1}{c|}{Dados} & \multicolumn{1}{c|}{Tempo (ms)} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$MA,MB$} & \multicolumn{1}{r|}{4779} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$MC,MD$} & \multicolumn{1}{r|}{3935} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$MI$} & \multicolumn{1}{r|}{5617} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$MJ$} & \multicolumn{1}{r|}{4203} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_0, h_1$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$MI,MJ$} & \multicolumn{1}{r|}{3170} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$MK$} & \multicolumn{1}{r|}{2880} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{coletor de informação} & \multicolumn{1}{c|}{metadados} & \multicolumn{1}{r|}{31} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de planejamento} & \multicolumn{1}{r|}{1014} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de tradução} & \multicolumn{1}{r|}{523} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de difusão} & \multicolumn{1}{r|}{12700} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo processamento} & \multicolumn{1}{r|}{11935} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo total} & \multicolumn{1}{r|}{26172} \\ 
+	\hline
+	\end{tabular}
+\end{table}
+
+Nota-se que o planejador considerou a execução simultânea dos operadores $op_{\{ma,mb\}}$ e $op_{\{mc,md\}}$ na etapa $1$, pois os operadores não possuem qualquer dependência de dados. O tempo para execução da operação de soma foi semelhante, para o operador $op_{\{ma,mb\}}$ gastou-se $4779$ms, enquanto que o operador $op_{\{mc,md\}}$ terminou a execução em $3935$ms. 
+
+Nas etapas $2$ e $4$ nota-se a operação de difusão. Essa operação distribui os resultados obtidos pelos operadores para todos os outros nós do ambiente, visto que algum operador seguinte pode utilizar os dados gerados na operação em questão.
+
+A etapa $3$ utiliza dois nós para a execução da operação de multiplicação. O tipo de paralelização adotada é direta, por isso, o desenvolvedor informa os parâmetros para a execução paralela dos dados. Ambos os nós disponíveis foram escolhidos para a divisão dos dados, e a operação completa levou $3170$ms.
+
+\section{Experimento 2 - Encadeamento de Fluxos de Trabalho}
+\label{ex2}
+
+A representação do esquema de execução do fluxo de trabalho está disposta na figura \ref{fig:ex2}.
+
+\begin{landscape}
+	
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=22cm]{images/fig_ex2.jpg}
+    \caption{Diagrama do experimento 2}
+    \label{fig:ex2}
+\end{figure}
+
+\end{landscape}
+
+No exemplo são definidos dez operadores: $op_{\{a,b\}}$, $op_{\{c,d\}}$, $op_{\{h,i\}}$, $ op_{\{e,f\}}$, $op_{\{ab,cd\}}$, $op_{\{g,hi\}}$, $op_{\{abcd,ef\}}$, $op_{\{ef,ghi\}}$, $op_{\{efghi_hi\}}$ e $op_{\{abcdef,efghihi\}}$. A indexação de cada operador define sua entrada de dados. O objetivo do experimento é a obtenção do dado final $ABCDEFEFGHIHI$.
+
+Para o experimento foram utilizados 4 nós: $h_0, h_1, h_2$ e $h_3$. Testou-se a validade do componente \emph{OráculoDeMetaDados} que retorna a taxa de ocupação dos nós disponíveis, em três situações diferentes:
+
+\begin{enumerate}
+	\item quatro nós disponíveis;
+	\item dois nós disponíveis ($h_0$ e $h_1$) e dois nós parcialmente disponíveis ($h_2$ e $h_3$);
+	\item um nó disponível ($h_0$) e três parcialmente disponíveis ($h_1$, $h_2$ e $h_3$).
+\end{enumerate}
+
+As tabelas \ref{tab:ex2a}, \ref{tab:ex2b}, \ref{tab:ex2c} demonstram os resultados para as três situações, respectivamente.
+
+\newpage
+
+\begin{table}[ht]
+	\centering
+	\caption{Encadeamento de fluxos - 4 nós disponíveis}
+	\label{tab:ex2a}
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} & \multicolumn{1}{c|}{Dados} & \multicolumn{1}{c|}{Tempo (ms)} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$H,I$} & \multicolumn{1}{r|}{17400} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$E,F$} & \multicolumn{1}{r|}{17160} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$C,D$} & \multicolumn{1}{r|}{16699} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$A,B$} & \multicolumn{1}{r|}{17738} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EF$} & \multicolumn{1}{r|}{16616} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$HI$} & \multicolumn{1}{r|}{15818} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$AB$} & \multicolumn{1}{r|}{14650} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$CD$} & \multicolumn{1}{r|}{14472} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$G,HI$} & \multicolumn{1}{r|}{13168} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$AB,CD$} & \multicolumn{1}{r|}{14475} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$GHI$} & \multicolumn{1}{r|}{14908} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCD$} & \multicolumn{1}{r|}{14637} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EF,GHI$} & \multicolumn{1}{r|}{14189} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCD,EF$} & \multicolumn{1}{r|}{13622} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHI$} & \multicolumn{1}{r|}{14661} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEF$} & \multicolumn{1}{r|}{14881} \\ 
+	\hline
+	\multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EFGHI,HI$} & \multicolumn{1}{r|}{13584} \\ 
+	\hline
+	\multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHIHI$} & \multicolumn{1}{r|}{15042} \\ 
+	\hline
+	\multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCDEF,EFGHIHI$} & \multicolumn{1}{r|}{14900} \\ 
+	\hline
+	\multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEFEFGHIHI$} & \multicolumn{1}{r|}{15145} \\ 
+	\hline
+	\multicolumn{1}{|c|}{11} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{coletor de informação} & \multicolumn{1}{c|}{metadados} & \multicolumn{1}{r|}{39} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de planejamento} & \multicolumn{1}{r|}{3523} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de tradução} & \multicolumn{1}{r|}{1301} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de difusão} & \multicolumn{1}{r|}{150830} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo processamento} & \multicolumn{1}{r|}{153016} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo total} & \multicolumn{1}{r|}{308670} \\ 
+	\hline
+	\end{tabular}
+\end{table}
+
+Nota-se que com 4 nós disponíveis o planejador elabora o plano ótimo, distribuindo o máximo de operadores possível na etapa $1$. A difusão dos resultados ocorre nas etapas $2$, $4$, $6$, $8$ e $10$. As etapas ímpares são responsáveis pelos cálculos dos operadores enquanto que as etapas pares são responsáveis pela difusão dos resultados obtidos.
+
+\newpage
+
+\begin{table}[ht]
+	\centering
+	\caption{Encadeamento de fluxos - 2 nós disponíveis e 2 parcialmente disponíveis}
+	\label{tab:ex2b}
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} & \multicolumn{1}{c|}{Dados} & \multicolumn{1}{c|}{Tempo (ms)} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$H,I$} & \multicolumn{1}{r|}{18999} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$C,D$} & \multicolumn{1}{r|}{17012} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$A,B$} & \multicolumn{1}{r|}{17541} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$HI$} & \multicolumn{1}{r|}{17243} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$CD$} & \multicolumn{1}{r|}{16543} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$AB$} & \multicolumn{1}{r|}{15426} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$E,F$} & \multicolumn{1}{r|}{15188} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$G,HI$} & \multicolumn{1}{r|}{13453} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EF$} & \multicolumn{1}{r|}{15377} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$GHI$} & \multicolumn{1}{r|}{15170} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EF,GHI$} & \multicolumn{1}{r|}{15286} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$AB,CD$} & \multicolumn{1}{r|}{14212} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHI$} & \multicolumn{1}{r|}{15334} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCD$} & \multicolumn{1}{r|}{15415} \\ 
+	\hline
+	\multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EFGHI,HI$} & \multicolumn{1}{r|}{13484} \\ 
+	\hline
+	\multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCD, EF$} & \multicolumn{1}{r|}{13389} \\ 
+	\hline
+	\multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHIHI$} & \multicolumn{1}{r|}{15433} \\ 
+	\hline
+	\multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEF$} & \multicolumn{1}{r|}{15423} \\ 
+	\hline
+	\multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCDEF,EFGHIHI$} & \multicolumn{1}{r|}{13634} \\ 
+	\hline
+	\multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEFEFGHIHI$} & \multicolumn{1}{r|}{15518} \\ 
+	\hline
+	\multicolumn{1}{|c|}{11} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{coletor de informação} & \multicolumn{1}{c|}{metadados} & \multicolumn{1}{r|}{10} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de planejamento} & \multicolumn{1}{r|}{2285} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de tradução} & \multicolumn{1}{r|}{1043} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de difusão} & \multicolumn{1}{r|}{156882} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo processamento} & \multicolumn{1}{r|}{152279} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo total} & \multicolumn{1}{r|}{312489} \\ 
+	\hline
+	\end{tabular}
+\end{table}
+
+Ao trabalhar com dois nós parcialmente disponíveis, o planejador optou por um plano no qual em um primeiro momento apenas 3 nós são utilizados. Entretanto gerou-se ainda assim um plano com $10$ etapas. A grande diferença é que a etapa $7$ executa paralelamente o operador $op_{\{efghi_hi\}}$ e $op_{\{abcd,ef\}}$. No plano anterior, com todos os nós disponíveis, o operador $op_{\{abcd,ef\}}$ é executado na etapa $5$, pois neste momento, todas as dependências já haviam sido calculadas.
+
+\newpage
+
+\begin{table}[ht]
+	\centering
+	\caption{Encadeamento de fluxos - 1 nó disponível e 3 parcialmente disponíveis}
+	\label{tab:ex2c}
+	\begin{tabular}{|l|l|l|l|l|}
+	\hline
+	\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} & \multicolumn{1}{c|}{Dados} & \multicolumn{1}{c|}{Tempo (ms)} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$E,F$} & \multicolumn{1}{r|}{18146} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$H,I$} & \multicolumn{1}{r|}{17923} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$C,D$} & \multicolumn{1}{r|}{17075} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$A,B$} & \multicolumn{1}{r|}{17972} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EF$} & \multicolumn{1}{r|}{16672} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$HI$} & \multicolumn{1}{r|}{15897} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$AB$} & \multicolumn{1}{r|}{14519} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$CD$} & \multicolumn{1}{r|}{14676} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$G,HI$} & \multicolumn{1}{r|}{13658} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{$h_0$} & \multicolumn{1}{c|}{MULT} & \multicolumn{1}{c|}{$AB,CD$} & \multicolumn{1}{r|}{14333} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$GHI$} & \multicolumn{1}{r|}{15110} \\ 
+	\hline
+	\multicolumn{1}{|c|}{4} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCD$} & \multicolumn{1}{r|}{14909} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_3$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EF,GHI$} & \multicolumn{1}{r|}{14770} \\ 
+	\hline
+	\multicolumn{1}{|c|}{5} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCD,EF$} & \multicolumn{1}{r|}{14974} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHI$} & \multicolumn{1}{r|}{14817} \\ 
+	\hline
+	\multicolumn{1}{|c|}{6} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEF$} & \multicolumn{1}{r|}{15352} \\ 
+	\hline
+	\multicolumn{1}{|c|}{7} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$EFGHI,HI$} & \multicolumn{1}{r|}{14004} \\ 
+	\hline
+	\multicolumn{1}{|c|}{8} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$EFGHIHI$} & \multicolumn{1}{r|}{15235} \\ 
+	\hline
+	\multicolumn{1}{|c|}{9} & \multicolumn{1}{c|}{$h_2$} & \multicolumn{1}{c|}{SUM} & \multicolumn{1}{c|}{$ABCDEF,EFGHIHI$} & \multicolumn{1}{r|}{14046} \\ 
+	\hline
+	\multicolumn{1}{|c|}{10} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$ABCDEFEFGHIHI$} & \multicolumn{1}{r|}{14987} \\ 
+	\hline
+	\multicolumn{1}{|c|}{11} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{coletor de informação} & \multicolumn{1}{c|}{metadados} & \multicolumn{1}{r|}{32} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de planejamento} & \multicolumn{1}{r|}{2256} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de tradução} & \multicolumn{1}{r|}{1115} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de difusão} & \multicolumn{1}{r|}{152174} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo processamento} & \multicolumn{1}{r|}{156973} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo total} & \multicolumn{1}{r|}{312518} \\ 
+	\hline
+	\end{tabular}
+\end{table}
+
+Mesmo com apenas um nó totalmente disponível, o planejador ainda aproveita do poder de paralelização, e gera um plano bastante semelhante ao primeiro experimento.
+
+\newpage
+
+\section{Experimento 3 - Múltiplas Entrada e Saídas de Dados}
+\label{ex3}
+
+No terceiro experimento utilizou-se um único operador para demonstrar a capacidade de múltiplas entradas e saídas de dados. Nem sempre um operador utiliza um número fixo de entradas ou saídas. Nesse experimento demonstra-se a capacidade do modelo em executar operadores mais complexos, que utilizem vários dados de entrada e gerem várias saídas.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=7cm]{images/fig_ex3.jpg}
+    \caption{Diagrama do experimento 3}
+    \label{fig:ex3}
+\end{figure}
+
+Na figura \ref{fig:ex3} ilustra-se um fluxo de trabalho que utiliza como entrada de dados três matrizes: $NA, NB$ e $NC$. O operador aplicado, $op_{\{na,nb,nc\}}$ soma as matrizes $NA$ e $NB$ e a matriz resultante é multiplicada com $NC$.
+
+Apenas um nó ($h_1$) foi utilizado para a execução deste experimento. Os detalhes da execução estão descritos na tabela \ref{tab:ex3}.
+
+\begin{table}[ht]
+	\centering
+	\caption{Resultados do experimento com encadeamento de fluxos}
+	\label{tab:ex3}
+	\begin{tabular}{llll|l|}
+	\hline
+	\multicolumn{1}{|c|}{Ordem} & \multicolumn{1}{c|}{Host} & \multicolumn{1}{c|}{Operador} & \multicolumn{1}{c|}{Dados} & \multicolumn{1}{c|}{Tempo (ms)} \\ 
+	\hline
+	\multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{$h_1$} & \multicolumn{1}{c|}{SUM,MULT} & \multicolumn{1}{c|}{$NA,NB,NC$} & \multicolumn{1}{r|}{5809} \\ 
+	\hline
+	\multicolumn{1}{|c|}{2} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{DIFUNDIR} & \multicolumn{1}{c|}{$NI,NJ$} & \multicolumn{1}{r|}{7258} \\ 
+	\hline
+	\multicolumn{1}{|c|}{3} & \multicolumn{1}{c|}{*} & \multicolumn{1}{c|}{coletor de informação} & \multicolumn{1}{c|}{metadados} & \multicolumn{1}{r|}{91} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de planejamento} & \multicolumn{1}{r|}{1030} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de tradução} & \multicolumn{1}{r|}{580} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo de difusão} & \multicolumn{1}{r|}{7258} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo processamento} & \multicolumn{1}{r|}{5809} \\ 
+	\hline
+	\multicolumn{4}{|c|}{tempo total} & \multicolumn{1}{r|}{14790} \\ 
+	\hline
+	\end{tabular}
+\end{table}
+
+\section{Considerações}
+\label{ex-consideracoes}
+
+O principal experimento \ref{ex2} demonstra a capacidade do planejador adaptar o escalonamento de acordo com a situação dos recursos. Na primeira execução, quando os quatro nós estavam disponíveis, o melhor plano foi traçado, executando quatro operadores em paralelo $op_{\{h,i\}}$, $ op_{\{e,f\}}$, $op_{\{c,d\}}$ e $op_{\{a,b\}}$, gerando o plano de execução com dez passos. Ao trabalhar com um ambiente com um nó parcialmente ocupado, a primeira parte da execução foi escalonada com três operadores. Entretanto, outras execuções paralelas foram alocadas durante o plano deixando-o também com dez passos.
+
+A utilização da paralelização direta mostra que o ambiente está preparado para a adequação da paralelização por plano, no qual o próprio planejador escolhe qual operador e quantos nós serão utilizados para a execução de uma determinada tarefa.
+
+No experimento que utiliza múltiplas entradas de dados, demonstra-se que sistema é capaz de agregar operadores mais elaborados, que utilizem várias operações e conjuntos de dados variados.
+
+Os experimentos realizados neste trabalho foram direcionados para a validação do modelo (seção \ref{modelo}). Para isto implementou-se e testou-se as principais funcionalidades para um ambiente de execução distribuída com a geração de planos de execução por um planejador.

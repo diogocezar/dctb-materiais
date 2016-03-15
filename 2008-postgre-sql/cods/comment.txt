@@ -1,0 +1,1 @@
+COMMENT ON tipo_de_objeto nome_do_objeto IS 'text'

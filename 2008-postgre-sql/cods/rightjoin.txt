@@ -1,0 +1,5 @@
+SELECT p.uname, p.nome, a.pessoa, a.qtde
+FROM pessoas p
+RIGHT JOIN acessos a
+ON p.uname=a.pessoa
+ORDER BY p.uname;

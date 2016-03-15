@@ -1,0 +1,16 @@
+//if com uma única possibilidade. Exibe a string "Verdadeiro" no Console caso a 
+//expressão (a==true) seja verdadeira
+if(a==true){
+System.Console.Write("Verdadeiro");
+}
+//if com uma única possibilidade. Exibe a string "Verdadeiro" no Console caso a 
+//expressão (a==true) seja verdadeira, senão exibe a string "Falso"
+if(a==true){
+  System.Console.Write("Verdadeiro");
+}
+else{
+  System.Console.Write("Falso");
+}
+
+
+

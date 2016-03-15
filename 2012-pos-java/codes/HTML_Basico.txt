@@ -1,0 +1,8 @@
+<HTML>
+	<HEAD>
+		<TITLE> Meu documento HTML </TITLE>
+	</HEAD>
+	<BODY>
+		Aqui você coloca os comandos em HTML.
+	</BODY>
+</HTML>

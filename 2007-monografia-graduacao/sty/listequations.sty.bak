@@ -1,0 +1,44 @@
+%%%%%%%%
+\newcommand{\listequationname}{LISTA DE EQUAÇÕES}
+
+%%%%%%%%%%%%%%%% Caption %%%%%%%%%%
+\providecommand{\eqcaption}[1]{
+       \addcontentsline{loe}
+       {section}
+       {\numberline {\theequation} {\ignorespaces #1}}
+       }
+
+%%%%%%%%%%% Options %%%%%%%
+%\DeclareOption{book}{
+   \newcommand\listofequations{%
+        \if@twocolumn
+           \@restonecoltrue\onecolumn
+        \else
+     \@restonecolfalse
+   \fi
+   \renewcommand{\leftmark}{\MakeUppercase\listequationname}
+   \renewcommand{\rightmark}{\MakeUppercase\listequationname}
+   \chapter*{\listequationname}
+   \@starttoc{loe}%
+   \if@restonecol\twocolumn\fi
+   \clearpage %prevents problems if more than 2 pages, on hdr,footer
+   }
+%}
+
+%\DeclareOption{article}{
+%   \newcommand\listofequations{%
+%        \if@twocolumn
+%   \renewcommand{\leftmark}{\MakeUppercase\listequationname}
+%   \renewcommand{\rightmark}{\MakeUppercase\listequationname}
+%   \section*{\listequationname}
+%   \@starttoc{loe}%
+%        \else
+%   \renewcommand{\leftmark}{\MakeUppercase\listequationname}
+%   \renewcommand{\rightmark}{\MakeUppercase\listequationname}
+%   \section*{\listequationname}
+%   \@starttoc{loe}%
+%   \fi
+%   }
+%}
+
+\ProcessOptions

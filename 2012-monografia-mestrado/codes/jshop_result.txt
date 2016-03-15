@@ -1,0 +1,6 @@
+[ 1 ]    (!start-task h1 a d1)
+[ 2 ]    (!start-task h2 b d1)
+[ 3 ]    (!end-task h1 a d21)
+[ 4 ]    (!end-task h2 b d22)
+[ 5 ]    (!start-task h1 c d21)
+[ 6 ]    (!end-task h1 c d3)

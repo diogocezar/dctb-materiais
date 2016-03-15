@@ -1,0 +1,47 @@
+using System;
+class Arithmetics{
+  public static void Main(string[] args){
+    //Verifica o número de argumentos entrados
+    if(args.Length == 3){	
+      int x=0,y=0;	
+      //Convertem os valores dos argumentos 2 e 3 para inteiro 32-bit
+      //Se ocorrer algum erro o modo de utilização	
+      try{
+        x = args[1].ToInt32(); 
+        y = args[2].ToInt32(); 
+      }
+      catch{
+        usage();
+        return;	
+      }
+      //Efetua a operação selecionada no primeiro argumento
+      switch(args[0]){
+      case "+":
+        Console.Write("Valor da soma = {0}", x+y);
+        break;
+      case "-":
+        Console.Write("Valor da subtração = {0}", x-y);
+        break;
+      case "/":
+        Console.Write("Valor da divisão = {0}", x/y);
+        break;
+      case "*":
+        Console.Write("Valor da multiplicação = {0}", x*y);
+        break;
+      case "%":
+        Console.Write("Valor da sobra = {0}", x%y);
+        break;
+      default:
+        usage();
+  }
+  else{  
+    usage();
+  }
+}
+
+public static void usage(){  
+  //Modo de utilização
+  Console.WriteLine("Modo de usar: Arithmetics operador valor1 valor2");
+  Console.WriteLine("Ex.: Arithmetics + 100 200");
+}
+}

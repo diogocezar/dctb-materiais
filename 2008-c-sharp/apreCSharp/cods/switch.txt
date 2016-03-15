@@ -1,0 +1,13 @@
+switch(chOpt){
+    case '1':
+      Console.WriteLine("Inserir...");
+      break;
+    case '2':
+      Console.WriteLine("Atualizar...");
+      break;	 
+    case '3':
+      Console.WriteLine("Apagar...");
+      break;
+    default:
+      Console.WriteLine("Procurar...");
+}

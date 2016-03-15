@@ -1,0 +1,58 @@
+\select@language {brazil}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Exemplo de um ambiente hipertexto}}{3}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Quantiza\c c\~ao em redes de informa\c c\~ao}}{7}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Formigas em busca de alimento encontram o menor caminho entre alimento e ninho}}{10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Sistema hiperm\IeC {\'\i }dia representado como um grafo}}{13}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Arquitetura do modelo proposto}}{18}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sistema de gerenciamento dos registros}}{22}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Quantidade de trabalho aplicada em cada workflow nas fases do UP}}{23}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Levantamento dos atores do sistema}}{27}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Levantamento dos casos de uso do sistema}}{28}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Especifica\c c\~ao do caso de uso: AcionarLink}}{29}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Especifica\c c\~ao do caso de uso: AdministrarGrupos}}{31}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Especifica\c c\~ao do caso de uso: GerenciarRegistrosDoSistema}}{33}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de casos de uso}}{35}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de seq\"u\^encia: AcionarLink}}{40}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama de seq\"u\^encia: AcrescimoDeFeromonio}}{40}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Diagrama de seq\"u\^encia: AlterarGrupo}}{41}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Diagrama de seq\"u\^encia: ConsultarPaginasCadastradas}}{42}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Diagrama de seq\"u\^encia: ConsultrarFrequenciaDosGrupos}}{42}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Diagrama de seq\"u\^encia: DeducaoDeFeromonio}}{43}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Diagrama de seq\"u\^encia: EfetuarLogin}}{43}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Diagrama de seq\"u\^encia: EscolherGrupo}}{44}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Diagrama de seq\"u\^encia: EscolherTipoDeOrientacao}}{44}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Diagrama de seq\"u\^encia: ExcluirGrupo}}{45}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Diagrama de seq\"u\^encia: InserirGrupo}}{46}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Diagrama de seq\"u\^encia: TrocarGrupo}}{46}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Diagrama de classes}}{47}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Pacote \emph {SpaceBrain}}}{48}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Pacote Classes}}{49}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Pacote Frameworks}}{50}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Modelo Relacional}}{51}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Diagrama de pacotes}}{52}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Diagrama de implanta\c c\~ao}}{53}
+\contentsline {figure}{\numberline {5.27}{\ignorespaces Diagrama de componentes}}{54}
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Funcionamento de um Neur\^onio Humano}}{58}
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Representa\c c\~ao do funcionamento do RSS}}{65}
+\contentsline {figure}{\numberline {9.1}{\ignorespaces Exemplo de grafo gerado pelo subsistema}}{69}
+\contentsline {figure}{\numberline {9.2}{\ignorespaces Modelo Relacional do Sub-sistema \emph {Go}! Not\IeC {\'\i }cias}}{70}
+\contentsline {figure}{\numberline {9.3}{\ignorespaces Sistema de avalia\c c\~ao}}{70}
+\contentsline {figure}{\numberline {9.4}{\ignorespaces Sistema de coment\'arios}}{71}
+\contentsline {figure}{\numberline {10.1}{\ignorespaces Representa\c c\~ao gr\'afica da tabela de ferom\^onio inicial}}{75}
+\contentsline {figure}{\numberline {10.2}{\ignorespaces Representa\c c\~ao gr\'afica da \'ultima itera\c c\~ao da Tabela \ref {tab:resultadou1na}}}{77}
+\contentsline {figure}{\numberline {10.3}{\ignorespaces Representa\c c\~ao gr\'afica da tabela \ref {tab:resultadou1no}}}{79}
+\contentsline {figure}{\numberline {10.4}{\ignorespaces Representa\c c\~ao gr\'afica da tabela \ref {tab:resultadou2na}}}{80}
+\contentsline {figure}{\numberline {10.5}{\ignorespaces Representa\c c\~ao gr\'afica da tabela \ref {tab:resultadou2no}}}{82}
+\contentsline {figure}{\numberline {10.6}{\ignorespaces Representa\c c\~ao gr\'afica da tabela \ref {tab:resultadou3na}}}{83}
+\contentsline {figure}{\numberline {10.7}{\ignorespaces Representa\c c\~ao gr\'afica da tabela \ref {tab:resultadou3no}}}{85}
+\contentsline {figure}{\numberline {10.8}{\ignorespaces Gr\'afico indicativo com diferen\c ca de ferom\^onio}}{92}
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Disposi\c c\~ao dos grupos de interesse}}{111}
+\contentsline {figure}{\numberline {C.2}{\ignorespaces Disposi\c c\~ao objetiva}}{111}
+\contentsline {figure}{\numberline {C.3}{\ignorespaces Disposi\c c\~ao orientada}}{111}
+\contentsline {figure}{\numberline {C.4}{\ignorespaces Disposi\c c\~ao relacionada}}{111}
+\contentsline {figure}{\numberline {C.5}{\ignorespaces Pele roxa}}{111}
+\contentsline {figure}{\numberline {C.6}{\ignorespaces Pele amarela}}{112}
+\contentsline {figure}{\numberline {C.7}{\ignorespaces Sistema em ingl\^es}}{112}
+\contentsline {figure}{\numberline {D.1}{\ignorespaces P\'agina principal do subsistema}}{113}
+\contentsline {figure}{\numberline {D.2}{\ignorespaces Detalhes de uma not\IeC {\'\i }cia}}{114}
+\contentsline {figure}{\numberline {D.3}{\ignorespaces Modo de Administra\c c\~ao}}{115}

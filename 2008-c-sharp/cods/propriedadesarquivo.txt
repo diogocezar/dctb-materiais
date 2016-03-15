@@ -1,0 +1,11 @@
+DirectoryInfo dir = new DirectoryInfo(@"F:\WINNT");
+FileInfo[] bmpfiles = dir.GetFiles("*.bmp");
+Console.WriteLine("Total number of bmp files", bmpfiles.Length);
+Foreach( FileInfo f in bmpfiles)
+{
+  Console.WriteLine("Name is : {0}", f.Name);
+  Console.WriteLine("Length of the file is : {0}", f.Length);
+  Console.WriteLine("Creation time is : {0}", f.CreationTime);
+  Console.WriteLine("Attributes of the file are : {0}",
+                     f.Attributes.ToString());
+}

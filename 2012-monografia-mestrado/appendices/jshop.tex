@@ -1,0 +1,31 @@
+\chapter{Modelo Inicial Elaborado em JSHOP}
+\label{jshop}
+
+Neste apêndice apresenta-se a primeira modelagem do problema utilizando a ferramenta JSHOP \cite{Ilghami2006}.
+
+Os códigos \ref{jshopproblem} e \ref{jshopdomain} apresentam os arquivos de problema e domínio modelados.
+
+\UFPRcode{Java}{jshopproblem}{Problema elaborado em JSHOP}{codes/jshop_problem.txt}
+
+Nota-se que a elaboração do arquivo de problema é muito semelhante a um problema elaborado na linguagem PDDL. O problema em questão utiliza três tarefas. A tarefa $A$ e $B$ são dependentes do dado $D_1$, e geram como saída $D_{21}$ e $D_{22}$ respectivamente. a tarefa $C$ utiliza como entrada $D_{21}$ e $D_{22}$ e gera $D_3$ que também é o objetivo. Estão disponíveis três nós ($H1, H2$ e $H3$).
+
+Como o JSHOP trabalha com um sistema hierárquico de decomposição de tarefas, solicita-se que cada resolução \emph{doplan} seja executada separadamente. Ainda foi utilizado um método para finalização de cada uma das tarefas (caso ainda não tenha sido finalizada pela estrutura recursiva).
+
+\UFPRcode{Java}{jshopdomain}{Domínio elaborado em JSHOP}{codes/jshop_domain.txt}
+
+Como domínio do problema descreve-se ações de inicialização e finalização de tarefa. O método \emph{doplan} é o método principal. Ele invoca os demais métodos ou ele próprio recursivamente caso seja necessário. O método \emph{resolve-all} é utilizado para resolver todas as dependências de uma tarefa que necessita dos dados para sua execução. O método \emph{finish-task} é invocado e termina uma tarefa com o operador \emph{end-task} caso ela ainda esteja em execução.
+
+A figura \ref{fig:jshopdec} mostra a decomposição utilizada para a geração do plano.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=10cm]{images/fig_jshop.jpg}
+    \caption{Decomposição de ações no JSHOP}
+    \label{fig:jshopdec}
+\end{figure}
+
+O código \ref{jshopresult} mostra o resultado obtido.
+
+\UFPRcode{Java}{jshopresult}{Plano de ações retornado pelo JSHOP}{codes/jshop_result.txt}
+
+Com a decomposição das tarefas conseguiu-se inicialmente um plano de execução aceitável entretanto é fácil observar que as ações $1$ e $2$ poderiam ser executadas de forma paralela, visto que cada uma delas utiliza um nó diferente. Esta foi a principal motivação para a utilização de um planejador capaz de gerar planos paralelos.

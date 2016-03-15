@@ -1,0 +1,17 @@
+\beamer@slide {createtable}{43}
+\beamer@slide {createtable1}{45}
+\beamer@slide {createtable2}{46}
+\beamer@slide {altertable}{47}
+\beamer@slide {droptable}{49}
+\beamer@slide {comment}{50}
+\beamer@slide {comment}{51}
+\beamer@slide {insert}{52}
+\beamer@slide {update}{53}
+\beamer@slide {delete}{54}
+\beamer@slide {truncate}{55}
+\beamer@slide {exists}{56}
+\beamer@slide {innotin}{57}
+\beamer@slide {innotinalt}{58}
+\beamer@slide {innerjoin}{60}
+\beamer@slide {leftjoin}{62}
+\beamer@slide {rightjoin}{64}

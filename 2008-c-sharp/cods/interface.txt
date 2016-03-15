@@ -1,0 +1,19 @@
+interface IExemploInterface
+{
+    void ExemploMetodo();
+}
+class ImplementacaoClasse : IExemploInterface
+{
+    // Implementação explicita da interface
+    void IExemploInterface.ExemploMetodo()
+    {
+        // Implementação do método
+    }
+    static void Main()
+    {
+        // Declarando uma instancia de uma interface
+        IExemploInterface obj = new ImplementacaoClasse();
+        // chame o método.
+        obj.ExemploMetodo();
+    }
+} 

@@ -1,0 +1,194 @@
+\section[Projeto OriAnt]{Projeto OriAnt}
+
+\subsection[Projeto OriAnt]{Projeto OriAnt}
+
+\begin{frame}
+    \frametitle{Projeto OriAnt}
+
+    O projeto OriAnt foi dividido em três principais módulos:
+
+    \begin{itemize}
+        \item <1-> computação de feromônio;
+        \item <2-> adaptação;
+        \item <3-> administração.
+    \end{itemize}
+\end{frame}
+
+\subsection{Módulo: Computação de Feromônio}
+
+\begin{frame}
+    \frametitle{Módulo: Computação de Feromônio}
+
+    Para descrever o módulo de computação de feromônio, desenvolveu-se
+    um modelo $M<P,G,F,pA>$.
+
+    \begin{block}{Descrição do modelo}
+        \begin{itemize}
+            \item páginas ($P$);
+            \item grupos ($G$);
+            \item feromônio ($F$);
+            \item parâmetros administrativos ($pA$).
+        \end{itemize}
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Descrição do Modelo}
+
+        \begin{itemize}
+        \item $P$: é uma quádrupla $P<p, u, e, c>$ com os dados de
+        todas as páginas, tais como identificador, data e hora do último acesso,
+        endereço URL e número de acessos, respectivamente;
+
+        \item $G$: é uma dupla $G<g, n>$, sendo $g$ o identificador do grupo e $n$ o
+        número de acessos daquele grupo;
+
+        \item $F$: é uma quádrupla $F<o, d, g, qf>$, tendo $o$ como identificador de
+        uma página origem, $d$ da página destino, $g$ como identificador de
+        grupo e $qf$ como quantidade de feromônio.
+
+        \item $pA$: é uma tripla $pA<a, t, d>$, tendo $a$ como a taxa de
+        acréscimo de feromônio, $t$ como a taxa de evaporação e $d$ como
+        taxa de divisão, parâmetro que pondera a diferença dos tempos para a
+        subtração de feromônio, necessário para uniformizar os intervalos de
+        tempo extraídos de $P_{u}$.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Acréscimo de Feromônio}
+
+        Para cada acesso, ocorre o acréscimo de feromônio de acordo com a
+        equação \ref{eq:acrescimo_feromonio}.
+
+        \begin{equation}
+            F_{odg} = F_{odg} + pA_a
+            \label{eq:acrescimo_feromonio}
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $pA_a$ é a taxa de acréscimo de feromônio definida pelo administrador do sistema, que
+            significa a relevância de um acesso;
+
+            \item $F_{odg}$ é quantidade de feromônio na aresta, que liga a origem $o$
+            ao destino $d$ para o grupo $g$.
+
+        \end{itemize}
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Subtração de Feromônio}
+
+        A fórmula de subtração de feromônio foi baseada no conceito de juros
+        compostos e pode ser observada na equação \ref{eq:reducao}
+
+        \begin{equation}
+            \label{eq:reducao}
+            F_{odg} = F_{odg} * (1 - \frac{pA_t}{100})^\tau
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+            \item $pA_t$ é a taxa de evaporação de feromônio, dependente do tempo;
+
+            \item $\tau$ é o intervalo de tempo, que a página ficou sem acessos,
+            determinado pela equação~\ref{eq:tau}.
+
+        \end{itemize}
+
+        \begin{equation}
+            \tau = \frac{t_{atual} - t_{ultimo acesso}}{pA_d}
+            \label{eq:tau}
+        \end{equation}
+
+        \emph{onde:}
+
+        \begin{itemize}
+
+        \item $pA_d$ é a taxa de divisão definida pelo administrador, que é
+        inversamente proporcional a taxa de subtração de feromônio.
+
+        \end{itemize}
+\end{frame}
+
+\subsection{Módulo: Adaptação}
+
+\begin{frame}
+    \frametitle{Arquitetura do Modelo Proposto}
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=\textwidth]{images/oriant/fig_geral.jpg}
+            \label{fig:arquitetura}
+            \caption{Arquitetura do modelo proposto}
+        \end{center}
+    \end{figure}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cálculo da Relevância de uma Página}
+
+    \begin{equation}
+        \omega(o, d, g) = \frac{F_{odg}}{\sum_{t=1}^{n}F_{otg}}
+        \label{eq:relevancia}
+    \end{equation}
+
+    \emph{onde:}
+
+    \begin{itemize}
+        \item $\omega$ é a relevância daquela página em relação às outras;
+        \item $n$ é o número de páginas destino a partir daquela
+        origem.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Opções para o usuário OriAnt}
+
+    Além do grupo de interesses, também é possível que o usuário escolha
+    um dos tipos de orientação:
+
+    \begin{itemize}
+        \item <1-> disposição objetiva;
+        \item <2-> disposição orientada;
+        \item <3-> disposição por assuntos relacionados;
+    \end{itemize}
+
+    E o contexto da orientação: esta página ou todas as páginas:
+
+    \begin{itemize}
+        \item <4-> essa página;
+        \item <5-> todas as páginas;
+    \end{itemize}
+
+\end{frame}
+
+
+\subsection{Módulo: Administração}
+
+\begin{frame}
+    \frametitle{Módulo: Administração}
+
+    Dentre as funcionalidades disponíveis estão:
+
+    \begin{itemize}
+
+        \item <1-> inserir, alterar ou remover grupos;
+
+        \item <2-> consultas sobre a freqüência dos grupos;
+
+        \item <3-> alterar template;
+
+        \item <4-> alteração dos parâmetros administrativos ($pA$);
+
+        \item <5-> gerenciamento dos registros do banco de dados;
+
+    \end{itemize}
+
+\end{frame}

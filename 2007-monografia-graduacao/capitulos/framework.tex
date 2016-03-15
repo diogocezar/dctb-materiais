@@ -1,0 +1,243 @@
+%%%%%%%%%%%%%%%%%%%%%
+% F R A M E W O R K %
+%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:framework]{FRAMEWORK \emph{SpaceBrain}}
+
+Esse capítulo descreve o \emph{framework} desenvolvido para a
+implementação do sistema.
+
+    \UTFPRsection[sec:conceitos]{CONCEITOS}
+
+    Para o desenvolvimento do sistema, foi criado um \emph{framework}
+    denominado \emph{SpaceBrain}, baseado no funcionamento básico do
+    cérebro humano.
+
+    Segundo \citeonline{artigo:neuronios}, o sistema nervoso é
+    responsável por fazer o ser humano interagir com o mundo e fazer a
+    comunicação das partes do corpo entre si. Sem as milhares de células
+    nervosas não seríamos capazes de perceber os cinco sentidos básicos
+    (visão, audição, tato, paladar e olfato).
+
+    Os neurônios realizam suas funções transmitindo impulsos ao longo de
+    suas fibras denominadas axônios. Os impulsos recebidos por um
+    neurônio são armazenados numa função soma, onde seu valor é passado
+    para frente pelo axônio desse neurônio, como pode ser visto na
+    Figura \ref{fig:funcneuronio}
+    \cite{artigo:neuronios}.
+
+    \UTFPRfigura{width=7cm}{neuronio/neuronio.jpg}{Funcionamento de
+    um Neurônio Humano}{fig:funcneuronio}
+
+    Partindo desse princípio, os neurônios são representados por
+    classes. Cada classe possui uma função e atua de forma independente.
+    Por esse motivo os impulsos transmitidos no sistema nervoso foram
+    desconsiderados. Os neurônios (classes) interagem entre si
+    compartilhando recursos de forma cooperativa; entretanto, esse
+    não é o principal objetivo, mas sim, possibilitar a chamada
+    individual e não programada de qualquer um dos neurônios
+    disponíveis.
+
+    Para a implementação do \emph{framework} foram utilizadas algumas
+    particularidades da linguagem de programação. Em PHP tem-se a função
+    \texttt{eval} que permite que uma \texttt{String} com comandos da
+    linguagem, seja executada (ver código \ref{cod:eval}), o que
+    possibilitou a criação das classes em tempo de execução.
+
+    \texttt{\lstinputlisting[language=PHP, label=cod:eval, caption={Exemplo
+    de utilização da função eval}]{cods/eval.txt}}
+
+    A classe principal $<$\texttt{Cerebro.php}$>$ possui um único
+    atributo $<$\texttt{\$objeto}$>$ que é um \emph{array} de objetos.
+    Antes de se instanciar um novo neurônio, um método para tratamento
+    de erros é anexado ao objeto, esse método é definido pela classe
+    $<$\texttt{Cerebro.php}$>$ e está presente em todos os neurônios
+    para reportar eventuais erros do sistema. Após a inclusão do método
+    de tratamento de erros esse neurônio é instanciado e armazenado em
+    um posicionamento do \emph{array} principal indexado com o nome do
+    neurônio instanciado.
+
+    Em geral, cada neurônio pode ser invocado separadamente, entretanto,
+    algumas classes poderão exigir uma ordem de invocação, como por
+    exemplo em um sistema que se utilize banco de dados. Neste caso, um
+    neurônio que utilize os dados deve ser instanciado após o neurônio
+    de controle do banco de dados.
+
+    Para padronização do sistema e facilidade de manutenção, todas suas
+    funcionalidades são incluídas na classe principal
+    (\texttt{Cerebro.php}), dentre elas:
+
+    \begin{itemize}
+        \item \emph{frameworks}: Sajax, PEAR::DB, PEAR::HTML\_Template\_IT
+        e PEAR, (ver Seção \ref{subsec:pear}).
+
+        \item arquivos de configuração: config.php (ver Seção \ref{sec:configuracao}),
+        tableMapping.php (ver Seção \ref{sec:mapeamento}) e erros.php (ver Seção \ref{sec:erros});
+
+        \item classe genérica do sistema (ver Seção \ref{sec:generica}).
+    \end{itemize}
+
+    \UTFPRsection[sec:neuronios]{NEURÔNIOS}
+
+    Com o intuito principal de reutilização de código, foi criada
+    uma coleção de neurônios essenciais para a implementação
+    de \emph{websites} comerciais que englobam sistemas de
+    \emph{e-commerce}, \emph{websites} institucionais, sistemas de
+    notícias e galeria de fotos.
+
+    Dentre os neurônios desenvolvidos para o \emph{framework} e
+    implementados no sistema OriAnt estão:
+
+    \begin{itemize}
+
+        \item \emph{connection}: neurônio responsável por estabelecer uma comunicação com o banco de
+        dados. Basicamente ele coleta as constantes armazenadas no arquivo
+        $<$\texttt{config.php}$>$ (ver Seção \ref{sec:configuracao}), verifica a integridade das
+        informações,
+        invoca o \emph{framework} PEAR::DB; e armazena o objeto numa variável global
+        comum a todos os neurônios;
+
+        \item \emph{database}: neurônio responsável por realizar a manipulação do banco de dados,
+        realiza consultas, inserções, alterações e exclusões;
+
+        \item \emph{cookie}: neurônio responsável por gerenciar as \emph{cookies} do sistema. Com ele é possível
+        inserir, remover ou visualizar uma \emph{cookie} do sistema.
+
+        \item \emph{session}: neurônio responsável por gerenciar as sessões do sistema. É possível
+        inserir, remover, visualizar ou limpar as sessões do sistema.
+
+    \end{itemize}
+
+    Outros neurônios foram criados para a implantação do subsistema de
+    teste. São eles:
+
+    \begin{itemize}
+
+        \item \emph{noticesrss}: neurônio responsável por interpretar notícias no formato \UTFPRsigla{RSS}{\emph{RDF Site Summary}}. Esse
+        neurônio pode ser considerado o núcleo do subsistema de testes,
+        implementando a maioria das funcionalidades necessárias;
+
+        \item \emph{tree}: neurônio responsável por gerar menu em formato de árvore. É
+        possível inserir e remover nodos do menu em formato de árvore.
+
+    \end{itemize}
+
+    E ainda foram desenvolvidos neurônios extras para funcionalidades
+    não implementadas no sistema, que podem ser vistos no apêndice
+    \ref{ape:neuronios}.
+
+    \UTFPRsection[sec:mapeamento]{MAPEAMENTO DAS TABELAS DO SISTEMA}
+
+    Uma das grandes dificuldades da programação orientada a objetos é a
+    persistência dos objetos. Para minimizar essas dificuldades várias
+    técnicas existem para abstrair o armazenamento individual de
+    cada atributo no banco de dados, entre elas os bancos de dados
+    orientados a objetos e mapeamento objeto-relacional.
+
+    Neste trabalho, implementou-se os conceitos da técnica de mapeamento
+    objeto-relacional, entretanto, sem a utilização de XML. Para cada
+    tabela do sistema, cria-se um \emph{array} correspondente em um
+    arquivo apropriado, indicando o nome da tabela e quais são os
+    seus campos. Os atributos das classes são gerados na mesma ordem que
+    os elementos do \emph{array}, sendo que o primeiro atributo sempre é
+    sua chave primária. Feito isso, uma classe genérica (ver Seção
+    \ref{sec:generica}) que é herdada por todas as classes do sistema,
+    efetua operações básicas de inserção, exclusão, busca e alteração.
+
+    Um pequeno exemplo de como o mapeamento foi feito é transcrito no
+    Código \ref{cod:mapTab}.
+
+    \texttt{\lstinputlisting[language=PHP, label=cod:mapTab,
+    caption={Trecho de código demonstrando mapeamento da tabela
+    feromônio}]{cods/mapeamento.txt}}
+
+    No Código \ref{cod:mapTab}, observa-se a declaração dos atributos da
+    classe feromônio nas linhas 7 a 11. Em um arquivo separado são
+    criados três \emph{arrays} indexados pelo nome da tabela no exemplo:
+    "feromonio"{}; o \emph{array} \$tabelaMap ['feromonio'] armazena o
+    nome da tabela do banco de dados, o \emph{array} \$camposMap
+    ['feromonio'] armazena o nome dos campos do banco de dados e
+    finalmente o \emph{array} \$aliasMap ['feromonio'] armazena os
+    nomes de exibição, para cada um dos campos.
+
+    \UTFPRsection[sec:generica]{CLASSE GENÉRICA}
+
+    A classe abstrata $<$\texttt{Generic.php}$>$ é responsável por
+    montar o esqueleto de um objeto que deva ser salvo no banco de
+    dados, suas classes herdeiras devem ser classes pertinentes ao
+    sistema e não neurônios, já que os neurônios têm sua funcionalidade
+    específica.
+
+    A classe genérica armazena quatro atributos básicos:
+
+    \begin{itemize}
+    \item \emph{\$tabela}: armazena em uma \emph{string} o nome da tabela;
+
+    \item \emph{\$condicao}: armazena em uma \emph{string} a condição para a execução das cláusulas \emph{update} e
+    \emph{delete};
+
+    \item \emph{\$campos(\emph{array})}: armazena um \emph{array} com os campos da tabela onde os dados serão
+    armazenados;
+
+    \item \emph{\$valores(\emph{array})}: armazena os valores que serão inseridos na tabela.
+    \end{itemize}
+
+    Para o preenchimento obrigatório desses atributos a classe genérica
+    implementa um novo método abstrato denominado \texttt{$\_\_$toFillGeneric}.
+    As principais funcionalidades da classe genérica são:
+
+    \begin{itemize}
+    \item \emph{uniqueKey(\$key)}: retorna um registro único do banco de
+    dados com a \emph{primary key} igual a \$key passada como
+    parâmetro;
+
+    \item \emph{save}: salva os atributos do objeto atual no banco de
+    dados;
+
+    \item \emph{update}: atualiza os dados armazenados, subistituindo-os
+    pelos atributos atuais do objeto;
+
+    \item \emph{delete}: exclui o registro do banco de dados.
+    \end{itemize}
+
+    A classe genérica está transcrita no apêndice
+    \ref{ape:generica}.
+
+    \UTFPRsection[sec:vantagens]{VANTAGENS E DESVANTAGENS DO FRAMEWORK}
+
+    Como vantagem pode-se destacar que o \emph{framework} possibilita o
+    controle de qualquer neurônio a qualquer momento e em qualquer parte
+    do sistema. Assim que se invoca um neurônio, ele persiste enquanto a
+    classe cérebro existir, além disso, ainda é possível observar que o
+    \emph{framework} é modularizado, pois muitas funcionalidades gerais
+    ficam separadas da regra de negócios principal do sistema.
+
+    Uma das desvantagens é que com a implementação do \emph{framework}
+    se perde o método construtor dos neurônios, pois os objetos são
+    criados em tempo de execução e no momento dessa construção ainda não
+    é possível passar parâmetros para o construtor, todos os
+    métodos construtores são substituídos por métodos que podem ser
+    invocados depois da criação. Outro ponto negativo é que os neurônios
+    não podem ser herdados ou herdar nenhuma classe.
+
+    \UTFPRsection[sec:erros]{TRATAMENTO DE ERROS}
+
+    Para que o usuário fique ciente dos eventuais erros do sistema,
+    criou-se um método de tratamento de erros. Cada neurônio, ao ser
+    criado, implementa uma funcionalidade adicionada pela classe
+    \texttt{Cerebro.php}. Esse método é invocado em todas as situações
+    de exceção no sistema e mostra uma mensagem de acordo com uma
+    constante de erro definida em um arquivo separado. Nesse arquivo,
+    estão em formato de \emph{array} todas as mensagens que serão
+    exibidas para os usuários indexadas por uma palavra-chave.
+
+    O arquivo de constante de erros está transcrito no apêndice
+    \ref{ape:erros}.
+
+    \UTFPRsection[sec:configuracao]{ARQUIVO DE CONFIGURAÇÃO DO SISTEMA}
+
+    Para padronizar as configurações do sistema, um arquivo foi definido
+    para manter constantes utilizadas por ele. São elas:
+    constantes para configuração do banco de dados, envio de
+    \emph{e-mails}, envio de arquivos, geração de fotos, indexar
+    \emph{cookies} e constantes para indexar sessões.

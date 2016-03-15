@@ -1,0 +1,12 @@
+SqlConnection oConn = new SqlConnection(sConnString);
+SqlCommand oCmd = new SqlCommand();
+oCmd.Connection = oConn;
+oCmd.CommandText = "UPDATE Products " + " SET UnitPrice=@UnitPrice " + " WHERE ProductId=@ProductId";
+SqlParameter oParam = new SqlParameter("@UnitPrice", 1.5);
+oCmd.Parameters.Add(oParam);
+oParam = new SqlParameter();
+oParam.ParameterName = "@ProductId";
+oParam.DbType = DbType.Int32;
+oParam.Value = 1;
+oCmd.Parameters.Add(oParam);
+oCmd.ExecuteNonQuery();

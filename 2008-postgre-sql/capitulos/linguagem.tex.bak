@@ -1,0 +1,226 @@
+\section[A linguagem C\#]{A linguagem C\#}
+\begin{frame}
+    \frametitle{A linguagem C\#}
+    \begin{itemize}
+        \item <1-> É uma linguagem da plataforma .NET;
+        \item <2-> Derivada do C++;
+        \item <3-> Orientada a objetos.
+    \end{itemize}
+\end{frame}
+
+\subsection{Características do C\#}
+
+\begin{frame}
+    \frametitle{Características do C\#}
+    \begin{itemize}
+        \item <1-> Simplicidade;
+        \item <2-> Completamente orientada a objetos;
+        \item <3-> Fortemente tipada;
+        \item <4-> Tudo é um objeto;
+        \item <5-> Controle de versões;
+        \item <6-> Entre outros.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Características do C\#}
+    Alguns detalhes que devem ser observados:
+    \begin{itemize}
+        \item <1-> Sensitive CASE, diferencia maiúsculas e minúsculas;
+        \item <2-> As instruções terminam com ponto e virgula;
+        \item <3-> As extensões dos arquivos são .cs;
+    \end{itemize}
+    \begin{block}<4->{Comentários}
+        \small
+        \textcolor[rgb]{0.00,0.50,0.00}{
+        // Comenta apenas uma linha por vez \\
+        \vspace{0.5cm}
+        /* Este é um comentário de múltiplas linhas. \\
+        Ele pode ser dividido Em muitas linhas */}
+    \end{block}
+\end{frame}
+
+\subsection{Primeiro programa em C\#}
+
+\begin{frame}
+    \frametitle{Primeiro programa em C\#}
+    Escrevendo o tradicional programa Hello World, em C\#:
+    \texttt{\lstinputlisting[language=C, label=helloword, caption={Hello
+    World em C\#}]{cods/helloworld.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Estrutura de um programa em C\#}
+    \texttt{\lstinputlisting[language=C, label=programstructure,
+    caption={Estrutura de um programa em
+    C\#}]{cods/programstructure.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Estrutura de um programa em C\#}
+    \begin{itemize}
+        \item <1-> \emph{Namespaces}: são a forma lógica de organizar o código-fonte;
+        \item <2-> Tipos: classes, estruturas, interfaces, delegações, enums;
+        \item <3-> Membros: constantes, campos, métodos, propriedades, indexadores, eventos, operadores, construtores;
+        \item <4-> Outros: coméntarios e instruções.
+    \end{itemize}
+\end{frame}
+
+\subsection{Tipos de dados em C\#}
+
+\begin{frame}%[t,allowframebreaks]
+    \frametitle{Tipos de dados em C\#}
+        \tiny
+        \vspace{-1cm}
+        \begin{table}[!htb]
+            \centering
+            \label{tab:tiposprimitivos}
+            \caption{Tipos primitivos do C\#}
+            \begin{tabular}{|l|l|p{4cm}|p{3.5cm}|}
+                \hline
+                Tipo C\# & Tipo .NET & Descrição & Faixa de dados \\
+                \hline
+                bool & System.Boolean & Booleano & true ou false \\
+                \hline
+                byte & System.Byte & Inteiro de 8-bit com sinal & -127 a 128 \\
+                \hline
+                char & System.Char & Caracter Unicode de 16-bit & U+0000 a U+ffff \\
+                \hline
+                decimal & System.Decimal & Inteiro de 96-bit com sinal com 28-29 dígitos significativos & 1,0 x $10^{-28}$ a 7,9 x $10^{28}$ \\
+                \hline
+                double & System.Double & Flutuante IEEE 64-bit com  & +-5,0 x $10^{-324}$ a +-1,7 x $10^{324}$ \\
+                \hline
+                float & System.Single & Flutuante IEEE 32-bit com  & +-1,5 x $10^{-45}$ a +-3,4 x $10^{38}$ \\
+                \hline
+                int & System.Int32 & Inteiro de 32-bit com sinal & -2.147.483.648 a 2.147.483.647 \\
+                \hline
+                long & System.Int64 & Inteiro de 64-bit com sinal & -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 \\
+                \hline
+                Object & System.Object & Classe base  &  -\\
+                \hline
+                Sbyte & System.Sbyte & Inteiro de 8-bit sem sinal & 0 a 255 \\
+                \hline
+                Short & System.Int16 & Inteiro de 16-bit com sinal & -32,768 a 32,767 \\
+                \hline
+                String & System.String & String de caracteres Unicode &  -\\
+                \hline
+                Uint & System.UInt32 & Inteiro de 32-bit sem sinal & 0 a 4,294,967,295 \\
+                \hline
+                Ulong & System.UInt64 & Inteiro de 64-bit sem sinal & 0 a 18,446,744,073,709,551,615 \\
+                \hline
+                Ushort & System.UInt16 & Inteiro de 16-bit sem sinal & 0 a 65,535 \\
+                \hline
+            \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tipos Valor e Tipos Referência}
+    \begin{itemize}
+            \item <1-> Tipos valor(\emph{value types}): dados em memória;
+            \item <2-> Tipos referência(\emph{reference types}): referência para um valor;
+            \item <3-> Tipos ponteiro(\emph{pointer types}): apontam para um endereço de memória.
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conversão de tipos}
+    \begin{itemize}
+            \item <1-> Valores são convertidos sempre para o tipo de maior faixa de valores;
+            \item <2-> A conversão dos tipos de ponto flutuante(float, double) para decimal causa erro;
+            \item <3-> A conversão entre os tipos com sinal e sem sinal de valores inteiros com o mesmo tamanho causa erro.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tipos de conversão automática}
+       \scriptsize
+        \vspace{-1cm}
+        \begin{table}[!htb]
+            \centering
+            \label{tab:conversaoautomatica}
+            \caption{Tipos de conversão automática}
+            \begin{tabular}{|l|l|}
+                \hline
+                Tipo & Converte em \\
+                \hline
+                sbyte & short, int, long, float, double, decimal \\
+                \hline
+                byte & short, ushort, int, uint, long, ulong, float, double, decimal \\
+                \hline
+                short & int, long, float, double, decimal \\
+                \hline
+                ushort & int, uint, long, ulong, float, double, decimal \\
+                \hline
+                int & long, float, double, decimal \\
+                \hline
+                uint & long, ulong, float, double, decimal \\
+                \hline
+                long & float, double, decimal \\
+                \hline
+                ulong & long, double, decimal \\
+                \hline
+                char & ushort, int, uint, long, ulong, float, double, decimal \\
+                \hline
+                float & double \\
+                \hline
+            \end{tabular}
+        \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{O Objeto \emph{Convert}}
+    \begin{itemize}
+            \item Em C\# temos o objeto \texttt{\emph{Convert}} que é usado para converter um tipo de dado em
+            outro;
+            \item  Os tipos de dados suportados são: \emph{Boolean}, \emph{Char},
+            \emph{SByte}, \emph{Byte}, \emph{Int16}, \emph{Int32}, \emph{Int64},
+            \emph{UInt16}, \emph{UInt32}, \emph{UInt64}, \emph{Single},
+            \emph{Double}, \emph{Decimal}, \emph{DateTime} e \emph{String}.
+    \end{itemize}
+
+    \texttt{\lstinputlisting[language=C, label=conversaoConvert,
+    caption={Exemplo de utilização do objeto Convert}]{cods/conversaoconvert.txt}}
+\end{frame}
+
+\subsection{Arrays}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Arrays}
+    \begin{itemize}
+            \item \emph{array} é uma matriz de valores do mesmo tipo, criada em tempo de execução, acessada por meio de um índice;
+            \item declaração do \emph{array} sempre faz o uso de um colchete([]);
+            \item O tipo \emph{array} pode ter diversas dimensões;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=array, caption={Sintaxe
+    para a declaração de Arrays}]{cods/array.txt}}
+
+    \texttt{\lstinputlisting[language=C, label=array2, caption={Sintaxe
+    para a declaração de Arrays com duas ou mais
+    dimensões}]{cods/array2.txt}}
+
+    \texttt{\lstinputlisting[language=C, label=array3, caption={Sintaxe
+    para a declaração de uma matriz de Arrays com duas ou mais
+    dimensões}]{cods/array3.txt}}
+
+    \texttt{\lstinputlisting[language=C, label=array4, caption={Sintaxe
+    para a inicialização de Arrays com duas ou mais
+    dimensões}]{cods/array4.txt}}
+
+    \begin{itemize}
+            \item Para passar um argumento array para um método, especifique o nome do array sem usar colchetes.
+            \item Para que um método receba um \emph{array}, a lista de parâmetros deve especificar que um array será recebido.
+    \end{itemize}
+
+    \texttt{\lstinputlisting[language=C, label=array5, caption={Passando arrays à métodos}]{cods/array5.txt}}
+
+    \begin{block}{Propriedades e Métodos dos Arrays}
+        \begin{itemize}
+            \item \texttt{obj.Length} $\longrightarrow$ Tamanho do vetor;
+            \item \texttt{Array.IndexOf(Array vetor, object value)} $\longrightarrow$ Procura a primeira ocorrência de valor em vetor;
+            \item \texttt{Array.LastIndexOf(Array vetor, object value)} $\longrightarrow$ Procura a última ocorrência de valor em vetor;
+            \item \texttt{Array.Sort(Array vetor)} $\longrightarrow$ Ordena um vetor crescentemente;
+            \item \texttt{Array.Reverse(Array vetor)} $\longrightarrow$ Ordena um vetor decrescentemente.
+        \end{itemize}
+    \end{block}
+\end{frame}

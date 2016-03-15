@@ -1,0 +1,1054 @@
+%%%%%%%%%%%%%%%%%%%%%
+% M O D E L A G E M %
+%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:modelagem]{MODELAGEM}
+
+Neste capítulo, apresenta-se na Seção \ref{sec:metodologia} a
+metodologia utilizada para o desenvolvimento do projeto, bem como
+uma descrição da UML na Seção \ref{sec:uml} e os artefatos gerados
+na Seção \ref{sec:artefatos}.
+
+    \UTFPRsection[sec:metodologia]{METODOLOGIA}
+
+    Neste sistema, o processo de desenvolvimento adotado é baseado no
+    \UTFPRsigla{PDSU}{Processo de Desenvolvimento de Softwares
+    Unificado}, denotado nesse trabalho como
+    \UTFPRsigla{UP}{\emph{Unified Process}}. Este é usado em
+    conjunto com a \UTFPRsigla{UML}{\emph{Unified Modeling Language}}, e
+    o paradigma de orientação a objetos.
+
+    A Figura \ref{fig:work} representa graficamente as fases (concepção,
+    elaboração, construção e transição), as tarefas do processo
+    (requisitos, análise, projeto, implantação e testes), e a quantidade
+    de trabalho estimado para tarefas específicas em cada fase.
+
+    \UTFPRfigura[\cite{arlow:2003}]{width=15.5cm,height=9cm}{metodologia/fases_workflows.jpg}{Quantidade
+    de trabalho aplicada em cada workflow nas fases do UP}{fig:work}
+
+    O UP é iterativo e incremental, ou seja, para cada uma de suas
+    fases: concepção, elaboração, construção e transição; existe uma
+    quantidade de trabalho necessária para cada fluxo: requisitos,
+    análise, projeto, implantação e teste. De acordo com a necessidade
+    do projeto pode-se estabelecer um número de iterações para uma fase.
+    O UP é, ainda, baseado em casos de uso \cite{livro:up}.
+
+    A concepção estabelece a viabilidade e escopo do sistema, define e
+    estrutura uma arquitetura, identifica os riscos, esclarece questões
+    de custo-benefício. A elaboração deve coletar os requisitos, visando
+    recolher o máximo de informação útil e solidificar a arquitetura.
+    Essa fase visa o desenvolvimento da maioria dos casos de uso e a
+    especificação das metas de qualidade. A construção desenvolve uma
+    versão operacional do sistema que possa ser entregue à usuários
+    beta. Nessa etapa constrói-se maior parte dos modelos de projeto,
+    análise, instalação, implantação e teste. E, por fim a transição, a
+    fase final do projeto, quando é realizada a entrega do sistema aos
+    usuários beta com todas as funcionalidades finalizadas (e
+    futuramente a todos os usuários). A divulgação do software, e
+    preparação dos usuários também fazem parte dessa fase
+    \cite{livro:up}.
+
+    Cada uma dessas fases é dividida em sub-processos, chamados fluxos de
+    trabalho ou \emph{workflows}. Cada fluxo de trabalho tem um tema
+    técnico específico, enquanto as fases constituem divisões
+    gerenciais, caracterizadas por atingirem metas bem definidas
+    \cite{livro:engenharia}, podem acontecer uma ou mais iterações por
+    fase do processo, cada iteração gerará uma gama de artefatos
+    específicos dos fluxo de trabalho.
+
+    Neste trabalho, com o uso desta metodologia e base nos \emph{workflows}
+    citados, foram gerados os seguintes artefatos para fins de
+    documentação:
+
+        \begin{itemize}
+
+        \item Requisitos: Fluxo que visa obter um conjunto de requisitos de um produto, aprovado
+        pelo cliente e desenvolvedor \cite{livro:engenharia}.
+
+        \begin{itemize}
+            \item Levantamento dos requisitos funcionais e
+            não-funcionais;
+
+            \item Levantamento dos atores e casos de uso;
+
+            \item Levantamento dos riscos;
+
+            \item Especificação dos casos de uso;
+
+            \item Diagrama de caso de uso.
+        \end{itemize}
+
+        \end{itemize}
+
+        \begin{itemize}
+        \item Análise: Fluxo cujo objetivo é detalhar, estruturar, e validar os requisitos, de forma
+        que esses possam ser usados como base para o planejamento detalhado \cite{livro:engenharia}.
+
+        \begin{itemize}
+            \item Refinamento dos casos de uso;
+
+            \item Especificação de casos de uso;
+
+            \item Diagrama de seqüência.
+
+        \end{itemize}
+
+        \item Projeto: Fluxo cujo objetivo é formular um modelo estrutural do produto que sirva de
+        base para a implementação \cite{livro:engenharia}.
+
+        \begin{itemize}
+            \item Diagrama de classe de projeto;
+
+            \item \UTFPRsigla{MR}{Modelo Relacional};
+
+            \item Diagrama de pacotes;
+
+            \item Perguntas Freqüentes; (Apêndice \ref{ape:faq}).
+
+        \end{itemize}
+
+        \item Implementação: Fluxo cujo objetivo é realizar o projeto em termos de componentes de
+        código \cite{livro:engenharia}.
+
+        \begin{itemize}
+            \item Diagrama de implantação;
+
+            \item Diagrama de componentes.
+        \end{itemize}
+
+        \item Teste: Fluxo cujo objetivo é verificar os resultados da implementação
+        \cite{livro:engenharia}.
+
+        \begin{itemize}
+            \item Gerar casos de teste das principais funcionalidades do
+            sistema.
+        \end{itemize}
+
+        \end{itemize}
+
+    \UTFPRsection[sec:uml]{UML}
+
+    A UML é uma linguagem gráfica para visualização, especificação,
+    construção e documentação de artefatos de sistemas complexos de
+    \emph{software}. A UML proporciona uma forma padrão para a preparação de
+    planos de arquitetura de projetos de sistemas, incluindo aspectos
+    conceituais, tais como: processos de negócios e funções do
+    sistema. Além de ítens concretos como as classes escritas em determinada
+    linguagem de programação, esquemas de bancos de dados e componentes
+    de software reutilizáveis \cite{livro:uml}.
+
+    Neste trabalho, a linguagem UML servio para a documentação dos
+    artefatos descritos na Seção \ref{sec:artefatos}.
+
+    \UTFPRsection[sec:artefatos]{ARTEFATOS GERADOS}
+
+        Nesta sessão são apresentados os artefatos gerados para
+        documentação do projeto.
+
+        \UTFPRsubsection{Levantamento dos requisitos funcionais e não-funcionais}
+
+        O levantamento dos requisitos funcionais e não-funcionais é feito a
+        partir do fluxo que visa a obtenção do conjunto de requisitos de um
+        produto, aprovado pelo cliente e desenvolvedor.
+
+        Os requisitos funcionais estão listados na Tabela
+        \ref{tab:requisitosfuncionais}.
+
+            \begin{table}[H]
+            \caption{Requisitos Funcionais}
+            \label{tab:requisitosfuncionais}
+            \begin{tabular}{|p{1cm}|p{6cm}|p{6cm}|p{2cm}|}
+                \hline
+                ID & Funcionalidade & Necessidades & Prioridades \\
+                \hline
+                F01 & O sistema deve permitir a escolha de um grupo de interesse do usuário & Fornecimento do grupo escolhido. & Essencial \\
+                \hline
+                F02 & O sistema deve permitir a escolha do tipo de orientação que o usuário deseja utilizar. & Disponibilizar as opções para escolha. & Essencial \\
+                \hline
+                F03 & O sistema deve ser acionado a cada clique do usuário na página hospedeira. & Adição e subtração de feromônio a cada clique. & Essencial \\
+                \hline
+                F04 & O sistema deve permitir o acesso restrito para o administrador. & Fornecimento de uma identificação e senha para acesso ao sistema. & Essencial \\
+                \hline
+                F05 & O sistema deve diferenciar grupos mais acessados. & Contagem de usuários por grupo. & Opcional \\
+                \hline
+                F06 & O sistema deve permitir a consulta de freqüência dos grupos. & Contagem de usuários por grupo. & Opcional \\
+                \hline
+                F07 & O sistema deve permitir a consulta de páginas cadastradas. & Armazenamento das páginas acessadas. & Opcional \\
+                \hline
+                F08 & O sistema deve permitir a administração dos grupos. & Inserção, alteração e exclusão dos grupos. & Essencial \\
+                \hline
+                F09 & O sistema deve permitir a seleção de templates disponíveis. & \emph{Templates} previamente cadastrados. & Opcional \\
+                \hline
+                F10 & O sistema deve permitir a administração das cores dos \emph{links}. & Cadastro das cores. & Opcional \\
+                \hline
+                F11 & O sistema deve permitir a alteração dos parâmetros administrativos. & Armazenamento dos parâmetros administrativos. & Essencial \\
+                \hline
+                F12 & O sistema deve permitir a consulta de índices de feromônio. & Cadastro dos índices. & Opcional \\
+                \hline
+                F13 & O sistema deve permitir o gerenciamento dos registros. & Sistema de Gerenciamento. & Essencial \\
+                \hline
+            \end{tabular}
+            \end{table}
+
+        \newpage
+
+        Os requisitos não-funcionais estão listados na Tabela
+        \ref{tab:requisitosnfuncionais}.
+
+            \begin{table}[H]
+            \caption{Requisitos Requisitos Não-funcionais}
+            \label{tab:requisitosnfuncionais}
+            \begin{longtable}{|p{1cm}|p{11.5cm}|p{3cm}|}
+                \hline
+                ID & Requisitos & Categoria \\
+                \hline
+                NF01 & O sistema deverá ser manipulado através de uma interface gráfica. & Usabilidade  \\
+                \hline
+                NF02 & O sistema deverá funcionar na Internet. & Espaço  \\
+                \hline
+                NF03 & O sistema deverá funcionar sobre plataforma \emph{Windows}. & Padronização e Entrega \\
+                \hline
+                NF04 & O sistema deverá utilizar PostgreSQL como SGBD-OR para armazenamento e manipulação dos dados. & Padronização \\
+                \hline
+                NF05 & O sistema deverá possibilitar a interação dos usuários com o sistema, através de um software já utilizado pelos envolvidos (navegador de Internet). & Usabilidade \\
+                \hline
+                NF06 & O sistema deverá utilizar a linguagem de programação PHP. & Padronização \\
+                \hline
+                NF07 & O sistema deverá ser parcialmente desenvolvido com base no processo de desenvolvimento UP (Unified Process). & Padronização \\
+                \hline
+                NF08 & O sistema deverá utilizar padrões da UML para a modelagem. & Padronização \\
+                \hline
+                NF09 & O sistema deverá utilizar padrões de XHTML e CSS estabelecidos pela W3C. & Padronização \\
+                \hline
+            \end{longtable}
+            \end{table}
+
+        \UTFPRsubsection{Levantamento dos atores e casos de uso}
+
+            Os atores são usuários, outros sistemas ou até mesmo algum hardware
+            especial, que utilizarão de alguma forma o software, bem como os
+            serviços, ou seja, as opções, que o sistema disponibilizará.
+            \cite{td:shido}. Neste trabalho os atores encontrados estão
+            listados na Figura \ref{fig:atores}
+
+            \UTFPRfigura{width=5cm}{diagramas/Atores.jpg}{Levantamento dos atores do sistema}{fig:atores}
+
+            O Diagrama de Casos de Uso é o diagrama mais geral e informal da
+            UML, sendo utilizado normalmente nas fases de Levantamento e Análise
+            de Requisitos do sistema, embora venha a ser consultado durante todo
+            o processo de modelagem e possa servir de base para outros
+            diagramas \cite{td:shido}. Neste trabalho os casos de usos encontrados estão
+            relacionados na Figura \ref{fig:casosdeusotodos}
+
+            \UTFPRfigura{width=10cm}{diagramas/CasosDeUso.jpg}{Levantamento dos casos de uso do sistema}{fig:casosdeusotodos}
+
+        Os levantamentos dos riscos do sistema estão descritos na Tabela
+        \ref{tab:levantamentoriscos}; a coluna PO significa a probabilidade
+        de ocorrência do risco.
+
+        \begin{table}[H]
+        \caption{Levantamento dos riscos}
+        \label{tab:levantamentoriscos}
+        \begin{longtable}{|p{0.7cm}|p{11cm}|p{1.5cm}|p{1.5cm}|}
+            \hline
+            ID & Risco & Categoria & PO \\
+            \hline
+            R1 & O sistema poderá tornar um \emph{site} dinâmico mais lento, que um padrão aceitável. & Técnico & Média \\
+            \hline
+            R2 & O sistema poderá isolar certas áreas do \emph{site}, criando áreas mortas. & Técnico & Baixa \\
+            \hline
+            R3 & Os algoritmos de ACO podem levar mais tempo que o previsto para serem desenvolvidos.  & Técnico & Baixa \\
+            \hline
+            R4 & O sistema pode não ser aceito por ser lento ou não se enquadrar nos \emph{websites} atuais. & Negócio & Baixa \\
+            \hline
+            R5 & Os algoritmos de ACO podem causar um maior custo de processamento que o esperado. & Projeto & Baixa \\
+            \hline
+            R6 & Pode-se deparar com dados de \emph{backup} corrompidos. & Técnico & Baixa \\
+            \hline
+            R7 & O sistema pode não gerar a melhor sugestão de \emph{link} para o usuário. & Técnico & Média \\
+            \hline
+            R8 & O usuário prefere procurar seu objetivo que utilizar o sistema de sugestão. & Técnico & Baixa \\
+            \hline
+            R9 & O sistema pode não funcionar caso o administrador do \emph{website} hospedeiro não defina corretamente os grupos de interesse dos usuários. & Técnico & Média \\
+            \hline
+            R10 & Usuários não são formigas, não há como prever seu comportamento no sistema proposto, podendo tornar o sistema completamente ineficaz. & Técnico & Média \\
+            \hline
+        \end{longtable}
+        \end{table}
+
+    \UTFPRsubsection{Especificação dos casos de uso}
+
+    Nesta seção, estão especificados os diagramas de Casos de Uso,
+    apresentando a interação entre os respectivos atores e o sistema, as
+    condições especificadas e os possíveis fluxos alternativos.
+
+        A Figura \ref{tab:euc:acionarlink} mostra a especificação do
+        caso de uso AcionarLink.
+
+        \UTFPRfigura{width=10cm}{diagramas/AcionarLink.jpg}{Especificação do caso de uso: AcionarLink}{fig:euc:acionarlink}
+
+        A Tabela \ref{tab:euc:acionarlink} detalha a
+        especificação do caso de uso AcionarLink.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AcionarLink}
+        \label{tab:euc:acionarlink}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AcionarLink\\
+            \hline
+            \textbf{Id:} UC01.1 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} O usuário deve ter escolhido um grupo.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item Usuário aciona um \emph{link} do \emph{site}.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O usuário é redirecionado para a página acionada.\\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:deducaodeferomonio} detalha a
+        especificação do caso de uso DeduçãoDeFeromônio.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: DeduçãoDeFeromônio}
+        \label{tab:euc:deducaodeferomonio}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} DeduçãoDeFeromônio\\
+            \hline
+            \textbf{Id:} UC01.2 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} O usuário deve ter escolhido um grupo.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O sistema executa a rotina de dedução de
+                feromônio.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O usuário é redirecionado para a página acionada.\\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:acrescimodeferomonio} detalha a
+        especificação do caso de uso AcréscimoDeFeromônio.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AcréscimoDeFeromônio}
+        \label{tab:euc:acrescimodeferomonio}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AcréscimoDeFeromônio\\
+            \hline
+            \textbf{Id:} UC01.3 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} O usuário deve ter escolhido um grupo.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O sistema executa a rotina de acréscimo de
+                feromônio, baseado no \emph{link} acionado pelo usuário.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O usuário é redirecionado para a página acionada.\\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Figura \ref{fig:euc:admingrupos} mostra a especificação do
+        caso de uso AdministrarGrupos.
+
+        \UTFPRfigura{width=10cm}{diagramas/AdministrarGrupos.jpg}{Especificação do caso de uso: AdministrarGrupos}{fig:euc:admingrupos}
+
+        A Tabela \ref{tab:euc:inserirgrupo} detalha a
+        especificação do caso de uso InserirGrupo.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: InserirGrupo}
+        \label{tab:euc:inserirgrupo}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} InserirGrupo\\
+            \hline
+            \textbf{Id:} UC02.1 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador deverá informar o nome do novo grupo a ser inserido.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O administrador é redirecionado para página de gerenciamento, após a mensagem de registro inserido com sucesso. \\
+            \hline
+            \textbf{Fluxo alternativo:} Sistema informa que os dados não foram inseridos corretamente.\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:alterargrupo} detalha a
+        especificação do caso de uso AlterarGrupo.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AlterarGrupo}
+        \label{tab:euc:alterargrupo}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AlterarGrupo\\
+            \hline
+            \textbf{Id:} UC02.2 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador deverá informar o novo nome do grupo a ser alterado.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O administrador é redirecionado para página de gerenciamento, após a mensagem de "registro atualizado com sucesso". \\
+            \hline
+            \textbf{Fluxo alternativo:} Sistema informa que os dados não foram inseridos corretamente.\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:removergrupo} detalha a
+        especificação do caso de uso RemoverGrupo.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: RemoverGrupo}
+        \label{tab:euc:removergrupo}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} RemoverGrupo\\
+            \hline
+            \textbf{Id:} UC02.3 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador deverá escolher o grupo a ser
+                removido;
+                \item O sistema deverá remover toda a trilha de
+                feromônio dos usuários que escolheram o grupo removido.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O administrador é redirecionado para página de gerenciamento, após a mensagem de "registro removido com sucesso". \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Figura \ref{fig:euc:gerenciar} mostra a especificação do
+        caso de uso GerenciarRegistrosDoSistema.
+
+        \UTFPRfigura{width=5cm}{diagramas/GerenciarRegistrosDoSistema.jpg}{Especificação do caso de uso: GerenciarRegistrosDoSistema}{fig:euc:gerenciar}
+
+        A Tabela \ref{tab:euc:filtrarregistro} detalha a
+        especificação do caso de uso FiltrarRegistro.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: FiltrarRegistro}
+        \label{tab:euc:filtrarregistro}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} FiltrarRegistro\\
+            \hline
+            \textbf{Id:} UC03.1 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador deverá digitar as iniciais da
+                palavra que identifica o registro procurado em um \emph{inputbox}, enquanto o sistema
+                filtra os registros.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O sistema exibe apenas registros contendo partes da palavra digitada. \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:alterarregistro} detalha a
+        especificação do caso de uso AlterarRegistro.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AlterarRegistro}
+        \label{tab:euc:alterarregistro}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AlterarRegistro\\
+            \hline
+            \textbf{Id:} UC03.2 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador escolhe o registro a ser alterado.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O administrador é redirecionado para o formulário de alteração. \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:excluirregistro} detalha a
+        especificação do caso de uso ExcluirRegistro.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: ExcluirRegistro}
+        \label{tab:euc:excluirregistro}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} ExcluirRegistro\\
+            \hline
+            \textbf{Id:} UC03.3 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador escolhe o registro a ser excluído.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O administrador é redirecionado para página de gerenciamento, após a mensagem de "registro removido com sucesso". \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Figura \ref{fig:casosdeuso} mostra a especificação do
+        caso de uso global do sistema.
+
+        \UTFPRfigura{width=14cm}{diagramas/Principal.jpg}{Diagrama de casos de uso}{fig:casosdeuso}
+
+        A Tabela \ref{tab:euc:escolhergrupo} detalha a
+        especificação do caso de uso EscolherGrupo.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: EscolherGrupo}
+        \label{tab:euc:escolhergrupo}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} EscolherGrupo\\
+            \hline
+            \textbf{Id:} UC0.1 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} N/A\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O usuário escolhe um dos grupos de acordo com sua
+                relevância (para o mesmo).
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} O usuário é redirecionado para a tela principal do sistema. \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:escolhertipoorientacao} detalha a
+        especificação do caso de uso EscolherTipoDeOrientação.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: EscolherTipoDeOrientação}
+        \label{tab:euc:escolhertipoorientacao}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} EscolherTipoDeOrientação\\
+            \hline
+            \textbf{Id:} UC0.2 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} O usuário deve ter escolhido um grupo.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O usuário escolhe um dos tipos de orientação;
+                \item O sistema informa as sugestões de acordo com a
+                orientação escolhida.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:trocargrupo} detalha a
+        especificação do caso de uso TrocarGrupo.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: TrocarGrupo}
+        \label{tab:euc:trocargrupo}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} TrocarGrupo\\
+            \hline
+            \textbf{Id:} UC0.3 \\
+            \hline
+            \textbf{Ator(es):} Usuário \\
+            \hline
+            \textbf{Pré-condições:} O usuário deve ter escolhido um grupo.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O usuário escolhe a opção para troca de grupo;
+                \item A lista de grupos é exibida para que se possa
+                escolher o novo grupo.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:consultarfrequenciadosgrupos} detalha a
+        especificação do caso de uso ConsultarFreqüenciaDosGrupos.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: ConsultarFreqüenciaDosGrupos}
+        \label{tab:euc:consultarfrequenciadosgrupos}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} ConsultarFreqüenciaDosGrupos\\
+            \hline
+            \textbf{Id:} UC0.4 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador consulta quais são os grupos mais
+                freqüentados.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:consultarpaginascadastradas} detalha a
+        especificação do caso de uso ConsultarPáginasCadastradas.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: ConsultarPáginasCadastradas}
+        \label{tab:euc:consultarpaginascadastradas}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} ConsultarPáginasCadastradas\\
+            \hline
+            \textbf{Id:} UC0.5 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador consulta todas as páginas
+                percorridas pelos usuários e o seu nível de feromônio.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:alterartemplate} detalha a
+        especificação do caso de uso AlterarTemplate.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AlterarTemplate}
+        \label{tab:euc:alterartemplate}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AlterarTemplate\\
+            \hline
+            \textbf{Id:} UC0.5 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador escolhe um novo \emph{template} de interface (\emph{skin}) para o
+                sistema.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        A Tabela \ref{tab:euc:alterarparametrosadminsitrativos} detalha a
+        especificação do caso de uso AlterarParâmetrosAdministrativos.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: AlterarParâmetrosAdministrativos}
+        \label{tab:euc:alterarparametrosadminsitrativos}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} AlterarParâmetrosAdministrativos\\
+            \hline
+            \textbf{Id:} UC0.6 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} O administrador deverá estar logado no sistema.\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador altera os parâmetros
+                administrativos do sistema:
+                \begin{itemize}
+                    \item login;
+                    \item senha;
+                    \item acréscimo de feromônio;
+                    \item taxa de evaporação;
+                    \item divisor da diferença da subtração: (agora) -
+                    (ultimo\_acesso);
+                \end{itemize}
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo:} N/A\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \newpage
+
+        A Tabela \ref{tab:euc:efetuarlogin} detalha a
+        especificação do caso de uso EfetuarLogin.
+
+        \begin{table}[H]
+        \caption{Especificação do caso de uso: EfetuarLogin}
+        \label{tab:euc:efetuarlogin}
+        \begin{longtable}{|p{16cm}|}
+            \hline
+            \textbf{Caso de uso:} EfetuarLogin\\
+            \hline
+            \textbf{Id:} UC0.6 \\
+            \hline
+            \textbf{Ator(es):} Administrador \\
+            \hline
+            \textbf{Pré-condições:} N/A\\
+            \hline
+            \textbf{Fluxo de eventos:}
+            \begin{enumerate}
+                \item O administrador informa login e senha;
+                \item O sistema valida o acesso.
+            \end{enumerate}
+            \\
+            \hline
+            \textbf{Pós-condições:} N/A \\
+            \hline
+            \textbf{Fluxo alternativo 1:} Usuário não cadastrado\\
+                    \hline
+            \textbf{Fluxo alternativo 2:} Acesso negado\\
+            \hline
+        \end{longtable}
+        \end{table}
+
+        \UTFPRsubsection{Diagramas de seqüência}
+
+        O Diagrama de Seqüência demonstra a ordem temporal das
+        trocas de mensagens entre os objetos envolvidos em um
+        determinado processo. Tem como base um Caso de Uso e
+        apóia-se no Diagrama de Classes para determinar quais os
+        objetos envolvidos em determinado processo. \cite{td:shido}.
+
+        \newpage
+
+        A Figura \ref{fig:ds:acionarlink} mostra o diagrama de seqüência
+        AcionarLink.
+
+            \UTFPRfigura{width=16cm}{diagramas/AcionarLink1.jpg}{Diagrama de seqüência: AcionarLink}{fig:ds:acionarlink}
+
+        A Figura \ref{fig:ds:acrescimoferomonio} mostra o diagrama de seqüência
+        AcrescimoDeFeromonio.
+
+            \UTFPRfigura{width=16cm}{diagramas/AcrecimoDeFeromonio.jpg}{Diagrama de seqüência: AcrescimoDeFeromonio}{fig:ds:acrescimoferomonio}
+
+        \newpage
+
+        A Figura \ref{fig:ds:alterargrupo} mostra o diagrama de seqüência
+        AlterarGrupo.
+
+            \UTFPRfigura{width=16cm}{diagramas/AlterarGrupo.jpg}{Diagrama de seqüência: AlterarGrupo}{fig:ds:alterargrupo}
+
+        \newpage
+
+        A Figura \ref{fig:ds:consultarpaginas} mostra o diagrama de seqüência
+        ConsultarPaginasCadastradas.
+
+            \UTFPRfigura{width=16cm}{diagramas/ConsultarPaginasCadastradas.jpg}{Diagrama de seqüência: ConsultarPaginasCadastradas}{fig:ds:consultarpaginas}
+
+        A Figura \ref{fig:ds:consultarfrequencia} mostra o diagrama de seqüência
+        ConsultrarFrequenciaDosGrupos.
+
+            \UTFPRfigura{width=16cm}{diagramas/ConsultrarFrequenciaDosGrupos.jpg}{Diagrama de seqüência: ConsultrarFrequenciaDosGrupos}{fig:ds:consultarfrequencia}
+
+        \newpage
+
+        A Figura \ref{fig:ds:deducao} mostra o diagrama de seqüência
+        DeducaoDeFeromonio.
+
+            \UTFPRfigura{width=16cm}{diagramas/DeducaoDeFeromonio.jpg}{Diagrama de seqüência: DeducaoDeFeromonio}{fig:ds:deducao}
+
+        A Figura \ref{fig:ds:efetuarlogin} mostra o diagrama de seqüência
+        EfetuarLogin.
+
+            \UTFPRfigura{width=16cm}{diagramas/EfetuarLogin.jpg}{Diagrama de seqüência: EfetuarLogin}{fig:ds:efetuarlogin}
+
+        \newpage
+
+        A Figura \ref{fig:ds:escolhergrupo} mostra o diagrama de seqüência
+        EscolherGrupo.
+
+            \UTFPRfigura{width=16cm}{diagramas/EscolherGrupo.jpg}{Diagrama de seqüência: EscolherGrupo}{fig:ds:escolhergrupo}
+
+        A Figura \ref{fig:ds:escolhertipoorientacao} mostra o diagrama de seqüência
+        EscolherTipoDeOrientacao.
+
+            \UTFPRfigura{width=16cm}{diagramas/EscolherTipoDeOrientacao.jpg}{Diagrama de seqüência: EscolherTipoDeOrientacao}{fig:ds:escolhertipoorientacao}
+
+        \newpage
+
+        A Figura \ref{fig:ds:excluirgrupo} mostra o diagrama de seqüência
+        ExcluirGrupo.
+
+            \UTFPRfigura{width=16cm}{diagramas/ExcluirGrupo.jpg}{Diagrama de seqüência: ExcluirGrupo}{fig:ds:excluirgrupo}
+
+        \newpage
+
+        A Figura \ref{fig:ds:inserirgrupo} mostra o diagrama de seqüência
+        InserirGrupo.
+
+            \UTFPRfigura{width=16cm}{diagramas/EscolherGrupo.jpg}{Diagrama de seqüência: InserirGrupo}{fig:ds:inserirgrupo}
+
+        A Figura \ref{fig:ds:trocargrupo} mostra o diagrama de seqüência
+        TrocarGrupo.
+
+            \UTFPRfigura{width=16cm}{diagramas/TrocarGrupo.jpg}{Diagrama de seqüência: TrocarGrupo}{fig:ds:trocargrupo}
+
+        \UTFPRsubsection[subsec:diagramadeclasses]{Diagrama de classes}
+
+        O Diagrama de Classes serve de apoio para a maioria dos outros
+        diagramas e mostra um conjunto de classes, interfaces e colaborações
+        e seus relacionamentos. Como o próprio nome já diz, define a
+        estrutura das classes utilizadas pelo sistema, determinando os
+        atributos e métodos possuídos por cada classe, além de estabelecer
+        como as classes se relacionam e trocam informações entre si
+        \cite{td:shido}.
+
+        Na Figura \ref{fig:diagramadeclasses} pode-se observar o diagrama de classes elaborado
+        para o projeto dividido em três principais segmentos:
+        "\emph{SpaceBrain}", que abriga as classes do \emph{framework}
+        desenvolvido, "Classes"{} que contém as classes do sistema e
+        finalmente, "\emph{Frameworks}"{} que mostra os demais recursos
+        utilizados pelo sistema.
+
+        As Figuras \ref{fig:diagramadeclassesP1},
+        \ref{fig:diagramadeclassesP2} e \ref{fig:diagramadeclassesP3}
+        mostram as classes de forma ampliada.
+
+        \UTFPRfigura{width=\textwidth}{diagramas/DiagramaDeClasses.jpg}{Diagrama de classes}{fig:diagramadeclasses}
+
+        \newpage
+
+        \UTFPRfigura{width=\textwidth}{diagramas/DiagramaDeClassesP1.jpg}{Pacote \emph{SpaceBrain}}{fig:diagramadeclassesP1}
+
+        Na Figura \ref{fig:diagramadeclassesP1} as classes destacadas com um
+        fundo claro são as classes utilizadas pelo sistema. O
+        \emph{framework} tem como objetivo integrar várias funcionalidades
+        para o desenvolvimento de aplicações \emph{web} e foi desenvolvido
+        antes do projeto OriAnt, por esse motivo algumas de suas classes não
+        foram utilizados nesse trabalho, mas fazem parte do pacote. As
+        classes do pacote "\emph{SpaceBrain}"{} utilizadas no
+        trabalho, serão detalhadas na Seção \ref{sec:neuronios} e as demais
+        classes estão descritas no Apêndice \ref{ape:neuronios}.
+
+        \newpage
+
+        \UTFPRfigura{width=\textwidth}{diagramas/DiagramaDeClassesP2.jpg}{Pacote Classes}{fig:diagramadeclassesP2}
+
+        \newpage
+
+        \UTFPRfigura{width=12cm}{diagramas/DiagramaDeClassesP3.jpg}{Pacote Frameworks}{fig:diagramadeclassesP3}
+
+        \newpage
+
+        \UTFPRsubsection{Modelo Relacional}
+
+        Apesar da complexidade dos algoritmos desenvolvidos, o modelo
+        relacional do projeto apresenta-se de forma simples.
+
+        \UTFPRfigura{width=10cm}{diagramas/mer.jpg}{Modelo Relacional}{fig:mer}
+
+        Na Figura \ref{fig:mer}, pode-se observar as tabelas e os
+        relacionamentos dos dados apresentados pelo modelo $M$ na Seção
+        \ref{sec:engine}.
+
+        \newpage
+
+        \UTFPRsubsection{Diagrama de pacotes}
+
+        O Diagrama de Pacotes da Figura \ref{fig:diagramadepacotes}, representa os subsistemas ou sub-módulos
+        encontrados no sistema principal \cite{livro:uml}.
+
+        \UTFPRfigura{width=15cm}{diagramas/DiagramaDePacotes.jpg}{Diagrama de pacotes}{fig:diagramadepacotes}
+
+        \newpage
+
+        \UTFPRsubsection{Diagrama de implantação}
+
+        O Diagrama de Implantação determina as necessidades de hardware do
+        sistema, as características físicas como servidores, estações,
+        topologias e protocolos de comunicação, ou seja, todo o aparato
+        físico sobre o qual o sistema deverá ser executado
+        \cite{td:shido}.
+
+        \UTFPRfigura{width=13cm}{diagramas/DiagramaDeImplantacao.jpg}{Diagrama de implantação}{fig:diagramadeimplantacao}
+
+        Na Figura \ref{fig:diagramadeimplantacao}, pode-se observar a
+        interação da máquina cliente com o servidor \emph{web} através do
+        protocolo HTTP pela internet. O servidor \emph{web} abriga os dois
+        sistemas e acessa eventualmente dois bancos de dados, um deles
+        necessários para computar os registros do sistema OriAnt e outro
+        para armazenar os dados do \emph{website} hospedeiro.
+
+        Para a implantação do sistema é necessário que o administrador do
+        \emph{website} hospedeiro copie todo o conteúdo de seu site para
+        dentro da pasta PHP, localizada dentro da pasta "oriant"; crie um
+        novo banco de dados PostgreSQL, e carregue as tabelas do arquivo
+        "oriant/bd/sql/sql.sql"{}. Ainda é necessário que se edite o arquivo
+        de configuração "oriant/conf/config.php"{}, alterando as informações
+        para conexão no banco de dados (nome, servidor, usuário e senha).
+        Feito isso, já é possível utilizar o sistema OriAnt.
+
+        \newpage
+
+        \UTFPRsubsection{Diagrama de componentes}
+
+        O Diagrama de Componentes está amplamente associado à linguagem de
+        programação que será utilizada para desenvolver o sistema modelado.
+        Esse diagrama representa os componentes do sistema quando este for
+        ser implementado em termos de módulos de código-fonte, bibliotecas,
+        formulários, arquivos de ajuda, módulos executáveis etc. e determina
+        como esses componentes estarão estruturados e interagirão para que o
+        sistema funcione de maneira adequada \cite{td:shido}.
+
+        \UTFPRfigura{width=17cm}{diagramas/DiagramaDeComponentes.jpg}{Diagrama de componentes}{fig:diagramadecomponentes}
+
+        Na Figura \ref{fig:diagramadecomponentes}, Os pacotes:
+        "\emph{SpaceBrain}", "\emph{Frameworks}"{} e Classes representam as
+        classes mostradas na Seção \ref{subsec:diagramadeclasses}. Os
+        componentes do pacote "javascript"{} são utilizados pela página
+        principal localizada no pacote "oriant"{} e estão descritos na Seção
+        \ref{subsec:javascript}. O pacote "cont"{} abrigam os arquivos para:
+        configuração do sistema, tratamento de erros e mapeamento das
+        tabelas descritos respectivamente nas Seções \ref{sec:configuracao},
+        \ref{sec:erros} e \ref{sec:mapeamento}. O pacote "HTML"{} e "CSS"{}
+        são unidos e abrigam os arquivos para elaboração dos templates de
+        interface do sistema. O pacote "lang"{} é composto pelos arquivos de
+        tradução do sistema. O pacote "ajax"{} abriga os arquivos para
+        implementação das funcionalidades em AJAX. O pacote gerenciar é
+        formado por um arquivo genérico para gerenciamento dos registros das
+        tabelas do banco de dados, mais detalhado na
+        Seção \ref{subsubsec:gerenciamento}. O pacote "lib"{} contém um arquivo com
+        várias pequenas funcionalidades utilizadas pelo sistema, como
+        geração de data, tratamento de strings, entre outros. e o pacote
+        "php"{} abriga todo o \emph{website} hospedeiro.

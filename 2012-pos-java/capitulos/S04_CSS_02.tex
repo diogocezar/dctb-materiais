@@ -1,0 +1,254 @@
+\section[CSS - Parte 2]{CSS - Parte 2}
+
+
+\begin{frame}
+    \frametitle{CSS - Cores da Web}
+    \begin{itemize}
+      \item definidas pela mistura de 256 tonalidades de vermelho, de verde e de
+azul em diferentes proporções;
+      \item contagem hexadecimal;
+      \item \texttt{\#ffffff} será o branco e \texttt{\#000000} o preto.
+      \item algumas vezes você encontrará a sintaxe com apenas três dígitos, por
+exemplo, \texttt{\#2a0}. Isto é uma abreviatura para \texttt{\#22aa00}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,fragile]
+    \frametitle{CSS - Modificando o Body}
+    \begin{itemize}
+      \item ao modificar a tag \texttt{body}, modificamos automaticamente todos
+os elementos de nossa página;
+      \item se setarmos uma cor de letra padrão (\textit{color}) no
+\texttt{body}, ela valera enquanto outra regra css não for aplicada:
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML,
+	  caption=Modificando o Body e seus Filhos
+	}
+	\begin{lstlisting}
+	  body { 
+	    background-color: #e8eae8; 
+	    color: #5d665b; 
+	    margin: 50px
+	  } 
+
+	  <body>
+	    <p>Testando CSS</p>
+	  </body>
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Estilizando Textos e Fontes}
+    \begin{itemize}
+      \item páginas \textit{Web} só conseguem mostrar os tipos de fontes que
+estejam instalados na máquina do usuário;
+      \item a seguir uma especificação típica para escolha de uma família de
+fontes do tipo sem serifas:
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  font-family: Verdana, Geneva, Arial, sans-serif;
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \begin{itemize}
+      \item e, para fontes com serifas:
+    \end{itemize}
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  font-family: Georgia, "Times New Roman", Times, serif;
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    \begin{itemize}
+      \item observe que nomes de fontes composto por mais de uma palavra devem
+ser escritos entre aspas: ``\textit{Times New Roman}''.
+    \end{itemize}
+    
+    \framebreak
+    
+    \begin{itemize}
+      \item na \textit{Web} os tamanhos de fonte não seguem um padrão rígido
+variando de um computador para outro:
+
+      \begin{itemize}
+       \item resolução;
+       \item sistema operacional;
+       \item navegador;
+      \end{itemize}
+      
+      \framebreak
+
+      \item tamanhos relativos:
+      
+      \begin{itemize}
+       \item se você quer servir sua página \textit{Web} ao maior número
+possível de usuários é melhor especificar um tamanho de fonte relativo àquele
+escolhido como padrão pelo usuário;
+       \item porcentagem (\%);
+       \item unidade de medida em;
+       \item método descritivo de tamanhos:
+       
+       \begin{itemize}
+        \item \texttt{xx-large};
+        \item \texttt{medium};
+        \item \texttt{small};
+        \item etc...
+       \end{itemize}
+      \end{itemize}
+      
+      \framebreak
+      
+      \item tamanhos absolutos:
+      
+       \begin{itemize}
+        \item se o público para o qual você projetar seu \textit{site} for
+bastante específico, pode-se especificar o tamanho de suas fontes em
+pixels.
+       \end{itemize}
+      
+      \item convém ressaltar que você nunca deverá usar `points' para definir
+tamanhos de fonte para tela (\textit{screen}), use-o somente para impressão
+(\textit{print}).
+
+      \framebreak
+
+      \item o espaçamento padrão entre linhas é de aproximadamente 120\% do
+tamanho da fonte;
+
+      \item aumentar um pouco este espaçamento em geral resulta em melhoria da
+legibilidade, especialmente se as linhas são muito longas;
+
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=HTML
+	}
+	\begin{lstlisting}
+	  line-height: 180%;
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+      
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{CSS - Divisão por Divs}
+    \begin{itemize}
+      \item construção layouts mais interessantes;
+      \item o corpo \textit{body} da página é a área total visível, é possível
+compartimentar a página em pequenas divisões com seus estilos próprios;
+      \item tudo o que temos a fazer é englobar entre o par de \textit{tags}
+\texttt{<div>}...\texttt{</div>} à área que pretendemos transformar em uma
+divisão;
+      \item pode-se aninhar outros blocos dentro desta nova área que acaba-se
+de criar;
+      \framebreak
+      
+      \item Divs em  CSS podem ter uma largura e uma altura (\textit{width} e
+\textit{height}), uma cor de fundo ou até mesmo uma imagem de fundo que pode se
+repetir constituindo um padrão de preenchimento;
+
+      \item para manter o texto afastado das bordas deve-se usar o
+enchimento: \texttt{padding};
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=4cm]{images/padding.jpg}
+        \end{center}
+    \end{figure}
+    
+    \framebreak
+    
+    \item deve-se tomar precauções ao usar \textit{padding} pois ele se comporta
+de maneira diferente no navegador \textit{Microsoft Internet Explorer};
+
+    \item o \textit{IE} coloca o \textit{padding} dentro do \textit{box}, e em
+consequência seu comprimento e altura não se alteram.
+
+    \framebreak
+    
+    \item além dos limites do padding você poderá ter uma borda:
+    
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=4cm]{images/border.jpg}
+        \end{center}
+    \end{figure}
+    
+    \item para separar um \textit{box} de outro usa-se as margens:
+    
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=4cm]{images/margin.jpg}
+        \end{center}
+    \end{figure}
+    
+    \framebreak
+    
+    \item \textit{boxes} CSS podem ser colocados em qualquer lugar da página
+através da definição CSS \texttt{position: absolute} se forem definidos dentro
+da tag \texttt{<body>};
+
+    \item caso defina-se um div \textit{absolute} dentro de um
+\textit{relative}, leva-se em consideração a posição do seu pai (relativo);
+
+    \item \textbf{posicionamento absoluto} exemplo: a localização de
+uma casa poderia ser descrita assim: à 50 metros da Rua Norte e à 100 metros da
+Rua Leste.
+
+    \item \textit{boxes} com dimensões definidas e posicionados de forma
+absoluta, são semelhantes a recortes de notícias e imagens de jornais que se faz
+para montagem de um álbum de recortes.
+
+    \framebreak
+
+    \item posicionamento relativo considera que \textit{boxes} CSS localizam-se
+próximos a um outro box;
+
+    \item \textbf{posicionamento relativo}: exemplo: a casa destino localiza-se
+a 5 metros da sua casa;
+
+    \item para fazer com que boxes flutem um ao lado do outro em lugar de em
+baixo, define-se \texttt{float: left}; ou \texttt{float: right};
+
+    \item os boxes flutuam um ao lado do outro enquanto houver espaço
+lateral;
+
+    \item acabando o espaço lateral eles ocuparão a posição abaixo daqueles que
+já flutuaram;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item faça uma página em XHTML utilizando:
+      \begin{itemize}
+	\item pelo menos duas fontes diferentes;
+	\item pelo menos duas cores diferentes;
+	\item posicionamento relativo;
+	\item posicionamento absoluto;
+	\item organizando as atribuições em um arquivo CSS separado;
+      \end{itemize}
+    \end{itemize}
+\end{frame}

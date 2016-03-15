@@ -1,0 +1,10 @@
+<?php
+$string = "class Pessoa{
+	   	public function toString(){
+	   		return 'classe pessoa';
+	   	}
+	   }";	
+eval($string);
+$pessoa = new Pessoa();
+echo $pessoa->toString();
+?>

@@ -1,0 +1,16 @@
+FileInfo fi = new FileInfo("c:\myfile.txt");
+StreamReader txtR;
+txtR = fi.OpenText();
+string read = null;
+while ((read = txtR.ReadLine()) != null){
+  Console.WriteLine(read);
+}
+s.Close();
+// Método ReadToEnd();
+Console.WriteLine(txtR.ReadToEnd());
+
+FileInfo fi = new FileInfo("c:\myfile.txt");
+StreamWriter txtW;
+txtW = fi.CreateText();
+txtW.Write("teste");
+txtW.Close();

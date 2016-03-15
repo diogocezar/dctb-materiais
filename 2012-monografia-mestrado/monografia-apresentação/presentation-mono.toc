@@ -1,0 +1,9 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{3}{0}{1}
+\beamer@sectionintoc {2}{Trabalhos Relacionados}{7}{0}{2}
+\beamer@sectionintoc {3}{Planejamento em Intelig\^encia Artificial}{10}{0}{3}
+\beamer@sectionintoc {4}{Ambiente Distribu\IeC {\'\i }do}{12}{0}{4}
+\beamer@sectionintoc {5}{Modelo Proposto - Smart Workflow Execution by Planing (SWEP)}{13}{0}{5}
+\beamer@sectionintoc {6}{Experimentos}{24}{0}{6}
+\beamer@sectionintoc {7}{Conclus\~ao}{32}{0}{7}

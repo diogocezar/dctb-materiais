@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<!-- BEGIN bloco_titulo -->
+<title>{titulo}</title>
+<!-- END bloco_titulo -->
+<!-- BEGIN bloco_skin -->
+<link href="../css/skins/{skin}/oriAnt.css" rel="stylesheet" type="text/css"/>
+<!-- END bloco_skin -->
+</head>
+<!-- BEGIN bloco_javascript -->
+<script>{sjax}</script>
+<script language="javascript" src="../jscripts/constants/constants.js"></script>
+<script language="javascript" src="../jscripts/codify/codify.js"></script>
+<script language="javascript" src="../jscripts/effects/effects.js"></script>
+<script language="javascript" src="../jscripts/links/links.js"></script>
+<script language="javascript" src="../jscripts/groups/groups.js"></script>
+<script language="javascript" src="../jscripts/forms/forms.js"></script>
+<script language="javascript" src="../jscripts/cookie/cookie.js"></script>
+<script language="javascript" src="../ajax/ajax.js"></script>
+<script>
+/* Configurações para subistituição dos links */
+var DOMINIO       = '{domain}';
+var COOKIE_GRUPO  = '{cookie_grupo}';
+var COOKIE_QUALG  = '{cookie_qualg}';
+var COOKIE_CONTE  = '{cookie_conte}';
+var COOKIE_TIPOO  = '{cookie_tipoo}';
+</script>
+<!-- END bloco_javascript -->
+<!-- BEGIN bloco_html -->
+<body onload="{execute_java}">
+<div id="id_container">
+	<div id="id_logo"> </div>
+	<div id="id_conteudo">
+		<div id="id_titulo"> <span class="titulo">{cmp_titulo}</span> </div>
+        <div id="id_language"><a href="{link_language}" target="_parent">{cmp_lnaguage}</a></div>
+        <div id="id_spacer"> - </div>
+		<div id="id_help"> <a href="{link_help}" target="_parent">{cmp_help}</a> </div>
+		<div id="id_tipo"> 
+		{cmp_lb_tipo_oriantcao}&nbsp;<span id="id_tipo_orientacao" class="vemelho negrito tipoOri">{cmp_tipo_orientacao}</span>
+		<div id="id_informacoes"></div>
+		</div>
+		<div id="id_grupos"><span class="texto">{cmp_selecione_grupo}
+		  </span>
+		  <div id="id_in_grupos"></div>
+		</div>
+		<div id="id_box">
+			<form name="{id_form}">
+			<div class="texto" id="id_box_grupo"> {titulo_grupo} <span class="vemelho negrito">{cmp_grupo}</span>{cmp_alterar}</div>
+			<div id="id_box_opcoes_tipo_ori">
+			{cmp_lb_tipo_oriantcao}
+				<select id="{combo_name}" name="{combo_name}" onchange="{combo_java}" class="comboBox">
+					{combo_opcoes}
+				</select>
+			</div>
+			<div id="id_box_opcoes_contexto">
+			{titulo_contexto}
+			<br />
+				<input id="{radio_name}" name="{radio_name}" type="radio" value="{radio_value_1}" onclick="{radio_java_1}" {radio_check_1}/>
+				<span onclick="{radio_java_1}" class="cursorLink">{cmp_radio_op1}</span>
+				<input id="{radio_name}" name="{radio_name}" type="radio" value="{radio_value_2}" onclick="{radio_java_2}" {radio_check_2}/>
+				<span onclick="{radio_java_2}" class="cursorLink">{cmp_radio_op2}</span>
+			</div>
+			<div id="id_box_opcoes_contexto_ori">{cmp_disposicao_rel}</div>
+			</form>
+		</div>
+	</div>
+</div>
+<div id="id_loading"> <img src="../images/loaded.gif" align="absmiddle" /> {cmp_carregando}... </div>
+</body>
+</html>
+<!-- END bloco_html -->

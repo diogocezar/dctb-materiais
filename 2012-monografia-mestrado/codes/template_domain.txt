@@ -1,0 +1,36 @@
+(define (domain matrix)
+(:requirements :typing :fluents)
+	(:types data task hosts - object)
+	(:predicates
+		(have ?d - data)
+		(availiable ?h - hosts)
+		(half-availiable ?h - hosts)
+		(working-full ?h - hosts ?t - task)
+		(working-half ?h - hosts ?t - task)
+		(inputX D - data ?t - task)
+		(outputY D - data ?t - task)
+	)
+	(:functions
+		(total-cost)
+	)
+	(:action start-task-full_$X
+	:parameters (?h - hosts ?t - task $D - data)
+	:precondition (and (availiable ?h) (have $D) (input_$X $D ?t))
+	:effect (and (working-half ?h ?t) (not (availiable ?h)) (increase (total-cost) 1))
+	)
+	(:action start-task-half_$X
+	:parameters (?h - hosts ?t - task $D - data)
+	:precondition (and (half-availiable ?h) (have $D) (input_$X $D ?t))
+	:effect (and (working-full ?h ?t) (not (half-availiable ?h)) (increase (total-cost) 10))
+	)
+	(:action end-task-full_$X
+	:parameters (?h - hosts ?t - task $D - data)
+	:precondition (and (working-half ?h ?t) (output_$X $D ?t))
+	:effect (and (availiable ?h) (have $D) (not (half-availiable ?h)) (not (working-half ?h ?t)))
+	)
+	(:action end-task-half_$X
+	:parameters (?h - hosts ?t - task  $D - data)
+	:precondition (and (working-full ?h ?t) (output_$X $D ?t))
+	:effect (and (half-availiable ?h) (have $D) (not (working-full ?h ?t)))
+	)
+)

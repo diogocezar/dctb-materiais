@@ -1,0 +1,7 @@
+int VarInteiro = 32450;
+long VarLong = VarInteiro;
+float VarFloat = VarLong;
+double VarDouble = VarFloat;
+decimal VarDecimal = VarLong;
+byte VarByte = (byte)VarInteiro;
+int VarInteiro = (int)31.245F;

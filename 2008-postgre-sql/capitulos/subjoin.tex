@@ -1,0 +1,85 @@
+\section[Subconsultas e Junções]{Subconsultas e Junções}
+
+\subsection{Exists}
+\begin{frame}
+    \frametitle{Exists}
+    \begin{block}{Caracterização}
+        Verifica se um valor existe no \emph{resultset} retornado por um
+        \emph{select}.
+    \end{block}
+    \begin{itemize}
+        \item Se a subconsulta retornar pelo menos uma linha, o resultado dela é TRUE, caso contrário será
+        FALSE;
+        \item Observe a ligação entre a consulta externa e a
+        interna.
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=exists,
+    caption={Exemplo de utilização do Exists}]{cods/exists.txt}}
+\end{frame}
+
+\subsection{In e Not In}
+\begin{frame}
+    \frametitle{In e Not In}
+    \begin{block}{Caracterização}
+        Verifica  se um valor está contido em um grupo de valores.
+    \end{block}
+    \texttt{\lstinputlisting[language=C, label=innotin,
+    caption={Exemplo de utilização do in e not in}]{cods/innotin.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Formas Alternativas para In e Not In}
+    \texttt{\lstinputlisting[language=C, label=innotinalt,
+    caption={Exemplo de utilização do in e not in de formas alternativas}]{cods/innotinalt.txt}}
+\end{frame}
+
+\subsection{Junções}
+\subsubsection{Inner Join}
+\begin{frame}
+    \frametitle{Inner Join}
+    \begin{block}{Caracterização}
+        Somente as linhas/registros que satisfaçam a ligação determinada
+        pelo \emph{JOIN} serão recuperados pelo \emph{SELECT}, sendo assim, os registros
+        que não se enquadram no relacionamento definido pelo \emph{JOIN} não serão
+        recuperados.
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo}
+    \texttt{\lstinputlisting[language=C, label=innerjoin,
+    caption={Exemplo de utilização do Inner Join}]{cods/innerjoin.txt}}
+\end{frame}
+
+\subsubsection{Left Join}
+\begin{frame}
+    \frametitle{Left Join}
+    \begin{block}{Caracterização}
+        Através do uso do \emph{LEFT}, todos os registros na tabela à esquerda da
+        \emph{query} serão listados, independente de terem ou não registros
+        relacionados na tabela à direita. Nesse caso, as colunas
+        relacionadas com a tabela da direita voltam nulos (\emph{NULL}).
+    \end{block}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo}
+    \texttt{\lstinputlisting[language=C, label=leftjoin,
+    caption={Exemplo de utilização do Left Join}]{cods/leftjoin.txt}}
+\end{frame}
+
+\subsubsection{Right Join}
+\begin{frame}
+    \frametitle{Left Join}
+    \begin{block}{Caracterização}
+        É o inverso do \emph{Left Join}, ou seja, todos os registros da tabela à
+        direita serão listados, independente de terem ou não registros relacionados na tabela à esquerda.
+    \end{block}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplo}
+    \texttt{\lstinputlisting[language=C, label=rightjoin,
+    caption={Exemplo de utilização do Right Join}]{cods/rightjoin.txt}}
+\end{frame}

@@ -1,0 +1,6 @@
+0.01: (pick-up A)
+0.02: (stack B A)
+0.03: (pick-up C)
+0.04: (stack C B)
+0.05: (pick-up D)
+0.06: (stack D C)

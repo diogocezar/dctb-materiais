@@ -1,0 +1,105 @@
+
+%% Glenn Kramer's PS-MACROS.STY for use with psfig
+
+% Tue Mar 17 1992
+% Changed to work with dvips and epsf.tex macros
+% for backward compatablilty with the old version
+% of TeX.
+% The PSFIG version is much prefered, but I could work
+% out how to un-do Glenn's modifications from dvitps to
+% dvi2ps backto dvips. (Yes, 3 different dvi printers).
+%
+% We loose the \psdraft and \draftnotice commands :-(
+% CAN ONLY SCALE DOWN!!
+
+
+\typeout{PS-MACROS, University of Sussex at Brighton, 17-MAR-1992}
+
+% Switch from psfig to epsf (rzd)
+%\input{psfig.sty}
+\input{epsf}
+
+% tidy up old commands
+\def\psdraft{\typeout{Sorry! psdraft not supported}}
+\def\psfull{\typeout{Sorry! psfull is not supported}}
+\def\draftnotice{\typeout{Sorry! draftnotice is not supported}}
+\def\nodraftnotice{\typeout{Sorry! nodraftnotice is not supported}}
+\newif\if@noisy
+\def\pssilent{%
+    \@noisyfalse
+}
+\def\psnoisy{%
+    \@noisytrue
+}
+\psnoisy
+
+
+
+
+% \centerfig[topspace][bottomspace]{filename}[scale]
+% usage examples:
+% \centerfig{foo}[130]
+% \centerfig[1ex]{foo}
+% \centerfig[2ex]{foo}[80]
+% \centerfig[2ex][1in]{foo}[80]
+
+\catcode`\@=11
+
+%
+\def\epsfsize#1#2{\@result#1}
+
+\def\@centerfig@scale#1#2#3[#4]{\vspace*{#1}
+%  \centerline{\psfig{file=#3,scale=#4}}
+  \centerline{%
+    \def\@result{0.#4}     % scale down by 100
+    \epsfbox{#3}}           % (rzd)
+    \if@noisy\typeout{Including #3 scaled #4 per cent}\fi
+  \vspace*{#2}}
+
+\def\@centerfig@noscale#1#2[#3]{\vspace*{#1}
+  \centerline{%
+    \def\@result{1}
+    \epsfbox{#3}}               % (rzd)
+    \if@noisy\typeout{Including #3 scaled at natural scale}\fi
+  \vspace*{#2}}
+
+\def\@centerfig@tb#1[#2]#3{\@ifnextchar[
+  {\@centerfig@scale{#1}{#2}#3}{\@centerfig@noscale{#1}{#2}[#3]}}
+
+\def\@centerfig@top[#1]{\@ifnextchar[
+  {\@centerfig@tb{#1}}{\@centerfig@tb{#1}[0pt]}}
+
+\def\@centerfig{\@ifnextchar[{\@centerfig@top}{\@centerfig@top[0pt]}}
+
+\def\centerfig{\@centerfig}
+
+
+% \addfig{filename}[scale]
+% usage examples:
+% \addfig{foo}[130]
+% \addfig{foo}
+
+%% Same changes as fro \centerfig (rzd)
+
+%\def\@addfig@scale#1[#2]{\mbox{\psfig{file=#1,scale=#2}}}
+\def\@addfig@scale#1[#2]{\mbox{%
+    \def\@result{#2}
+    \if@noisy\typeout{Including #1 scaled #2 per cent}\fi
+    \epsfbox{#1}}}
+
+%\def\@addfig@noscale[#1]{\mbox{\psfig{file=#1}}}
+\def\@addfig@noscale[#1]{\mbox{%
+    \def\@result{1}    % use natural size
+    \if@noisy\typeout{Including #1 at natural scale}\fi
+    \epsfbox{#1}}}              % (rzd)
+
+
+\def\@addfig#1{\@ifnextchar[
+  {\@addfig@scale#1}{\@addfig@noscale[#1]}}
+
+\def\addfig{\@addfig}
+
+
+
+
+\catcode`\@=12

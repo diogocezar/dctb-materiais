@@ -1,0 +1,7 @@
+GET /internet/index.html HTTP/1.0
+User-agente: Mozilla /4.5 [en] (WinNT; I)
+AcceptP: text/plain, text/html, image/gif, image/x-xbitmap,
+image/jpeg, image/pjpeg, image/png, */*
+Accept-Charset: isso-8859-1, *, utf-8
+Accept-Enconding: gzip
+Accept-Language: en

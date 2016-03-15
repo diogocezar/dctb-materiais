@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE
+html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Listas de Definição</title>
+</head>
+	<body>
+		<dl>
+			<dt> Hardware :</dt> <dd> Parte Fisica do computador</dd>
+			<dt> Software :</dt> <dd> Parte Lógica do computador</dd>
+		</dl>
+	</body>
+</html>

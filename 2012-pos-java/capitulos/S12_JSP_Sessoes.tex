@@ -1,0 +1,113 @@
+\section[JSP Sessões]{JSP Sessões}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{JSP Sessões}
+    \begin{itemize}
+      \item em JSP as sessões (assim como o \textit{request} e
+\textit{response}) são pré-inicializados internamente;
+      \item não precisamos pegar a sessão armazenada no \textit{request} para
+manipular as variáveis de sessão;
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Setando as sessões
+	}
+	\begin{lstlisting}
+	  HttpSession session = request.getSession();
+	  session.setAttribute("usuario_autenticado", usuario.getNome());
+	  session.setAttribute("id_usuario_autenticado", usuario.getId());
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \begin{itemize}
+      \item usando apenas JSP a primeira linha não é necessária;
+      
+      \framebreak
+      
+      \item o método \texttt{setAttribute} inclui um valor e um identificador na
+sessão;
+      \item para verificar ou receber esse valor armazenado usamos
+o \textit{getAttribute}; 
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Recuperando as sessões
+	}
+	\begin{lstlisting}
+	  String usuarioAutenticado = (String)
+	  session.getAttribute("usuario_autenticado");
+	  Long idUsuarioAutenticado = (Long)
+	  session.getAttribute("id_usuario_autenticado");
+	  if (usuarioAutenticado == null || idUsuarioAutenticado == null) {
+	    response.sendRedirect("login.jsp");
+	  }
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{itemize}
+      \item para destruir a sessão removendo todos os valores armazenados
+usamos o código abaixo, isso é útil quando um usuário faz \textit{logout} no
+sistema.
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Destruindo as sessões
+	}
+	\begin{lstlisting}
+	  session.invalidade();
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+    
+    \framebreak
+    
+    \begin{itemize}
+      \item pode-se remover um valor específico da sessão usando o código de
+exemplo abaixo.
+    \end{itemize}
+    
+    \begin{center}
+    \begin{minipage}{0.9\textwidth}
+	\lstset{
+	  frame=tb,
+	  language=Java,
+	  caption=Removendo uma única sessão
+	}
+	\begin{lstlisting}
+	  HttpSession session = request.getSession();
+	  session.removeAttribute("usuario_autenticado");
+	\end{lstlisting}
+    \end{minipage}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+      \begin{itemize}
+       \item Faça um sistema de Login, contendo:
+       \begin{itemize}
+	  \item E-mail do usuário (validado por javascript);
+	  \item Senha so usuário;
+	  \item Acesso permitido caso o email seja ``admin@utfpr.edu.br'' e a
+senha seja ``posJava2012'';
+	  \item Mensagem de acesso permitido ou negado;
+	  \item Sistema de LogOff (removendo as sessões setadas);
+       \end{itemize}
+      \end{itemize}
+\end{frame}

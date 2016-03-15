@@ -1,0 +1,6 @@
+SqlCommand oCmd = new SqlCommand("SELECT ProductName, ProductId FROM Products", oConn);
+SqlDataReader oDr;
+oDr = oCmd.ExecuteReader();
+while (oDr.Read()) {
+	Debug.WriteLine(oDr("ProductName").ToString());
+}

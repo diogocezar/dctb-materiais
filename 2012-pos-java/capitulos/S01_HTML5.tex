@@ -1,0 +1,224 @@
+\section[Introdução]{Introdução}
+
+\begin{frame}
+    \frametitle{Internet}
+    \begin{itemize}
+      \item constante evolução:
+      \begin{itemize}
+	\item twitter;
+	\item facebook;
+	\item orkut;
+	\item google;
+      \end{itemize}
+    \item como interagir na web sem esses serviços?
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Gambiarras?}
+    \begin{itemize}
+      \item âmbito computacional: primeiro se faz, depois pergunta se é
+possível!
+      \item como? Gambiarra!
+      \item Problemas:
+      \begin{itemize}
+	\item falta de padronização;
+	\item falta de especificação;
+	\item difícil manutenção;
+	\item não há como se trabalhar de forma colaborativa;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Como está a Internet?}
+    \begin{itemize}
+      \item a internet que acessamos hoje, nativamente não apresenta os recursos
+necessários para a evoluída onda web 2.0;
+      \item e a W3C (World Wide Web Consortium)?
+      \begin{itemize}
+	\item grande grupo que ministra as métricas a serem seguidas pelas
+aplicações web;
+	\item especificou detalhadamente toda a web que utilizamos hoje (HTML
+4.01 / XHTML 1.0);
+	\item problema? Navegadores PROPRIETÁRIOS insistem em não implementar o
+PADRÃO.
+      \end{itemize}
+      \item a Internet chegou em um nível de evolução altíssimo;
+      \item não é viável continuarmos a montar esse Frankstein;
+      \item plugins e mais plugins: fazem o que deveria ser nativo!
+      \begin{itemize}
+       \item flash, silverlight e javafx;
+      \end{itemize}
+      \item esse é o objetivo do HTML5: encapsular os recursos que a internet
+tem para oferecer em um só lugar!
+    \end{itemize}
+\end{frame}
+
+\section[Historico]{Histórico}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Histórico}
+    \begin{itemize}
+      \item 1995 - Netscape:
+      \begin{itemize}
+	\item lança JavaScript;
+	\item métricas (especificação) a serem seguidas pela linguagem;
+	\item presente até os dias atuais;
+	\item permite a interação com os objetos HTML no lado cliente;
+	\item pode alterar características dos objetos que compões o documento
+(textos, formulários, imagens) em tempo de execução;
+	\item lança junto com o JavaScript o DOM(Document Object Model):
+mapeia os elementos HTML em formato de árvore.
+	\item mapeia os elementos HTML em formato de árvore.
+	\framebreak
+	\item o JavaScript também foi implementado por outras empresas:
+	\begin{itemize}
+	 \item Microsoft lança o JScript;
+	 \item Adobe lança o ActionScript.
+	\end{itemize}
+      \end{itemize}
+      \framebreak
+      \item em 1998, Jhonatan colaborador da Microsoft, implementou a função que
+daria vida ao Ajax: XMLHTTP;
+      \begin{itemize}
+       \item apesar do nome, não tem muito a ver com XML;
+       \item XMLHTTP: Comunicação com o servidor de forma assíncrona;
+       \item na época não teve destaque: não tinha ficado claro seu exato
+funcionamento.
+      \framebreak
+      \end{itemize}
+      \item em 2002, a empresa Mozilla percebeu a potencialidade desse recurso e
+implementou a função XMLHttpRequest;
+      \begin{itemize}
+       \item ``Mesma'' coisa com nome diferente!
+      \end{itemize}
+      \item somente em 2004, o mundo se rendeu a essa nova funcionalidade:
+      \begin{itemize}
+       \item mágicas feitas pelo Google: Gmail!
+       \item nasce nesse momento o conceito de programação Ajax
+(Asynchronous Javascript And XML);
+       \item não era um conceito novo, mas foi com o Google que teve destaque.
+      \end{itemize}
+      \framebreak
+      \item em 2005, Google lança o Google Maps:
+      \begin{itemize}
+       \item foi a primeira aplicação web com características de uma aplicação
+Desktop;
+      \end{itemize}
+      \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Saga do HTML}
+    \begin{itemize}
+      \item saga do HTML começa em 1999:
+      \begin{itemize}
+	\item lançamento do HTML 4.01;
+	\item quase toda a internet que acessamos hoje está escrita em HTML 4.01
+ou XHTML 1.0;
+	\item 10 anos com a mesma linguagem;
+	\item não se previa a dimensão tomada pela web atual;
+      \end{itemize}
+      \framebreak
+      \item mas a evolução aconteceu, não?
+      \begin{itemize}
+       \item a Internet atual oferece recursos inimagináveis a 10 anos;
+       \item como?
+       \begin{itemize}
+        \item Plugin Hell (Inferno de Plugins) - Adobe Flash, Microsoft
+SilverLight e Sun com Java Fx;
+	 \item não seguem um padrão;
+	 \item não são nativos;
+	 \item são particulares;
+	 \item não tem a codificação aberta.
+       \end{itemize}
+      \end{itemize}
+      \framebreak
+      \item a W3C bem que tentou, com a divulgação do XHTML 2.0;
+      \item problema:
+      \begin{itemize}
+       \item foi uma tentativa de revolução, e o mercado não estava preparado
+para absorver tamanhas transformações;
+      \end{itemize}
+	\item resultado:
+      \begin{itemize}
+       \item então o XHTML2.0 foi descontinuado;
+      \end{itemize}
+      \end{itemize}
+\end{frame}
+
+\section[HTML5]{HTML5}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Surgimento do HTML5}
+    \begin{itemize}
+    \item em 2004, representantes das empresas: Mozzila, Apple e Opera se reunem
+para criar um grupo paralelo a W3C;
+    \item \textit{The Web Hypertext Application Technology Working Group}
+(WHAT-WG);
+    \item começam a desenvolver uma codificação diferente a proposta pela W3C
+com o XHTML 2.0;
+    \item esse grupo tomou como base a evolução e não a revolução;
+    
+    \framebreak
+    
+    \item objetivo: garantir compatibilidade do mesmo código para navegadores
+diferentes;
+    \item proposta do HTML5: especificar detalhadamente como interpretar
+possíveis erros para que seja possível manter a maior compatibilidade possível;
+
+    \framebreak
+    
+    \item HTML5 já pode ser usado?
+    
+    \begin{itemize}
+     \item navegadores modernos já implementam boa parte de sua especificação;
+     \item Mozzila, Chrome, Opera e Safari;
+     \item Internet Explorer NÃO! Alias, não implementa 100\% nem das diretrizes
+da W3C propostas em 1999;
+    \end{itemize}
+    
+    \item o que vai mudar?
+    
+    \begin{itemize}
+      \item organização e simplificação de código;
+      \item acesso nativo a audio e vídeo;
+      \item possibilidade de interação CANVAS (desenho) no próprio documento
+HTML;
+      \item possibilidade de estilos diferenciados e modernos (CSS3);
+    \end{itemize}
+    
+    \framebreak
+
+    \item então vamos aprender HTML5?
+    
+    \begin{itemize}
+      \item não (só ele)! O mercado ainda não esta preparado para migrar;
+      \item códigos HTML5 não são interpretados por todos navegadores;
+      \item nem todos os recursos estão implementados;
+    \end{itemize}
+    
+    \item Quando usar HTML5?
+
+    \begin{itemize}
+      \item Sistemas específicos para rodar em navegadores específicos;
+    \end{itemize}   
+    \end{itemize}
+\end{frame}
+
+\section[Conclusão]{Conclusão}
+
+\begin{frame}
+    \frametitle{Conclusão}
+    \begin{itemize}
+      \item a Internet está atrasada devido a burocracia e aos interesses das
+grandes empresas (\textit{MICROSOFT}) que insistem em ditar regra;
+      \item de nada adianta as inovações do Google serem acessadas por um
+USUÁRIO pelo Internet Explorer 6.0;
+      \item temos o compromisso como desenvolvedores de lutar pela evolução,
+desenvolver para nossos clientes sistemas com tecnologia de ponta, e orientá-los
+a utilizar um navegador compatível com os recursos desenvolvidos.
+      \item Maiores detalhes sobre HTML5 no artigo em anexo as aulas;
+    \end{itemize}
+\end{frame}

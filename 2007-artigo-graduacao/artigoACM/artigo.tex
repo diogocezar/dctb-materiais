@@ -1,0 +1,696 @@
+% THIS IS SIGPROC-SP.TEX - VERSION 2.9
+% WORKS WITH V3.0SP OF ACM_PROC_ARTICLE-SP.CLS
+% MARCH 2007
+%
+% It is an example file showing how to use the 'acm_proc_article-sp.cls' V3.0SP
+% LaTeX2e document class file for Conference Proceedings submissions.
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V3.0SP) *DOES NOT* produce:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) Page numbering
+% ---------------------------------------------------------------------------------------------------------------
+% It is an example which *does* use the .bib file (from which the .bbl file
+% is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission,
+% you need to 'insert'  your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% Questions regarding SIGS should be sent to
+% Adrienne Griscti ---> griscti@acm.org
+%
+% Questions/suggestions regarding the guidelines, .tex and .cls files, etc. to
+% Gerald Murray ---> murray@acm.org
+%
+% For tracking purposes - this is V2.9SP - MARCH 2007
+
+\documentclass{acm_proc_article-sp}
+
+%-- Begin patch area for accents in 'Author Block' area - may be needed by some authors / but not all
+\DeclareFixedFont{\auacc}{OT1}{phv}{m}{n}{12}   % Needed for "Author Block" accents - Patch by Gerry 3/21/07
+\DeclareFixedFont{\afacc}{OT1}{phv}{m}{n}{10}   % Needed for "Author Block" accents in the affiliation/address line - Patch by Gerry 3/21/07
+%--
+
+%\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+
+\hyphenation{mo-de-lar en-ge-nha-ria pro-ble-mas subs-tân-cia ins-pi-ran-do fe-ro-mô-nio}
+
+%
+\def\sharedaffiliation{%
+\end{tabular}
+\begin{tabular}{c}}
+%
+\begin{document}
+
+\title{Estratégia de orientação para sistemas de hipermídia por meio de navegação colaborativa}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{2} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+       \alignauthor Diogo Cezar Teixeira Batista\\
+       \email{xgordo@gmail.com}
+% 2nd. author
+       \alignauthor Ligia Flávia Antunes Batista\\
+       \email{ligia@utfpr.edu.br}
+%
+      \sharedaffiliation
+       \affaddr{Universidade Tecnológica Federal do Paraná - UTFPR}\\
+       \affaddr{Av. Alberto Carazzai, 1640 }\\
+       \affaddr{Cornélio Procópio, PR, Brasil}\\
+%
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+\date{01 July 2007}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+This paper presents a model of orientation to users of hypermedia systems based on Ant Colony Optimization theory (ACO). This theory was adapted to used as a way of collaborative navigation. The model was implemented in a prototype and some tests were made. The first results indicate that the model is useful to help users to find the information that they search for.
+\end{abstract}
+
+% A category with the (minimum) three required fields
+\category{H.}{Information Systems}{Information Interfaces and Presentation }
+\category{H.5}{Information Interfaces and Presentation }{Hypertext/Hypermedia}[user issues, navigation]
+
+\terms{Human factors, Experimentation}
+
+\keywords{Adaptative Hypermedia, Orientation, Ant Colony Optimization, Collaborative Navigation.} % NOT required for Proceedings
+
+% *******************************************************************************************************************************
+
+\section{Introdução}
+
+O número de sistemas hipermídia existentes implica possibilidade de acesso imediato a imensuráveis quantidades de informação, distribuídas desorganizadamente na Internet. Desta forma, justamente pela diversidade e infinidade de documentos disponíveis na \textit{Web}, torna-se muitas vezes difícil para diversos usuários encontrar a informação desejada. As buscas realizadas geralmente trazem, em meio ao assunto procurado, muito conteúdo não relacionado ou irrelevante. Além disto, sistemas de busca funcionam apenas como filtro para o assunto desejado, sem oferecer alguma forma de assistência navegacional que oriente o usuário até seu objetivo em um determinado sítio, gerando problema de desorientação, pela sensação de não saber a direção a ser seguida. A hipermídia adaptativa é uma área que aborda a modificação do sistema \textit{Web} de forma a atender as necessidades de cada indivíduo, por meio da adaptação, com métodos específicos para minimizar a desorientação.
+
+Neste contexto, visualiza-se a proposta de navegação cola- borativa como uma forma de ajuda mútua entre os usuários que estiverem navegando pelas mesmas páginas. Parte-se da premissa de que grande parte dos usuários percorrem os mesmos caminhos durante a navegação.  Para modelar tal solução, baseou-se na teoria do comportamento das formigas, uma vez que a colônia trabalha em grupo e esta característica determina o sucesso de suas tarefas, notadamente a busca e transporte de alimento. Esta teoria foi proposta originalmente para resolver problemas específicos de otimização combinatorial \cite{dorigo:96, sousa:03, ajith:06} e tem sido utilizada para outras classes de soluções, como processamento de imagens, engenharia de software, eletro-eletrônica, medicina, entre outras  \cite{lopes:06, zarnani:06}.
+
+Pode-se fazer uma analogia do comportamento dos usuários que navegam em sistemas \textit{Web} com formigas, em que a comunicação se dá por meio de pistas (feromônio) deixadas em caminhos já percorridos \cite{interlegis}. Se um caminho for muitas vezes percorrido, assume-se que é um trajeto interessante, que deve ser transmitido aos demais. Desta forma, haveria uma comunicação indireta entre os membros da colônia a fim de que todos alcancem seus objetivos, o que demostra que o sucesso da colônia de formigas em encontrar o alimento advém de uma forma cooperativa de trabalho.
+
+Entretanto isto, ainda não ocorre na Internet, pois os usuários não interagem para colaborar entre si na navegação. Com base nisto, o presente trabalho tem como objetivo modelar uma estratégia de orientação aos usuários por meio de navegação colaborativa. Os fundamentos em que se baseia a abordagem proposta estão detalhados na seção~\ref{sec:navegacao}. O modelo desenvolvido é apresentado na seção~\ref{sec:modelo}. Os resultados observados nos testes são discutidos na seção~\ref{sec:resultados}. A seção~\ref{sec:consideracoes} relata as considerações finais deste trabalho.
+
+% *******************************************************************************************************************************
+
+\section{ABORDAGEM DE ORIENTAÇÃO} \label{sec:navegacao}
+
+A capacidade de auto-organização de insetos sociais é denominada estigmergia, termo também aplicado ao comportamento de cardumes, bandos e enxames. Esta característica é apresentada como um novo paradigma de heurísticas construtivas, \textit{Ant Colony Optimization} (ACO) \cite{dorigo:96},   inspirando trabalhos que produzem soluções otimizadas para problemas como o do caixeiro viajante e roteamento de pacotes .
+
+As formigas reais comunicam-se indiretamente por uma substância chamada feromônio, deixado no meio ambiente. Essa substância é exalada espontaneamente por todos os membros da colônia e possibilita que uma formiga escolha entre dois caminhos diferentes por uma probabilidade baseada na quantidade de feromônio presente em cada um. Logo, se há maior concentração de feromônio em determinado caminho, será este o  caminho escolhido \cite{lopes:06}, gerando um comportamento denominado autocatalítico \cite{dorigo:96}.
+
+No início do processo, quando um grupo de formigas está em busca de alimento e ainda não há um caminho traçado, aquelas que optarem pelo trajeto mais curto irão chegar ao alimento antes das outras. Desta forma, vão também retornar primeiro ao ninho e com isto, acentuar com feromônio a rota percorrida. Com tempo, o hormônio acumula-se mais rapidamente na trilha mais curta, tornando-a a rota preferencial dos membros da colônia \cite{lopes:06}. O feromônio evapora com o passar do tempo. Assim, um caminho que não é constantemente visitado e reforçado, tende a desaparecer, deixando de ser o selecionado pelas formigas.
+
+
+Este trabalho tem seu alicerce nas técnicas de hipermídia adaptativa, as quais  são brevemente tratadas na seção~\ref{subsec:hipermidia}. A aplicação da teoria bio-inspirada  do comportamento das formigas aplicada em navegação de sistemas \textit{Web} é apresentada na seção~\ref{subsec:teoria}.
+
+% *****************************************************************
+
+\subsection{Hipermídia Adaptativa} \label{subsec:hipermidia}
+
+A hipermídia adaptativa tem como objetivo proporcionar conteúdo adequado ao perfil ou modelo de cada usuário. Para tal, dois componentes básicos são necessários: a máquina de adaptação, que possui as regras a serem executadas de modo a modificar apropriadamente o que será apresentado, e o modelo do usuário, que apresenta as características, interesses e objetivos daquele que for utilizar o sistema em cada momento.
+
+A adaptação pode se dar em dois espaços distintos: apresentação e navegação. O espaço de apresentação compreende a modificação do conteúdo que será apresentado a cada usuário, enquanto que o de navegação altera a máquina abstrata do hipertexto, ou seja, as ligações (\textit{hyperlinks}) existentes nas páginas que compõem o hiperdocumento \cite{palazzo:02}, contexto em que insere-se esta proposta.
+
+Os métodos existentes para navegação adaptativa indicam o que deve ser feito para proporcionar auxílio ao usuário. São definidos como uma generalização das técnicas existentes, sendo baseados em uma idéia clara de adaptação que pode ser apresentada em nível conceitual \cite{brusilovsky:96}. São assim enumerados \cite{palazzo:02}:
+
+\begin{itemize}
+    \item Condução global: o sistema conduz o usuário na direção de seu objetivo, apresentando uma seqüência de passos;
+    \item Condução local: sugere-se um passo de navegação que seja interessante, conforme os dados do modelo do usuário;
+    \item Suporte à orientação global: auxilia o entendimento da estrutura de todo o hiperdocumento;
+    \item Suporte à orientação local: ajuda na compreensão de seu posicionamento no hiperespaço, apresentando informações sobre os nós que podem ser acessados a partir do atual.
+\end{itemize}
+
+As técnicas de navegação adaptativa apontam como deve ser feito o auxílio ao usuário. Fazem parte do nível de implementação em um sistema e podem ser caracterizadas por um tipo específico de representação do conhecimento e por um algoritmo de adaptação \cite{brusilovsky:96}. Cita-se \cite{palazzo:02}:
+
+\begin{itemize}
+  \item Orientação direta: indica em cada ponto da navegação qual o melhor nodo (página) a ser visitado a seguir. Como desvantagem, esta técnica não oferece suporte no caso do usuário não desejar seguir a sugestão do sistema;
+  \item Classificação: ordena os links de um nodo de acordo com sua relevância;
+  \item Ocultação: consiste em restringir o espaço de navegação, ocultando os links para nodos não relevantes para cada usuário;
+  \item Anotação: tem como característica básica  aumentar a informação existente nos links com alguma forma de anotação ou comentário que pode dizer mais sobre o estado corrente dos nodos a que se conectam;
+  \item Geração de links: consiste em criar links adicionais automaticamente nos nodos. Umas das desvantagens desta técnica é o
+      aumento no número de links gerados nos nodos, aumentando a sobrecarga cognitiva e tornando o hiperespaço mais complexo;
+  \item Mapas adaptativos: têm o objetivo de ajudar o usuário a entender a estrutura do hiperespaço.
+\end{itemize}
+
+% *****************************************************************
+
+\subsection{Aplicação da teoria da colônia de formigas} \label{subsec:teoria}
+
+O relacionamento entre as técnicas de hipermídia adaptativas para navegação e a abordagem comportamental dos insetos sociais se dá fazendo analogia do indivíduo que acessa a \textit{Web} com um certo objetivo e a formiga que percorre certas trilhas em busca de alimento. A seqüência de páginas acessada é comparada ao caminho percorrido. Neste contexto, a representação do sistema de hipertexto é a de um grafo, em que as páginas são os vértices e os \textit hyperlinks são as arestas.
+
+Uma abordagem anteriormente proposta, implementada no sistema \textit{AntWeb} \cite{interlegis}, uma matriz bidimensional representa as taxas de feromônio de cada nodo para todos os outros. A quantidade de feromônio depositada em cada célula da matriz corresponde ao quão relevante uma página destino é perante uma página origem (corrente), considerando um objetivo final como página alvo. Ou, de outra forma, é um indicativo de resposta para a pergunta: estando no nodo $i$, dar o passo para $j$, é uma boa escolha a fim de alcançar a página destino $d$?
+
+Para isto, faz-se o cálculo da probabilidade de cada formiga escolher ir para a página $j$, estando na página $i$  na iteração $p$, a partir da matriz de feromônio, utilizando uma heurística de custo baseada em tempo de obtenção e visita da página $j$.
+
+Uma das limitações da abordagem \textit{AntWeb} é que não é possível fazer testes com usuários reais, apenas com caminhos aleatórios de navegação que simulam o comportamento de formigas. Além disto, há a necessidade de determinar, para cada usuário, uma página objetivo, a partir da qual ele é conduzido, informação esta difícil de ser determinada, uma vez que muda com o tempo e o que é de interesse de uma pessoa hoje, amanhã pode não ser \cite{interlegis}.
+
+%A equação \ref{eq:feromonio} \cite{interlegis} mostra como é feito o cálculo da probabilidade de cada formiga escolher ir para a página $j$, estando na página $i$  na iteração $p$, .
+%
+%\begin{equation}  \label{eq:feromonio}
+%    Prob_{ij}^d(p) =
+%    \frac{[\tau_{j}^d(p)]^\alpha.[\eta_{j}(p)]^\beta}{\sum_{\forall\imath\in{}N}[\tau_{\imath}^d(p)]^\alpha.[\eta_{\imath}(p)]^\beta}
+%    \forall j \in N_{i}
+%\end{equation}
+%
+%Onde: \\
+%$\tau_{j}^d(p)$ é a quantidade de feromônio na página $j$ na iteração $p$ para o
+%destino $d$; \\
+%$N_{i}$ é o conjunto dos vizinhos da página $i$ \\
+%$ \alpha \hspace{.1cm} $ e \space $\beta$ são parâmetros que permitem controlar respectivamente os pesos relativos
+%a trilha de feromônio e o valor da heurística \\
+% $\eta_{j} = 1/ \omega t_{j}$ é uma heurística relacionada ao custo de usar a página $j$, dada pela equação~\ref{eq:custo}.
+%
+%\begin{equation}
+%    \omega t_{j} = lt_{j} + \nu t_{j}
+%    \label{eq:custo}
+%\end{equation}
+%
+%Onde: \\
+%$\omega t_{j}$ é o tempo estimado na página $j$; \\
+%$lt_{j}$ o tempo estimado para obter a página $j$ através do browser e\\
+%$\nu t_{j}$ o tempo que o usuário levará para visitar a página.
+
+Na abordagem ora proposta, denominada OriAnt (Orientação por Formigas), tenta-se contornar estes problemas eliminando a necessidade de determinar a página objetivo de cada usuário e introduzindo a navegação colaborativa para comunicação indireta entre usuários da mesma categoria, tornando possível também a realização de testes com usuários reais. Para isto desenvolveu-se um modelo $M<P,G,F>$ constituído de três conjuntos de dados, representando páginas (P), grupos (G) e feromônio (F). Cada elemento possui seus subelementos de tal forma que:
+
+\begin{itemize}
+
+\item P  é uma quádrupla $P<p, u, e, c>$ com os seguintes dados de todas as páginas: identificador, data e hora do último acesso, endereço (URL - \textit{Uniform Resource Locator}) e número de acessos, respectivamente;
+
+\item G é uma dupla $G<g, n>$, sendo $g$ o identificador do grupo e $n$ o número de acessos daquele grupo;
+
+\item F é uma quádrupla $F<o, d, g, qf>$, tendo $o$ como identificador de uma página origem, $d$ da página destino, $g$ como identificador de grupo e $qf$ como quantidade de feromônio.
+
+\end{itemize}
+
+Desta forma, a camada de navegação adaptativa OriAnt mantém informações de todas as páginas de um sítio \textit{Web} em P. Os interesses  dos usuários são mapeados por meio de grupos em G, como uma forma de modelagem de objetivos simplificada, uma vez que o objetivo principal deste trabalho é verificar a aplicabilidade da estratégia de orientação e não a modelagem do usuário. A representação de feromônios é feita em F, uma matriz tridimensional, indicando a relevância da página destino $d$ para o grupo $g$.
+
+A cada acesso, ocorre o acréscimo de feromônio, conforme a Equação~\ref{eq:acrescimo_feromonio}. A fórmula de subtração (evaporação) de feromônio, por sua vez, é baseada no conceito de juros compostos, sendo definida pela Equação~\ref{eq:reducao}.
+
+\begin{equation}
+    F_{odg} = F_{odg} + \xi
+    \label{eq:acrescimo_feromonio}
+\end{equation}
+
+onde:\\
+$\xi$ é uma constante definida pelo administrador do
+sistema, que significa a relevância de um acesso;
+
+$F_{odg}$ é quantidade de feromônio na aresta que liga a origem $o$ ao destino $d$ para o grupo $g$.
+
+
+
+\begin{equation}
+    \label{eq:reducao}
+    F_{odg} = F_{odg} * (1 - \frac{\varphi}{100})^\tau
+\end{equation}
+
+$\varphi$ é a taxa de evaporação de feromônio, constante
+definida pelo administrador, dependente do tempo; \\
+$\tau$ é o intervalo de tempo que a página ficou sem acessos,  determinado pela equação~\ref{eq:tau}.
+
+
+\begin{equation}
+    \tau = t_{atual} - t_{último acesso}
+    \label{eq:tau}
+\end{equation}
+
+% *******************************************************************************************************************************
+
+\section{CAMADA DE ADAPTAÇÃO} \label{sec:modelo}
+
+Para implementar o modelo descrito na seção \ref{subsec:teoria}, optou-se por projetar uma camada de adaptação que pudesse ser acoplada a qualquer sistema \textit{Web} para proporcionar navegação adaptativa. A solução proposta Oriant é atualizada concomitantemente a cada clique e oferece novas orientações para auxiliar o usuário.
+
+A arquitetura do modelo proposto está apresentada na Figura~\ref{fig:arquitetura}, em que as setas apresentam a seqüência de ações que ilustra o comportamento adaptativo da camada OriAnt a partir da navegação de um usuário, que compreende:
+
+\begin{figure*}[ht]
+\centering
+\epsfig{file=images/arquitetura.eps,  width=5.5in}
+\caption{Arquitetura do modelo proposto}
+\label{fig:arquitetura}
+\end{figure*}
+
+
+\begin{enumerate}
+    \item Escolher o grupo: o usuário faz a opção de seu tema de interesse, para que a partir desta, a camada de adaptação atue. Os grupos de interesse com maior número de visitas recentes aparecem destacados na camada com fontes maiores, conforme ilustrado na Figura~\ref{fig:grupos}. Este dado é obtido a partir do sub-elemento n de G. Ressalta-se que os grupos são dinâmicos e mantidos pelo administrador do sistema;
+    \item Atualizar o banco de dados OriAnt com o dado do grupo, especificando aquele que o usuário tem interesse e incrementando o sub-elemento n de G:
+    \item Navegar acionando o \textit{hyperlink} desejado;
+    \item Visualizar a página destino: a camada de orientação é transparente para o usuário e portanto, a página destino é visualizada normalmente após um clique;
+    \item Realizar a computação de feromônio: calcular a nova quantidade de feromônio para o elemento $F_{odg}$ conforme a equação \ref{eq:acrescimo_feromonio};
+    \item Atualizar o banco de dados com o novo valor de $F_{odg}$ (página acessada);
+    \item Efetuar a dedução de feromônio (evaporação): calcular a nova quantidade de feromônio para toda a matriz de feromônio conforme a equação \ref{eq:reducao};
+    \item Atualizar o banco de dados com os novos valores de  $F_{odg}$ para toda a matriz de feromônio;
+    \item Iniciar a computação dos links que devem ser sugeridos conforme cálculo de relevância da página, definido pela equação \ref.
+    \item Obter os dados do banco com relação à navegação dos outros usuários para sugerir links;
+    \item Exibir sugestões de links conforme a estratégia de orientação selecionada:
+    \item Aguardar que o usuário acione outro \textit{hyperlink}.
+\end{enumerate}
+
+\begin{equation}
+    \omega(\alpha, \beta) = \frac{F_{\alpha \rho \gamma}}{\sum_{d=1}^{n}F_{\alpha d \gamma}}
+    \label{eq:relevancia}
+\end{equation}
+
+
+Enfatiza-se que, caso o usuário não faça a escolha do grupo de interesse, o laço de adaptação não é executado. Caso ocorra troca de grupo de interesse durante a navegação, as sugestões passarão a ser computadas com base no novo grupo selecionado.
+
+\begin{figure*}[ht]
+\centering
+\epsfig{file=images/camada_grupos.eps,  width=5.5in}
+\caption{Grupos de interesse}
+\label{fig:grupos}
+\end{figure*}
+
+
+Além da informação do grupo de interesse, escolhe-se o tipo de orientação (entre objetiva, orientada e relacionada) e o contexto da orientação (esta página ou todas as páginas).
+
+Dependendo do tipo de orientação selecionada a camada Oriant oferece:
+
+\begin{itemize}
+
+ \item Disposição objetiva: Mostrará qual é a página alvo. Essa é a página que possui mais feromônio (de um certo grupo). Essa disposição  implementa a técnica de orientação direta de  \cite{palazzo:02};
+
+ \item Disposição orientada: Mostrará qual o caminho que deve-se seguir para chegar até a página alvo. Esse caminho é  traçado com base no histórico dos caminhos percorridos de usuários do mesmo grupo; EXEMPLO AQUI
+
+ \item Disposição por assuntos relacionados:  Mostrará quais os links mais visitados pelos usuários de seu  grupo. Além da página alvo outras páginas também podem  interessar o usuário de determinado grupo, assim ao  selecionar a exibição por assuntos relacionados, obtém-se  uma lista das páginas mais relevantes para determinado. Uma ilustração de como a camada se comporta neste tipo de orientação é apresentada na Figura~\ref{fig:ori_relacionada}.
+
+\end{itemize}
+
+Dependendo do contexto de orientação, a camada de adaptação comporta-se da seguinte forma:
+
+  \begin{itemize}
+      \item Essa Página: Quando esta opção está selecionada a disposição toma como contexto a página
+      atual, ou seja, a partir da página atual, calcula qual é a próxima página mais relevante;
+
+      \item Todas as Páginas: Quando esta opção está selecionada a disposição toma como contexto todas as páginas do sistema,
+      ou seja, dentre todas as páginas qual é a página mais relevante. Este contexto é particularmente interessante para usuários que não conhecem a estrutura global do site em que estão navegando e já encontram-se desorientados.
+  \end{itemize}
+
+
+\begin{figure*}[ht]
+\centering
+\epsfig{file=images/ori_relacionada.eps,  width=5.5in}
+\caption{Orientação}
+\label{fig:ori_relacionada}
+\end{figure*}
+
+
+
+A partir do cálculo da relevância de cada página em relação a atual, do tipo de orientação e do contexto, OriAnt sugere páginas, caminhos ou assuntos considerados mais apropriados para o grupo de interesse do usuário.
+
+% *******************************************************************************************************************************
+
+\section{Resultados e discussão} \label{sec:resultados}
+
+Para realizar testes e avaliar os resultados, foi desenvolvido um
+site de notícias ao qual foi acoplada a camada de orientação OriAnt.
+Inicialmente, realizou-se um teste de acompanhamento dos valores da
+matriz de feromônio, a fim de que fosse possível verificar se a
+quantidade estava sendo corretamente adicionada em cada clique e a
+evaporação ocorrendo conforme o desejado. Para isto foi observado se
+as páginas recentemente acessadas não sofriam alterações de
+feromônio e  se a dedução estava sendo efetuada proporcionalmente ao
+intervalo de tempo entre os cliques. Os resultados estão
+apresentados nas Tabelas \ref{tab:evolucao_feromonio1},
+\ref{tab:evolucao_feromonio10} e \ref{tab:evolucao_feromonio24} em
+que a coluna nomeada por origem-destino-grupo representa
+respectivamente os identificadores da página atual, da página que é
+o destino do \textit{link} acessado e do grupo de interesse do
+usuário. As colunas qf1 a qf5 indicam a presença de feromônio em
+cada uma das iterações subseqüentes, tendo como iteração um clique
+do usuário. A tabela \ref{tab:diftempo} apresenta o horário de
+último acesso da página (pg) antes do início do teste. A coluna qf0
+é a quantidade de feromônio com que cada item da tabela foi
+inicializado.
+
+\begin{table}
+\centering \caption{Diferença de tempo inicial entre as páginas}
+\label{tab:diftempo}
+\begin{scriptsize}
+\begin{tabular}{|l|l|l|l|}
+\hline
+pg & último-acesso & dif & qf0 \\
+\hline
+1 & 12:31 & 0min & 10 \\
+\hline
+2 & 12:31 & 0min & 20 \\
+\hline
+3 & 12:32 & 1min & 10 \\
+\hline
+4 & 12:33 & 2min & 10 \\
+\hline
+5 & 12:35 & 4min & 10 \\
+\hline
+6 & 12:35 & 4min & 20 \\
+\hline
+7 & 12:36 & 5min & 10 \\
+\hline
+8 & 12:36 & 5min & 10 \\
+\hline
+9 & 12:37 & 6min & 10 \\
+\hline
+10 & 12:38 & 7min & 20 \\
+\hline
+11 & 12:39 & 8min & 10 \\
+\hline
+12 & 12:39 & 8min & 10 \\
+\hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+\begin{table}
+\centering \caption{Evolução da matriz de feromônio - 1 hora}
+\label{tab:evolucao_feromonio1}
+\begin{scriptsize}
+\begin{tabular}{|c|p{0.8cm}|c|c|c|c|c|c|}
+\hline
+\# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+\hline
+1 & 1-1-1 & 9,92858 & 9,85717 & 9,78568 & 9,71423 & 9,64282 \\
+\hline
+2 & 1-2-1 & 19,85715 & 19,71432 & 19,57134 & 19,42845 & 19,28563 \\
+\hline
+3 & 1-3-1 & 9,92974 & 9,85947 & 9,78911 & 9,71877 & 9,64845 \\
+\hline
+4 & 1-4-1 & 9,9309 & 9,86177 & 9,79253 & 9,72331 & 9,65409 \\
+\hline
+5 & 1-5-2 & 9,93322 & 9,86638 & 9,7994 & 9,7324 & 9,66537 \\
+\hline
+6 & 5-6-2 & 19,86644 & 19,73277 & 19,59881 & 19,46482 & 19,33076 \\
+\hline
+7 & 5-7-2 & 9,93438 & 9,86869 & 9,80284 & 9,73696 & 9,67103 \\
+\hline
+8 & 5-8-2 & 9,93438 & 9,86869 & 9,80284 & 9,73696 & 9,67103 \\
+\hline
+9 & 1-9-3 & 20 & 19,99899 & 19,99677 & 19,99358 & 19,98937 \\
+\hline
+10 & 9-10-3 & 19,8734 & 19,7466 & 19,61943 & 19,49213 & 19,36467 \\
+\hline
+11 & 9-11-3 & 9,93786 & 9,87561 & 9,81316 & 9,75063 & 9,688 \\
+\hline
+12 & 9-12-3 & 9,93786 & 9,87561 & 9,81316 & 9,75063 & 9,688 \\
+\hline
+13 & 9-13-3 & 0 & 10 & 9,9994 & 9,99831 & 9,99671 \\
+\hline
+14 & 9-14-3 & 0 & 0 & 10 & 9,99951 & 9,99852 \\
+\hline
+15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99949 \\
+\hline
+16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+\hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+%As linhas de 13 a 17 representam caminhos que iniciaram sem feromônio, ou sejam, nunca haviam sido percorridos. As linhas 1, 3, 4, 5, 7, 8, 9, 11 e 12 apresentam comportamento idêntico, porque ... ??? A diferença entre as linhas 2, 6 e 10, que começaram com 20 unidades, deve-se a ... ??? As linhas de 13 a 17 representam a seqüência de páginas acessadas pela primeira vez a partir de um dado destino e por isto têm seus valores iniciados em 10 em cada iteração. A Figura \ref{fig:qtd_feromonio} apresenta o gráfico da evolução das páginas 1, 2, 10 e 15.
+
+As linhas de 13 a 16 representam caminhos que iniciaram sem
+feromônio, ou seja, nunca haviam sido percorridos.
+
+As linhas 1, 3, 4, 5 e 10 com as diferenças de tempo 0, 1, 2, 4 e 7
+minutos respectivamente apresentam uma taxa de evaporação
+diferenciada correspondente a $\tau$.
+
+As linhas 7,8 e 11,12 apresentam os mesmos valores de $\tau$, porque
+a diferença de tempo não foi relevante para a subtração do feromônio
+
+A diferença entre as linhas 2, 6 e 10, que começaram com 20
+unidades, deve-se a diferença de tempo entre o acesso dos das aresta
+que foram acessados com diferença de 0, 4 e 7 minutos
+respectivamente.
+
+As linhas de 13 a 16 representam a seqüência de páginas acessadas
+pela primeira vez a partir de um dado destino e por isto têm seus
+valores iniciados em 10 em cada iteração.
+
+A Figura \ref{fig:qtd_feromonio} apresenta o gráfico da evolução das
+páginas 1, 2, 10 e 15.
+
+\begin{table}
+\centering \caption{Evolução da matriz de feromônio - 10 horas}
+\label{tab:evolucao_feromonio10}
+\begin{scriptsize}
+\begin{tabular}{|c|p{0.8cm}|c|c|c|c|c|c|}
+\hline
+\# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+\hline
+1 & 1-1-1 & 9,31582 & 8,67811 & 8,08376 & 7,5296 & 7,01306 \\
+\hline
+2 & 1-2-1 & 18,63165 & 17,35624 & 16,16754 & 15,05922 & 14,02614 \\
+\hline
+3 & 1-3-1 & 9,31691 & 8,68014 & 8,0866 & 7,53313 & 7,01717 \\
+\hline
+4 & 1-4-1 & 9,318 & 8,68217 & 8,08943 & 7,53664 & 7,02126 \\
+\hline
+5 & 1-5-2 & 9,32018 & 8,68624 & 8,09512 & 7,54371 & 7,02949 \\
+\hline
+6 & 5-6-2 & 18,64036 & 17,37247 & 16,19022 & 15,0874 & 14,05896 \\
+\hline
+7 & 5-7-2 & 9,32127 & 8,68827 & 8,09795 & 7,54723 & 7,03359 \\
+\hline
+8 & 5-8-2 & 9,32127 & 8,68827 & 8,09795 & 7,54723 & 7,03359 \\
+\hline
+9 & 1-9-3 & 20 & 19,99922 & 19,9977 & 19,99482 & 19,99089 \\
+\hline
+10 & 9-10-3 & 18,64689 & 17,38465 & 16,20726 & 15,10858 & 14,08363 \\
+\hline
+11 & 9-11-3 & 9,32454 & 8,69436 & 8,10647 & 7,55782 & 7,04593 \\
+\hline
+12 & 9-12-3 & 9,32454 & 8,69436 & 8,10647 & 7,55782 & 7,04593 \\
+\hline
+13 & 9-13-3 & 0 & 10 & 9,99963 & 9,99858 & 9,997 \\
+\hline
+14 & 9-14-3 & 0 & 0 & 10 & 9,99932 & 9,99811 \\
+\hline
+15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99947 \\
+\hline
+16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+\hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+\begin{table}
+\centering \caption{Evolução da matriz de feromônio - 24 horas}
+\label{tab:evolucao_feromonio24}
+\begin{scriptsize}
+\begin{tabular}{|c|p{0.8cm}|c|c|c|c|c|c|}
+\hline
+\# & origem-destino-grupo & qf it1 & qf it2 & qf it3 & qf it4 & qf it5 \\
+\hline
+1 & 1-1-1 & 8,39057 & 7,03988 & 5,90639 & 4,95517 & 4,15693 \\
+\hline
+2 & 1-2-1 & 16,78114 & 14,07976 & 11,81278 & 9,91034 & 8,31387 \\
+\hline
+3 & 1-3-1 & 8,39155 & 7,04153 & 5,90846 & 4,95749 & 4,15937 \\
+\hline
+4 & 1-4-1 & 8,39253 & 7,04317 & 5,91053 & 4,9598 & 4,16179 \\
+\hline
+5 & 1-5-2 & 8,3945 & 7,04647 & 5,91468 & 4,96445 & 4,16667 \\
+\hline
+6 & 5-6-2 & 16,78899 & 14,09293 & 11,82936 & 9,92889 & 8,33332 \\
+\hline
+4 & 5-7-2 & 8,39548 & 7,04812 & 5,91676 & 4,96677 & 4,1691 \\
+\hline
+7 & 5-8-2 & 8,39548 & 7,04812 & 5,91676 & 4,96677 & 4,1691 \\
+\hline
+8 & 1-9-3 & 20 & 19,99918 & 19,99758 & 19,99505 & 19,99151 \\
+\hline
+10 & 9-10-3 & 16,79488 & 14,10282 & 11,84181 & 9,94283 & 8,34795 \\
+\hline
+11 & 9-11-3 & 8,39842 & 7,05306 & 5,92298 & 4,97374 & 4,17642 \\
+\hline
+12 & 9-12-3 & 8,39842 & 7,05306 & 5,92298 & 4,97374 & 4,17642 \\
+\hline
+13 & 9-13-3 & 0 & 10 & 9,99961 & 9,99875 & 9,99739 \\
+\hline
+14 & 9-14-3 & 0 & 0 & 10 & 9,99953 & 9,99856 \\
+\hline
+15 & 9-15-3 & 0 & 0 & 0 & 10 & 9,99949 \\
+\hline
+16 & 9-16-3 & 0 & 0 & 0 & 0 & 10 \\
+\hline
+\end{tabular}
+\end{scriptsize}
+\end{table}
+
+
+\begin{figure}[ht]
+\centering
+\epsfig{file=images/qtd_feromonio.eps,  width=3.2in}
+\caption{Gráfico dos testes após intervalo de 1 hora}
+\label{fig:qtd_feromonio}
+\end{figure}
+
+Teste de 10 horas de intervalo:
+ valores iniciais de feromônio, simula-se uma passagem de tempo de 10 horas como se ninguém tivesse acessado o site
+
+\begin{figure}[ht]
+\centering
+\epsfig{file=images/graf_teste10h.eps,  width=3.2in}
+\caption{Gráfico dos testes após intervalo de 10 horas}
+\label{fig:qtd_feromonio}
+\end{figure}
+
+Teste de 24 horas
+
+\begin{figure}[ht]
+\centering
+\epsfig{file=images/graf_teste24h.eps,  width=3.2in}
+\caption{Gráfico dos testes após intervalo de 24 horas}
+\label{fig:qtd_feromonio}
+\end{figure}
+
+
+são as mesmas para os tres casos? 1h, 10 h e 24 h?
+as diferenças sim...
+
+\begin{figure}[ht]
+\centering
+\epsfig{file=images/graf_diferencas.eps,  width=3.2in}
+\caption{Diferenças ...}
+\label{fig:qtd_feromonio}
+\end{figure}
+
+
+% *******************************************************************************************************************************
+
+\section{Considerações finais} \label{sec:consideracoes}
+
+É possível uma colaboração entre usuários por meio do
+compartilhamento dos caminhos realizados durante a navegação e das
+páginas acessadas, independente de trilha percorrida para
+atingi-las.
+
+Usuário não são formigas, e por isso podem não seguir o caminho mais
+relevante atribuído por seu grupo, podendo ocasionar uma
+desistabilização do sistema, que é pode ser contornada caso a
+maioria dos usuários de seu grupo sigam o sugerido.
+
+Há a necessidade de esclarecimento sobre o sistema para o usuário,
+pois o sistema pode ser tornar pouco atrativo caso não seja
+manipulado de forma correra.
+
+Dentre os trabalhos futuros, visualiza-se a necessidade de aprimorar
+a modelagem do usuário. Melhorar a eficiência do sistema, uma vez
+que a camada deixa o \emph{website} hospedeiro mais lento.
+
+Há ainda a possibilidade de se implementar outras formas de
+orientação, dentre as vistas nas técnicas de ha. Anotações
+compartilhadas entre os usuários em links relevantes,
+
+Ainda é possível se traçar estatísticas de acesso com a base da
+dados do sistema, podendo-se traçar que tipos de usuários trafegam
+por quais partes do site, quais as páginas mais ou menos
+visitadas...
+
+O oriant é limitado a 1 site apenas, pode-se estudar a possibilidade
+de implementação de um software (barra de ferramentas do navegador)
+que funcione como uma espécie de \emph{pagehank} mas que possa ser
+compartilhado por vários sites com uma base de dados centralizada.
+
+Há a possibilidade de se implantar o sistema oriant não só em
+páginas web ou mas também em programas que possuam várias
+classificações, melhorando assim a usabilidade do programa, onde
+seria possível traçar quais as funcionalidades mais acessadas pelos
+usuários.
+% *******************************************************************************************************************************
+
+
+
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+
+\bibliography{refs}  % sigproc.bib is the name of the Bibliography in this case
+
+%\begin{thebibliography}{1}
+%
+%\bibitem{dorigo:96}
+%M.~Dorigo, V.~Maniezzo, and A.~Colorni.
+%\newblock The {A}nt {S}ystem: {O}ptimization by a colony of cooperating agents.
+%\newblock {\em IEEE Transactions on Systems, Man, and Cybernetics Part B:
+%  Cybernetics}, 26(1):29--41, 1996.
+%
+%\bibitem{lopes:06}
+%H.~S. Lopes.
+%\newblock Fundamentos de computação evolucionária e aplicações.
+%\newblock In K.~R. Felizardo, editor, {\em Anais da Escola Regional de
+%  Informática da Sociedade Brasileira de Computação}, pages 52--107,
+%  Bandeirantes, PR, maio 2006. Departamento de Informática da FFALM.
+%
+%\bibitem{palazzo:02}
+%L.~A.~M. Palazzo.
+%\newblock Sistemas de hipermídia adaptativa.
+%\newblock In {\em XXI Jornada de Atualização em Informática. XXII Congresso da
+%  SBC}, Florianópolis, julho 2002.
+%
+%\bibitem{interlegis}
+%P.~H.~G. Vieira and R.~G. Caixeta.
+%\newblock Implementação da heurística da formiga para auxiliar à navegação do
+%  portal interlegis.
+%\newblock 2004.
+%
+%\bibitem{zarnani:06}
+%A.~Zarnani and M.~Rahgozar.
+%\newblock Mining spatial trends by a colony of cooperative ant agents.
+%\newblock In {\em SIAM Conference on Data Mining}, Bethesda, Maryland, USA,
+%  April 2006. Society for Industrial and Applied Mathematics.
+%
+%\end{thebibliography}
+
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+\end{document}

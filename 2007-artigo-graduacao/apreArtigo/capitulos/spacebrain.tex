@@ -1,0 +1,56 @@
+\section[SpaceBrain]{SpaceBrain}
+
+\subsection[SpaceBrain]{SpaceBrain}
+
+\begin{frame}
+\frametitle{Conceitos de Cérebro e Neurônio}
+    \begin{itemize}
+        \item <1-> \emph{SpaceBrain}: \emph{framework} baseado no funcionamento do cérebro humano.
+        \item <2-> neurônios: representados por classes;
+        \item <3-> cada classe possui uma função e atua de forma independente;
+        \item <4-> objetivo: possibilitar a invocação individual e não programada de cada neurônio;
+    \end{itemize}
+\end{frame}
+
+\subsection[Neurônios]{Neurônios}
+
+\begin{frame}
+\frametitle{Neurônios}
+    Com objetivo de reutilização de código, uma coleção de neurônios
+    foi implementada, dentre eles estão:
+
+    \begin{itemize}
+        \item <1-> \emph{Connection}: estabelece a comunicação com o banco de dados;
+        \item <2-> \emph{Database}: manipulação do banco de dados;
+        \item <3-> \emph{Cookie}: gerenciamento das \emph{cookies} do sistema;
+        \item <4-> \emph{Session}: gerenciamento das sessões do sistema.
+    \end{itemize}
+\end{frame}
+
+%\subsection[Classe Genérica]{Classe Genérica}
+%
+%\begin{frame}
+%\frametitle{Classe Genérica}
+%
+%    \begin{block}{Objetivo}
+%    Essa é a classe responsável por montar o esqueleto de um objeto
+%    que deva ser armazenado no banco de dados.
+%    \end{block}
+%
+%    As suas principais funcionalidades são:
+%
+%    \begin{itemize}
+%    \item \emph{uniqueKey(\$key)}: Retorna um registro único do banco de
+%    dados com o \emph{primary key} igual a \$key passada como
+%    parâmetro;
+%
+%    \item \emph{save}: Salva os atributos do objeto atual no banco de
+%    dados;
+%
+%    \item \emph{update}: Atualiza os dados armazenados, subistituindo-os
+%    pelos atributos atuais do objeto;
+%
+%    \item \emph{delete}: Exclui o registro do banco de dados.
+%    \end{itemize}
+%
+%\end{frame}

@@ -1,0 +1,228 @@
+\section{Conexão com Banco de Dados}
+
+\subsection{O que é o ADO.NET ?}
+
+\begin{frame}
+    \frametitle{O que é o ADO.NET ?}
+    \begin{itemize}
+        \item Tecnologia baseada no ADO (\emph{Active Data Objects});
+        \item Criado para trabalhar com um ambiente desconectado;
+        \item Camada de persistência em XML.
+    \end{itemize}
+\end{frame}
+
+\subsection{Os namespaces relacionados ao ADO.NET}
+
+\begin{frame}
+    \frametitle{Os namespaces relacionados ao ADO.NET}
+    \begin{itemize}
+        \item Os namespaces utilizados para trabalhar com ADO.NET:
+        \begin{itemize}
+            \item \emph{System.Data}: Infra-estrutura básica para trabalharmos com qualquer base de dados relacional;
+            \item \emph{System.Data.Common}: Interfaces comuns a todos os bancos de dados;
+            \item \emph{System.Data.SqlClient}: Biblioteca de acesso ao SQL Server;
+            \item \emph{System.Data.OleDb}: Biblioteca de acesso para bancos de dados que suportam OleDb;
+            \item \emph{System.Data.SqlTypes}: Definição dos tipos nativos do SQL Server;
+            \item \emph{System.XML}: Contém as classes para manipulação de documentos XML.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{O modelo de execução do ADO.NET}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{O modelo de execução do ADO.NET}
+    \begin{itemize}
+        \item Múltiplas bases de dados simultaneamente;
+        \item É possível armazenar duas tabelas de diferentes bancos de dados;
+        \item Estrutura responsável pelo armazenamento dos dados: \emph{DataSet};
+        \item Os \emph{DataSet} contém um conjunto de objetos (\emph{DataTables}) que representam resultados tabulares extraídos da base de dados.
+    \end{itemize}
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/dataProvider.jpg}
+            \caption{Esquema acesso ao banco de dados}
+        \end{center}
+    \end{figure}
+
+    \begin{itemize}
+        \item Para extrair os dados: .\emph{NET Data Providers};
+        \item \emph{Data Providers}: bibliotecas de classes especializadas para o acesso a um tipo de banco de dados relacional;
+        \item Por serem uma implementação específica, são mais eficientes que bibliotecas genéricas como OLEDB ou ODBC;
+        \item Apesar de cada implementação ser específica para o banco de dados, possuem uma estrutura em comum.
+    \end{itemize}
+\end{frame}
+
+\subsection{O modelo de execução em um ambiente conectado}
+
+\begin{frame}
+    \frametitle{O modelo de execução em um ambiente conectado}
+    \begin{itemize}
+        \item O ADO.NET é capaz de trabalhar com dois modelos, o modelo conectado e o modelo desconectado;
+        \item No modelo conectado: necessário manter a conexão aberta enquanto são realizadas as operações de leitura e gravação;
+        \item Para trabalharmos com o modelo conectado do ADO.NET devemos seguir a seguinte ordem:
+        \begin{enumerate}
+            \item \emph{XxxConnection}: utilizado para estabelecer a conexão com o banco;
+            \item \emph{XxxCommand}: É um objeto utilizado para enviar comandos a base de dados;
+            \item \emph{XxxDataReader}: É um objeto utilizado para ler dados de um comando executado.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\subsection{O modelo de execução em um ambiente desconectado}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{O modelo de execução em um ambiente desconectado}
+    \begin{itemize}
+        \item Utiliza outros objetos;
+        \item \emph{DataSet}: armazena e manipula os dados em memória;
+        \item \emph{XxxDataAdapter}: extrai e envia as alterações ao banco de dados;
+        \item Os passos para extração e manipulação dos dados em um ambiente desconectado são:
+        \begin{enumerate}
+            \item É aberta uma conexão utilizando um objeto \emph{XxxConnection};
+            \item É criado um objeto do tipo \emph{XxxDataAdapter}: dados para memoria $\rightarrow$ aramazena alterações;
+            \item método \emph{Fill} do \emph{XxxDataAdapter} para extrair os dados da base e armazenar em um \emph{DataSet};
+            \item Fechamos a conexão com o banco pois os dados;
+            \item É possível inserir, remover ou alterar registros do \emph{DataSet};
+            \item Ao finalizar as alterações, restabelecemos a conexão com o banco de dados para enviar as alterações;
+            \item Utilizase o comando \emph{XxxCommandBuilder} para gerar as strings sql que vão alterar o \emph{XxxDataAdapter};
+            \item Utilizando o método \emph{Update} do \emph{DataAdapter}, enviamos as alterações para o banco de dados;
+            \item Ao finalizar o processo, fechamos a conexão com o banco de dados.
+        \end{enumerate}
+    \end{itemize}
+\end{frame}
+
+\subsection{Estabelecendo uma conexão com um banco de dados}
+
+\begin{frame}
+    \frametitle{Estabelecendo uma conexão com um banco de dados}
+    \begin{itemize}
+        \item Primeiro passo para uma aplicação que acessa dados de um banco;
+        \item Cria-se uma instância (objeto) da classe que faz a conexão com o banco;
+        \item Ao criar essa instância informa-se uma \emph{Connection String} que contém parâmetros para conexão no banco, como usuário e senha;
+        \item A \emph{string} de conexão possui uma série de parâmetros que podem variar de acordo com o banco de dados utilizado;
+        \item Os parâmetros são separados por ponto e virgula.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Padrão para Connection Strings}]{cods/connectionStringDefault.txt}}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Exemplos de Connection Strings}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplos de Connection Strings}]{cods/connectionStringsGlobal.txt}}}
+\end{frame}
+
+\subsection{Criando comandos}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Criando comandos}
+    \begin{itemize}
+        \item É possível executar comandos no banco através da classe: \emph{SqlCommand};
+        \item Ao se criar uma instância deve-se informar a consulta SQL bem como a Conexão com o banco;
+        \item Esses parâmetros podem ser informados no construtor ou através das propriedades \emph{CommandText} e \emph{Connection};
+        \item Os SQL's informados podem ser de qualquer tipo:
+        \begin{itemize}
+            \item Retornando um conjunto de registros;
+            \item Retornando um valor específico;
+            \item Sem retorno.
+        \end{itemize}
+        \item Para cada um desses casos existe um método específico para execução.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização do comando SqlCommand}]{cods/sqlCommand.txt}}}
+\end{frame}
+
+\subsection{Executando comandos}
+
+\begin{frame}
+    \frametitle{Executando comandos}
+    \begin{itemize}
+        \item Os métodos de execução variam de acordo com a natureza do comando executado;
+        \item Os três métodos mais comuns são:
+        \begin{itemize}
+            \item \emph{ExecuteNonQuery}: Para comandos que não executam consultas (querys);
+            \item \emph{ExecuteScalar}: Para comandos que executam resultados escalares;
+            \item \emph{ExecuteReader}: Para comandos que retornam conjuntos de dados.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsubsection{O método ExecuteNonQuery}
+
+\begin{frame}
+    \frametitle{O método ExecuteNonQuery}
+    \begin{block}{Definição}
+        É utilizado quando queremos executar um comando que não retorna como
+        resultado um conjunto de dados.
+    \end{block}
+    \begin{itemize}
+        \item Utilizado para executar DCL (\emph{Data Control Language}) suportados pelo banco de dados;
+        \item Opcionalmente podemos informar um parâmetro para este método para obter o número de linhas afetadas pelo comando executado.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização do comando ExecuteNonQuery}]{cods/executeNonQuery.txt}}}
+\end{frame}
+
+\subsubsection{O método ExecuteScalar}
+
+\begin{frame}
+    \frametitle{O método ExecuteScalar}
+    \begin{block}{Definição}
+        É utilizado para comandos que retornam valores escalares, ou seja,
+        valores únicos.
+    \end{block}
+    \begin{itemize}
+        \item Em geral é utilizado para comandos que retornam uma contagem de registros;
+        \item Este comando pode retornar qualquer tipo de dado.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização do comando ExecuteScalar}]{cods/executeScalar.txt}}}
+\end{frame}
+
+\subsubsection{O método ExecuteReader}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{O método ExecuteReader}
+    \begin{block}{Definição}
+        É utilizado para executar consultas (\emph{querys}) que retornam um conjunto de
+        dados.
+    \end{block}
+    \begin{itemize}
+        \item Este método tem como resultado um objeto do tipo \emph{SqlDataReader}.
+        \item A classe \emph{SqlDataReader} representa um cursor aberto no banco de dados com os dados retornados;
+        \item Para lermos os dados de um \emph{DataReader}, é necessário executamos o método \emph{Read};
+        \item Com o \emph{DataReader} não é possivel executar nenhuma outra operação com a mesma conexão aberta, por isso deve-se fechar ao término da execução.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização do comando ExecuteReader}]{cods/executeReader.txt}}}
+\end{frame}
+
+\subsection{Passando parâmetros}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Passando parâmetros}
+    \begin{itemize}
+        \item É possível passar parâmetros para os objetos da classe \emph{SqlCommand};
+        \item Para indicarmos parâmetros nas \emph{querys} utilizamos o símbolo @ como prefixo para indicar um parâmetro;
+        \item Esta sintaxe pode variar de acordo com o banco de dados utilizado (o Oracle utiliza ":" por exemplo);
+        \item Depois de indicar os parâmetros na query, é preciso adicionar objetos do tipo \emph{SqlParameter} na coleção de parâmetros do \emph{SqlCommand}.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização de parâmetros}]{cods/parametros.txt}}}
+\end{frame}
+
+\subsection{O que é um DataSet?}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{O que é um DataSet?}
+    \begin{itemize}
+        \item É possível passar parâmetros para os objetos da classe \emph{SqlCommand};
+        \item Para indicarmos parâmetros nas \emph{querys} utilizamos o símbolo @ como prefixo para indicar um parâmetro;
+        \item Esta sintaxe pode variar de acordo com o banco de dados utilizado (o Oracle utiliza ":" por exemplo);
+        \item Depois de indicar os parâmetros na query, é preciso adicionar objetos do tipo \emph{SqlParameter} na coleção de parâmetros do \emph{SqlCommand}.
+    \end{itemize}
+    \texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+    caption={Exemplo de utilização de parâmetros}]{cods/parametros.txt}}}
+\end{frame}

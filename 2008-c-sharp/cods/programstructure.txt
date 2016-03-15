@@ -1,0 +1,16 @@
+using System;
+namespace MathNamespace{
+	public class MathClass{
+	/* Main: exibe no prompt */    
+		public static void Main(string[] args){      
+			Math m = new Math();
+			Console.WriteLine(m.Sum(1,1));
+		}
+		//<summary>Classe Math</summary>
+		public class Math:Object{
+			public int Sum(int a, int b){ 
+				return (a+b);
+			}
+		}
+	}
+}

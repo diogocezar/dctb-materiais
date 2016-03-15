@@ -1,0 +1,2104 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{amsfonts}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=3.5cm]{geometry}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S  D O S   C Ó D I G O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\tiny, extendedchars=true, breaklines=true,frame=tb,
+basicstyle=\footnotesize, stringstyle=\tiny, showstringspaces=false}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S   D A   P Á G I N A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\footskip=1cm \setcounter{tocdepth}{5} \setcounter{secnumdepth}{5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% E S P A Ç A M E N T O   D U P L O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\baselinestretch}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O S   D E   S U B S T I T U I Ç Ã O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\header}        [1]{\def\imprimeheader{#1}}
+\newcommand{\footer}        [1]{\def\imprimefooter{#1}}
+\newcommand{\titulo}        [1]{\def\imprimetitulo{#1}}
+\newcommand{\subtitulo}     [1]{\def\imprimesubtitulo{#1}}
+\newcommand{\autor}         [1]{\def\imprimeautor{#1}}
+\newcommand{\local}         [1]{\def\imprimelocal{#1}}
+\newcommand{\instituicao}   [1]{\def\imprimeinstituicao{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   S U B . S U B . S U B . %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\subsubsubsection}[1]{
+    \paragraph{#1}
+}
+
+\newcommand{\subsubsubsubsection}[1]{
+    \subparagraph{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   F A N C Y   C O M   P A G I N A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setheader}{
+    \pagestyle{fancy}
+    \lhead{\bfseries \imprimeheader}
+    \chead{}
+    \rhead{\textcolor[rgb]{0.34,0.51,0.09}{\textbf{\thepage}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   L I M P O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setheaderlimpo}{
+    \thispagestyle{empty}
+    \lhead{}
+    \chead{}
+    \rhead{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R O D A P É  C O M   C O N T E Ú D O  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setfooter}{
+    \pagestyle{fancy}
+    \lfoot{\textcolor[rgb]{0.34,0.51,0.09}{\textbf{\imprimetitulo}}}
+    \cfoot{}
+    \rfoot{\textcolor[rgb]{0.34,0.51,0.09}{\textbf{\thepage}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R O D A P É  L I M P O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setfooterlimpo}{
+    \pagestyle{fancy}
+    \lfoot{}
+    \cfoot{}
+    \rfoot{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  S U B S T I T U I N D O   C O N S T A N T E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titulo{Apostila C\#} \subtitulo{Conceitos Básicos} \autor{Diogo
+Cezar Teixera Batista} \local{Cornélio Procópio}
+\instituicao{Universidade Tecnológica Federal do Paraná}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   D O   P R O J E T O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\header{
+    \textcolor[rgb]{0.34,0.51,0.09}{\textbf{\imprimetitulo}}
+    \newline
+    {\scriptsize \imprimeautor}
+    \newline
+    {\scriptsize \today}
+    \vspace{0.1cm}
+}
+
+\setfooterlimpo
+\setheaderlimpo
+
+\begin{document}
+
+%%%%%%%%%%%
+% C A P A %
+%%%%%%%%%%%
+
+    \setfooter
+    \setheader
+
+    \begin{flushright}
+    \end{flushright}
+
+    \vspace{2cm}
+
+    \begin{center}
+    {\Huge \textbf{\textcolor[rgb]{0.34,0.51,0.09}{\imprimetitulo}}}
+
+    \vspace{3cm}
+
+    {\huge \textbf{\imprimesubtitulo}}
+
+    \vspace{3cm}
+
+    {\Large \imprimeinstituicao}
+
+    \vspace{1cm}
+
+    {\Large \imprimeautor}
+
+    \vspace{3cm}
+
+    \imprimelocal
+
+    \vspace{3cm}
+
+    \today
+
+    \vspace{2cm}
+
+    {\scriptsize \textcolor[rgb]{0.29,0.29,0.29}{Apostila baseada nas obras de : Fabio R. Galuppo, Edwin Lima, Breno Gontijo e Rudson Kiyoshi}}
+
+    \end{center}
+
+    \newpage
+
+
+%%%%%%%%%%%%%%%%%
+% S U M Á R I O %
+%%%%%%%%%%%%%%%%%
+
+    \begin{flushright}
+    \end{flushright}
+
+    \setcounter{page}{2}
+
+    \setheader
+
+    \setfooterlimpo
+
+    \tableofcontents
+
+    \newpage
+%
+%    \listoffigures
+%
+%    \newpage
+%
+    \listoftables
+%
+    \newpage
+%
+    \lstlistoflistings
+
+    \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% D O C U M E N T O   P R I N C I P A L  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \setfooter
+
+    \section{INTRODUÇÃO}
+
+        Entende-se por uma plataforma de desenvolvimento, um conjunto de
+        instruções ordenadas que tem por objetivo resolver um problema do
+        mundo real, abstraindo-o em um conjunto de comandos lógicos.
+
+    \subsection{Plataforma .NET}
+
+        .NET é a nova plataforma de desenvolvimento da Microsoft que tem
+        como foco principal o desenvolvimento de Serviços \emph{WEB} XML. Um
+        serviço \emph{Web} XML, ou simplesmente \emph{Web Service}
+        transcende ao que nós conhecemos como páginas dinâmicas, as quais
+        podem ser acessadas a partir de um \emph{browser}. A idéia central de um
+        \emph{Web Service} consiste em permitir que as aplicações, sejam elas da
+        \emph{Web} ou \emph{Desktop}, se comuniquem e troquem dados de forma
+        simples e transparente, independente do sistema operacional ou da
+        linguagem de programação.
+
+    \subsubsection{Abordagem .NET}
+
+        \begin{itemize}
+        \item \emph{Independência de linguagem de programação}: o que permite a
+        implementação do mecanismo de herança, controle de exceções e
+        depuração entre linguagens de programação diferentes;
+
+        \item \emph{Reutilização de código legado}: o que implica em reaproveitamento de código
+        escrito usando outras tecnologias como COM, COM+, ATL, DLLs e outras
+        bibliotecas existentes;
+
+        \item \emph{Tempo de execução compartilhado}: o "\emph{runtime}"{} de .NET é compartilhado
+        entre as diversas linguagens que a suportam, o que quer dizer que
+        não existe um \emph{runtime} diferente para cada linguagem que implementa
+        .NET;
+
+        \item \emph{Sistemas auto-explicativos e controle de versões}: cada peça de código
+        .NET contém em si mesma a informação necessária e suficiente de
+        forma que o runtime não precise procurar no registro do Windows mais
+        informações sobre o programa que está sendo executado. O runtime
+        encontra essas informações no próprio sistema em questão e sabe qual
+        a versão a ser executada, sem acusar aqueles velhos conflitos de
+        incompatibilidade ao registrar DLLs no Windows;
+
+        \item Simplicidade na resolução de problemas complexos.
+        \end{itemize}
+
+    \subsubsection{Arquitetura .NET}
+
+    \paragraph{CLR (\emph{Commom Language Runtime})}
+
+        O CLR, ou tempo de execução compartilhado, é o ambiente de execução
+        das aplicações .NET. As aplicações .NET não são aplicações Win32
+        propriamente ditas (apesar de executarem no ambiente Windows), razão
+        pela qual o runtime Win32 não sabe como executá-las. O Win32, ao
+        identificar uma aplicação .NET, dispara o runtime .NET que, a partir
+        desse momento, assume o controle da aplicação no sentido mais amplo
+        da palavra, porque, dentre outras coisas, é ele quem vai cuidar do
+        gerenciamento da memória via um mecanismo de gerenciamento de
+        memória chamado \emph{Garbage Collector} (GC) ou coletor de lixo.
+        Esse gerenciamento da memória torna os programas menos susceptíveis
+        a erros. Mais ainda, o CLR como seu próprio nome o diz, é
+        compartilhado e, portanto, não temos um runtime para VB.NET, outro
+        para C\# etc. É o mesmo para todo mundo.
+
+    \paragraph{CLS (\emph{Common Language Specification})}
+
+        O CLS, ou EspecificaçãoComumda Linguagem, é um subconjunto do CTS, e
+        define um conjunto de regras que qualquer linguagem que implemente a
+        .NET 8 deve seguir a fim de que o código gerado resultante da
+        compilação de qualquer peça de software escrita na referida
+        linguagem seja perfeitamente entendido pelo runtime .NET.
+
+    \paragraph{BCL (\emph{Base Classe Library})}
+
+        Oferece ao desenvolvedor uma biblioteca consistente de componentes
+        de software reutilizáveis que não apenas facilitem, mas também que
+        acelerem o desenvolvimento de sistemas.
+
+    \section{A linguagem C\#}
+
+        C\# (pronunciada "C Sharp"), é uma linguagem de programação da
+        Plataforma .NET, derivada de C/C++ orientada à objetos. É a
+        linguagem nativa para .NET \emph{Common Language Runtime}(CLR),
+        mecanismo de execução da plataforma .NET. Isso possibilita a
+        convivência com várias outras linguagens especifícadas pela Common
+        Language Subset(CLS). Por exemplo, uma classe base pode ser escrita
+        em C\#, derivada em Visual Basic e novamente derivada em C\#.
+
+    \subsection{Características do C\#}
+
+    \begin{itemize}
+
+        \item \emph{Simplicidade}: os projetistas de C\# costumam dizer que
+        essa linguagem é tão poderosa quanto o C++ e tão simples quanto o
+        Visual Basic.
+
+        \item  \emph{Completamente orientada a objetos}: em C\#, qualquer variável tem
+        de fazer parte de uma classe.
+
+        \item \emph{Fortemente tipada}: isso ajudará a evitar erros por manipulação
+        imprópria de tipos, atribuições incorretas etc.
+
+        \item \emph{Gera código gerenciado}: assim como o ambiente .NET é
+        gerenciado, assim também é a linguagem C\#.
+
+        \item \emph{Tudo é um objeto}: System.Object é a classe base de todo o sistema
+        de tipos de C\#.
+
+        \item \emph{Controle de versões}: cada assembly gerado, seja como EXE ou
+        DLL, tem informação sobre a versão do código, permitindo a
+        coexistência de dois assemblies homônimos, mas de versões diferentes
+        no mesmo ambiente.
+
+        \item \emph{Suporte a código legado}: o C\# pode interagir com código legado
+        de objetos COM e DLLs escritas em uma linguagem não-gerenciada.
+
+        \item \emph{Flexibilidade}: se o desenvolvedor precisar usar ponteiros, o C\#
+        permite, mas ao custo de desenvolver código não-gerenciado, chamado
+        "unsafe".
+
+        \item \emph{Linguagem gerenciada}: os programas desenvolvidos em C\# executam
+        num ambiente gerenciado, o que significa que todo o gerenciamento de
+        memória é feito pelo runtime via o GC (\emph{Garbage Collector}), e
+        não diretamente pelo programador, reduzindo as chances de cometer
+        erros comuns a linguagens de programação onde o gerenciamento da
+        memória é feito diretamente pelo programador.
+
+    \end{itemize}
+
+%    \subsection{Objetivos da Linguagem}
+%
+%    \begin{itemize}
+%        \item \emph{Linguagem orientada a componentes} \\
+%        .NET \emph{Common Language Runtime} é um ambiente baseado em componentes, e
+%        C\# é desenhado para facilitar a criação de componentes. Os conceitos
+%        de componentes, como propriedades, métodos, eventos e atributos, são
+%        fortemente aplicados;
+%
+%        \item \textbf{Tudo é objeto} \\
+%        Em C\#, ao contrário de linguagens como Java ou C++, tipos de dados e
+%        objetos interagem. C\# fornece um "sistema unificado de tipos", onde
+%        todos os tipos são tratados como objetos, sem perda de
+%        performance;
+%
+%        \item \textbf{Recursos da linguagem} \\
+%        Coletor de Lixo(\emph{Garbage Collection}) que fornece gerenciamento
+%        automático de memória, Excessões(\emph{Exceptions}) que dispara erros que
+%        podem ser tratados, segurança no tipo de dados (\emph{Type-safety}) que
+%        assegura a manipulação de variáveis e \emph{casts} e
+%        Versão(\emph{Versioning});
+%
+%        \item \textbf{Preservar seu  investimento} \\
+%        C\# é montado sobre a "herança"{} do C++, isso torna confortável a
+%        adaptação do programador C++. C\# possibilita utilização de
+%        ponteiros, na execução de código não gerenciado.
+%
+%    \end{itemize}
+
+    \newpage
+
+    \section{PRIMEIRO PROGRAMA}
+
+        Escrevendo o tradicional programa Hello World, em C\#:
+
+        \texttt{\lstinputlisting[language=C, label=helloword, caption={Hello
+        World em C\#}]{cods/helloworld.txt}}
+
+        A cláusula \emph{using} referencia a as classes a serem utilizadas,
+        \emph{System} atua como \emph{namespace} das classes. O
+        \emph{namespace} \emph{System} contém muitas classes, uma delas é a
+        \emph{Console}. O método \emph{WriteLine}, simplesmente emite a
+        \emph{string} no \emph{console}.
+
+    \subsection{Main}
+
+        O método \emph{Main} é o ponto de entrada de execução do seu
+        programa. A classe que será executada inicialmente possui embutida a
+        função estática \emph{Main}. Uma ou mais classes podem conter a
+        função \emph{Main}, entretanto, apenas uma será o ponto de entrada,
+        indicada na compilação pelo parâmetro \texttt{/main:<tipo>}, ou
+        simplificando \texttt{/m:<tipo>}.
+
+        O método Main, pode ser declarado de 4 formas:
+
+        \begin{enumerate}
+            \item Retornando um vazio(void): \texttt{public static void
+            Main()};
+            \item Retornando um inteiro(int): \texttt{public static int
+            Main()};
+            \item Recebendo argumentos, através de um array de string e retornando um
+            vazio:\texttt{ public static void Main(string[] args)};
+            \item Recebendo argumentos, através de um array de string e retornando um
+            inteiro: \texttt{public static int Main(string[] args)}.
+        \end{enumerate}
+
+    \section{ESTRUTURA DE UM PROGRAMA}
+
+        O esqueleto de um programa em C\#, apresentando alguns dos seus
+        elementos mais comuns, segue abaixo:
+
+    \texttt{\lstinputlisting[language=C, label=programstructure, caption={Estrutura de um programa em C\#}]{cods/programstructure.txt}}
+
+        A estrutura de um programa em C\#, pode ser dividida em um ou mais
+        arquivos, e conter:
+
+        \begin{itemize}
+            \item \emph{\textbf{Namespaces}}: são a forma lógica de organizar o código-fonte;
+            \item \textbf{Tipos}: classes, estruturas, interfaces, delegações, enums;
+            \item \textbf{Membros}: constantes, campos, métodos, propriedades, indexadores, eventos, operadores, construtores;
+            \item \textbf{Outros}: coméntarios e instruções.
+        \end{itemize}
+
+    \section{VARIÁVEIS NA LINGUAGEM C\#}
+
+        Na linguagem C\# as variáveis estão agrupadas em algumas categorias
+        como:
+
+        \begin{itemize}
+            \item \emph{Static}: existe apenas uma única copia desta variável para
+            todas as instâncias de uma classe. Uma variável \emph{static} começa
+            a existir quando um programa começa a executar, e deixa de existir
+            quando o programa terminar.
+
+            \item \emph{Instance}: existe uma copia para cada instância de uma classe. Uma variável Instance começa a existir
+            quando uma instância daquele tipo e criado, e deixa de existir
+            quando não houver nenhuma referencia aquela instância ou quando e
+            método \emph{Finalize} e executado.
+
+            \item \emph{Array}: é uma matriz que e criada em tempo de execução.
+        \end{itemize}
+
+    \subsection{Tipos de dados}
+
+        Como toda linguagem de programação o C\# também apresenta seu grupo
+        de tipos de dados básico. Esses tipos são conhecidos como tipos
+        primitivos ou fundamentais por serem suportados diretamente pelo
+        compilador, e serão utilizados durante a codificação na definição de
+        variáveis, parâmetros, declarações e até mesmo em comparações.
+
+        A Tabela 1 apresenta os tipos básicos da linguagem C\# relacionados
+        juntamente com os tipos de dados do .NET Em C\#, todos eles possuem
+        um correspondente na \emph{Common Language Runtime}(CLR), por
+        exemplo int, em C\#, refere-se a System.Int32.
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:tiposprimitivos}
+            \caption{Tipos primitivos do C\#}
+            \begin{tabular}{|l|l|p{5cm}|p{5cm}|}
+                \hline
+                Tipo C\# & Tipo .NET & Descrição & Faixa de dados \\
+                \hline
+                bool & System.Boolean & Booleano & true ou false \\
+                \hline
+                byte & System.Byte & Inteiro de 8-bit com sinal & -127 a 128 \\
+                \hline
+                char & System.Char & Caracter Unicode de 16-bit & U+0000 a U+ffff \\
+                \hline
+                decimal & System.Decimal & Inteiro de 96-bit com sinal com 28-29 dígitos significativos & 1,0 x $10^{-28}$ a 7,9 x $10^{28}$ \\
+                \hline
+                double & System.Double & Flutuante IEEE 64-bit com  & +-5,0 x $10^{-324}$ a +-1,7 x $10^{324}$ \\
+                \hline
+                float & System.Single & Flutuante IEEE 32-bit com  & +-1,5 x $10^{-45}$ a +-3,4 x $10^{38}$ \\
+                \hline
+                int & System.Int32 & Inteiro de 32-bit com sinal & -2.147.483.648 a 2.147.483.647 \\
+                \hline
+                long & System.Int64 & Inteiro de 64-bit com sinal & -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807 \\
+                \hline
+                Object & System.Object & Classe base  &  -\\
+                \hline
+                Sbyte & System.Sbyte & Inteiro de 8-bit sem sinal & 0 a 255 \\
+                \hline
+                Short & System.Int16 & Inteiro de 16-bit com sinal & -32,768 a 32,767 \\
+                \hline
+                String & System.String & String de caracteres Unicode &  -\\
+                \hline
+                Uint & System.UInt32 & Inteiro de 32-bit sem sinal & 0 a 4,294,967,295 \\
+                \hline
+                Ulong & System.UInt64 & Inteiro de 64-bit sem sinal & 0 a 18,446,744,073,709,551,615 \\
+                \hline
+                Ushort & System.UInt16 & Inteiro de 16-bit sem sinal & 0 a 65,535 \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \subsubsection{Tipos Valor e Tipos Referência}
+
+        Os tipos de dados no C\# são divididos em 3 categorias:
+
+        \begin{itemize}
+            \item Tipos valor(\emph{value types});
+            \item Tipos referência(\emph{reference types});
+            \item Tipos ponteiro(\emph{pointer types}).
+        \end{itemize}
+
+        Tipos valor armazenam dados em memória enquanto tipos referência
+        armazenam uma referência, ou o endereço, para o valor atual.
+
+        Quando utilizamos uma variável do tipo referência não estaremos
+        acessando seu valor diretamente, mas sim um endereço referente ao
+        seu valor, ao contrário do tipo valor que permite o acesso
+        diretamente a seu conteúdo.
+
+        Os tipos ponteiro, apenas apontam para um endereço de memória.
+
+    \subsubsection{Conversão de Tipos}
+
+        Converter um tipo de dado em número ou em literal é comum em
+        situações de programação.
+
+        Devemos considerar alguns aspectos para a conversão de números:
+
+        \begin{itemize}
+            \item Como existem diversos tipos de números, inteiros, ponto
+            flutuante ou decimal, os valores são convertidos sempre para o tipo
+            de maior faixa de valores. Por exemplo, o tipo long é convertido
+            para o ponto flutuante, mais é importante ressaltar que o contrario
+            causa um erro.
+            \item Os tipos de menor faixa são convertidos para os
+            de maior faixa. Por exemplo, o tipo int pode ser convertido para:
+            long, float, double ou decimal.
+            \item A conversão dos tipos de ponto flutuante(float, double) para decimal causa erro.
+            \item A conversão entre os tipos com sinal e sem sinal de valores inteiros com o mesmo
+            tamanho causa erro. Por exemplo, entre o tipo int e unit.
+        \end{itemize}
+
+        Por exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=conversaoTipos,
+        caption={Exemplo de conversão automática de
+        tipos}]{cods/conversao.txt}}
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:conversaoautomatica}
+            \caption{Tipos de conversão automática}
+            \begin{tabular}{|l|l|}
+                \hline
+                Tipo & Converte em \\
+                \hline
+                sbyte & short, int, long, float, double, decimal \\
+                \hline
+                byte & short, ushort, int, uint, long, ulong, float, double, decimal \\
+                \hline
+                short & int, long, float, double, decimal \\
+                \hline
+                ushort & int, uint, long, ulong, float, double, decimal \\
+                \hline
+                int & long, float, double, decimal \\
+                \hline
+                uint & long, ulong, float, double, decimal \\
+                \hline
+                long & float, double, decimal \\
+                \hline
+                ulong & long, double, decimal \\
+                \hline
+                char & ushort, int, uint, long, ulong, float, double, decimal \\
+                \hline
+                float & double \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \subsubsection{O Objeto \emph{Convert}}
+
+        Em C\# temos o objeto \texttt{\emph{Convert}} que é usado para
+        converter um tipo de dado em outro.
+
+        Os tipos de dados suportados são: \emph{Boolean}, \emph{Char},
+        \emph{SByte}, \emph{Byte}, \emph{Int16}, \emph{Int32}, \emph{Int64},
+        \emph{UInt16}, \emph{UInt32}, \emph{UInt64}, \emph{Single},
+        \emph{Double}, \emph{Decimal}, \emph{DateTime} e \emph{String}.
+
+        Por exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=conversaoConvert,
+        caption={Exemplo de utilização do objeto
+        \texttt{\emph{Convert}}}]{cods/conversaoConvert.txt}}
+
+    \subsection{\emph{Arrays}}
+
+        Um tipo \emph{array} é uma matriz de valores do mesmo tipo, que é
+        criada em tempo de execução, podendo ser acessada por meio de um
+        índice.
+
+        A declaração do \emph{array} sempre faz o uso de um colchete( [ ] )
+        depois do tipo da variável. O uso da instrução \emph{new} sempre
+        deve ser utilizado, pois é obrigatório.
+
+        O tipo \emph{array} pode ter diversas dimensões, o tamanho desta é
+        definido pelo desenvolvedor, mas devemos saber que o primeiro índice
+        é sempre zero.
+
+        No tipo \emph{array} devemos sempre inicializar seus elementos, pois
+        é obrigatório também. Veja abaixo a forma de sintaxe para a
+        declaração de arrays.
+
+        \texttt{\lstinputlisting[language=C, label=array, caption={Sintaxe
+        para a declaração de \emph{Arrays}}]{cods/array.txt}}
+
+        \texttt{\lstinputlisting[language=C, label=array2, caption={Sintaxe
+        para a declaração de \emph{Arrays} com duas ou mais
+        dimensões}]{cods/array2.txt}}
+
+        \texttt{\lstinputlisting[language=C, label=array3, caption={Sintaxe
+        para a declaração de uma matriz de \emph{Arrays} com duas ou mais
+        dimensões}]{cods/array3.txt}}
+
+        \texttt{\lstinputlisting[language=C, label=array4, caption={Sintaxe
+        para a inicialização de \emph{Arrays} com duas ou mais
+        dimensões}]{cods/array4.txt}}
+
+        Para passar um argumento array para um método, especifique o nome do
+        array sem usar colchetes e para que um método receba um
+        \emph{array}, a lista de parâmetros deve especificar que um array
+        será recebido.
+
+        Veja o seguinte exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=array5, caption={Passando \emph{Arrays} à métodos}]{cods/array5.txt}}
+
+        Algumas Propriedades e Métodos dos Arrays:
+
+        \begin{itemize}
+            \item \texttt{obj.Length} $\longrightarrow$ Tamanho do vetor;
+            \item \texttt{Array.IndexOf(Array vetor, object value)} $\longrightarrow$ Procura a primeira ocorrência de valor em vetor;
+            \item \texttt{Array.LastIndexOf(Array vetor, object value)} $\longrightarrow$ Procura a última ocorrência de valor em vetor;
+            \item \texttt{Array.Sort(Array vetor)} $\longrightarrow$ Ordena um vetor crescentemente;
+            \item \texttt{Array.Reverse(Array vetor)} $\longrightarrow$ Ordena um vetor decrescentemente.
+        \end{itemize}
+
+    \section{COMANDOS}
+
+    \subsection{Seleção}
+
+        Os comandos de seleção são utilizados na escolha de uma
+        possibilidade entre uma ou mais possíveis. Os comandos
+        \texttt{\emph{if}} e \texttt{\emph{switch}} fazem parte deste grupo.
+
+    \subsubsection{Comando \emph{if}}
+
+        O comando \texttt{\emph{if}}  utiliza uma expressão, ou expressões,
+        booleana para executar um comando ou um bloco de comandos. A
+        cláusula else é opcional na utilização do \texttt{\emph{if}}, no
+        entanto, seu uso é comum em decisões com duas ou mais opções.
+
+        \texttt{\lstinputlisting[language=C, label=if, caption={Exemplo do
+        comando \texttt{\texttt{if}} em C\#}]{cods/if.txt}}
+
+        Toda expressão do comando \emph{\texttt{if}} deve ser embutida em
+        parênteses (()) e possui o conceito de curto-circuito
+        (\emph{short-circuit}). Isto quer dizer que se uma expressão
+        composta por \emph{And} (\&\&), fornecer na sua primeira análise um
+        valor booleano \emph{false} (falso), as restantes não serão
+        analisadas. Este conceito é válido para todas expressões booleanas.
+
+        Por exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=if2, caption={\emph{Ifs}
+        com \emph{And} e \emph{Or}}]{cods/if2.txt}}
+
+        Assim como outros comandos. O if também pode ser encontrado na forma
+        aninhada.
+
+        \texttt{\lstinputlisting[language=C, label=if3, caption={\emph{Ifs}
+        aninhados}]{cods/if3.txt}}
+
+        Porém, devido a característica de curto-circuito nas expressões, as
+        linhas de cima podem e devem ser reescritas para:
+
+        \texttt{\lstinputlisting[language=C, label=if4,
+        caption={Curto-circuito}]{cods/if4.txt}}
+
+        O comando \texttt{\emph{if}}  também pode ser encontrado num formato
+        escada \texttt{\emph{if-else-if}}, quando existem mais do que duas
+        possibilidades. Porém, na maioria destes casos, se as expressões não
+        forem compostas ou utilizarem de funções, a cláusula \emph{switch}
+        substitui este tipo de construção.
+
+        \texttt{\lstinputlisting[language=C, label=if5, caption={Exemplo
+        \texttt{\emph{if-else-if}}}]{cods/if5.txt}}
+
+        O comando if com a cláusula else única pode ser encontrado em sua
+        forma reduzida com operador ternário representado por interrogação
+        (?:). É chamado de operador ternário por possuir 3 expressões: a
+        primeira refere-se a condição boolena, a segunda se a condição é
+        verdadeira e a terceira se a condição é falsa.
+
+        \texttt{\lstinputlisting[language=C, label=if6, caption={Operador
+        Ternário}]{cods/if6.txt}}
+
+    \subsubsection{Comando \emph{switch}}
+
+        O comando \emph{switch} utiliza o valor de uma determina expressão
+        contra uma lista de valores constantes para execução de um ou mais
+        comandos. Os valor constante é tratado através da cláusula case e
+        este pode ser númerico, \emph{caracter} ou \emph{string}. A cláusula
+        \emph{default} é utilizada para qualquer caso não interceptado pelo
+        case. O exemplo abaixo implementa a versão com o comando switch do
+        exemplo, previamente mostrado com o comando \emph{if}:
+
+        \texttt{\lstinputlisting[language=C, label=switch, caption={Comando
+        \texttt{\emph{switch}}}]{cods/switch.txt}}
+
+        Uma ou mais cláusulas case podem ser encontradas seguidamente quando
+        mais do que uma opção é permitida para um comando ou bloco de
+        comandos. O exemplo abaixo apresenta essa condição:
+
+        \texttt{\lstinputlisting[language=C, label=switch, caption={Comando
+        \texttt{\emph{switch}}}]{cods/switch2.txt}}
+
+        A cláusula \texttt{\emph{break}}, é utilizada para separar os blocos
+        do \texttt{\emph{switch}} e garante que o bloco seja executado
+        somente até determinado ponto.
+
+    \subsection{Iteração ou Loop}
+
+        Conhecidos como laço ou loop, os comandos de iteração executam
+        repetidamente um comando ou bloco de comandos, a partir de uma
+        determinada condição. Esta condição pode ser pré-definida ou com
+        final em aberto. Em C\#, fazem parte dos comandos de iteração:
+        \texttt{\emph{while}}, \texttt{\emph{do}}, \texttt{\emph{for}} e
+        \texttt{\emph{foreach}}.
+
+    \subsubsection{Comando \emph{for}}
+
+        O comando for possui 3 declarações opcionais, separadas por ponto e
+        vírgula (;), dentro dos parênteses: inicialização, condição e a
+        iteração. Em cada parâmetro, mais de uma expressão pode ser
+        encontrada separada por vírgula.
+
+        \texttt{\lstinputlisting[language=C, label=for, caption={Iteração
+        \texttt{\emph{for}}}]{cods/for.txt}}
+
+        Quando a cláusula for é processada pela primeira vez, se presente, a
+        expressão ou expressões da declaração inicializadora são executadas
+        na ordem que elas estão escritas, este passo ocorre apenas uma vez.
+        Se a declaração condicional estiver presente, será avaliada, caso
+        contrário o for assume o valor verdadeiro (true). Na avaliação, se o
+        valor obtido for verdadeiro (true) o comando ou bloco de comandos
+        associados serão executados, ao seu final a terceira declaração ou
+        declaração de iteração é processada e, então, novamente a declaração
+        condicional é processada. Este fluxo ocorre continuamente até que a
+        declaração condicional seja avaliada como falsa (false) ou o comando
+        break seja encontrado, como visto anteriormente. O comando continue
+        força uma nova iteração.
+
+        \texttt{\lstinputlisting[language=C, label=for2, caption={Iteração
+        \texttt{\emph{for}} (exemplo)}]{cods/for2.txt}}
+
+    \subsubsection{Comando \emph{foreach}}
+
+        O comando \emph{foreach} enumera os elementos de uma coleção. O
+        código abaixo implementa a funcionalidade do exemplo anterior:
+
+        \texttt{\lstinputlisting[language=C, label=foreach,
+        caption={Iteração \texttt{\emph{foreach}}
+        (exemplo)}]{cods/foreach.txt}}
+
+    \subsubsection{Comandos \emph{do} e \emph{while}}
+
+        Os comandos \emph{do} e \emph{while} têm características
+        semelhantes. Ambos executam condicionalmente um comando ou bloco de
+        comandos. No entanto, o comando \emph{do} pode ser executado uma ou
+        mais vezes e o comando \emph{while} pode ser executado nenhuma ou
+        mais vezes, isto ocorre porque a expressão condicional do comando do
+        é encontrada no final do bloco.
+
+        \texttt{\lstinputlisting[language=C, label=dowhile,
+        caption={Iteração \texttt{\emph{do while}}
+        (exemplo)}]{cods/dowhile.txt}}
+
+    \section{OPERADORES}
+
+        C\# é uma linguagem muito rica em operadores. Estes representados
+        por símbolos são utilizados na construção de expressões. A sintaxe
+        de expressão do C\# é baseada na sintaxe do C++. Os operadores são
+        categorizados em diversas funcionalidades. A tabela 3 apresenta
+        essas divisões.
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:operadorescsharp}
+            \caption{Operadores do C\#}
+            \begin{tabular}{|l|l|}
+                \hline
+                Categoria & Operadores \\
+                \hline
+                Aritmética &\& + - * / \% \\
+                \hline
+                Lógica (boolena e bitwise) & \& $|$ \^{} ! ~ \&\& $||$ true false \\
+                \hline
+                Concatenação de string & + \\
+                \hline
+                Incremento e decremento & ++ -- \\
+                \hline
+                Shift & $<<$ $>>$ \\
+                \hline
+                Relacional & == != $<>$ $<$= $>$= \\
+                \hline
+                Atribuição & = += -= *= /= \%= \&= |= \^= $<<$= $>>$= \\
+                \hline
+                Acesso a membro & . \\
+                \hline
+                Indexação & [] \\
+                \hline
+                Indexação & () \\
+                \hline
+                Condicional & ?: \\
+                \hline
+                Delegate (concatenação e remoção) & + - \\
+                \hline
+                Delegate (concatenação e remoção) & new \\
+                \hline
+                Informação de tipo & is sizeof typeof \\
+                \hline
+                Controle de excessão de overflow & checked unchecked \\
+                \hline
+                Indireção e endereço & * -> [] \& \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+        Quando uma expressão possui múltiplas operações, a precedência dos
+        operadores é levada em consideração na avaliação da mesma.
+        Normalmente, as expressões são avaliadas da esquerda para direita,
+        exceto para operações de atribuição e condicional, porém a
+        precedência pode ser alterada através do uso do parênteses.
+
+    \subsection{Operadores Aritméticos}
+
+        Os operadores aritméticos são utilizados na maioria das expressões
+        para execução de cálculos. Numa expressão, eles podem produzir
+        resultados fora da faixa de valores. Neste caso, uma excessão como
+        \emph{OverflowException} é gerada.
+
+        Os operadores unários (atribuídos a 1 atributo) + e - são utilizados
+        para representar se o número é positivo ou negativo,
+        respectivamente.
+
+        \texttt{\lstinputlisting[language=C, label=operadoresUnarios,
+        caption={Operadores Unários}]{cods/operadores.txt}}
+
+        Os operadores binários +, -, *, / e  \% são utilizados nas
+        expressões para execução de cálculos tais como soma, subtração,
+        multiplicação, divisão e sobra. O operador binário + quando
+        utilizado entre strings representam concatenação. No entanto, quando
+        existem strings e números na expressão e nenhuma operação de cast
+        for executada a operação é tratado como concatenação. O operador
+        binário \% é computado através da fórmula dividendo - ( dividendo /
+        divisor ) * divisor. Os exemplos abaixo ilustram essas condições:
+
+        \texttt{\lstinputlisting[language=C, label=operadoresBinarios,
+        caption={Operadores Binários}]{cods/operadores2.txt}}
+
+        O código abaixo utiliza os operadores aritméticos. Note a utilização
+        e recebimento de argumentos através da linha de comando. O
+        \emph{entry-point} \emph{Main} permite ser passado um vetor de
+        strings como parâmetro. O método \emph{Length} conta o número de
+        parâmetros passado, ignorando o executável. Como todo vetor o
+        primeiro parâmetro é representado pelo índice zero, por exemplo
+        args[0]. A váriavel args não é uma palavra-chave, portanto, esta
+        pode ser alterada:
+
+        \texttt{\lstinputlisting[language=C, label=exemploOperadores,
+        caption={Exemplo Operadores Binários}]{cods/operadores3.txt}}
+
+    \subsection{Operadores de Incremento e Decremento}
+
+        Os operadores ++ e -- aumentam ou diminuem por um o valor
+        correspondente. O ponto chave é que se o operador for utilizado à
+        esquerda da variável, ou seja prefixado, o valor é adicionado ou
+        subtraído de um antes de sua utilização.
+
+        \texttt{\lstinputlisting[language=C, label=operadoresIncDec,
+        caption={Operadores de Incremento e
+        Decremento}]{cods/operadores4.txt}}
+
+    \subsection{Operadores Lógico, Relacional e Condicional}
+
+        Esses operadores são utilizados em expressões onde o resultado
+        retornado ou a característica é booleana.
+
+        O operador de negação ! retorna o complemento de um valor booleano.
+
+        \texttt{\lstinputlisting[language=C, label=operadoresLogico,
+        caption={Exemplo do operador de negação}]{cods/operadores5.txt}}
+
+        Os operadores relacionais ==, !=, <, >, <=, >=, resultam em um valor
+        booleano e representam igual, não igual ou diferente, menor, maior,
+        menor ou igual e maior ou igual, respectivamente.
+
+        Por exemplo,  a == b quer dizer se a for igual a b, isto é
+        totalmente válido na expressão com tipos primitivos(\emph{value
+        types}), tais como int, long, char, entre outros. Porém o
+        comportamento dos operadores == e != são diferenciados quando
+        utilizado entre \emph{structs} (\emph{value types}) e classes
+        (\emph{reference types}). Para \emph{structs} a comparação deve
+        levar em consideração todos os campos da estrutura. Para classes a
+        comparação é efetuada pelo endereço, ou referência, da classe. O
+        único \emph{reference type} que compara o valor e não a referência é
+        a \emph{string} ou a classe System.String, pois os operadores == e
+        != são sobrecarregados. A sobrecarga pode alterar o comportamento
+        padrão dos operadores.
+
+    \subsection{Operação de Atribuição}
+
+        Estes operadores, divididos entre simples e compostos, são
+        utilizados na designação de um valor para uma variável. O operador =
+        representa a atribuição simples, ou seja uma variável do lado
+        esquerdo recebe o contéudo de um valor, de uma variável ou do
+        resultado de uma expressão do lado direito.
+
+        \texttt{\lstinputlisting[language=C, label=operadoresAtr,
+        caption={Exemplo do operador de atribuição}]{cods/operadores6.txt}}
+
+        Os operadores +=, -=, *=, /=, \%=, \&=, |=, \^=, <<= e >>=
+        representam a atribuição composta, que normalmente atuam como um
+        atalho na construção de uma expressão.
+
+        \texttt{\lstinputlisting[language=C, label=operadoresAtrComp,
+        caption={Exemplo do operador de atribuição
+        composta}]{cods/operadores7.txt}}
+
+    \section{PROGRAMAÇÃO BASEADA EM OBJETOS}
+
+    \subsection{Convenções e Padrões de Nomenclatura}
+
+        As convenções e padrões de nomenclatura auxiliam o desenvolvedor na
+        organização, localização e manutenção de seus códigos. Imagine como
+        seria encontrar a seguinte codificação:
+
+        \texttt{\lstinputlisting[language=C, label=codErrado,
+        caption={Exemplo de codificação sem qualquer padrão de
+        nomenclatura}]{cods/sempadrao.txt}}
+
+        Observe a diferença, se utilizarmos algumas regras de nomenclatura:
+
+        \texttt{\lstinputlisting[language=C, label=codCerto,
+        caption={Exemplo de codificação com padrão de
+        nomenclatura}]{cods/compadrao.txt}}
+
+        Após aplicadas as regras de nomenclaturas, além de saber o que
+        significa cada variável e método, conseguimos ler sem dificuldade as
+        palavras sem os espaços que as separam.
+
+        Para a nomenclatura de classes, como visto no exemplo, deve-se
+        utilizar o seguinte padrão: Primeiro caractere de cada palavra em
+        caixa alta. Chamada de notação \emph{PascalCasing}.
+
+        Para a nomenclatura de métodos, utiliza-se: Primeira letra de cada
+        palavra em caixa alta, menos da primeira. Chamada de notação
+        \emph{camelCasing}.
+
+    \subsubsection{Nomeação de variáveis}
+
+        Recomendação da Microsoft para nomeação de variáveis:
+
+        \begin{itemize}
+            \item Evite usar underline "\_";
+            \item Não crie variáveis com o mesmo nome mudando somente entre maiúsculas e
+            minúsculas;
+            \item Utilize nomes de variáveis com minúsculas;
+            \item Evite utilizar todas as letras maiúsculas (normalmente utilizado para definir constantes);
+            \item Notação \emph{camelCasing}.
+        \end{itemize}
+
+    \subsubsection{Nomeação de classes, métodos, propriedades, entre outros.}
+
+        Recomendações para nomeação de classes, métodos, propriedades,
+        enumeradores, interfaces, constantes, campos somente leitura e
+        namespace: Notação \emph{PascalCasting}.
+
+    \subsection{Classes}
+
+        Uma classe é um poderoso tipo de dado em C\#. Como estrutura, uma
+        classe define os dados e o comportamento dos tipos de dados.
+
+        Uma classe em C\# tem a seguinte estrutura:
+
+        \texttt{\lstinputlisting[language=C, label=classe, caption={Exemplo
+        de Classe em C\#}]{cods/classe.txt}}
+
+        Os atributos definem através de tipos de dados as características
+        que um objeto venha a apresentar. Em uma classe Carro, por exemplo,
+        poderíamos afirmar que cor, peso e modelo seriam seus atributos.
+
+        O método construtor sempre é chamado quando se cria um novo objeto,
+        ele pode ou não conter uma assinatura.
+
+        Os outros métodos definem através de rotinas as ações que um objeto
+        venha a apresentar, No exemplo citado acima, uma classe Carro
+        poderia conter os métodos: acelerar, frear e ligar.
+
+    \subsection{Propriedades}\label{subsec:css}
+
+        As propriedades são recursos fornecidos pelas classes para que seja
+        possível alterar seus valores.
+
+        Os recursos \emph{get} e \emph{set} comuns às propriedades.
+
+        Veja como é possível se definir esses recursos:
+
+        \texttt{\lstinputlisting[language=C, label=propriedades,
+        caption={Exemplo de Propriedades em C\#}]{cods/propriedade.txt}}
+
+    \subsection{Modificadores de visibilidade}
+
+        C\# apresenta os seguintes modificadores de visibilidades:
+
+        \begin{enumerate}
+            \item \emph{private}: Significa que, exceto a classe incluída, nada pode acessar o objeto, método ou
+            variável;
+            \item \emph{public}: Significa que todos têm acesso livre a este
+            membro;
+            \item \emph{protected}: Significa que são apenas visíveis para as classes derivadas por meio de
+            herança;
+            \item \emph{internal}:  todos têm acesso livre a este
+            membro dentro de um assembly (DLL ou EXE; correspondente ao JAR do Java). Fora do assembly a classe é inacessível.
+        \end{enumerate}
+
+        Atributos \emph{internal}, são utilizados geralmente para a criação
+        de bibliotecas, já que uma biblioteca pode ter vários
+        \emph{namespaces}.
+
+        O exemplo a seguir mostra como devemos dispor os modificadores de
+        visibilidade:
+
+        \texttt{\lstinputlisting[language=C, label=modificadoresVis,
+        caption={Exemplo de utilização dos modificadores de visibilidade
+        C\#}]{cods/modificadores.txt}}
+
+    \subsection{Herança}
+
+        A herança é um recurso utilizado para derivar classes que têm
+        métodos ou atributos em comum. Sua principal vantagem é o
+        reaproveitamento de código.
+
+        Para ilustrar a utilização do recurso de herança, imagine a seguinte
+        situação:
+
+        \begin{cite}
+            Em um determinado programa, deve-se implementar as seguintes
+            classes: Fornecedor(id, cnpf, rua, numero, bairro, telefone,
+            email, gerente) e Cliente(id, cpf, rua, numero, bairro, telefone,
+            email, limiteDeCompras). O programa deve cadastrar essas
+            informações, bem como consulta-las e imprimi-las.
+        \end{cite}
+
+        Se o programador optar por utilizar herança, os atributos e métodos
+        em comum:
+
+        \begin{itemize}
+            \item Atributos:
+            \begin{itemize}
+                \item rua;
+                \item numero;
+                \item bairro;
+                \item telefone;
+                \item email.
+            \end{itemize}
+            \item Metodos:
+            \begin{itemize}
+                \item cadastrar();
+                \item consultar();
+                \item imprimir().
+            \end{itemize}
+        \end{itemize}
+
+        Poderiam ser escritos em uma "Pai"{} chamada Pessoa que derivaria as
+        duas classes filhas Fornecedor e Cliente.
+
+        Em C\# todas as classes derivam da classe \emph{Object}.
+
+        Sua declaração deve acontecer da seguinte maneira:
+
+        \texttt{\lstinputlisting[language=C, label=Heranca, caption={Exemplo
+        de declaração de herança em C\#}]{cods/heranca.txt}}
+
+    \subsubsection{\emph{This} e \emph{Base}}
+
+        As cláusulas \emph{this} e \emph{base} são referências que indicam a
+        propria classe e a classe base, respectivamente.
+
+        Entende-se como classe base, a classe cuja a classe atual herda as
+        propriedades e atributos.
+
+        Sua notação pode ser observada no seguinte exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=thisBase,
+        caption={Exemplo de \emph{this} e \emph{base} em
+        C\#}]{cods/thisbase.txt}}
+
+    \subsection{Declaração e Chamada de Métodos e Objetos}
+
+        Para se instanciar um objeto deve-se utilizar a operação \emph{new}.
+        Essa operação atribui um $<$objeto$>$ montado dentro de uma variável
+        do tipo $<$objeto$>$.
+
+        Utiliza-se a seguinte notação:
+
+        \texttt{\lstinputlisting[language=C, label=instObjeto,
+        caption={Exemplo instanciação de objeto em C\#}]{cods/instobj.txt}}
+
+        Para acessar seus atributos e métodos utilizamos a instrução ".",
+        como pode ser observado no exemplo a seguir:
+
+        \texttt{\lstinputlisting[language=C, label=acessoAtrMet,
+        caption={Exemplo acesso a atributos e métodos em
+        C\#}]{cods/acessoatrmet.txt}}
+
+        Entretanto como já foi explanado, atributos com modificador de
+        acesso do tipo \emph{private} não possibilitam o acesso direto, para
+        isso devemos utilizar as propriedades explanadas na sessão
+        \ref{subsec:css}.
+
+    \subsection{Métodos e Atributos \emph{Static}}
+
+        A operação \emph{static} define um método ou atributo como
+        pertencentes à classe em questão e não aos objetos, assim sendo
+        esses atributos ou métodos terão apenas 1 cópia para $n$ objetos que
+        gerarem.
+
+        Sua declaração é feita com a palavra \emph{static} depois do
+        modificador de acesso (\emph{public, private}) e antes do tipo de
+        dado (\emph{int, string}).
+
+        O seu acesso é feito pelo nome da classe e não mais pela referência
+        da classe ou pelo nome do objeto.
+
+        Veja no exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=static, caption={Exemplo
+        acesso a atributos e métodos estáticos em C\#}]{cods/static.txt}}
+
+    \subsection{\emph{Const} e \emph{ReadOnly}}
+
+        São operadores utilizados para a criação de constantes, cujos os
+        valores não poderão ser alterados durante a execução do programa.
+
+        Algumas diferenças entre os operadores:
+
+        \begin{itemize}
+            \item \emph{const}:
+            \begin{itemize}
+                \item Não pode ser estático (\emph{static});
+                \item O valor é setado em tempo de compilação;
+                \item É inicializado somente na compilação.
+            \end{itemize}
+            \item \emph{readonly}:
+            \begin{itemize}
+                \item Pode ser estático (\emph{static});
+                \item O valor é setado em tempo de execução;
+                \item Pode ser inicializado na declaração ou na codificação
+                do construtor.
+            \end{itemize}
+        \end{itemize}
+
+    \subsection{Classes e Métodos Abstratos}
+
+        A classe abstrata é um tipo de classe que somente pode ser herdada e
+        não instanciada, de certa forma pode se dizer que este tipo de
+        classe é uma classe conceitual que pode definir funcionalidades para
+        que as suas subclasses (classes que herdam desta classe) possam
+        implementa-las de forma não obrigatória, ou seja ao se definir um
+        conjunto de métodos na classe abstrata não é de total
+        obrigatoriedade a implementação de todos os métodos em suas
+        subclasses, em uma classe abstrata os métodos declarados podem ser
+        abstratos ou não, e suas implementações devem ser obrigatórias na
+        subclasse ou não, quando criamos um método abstrato em uma classe
+        abstrata sua implementação é obrigatória, caso você não implemente o
+        mesmo o compilador criará um erro em tempo de compilação.
+
+        O mesmo se têm com métodos abstratos, não se pode herda-los.
+
+        \texttt{\lstinputlisting[language=C, label=abstract,
+        caption={Exemplo de implementação de uma classe abstrata em
+        C\#}]{cods/abstract.txt}}
+
+    \subsection{Interfaces}
+
+        As interfaces são fundamentais em um sistema orientado a objetos,
+        quando dizemos que um objeto é a instancia de uma classe, na verdade
+        queremos dizer, que este objeto implementa a interface definida pela
+        classe, ou seja uma interface define as operações que um objeto será
+        obrigado a implementar. Para cada operação declarada por um objeto
+        deve ser especificado o nome da operação, os objetos que esta
+        operação aceita como parâmetro e o tipo de valor retornado pela
+        operação; este conjunto de informações sobre uma determinada
+        operação tem o nome de assinatura da operação, e um conjunto de
+        assinaturas de operações dá-se o nome de interface.
+
+        É importante lembrar que uma interface nunca contém implementação,
+        ou seja numa interface não se pode definir campos, pois o mesmo é
+        uma implementação de um atributo objeto, a interface também não
+        permite construtores pois num contrutor temos as instruções usadas
+        para inicializar campos. Para podermos usar uma interface devemos
+        criar uma classe ou estrutura e herdar da interface, com isso é
+        obrigatório implementar todos os métodos da interface.
+
+        \texttt{\lstinputlisting[language=C, label=interface,
+        caption={Exemplo de implementação de uma interface em
+        C\#}]{cods/interface.txt}}
+
+        Note que, para se sobrescrever um método da interface utilizamos
+        \emph{$<$Interface$>$.$<$Metodo$>$}. Código \ref{interface}, Linha
+        8.
+
+        A declaração de uma instância de uma interface é feita de forma
+        diferente da declaração de um objeto normal, aqui temos: Interface
+        $<$var$>$ = new $<$ClasseQueImplementaAInterface$>$(); Código
+        \ref{interface}, Linha 15.
+
+    \subsection{Métodos Virtuais}
+
+        Quando queremos possibilitar a algum método que ele seja
+        sobrescrito, utilizamos o operador \emph{virtual}. Os métodos
+        virtuais podem possuir corpo.
+
+        Caso um método não seja declarado como \emph{virtual} ou
+        \emph{abstract} não será possível a sua sobrescrita.
+
+    \subsection{Classes e Métodos \emph{sealed} - Finais}
+
+        Uma classe selada é utilizada para restringir características da
+        herança do objeto, quando uma classe é definida como sealed , está
+        classe não poderá ser  herdada, caso você tente o compilador criara
+        um erro em tempo de compilação, após criar uma classe selada pode se
+        observar que o intelisense (famoso ctrl + espaço) não mostra o nome
+        da classe definida como sealed quando você tenta criar uma herança
+        para novas classes.
+
+        Os métodos declarados como \emph{sealed} também não poderão ser
+        sobrescritos.
+
+        \texttt{\lstinputlisting[language=C, label=seled, caption={Exemplo
+        de implementação de uma classe \emph{sealed} em
+        C\#}]{cods/seled.txt}}
+
+    \subsection{Então, quando devo utilizar o que?}
+
+        Classes Abstratas podem adicionar mais funcionalidades, sem destruir
+        as funcionalidades das classes filhos que poderiam estar usando uma
+        versão mais antiga. Elas fornecem uma maneira simples e fácil para
+        versionar nossos componentes. Através da atualização da classe base,
+        todas as classes que herdam são atualizadas automaticamente com a
+        mudança.
+
+        Em uma interface, a criação de funções adicionais terá um efeito
+        sobre suas classes filhos, devido à necessidade de implementação dos
+        Métodos criados na interface.
+
+        Classes abstratas deveriam ser usadas principalmente para objetos
+        que estão estritamente relacionados, enquanto o uso de interfaces é
+        mais adequado para fornecer funcionalidade comum a classes
+        independentes. Digamos que existem duas classes, de passaros e de
+        aviões, e nas duas existam os métodos chamados voar(). Seria
+        estranho para uma classe aviões herdar a partir de umas classe
+        passaros apenas porque necessita do método voar(). Em vez disso, o
+        método voar() deve ser definido em uma interface e em ambas as
+        classes passaros e aviões devem implementar a interface. Se queremos
+        proporcionar uma funcionalidade em comum para os componentes,
+        devemos utilizar uma classe abstrata.
+
+        Classes abstratas nos permite implementar parcialmente uma classe,
+        enquanto a interface não contem a implementação de qualquer membro.
+        Por isso, a seleção de interface ou classes abstratas depende das
+        necessidades e design do nosso projeto. Podemos fazer uma classe
+        abstrata, interface, ou até uma combinação de ambas dependendo de
+        nossas necessidades. Se desejarmos criar uma classe ou método
+        interno para um componente ou library o ideal é utilizar o tipo
+        \emph{sealed} porque qualquer tentativa de anular algumas das suas
+        funcionalidades não será permitida.
+
+        Nós podemos marcar uma classe ou método como selados por motivos
+        comerciais, a fim de impedir um terceiro de modificar nossa classe.
+        Por exemplo, no .NET a string é uma classe selada. Não devemos usar
+        a palavra-chave \emph{sealed} com um método a menos que o método
+        seja uma mudança de outro método, ou se estamos definindo um novo
+        método e não queremos que ninguém mais sobreponha-o, não se deve
+        declará-lo como virtual em primeiro lugar. A palavra-chave selado
+        fornece uma maneira de garantir que ao sobrepor um método seja
+        fornecido um "final" significa que ninguém mais poderá sobrepor-lo
+        novamente.
+
+    \section{TRATAMENTO DE ERROS E EXCEÇÕES}
+
+        No mundo dos \emph{frameworks} e linguagens de programação, as
+        excessões, ações que causam anômalias nas aplicações são tratadas de
+        diversas formas. O .NET \emph{Framework} elege, pelo poder e pela
+        flexibilidade, o tratamento de excessões estruturadas. Desta forma o
+        C\# também utiliza-se deste modelo estruturado, uniforme e
+        \emph{type-safe}.
+
+        Quando uma excessão ocorre, um objeto herdado de \emph{System.Exception}, é
+        criado para representá-la. O modelo orientado à objetos permite que
+        seja criada uma excessão definida pelo usuário que é herdada de
+        System.Exception ou de uma outra classe de excessão pré-definida. As
+        excessões pré-definas mais comuns são apresentadas na Tabela
+        \ref{tab:excessoes}.
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:excessoes}
+            \caption{Classes de excessões mais comuns em C\#}
+            \begin{tabular}{|l|p{8cm}|}
+                \hline
+                Excessão & Descrição (disparado quando) \\
+                \hline
+                System.OutOfMemoryException & alocação de memória, através de new, falha. \\
+                \hline
+                System.StackOverflowException & quando a pilha(stack) está cheia e sobrecarregada. \\
+                \hline
+                System.NullReferenceException & uma referência nula(null) é utilizada indevidamente.  \\
+                \hline
+                System.TypeInitializationException & um construtor estático dispara uma excessão. \\
+                \hline
+                System.InvalidCastException & uma conversão explícita falha em tempo de execução. \\
+                \hline
+                System.ArrayTypeMismatchException & o armazenamento dentro de um array falha. \\
+                \hline
+                System.IndexOutOfRangeException & o índice do array é menor que zero ou fora do limite. \\
+                \hline
+                System.MulticastNotSupportedException & a combinação de dois delegates não nulo falham. \\
+                \hline
+                System.ArithmeticException & DivideByZeroException e OverflowException. Base aritmética. \\
+                \hline
+                System.DivideByZeroException & ocorre uma divisão por zero. \\
+                \hline
+                System.OverflowException & ocorre um overflow numa operação aritmética. Checked. \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+        As excessões podem ser disparadas de duas formas: através do comando
+        throw, fornecendo a instância de uma classe herdada de
+        System.Exception, ou em certas circunstâncias durante o
+        processamento dos comandos e expressões que não podem ser
+        completadas normalmente.
+
+        Os comando em C\# para utilização do tratamento de excessões
+        estruturados são: \emph{try} - bloco de proteção do código,
+        \emph{catch} - filtra e trata a excessão, \emph{finally} - sempre
+        executado após o disparo da excessão ou não, e \emph{throw} -
+        dispara uma excessão.
+
+    \subsection{Comando \emph{throw}}
+
+        O comando \emph{throw} é utilizado para disparar ou sinalizar a
+        ocorrência de uma situação inesperada durante a execução do
+        programa, ou seja uma excessão. O parâmetro seguido deve ser da
+        classe System.Exception ou derivada.
+
+        \texttt{\lstinputlisting[language=C, label=excessaoTheow,
+        caption={Exemplo de utilização do comando throw}]{cods/throw.txt}}
+
+    \subsection{Bloco \emph{try} - \emph{catch}}
+
+        Uma ou mais instruções \emph{catch} são colocadas logo abaixo do
+        bloco \emph{try} para interceptar uma excessão. Dentro do bloco
+        \emph{catch} é encontrado o código de tratamento da excessão. O
+        tratamento da excessão trabalha de forma hierárquica, ou seja quando
+        uma excessão é disparada, cada \emph{catch} é verificado de acordo
+        com a excessão e se a excessão ou derivada dela é encontrada o bloco
+        será executado e os outros desprezados, por isso, na implementação é
+        muito importante a sequência dos blocos catch. O catch também pode
+        ser encontrado na sua forma isolada, tratando qualquer excessão não
+        detalhada.
+
+        \texttt{\lstinputlisting[language=C, label=excessaoCatch,
+        caption={Exemplo de utilização do bloco \emph{try} -
+        \emph{catch}}]{cods/catch.txt}}
+
+            \subsection{Bloco \emph{try} - \emph{finally}}
+
+        A instrução finally garante a execução de seu bloco, independente
+        da excessão ocorrer no bloco try.
+
+        Tradicionalmente o bloco finally é utilizado para liberação de
+        recursos consumidos, por exemplo fechar um arquivo ou uma conexão.
+
+        \texttt{\lstinputlisting[language=C, label=excessaoFinally,
+        caption={Exemplo de utilização do bloco \emph{try} -
+        \emph{finally}}]{cods/finally.txt}}
+
+        Se não tratada, o comportamento de qualquer excessão é de
+        terminação, como podemos concluir no exemplo acima. Lembrando que, o
+        tratamento de uma excessão, ou sua interceptação, é feita no bloco
+        catch.
+
+    \subsection{Bloco \emph{try} - \emph{catch} - \emph{finally}}
+
+        Os comandos try, catch e finally podem ser utilizados em conjunto,
+        como pode ser visto no proximo exemplo:
+
+        \texttt{\lstinputlisting[language=C, label=excessaoTriCatchFinally,
+        caption={Exemplo de utilização do bloco \emph{try} - \emph{catch} -
+        \emph{finally}}]{cods/trycatchfinally.txt}}
+
+    \subsection{A classe Exception}
+
+        A forma mais comum e generalizada de disparo de uma excessão é
+        através da classe base Exception. Ela fornece as informações
+        necessárias para tratamento das excessões, possuindo alguns membros,
+        métodos e propriedades, que trazem as informações necessárias
+        decorrentes do erro. Normalmente uma instância de classe, ou
+        derivada, é utilizada através de um bloco catch, como vimos nos
+        exemplos anteriores.
+
+        Vamos descrever alguns membros da classe \emph{Exception}:
+
+            \begin{itemize}
+                \item \emph{Message}: retorna uma string com o texto da mensagem de erro.
+                \item \emph{Source}: possui ou define a uma string com o texto da origem(aplicação ou objeto) do erro.
+                \item \emph{HelpLink}: possui uma string com o link(URN ou URL) para arquivo de ajuda.
+                \item \emph{StackTrace}: possui uma string com a sequência de chamadas na stack.
+                \item \emph{InnerException}: retorna uma referêrencia para uma excessão interna.
+                \item \emph{TargetSite}: retorna o método que disparou esta excessão.
+                \item \emph{GetBaseException}: retorna uma referêrencia para uma excessão interna.
+                \item \emph{SetHelpLink}: define o link(URN ou URL) para arquivo de ajuda.
+            \end{itemize}
+
+        \texttt{\lstinputlisting[language=C, label=excessaoClass,
+        caption={Membros da classe
+        \emph{Exception}}]{cods/excessaoclass.txt}}
+
+    \section{MANIPULAÇÃO DE ARQUIVOS}
+
+        Com a manipulação de arquivos, podemos criar, editar e excluir
+        arquivos ou diretórios.
+
+        Para que possamos trabalhar com as classes referente a manipulação
+        de arquivos devemos utilizar o pacote: \texttt{System.IO} (IO
+        \emph{Input}/\emph{Output} significa Entrada/Saída).
+
+        As principais classes que estão nesse pacote:
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:classesIO}
+            \caption{Principais classes do System.IO}
+            \begin{tabular}{|l|p{8cm}|}
+                \hline
+                Classe & Uso \\
+                \hline
+                Directory, File, DirectoryInfo, e FileInfo & Cria, exclui e move arquivos e diretórios. Ainda retorna informações específicas sobre arquivos ou diretórios \\
+                \hline
+                FileStream & Usado para escrever/ler informações em arquivo com ajuda das classes StreamReader e StreamWriter  \\
+                \hline
+                StreamWriter e StreamReader & Lê e escreve um informação textual  \\
+                \hline
+                StringReader e StringWriter & Lê e escreve um informação textual a partir de um \emph{buffer} de string \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \subsection{Classes \emph{DirectoryInfo} e \emph{FileInfo}}
+
+        É possível recuperar algumas informações de arquivos e diretórios,
+        como data de criação, extensão, entre outros. Para isso utiliza-se
+        em C\# as classes \emph{DirectoryInfo} e \emph{FileInfo}.
+
+        Utiliza-se \emph{DirectoryInfo} quando se deseja informações sobre
+        um diretório, e \emph{FileInfo} para informações de um arquivo.
+
+        A seguir estão listadas algumas propriedades e métodos que essas
+        classes oferecem:
+
+        \begin{table}[!htb]
+            \centering
+            \label{tab:atributosDirFile}
+            \caption{Propriedades e métodos de \emph{DirectoryInfo} e \emph{FileInfo}}
+            \begin{tabular}{|l|p{8cm}|}
+                \hline
+                Propriedade/Método & Uso \\
+                \hline
+                Attributes & Retorna os atributos associados aos arquivos \\
+                \hline
+                CreationTime & Retorna a hora de criação do arquivo  \\
+                \hline
+                Exists & Checa se o arquivo/diretório existe \\
+                \hline
+                Extension & Retorna a extensão do arquivo \\
+                \hline
+                LastAccessTime & Retorna a hora do último acesso \\
+                \hline
+                FullName & Retorna o nome completo do arquivo/diretório \\
+                \hline
+                LastWriteTime & Retorna a hora da ultima escrita no arquivo/diretório \\
+                \hline
+                Name & Retorna o nome do arquivo/diretório \\
+                \hline
+                Delete() & Exclui o arquivo/diretório \\
+                \hline
+            \end{tabular}
+        \end{table}
+
+    \subsubsection{Criando diretórios e subdiretórios}
+
+        Para criar um diretório utiliza-se a seguinte notação:
+
+        \texttt{\lstinputlisting[language=C, label=diretorio,
+        caption={Criação de diretório}]{cods/diretorio.txt}}
+
+        Para criar um subdiretório:
+
+        \texttt{\lstinputlisting[language=C, label=subdiretorio,
+        caption={Criação de subdiretórios}]{cods/subdiretorio.txt}}
+
+    \subsubsection{Acessando as propriedades}
+
+        Para acessar as propriedades de um diretório utiliza-se a seguinte
+        notação:
+
+        \texttt{\lstinputlisting[language=C, label=propriedades,
+        caption={Propriedades de um diretório}]{cods/propriedades.txt}}
+
+        Abaixo um exemplo de acesso às propriedades de arquivos:
+
+        \texttt{\lstinputlisting[language=C, label=propriedadesarquivos,
+        caption={Propriedades de arquivos}]{cods/propriedadesarquivo.txt}}
+
+    \subsection{Criando arquivos usando a classe \emph{FileInfo}}
+
+        Com a classe \emph{FileInfo}, é possível criar novos arquivos,
+        acessar suas informações, exclui-los e move-los. Essa classe também
+        oferece métodos para abrir, ler e escrever um arquivo.
+
+        O seguinte exemplo mostra como é possível criar um arquivo texto e
+        acessar suas informações.
+
+        \texttt{\lstinputlisting[language=C, label=fileinfo,
+        caption={Criando arquivos com a classe
+        FileInfo}]{cods/fileinfo.txt}}
+
+    \subsubsection{Entendendo o método \emph{Open()}}
+
+        Com o método \emph{Open()}, disponível na classe \emph{FileInfo}, é
+        possível abrir um arquivo. Deve-se passar no construtor, o modo de
+        abertura e acesso ao arquivo.
+
+        O seguinte exemplo ilustra essa situação:
+
+        \texttt{\lstinputlisting[language=C, label=fileinfoopen,
+        caption={Abrindo arquivos com a classe
+        FileInfo}]{cods/fileinfoopen.txt}}
+
+    \subsubsection{Entendendo a classe \emph{FileStream}}
+
+        Ao abrir ou criar nossos arquivos, o atribuímos para a classe
+        \emph{FileStream}. Ela pode escrever ou ler arquivos, com a ajuda
+        das classes \emph{StreamWriter} e \emph{StreamReader}.
+
+        O exemplo a seguir ilustra como isso é possível:
+
+        \texttt{\lstinputlisting[language=C, label=filestream,
+        caption={Escrevendo/Lendo com FileStream}]{cods/filestream.txt}}
+
+    \subsubsection{Métodos \emph{CreateText()} e \emph{OpenText()}}
+
+        O método \emph{CreateText()} retorna um \emph{StreamWriter} que vai
+        escrever um arquivo. O método \emph{OpenText()} retorna um
+        \emph{StreamReader} que vai ler um arquivo.
+
+        Esses métodos são utilizados quando trabalha-se com arquivos de
+        texto puro.
+
+        Exemplos de utilização dos métodos:
+
+        \texttt{\lstinputlisting[language=C, label=createopentext,
+        caption={CreateText e OpenText}]{cods/createopentext.txt}}
+
+    \section{APROFUNDANDO EM WINDOWS FORMS}
+
+Um programa dificilmente é desenvolvido com apenas um formulário
+(\emph{Form}). Sempre temos vários deles nos nossos programas, vamos
+estudar neste capitulo como trabalhar com varios formulários. Além
+disso, vamos estudar as propriedades mais importantes dos
+formulários.
+
+Basicamente podemos ter os seguintes tipos de interface Windows:
+
+\begin{itemize}
+    \item MDI (\emph{Multiple Document Interface}): Aplicação que suporta múltiplos
+    documentos abertos simultaneamente, como o Word por exemplo.
+    \item SDI (\emph{Single Document Interface}): Aplicação que permite a abertura de
+    apenas um documento de cada vez. Exemplo: O Paint do Windows, a
+    calculadora, o Internet Explorer.
+    \item Janelas modais. Exemplo: As janelas informativas conhecidas como
+    diálogos.
+\end{itemize}
+
+    \subsection{Aplicações MDI}
+
+As aplicações MDI têm como objetivo criar várias instâncias (filhos)
+dentro de uma aplicação principal (pai). Por esse motivo temos que
+seguir alguns passos para configurar esse ambiente.
+
+Para definir uma janela como principal (janela pai) altera-se a
+propriedade \texttt{isMdiContainer = true} ainda em tempo de
+compilação.
+
+    \subsubsection{Adicionando uma nova janela filha}
+
+Para adicionar uma nova janela filha, devemos inserir um novo
+formulário ao projeto: menu \emph{File/Add} $>$ \emph{New Item},
+selecione \emph{Windows Forms}.
+
+Ao instanciarmos uma nova janela filha utilizamos a seguinte
+codificação:
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Janela filha (MDI)}]{cods/mdifilha.txt}}}
+
+O que se fez aqui?
+
+\begin{itemize}
+    \item Criamos uma nova instância do formulário que constitui a nossa janela
+    filha;
+    \item Em seguida, definimos o pai da janela filha ajustando a propriedade \texttt{MdiParent}
+    do formulário como sendo o formulário principal. Por essa razão,
+    atribuímos a essa propriedade o valor this, indicando que a janela
+    pai é o objeto correspondente ao formulário principal.
+    \item Finalmente mostramos a janela filha chamando o método \emph{Show()}.
+\end{itemize}
+
+    \subsubsection{Fechando uma janela filha}
+
+Para fechar uma janela filha MDI ativa utiliza-se a seguinte
+notação:
+
+\texttt{\lstinputlisting[language=C, label=mdifechaFilha,
+caption={Fechar janela filha (MDI)}]{cods/mdifechafilha.txt}}
+
+    \subsection{Aplicações SDI}
+
+Sempre que você cria uma Windows Application um formulário já é
+criado por padrão, ele é conhecido como formulário Base.
+
+Para adicionar um novo formulário no seu programa você:
+
+\begin{enumerate}
+    \item Na janela \emph{Solution Explorer}, clique com o botão direito no nome do
+projeto, selecione \emph{Add} e clique em \emph{Windows Form};
+    \item Digite um nome para o novo formulário e clique em \emph{Add}.
+\end{enumerate}
+
+    \subsubsection{Exemplo múltiplos formulários}
+
+Vamos fazer um exemplo que ilustra como podemos trabalhar com
+múltiplos formulário:
+
+\begin{enumerate}
+    \item Crie uma Windows Application chamada Formulários;
+    \item Arraste 2 \emph{buttons} para o Form1;
+    \item Mude as propriedades \emph{Text} dos \emph{Buttons} 1 e 2 para Vermelho e Verde
+    respectivamente;
+    \item Adicione mais dois formulários no projeto;
+    \item Mude o nome do \emph{Form2} para frmVermelho e do Form3 para frmVerde. Para
+    isso clique sobre o nome do \emph{Form} no \emph{Solution Explorer} e
+    clique em \emph{Rename};
+    \begin{itemize}
+        \item Se a uma mensagem de confirmação aparecer, clique em Sim. Isso vai atualizar todas as
+        referencias ao \emph{form} do projeto para o novo nome.
+    \end{itemize}
+    \item Mude a propriedade \emph{BackColor} do frmVermelho para a cor
+    Vermelha;
+    \item Mude a propriedade \emph{BackColor} do frmVerde para Verde;
+    \item No Form1 de um clique duplo sobre o botão Vermelho e digite o seguinte
+    código dentro do procedimento do evento \emph{click}:
+        \texttt{\lstinputlisting[language=C, label=formShow,
+        caption={Código para exibir formulário}]{cods/show.txt}}
+    \item Faça o mesmo para o botão Verde mas digite o seguinte código:
+        \texttt{\lstinputlisting[language=C, label=formShowDialog,
+        caption={Código para exibir formulário com show dialog}]{cods/showdialog.txt}}
+    \item Execute a aplicação.
+\end{enumerate}
+
+Note que para a chamada de um formulário é necessário que o mesmo
+seja instanciado.
+
+Com o formulário Vermelho aberto, perceba que você pode clicar
+novamente no Form1 e depois voltar para o Vermelho e assim por
+diante, o que não acontece com o formulário Verde. Isso porque
+usamos o método ShowDialog ao invés do método Show.
+
+    \subsection{Passando valores entre Forms}
+
+Continuando com o exemplo anterior, vamos alterar um componente de
+um formulário, em outro:
+
+\begin{enumerate}
+    \item Adicione 1 \emph{button} e 1 \emph{label} no formulário
+    frmVermelho;
+    \item Vá para o painel de código do frmVermelho e dentro da classe frmVermelho
+    digite o seguinte código:
+        \texttt{\lstinputlisting[language=C, label=formString,
+        caption={Variável pública do tipo string}]{cods/formstring.txt}}
+    Isso cria uma variável publica do tipo string chamada Mensagem.
+    \item Vá para o Form1 e de um clique duplo sobre o botão Vermelho.
+    \item Adicione o seguinte código:
+        \texttt{\lstinputlisting[language=C, label=formModigicaString,
+        caption={Modificando o valor da string}]{cods/formmodificastring.txt}}
+    \item Volte para o frmVermelho, de um clique duplo sobre o button1 e digite o
+    seguinte código no procedimento:
+        \texttt{\lstinputlisting[language=C, label=formLabelString,
+        caption={Modificando o valor da label para um string local}]{cods/formmodificastringlabel.txt}}
+        Isso adiciona o conteúdo da variável mensagem no Label1.
+    \item Execute a aplicação.
+\end{enumerate}
+
+O conteúdo da variável foi exibida no label1. O mais importante
+desta lição é que você agora é capaz de passar valores entre
+formulários.
+
+    \subsection{Posicionando os formulários na tela}
+
+Por questões de estética, temos a possibilidade de alterar algumas
+propriedades dos componentes para que eles se tornem mais
+apresentáveis. O posicionamento de formulário na tela ilustra uma
+dessas possibilidades.
+
+Vamos estudar algumas modificações na propriedade
+\emph{StartPosition}.
+
+\begin{itemize}
+    \item \emph{CenterScreen}: Essa propriedade faz com que o formulário em questão seja exibido no centro da
+    tela;
+    \item \emph{Manual}: Deve-se especificar manualmente como os valores que serão usados para
+    posicionar o formulário na tela.
+    \begin{itemize}
+        \item A propriedade location faz o posicionamento ${x, y}$
+        do formulário na tela. Se alterarmos a propriedade para
+        (100, 50), o formulário será exibido a 100 pixels da lateral esquerda e 50 pixels do topo da
+        tela.
+    \end{itemize}
+\end{itemize}
+
+A propriedade \emph{WindowsState} altera o estado inicial do meu
+formulário principal:
+
+\begin{itemize}
+    \item \emph{Normal}: Abre o formulário em seu estado inicial;
+    \item \emph{Minimized}: Abre o formulário minimizado na barra de
+    tarefas;
+    \item \emph{Maximized}: Abre o formulário maximizado.
+\end{itemize}
+
+
+    \subsection{Controlando os eventos dos formulários}
+
+Os eventos são ações atribuídas ao comportamento do formulário.
+Sempre que um evento ocorre um bloco de código pode ser processado,
+esse bloco de código é conhecido como \emph{Manipulador de Evento}.
+
+O \emph{.NET Framework} usa uma nomeação padrão para os
+\emph{Manipuladores de Eventos}. Essa nomeação combina o nome do
+objeto com o evento correspondente ligando-os por um underline,
+exemplo: button1\_Click; form1\_Load.
+
+    \newpage
+
+    \section{CONEXÃO COM BANCO DE DADOS}
+
+    \subsection{O que é o ADO.NET ?}
+
+O ADO.NET é uma nova tecnologia baseada no ADO (\emph{Active Data
+Objects}), com muito mais recursos. O ADO.NET possui um modelo para
+manipulação de dados completamente diferente da versão anterior do
+ADO, simplificando o processo de conexão e manipulação de dados.
+
+A arquitetura do ADO.NET foi criada para trabalhar com um ambiente
+desconectado, ou seja, buscamos as informações do banco de dados e
+trazemos para a memória da aplicação. A manipulação dos dados é
+feita toda em memória e posteriormente enviada ao banco de dados.
+
+Por trabalhar de uma forma voltada ao modelo desconectado, o ADO.NET
+possui uma camada de persistência em XML. É possível gravar e ler
+todo o conteúdo de todo um conjunto de armazenado nas estruturas do
+ADO.NET em XML.
+
+O ADO.NET faz parte do .NET Framework, e é composto por um conjunto
+de classes, interfaces, tipos e enumerações.
+
+    \subsection{Os \emph{namespaces} relacionados ao ADO.NET}
+
+Para trabalharmos com o ADO.NET em uma aplicação .NET, é necessário
+utilizarmos algumas das \emph{namespaces} disponíveis nas
+bibliotecas do .NET Framework. Alguns dos principais
+\emph{namespace} são:
+
+\begin{itemize}
+    \item \emph{System.Data}: Contém a infra-estrutura básica para trabalharmos com qualquer base de dados relacional. Neste \emph{namespace} encontramos as classes responsáveis por armazenar as estruturas dos bancos relacionais em memória;
+    \item \emph{System.Data.Common}: Contém as interfaces comuns a todos os bancos de dados. Este \emph{namespace} é utilizado internamente pelo framework e por fabricantes de bancos de dados, para a construção de bibliotecas de acesso;
+    \item \emph{System.Data.SqlClient}: Biblioteca de acesso ao SQL Server. Permite a conexão, a extração e a execução de comandos em servidores SQL Server de versão 7 ou superior;
+    \item \emph{System.Data.OleDb}: Biblioteca de acesso para bancos de dados que suportam OleDb. Permite conexão, a extração e a execução de comandos nestes bancos de dados. É necessário informar o provedor \emph{OleDb} a ser utilizado. Permite acesso a bancos mais simples, como o Access;
+    \item \emph{System.Data.SqlTypes}: Contém a definição dos tipos nativos do SQL Server;
+    \item \emph{System.XML}: Contém as classes para manipulação de documentos XML. Como o ADO.NET possui uma camada de persistência em XML, este \emph{namespace} é amplamente utilizado.
+\end{itemize}
+
+    \subsection{O modelo de execução do ADO.NET}
+
+O ADO.NET provê uma estrutura de acesso a dados que permite o acesso
+a múltiplas bases de dados simultaneamente. É possível armazenar
+duas tabelas de diferentes bancos de dados (SQL Server e Access por
+exemplo) em uma mesma estrutura de dados (DataSet).
+
+A estrutura responsável pelo armazenamento dos dados é o
+\emph{DataSet}, que contém um conjunto de objetos
+(\emph{DataTables}) que representam resultados tabulares extraídos
+da base de dados.
+
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/dataProvider.jpg}
+            \caption{Esquema acesso ao banco de dados}
+        \end{center}
+    \end{figure}
+
+Para fazer a extração dos dados, o ADO.NET utiliza os chamados ".NET
+Data Providers". Os \emph{Data Providers} são bibliotecas de classes
+especializadas para o acesso a um tipo de banco de dados relacional.
+Por serem uma implementação específica para o banco de dados, estas
+possuem um acesso bem mais eficiente do que outras bibliotecas como
+a OleDb.
+
+Segue uma lista de data providers disponíveis para os bancos
+citados:
+
+\begin{itemize}
+    \item Firebird .NET Data Provider;
+    \item MySQL .NET Data Provider;
+    \item Npgsql .NET Data Provider;
+\end{itemize}
+
+Apesar de serem uma implementação específica para um tipo de banco
+de dados, as classes dos \emph{Data Providers} possuem uma estrutura
+comum.
+
+    \subsection{O modelo de execução em um ambiente conectado}
+
+O ADO.NET é capaz de trabalhar com dois modelos, o modelo conectado
+e o modelo desconectado. No modelo conectado é necessário manter a
+conexão aberta enquanto são realizadas as operações de leitura e
+gravação.
+
+Para trabalharmos em um modelo conectado, devemos observar alguns
+objetos disponíveis nas classes dos .NET \emph{Data Providers}, que
+devem ser utilizados na seguinte ordem:
+
+\begin{itemize}
+
+    \item \emph{XxxConnection}: É o objeto utilizado para estabelecer a conexão com o banco. É necessário informar os parâmetros de conexão e abrir a conexão com o banco. Exemplos dessa classe são \emph{SqlConnection} e \emph{OleDbConnection};
+    \item \emph{XxxCommand}: É um objeto utilizado para enviar comandos a base de dados. É necessário montar a cláusula Sql desejada e informar ao objeto de comando. Ao executar o comando, este pode devolver um objeto do tipo \emph{XxxDataReader};
+    \item \emph{XxxDataReader}: É um objeto utilizado para ler dados de um comando executado. O método Read lê os dados de registro em registro. Após a leitura completa dos dados é necessário fechar o \emph{DataReader} e a conexão;
+
+\end{itemize}
+
+    \subsection{O modelo de execução em um ambiente desconectado}
+
+O modelo de execução em um ambiente desconectado utiliza outros
+objetos. Neste modelo utilizamos o objeto \emph{DataSet} para
+armazenar e manipular os dados em memória e o objeto
+\emph{XxxDataAdapter} para extrair e enviar as alterações ao banco
+de dados. O objeto de conexão também é utilizado neste modelo.
+
+Os passos para extração e manipulação dos dados em um ambiente
+desconectado são:
+
+\begin{enumerate}
+
+    \item É aberta uma conexão utilizando um objeto \emph{XxxConnection} (\emph{OleDbConnection} ou \emph{SqlConnection} por exemplo);
+    \item É criado um objeto do tipo \emph{XxxDataAdapter} que é responsável por fazer a extração de dados do banco de dados para a memória e o posterior envio dos dados da memória para o banco de dados;
+    \item Utilizando o método \emph{Fill}, extraímos os dados da base de dados e armazenamos em um \emph{DataSet}. Neste momento fechamos a conexão com o banco pois os dados já estão na memória da aplicação para serem manipulados;
+    \item Como os dados estão em memória, é possível inserir, remover ou alterar registros do \emph{DataSet};
+    \item Ao finalizar as alterações, restabelecemos a conexão com o banco de dados para enviar as alterações;
+    \item Utilizando o método \emph{Update} do \emph{DataAdapter}, enviamos as alterações para o banco de dados. O \emph{DataAdapter} verifica os tipos de alterações que foram realizadas e executa o comando correspondente no banco de dados (inserção, exclusão, atualização);
+    \item Ao finalizar o processo, fechamos a conexão com o banco de dados.
+
+\end{enumerate}
+
+    \subsection{Estabelecendo uma conexão com um banco de dados}
+
+O primeiro passo para criarmos uma aplicação com conexão a um banco
+de dados é estabelecer a conexão com o banco. Para estabelecermos a
+conexão, devemos criar um objeto de conexão.
+
+Ao criarmos uma instância da classe que irá se conectar, devemos
+informar uma string de conexão, que contém todos os parâmetros para
+a conexão com o banco de dados, como usuário e senha.
+
+A string de conexão possui uma série de parâmetros, que pode variar
+de acordo com o banco de dados utilizado. Os parâmetros da string de
+conexão são separados por ponto e vírgula, e devem ser informados
+com a seguinte notação:
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Padrão para \emph{Connection
+Strings}}]{cods/connectionStringDefault.txt}}}
+
+Abaixo está uma classe com string de conexão para os bancos MySQL,
+Firebird e PostGreSQL respectivamente:
+
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Padrão para \emph{Connection
+Strings}}]{cods/connectionStringsGlobal.txt}}}
+
+    \subsection{Criando comandos}
+
+É possível executar comando no banco de dados através da classe
+\emph{SqlCommand}. Ao criar um objeto dessa classe, devemos informar
+o comando Sql a ser executado, bem como a conexão a ser utilizada.
+Estes parâmetros podem ser informados tanto no construtor da classe
+\emph{SqlCommand} como também através das propriedades
+\emph{CommandText} e \emph{Connection}.
+
+Os comandos SQL informados em um objeto de comando podem ser de
+qualquer tipo: que retornam um conjunto de linha, que retornam um
+valor específico, ou que não retornam nenhuma quer. Cada um destes
+tipos de comando SQL possui um método para execução.
+
+Através da classe \emph{SqlCommand} também é possível executar
+\emph{Stored Procedures} do banco de dados, sendo necessário apenas
+informar o nome da \emph{stored procedure} no parâmetro
+\emph{CommandText}, e setar a propriedade \emph{CommandType} da
+classe para \emph{CommandTypes.StoredProcedure}.
+
+Um exemplo de criação de um objeto de comando pode ser observado a
+seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Exemplo de utilização do comando
+\emph{SqlCommand}}]{cods/sqlCommand.txt}}}
+
+    \subsection{Executando comandos}
+
+Para executarmos os comandos especificados na classe
+\emph{SqlCommand}, precisamos executar um dos métodos de execução
+disponíveis. Os métodos de execução variam de acordo com a natureza
+do comando executado. Os três métodos mais comuns são:
+
+\begin{itemize}
+    \item \emph{ExecuteNonQuery}: Para comandos que não executam consultas (querys);
+    \item \emph{ExecuteScalar}: Para comandos que executam resultados escalares;
+    \item \emph{ExecuteReader}: Para comandos que retornam conjuntos de dados.
+\end{itemize}
+
+    \subsubsection{O método \emph{ExecuteNonQuery}}
+
+O método \emph{ExecuteNonQuery} é utilizado quando queremos executar
+um comando que não retorna como resultado um conjunto de dados. Este
+método é utilizado para comandos de atualização e inserção e também
+para comando DCL (\emph{Data Control Language}) suportados pelo
+banco de dados.
+
+Opcionalmente podemos informar um parâmetro para este método para
+obter o número de linhas afetadas pelo comando executado.
+
+Um exemplo de utilização do comando \emph{ExecuteNonQuery} pode ser
+observado a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Exemplo de utilização do comando
+\emph{ExecuteNonQuery}}]{cods/executeNonQuery.txt}}}
+
+    \subsubsection{O método \emph{ExecuteScalar}}
+
+O método \emph{ExecuteScalar} é utilizado para comandos que retornam
+valores escalares, ou seja, valores únicos. Em geral é utilizado
+para comandos que retornam uma contagem de registros ou que executam
+ao comando de agregação no banco de dados.
+
+Este comando pode retornar qualquer tipo de dado.
+
+Um exemplo de utilização do comando \emph{ExecuteScalar} pode ser
+observado a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Exemplo de utilização do comando
+\emph{ExecuteScalar}}]{cods/executeScalar.txt}}}
+
+    \subsubsection{O método \emph{ExecuteReader}}
+
+O método \emph{ExecuteReader} é utilizado para executar
+\emph{querys} que retornam um conjunto de dados. Este método tem
+como resultado um objeto do tipo \emph{SqlDataReader}.
+
+A classe \emph{SqlDataReader} representa um cursor aberto no banco
+de dados com os dados retornados pela query informada no objeto de
+comando.
+
+Para lermos os dados de um \emph{DataReader}, é necessário
+executamos o método \emph{Read}. Este método retorna verdadeiro caso
+um registro tenha sido lido do cursor do banco de dados, e falso
+quando não houver mais registros a serem lidos. É necessário chamar
+o método Read pelo menos uma vez, pois o cursor aberto não fica
+posicionado no primeiro registro.
+
+Como o \emph{DataReader} mantém um cursor aberto com o banco de
+dados, não é possível realizar nenhuma operação no banco de dados
+(utilizando a conexão utilizada pelo \emph{DataReader}) enquanto o
+\emph{DataReader} estiver aberto. Por tanto, é necessário fechar o
+\emph{DataReader} imediatamente após a sua utilização.
+
+Um exemplo de utilização do método \emph{ExecuteReader} e da classe
+\emph{DataReader} pode ser observado a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Exemplo de utilização do comando
+\emph{ExecuteReader}}]{cods/executeReader.txt}}}
+
+    \subsection{Passando parâmetros}
+
+É possível passar parâmetros para os objetos da classe
+\emph{SqlCommand}. Para indicarmos parâmetros nas \emph{querys}
+informadas neste objeto, utilizamos o símbolo @ como prefixo para
+indicar um parâmetro. Esta sintaxe pode variar de acordo com o banco
+de dados utilizado (o Oracle utiliza ":" por exemplo).
+
+Depois de indicar os parâmetros na query, é preciso adicionar
+objetos do tipo \emph{SqlParameter} na coleção de parâmetros do
+\emph{SqlCommand}. A coleção de parâmetros pode ser acessada através
+da propriedade Parameters do objeto de comando.
+
+Um exemplo de criação de parâmetros pode ser observado a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Exemplo de utilização de parâmetros
+}]{cods/parametros.txt}}}
+
+    \subsection{O que é um \emph{DataSet}?}
+
+O \emph{DataSet} é uma classe capaz de armazenar múltiplos
+resultados tabulares em uma mesma estrutura. O \emph{dataset} é
+composto por estruturas chamadas \emph{DataTables} que representam
+estes resultados tabulares.
+
+Para extrairmos dados da base de dados e preenchermos o
+\emph{DataSet} utilizamos a classe \emph{DataAdapter}. Esta classe é
+capaz de executar os quatro comandos básicos de um banco de dados
+(\emph{Insert, Update, Delete, Select}) sendo capaz de executar
+estas operações sobre os dados do \emph{dataset}.
+
+    \subsection{O que é um \emph{DataAdapter} ?}
+
+O \emph{DataAdapter} é a classe responsável por fazer a interação
+entre a base de dados e o \emph{DataSet}. Ela possui quatro
+propriedades que representam os quatro comandos principais que
+utilizamos para interagir com o banco de dados.
+
+Para realizar a extração de dados do banco de dados para o
+\emph{DataSet}, o \emph{DataAdapter} usa o comando de \emph{select},
+contido na propriedade \emph{SelectCommand}.
+
+Após extrairmos os dados para o \emph{DataSet}, podemos modificar
+estes dados (que estão armazenados em memória). À medida que
+modificamos os dados do \emph{DataSet}, este faz uma marcação nas
+alterações que fazemos, marcando as linhas inseridas como inseridas,
+modificadas como modificados e excluídos como excluídos. Quando
+concluímos as alterações, é possível chamar o \emph{DataAdapter}
+novamente para que ele execute para cada linha modificada o comando
+correspondente a modificação realizada.
+
+    \subsection{Criando um \emph{DataSet} e um \emph{DataAdapter}}
+
+Quando criamos um \emph{DataAdapter} é possível informar uma
+\emph{query} e uma conexão para a extração dos dados. O
+\emph{SqlCommand} referente à propriedade \emph{SelectCommand} é
+criado automaticamente. Os outros comandos devem ser criados
+manualmente.
+
+Um exemplo de criação de um objeto \emph{DataAdapter} pode ser
+observado a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Criando um \emph{DataSet} e um \emph{DataAdapter}
+}]{cods/dataAdapterDataSet.txt}}}
+
+    \subsection{Criando e preenchendo um \emph{DataSet}}
+
+Para criar um novo \emph{DataSet} basta utilizar o comando New e
+criar um novo objeto. Para preencher um \emph{dataset} utilizando um
+\emph{DataAdapter}, devemos utilizar o método \emph{Fill} do
+\emph{DataAdapter}, informando o \emph{DataSet} e nome da tabela a
+ser criada no \emph{DataSet}.
+
+Um exemplo de criação de um \emph{DataSet} e utilização de um
+\emph{DataAdapter} podem ser observados a seguir.
+
+\texttt{\texttt{\lstinputlisting[language=C, label=mdiFilha,
+caption={Criando e preenchendo um
+\emph{DataSet}}]{cods/preenchendoDataSet.txt}}}
+
+\end{document}

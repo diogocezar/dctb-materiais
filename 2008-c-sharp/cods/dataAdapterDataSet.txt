@@ -1,0 +1,4 @@
+SqlDataAdapter daProduct = new SqlDataAdapter("SELECT * FROM Products", oConn);
+SqlDataAdapter daOrders = new SqlDataAdapter();
+SqlCommand oCmd = new SqlCommand("SELECT * FROM Orders", oConn);
+daOrders.SelectCommand = new SqlCommand(oCmd);

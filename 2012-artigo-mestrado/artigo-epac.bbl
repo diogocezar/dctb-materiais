@@ -1,0 +1,82 @@
+\begin{thebibliography}{10}
+\newcommand{\enquote}[1]{``#1''}
+
+\bibitem{Simmhan2005}
+Simmhan, Y.~L., Plale, B., and Gannon, D., \enquote{{A survey of data
+  provenance in e-science},} {\em ACM SIGMOD Record\/}, Vol.~34, No.~3, Sept.
+  2005, pp.~31.
+
+\bibitem{Hollingsworth1995}
+Hollingsworth, D., \enquote{Workflow Management Coalition - The Workflow
+  Reference Model,} Tech. rep., Workflow Management Coalition, Jan. 1995.
+
+\bibitem{Deelman2009}
+Deelman, E., Gannon, D., Shields, M., and Taylor, I., \enquote{{Workflows and
+  e-Science: An overview of workflow system features and capabilities},} {\em
+  Journal of Future Generation Computer Systems\/}, Vol.~25, No.~5, May 2009,
+  pp.~528--540.
+
+\bibitem{Almeida2008}
+Almeida, E. C.~D., Suny\'{e}, G., Traon, Y.~L., and Valduriez, P., \enquote{{A
+  Framework for Testing Peer-to-Peer Systems},} {\em 2008 19th International
+  Symposium on Software Reliability Engineering (ISSRE)\/}, Nov. 2008,
+  pp.~167--176.
+
+\bibitem{Altintas2004}
+Altintas, I., Berkley, C., Jaeger, E., Jones, M., Ludascher, B., and Mock, S.,
+  \enquote{{Kepler: an Extensible System for Design and Execution of Scientific
+  Workflows},} {\em Proceedings of the 16th International Conference on
+  Scientific and Statistical Database Management\/}, IEEE Computer Society,
+  2004, pp. 423--424.
+
+\bibitem{Belhajjame2008}
+Belhajjame, K., Wolstencroft, K., Corcho, O., Oinn, T., Tanoh, F., William, A.,
+  and Goble, C., \enquote{{Metadata Management in the Taverna Workflow
+  System},} {\em Journal of 8th IEEE International Symposium on Cluster
+  Computing and the Grid\/}, Vol.~0, May 2008, pp.~651--656.
+
+\bibitem{Akram2006}
+Akram, A., Meredith, D., and Allan, R., \enquote{{Evaluation of BPEL to
+  Scientific Workflows},} {\em Proceedings of 6th IEEE International Symposium
+  on Cluster Computing and the Grid\/}, IEEE Computer Society, 2006, pp.
+  269--274.
+
+\bibitem{Lee2008}
+Lee, K., Paton, N.~W., Sakellariou, R., Deelman, E., Fernandes, A. A.~A., and
+  Mehta, G., \enquote{{Adaptive Workflow Processing and Execution in Pegasus},}
+  {\em Proceedings of 3rd International Conference on Grid and Pervasive
+  Computing Workshops\/}, May 2008, pp.~99--106.
+
+\bibitem{Weld1999}
+Weld, D., \enquote{{Recent advances in AI planning},} {\em AI magazine\/},
+  Vol.~20, No.~2, 1999, pp.~93.
+
+\bibitem{Fikes1971}
+Fikes, R.~E. and Nilsson, N.~J., \enquote{{Strips: A new approach to the
+  application of theorem proving to problem solving},} {\em Artificial
+  Intelligence\/}, Vol.~2, No. 3-4, Jan. 1971, pp.~189--208.
+
+\bibitem{Blum1995}
+Blum, A., \enquote{{Fast Planning Through Planning Graph Analysis.}} Tech. Rep.
+  1-2, CARNEGIE-MELLON UNIV PITTSBURGH PA DEPT OF COMPUTER SCIENCE, Feb. 1995.
+
+\bibitem{Kautz1992}
+Kautz, H., \enquote{{Planning as satisfiability},} {\em Proceedings of the
+  European Conference on\/}, , No. August 1992, 1992, pp.~1--12.
+
+\bibitem{Nau1999}
+Nau, D., Cao, Y., Lotem, A., and Mu\~{n}oz Avila, H., \enquote{{SHOP: Simple
+  hierarchical ordered planner},} {\em Proceedings of the 16th international
+  joint conference on Artificial intelligence-Volume 2\/}, Morgan Kaufmann
+  Publishers Inc., 1999, pp. 968--973.
+
+\bibitem{Nau2003}
+Nau, D., Au, T., Ilghami, O., Kuter, U., Murdock, J., Wu, D., and Yaman, F.,
+  \enquote{{SHOP2: An HTN planning system},} {\em Journal of Artificial
+  Intelligence Research\/}, Vol.~20, No.~1, 2003, pp.~379--404.
+
+\bibitem{Ilghami2006}
+Ilghami, O., \enquote{{Documentation for JSHOP2},} {\em Tech. rep, Department
+  of Computer Science, University of Maryland\/}, Vol.~51, 2006.
+
+\end{thebibliography}

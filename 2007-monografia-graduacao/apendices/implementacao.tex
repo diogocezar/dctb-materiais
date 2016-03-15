@@ -1,0 +1,75 @@
+\chapter{IMPLEMENTAÇÃO DOS RECURSOS DE DESENVOLVIMENTO}\label{ape:codtableless}
+
+Para demonstrar a versatilidade da utilização dos recursos citados
+no Capítulo \ref{cap:desenvolvimento}, estão transcritos códigos
+efetivamente utilizados no projeto.
+
+\UTFPRsection[ape:tableless]{TABLELESS}
+
+O Código \ref{cod:oriantHTML} transcreve as linhas do arquivo
+\texttt{oriant.html} que abriga a camada principal do sistema.
+
+\texttt{\lstinputlisting[language=HTML, label=cod:oriantHTML,
+caption={Código do arquivo oriant.html}]{cods/oriAntHTML.txt}}
+
+No Código \ref{cod:oriantHTML} as linhas que estão entre as tags
+"$<! --$"{} e "$-- >$"{} são comentários utilizados na substituição
+de tags no sistema de \emph{templates} implementado, e as variáveis
+são definidas por uma palavra entre colchetes \{\}, (ver Seção
+\ref{subsec:pear}). A linha 9 faz ligação do código HTML à um código
+CSS, nota-se que na URL há uma variável (\texttt{\emph{skin}}) que
+será substituída pelo nome do \emph{template} de interface
+selecionado. O trecho de código localizado entre as linhas 33 e 69
+monta o \emph{layout} da camada OriAnt, é possível observar que não
+há a utilização da \emph{tag} "\emph{table}"{} para a composição do
+\emph{layout}.
+
+O Código \ref{cod:oriAntCSS} transcreve as linhas do arquivo
+\texttt{oriAnt.css} que é uma das folhas de estilo invocada pelo
+Código \ref{cod:oriantHTML}.
+
+\texttt{\lstinputlisting[language=HTML, label=cod:oriAntCSS,
+caption={Código do arquivo oriAnt.css}]{cods/oriAntCSS.txt}}
+
+O Código \ref{cod:oriAntCSS} formata as \emph{tags} do arquivo
+\texttt{oriant.html} compondo o \emph{layout} da camada. Para
+alterar as cores e figuras do \emph{layout} basta a substituição
+desse arquivo.
+
+\UTFPRsection[ape:rss]{RSS}
+
+O Código \ref{cod:rss} exemplifica a especificação RSS mencionada na
+Seção \ref{subsec:rss}.
+
+\texttt{\lstinputlisting[language=HTML, label=cod:rss,
+caption={Exemplo de RSS utilizado no subsistema para
+testes}]{cods/rss.txt}}
+
+\UTFPRsection[ape:ajax]{AJAX}
+
+Para solidificar a utilização da tecnologia AJAX no sistema
+proposto, transcreve-se parte dos códigos para a obtenção dos grupos
+de interesses do sistema.
+
+O trecho de Código \ref{cod:ajaxPHP} mostra além das configurações
+do \emph{framework} sAjax, uma função PHP que invoca outras
+funcionalidades também escritas em PHP.
+
+\texttt{\lstinputlisting[language=PHP, label=cod:ajaxPHP,
+caption={Trecho de código do arquivo ajax.php}]{cods/ajaxPHP.txt}}
+
+O trecho de Código \ref{cod:ajaxJS} mostra duas funções que seguem a
+padronização estipulada pelo \emph{framework} sAjax.
+
+\texttt{\lstinputlisting[language=PHP, label=cod:ajaxJS,
+caption={Trecho de código do arquivo ajax.js}]{cods/ajaxJS.txt}}
+
+Com o \emph{framework} devidamente configurado é possível executar a
+função \texttt{call\_getGrupos()} a qualquer momento em uma página
+já carregada. Essa irá invocar uma função transparente criada pelo
+\emph{framework} sAjax chamada
+\emph{x\_getGrupos(return\_getGrupos);} que passa como parâmetro
+qual será a função que será executada como retorno. O código PHP é
+executado e retorna para a função \emph{return\_getGrupos(retorno)}
+com o valor de seu processamento. Os grupos são adicionados na
+\emph{div} "idInGrupos" que pode ser observado na linha 12.

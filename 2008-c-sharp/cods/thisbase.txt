@@ -1,0 +1,7 @@
+this.nomeAtributo = valor;
+valor = this.nomeAtributo;
+this.NomeMetodo();
+
+base.nomeAtributoClasseBase = valor;
+valor = base.nomeAtributoClasseBase;
+base.NomeMetodoClasseBase();

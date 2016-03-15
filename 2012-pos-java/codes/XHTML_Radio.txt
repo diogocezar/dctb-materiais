@@ -1,0 +1,4 @@
+<body>
+	<input type="radio" name="idade" id="idade" value="maior" /> Maior de Idade
+	<input type="radio" name="idade" id="idade" value="menor"/> Menor de Idade
+</body>

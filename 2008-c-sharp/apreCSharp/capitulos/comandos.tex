@@ -1,0 +1,104 @@
+\section{Comandos}
+
+\subsection{Seleção}
+
+\begin{frame}
+    \frametitle{Comandos de Seleção}
+    \begin{itemize}
+            \item <1-> Escolha de uma possibilidade entre uma ou mais possíveis;
+            \item <2-> Os comandos \texttt{\emph{if}} e \texttt{\emph{switch}} fazem parte deste grupo.
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Comando If}
+
+\begin{frame}
+    \frametitle{Comando de Seleção If}
+    \begin{itemize}
+            \item Expressão booleana para executar um bloco de comando;
+            \item Cláusula else opcional.
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=if, caption={Exemplo do
+    comando If em C\#}]{cods/if.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Operador ternário}
+    \begin{itemize}
+            \item \emph{If} com a cláusula \emph{else} única;
+            \item Ternário: 3 expressões;
+            \item Representado por interrogação;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=if6, caption={Operador
+    Ternário}]{cods/if6.txt}}
+\end{frame}
+
+\subsubsection{Comando Switch}
+
+\begin{frame}
+    \frametitle{Comando de Seleção Switch}
+    \begin{itemize}
+            \item Switch: interruptor;
+            \item Verifica se um valor existe em uma lista de opções;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=switch, caption={Comando
+    Switch}]{cods/switch.txt}}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Break e Continue}
+    \begin{itemize}
+            \item <1-> \emph{Break}: Utilizada para saída prematuramente de um laço ou uma instrução \emph{switch};
+            \item <2-> \emph{Continue}: Pula as instruções restantes no corpo da estrutura e passa para a próxima iteração do laço;
+    \end{itemize}
+\end{frame}
+
+\subsection{Iteração ou Loop}
+
+\begin{frame}
+    \frametitle{Comandos de Iteração ou Loop}
+    \begin{itemize}
+            \item Conhecidos como laço ou loop;
+            \item Executam repetidamente um comando ou bloco de comandos;
+            \item Encerram o ciclo com uma condição;
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Comando For}
+
+\begin{frame}
+    \frametitle{Comando de Iteração For}
+    \begin{itemize}
+            \item Possui 3 declarações opcionais;
+            \item Separadas por ponto e vírgula (;);
+            \item Declarações: inicialização, condição e iteração;
+            \item Mais de uma expressão em cada parâmetro: separação por vírgula(,).
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=for, caption={Iteração
+    For}]{cods/for.txt}}
+\end{frame}
+
+\subsubsection{Comando Foreach}
+
+\begin{frame}
+    \frametitle{Comando de Iteração Foreach}
+    \begin{itemize}
+            \item Enumera os elementos de uma coleção;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=foreach,
+    caption={Iteração foreach (exemplo)}]{cods/foreach.txt}}
+\end{frame}
+
+\subsubsection{Comandos do e while}
+
+\begin{frame}
+    \frametitle{Comandos de Iteração do e while}
+    \begin{itemize}
+            \item Características semelhantes;
+            \item Executam condicionalmente um comando ou bloco de comandos;
+            \item Comando \emph{do} $\longrightarrow$ executado uma ou mais vezes;
+            \item Comando \emph{while} $\longrightarrow$ executado nenhuma ou mais vezes;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=dowhile,
+    caption={Iteração do while (exemplo)}]{cods/dowhile.txt}}
+\end{frame}

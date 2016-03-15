@@ -1,0 +1,19 @@
+<body>
+<table border="1">
+	<caption>Título da Tabela</caption>
+	<tbody>
+		<tr>
+			<td colspan="3">Linha 1 Coluna 1</td>
+		</tr>
+		<tr>
+			<td>Linha 2 Coluna 1</td>
+			<td>Linha 2 Coluna 2</td>
+			<td rowspan="2">Linha 2 Coluna 3</td>
+		</tr>
+		<tr>
+			<td>Linha 3 Coluna 1</td>
+			<td>Linha 3 Coluna 2</td>
+		</tr>
+	</tbody>
+</table>
+</body>

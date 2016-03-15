@@ -1,0 +1,13 @@
+\beamer@endinputifotherversion {3.07pt}
+\select@language {brazil}
+\beamer@sectionintoc {1}{Introdu\c c\~ao}{3}{0}{1}
+\beamer@sectionintoc {2}{Abordagem de Orienta\c c\~ao}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Hiperm\IeC {\'\i }dia Adaptativa}{18}{0}{2}
+\beamer@subsectionintoc {2}{2}{Aplica\c c\~ao ACO}{21}{0}{2}
+\beamer@subsectionintoc {2}{3}{Modelo Proposto}{26}{0}{2}
+\beamer@sectionintoc {3}{Camada de Adapta\c c\~ao}{30}{0}{3}
+\beamer@sectionintoc {4}{Tecnologia}{34}{0}{4}
+\beamer@subsectionintoc {4}{1}{Tecnologia}{34}{0}{4}
+\beamer@subsectionintoc {4}{2}{Recursos de Desenvolvimento}{39}{0}{4}
+\beamer@sectionintoc {5}{Resultados}{44}{0}{5}
+\beamer@sectionintoc {6}{Refer\^encias}{55}{0}{6}

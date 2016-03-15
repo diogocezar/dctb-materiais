@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% S U B S I S T E M A   P A R A   T E S T E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\UTFPRchapter[cap:subsistema]{SUBSISTEMA PARA TESTES}
+
+O sistema proposto não poderia funcionar sem um \emph{website}
+hospedeiro. Por tanto, foi desenvolvido um subsistema para testes
+denominado \emph{Go!} Notícias, que também implementa o
+\emph{framework} descrito no Capítulo \ref{cap:framework} e utiliza
+seus recursos para exibição de notícias no formato RSS. A Figura
+\ref{fig:subPgPrincipal} apresentada no Apêndice
+\ref{ape:apresubsistema} mostra a página principal do subsistema.
+
+O subsistema possui a funcionalidade básica de administração, em que
+é possível gerenciar graficamente um menu em formato de grafo. Os
+nodos que não possuem filhos (nodo folha) redirecionam o usuário
+para uma lista de notícias extraídas do RSS cadastrado nesse nodo do
+grafo e os nodos que possuem filhos abrem sua ramificação com os
+nodos disponíveis.
+
+A Figura \ref{fig:subMenuAdmin} do apêndice \ref{ape:apresubsistema}
+ilustra a disposição do menu.
+
+\begin{figure}[!htb]
+\Tree [.$NP$ $NF$ [.$NPF$ $NF$ ] $NF$ ] \caption{Exemplo de grafo
+gerado pelo subsistema} \label{fig:figuraArvoreSubSistema}
+\end{figure}
+
+Na Figura \ref{fig:figuraArvoreSubSistema}, $NP$ representa um Nodo
+Pai, $NF$ um nodo filho e $NPF$ um nodo filho e também pai.
+
+Na lista de notícias exibida, ao se escolher um $NF$ é possível
+observar alguns dados iniciais da notícia como: título, nota (média
+entre as avaliações efetuadas), número de comentários, \emph{link}
+direto para a fonte da notícia e um \emph{link} para ver os detalhes
+dessa notícia. Ao se optar por visualizar os detalhes da notícia é
+possível ler um resumo da notícia em questão, visualizar os
+\emph{links} relacionados, avaliar ou comentar a notícia.
+
+O sistema foi programado para extrair os \emph{feeds}
+automaticamente da fonte RSS a cada intervalo de tempo, tornando o
+sistema constantemente atualizado com as últimas notícias.
+
+    \UTFPRsection[sec:submer]{Modelo Relacional}
+
+    Para melhor ilustrar o subsistema \emph{Go}! Notícias, pode-se
+    observar seu modelo relacional, na Figura \ref{fig:mergo}
+
+    \UTFPRfigura{width=8cm}{diagramas/mergo.jpg}{Modelo Relacional do Sub-sistema \emph{Go}! Notícias}{fig:mergo}
+
+    As tabelas "Avaliacao" e "Comentarios"{} não se relacionam diretamente com
+    a notícia em questão, esse relacionamento é feito pela URL (campo "pg") da
+    notícia. Esta forma de funcionamento, foi criado para
+    que esses dois sistemas possam ser implantados em qualquer
+    \emph{website} que utilize um sistema de notícias.
+
+    A tabela "NoticiasRSS"{} representa o menu em formato de grafo, um
+    auto-relacionamento é criado para identificar qual nodo é seu pai,
+    dessa forma, todos os nodos estão em uma única tabela que é montada
+    de forma recursiva. O campo ordem armazena uma \emph{string} que
+    representará a ordem desse nodo no grafo.
+
+    A tabela Admin armazena as informações para administração do
+    sistema.
+
+    \UTFPRsection{Sistema de Avaliação}
+
+    O sistema de avaliação foi criado para que os usuários possam
+    avaliar o conteúdo de uma página qualquer. Com os recursos AJAX, a
+    avaliação se torna agradável pois não é necessário que o usuário
+    aguarde o recarregamento da página. A metodologia de avaliação é
+    definida por uma escala de pontuação que vai de 1 a 10, como se pode
+    observar na Figura \ref{fig:aval}.
+
+    \UTFPRfigura{width=5cm}{sub/aval.jpg}{Sistema de
+    avaliação}{fig:aval}
+
+    A colaboração entre os usuários na avaliação, também é uma forma
+    interessante e mais simples de se implantar a classificação
+    adaptativa, técnica de navegação adaptativa, explanada no Capítulo~\ref{cap:fundamentos}.
+
+    \UTFPRsection{Sistema de Comentários}
+
+    O sistema de comentários permite que os usuários troquem opiniões
+    sobre o conteúdo de determinada notícia. O sistema também foi
+    desenvolvido com o AJAX e possibilita o envio do comentário sem a
+    necessidade de atualização da página. Um exemplo dos comentários
+    pode ser observado na Figura \ref{fig:come}.
+
+    \UTFPRfigura{width=8cm}{sub/come.jpg}{Sistema de
+    comentários}{fig:come}
+
+    Este recurso foi implementada a técnica de notação adaptativa
+    explanada no Capítulo \ref{cap:fundamentos}.
+
+
+    A Figura \ref{fig:subDetalhesNot} do apêndice \ref{ape:apresubsistema}
+    mostra os sistemas de avaliação e comentário implantados no
+    subsistema.

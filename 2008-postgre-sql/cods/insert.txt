@@ -1,0 +1,2 @@
+INSERT INTO tabela [ ( coluna [, ...] ) ]
+	{ VALUES ( { expressão | DEFAULT } [, ...] ) | consulta }

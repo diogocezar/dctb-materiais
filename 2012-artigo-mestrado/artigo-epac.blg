@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99c (TeX Live 2009)
+The top-level auxiliary file: artigo-epac.aux
+The style file: aiaa.bst
+Database file #1: referencias.bib
+Repeated entry---line 1497 of file referencias.bib
+ : @article{Deelman2009
+ :                     ,
+I'm skipping whatever remains of this entry
+Warning--there's a number but no volume in Kautz1992
+You've used 15 entries,
+            2292 wiz_defined-function locations,
+            691 strings with 7482 characters,
+and the built_in function-call counts, 3888 in all, are:
+= -- 307
+> -- 178
+< -- 10
++ -- 66
+- -- 51
+* -- 405
+:= -- 563
+add.period$ -- 30
+call.type$ -- 15
+change.case$ -- 1
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 186
+empty$ -- 386
+format.name$ -- 51
+if$ -- 841
+int.to.chr$ -- 0
+int.to.str$ -- 15
+missing$ -- 13
+newline$ -- 49
+num.names$ -- 15
+pop$ -- 37
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 80
+stack$ -- 0
+substring$ -- 286
+swap$ -- 79
+text.length$ -- 10
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 1
+while$ -- 40
+width$ -- 17
+write$ -- 139
+(There was 1 error message)

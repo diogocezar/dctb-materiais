@@ -1,0 +1,13 @@
+<body>
+	<p>Isto é um parágrafo</p>
+	<div>Esta é a primeira div</div>
+	<div>Esta é a segunda div</div>
+	<div>E finalmente esta &#233; a ultima </div>
+	<p>Outro parágrafo</p>
+	<blockquote>"Um pequeno bloco de citação"</blockquote>
+	<pre>
+	Este é um parágrafo com
+	mais de uma linha,
+	que é exibido corretamente !!!
+	</pre>
+</body>

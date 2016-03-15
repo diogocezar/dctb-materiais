@@ -1,0 +1,7 @@
+if(x==1){
+  if(y==100){
+    if(z==1000){
+      System.Console.Write("OK");
+    }
+  }
+}

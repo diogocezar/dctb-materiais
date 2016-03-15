@@ -1,0 +1,6 @@
+<body>
+<select name="civil" id="civil">
+   <option> Casado </option>
+   <option> Solteiro </option>
+</select>
+</body>

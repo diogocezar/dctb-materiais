@@ -1,0 +1,290 @@
+\section[JSP Ajax]{JSP Ajax}
+
+\begin{frame}[c,allowframebreaks,fragile]
+    \frametitle{Ajax}
+    \begin{itemize}
+      \item AJAX é uma solução lado-cliente baseada em HTML, JavaScript e DOM
+que permite que a comunicação entre o \textit{browser} e o servidor \textit{web}
+ocorra de forma assíncrona;
+      \item AJAX não é uma linguagem nova, nem mesmo uma tecnologia nova;
+      \item AJAX não é uma solução lado-servidor;
+      
+      \framebreak
+      
+      \item Por que usar?
+      \begin{itemize}
+       \item a comunicação HTTP é ineficiente:
+       \begin{itemize}
+        \item para cada requisição há uma resposta;
+        \item cada resposta devolve uma página inteira;
+        \item é preciso esperar toda a página carregar antes de usar uma
+aplicação \textit{web};
+       \end{itemize}
+      
+      \framebreak
+    
+       \item AJAX permite comunicação assíncrona:
+       \begin{itemize}
+        \item pequenos trechos de dados podem ser transferidos assincronamente;
+        \item permite que aplicação funcione enquanto dados são transferidos;
+       \end{itemize}
+      \end{itemize}
+      
+      \framebreak
+      
+      \item Quando usar?
+      \begin{itemize}
+       \item use em aplicações \textit{web} interativas que sofrem com o modelo
+requisição-resposta:
+	\begin{itemize}
+	  \item aplicações com menus, muitas opções, que requerem interatividade
+  em tempo real;
+	  \item aplicações que modelam sistemas desktop;
+	\end{itemize}
+	\item não use em aplicações que realmente precisam carregar uma página
+inteira:
+	\begin{itemize}
+	  \item Ex: tabelas, listas, etc...
+	\end{itemize}
+       \end{itemize}
+       
+       \framebreak
+       
+      \item Quem usa?
+      \begin{itemize}
+	\item Google;
+	\item Yahoo;
+	\item Microsoft;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c]
+\frametitle{Exemplo Comunicação Request-Response}
+  \begin{figure}[htb]
+      \begin{center}
+	  \includegraphics[width=10cm]{images/request_response.png}
+      \end{center}
+  \end{figure}
+\end{frame}
+
+\begin{frame}[c]
+\frametitle{Exemplo Comunicação Ajax}
+      \begin{figure}[htb]
+	  \begin{center}
+	      \includegraphics[width=10cm]{images/ajax.png}
+	  \end{center}
+      \end{figure}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks,fragile]
+\frametitle{Recursos do JQuery}
+\begin{itemize}
+ \item uma das principais funcionalidades do JQuery é o gerenciamento de AJAX;
+ \item funções próprias para controle e gerenciamento da transmissão de dados;
+ \item em geral: consegue-se acessar o conteúdo de uma página jsp dentro do
+javascript;
+ \item existem diferentes formas para se trabalhar com AJAX em JQUERY,
+basicamente todas seguem a mesma lógica, mas a sintaxe pode ser diferenciada;
+
+\framebreak
+
+  \item Sintaxe: \texttt{load(url,parametros,callback)}
+  
+  \begin{itemize}
+    \item \textit{url}: A URL que é solicitada a requisição.
+    \item \textit{parametros}: Um objeto cuja propriedades são serializadas em
+uma série de parâmetros codificados corretamente e que se passam a requisição.
+Se utilizado, deve-se especificar se a requisição utiliza o método POST, caso
+contrário, se omitido, a requisição utiliza o método GET.
+    \item \textit{callback}: Uma função chamada após a solicitação já ter sido
+processada.
+  \end{itemize}
+  
+  \item Esse comando serve apenas para ler HTML's;
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=HTML
+      }
+      \begin{lstlisting}
+	$("#conteudo").load("arquivo.html");
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=HTML
+      }
+      \begin{lstlisting}
+	<script>
+	  $(document).ready(function() {
+	    $("input[type=button]").click(function(event) {
+	      $("#conteudo").load("arquivo.html",aviso());
+	    });
+	  });
+	  function aviso(){
+	    alert("O conteudo sera carregado agora!");
+	  }
+	</script>
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \item carrega o conteúdo de arquivo.html na div com id conteúdo e dispara a
+função aviso() quando o conteúdo for lido;
+
+  \framebreak
+ 
+  \item pode-se filtrar o resultado obtido, com os seletores
+disponíveis pelo próprio JQuery;
+
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=HTML
+      }
+      \begin{lstlisting}
+	$("#box").load("meu_arquivo.html #conteudo")
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \item o exemplo acima só irá retornar o div com id conteudo do arquivo
+\texttt{meu\_arquivo.html}
+
+  \item esse recurso é exclusivo do método load();
+  
+  \framebreak
+  
+  \item Sintaxe: \texttt{\$.post(url, parametros, funcao\_retorno(data));}
+  
+  \begin{itemize}
+    \item \textit{url}: A URL que é solicitada a requisição.
+    \item \textit{parametros}: Um objeto cuja propriedades são serializadas em
+uma série de parâmetros codificados corretamente e que se passam a requisição. 
+    \item \textit{funcao\_retorno(data)} : Uma função chamada após a solicitação
+já ter sido processada.
+    \item \textit{data} é o resultado retornado
+  \end{itemize}
+
+  \item utilizado para resgatar recursos das linguagens de programação, em nosso
+caso, páginas jsp;
+
+  \framebreak
+  
+  \item ao utilizar \$.post os atributos serão enviados por post;
+  \item ao utilizar \$.get os atributos serão enviados por get;
+  \item para passar parâmetros deve-se utilizar a seguinte estrutura:
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=HTML
+      }
+      \begin{lstlisting}
+	{variavel1: valor1, 
+	variaval2: valor2,
+	...
+	variaveln: valorn}
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=HTML,
+	Caption=Chamando Ajax
+      }
+      \begin{lstlisting}
+	<script type="text/javascript">
+	  $(document).ready(function() {
+	    $("input[type=button]").click(function(event) {
+	      var acao = $(this).attr("value");
+	      $.post("pagina.jsp",{acao:acao},
+		function(data){
+		  $("#resultado").empty().html(data);  
+		}
+	      );
+	    });
+	  });
+	</script>
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=Java,
+	Caption=pagina.jsp
+      }
+      \begin{lstlisting}
+	<%
+	  String acao = request.getParameter("acao");
+	  if(acao.isEmpty){
+	%>
+	  <p>Ação está vazia!</p>
+	<%
+	  }
+	  else{
+	<%
+	  <p>Conteúdo a ser lido</p>
+	%>
+	  }
+	%>
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \framebreak
+  
+  \item é possível estabelecer ações para outras divs enquanto o AJAX é
+executado, ideal para criar uma div ``Loading'';
+
+  \item para isso, utiliza-se os comandos:
+  
+  \begin{center}
+  \begin{minipage}{0.9\textwidth}
+      \lstset{
+	frame=tb,
+	language=Java,
+	Caption=pagina.jsp
+      }
+      \begin{lstlisting}
+	$("#loading").ajaxStart("faça alguma coisa");
+	$("#loading").ajaxStop("faça alguma coisa");
+      \end{lstlisting}
+  \end{minipage}
+  \end{center}
+  
+  \item existem ainda outros comandos de controle para o Ajax:
+  
+  \begin{itemize}
+    \item \texttt{ajaxComplete(callback)}
+    \item \texttt{ajaxError(callback)}
+    \item \texttt{ajaxSend(callback)}
+  \end{itemize}
+
+  \item documentação completa: \url{http://docs.jquery.com/Ajax}
+  
+  
+\end{itemize}
+
+\end{frame}

@@ -1,0 +1,34 @@
+\section[Introdução]{Introdução}
+\begin{frame}
+    \frametitle{Introdução}
+    \begin{itemize}
+
+        \item <1-> Onde está a página que procuro em um site?
+
+%        \item <1-> Grande número de sistemas hipermídia;
+%
+%        \item <2-> Informações distribuídas desorganizadamente na Internet;
+%
+%        \item <3-> Sistemas de busca;
+%
+%            \begin{itemize}
+%                \item <4-> Trazem conteúdo não relacionado, ou
+%                irrelevante (semântica);
+%                \item <5-> Não oferecem assistência navegacional;
+%            \end{itemize}
+
+        \item <6-> \emph{Hipermídia Adaptativa}: modificação do conteúdo
+        \emph{web}.
+
+        \item <7-> Proposta: navegação colaborativa;
+
+            \begin{itemize}
+                \item <8-> Ajuda mútua entre os usuários que
+                estiverem navegando pelas mesmas páginas;
+
+                \item <9-> Solução baseada na teoria do comportamento das
+                formigas;
+            \end{itemize}
+
+    \end{itemize}
+\end{frame}

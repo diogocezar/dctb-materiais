@@ -1,0 +1,111 @@
+\chapter{Descrição dos Componentes}
+\label{components-description}
+
+Neste apêndice apresenta-se a descrição dos componentes apresentados Visão Detalhada do Sistema (seção \ref{visao-detalhada}), bem como a descrição dos componentes auxiliares utilizados para a implementação do sistema. Cada componente representa uma classe Java.
+
+A organização dos componentes pode ser observada na figura \ref{fig:components}.
+
+\begin{figure}[!htb]
+   \centering
+    \includegraphics[width=14cm]{images/fig_sys_components.jpg}
+    \caption{Componentes do sistema}
+    \label{fig:components}
+\end{figure}
+
+A tabela \ref{tab:descriptions} mostra a descrição de cada um dos componentes.
+
+\begin{table}[!htb]
+	\caption{Descrição dos componentes.}
+	\label{tab:descriptions}
+	\scriptsize
+	\begin{longtable}{|l|l|}
+		\hline
+		\multicolumn{2}{|c|}{SWEP} \\ 
+		\hline
+		ExportadorDeAções & Exporta as ações para geração de um plano de execução. \\ 
+		\hline
+		ExportadorDeAplicação & Exporta as informações da aplicação. \\ 
+		\hline
+		ImportadorDeAplicação & Importa as informações da aplicação. \\ 
+		\hline
+		ExportadorDeDados & Exporta os dados para um formato aceitável pelo sistema. \\ 
+		\hline
+		ImportadorDeDados & Importa os dados. \\ 
+		\hline
+		PlanoDeExecução & É um plano de execução (Gerado automaticamente). \\ 
+		\hline
+		FluxosDeTrabalhoAgrupados & Junção de todos os operadores diponíveis (Gerado automaticamente). \\ 
+		\hline
+		ExportadorBDI & Exporta uma base de dados do coletor de informações. \\ 
+		\hline
+		ImportadorDeInformações & Importa uma base de dados do coletor de informações. \\ 
+		\hline
+		FábricaDeScriptBash & Cria um arquivo bash para a execução do ambiente. \\ 
+		\hline
+		FábricaDePlanosDeExecução & Cria um plano de execução com base na ações exportadas. \\ 
+		\hline
+		FábricaDeAgrupador & Cria o arquivo JoinWorkFlow que reune todos os operadores disponíveis. \\ 
+		\hline
+		FábricaDePropriedadePU & Cria  o arquivo de propriedades do gerenciador de execução com as informações do sistema. \\ 
+		\hline
+		FábricaDePlanos & Invoca o planejador e gera um plano. \\ 
+		\hline
+		OráculoDeMetaDados & Retorna informações referente aos nós. \\ 
+		\hline
+		PreparaçãoDoAmbiente & Arquivo executável que coordena a execução do ambiente. \\ 
+		\hline
+		CaixaDeTradução & É responsável pela tradução das informações do sistema nos arquivos PDDL. \\ 
+		\hline
+		\multicolumn{2}{|c|}{Auxiliares} \\ 
+		\hline
+		Ação & Representa uma ação. \\ 
+		\hline
+		Aplicação & Representa a aplicação. \\ 
+		\hline
+		BancoDeInformações & Representa uma base de coletores de informação. \\ 
+		\hline
+		CalendárioInfos & Retorna informações de data e hora. \\ 
+		\hline
+		Dados & Representa uma coleção de dados. \\ 
+		\hline
+		DistribuiçãoDeDados & Representa um sistema de paralelização de dados simplista. \\ 
+		\hline
+		PlanoDeExecução & Representa um plano de execução. \\ 
+		\hline
+		Nó & Representa um nó. \\ 
+		\hline
+		ColetorDeInformações & Representa um coletor de informação em um nó. \\ 
+		\hline
+		LogsDoColetor & Representa um coletor de log de tarefas executadas. \\ 
+		\hline
+		Plano & Representa um plano. \\ 
+		\hline
+		Tarefa & Representa uma tarefa. \\ 
+		\hline
+		FluxoDeTrabalho & Representa quais tarefas foram executadas por cada nó. \\ 
+		\hline
+		WorkFlow & Representa um fluxo de trabalho. \\ 
+		\hline
+		\multicolumn{2}{|c|}{Fluxos de Trabalho} \\ 
+		\hline
+		Implementação & É a base para implementação dos demais operadores. \\ 
+		\hline
+		FLuxoDeTrabMult & Representa um operador que executa a multiplicação de matrizes. \\ 
+		\hline
+		FluxoDeTrabSoma & Representa um operador que executa a soma de matrizes. \\ 
+		\hline
+		\multicolumn{2}{|c|}{SysConstantes} \\ 
+		\hline
+		ConstantesDoSistema & Armazena as constantes do sistema. \\ 
+		\hline
+		\multicolumn{2}{|c|}{SysMensagens} \\ 
+		\hline
+		MensagensDoSistema & Armazena as mensagens do sistema. \\ 
+		\hline
+		\multicolumn{2}{|c|}{SysLogger} \\ 
+		\hline
+		LoggerDoSistema & Contém esquema de geração de logs do sistema. \\ 
+		\hline
+	\end{longtable}
+	\normalsize
+\end{table}

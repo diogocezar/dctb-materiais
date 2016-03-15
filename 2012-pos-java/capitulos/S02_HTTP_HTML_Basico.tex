@@ -1,0 +1,204 @@
+\section[Protocolo HTTP]{Protocolo HTTP}
+
+
+\begin{frame}
+    \frametitle{O que é o protocolo HTTP?}
+    \begin{itemize}
+      \item \textit{Hyper Text Transfer Protocol} é o protocolo usado na
+\textit{World Wide Web} para a distribuição e recuperação de informações;
+      \item a troca de informações entre um \textit{browser} e um servidor
+\textit{web} é feita através desse protocolo, que foi criado especificamente
+para a \textit{World Wide Web}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{O protocolo HTTP}
+    \begin{itemize}
+      \item HTTP define uma forma de conversação no estilo
+requisição-resposta entre um cliente (o navegador) e um servidor (o servidor
+\textit{Web});
+      \item toda a conversação se dá no formato ASCII (texto puro) através de um
+conjunto de comandos simples baseados em palavras da língua inglesa.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Cliente HTTP}
+    \begin{itemize}
+      \item os clientes de uma conexão HTTP são os \textit{browsers}
+(navegadores);
+      \item dentre os navegadores atuais em destaque podemos citar:
+      \begin{itemize}
+       \item Google Chrome;
+       \item Mozilla Firefox;
+       \item Safari;
+       \item Opera;
+       \item Internet Explorer;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Servidor HTTP}
+    \begin{itemize}
+      \item os servidores de uma conexão HTTP são os servidores Web;
+      \item os servidores de maior destaque são:
+      \begin{itemize}
+       \item Apache TomCat;
+       \item Glassfish;
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Pedido HTTP}
+    \begin{itemize}
+      \item um exemplo de pedido HTTP (é totalmente transparente para o usuário
+do \textit{browser}):
+    \end{itemize}
+    \lstinputlisting[language=Java,label=http, caption={Protocolo
+HTTP}]{codes/HTTP.txt}
+    \framebreak
+    \begin{itemize}
+     \item um pedido HTTP é composto de quatro partes básicas:
+     \begin{itemize}
+	\item o método - ação a ser realizada;
+	\item a URI (\textit{Universal Resource Identifier}) - informação
+requisitada;
+	\item a versão do protocolo HTTP;
+	\item informações adicionais - informações complementares às demais.
+     \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{URL}
+    \begin{itemize}
+      \item \textbf{URL} = protocolo + nome de domínio + caminho para a
+informação
+      \item http://www.microsoft.com/backoffice
+      \item https://www.company.com/catalog/orders.htm
+      \item ftp://orion.bureau.gov/stars/alphaquadrant/starlist.txt
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Resposta HTTP}
+    \begin{itemize}
+      \item o servidor \textit{Web} ao receber o pedido, o processa para 
+determinar o que deverá ser feito;
+      \item Um exemplo de resposta HTTP (também transparente para o usuário do
+\textit{browser}):
+       \item Códificação HTML anexada ao protocolo;
+    \end{itemize}
+    \lstinputlisting[language=Java,label=http-response, caption={Protocolo
+HTTP - Resposta}]{codes/HTTP_Response.txt}
+\end{frame}
+
+\section[HTML Básico]{HTML Básico}
+
+\begin{frame}
+    \frametitle{Como funciona uma Página \textit{Web}?}
+    \begin{itemize}
+      \item o espaço para sua página na Internet fica em um computador
+(Servidor);
+      \item as páginas são feitas usando a linguagem HTML (\textit{HyperText
+Markup Language})
+      \item as páginas podem ser ligadas entre si, formando o que chamamos de
+\textit{Link};
+      \item para visualizar as páginas é necessário um navegador;
+      \item Um navegador: exibe a codificação HTML em um formato agradável para
+o ser humano;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Introdução ao HTML}
+    \begin{itemize}
+      \item composto por TAGS (Comandos HTML);
+      \item sua página deve começar com \texttt{<HTML>} e terminar com
+\texttt{</HTML>};
+      \item o simbolo ``/'' encerra uma TAG;
+      \item entre o início da tag e o seu fechamento ficam os textos,
+parâmetros, atributos e até outras tags que irão formar a página;
+      \item caso a sintaxe seja escrita de forma errada, a página não irá ser
+mostrada corretamente;
+      \framebreak
+    \end{itemize}
+    \begin{block}{Estrutura das tags:}
+      \texttt{<NOME ATRIBUTO=VALOR>}SEU CONTEÚDO\texttt{</NOME>}
+    \end{block}
+    \begin{itemize}
+     \item após a tag inicial \texttt{<HTML>} precisa-se incluir o
+cabeçalho. Utilizando as tags \texttt{<HEAD>} e \texttt{</HEAD>};
+     \item e ainda um título usando o par \texttt{<TITLE>} e \texttt{</TITLE>};
+     \begin{itemize}
+	\item o título não é mostrado na página, porém os
+navegadores o utilizam para intitular a janela de visualização;
+     \end{itemize}
+     \framebreak
+     \item entre as tags \texttt{<BODY>} e \texttt{</BODY>} está o "corpo" do
+documento;
+      \item nesta parte do documento serão colocados todas as tags para
+apresentação de uma página HTML;
+     \framebreak
+     \item um documento simples seria digitado da seguinte maneira:
+    \lstinputlisting[language=HTML,label=html-basico,
+caption={Estrutura básica de um HTML}]{codes/HTML_Basico.txt}
+     \item os espaços em branco são ignorados quando o navegador "lê" o código;
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[c,allowframebreaks]
+    \frametitle{Principais Tags}
+    \begin{itemize}
+      \item \texttt{<H1>} e \texttt{</H1>} são tags para títulos;
+      \item Pode-se utiliza \texttt{<H2>}, \texttt{<H3>} para sub-títulos;
+      \item \texttt{<B>} \textbf{Negrito} \texttt{</B>};
+      \item \texttt{<U>} \underline{Sublinhado} \texttt{</U>};
+      \item \texttt{<I>} \textit{Itálico} \texttt{</I>};
+      \item \texttt{<P>} Um parágrafo \texttt{</P>};
+      \item Texto \texttt{<BR>} Quebra de linha;
+      \framebreak
+      \item \texttt{<a href="pagina.html"{}>}Texto do link\texttt{</a>};
+      \begin{itemize}
+       \item links são os pontos clicáveis do documento HTML que levam a
+qualquer outro documento da sua página ou site na Internet;
+	\item podem ser:
+	\begin{itemize}
+	  \item Internos, para documentos no mesmo servidor;
+	  \item Externos, para qualquer lugar na Web;
+	  \item Links para um mesmo ponto dentro de uma página;
+	\end{itemize}
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Conclusão}
+    \begin{itemize}
+      \item porque parar por aqui?
+      \begin{itemize}
+	\item existem diversos outros tipos de TAGS, para criação de tabela,
+inserção de imagens, entre outros;
+	\item os recursos estudados serão aplicados de uma maneira diferenciada
+com a utilização de folhas de estilo CSS;
+	\item o HTML puro, como o estudado até aqui, apesar de ser a base para o
+XHTML não é usual nas novas tecnologias.
+      \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Atividades}
+    \begin{itemize}
+      \item crie uma página HTML utilizando os seguintes recursos:
+      \begin{itemize}
+	\item insira 4 títulos atravéz das tagas \texttt{<H>};
+	\item insira 3 links;
+	\item utilize negrito, itálico e sublinhado em três parágrafos;
+	\item utilize a quebra de linha em um dos parágrafos;
+      \end{itemize}
+    \end{itemize}
+\end{frame}

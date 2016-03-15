@@ -1,0 +1,180 @@
+\chapter{PERGUNTAS FREQÜENTES}\label{ape:manual}
+
+Para ajudar o usuário a compreender melhor a utilização do sistema
+se criou uma seqüência de \UTFPRsigla{FAQ}{\emph{Frequently Asked
+Question}}:
+
+\paragraph{O que é OriAnt?}
+
+    \hspace{1cm}
+
+    OriAnt é um sistema computacional baseado no comportamentos das
+    colônias de formigas reais. O OriAnt funciona como um
+    hospedeiro em uma página \emph{web} e basicamente coleta as
+    informações dos \emph{links} acionados pelos usuários para orientar os
+    usuários na navegação.
+
+\paragraph{Por que o nome OriAnt?}
+
+    \hspace{1cm}
+
+    A palavra "Ant"{} em inglês significa formiga, a junção com o
+    prefixo "Ori"{} forma a palavra Oriente, que significa orientação,
+    direção.
+
+\paragraph{Por que escolher um grupo?}
+
+    \hspace{1cm}
+
+    O grupo selecionado pelo usuário é de suma importância, pois,
+    é baseado no histórico de usuários que acessaram o mesmo grupo
+    que o sistema consegue gerar os \emph{links} mais relevantes.
+
+\paragraph{Caso eu não escolha um grupo o sistema funcionará?}
+
+    \hspace{1cm}
+
+    Não, o sistema só entrará em ação quando um grupo for
+    selecionado.
+
+\paragraph{Eu posso escolher outro grupo durante a navegação?}
+
+    \hspace{1cm}
+
+    Sim, você pode trocar de grupo a qualquer momento, basta clicar
+    no ícone alterar grupo, que fica ao lado do grupo escolhido.
+
+\paragraph{Ao clicar nos links da camada OriAnt, ainda continuarei no
+    site em que estou navegando?}
+
+    \hspace{1cm}
+
+    Sim, os \emph{links} da camada OriAnt só apontam para a página atual
+    que você está navegando, apenas os \emph{links} de idioma e ajuda
+    apontam para uma sub-página do OriAnt.
+
+\paragraph{Outros usuários podem ver as páginas que eu acesso?}
+
+    \hspace{1cm}
+
+    Não, o sistema não cadastra os usuários, a identidade do usuário
+    é mantida em sigilo.
+
+\paragraph{Os tipos de orientação interferem no \emph{link} clicado?}
+
+    \hspace{1cm}
+
+    Não, os tipos de orientação apenas exibem as sugestões de forma
+    diferente, não interferem na computação dos cliques.
+
+\paragraph{Interações com a página como: Comentários, Avaliações e
+    Contatos interferem na computação dos cliques?}
+
+    \hspace{1cm}
+
+    Esse clique será computado, somente se a interação o redirecionar para outra
+    página.
+
+\paragraph{Onde o OriAnt armazena as informações?}
+
+    \hspace{1cm}
+
+    O OriAnt requer um banco de dados PostGreSQL 8.1 ou superior
+    parar armazenar os dados.
+
+\paragraph{O OriAnt funciona para um \emph{site} externo ao domínio, por
+    exemplo, eu poderia usar o OriAnt no site da UOL?}
+
+    \hspace{1cm}
+
+    Não, por motivos de segurança e limitações, o sistema OriAnt só funciona em um
+    \emph{site} de mesmo domínio.
+
+\paragraph{O website hospedeiro poderá utilizar banco de dados?}
+
+    \hspace{1cm}
+
+    Sim, poderá utiliza-lo.
+
+\paragraph{O \emph{website} hospedeiro deve utilizar o banco de dados
+PostGreSQL?}
+
+    \hspace{1cm}
+
+    Não, o banco de dados não precisa ser o mesmo, entretanto,
+    deve-se ter suporte a esse banco de dados.
+
+\paragraph{O \emph{website} hospedeiro pode conter \emph{frames}?}
+
+    \hspace{1cm}
+
+    Não, o sistema OriAnt é um \emph{frame} e não suporta sub
+    \emph{frames}.
+
+\paragraph{O website poderá utilizar javascript para redirecionar
+um \emph{link}?}
+
+    \hspace{1cm}
+
+    Não, a página deve utilizar apenas \emph{links} para navegação. Links que tiverem funções javascripts serão desconsiderados.
+
+\paragraph{Deve-se ter os \emph{cookies} habilitado para navegar no
+sistema?}
+
+    \hspace{1cm}
+
+    Sim, as informações escolhidas pelo usuário são armazenadas em \emph{cookies} e em sessões.
+
+\paragraph{Qual a diferença entre os tipos de orientação?}
+
+    \hspace{1cm}
+
+    Os tipos de orientação mostram várias formas de se atingir a
+    página mais relevante. São elas:
+
+            \subparagraph{\emph{Disposição objetiva}:}
+
+            \hspace{1cm}
+
+            Mostra qual é a página
+            alvo. Essa é a página que em média foi mais visitada pelos
+            outros elementos de um mesmo grupo.
+
+            \subparagraph{\emph{Disposição orientada}:}
+
+            \hspace{1cm}
+
+            Mostra qual o caminho que se
+            deve seguir para chegar até a página alvo. Esse caminho é
+            traçado com base no histórico dos caminhos percorridos de usuários do mesmo grupo.
+
+            \subparagraph{\emph{Disposição relacionada}:}
+
+            \hspace{1cm}
+
+            Mostra quais os links mais visitados pelos usuários de seu
+            grupo. Além da página alvo outras páginas também podem
+            interessar o usuário de determinado grupo, assim ao
+            selecionar a exibição por assuntos relacionados, obtém-se
+            uma lista das páginas mais relevantes para determinado
+            grupo.
+
+\paragraph{Qual a diferença entre os contextos de orientação?}
+
+            \subparagraph{\emph{Essa Página}:}
+
+            \hspace{1cm}
+
+            Quando essa opção está
+            selecionada, a disposição toma como contexto a página
+            atual, ou seja, a partir da página atual qual será a
+            próxima página mais relevante.
+
+            \subparagraph{\emph{Todas as Páginas}:}
+
+            \hspace{1cm}
+
+            Quando essa opção está
+            selecionada a disposição toma como contexto todas as páginas do sistema,
+            ou seja, dentre todas as páginas qual é a página mais
+            relevante.

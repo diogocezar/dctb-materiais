@@ -1,0 +1,110 @@
+\section{Tratamento De Erros e Exceções}
+
+\begin{frame}
+    \frametitle{Tratamento De Erros E Exceções}
+    \begin{block}{Definição}
+        Ações que causam anômalias nas aplicações.
+    \end{block}
+    \begin{itemize}
+        \item Várias formas de tratamento;
+        \item Plataforma .NET: Tratamento de excessões estruturadas;
+        \item Objeto herdado de \emph{System.Exception} deve ser
+        criado para representar as excessões;
+        \item O tratamento pode acontecer com alguma excessão
+        pré-definida.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Excessões Pré-definas Mais Comuns}
+    \vspace{-0.5cm}
+    \begin{table}[!htb]
+        \centering
+        \scriptsize
+        \label{tab:excessoes}
+        \begin{tabular}{|l|p{5.5cm}|}
+            \hline
+            Excessão & Descrição (disparado quando) \\
+            \hline
+            System.OutOfMemoryException & alocação de memória, através de new, falha. \\
+            \hline
+            System.StackOverflowException & quando a pilha(stack) está cheia e sobrecarregada. \\
+            \hline
+            System.NullReferenceException & uma referência nula(null) é utilizada indevidamente.  \\
+            \hline
+            System.TypeInitializationException & um construtor estático dispara uma excessão. \\
+            \hline
+            System.InvalidCastException & uma conversão explícita falha em tempo de execução. \\
+            \hline
+            System.ArrayTypeMismatchException & o armazenamento dentro de um array falha. \\
+            \hline
+            System.IndexOutOfRangeException & o índice do array é menor que zero ou fora do limite. \\
+            \hline
+            System.MulticastNotSupportedException & a combinação de dois delegates não nulo falham. \\
+            \hline
+            System.ArithmeticException & DivideByZeroException e OverflowException. Base aritmética. \\
+            \hline
+            System.DivideByZeroException & ocorre uma divisão por zero. \\
+            \hline
+            System.OverflowException & ocorre um overflow numa operação aritmética. Checked. \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{frame}
+
+\subsection{Comando Throw}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Comando Throw}
+    \begin{block}{Definição}
+        É utilizado para disparar ou sinalizar a
+        ocorrência de uma situação inesperada durante a execução do
+        programa, ou seja uma excessão.
+    \end{block}
+    \begin{itemize}
+        \item O parâmetro seguido deve ser da classe \emph{System.Exception} ou
+        derivada.
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=excessaoTheow,
+    caption={Exemplo de utilização do comando
+    throw}]{cods/throw.txt}}
+\end{frame}
+
+\subsection{Bloco Try - Catch}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Bloco Try - Catch}
+    \begin{block}{Definição}
+        Uma ou mais instruções \emph{catch} são colocadas logo abaixo do
+        bloco \emph{try} para interceptar uma excessão.
+    \end{block}
+    \begin{itemize}
+        \item Dentro do bloco catch é encontrado o tratamento da
+        excessão;
+        \item Encontrado na forma hierárquica (cada \emph{catch} é
+        verificado de acordo com a exceção);
+        \item Um \emph{catch} pode estar isolado, tratando qualquer
+        exceção.
+    \end{itemize}
+    \vspace{-2cm}
+    \texttt{\lstinputlisting[language=C, label=excessaoCatch,
+    caption={Exemplo de utilização do bloco try -
+    catch}]{cods/catch.txt}}
+\end{frame}
+
+\subsection{Bloco Try - Catch - Finally}
+
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Bloco Try - Catch - Finally}
+    \begin{block}{Finally}
+        A instrução \emph{finally} garante a execução de seu bloco,
+        independente da excessão ocorrer no bloco \emph{try}.
+    \end{block}
+    \begin{itemize}
+        \item \emph{Finally} é utilizado para liberação de
+        recursos consumidos;
+    \end{itemize}
+    \texttt{\lstinputlisting[language=C, label=excessaoTriCatchFinally,
+    caption={Exemplo de utilização do bloco Try - Catch -
+    Finally}]{cods/trycatchfinally.txt}}
+\end{frame}

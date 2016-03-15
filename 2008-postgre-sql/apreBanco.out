@@ -1,0 +1,24 @@
+\BOOKMARK [2][]{Outline0.1}{Introdu\347\343o}{}
+\BOOKMARK [3][]{Outline0.1.1.6}{Question\341rio inicial}{Outline0.1}
+\BOOKMARK [3][]{Outline0.1.2.7}{Realidade das empresas que n\343o utilizam BD}{Outline0.1}
+\BOOKMARK [3][]{Outline0.1.3.8}{Problemas}{Outline0.1}
+\BOOKMARK [3][]{Outline0.1.4.9}{Processamento de arquivos: por que n\343o \351 vi\341vel?}{Outline0.1}
+\BOOKMARK [3][]{Outline0.1.5.10}{Surgimento dos BD's}{Outline0.1}
+\BOOKMARK [3][]{Outline0.1.6.11}{Banco de Dados}{Outline0.1}
+\BOOKMARK [2][]{Outline0.2}{Modelo de Entidades e Relacionamentos}{}
+\BOOKMARK [3][]{Outline0.2.1.20}{Modelos de Banco de Dados}{Outline0.2}
+\BOOKMARK [3][]{Outline0.2.2.21}{Entidades e conjuntos de entidades}{Outline0.2}
+\BOOKMARK [3][]{Outline0.2.3.23}{Atributos}{Outline0.2}
+\BOOKMARK [3][]{Outline0.2.4.25}{Identificadores}{Outline0.2}
+\BOOKMARK [3][]{Outline0.2.5.29}{Relacionamentos}{Outline0.2}
+\BOOKMARK [3][]{Outline0.2.6.30}{Grau de Relacionamento}{Outline0.2}
+\BOOKMARK [2][]{Outline0.3}{Postgres}{}
+\BOOKMARK [3][]{Outline0.3.1.38}{ACID}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.2.39}{Alguns tipos de dados}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.3.41}{Funcionalidades Avan\347adas}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.4.43}{Linguagem de Defini\347\343o de Dados\(DDL\)}{Outline0.3}
+\BOOKMARK [3][]{Outline0.3.5.52}{Linguagem de Modifica\347\343o de Dados \(DML\)}{Outline0.3}
+\BOOKMARK [2][]{Outline0.4}{Subconsultas e Jun\347\365es}{}
+\BOOKMARK [3][]{Outline0.4.1.56}{Exists}{Outline0.4}
+\BOOKMARK [3][]{Outline0.4.2.57}{In e Not In}{Outline0.4}
+\BOOKMARK [3][]{Outline0.4.3.59}{Jun\347\365es}{Outline0.4}

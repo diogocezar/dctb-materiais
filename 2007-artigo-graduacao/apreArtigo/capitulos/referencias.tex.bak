@@ -1,0 +1,6 @@
+\section[Referências]{Referências}
+\begin{frame}[t,allowframebreaks]
+    \frametitle{Referências}
+    \nocite{*}
+    \bibliographystyle{bst/sbc}
+\end{frame}

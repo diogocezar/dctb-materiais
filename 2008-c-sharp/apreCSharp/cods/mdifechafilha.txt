@@ -1,0 +1,2 @@
+if (this.MdiChildren.Length != 0)
+this.ActiveMdiChild.Close( );

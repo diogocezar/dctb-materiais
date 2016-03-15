@@ -1,0 +1,414 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[brazil]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+\usepackage{fancyhdr}
+\usepackage{color}
+\usepackage{ifthen}
+\usepackage{amsfonts}
+\usepackage{indentfirst}
+\usepackage{listings}
+\usepackage[lmargin=2.5cm,rmargin=2.5cm,tmargin=2.5cm,bmargin=3.5cm]{geometry}
+\usepackage{url}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S  D O S   C Ó D I G O S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\lstset{numbers=left, stepnumber=1, firstnumber=1,
+numberstyle=\tiny, extendedchars=true, breaklines=true,frame=tb,
+basicstyle=\footnotesize, stringstyle=\tiny, showstringspaces=false}
+
+\renewcommand{\lstlistingname}{Código}
+\renewcommand{\lstlistlistingname}{Lista de Códigos}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O N F I G U R A Ç Õ E S   D A   P Á G I N A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\footskip=1cm \setcounter{tocdepth}{5} \setcounter{secnumdepth}{5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% E S P A Ç A M E N T O   D U P L O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\renewcommand{\baselinestretch}{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O S   D E   S U B S T I T U I Ç Ã O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\header}        [1]{\def\imprimeheader{#1}}
+\newcommand{\footer}        [1]{\def\imprimefooter{#1}}
+\newcommand{\titulo}        [1]{\def\imprimetitulo{#1}}
+\newcommand{\subtitulo}     [1]{\def\imprimesubtitulo{#1}}
+\newcommand{\autor}         [1]{\def\imprimeautor{#1}}
+\newcommand{\orientador}    [1]{\def\imprimeorientador{#1}}
+\newcommand{\local}         [1]{\def\imprimelocal{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C O M A N D O   P A R A   S U B . S U B . S U B . %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\subsubsubsection}[1]{
+    \paragraph{#1}
+}
+
+\newcommand{\subsubsubsubsection}[1]{
+    \subparagraph{#1}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   F A N C Y   C O M   P A G I N A %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setheader}{
+    \pagestyle{fancy}
+    \lhead{\bfseries \imprimeheader}
+    \chead{}
+    \rhead{\textcolor[rgb]{0.00,0.00,0.44}{\textbf{\thepage}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   L I M P O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setheaderlimpo}{
+    \thispagestyle{empty}
+    \lhead{}
+    \chead{}
+    \rhead{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R O D A P É  C O M   C O N T E Ú D O  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setfooter}{
+    \pagestyle{fancy}
+    \lfoot{\textcolor[rgb]{0.00,0.00,0.44}{\textbf{\imprimetitulo}}}
+    \cfoot{}
+    \rfoot{\textcolor[rgb]{0.00,0.00,0.44}{\textbf{\thepage}}}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% R O D A P É  L I M P O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\setfooterlimpo}{
+    \pagestyle{fancy}
+    \lfoot{}
+    \cfoot{}
+    \rfoot{}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  S U B S T I T U I N D O   C O N S T A N T E S %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titulo{Apostila de Ruby on Rails} \subtitulo{Conceitos Básicos}
+\autor{Diogo Cezar Teixera Batista} \local{Cornélio Procópio}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% C A B E Ç A L H O   D O   P R O J E T O %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\header{
+    \textcolor[rgb]{0.00,0.00,0.44}{\textbf{\imprimetitulo}}
+    \newline
+    {\scriptsize \imprimeautor}
+    \newline
+    {\scriptsize \today}
+    \vspace{0.1cm}
+}
+
+\setfooterlimpo
+\setheaderlimpo
+
+\begin{document}
+
+%%%%%%%%%%%
+% C A P A %
+%%%%%%%%%%%
+
+    \setfooter
+    \setheader
+
+    \begin{flushright}
+    \end{flushright}
+
+    \vspace{3cm}
+
+    \begin{center}
+    {\Huge \textbf{\textcolor[rgb]{0.00,0.00,0.44}{\imprimetitulo}}}
+
+    \vspace{3cm}
+
+    {\huge \textbf{\imprimesubtitulo}}
+
+    \vspace{3cm}
+
+    {\Large \imprimeautor}
+
+    \vspace{3cm}
+
+    \imprimelocal
+
+    \vspace{3cm}
+
+    \today
+
+    \vspace{2cm}
+
+    \end{center}
+
+    \newpage
+
+
+%%%%%%%%%%%%%%%%%
+% S U M Á R I O %
+%%%%%%%%%%%%%%%%%
+
+    \begin{flushright}
+    \end{flushright}
+
+    \setcounter{page}{2}
+
+    \setheader
+
+    \setfooterlimpo
+
+    \tableofcontents
+
+    \newpage
+
+    \listoffigures
+
+    \newpage
+
+    %\listoftables
+
+    %\newpage
+
+    \lstlistoflistings
+
+    \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% D O C U M E N T O   P R I N C I P A L  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+    \setfooter
+
+    \section{Protocolo HTTP}
+
+        \subsection{O que é o protocolo HTTP}
+
+O Hyper Text Transfer Protocol (HTTP) é o protocolo usado na \emph{World Wide Web} (www ou internet) para a distribuição e recuperação de informações.
+
+Na ciência da computação, um protocolo é uma convenção ou padrão que controla e possibilita uma conexão, comunicação ou transferência de dados entre dois sistemas computacionais. De maneira simples, um protocolo pode ser definido como "as regras que governam" a sintaxe, semântica e sincronização da comunicação. Os protocolos podem ser implementados pelo hardware, software ou por uma combinação dos dois.
+
+A troca de informações entre um \emph{browser} (navegador) e um servidor \emph{Web} é feita através desse protocolo, que foi criado especificamente para a World Wide Web.
+
+O protocolo HTTP define uma forma de conversação no estilo pedido-resposta entre um cliente (o \emph{browser}) e um servidor (o servidor \emph{Web}). Toda essa conversação se dá no formato ASCII (texto puro) através de um conjunto de comandos simples baseados em palavras da língua inglesa.
+
+    \subsection{Cliente HTTP}
+
+Os clientes de uma conexão HTTP são os \emph{browsers} ou navegadores;
+
+Dentre os navegadores atuais podemos citar:
+
+\begin{itemize}
+    \item Mozilla Firefox;
+    \item Internet Explorer;
+    \item Google Chrome;
+    \item Safari;
+    \item Opera.
+\end{itemize}
+
+    \subsection{Servidores HTTP}
+
+Os servidores de em uma conexão HTTP são os servidores \emph{Web}. Esses servidores são máquinas com grande potencialidade de armazenamento e processamento. Esses computadores devem ser configurados para poderem receber as visitas dos clientes HTTP.
+
+Quando utilizamos a linguagem Ruby aliada com o \emph{framework} Rails, ao instalarmos esses aplicativos um servidor \emph{Web} local é automaticamente configurado.
+
+    \subsection{Pedido HTTP}
+
+Um exemplo de pedido HTTP (é totalmente transparente para o usuário do browser):
+
+\texttt{\lstinputlisting[language=HTML, label=cod:pedido-http,
+    caption={Exemplo de um protocolo de pedido HTTP}]{cods/pedido-http.txt}}
+
+Um pedido HTTP é composto de quatro partes básicas:
+
+\begin{itemize}
+    \item o método - ação a ser realizada;
+    \item a URI (Universal Resource Identifier) - informação requisitada;
+    \item a versão do protocolo HTTP;
+    \item informações adicionais - informações complementares às demais.
+\end{itemize}
+
+    \subsubsection{Método}
+
+O método definido será aplicado no objeto (a informação requisitada) definido pela URI;
+
+Esse método pode ser:
+
+\begin{itemize}
+    \item \emph{GET} - retorna o objeto;
+    \item \emph{HEAD} - retorna somente informações sobre o objeto, como tamanho, data de criação etc;
+    \item \emph{POST} - envia informações para o servidor Web. Método utilizado por scripts.
+\end{itemize}
+
+    \subsection{Resposta HTTP}
+
+ O servidor \emph{Web} ao receber o pedido, processa-o de modo a determinar o que deverá ser feito e monta um protocolo de resposta ao pedido solicitado;
+
+Um exemplo de resposta HTTP (também transparente para o usuário do browser):
+
+\texttt{\lstinputlisting[language=HTML, label=cod:pedido-http,
+    caption={Exemplo de um protocolo de resposta HTTP}]{cods/resposta-http.txt}}
+
+Pode-se notar que ao final do protocolo o servidor anexa o HTML que deverá ser interpretado por nosso navegador.
+
+    \subsection{URL}
+
+É um acrônimo para \emph{Uniform Resource Locator}, localizador que permite identificar e acessar um serviço na rede \emph{Web}.
+
+É formado por 3 partes:
+
+\begin{itemize}
+    \item \emph{protocolo} - qual o protocolo será utilizado? no nosso caso http;
+    \item \emph{nome de domínio} - onde está localizada a página na Internet? é o nome ou apelido que se dá para localizar um servidor \emph{Web};
+    \item \emph{caminho para a informação} - ao achar esse servidor qual caminho seguir para encontrar a informação desejada?
+\end{itemize}
+
+Um exemplo para ilustrar essa situação é: http://www.microsoft.com/contato
+
+Nesse exemplo:
+
+\begin{itemize}
+    \item \emph{http://} - é o protocolo;
+    \item \emph{www.microsoft.com} - nome de domínio;
+    \item \emph{/contato} - caminho para a informação.
+\end{itemize}
+
+    \section{Padrão de Projeto MVC}
+
+Model-view-controller (MVC) é um padrão de arquitetura de software. Com o aumento da complexidade das aplicações desenvolvidas torna-se fundamental a separação entre os dados (\emph{Model}) e o \emph{layout} (\emph{View}). Desta forma, alterações feitas no \emph{layout} não afetam a manipulação de dados, e estes poderão ser reorganizados sem alterar o layout.
+
+O model-view-controller resolve este problema através da separação das tarefas de acesso aos dados e lógica de negócio, lógica de apresentação e de interação com o utilizador, introduzindo um componente entre os dois: o \emph{Controller}.
+
+MVC é usado em padrões de projeto de software, mas MVC abrange mais da arquitetura de uma aplicação do que é típico para um padrão de projeto.
+
+    \subsection{Por que MVC?}
+
+Atualmente muitos softwares utilizam o padrão MVC como base de funcionamento e, no caso, não é à toa, pois a abordagem é realmente muito boa e a lógica por trás faz "valer a pena"{} adotar o MVC.
+
+O MVC pode ser entendido como uma divisão de tarefas em um aplicativo. Cada um dos 3 tem sua função bem definida (na teoria) e executa exatamente o que deve; nada além, nada aquém.
+
+Com o desenvolvimento e evolução dos programas e, consequentemente, da forma de se fazer os programas, novas abordagens tiveram que ser pensadas para facilitar a programação e garantir que os softwares, depois de prontos, fossem mais facilmente manuteníveis. A partir disso surgiu o conceito de dividir tarefas, de garantir com que cada "camada"{} da aplicação tenha seu próprio escopo e definição e que a comunicação entre todas elas se dê de maneira eficiente e controlada.
+
+    \subsection{Entendendo o Model, o View e o Controller}
+
+Na maioria das fontes que você pesquisar sobre MVC, geralmente vai encontrar primeiramente a explicação de "View"{} provavelmente por ser a mais fácil de entender e/ou para não "assustar"{} muito no primeiro contato com o padrão de projeto. Mas, para seguir corretamente o acrônimo, serão apresentados, respectivamente, o Model (Modelo), o View (Visualização) e o Controller (Controle).
+
+\begin{itemize}
+    \item \emph{Model} - Tenha uma coisa em mente: quando pensar em \emph{Model}, pense em estruturas de dados! Num software baseado em MVC, é o \emph{Model} que tem o contato com as informações armazenadas e que são mostradas, estejam elas em um banco de dados, arquivo XML, ou onde quer que estejam. É no \emph{Model} e somente no \emph{Model} que as operações de CRUD devem acontecer.
+
+    \item \emph{View} - É a apresentação, é o que aparece, é o que é visualizado por quem usa o sistema. É no View que as informações, sejam elas quais forem e de de qual lugar tenha vindo, serão exibidas para a pessoa logicamente acompanhadas de um bom design, uma boa estrutura organizacional, um ambiente agradável para quem está vendo, e muitos outros.
+
+    \item \emph{Controller} - Como sugere o nome, é responsável por controlar todo o fluxo do programa. É o "cérebro"{} e o "coração"{} do aplicativo; é no Controller que se decide "se", "o que", "quando", "onde" e tudo o mais que faz com que a lógica funcione. Desde o que deve ser consultado no banco de dados à tela que vai ser exibida para quem usa o programa/sistema, é no Controller que tudo isso deve ser definido.
+\end{itemize}
+
+ Para facilitar ainda mais, veja esta representação esquemática do modelo MVC:
+
+\begin{figure}[!htb]
+    \centering
+    \caption{Representação esquemática do modelo MVC}
+    \includegraphics[width=9cm]{images/mvc.jpg}
+\end{figure}
+
+\newpage
+
+    \section{Introdução a Rails}
+
+        \subsection{O que é Rails?}
+
+Rails é um \emph{framework}\footnote{pode ser definido como uma software estrutura de auxílio ao
+desenvolvimento de outros softwares, visando prover agilidade e eficiência para que o
+programador se livre da implementação de código repetitivo e ... chato.} feito em Ruby que funciona no conceito MVC: Model, View, Controller, onde é separado o modelo de dados, a interface do usuário e o controle lógico do programa, permitindo que alterações em qualquer uma dessas partes tenham pouco impacto nas outras.
+
+        \subsection{O que é Ruby?}
+
+Ruby é uma linguagem de script interpretada para programação orientada a objetos de um modo fácil e rápido. Ela tem vários recursos para processar arquivos de texto e para fazer tarefas de gerenciamento de sistema (assim como o Perl). Ela é simples, direto ao ponto, extensível e portável. Oh, preciso mencionar, é totalmente livre, o que significa não só livre de precisar pagar para usá-la, mas também a liberdade de usar, copiar, modificar e distribuí-la.
+
+Dentre seus recursos podemos citar:
+
+\begin{itemize}
+    \item Ruby tem uma sintaxe simples, parcialmente inspirada por Eiffel e Ada;
+
+    \item Ruby tem recursos de tratamento de exceções, assim como Java e Python, para deixar mais fácil o tratamento de erros;
+
+    \item os operadores do Ruby são açúcar sintático para os métodos. Você pode redefini-los facilmente;
+
+    \item Ruby é uma linguagem completa e pura orientada a objetos. Isso significa que todo dado em Ruby é um objeto, não do jeito de Python e Perl, mas mais do jeito do SmallTalk: sem exceções. Por exemplo, em Ruby, o numero 1 e uma instância da classe \emph{Fixnum};
+
+    \item A orientação a objetos do Ruby é desenhada cuidadosamente para ser completa e aberta a melhorias. Por exemplo, Ruby tem a habilidade de adicionar métodos em uma classe, ou até mesmo em uma instância durante o runtime! Então, se necessário, a instância de uma classe pode se comportar diferente de outras instâncias da mesma classe;
+
+    \item Ruby tem heranca única, de propósito. Mas entende o conceito de modulos (chamados de Categories no Objective-C). Módulos são coleções de métodos. Toda classe pode importar um modulo e pegar seus métodos;
+
+    \item Ruby tem um \emph{garbage collector} que realmente é do tipo marca-e-limpa. Ele atua em todos os objetos do Ruby. Voce não precisa se preocupar em manter contagem de referências em libraries externas;
+
+    \item Escrever extensões em C para Ruby e mais fácil que em Perl ou Python, em grande parte por causa do garbage collector, e em parte pela boa API de extensões. A interface SWIG também esta disponível;
+
+    \item Ruby não precisa de declaracão de variáveis. Apenas usa a convenção de nomenclatura para delimitar o escopo das variáveis;
+
+    \item Ruby pode carregar bibliotecas de extensão dinamicamente, se o sistema operacional permitir;
+
+    \item Ruby tem um sistema de threading independente do sistema operacional;
+
+    \item Ruby é altamente portável: ela é desenvolvida em sua maioria no Linux, mas funciona em muitos tipos de UNIX, DOS, Windows 95/98/Me/NT/2000/XP, MacOS, BeOS, OS/2, etc.
+\end{itemize}
+
+    \section{Instalação}
+
+    Para instalar o Rails, devemos primeiro instalar o Ruby.
+
+    Para isso abra o executável e siga todos os passos até o final da instalação;
+
+    A linguagem Ruby conta com um auxiliar chamado gem que funciona de forma parecida com os instaladores de pacotes nas distribuições linux;
+
+    Para instalar o gem, abra o prompt de comando (Iniciar > executar > "cmd") vá até a pasta onde o gem foi extraído, e execute o comando:
+
+    \texttt{ruby setup.rb}
+
+    Depois de instalar o pacote gem basta executar o seguinte comando para instalar o Rails:
+
+    \texttt{gem install rails}
+
+    Por fim, é necessário copiar uma dll de acesso ao banco de dados MySql. Para isso, copie o arquivo libmysql.dll para a pasta de instalação do Ruby: ruby/bin
+
+    Os arquivos podem ser obtidos através so site: \emph{http://www.rubyonrails.pro.br/down}
+
+%    \section{Criando a estrutura de arquivos}
+%
+%    \section{Criando as tabelas}
+%
+%        \subsection{Criando as tabelas manualmente}
+%
+%        \subsection{Criando as tabelas com Scaffold}
+%
+%    \section{Configurando o Banco de Dados}
+%
+%    \section{Criando a Estrutura da Aplicação com Scaffold}
+%
+%    \section{Configurando o Relacionamento Entre Tabelas}
+%
+%        \subsection{Relacionamentos de 1 para N}
+%
+%        \subsection{Relacionamento de N para N}
+%
+%    \subsection{Alterando o Visual da Aplicação}
+\end{document}

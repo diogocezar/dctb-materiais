@@ -1,0 +1,41 @@
+\select@language {brazil}
+\contentsline {table}{\numberline {5.1}{\ignorespaces Requisitos funcionais}}{26}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Requisitos n\~ao-funcionais}}{27}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Levantamento dos riscos}}{28}
+\contentsline {table}{\numberline {5.4}{\ignorespaces Especifica\c c\~ao do caso de uso: AcionarLink}}{29}
+\contentsline {table}{\numberline {5.5}{\ignorespaces Especifica\c c\~ao do caso de uso: Dedu\c c\~aoDeFerom\^onio}}{30}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Especifica\c c\~ao do caso de uso: Acr\'escimoDeFerom\^onio}}{30}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Especifica\c c\~ao do caso de uso: InserirGrupo}}{31}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Especifica\c c\~ao do caso de uso: AlterarGrupo}}{32}
+\contentsline {table}{\numberline {5.9}{\ignorespaces Especifica\c c\~ao do caso de uso: RemoverGrupo}}{32}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Especifica\c c\~ao do caso de uso: FiltrarRegistro}}{33}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Especifica\c c\~ao do caso de uso: AlterarRegistro}}{34}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Especifica\c c\~ao do caso de uso: ExcluirRegistro}}{34}
+\contentsline {table}{\numberline {5.13}{\ignorespaces Especifica\c c\~ao do caso de uso: EscolherGrupo}}{35}
+\contentsline {table}{\numberline {5.14}{\ignorespaces Especifica\c c\~ao do caso de uso: EscolherTipoDeOrienta\c c\~ao}}{36}
+\contentsline {table}{\numberline {5.15}{\ignorespaces Especifica\c c\~ao do caso de uso: TrocarGrupo}}{36}
+\contentsline {table}{\numberline {5.16}{\ignorespaces Especifica\c c\~ao do caso de uso: ConsultarFreq\"uenciaDosGrupos}}{37}
+\contentsline {table}{\numberline {5.17}{\ignorespaces Especifica\c c\~ao do caso de uso: ConsultarP\'aginasCadastradas}}{37}
+\contentsline {table}{\numberline {5.18}{\ignorespaces Especifica\c c\~ao do caso de uso: AlterarTemplate}}{38}
+\contentsline {table}{\numberline {5.19}{\ignorespaces Especifica\c c\~ao do caso de uso: AlterarPar\^ametrosAdministrativos}}{38}
+\contentsline {table}{\numberline {5.20}{\ignorespaces Especifica\c c\~ao do caso de uso: EfetuarLogin}}{39}
+\contentsline {table}{\numberline {10.1}{\ignorespaces Constantes administrativas utilizadas nas etapas 1 e 2}}{72}
+\contentsline {table}{\numberline {10.2}{\ignorespaces Constantes administrativas utilizadas na etapas 3}}{72}
+\contentsline {table}{\numberline {10.3}{\ignorespaces Etapa 1: Estado inicial da tabela: grupo}}{73}
+\contentsline {table}{\numberline {10.4}{\ignorespaces Etapa 1: Estado inicial da tabela: ferom\^onio}}{74}
+\contentsline {table}{\numberline {10.5}{\ignorespaces Etapa 1: Estado inicial da tabela: p\'agina}}{74}
+\contentsline {table}{\numberline {10.6}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao aleat\'oria do usu\'ario 1}}{76}
+\contentsline {table}{\numberline {10.7}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao objetiva do usu\'ario 1}}{78}
+\contentsline {table}{\numberline {10.8}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao aleat\'oria do usu\'ario 2}}{79}
+\contentsline {table}{\numberline {10.9}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao objetiva do usu\'ario 2}}{81}
+\contentsline {table}{\numberline {10.10}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao aleat\'oria do usu\'ario 3}}{82}
+\contentsline {table}{\numberline {10.11}{\ignorespaces Dados extra\IeC {\'\i }dos da navega\c c\~ao objetiva do usu\'ario 3}}{84}
+\contentsline {table}{\numberline {10.12}{\ignorespaces Etapa 2: Estado inicial da tabela: grupo}}{86}
+\contentsline {table}{\numberline {10.13}{\ignorespaces Resultados testes do usu\'ario 3 - Navega\c c\~ao Objetiva}}{87}
+\contentsline {table}{\numberline {10.14}{\ignorespaces Diferen\c ca de tempo inicial entre as p\'aginas}}{88}
+\contentsline {table}{\numberline {10.15}{\ignorespaces Links acessados ap\'os uma hora do rein\IeC {\'\i }cio dos registros}}{89}
+\contentsline {table}{\numberline {10.16}{\ignorespaces Links acessados ap\'os dez horas do rein\IeC {\'\i }cio dos registros}}{90}
+\contentsline {table}{\numberline {10.17}{\ignorespaces Links acessados ap\'os vinte e quatro horas do rein\IeC {\'\i }cio dos registros}}{91}
+\contentsline {table}{\numberline {10.18}{\ignorespaces Diferen\c ca de ferom\^onio nos testes efetuados}}{92}
+\contentsline {table}{\numberline {12.1}{\ignorespaces Cronograma das atividades desenvolvidas}}{99}
+\contentsline {table}{\numberline {12.2}{\ignorespaces Cronograma da metodologia de desenvolvimento}}{99}

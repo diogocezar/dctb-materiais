@@ -1,0 +1,237 @@
+\section[Modelo de Entidades e Relacionamentos]{Modelo de Entidades e Relacionamentos}
+
+\subsection{Modelos de Banco de Dados}
+\begin{frame}
+    \frametitle{Modelos de Banco de Dados}
+    \begin{itemize}
+        \item Modelo Lógico:
+        \begin{itemize}
+            \item Modelo de dados abstrato;
+            \item Independente do SGBD;
+            \item Abordagem ER (Entidades e Relacionamentos) através
+            de um DER (Diagrama de Entidades e Relacionamentos);
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\subsection{Entidades e conjuntos de entidades}
+\begin{frame}
+    \frametitle{Entidades e conjuntos de entidades}
+    \begin{block}{Caracterização}
+        \begin{itemize}
+            \item Entidade: objeto que existe e que é distinguível de outros objetos $\Rightarrow$ Pode ser concreta ou
+            abstrata.
+            \item Conjunto de entidades: Conjunto de todas as entidades de um mesmo tipo.
+        \end{itemize}
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=11cm]{images/entidades.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Entidades e conjuntos de entidades}
+    \begin{block}{Caracterização}
+        \begin{itemize}
+            \item Entidade: objeto que existe e que é distinguível de outros objetos $\Rightarrow$ Pode ser concreta ou
+            abstrata.
+            \item Conjunto de entidades: Conjunto de todas as entidades de um mesmo tipo.
+        \end{itemize}
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=11cm]{images/entidades.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Atributos}
+
+\begin{frame}
+    \frametitle{Atributos}
+    \begin{block}{Caracterização}
+        Permitem a associação de informações pertinentes aos "objetos"{} do
+        mundo real.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/atributos.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsubsection{Atributos Compostos e Multivalorados}
+
+\begin{frame}
+    \frametitle{Atributos Compostos e Multivalorados}
+    Atributos compostos:
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/atributocomposto.jpg}
+        \end{center}
+    \end{figure}
+    Atributos multivalorados:
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=4cm]{images/atributomultivalorado.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Identificadores}
+
+\begin{frame}
+    \frametitle{Identificadores}
+    \begin{block}{Caracterização}
+        Atributos que fornecem um nome ou identificam as instâncias da
+        entidade.
+    \end{block}
+    \begin{itemize}
+        \item Único. Ex: num\_matrícula\_funcionario;
+        \item Não único. Ex: nome\_funcionario;
+        \item Composto. Ex: nome, num\_matricula;
+    \end{itemize}
+\end{frame}
+
+
+\subsubsection{Super Chave}
+
+\begin{frame}
+    \frametitle{Superchave}
+    \begin{block}{Caracterização}
+        Uma superchave é um conjunto de um ou mais atributos que identifica
+        unicamente uma entidade.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=8cm]{images/superchave.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsubsection{Chave Candidata}
+
+\begin{frame}
+    \frametitle{Chave Candidata}
+    \begin{block}{Caracterização}
+        Uma chave candidata é uma superchave que não contem nenhum
+        subconjunto próprio que seja por si só uma superchave.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=8cm]{images/chavecandidata.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsubsection{Chave Primária}
+
+\begin{frame}
+    \frametitle{Chave Primária}
+    \begin{block}{Caracterização}
+        Chave candidata escolhida pelo projetista do BD como principal meio
+        de identificação de cada uma das entidades de um conjunto de
+        entidades.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/chaveprimaria.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Relacionamentos}
+
+\begin{frame}
+    \frametitle{Relacionamentos}
+    \begin{block}{Caracterização}
+        Associação entre várias entidades.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/relacionamentos.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsection{Grau de Relacionamento}
+
+\begin{frame}
+    \frametitle{Cardinalidade do Mapeamento}
+    \begin{itemize}
+        \item Um-para-um (1:1);
+        \item Um-para-muitos (1:n);
+        \item Muitos-para-muitos (n:n);
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Cardinalidade do Mapeamento: 1:1}
+\begin{frame}
+    \frametitle{Cardinalidade do Mapeamento: 1:1}
+    \begin{block}{Caracterização}
+        Uma entidade em A é associada com no máximo uma entidade em B e vice-versa.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/1p1.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diagramas de Exemplo}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/1p1e.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsubsection{Cardinalidade do Mapeamento: 1:N}
+\begin{frame}
+    \frametitle{Cardinalidade do Mapeamento: 1:N}
+    \begin{block}{Caracterização}
+    Uma entidade de A é associada a qualquer número de entidades de B, uma entidade de B, por outro lado, pode estar associada somente a uma entidade de
+    A.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/1pn.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diagramas de Exemplo}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/1pne.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\subsubsection{Cardinalidade do Mapeamento: N:N}
+\begin{frame}
+    \frametitle{Cardinalidade do Mapeamento: N:N}
+    \begin{block}{Caracterização}
+        Uma entidade de A pode estar associada a qualquer número de
+        entidades de B e vice-versa.
+    \end{block}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=6cm]{images/npn.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Diagramas de Exemplo}
+    \begin{figure}[htb]
+        \begin{center}
+            \includegraphics[width=10cm]{images/npne.jpg}
+        \end{center}
+    \end{figure}
+\end{frame}

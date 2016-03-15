@@ -1,0 +1,129 @@
+#id_container{
+	position:relative;
+	width:775px;
+	text-align:center;
+	margin:0 auto;
+	padding-top:12px;
+	height:120px;
+	background-image: url(../../../images/skins/azul/oriAnt.jpg);
+	background-repeat: no-repeat;
+}
+#id_logo {
+	position:relative;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-attachment: scroll;
+	float:left;
+	width:154px;
+	height:117px;
+}
+#id_conteudo{
+	position:relative;
+	width:600px;
+	float:left;
+	text-align:center;
+	margin:0 auto;
+}
+#id_titulo{
+	text-align:left;
+	position:relative;
+	clear:none;
+	float:left;
+	width:511px;
+	border-bottom:solid 1px;
+	border-bottom-color:#333333;
+}
+#id_language{
+	text-align:right;
+	position:relative;
+	clear:none;
+	float:left;
+	padding-right:5px;
+	border-bottom:solid 1px;
+	border-bottom-color:#333333;
+}
+#id_spacer{
+	text-align:right;
+	position:relative;
+	clear:none;
+	float:left;
+	padding-right:5px;
+	border-bottom:solid 1px;
+	border-bottom-color:#333333;
+}
+#id_help{
+	text-align:right;
+	position:relative;
+	clear:none;
+	float:left;
+	border-bottom:solid 1px;
+	border-bottom-color:#333333;
+}
+#id_tipo{
+	position:relative;
+	text-align:left;
+	clear:both;
+	float:left;
+	width:405px;
+	padding-left:1px;
+	padding-top:5px;
+}
+#id_informacoes{
+	padding-top:5px;
+	font-size: 11px;
+	height:48px;
+	overflow-x: hidden; 
+	overflow-y: auto;
+}
+#id_grupos{
+	position:relative;
+	clear:both;
+	float:left;
+	width:600px;
+	text-align:left;
+}
+#id_in_grupos{
+	position:relative;
+	float:left;
+	width:599px;
+	height:60px;
+	text-align:center;
+	overflow-x: hidden; 
+	overflow-y: auto;
+}
+#id_box{
+	position:relative;
+	clear:none;
+	float:right;
+	width:190px;
+	text-align:right;
+	border-bottom:solid 1px;
+	border-left:solid 1px;
+	border-right:solid 1px;
+}
+#id_box_grupo{
+	border-bottom:solid 1px;
+	border-bottom-color:#9c0000;
+}
+#id_box_opcoes_tipo_ori{
+	text-align:center;
+	font-size: 11px;
+	padding-top:3px;
+	padding-bottom:3px;
+	border-bottom:solid 1px;
+	border-bottom-color:#9c0000;
+}
+#id_box_opcoes_contexto{
+	text-align:center;
+	font-size: 11px;
+}
+#id_box_opcoes_contexto_ori{
+	text-align:center;
+	font-size: 11px;
+}
+#id_loading{
+	background:#FFFFFF;
+	font:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	padding:5px;
+}

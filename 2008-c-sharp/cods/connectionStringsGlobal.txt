@@ -1,0 +1,8 @@
+class Global
+{
+	public static string cnmysql = "database = dados; data source = localhost; user id = root; password = password";
+
+	public static string cnfirebird = "User=SYSDBA; Password = masterkey; Database = C:\\dados.fdb; DataSource = localhost; Dialect=3; Charset=WIN1252; Role=; Connection lifetime=15; Pooling=true; MinPoolSize=0; MaxPoolSize=50; Packet Size=4096; ServerType=0";
+
+	public static string cnpostgree = "User	ID=postgres;Password=password;Host=localhost;Port=5432;Database=dados;Pooling=true;Min Pool Size=0;Max Pool Size=100;Connection Lifetime=0";
+}
