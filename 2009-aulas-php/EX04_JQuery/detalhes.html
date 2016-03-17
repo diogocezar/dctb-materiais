@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Detalhes</title>
+<script language="javascript" src="jquery/jquery.js"></script>
+<script>
+$(document).ready(function(){
+	$('#link').click(function(){
+		$('#maisinfo').toggle();
+	});						   
+});
+</script>
+</head>
+<body>
+<p>Clica no link para abrir a caixa de informação escondida.</p>
+<p><a href="#" id="link">Mais Informação</a></p>
+<div id="maisinfo" style="display:none">
+<p> Texto que ficará invisível até clicar no link.</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* Elementos HTML */
+
+body{
+	padding:0px;
+	margin:0px;
+	font-size:11px;
+}
+
+/* Boxes */
+#container{
+	position:absolute;
+	left:50%;
+	margin-left:-350px;
+	width:700px;
+	border:1px solid #333333;
+}
+
+#header{
+	position:relative;
+	float:left;
+	height:200px;
+	width:100%;
+	border:1px solid #333333;
+}
+
+#logo{
+	position:relative;
+	float:left;
+	height:150px;
+	width:700px;
+	margin-top:10px;
+	margin-bottom:10px;
+	border:1px solid #333333;
+}
+
+#menu{
+	position:relative;
+	float:left;
+	clear:none;
+	width:697px;
+	border:1px solid #333333;
+}
+
+#menu ul{
+	font-size:10px;
+	font-weight:bold;
+	line-height:20px;
+	list-style-type:none;
+	margin:1px;
+	padding:0px;
+	text-decoration:none;
+	text-indent:5px;
+	text-transform:uppercase;
+	vertical-align:middle;
+	border:1px solid #333333;
+}
+
+#menu li{
+	float:left;
+	margin:2px;
+	margin-left:5px;
+	text-align:center;
+	width:auto;
+	border:1px solid #333333;
+}
+
+#content{
+	margin-top:10px;
+	position:relative;
+	float:left;
+	clear:none;
+	width:697px;
+	border:1px solid #333333;
+}
+
+#footer{
+	margin-top:10px;
+	position:relative;
+	float:left;
+	clear:none;
+	width:697px;
+	text-align:center;
+	border:1px solid #333333;
+}

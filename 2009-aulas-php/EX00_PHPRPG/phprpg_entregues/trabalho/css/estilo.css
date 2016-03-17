@@ -1,0 +1,93 @@
+#telainicio{
+	position: absolute;
+}
+
+#botao{
+	font-size: 20px;
+	color: #2F4F4F;
+	margin-left:44%;
+}
+
+#imagemTela{
+	margin-left: 17%;
+	margin-top: 10%;
+	clear:right;
+}
+#container{
+	position:absolute;
+	margin-left:-400px;
+	width:800px;
+	float:left;
+	background-color: #9932CC;
+	border:1px solid #36648B;
+	float:none;
+}
+
+body{
+	font-family:Tahoma, Geneva, sans-serif;
+	color: #FFFFE0;
+	float:both;
+	margin:0 auto;
+}
+
+
+h1{
+	margin-top:10px;
+	color:#FAFAD2;
+	clear:left;
+}
+
+#dados{
+	background-color:#E0EEE0;
+	border:1px solid #2F4F4F;
+	width: 800px;
+    margin: 0 auto;
+	color:#838B8B;
+	margin-top:50px;
+	margin-bottom:40px;
+	float:none;
+	padding:0px;
+}
+
+#imagem{
+	float:right;
+    padding-left:10px;
+	padding-right:300px;
+	padding-top:20px;
+	clear:right;
+}
+
+#competidor{
+    float:left;
+	height: 230px;
+	width:150px;
+	clear:left;
+}
+
+#confronto{
+	background-color:#2F4F4F;
+	width: 762px;
+	color: #FFFFE0;
+	padding:20px;
+	margin-bottom:50px;
+	margin-top:50px;
+}
+
+#footer{
+	position:relative;
+	float:left;
+	background-color:#FF6347;
+	width:100%;
+	color:white;
+	height: 30px;
+	text-align:center;
+	font-size:12px;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+
+.imagemFundo{
+    background-image:url(../imagens/fundo.gif);
+	float:both;
+	margin:0 auto;
+}

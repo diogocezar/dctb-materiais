@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Detalhes</title>
+<script>
+function toggle(obj) {
+	var el = document.getElementById(obj);
+	if ( el.style.display != "none" ){
+		el.style.display = 'none';
+	}
+	else{ 
+		el.style.display = ''
+	}	
+}
+</script>
+</head>
+<body>
+<p>Clica no link para abrir a caixa de informação escondida.</p>
+<p><a href="#" onclick="toggle('maisinfo');">Mais Informação</a></p>
+<div id="maisinfo" style="display:none">
+<p> Texto que ficará invisível até clicar no link.</p>
+</div>
+</body>
+</html>

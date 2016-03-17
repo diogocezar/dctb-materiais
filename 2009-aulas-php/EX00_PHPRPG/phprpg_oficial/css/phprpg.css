@@ -1,0 +1,103 @@
+*{
+	font-family:Tahoma, Geneva, sans-serif;
+}
+
+h1, h2, h3{
+	position:relative;
+	float:left;
+	clear:both;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+
+h2{
+	border-bottom:1px solid black;
+	width:100%;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+h1{
+	font-size:20px;	
+}
+
+#arena{
+	position:relative;
+	float:left;
+	height:300px;
+	width:99%;
+	overflow:auto;
+	border:1px solid black;
+	padding-left:5px;
+	background-color:#85b0b6;
+	font-size:12px;
+	line-height:22px;
+}
+
+#linha{
+	position:relative;
+	float:left;
+	clear:both;
+}
+
+#container{
+	position:relative;
+	float:left;
+	margin-bottom:15px;
+}
+
+#foto_monstro{
+	position:relative;
+	float:left;
+	margin-right: 10px;
+}
+
+#foto_monstro img{
+	border:3px solid black;
+}
+
+#infos_monstro{
+	position:relative;
+	float:left;
+	margin-right:20px;
+	margin-top:0px;
+	font-size:13px;
+}
+
+#xis{
+	position:relative;
+	float:left;
+	margin-right:20px;
+	font-size:40px;
+}
+
+#foto_heroi{
+	position:relative;
+	float:left;
+	margin-right: 10px;
+}
+
+#foto_heroi img{
+	border:3px solid black;
+}
+
+#infos_heroi{
+	position:relative;
+	float:left;
+	margin-right:10px;
+	margin-top:0px;
+	font-size:13px;
+	text-align:right;
+}
+
+#espaco_confronto{
+	position:relative;
+	float:left;
+	height:50px;
+	width:100%;
+}
+
+.vida{
+	padding-left:25px;
+	color:#333;
+}
